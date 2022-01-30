@@ -1,11 +1,19 @@
+:root {
+	--secondary-background-color: #def2fa;
+	--text-primary-color: #3aafa9;
+	--primary-background-color: #17252a;
+	--shadow-color: #ccc;
+	--primary-font: "Segoe UI";
+}
+
 body {
-	background-color: #def2fa;
+	background-color: var(--secondary-background-color);
 }
 
 p {
-	font-family: "Segoe UI";
+	font-family: var(--primary-font);
 	font-size: x-large;
-	color: #3aafa9;
+	color: var(--text-primary-color);
 	font-weight: 400;
 }
 
@@ -23,14 +31,14 @@ p {
 	width: 40%;
 	min-width: 300px;
 	padding: 5%;
-	background: #17252a;
-	box-shadow: 3px 3px 5px 6px #ccc;
+	background: var(--primary-background-color);
+	box-shadow: 3px 3px 5px 6px var(--shadow-color);
 }
 
 .text-input {
 	width: 90%;
 	padding: 12px 5%;
-	font-family: "Segoe UI";
+	font-family: var(--primary-font);
 	font-size: large;
 }
 
@@ -40,7 +48,7 @@ button {
 	padding: 1.5em 10%;
 	height: 6vh;
 	margin-top: 20px;
-	font-family: "Segoe UI";
+	font-family: var(--primary-font);
 	font-size: large;
 	font-weight: 400;
 	text-align: center;
