@@ -10,28 +10,24 @@ p {
 }
 
 #main-container {
-	width: 40%;
-	height: 80vh;
-	position: absolute;
-	background: #17252a;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	margin: auto;
-	box-shadow: 3px 3px 5px 6px #ccc;
+	width: 100%;
+	min-height: 100vh;
+	height: fit-content;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .login-container {
-	padding: 10%;
-	position: absolute;
-	margin-top: 5%;
-	width: 80%;
+	width: 40%;
+	padding: 5%;
+	background: #17252a;
+	box-shadow: 3px 3px 5px 6px #ccc;
 }
 
 .text-input {
-	width: 80%;
-	padding: 12px 10%;
+	width: 90%;
+	padding: 12px 5%;
 	font-family: "Segoe UI";
 	font-size: large;
 }
