@@ -19,7 +19,9 @@ p {
 }
 
 .login-container {
+	margin: 5% 0px;
 	width: 40%;
+	min-width: 300px;
 	padding: 5%;
 	background: #17252a;
 	box-shadow: 3px 3px 5px 6px #ccc;
@@ -33,12 +35,15 @@ p {
 }
 
 button {
-	padding: 1px 10%;
+	display: inline-flex;
+	align-items: center;
+	padding: 1.5em 10%;
 	height: 6vh;
 	margin-top: 20px;
 	font-family: "Segoe UI";
 	font-size: large;
 	font-weight: 400;
+	text-align: center;
 	background-color: #2b7a78;
 	color: #def2f1;
 	border: none;
