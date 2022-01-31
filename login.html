@@ -1,26 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="CSS/style.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="JS/font-awesome.js" crossorigin="anonymous"></script>
     <title>Login</title>
   </head>
   <body>
     <div id="main-container">
       <div class="login-container">
-        <form action="" method="get">
-          <p class="login-text">Email</p>
-          <input type="text" name="email" id="email" class="text-input" />
-          <p class="login-text">Password</p>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            class="text-input"
-          />
-          <button type="submit">Login</button>
+        <div class="icon-container">
+          <i class="fas fa-user-circle user-icon"></i>
+        </div>
+
+        <form action="" method="post" class="login-form">
+          <div class="form-block">
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="text-input"
+              placeholder="Email"
+              required
+            />
+          </div>
+          <div class="form-block">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="text-input"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div class="form-block">
+            <button type="submit">Login</button>
+          </div>
         </form>
       </div>
     </div>
