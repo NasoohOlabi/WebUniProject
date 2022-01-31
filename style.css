@@ -1,58 +1,68 @@
 :root {
-	--secondary-background-color: #def2fa;
-	--text-primary-color: #3aafa9;
-	--primary-background-color: #17252a;
-	--shadow-color: #ccc;
-	--primary-font: "Segoe UI";
+  --secondary-background-color: #def2fa;
+  --text-primary-color: #ffffff;
+  --primary-background-color: #0075ff;
+  --shadow-color: #ccc;
+  --primary-font: "Segoe UI";
 }
 
 body {
-	background-color: var(--secondary-background-color);
+  background-color: var(--secondary-background-color);
 }
 
 p {
-	font-family: var(--primary-font);
-	font-size: x-large;
-	color: var(--text-primary-color);
-	font-weight: 400;
+  font-family: var(--primary-font);
+  font-size: x-large;
+  color: var(--text-primary-color);
+  font-weight: 400;
 }
 
 #main-container {
-	width: 100%;
-	min-height: 100vh;
-	height: fit-content;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .login-container {
-	margin: 5% 0px;
-	width: 40%;
-	min-width: 300px;
-	padding: 5%;
-	background: var(--primary-background-color);
-	box-shadow: 3px 3px 5px 6px var(--shadow-color);
+  margin: 5% 0px;
+  width: 30%;
+  min-width: 300px;
+  padding: 5%;
+  background: var(--primary-background-color);
+  box-shadow: 3px 3px 5px 6px var(--shadow-color);
 }
 
 .text-input {
-	width: 90%;
-	padding: 12px 5%;
-	font-family: var(--primary-font);
-	font-size: large;
+  width: 90%;
+  padding: 12px 5%;
+  font-family: var(--primary-font);
+  font-size: large;
 }
 
 button {
-	display: inline-flex;
-	align-items: center;
-	padding: 1.5em 10%;
-	height: 6vh;
-	margin-top: 20px;
-	font-family: var(--primary-font);
-	font-size: large;
-	font-weight: 400;
-	text-align: center;
-	background-color: #2b7a78;
-	color: #def2f1;
-	border: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 1.5em 10%;
+  height: 6vh;
+  margin-top: 20px;
+  font-family: var(--primary-font);
+  font-size: large;
+  font-weight: 400;
+  text-align: center;
+  background-color: #e84118;
+  color: #def2f1;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  border: 1px solid white;
+}
+
+.required {
+  color: black;
 }
