@@ -4,6 +4,10 @@
   --primary-background-color: #17252a;
   --shadow-color: #ccc;
   --primary-font: "Segoe UI";
+  --standard-padding: var(--standard-vertical-padding)
+    var(--standard-horizontal-padding);
+  --standard-vertical-padding: 0.375rem;
+  --standard-horizontal-padding: 0.75rem;
 }
 
 body {
@@ -33,7 +37,7 @@ p {
 
 .login-container {
   margin: 5% 0px;
-  width: 30%;
+  width: 25%;
   min-width: 300px;
   padding: 5%;
   background: var(--primary-background-color);
@@ -42,9 +46,9 @@ p {
 
 .text-input {
   display: block;
-  width: 100%;
+  width: calc(calc(100% - 2 * 0.75rem) - 2px);
   height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 0.75rem;
+  padding: var(--standard-padding);
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -75,7 +79,7 @@ button {
   font-weight: 400;
   text-align: center;
   border: 1px solid #007bff;
-  padding: 0.375rem 0.75rem;
+  padding: var(--standard-padding);
   font-size: 1rem;
   line-height: 1.5;
   border-radius: 0.25rem;
@@ -84,9 +88,8 @@ button {
   color: #fff;
   background-color: #007bff;
   display: block;
-  width: 106%;
+  width: 100%;
   cursor: pointer;
-  margin: 30px 0;
 }
 
 button:hover {
@@ -130,9 +133,9 @@ button:hover {
 
 .form-select {
   display: inline-block;
-  width: 106%;
+  width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
-  padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+  padding: 0.375rem 1.75rem var(--standard-padding);
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -143,8 +146,6 @@ button:hover {
     right 0.75rem center/8px 10px no-repeat;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
 }
 .form-select:focus {
