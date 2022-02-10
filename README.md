@@ -1,3 +1,7 @@
-<h1>Hello World!</h1>
+# Hello World
 
-## This Project is hosted on : <https://nasooholabi.github.io/WebUniProject/> ##
+This is a university project
+
+## Hosting
+
+This Project is hosted on : <https://nasooholabi.github.io/WebUniProject/>
