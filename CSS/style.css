@@ -8,15 +8,6 @@
     var(--standard-horizontal-padding);
   --standard-vertical-padding: 0.375rem;
   --standard-horizontal-padding: 0.75rem;
-  --secondary-background-color: #def2fa;
-  --text-primary-color: #ffffff;
-  --primary-background-color: #17252a;
-  --shadow-color: #ccc;
-  --primary-font: "Segoe UI";
-  --standard-padding: var(--standard-vertical-padding)
-    var(--standard-horizontal-padding);
-  --standard-vertical-padding: 0.375rem;
-  --standard-horizontal-padding: 0.75rem;
   --spinner-color: white;
 }
 
