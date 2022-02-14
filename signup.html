@@ -77,15 +77,22 @@
 						/>
 					</div>
 					<div class="form-block">
-						<select class="form-select" aria-label="Account Type">
-							<option selected>Account Type</option>
-							<option value="1">Student</option>
-							<option value="2">Teacher</option>
-							<option value="3">Admin</option>
+						<select
+							name="AccountType"
+							class="form-select"
+							aria-label="Account Type"
+						>
+							<option value="" disabled selected hidden>
+								Account Type
+							</option>
+							<option value="student">Student</option>
+							<option value="teacher">Teacher</option>
+							<option value="admin">Admin</option>
 						</select>
 					</div>
 					<div class="form-block">
 						<input
+							name="ProfileImg"
 							class="file-input"
 							type="file"
 							id="formFile"
