@@ -26,23 +26,25 @@
               type="text"
               name="email"
               id="email"
-              class="text-input"
+              class="text-input valid-input"
               placeholder="Email"
               required
             />
+            <small class="invalid-text"> Please enter a valid email</small>
           </div>
           <div class="form-block">
             <input
               type="password"
               name="password"
               id="password"
-              class="text-input"
+              class="text-input valid-input"
               placeholder="Password"
               required
             />
+            <small class="invalid-text">Please enter a valid password</small>
           </div>
           <div class="form-block">
-            <button type="submit">
+            <button type="submit" id="submit-btn">
               Login
               <svg id="spinner" viewBox="0 0 50 50">
                 <circle
