@@ -71,9 +71,7 @@ function isValidForm(form_obj) {
 				res[key] = validators[key](receivedValue, form_obj["password"]);
 			} else if (
 				key === "password" &&
-				document
-					.querySelector("button#submit-btn")
-					.innerHTML.slice(0, 5) === "login"
+				document.querySelector("button#submit-btn").innerText === "Login"
 			) {
 				// no need to validate login password
 				res[key] = true;
