@@ -1,3 +1,17 @@
+// ids = Object.keys(readInputs)
+// const ids = [
+// 	"email",
+// 	"password",
+// 	"first_name",
+// 	"last_name",
+// 	"confirm-password",
+// 	"phone",
+// 	"AccountType",
+// ];
+
+/**
+ * A set of validator functions to use while validating forms
+ */
 const validators = {
 	email: (email) => {
 		// validate email format
@@ -23,6 +37,12 @@ const validators = {
 	ProfileImg: (fakePath) => fakePath.length > 0,
 };
 
+/**
+ *	Note that multiple calls to doBeforeAfterSpin will only take into account last 1000 ms
+ * @param {(event)=>void} init
+ * @param {(event)=>void} callBack
+ * @returns function that execute init and then execute callBack after 1000 ms
+ */
 const doBeforeAfterSpin = (init, callBack) => (event) => {
 	init(event);
 	if (window.parsing_input_interval) {
@@ -38,7 +58,12 @@ const doBeforeAfterSpin = (init, callBack) => (event) => {
 		callBack(event);
 	}, 1000);
 };
-
+/**
+ * Adds callBack as eventLister to listOfEventNames events to the nodes in HtmlCollection
+ * @param {string[]} listOfEventNames
+ * @param {HtmlCollection} collection
+ * @param {(event)=>void} callBack
+ */
 const addEventsListenersToHTMLCollection = (
 	listOfEventNames,
 	collection,
@@ -50,7 +75,10 @@ const addEventsListenersToHTMLCollection = (
 		});
 	}
 };
-
+/**
+ *
+ * @returns Object with {(input/select).name : value}
+ */
 function readInputs() {
 	const dic = {};
 	for (let elem of document.getElementsByTagName("input")) {
@@ -61,7 +89,10 @@ function readInputs() {
 	}
 	return dic;
 }
-
+/**
+ * object of key form_element.name mapped to string value
+ * @param {string : boolean} form::element
+ */
 function isValidForm(form_obj) {
 	const res = {};
 	for (const key in form_obj) {
@@ -91,7 +122,11 @@ function removeErrorMsgUnderThisElem(elem) {
 	elem.className = "text-input valid-input";
 	elem.nextElementSibling.style.display = "none";
 }
-
+/**
+ * Highlight elements that needs to be red Highlighted
+ * and removes highlighting on those that don't need it accordingly
+ * @param {} flags
+ */
 function setFormStatus(flags) {
 	for (let elem of document.getElementsByClassName("text-input")) {
 		if (window[elem.id + " is Touched"] && !flags[elem.id]) {
@@ -103,6 +138,7 @@ function setFormStatus(flags) {
 }
 
 function main() {
+	// Unfilled, untouched fields shouldn't be highlighted in red
 	addEventsListenersToHTMLCollection(
 		["focus"],
 		document.getElementsByClassName("text-input"),
@@ -110,6 +146,9 @@ function main() {
 			window[event.currentTarget.id + " is Touched"] = true;
 		}
 	);
+
+	// Immediately after performing an input or a focusout the red highlighting will be removed
+	// After 1s of performing an input or a focusout the form will validate it self
 	addEventsListenersToHTMLCollection(
 		["input", "focusout"],
 		document.getElementsByClassName("text-input"),
