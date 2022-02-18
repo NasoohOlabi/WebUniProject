@@ -4,11 +4,77 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>da title</title>
+		<style>
+			body {
+				margin: 0;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			.relative {
+				position: relative;
+			}
+
+			aside {
+				width: 20%;
+			}
+
+			#mid-section {
+				display: flex;
+			}
+
+			#main-content {
+				width: 80%;
+				display: flex;
+				height: 300vh;
+				flex-direction: column;
+			}
+
+			.floater > h4 {
+				position: sticky;
+				top: 0;
+				margin: 0;
+			}
+
+			.bordered {
+				border: 0.5px solid black;
+			}
+		</style>
 	</head>
 
 	<body>
-		<a href="login.html">login</a>
-		<a href="signup.html">signup</a>
+		<header class="bordered">
+			<center>
+				<nav>
+					<span><a href="login.html">login</a></span>
+					<span><a href="signup.html">signup</a></span>
+				</nav>
+			</center>
+		</header>
+		<div id="mid-section">
+			<aside class="inlineBlock bordered">side bar</aside>
+			<div id="main-content" class="inlineBlock bordered">
+				<section class="floater relative bordered">
+					<h4>that's going to stick</h4>
+					<p>some content</p>
+				</section>
+				<section class="floater relative bordered">
+					<h4>that's going to stick</h4>
+					<p>some content</p>
+				</section>
+				<section class="floater relative bordered">
+					<h4>that's going to stick</h4>
+					<p>some content</p>
+				</section>
+			</div>
+			<br />
+			<br />
+			<br />
+			<br />
+		</div>
+		<footer class="bordered">da footer</footer>
 	</body>
 </html>
