@@ -5,6 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>da title</title>
+		<link rel="stylesheet" href="CSS/style.css" />
 		<style>
 			:root {
 				--background: #ecf0f1;
@@ -36,7 +37,7 @@
 			#main-content {
 				width: 80%;
 				display: flex;
-				height: 300vh;
+				height: 100vh;
 				flex-direction: column;
 				background-color: var(--background);
 			}
@@ -86,18 +87,113 @@
 			.bordered {
 				outline: 0.5px solid black;
 			}
+			.scrolling-wrapper {
+				display: flex;
+				flex-wrap: nowrap;
+				overflow-x: auto;
+			}
+			section::-webkit-scrollbar {
+				display: none;
+			}
+			.scrolling-wrapper > .card {
+				flex: 0 0 auto;
+				padding: 1em;
+				width: 200px;
+				height: 400px;
+			}
+			.scrolling-wrapper > .card > div {
+				width: 200px;
+				height: 200px;
+				display: flex;
+				align-items: center;
+				align-content: center;
+			}
+			.scrolling-wrapper > .card > div > img {
+				width: 100%;
+			}
+			body {
+				background: none;
+			}
+			#main-container {
+				background-color: rgba(10, 10, 10, 0.8);
+				display: none;
+				z-index: 9;
+				opacity: 1;
+			}
 		</style>
 	</head>
 
 	<body>
+		<script>
+			function clik() {
+				const login = document.getElementById("main-container");
+				login.style.display = "flex";
+				login.style.position = "absolute";
+			}
+		</script>
+		<div id="main-container">
+			<noscript
+				>It seems that you don't have javascript enabled for this
+				site...</noscript
+			>
+			<div class="login-container">
+				<div class="icon-container">
+					<i class="fas fa-user-circle user-icon"></i>
+				</div>
+
+				<form action="" method="post" class="login-form">
+					<div class="form-block">
+						<input
+							type="text"
+							name="email"
+							id="email"
+							class="text-input valid-input"
+							placeholder="Email"
+							required
+						/>
+						<small class="invalid-text">
+							Please enter a valid email</small
+						>
+					</div>
+					<div class="form-block">
+						<input
+							type="password"
+							name="password"
+							id="password"
+							class="text-input valid-input"
+							placeholder="Password"
+							required
+						/>
+						<small class="invalid-text"
+							>Please enter a valid password</small
+						>
+					</div>
+					<div class="form-block">
+						<button type="submit" id="submit-btn">
+							Login
+							<svg id="spinner" viewBox="0 0 50 50">
+								<circle
+									class="path"
+									cx="25"
+									cy="25"
+									r="20"
+									fill="none"
+									stroke-width="5"
+								></circle>
+							</svg>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
 		<header>
 			<img src="img/logo/MNU-logos_wide.jpeg" id="logo-img" />
 			<nav>
-				<span
-					><a href="login.html"
-						><button class="nav-btn">login</button></a
-					></span
-				>
+				<span>
+					<!-- <a href="login.html"> -->
+					<button class="nav-btn" onclick="clik()">login</button>
+					<!-- </a> -->
+				</span>
 				<span
 					><a href="signup.html"
 						><button class="nav-btn">signup</button></a
@@ -108,6 +204,24 @@
 		<div id="mid-section">
 			<aside class="inlineBlock">side bar</aside>
 			<div id="main-content" class="inlineBlock">
+				<section class="scrolling-wrapper">
+					<div class="card">
+						<div>
+							<img
+								src="img/welcome-poster-spectrum-brush-strokes-260nw-1146069941.jpg"
+							/>
+						</div>
+						<h2>Welcome the university site</h2>
+					</div>
+					<div class="card">
+						<div><img src="img/Climate-front-sub.jpg" /></div>
+						<h2>Card</h2>
+					</div>
+					<div class="card">
+						<div><img src="img/MIT-Water.jpg" /></div>
+						<h2>Card</h2>
+					</div>
+				</section>
 				<section class="floater relative">
 					<h4>that's going to stick</h4>
 					<p>some content</p>
