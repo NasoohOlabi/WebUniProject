@@ -6,132 +6,17 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>da title</title>
 		<link rel="stylesheet" href="CSS/style.css" />
-		<style>
-			:root {
-				--background: #ecf0f1;
-				--primary: rgb(83, 158, 138);
-				--navbar-height: 48px;
-			}
-			body {
-				margin: 0;
-				font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-			}
-
-			a {
-				text-decoration: none;
-			}
-
-			.relative {
-				position: relative;
-			}
-
-			aside {
-				width: 20%;
-				background-color: var(--background);
-			}
-
-			#mid-section {
-				display: flex;
-			}
-
-			#main-content {
-				width: 80%;
-				display: flex;
-				height: 100vh;
-				flex-direction: column;
-				background-color: var(--background);
-			}
-			header {
-				background-color: var(--primary);
-				padding: 0px;
-				display: flex;
-				height: var(--navbar-height);
-			}
-			nav {
-				display: flex;
-				justify-content: right;
-				align-items: center;
-				max-height: 64px;
-				height: var(--navbar-height);
-				width: 100%;
-			}
-
-			nav > span {
-				margin: 10px;
-			}
-			.nav-btn {
-				padding: 0.5em;
-				border-radius: 10%;
-				background-color: rgb(83, 158, 138);
-				border: none;
-				font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-				font-size: 1rem;
-				font-weight: bold;
-				color: var(--background);
-			}
-			.nav-btn:hover {
-				background-color: rgb(123, 189, 171);
-				border: none;
-			}
-			#logo-img {
-				height: var(--navbar-height);
-				display: inline;
-			}
-
-			.floater > h4 {
-				position: sticky;
-				top: 0;
-				margin: 0;
-			}
-
-			.bordered {
-				outline: 0.5px solid black;
-			}
-			.scrolling-wrapper {
-				display: flex;
-				flex-wrap: nowrap;
-				overflow-x: auto;
-			}
-			section::-webkit-scrollbar {
-				display: none;
-			}
-			.scrolling-wrapper > .card {
-				flex: 0 0 auto;
-				padding: 1em;
-				width: 200px;
-				height: 400px;
-			}
-			.scrolling-wrapper > .card > div {
-				width: 200px;
-				height: 200px;
-				display: flex;
-				align-items: center;
-				align-content: center;
-			}
-			.scrolling-wrapper > .card > div > img {
-				width: 100%;
-			}
-			body {
-				background: none;
-			}
-			#main-container {
-				background-color: rgba(10, 10, 10, 0.8);
-				display: none;
-				z-index: 9;
-				opacity: 1;
-			}
-		</style>
 	</head>
 
 	<body>
 		<script>
 			function clik() {
-				const login = document.getElementById("main-container");
+				const login = document.getElementById("main-container-popup");
 				login.style.display = "flex";
 				login.style.position = "absolute";
 			}
 		</script>
-		<div id="main-container">
+		<div id="main-container-popup">
 			<noscript
 				>It seems that you don't have javascript enabled for this
 				site...</noscript
@@ -202,11 +87,18 @@
 			</nav>
 		</header>
 		<div id="mid-section">
-			<aside class="inlineBlock">side bar</aside>
+			<aside class="inlineBlock">
+				<dl>
+					<dt>Links</dt>
+					<dd>Quizes</dd>
+					<dt>Milk</dt>
+					<dd>White cold drink</dd>
+				</dl>
+			</aside>
 			<div id="main-content" class="inlineBlock">
 				<section class="scrolling-wrapper">
 					<div class="card">
-						<div>
+						<div class=".card-image-container">
 							<img
 								src="img/welcome-poster-spectrum-brush-strokes-260nw-1146069941.jpg"
 							/>
@@ -214,31 +106,31 @@
 						<h2>Welcome the university site</h2>
 					</div>
 					<div class="card">
-						<div><img src="img/Climate-front-sub.jpg" /></div>
+						<div class=".card-image-container">
+							<img src="img/Climate-front-sub.jpg" />
+						</div>
 						<h2>Card</h2>
 					</div>
 					<div class="card">
-						<div><img src="img/MIT-Water.jpg" /></div>
+						<div class=".card-image-container">
+							<img src="img/MIT-Water.jpg" />
+						</div>
+						<h2>Card</h2>
+					</div>
+					<div class="card">
+						<div class=".card-image-container">
+							<img src="img/MIT-Water.jpg" />
+						</div>
+						<h2>Card</h2>
+					</div>
+					<div class="card">
+						<div class=".card-image-container">
+							<img src="img/MIT-Water.jpg" />
+						</div>
 						<h2>Card</h2>
 					</div>
 				</section>
-				<section class="floater relative">
-					<h4>that's going to stick</h4>
-					<p>some content</p>
-				</section>
-				<section class="floater relative">
-					<h4>that's going to stick</h4>
-					<p>some content</p>
-				</section>
-				<section class="floater relative">
-					<h4>that's going to stick</h4>
-					<p>some content</p>
-				</section>
 			</div>
-			<br />
-			<br />
-			<br />
-			<br />
 		</div>
 		<footer>da footer</footer>
 	</body>
