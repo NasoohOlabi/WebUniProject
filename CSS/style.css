@@ -122,6 +122,7 @@ aside {
 	background-color: rgba(10, 10, 10, 0.8);
 	display: none;
 	z-index: 9;
+	position: absolute;
 	opacity: 1;
 	width: 100%;
 	min-height: 100vh;
@@ -136,7 +137,7 @@ aside {
 	width: 25%;
 	min-width: 300px;
 	padding: 5%;
-	background: #7eaebec2;
+	background-color: #7eaebe;
 	box-shadow: 0px -1px 6px 2px #ffffff4a;
 }
 

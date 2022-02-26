@@ -5,23 +5,72 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>da title</title>
+		<link rel="stylesheet" href="CSS/all.min.css" />
 		<link rel="stylesheet" href="CSS/style.css" />
 		<link rel="stylesheet" href="CSS/util.style.css" />
 	</head>
 
 	<body>
-		<script>
-			function clik() {
-				const login = document.getElementById("main-container-popup");
-				login.style.display = "flex";
-				login.style.position = "absolute";
-			}
-		</script>
+		<script src="/JS/popping.js"></script>
+		<header>
+			<a href="/index.html">
+				<img src="/img/logo/MNU-logos_wide.jpeg" id="logo-img" />
+			</a>
+			<nav>
+				<span>
+					<!-- <a href="login.html"> -->
+					<button class="nav-btn" onclick="pop()">login</button>
+					<!-- </a> -->
+				</span>
+				<span
+					><a href="signup.html"
+						><button class="nav-btn">signup</button></a
+					></span
+				>
+			</nav>
+		</header>
+		<div id="mid-section">
+			<aside class="inlineBlock">
+				<dl>
+					<dt>Links</dt>
+					<dd>Quizes</dd>
+					<dt>Milk</dt>
+					<dd>White cold drink</dd>
+				</dl>
+			</aside>
+			<div
+				id="main-content"
+				class="inlineBlock height-fit-content flex-center"
+			>
+				<div class="quiz-question-container">
+					<div id="game">
+						<h3 id="question">What is the answer to this questions?</h3>
+						<div class="quiz-choice-container">
+							<p class="quiz-choice-prefix">1</p>
+							<p class="quiz-choice-text" data-number="1">Choice 1</p>
+						</div>
+						<div class="quiz-choice-container">
+							<p class="quiz-choice-prefix">2</p>
+							<p class="quiz-choice-text" data-number="2">Choice 2</p>
+						</div>
+						<div class="quiz-choice-container">
+							<p class="quiz-choice-prefix">3</p>
+							<p class="quiz-choice-text" data-number="3">Choice 3</p>
+						</div>
+						<div class="quiz-choice-container">
+							<p class="quiz-choice-prefix">4</p>
+							<p class="quiz-choice-text" data-number="4">Choice 4</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div id="main-container-popup">
 			<noscript
 				>It seems that you don't have javascript enabled for this
 				site...</noscript
 			>
+			<script src="./JS/form.js"></script>
 			<div class="login-container">
 				<div class="icon-container">
 					<i class="fas fa-user-circle user-icon"></i>
@@ -72,156 +121,7 @@
 				</form>
 			</div>
 		</div>
-		<header>
-			<img src="img/logo/MNU-logos_wide.jpeg" id="logo-img" />
-			<nav>
-				<span>
-					<!-- <a href="login.html"> -->
-					<button class="nav-btn" onclick="clik()">login</button>
-					<!-- </a> -->
-				</span>
-				<span
-					><a href="signup.html"
-						><button class="nav-btn">signup</button></a
-					></span
-				>
-			</nav>
-		</header>
-		<div id="mid-section">
-			<aside class="inlineBlock">
-				<dl>
-					<dt>Links</dt>
-					<dd>Quizes</dd>
-					<dt>Milk</dt>
-					<dd>White cold drink</dd>
-				</dl>
-			</aside>
-			<div
-				id="main-content"
-				class="inlineBlock height-fit-content flex-center"
-			>
-				<div class="quiz-question-container">
-					<div id="game">
-						<h3 id="question">What is the answer to this questions?</h3>
-						<div class="quiz-choice-container">
-							<p class="quiz-choice-prefix">A</p>
-							<p class="quiz-choice-text" data-number="1">Choice 1</p>
-						</div>
-						<div class="quiz-choice-container">
-							<p class="quiz-choice-prefix">B</p>
-							<p class="quiz-choice-text" data-number="2">Choice 2</p>
-						</div>
-						<div class="quiz-choice-container">
-							<p class="quiz-choice-prefix">C</p>
-							<p class="quiz-choice-text" data-number="3">Choice 3</p>
-						</div>
-						<div class="quiz-choice-container">
-							<p class="quiz-choice-prefix">D</p>
-							<p class="quiz-choice-text" data-number="4">Choice 4</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script>
-			const question = document.getElementById("question");
-			const choices = Array.from(
-				document.getElementsByClassName("quiz-choice-text")
-			);
-
-			let currentQuestion = {};
-			let acceptingAnswers = false;
-			let score = 0;
-			let questionCounter = 0;
-			let availableQuesions = [];
-
-			let questions = [
-				{
-					question: "Inside which HTML element do we put the JavaScript??",
-					choice1: "<script>",
-					choice2: "<javascript>",
-					choice3: "<js>",
-					choice4: "<scripting>",
-					answer: 1,
-				},
-				{
-					question:
-						"What is the correct syntax for referring to an external script called 'xxx.js'?",
-					choice1: "<script href='xxx.js'>",
-					choice2: "<script name='xxx.js'>",
-					choice3: "<script src='xxx.js'>",
-					choice4: "<script file='xxx.js'>",
-					answer: 3,
-				},
-				{
-					question: " How do you write 'Hello World' in an alert box?",
-					choice1: "msgBox('Hello World');",
-					choice2: "alertBox('Hello World');",
-					choice3: "msg('Hello World');",
-					choice4: "alert('Hello World');",
-					answer: 4,
-				},
-			];
-
-			//CONSTANTS
-			const CORRECT_BONUS = 10;
-			const MAX_QUESTIONS = 3;
-
-			startGame = () => {
-				questionCounter = 0;
-				score = 0;
-				availableQuesions = [...questions];
-				getNewQuestion();
-			};
-
-			getNewQuestion = () => {
-				if (
-					availableQuesions.length === 0 ||
-					questionCounter >= MAX_QUESTIONS
-				) {
-					//go to the end page
-					return window.location.assign("/end.html");
-				}
-				questionCounter++;
-				const questionIndex = Math.floor(
-					Math.random() * availableQuesions.length
-				);
-				currentQuestion = availableQuesions[questionIndex];
-				question.innerText = currentQuestion.question;
-
-				choices.forEach((choice) => {
-					const number = choice.dataset["number"];
-					choice.innerText = currentQuestion["choice" + number];
-				});
-
-				availableQuesions.splice(questionIndex, 1);
-				acceptingAnswers = true;
-			};
-
-			choices.forEach((choice) => {
-				choice.addEventListener("click", (e) => {
-					if (!acceptingAnswers) return;
-
-					acceptingAnswers = false;
-					const selectedChoice = e.target;
-					const selectedAnswer = selectedChoice.dataset["number"];
-
-					const classToApply =
-						selectedAnswer == currentQuestion.answer
-							? "correct"
-							: "incorrect";
-
-					selectedChoice.parentElement.classList.add(classToApply);
-
-					setTimeout(() => {
-						selectedChoice.parentElement.classList.remove(classToApply);
-						getNewQuestion();
-					}, 1000);
-				});
-			});
-
-			startGame();
-		</script>
+		<script src="./JS/quiz.js"></script>
 		<footer>da footer</footer>
 	</body>
 </html>
