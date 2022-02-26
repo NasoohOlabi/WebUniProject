@@ -1,0 +1,133 @@
+[25-Feb-2022 21:06:23 Europe/Berlin] index called
+[25-Feb-2022 21:07:48 Europe/Berlin] index called
+[25-Feb-2022 21:07:48 Europe/Berlin] PHP Fatal error:  Cannot redeclare simpleLog() (previously declared in C:\xampp\htdocs\mnu\application\libs\util\log.php:2) in C:\xampp\htdocs\mnu\application\libs\util\log.php on line 2
+[25-Feb-2022 21:08:32 Europe/Berlin] index called
+[25-Feb-2022 21:08:32 Europe/Berlin] Running : INSERT INTO `permission`(`name`) VALUES (:name)
+[25-Feb-2022 21:24:55 Europe/Berlin] index called
+[25-Feb-2022 21:24:55 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 21:24:55 Europe/Berlin] Running : "INSERT INTO `permission`(`name`) VALUES (:name)"
+[25-Feb-2022 21:24:55 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 21:24:55 Europe/Berlin] PHP Notice:  Undefined variable: FART in C:\xampp\htdocs\mnu\application\views\_templates\header.php on line 7
+[25-Feb-2022 21:25:31 Europe/Berlin] index called
+[25-Feb-2022 21:25:31 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 21:25:31 Europe/Berlin] Running : "INSERT INTO `permission`(`name`) VALUES (:name)"
+[25-Feb-2022 21:25:31 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 21:26:56 Europe/Berlin] index called
+[25-Feb-2022 21:26:56 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 21:26:56 Europe/Berlin] Running : "INSERT INTO `permission`(`name`) VALUES (:name)"
+[25-Feb-2022 21:26:56 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] index called
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "INSERT INTO `permission`(`name`) VALUES (:name)"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] index called
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "INSERT INTO `permission`(`name`) VALUES (:name)"
+[25-Feb-2022 22:19:25 Europe/Berlin] index called
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "INSERT INTO `permission`(`name`) VALUES (:name)"
+[25-Feb-2022 22:19:25 Europe/Berlin] index called
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "INSERT INTO `permission`(`name`) VALUES (:name)"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] index called
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "INSERT INTO `permission`(`name`) VALUES (:name)"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] index called
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] index called
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] index called
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "INSERT INTO `permission`(`name`) VALUES (:name)"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "INSERT INTO `permission`(`name`) VALUES (:name)"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "INSERT INTO `permission`(`name`) VALUES (:name)"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:19:25 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:22:33 Europe/Berlin] index called
+[25-Feb-2022 22:22:33 Europe/Berlin] index called
+[25-Feb-2022 22:22:33 Europe/Berlin] index called
+[25-Feb-2022 22:22:33 Europe/Berlin] index called
+[25-Feb-2022 22:22:33 Europe/Berlin] index called
+[25-Feb-2022 22:22:33 Europe/Berlin] index called
+[25-Feb-2022 22:22:33 Europe/Berlin] index called
+[25-Feb-2022 22:22:33 Europe/Berlin] index called
+[25-Feb-2022 22:24:37 Europe/Berlin] index called
+[25-Feb-2022 22:24:38 Europe/Berlin] index called
+[25-Feb-2022 22:24:38 Europe/Berlin] index called
+[25-Feb-2022 22:24:38 Europe/Berlin] index called
+[25-Feb-2022 22:24:38 Europe/Berlin] index called
+[25-Feb-2022 22:25:03 Europe/Berlin] index called
+[25-Feb-2022 22:26:40 Europe/Berlin] index called
+[25-Feb-2022 22:26:41 Europe/Berlin] index called
+[25-Feb-2022 22:26:41 Europe/Berlin] index called
+[25-Feb-2022 22:28:05 Europe/Berlin] index called
+[25-Feb-2022 22:30:42 Europe/Berlin] index called
+[25-Feb-2022 22:34:00 Europe/Berlin] index called
+[25-Feb-2022 22:34:00 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:35:11 Europe/Berlin] index called
+[25-Feb-2022 22:35:11 Europe/Berlin] Running : "SELECT * FROM permission"
+[25-Feb-2022 22:36:28 Europe/Berlin] index called
+[25-Feb-2022 22:36:41 Europe/Berlin] index called
+[25-Feb-2022 22:36:52 Europe/Berlin] index called
+[25-Feb-2022 23:25:51 Europe/Berlin] index called
+[25-Feb-2022 23:26:09 Europe/Berlin] index called
+[25-Feb-2022 23:27:10 Europe/Berlin] index called
+[25-Feb-2022 23:27:10 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on bool in C:\xampp\htdocs\mnu\application\models\rolemodel.php:33
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\controller\home.php(29): RoleModel->addPermissionToRole(34)
+#1 C:\xampp\htdocs\mnu\application\libs\application.php(62): Home->index()
+#2 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\rolemodel.php on line 33
+[25-Feb-2022 23:29:31 Europe/Berlin] index called
+[25-Feb-2022 23:29:31 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on bool in C:\xampp\htdocs\mnu\application\models\rolemodel.php:34
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\controller\home.php(29): RoleModel->addPermissionToRole(34)
+#1 C:\xampp\htdocs\mnu\application\libs\application.php(62): Home->index()
+#2 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\rolemodel.php on line 34
+[25-Feb-2022 23:29:34 Europe/Berlin] index called
+[25-Feb-2022 23:29:34 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on bool in C:\xampp\htdocs\mnu\application\models\rolemodel.php:34
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\controller\home.php(29): RoleModel->addPermissionToRole(34)
+#1 C:\xampp\htdocs\mnu\application\libs\application.php(62): Home->index()
+#2 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\rolemodel.php on line 34
+[25-Feb-2022 23:29:36 Europe/Berlin] index called
+[25-Feb-2022 23:29:36 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function fetchAll() on bool in C:\xampp\htdocs\mnu\application\models\rolemodel.php:34
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\controller\home.php(29): RoleModel->addPermissionToRole(34)
+#1 C:\xampp\htdocs\mnu\application\libs\application.php(62): Home->index()
+#2 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\rolemodel.php on line 34
+[25-Feb-2022 23:30:09 Europe/Berlin] index called
+[25-Feb-2022 23:30:29 Europe/Berlin] index called
+[25-Feb-2022 23:51:24 Europe/Berlin] index called
+[25-Feb-2022 23:51:24 Europe/Berlin] PHP Fatal error:  Cannot redeclare simpleLog() (previously declared in C:\xampp\htdocs\mnu\application\libs\util\log.php:2) in C:\xampp\htdocs\mnu\application\libs\util\log.php on line 2
+[25-Feb-2022 23:52:33 Europe/Berlin] index called
+[25-Feb-2022 23:52:33 Europe/Berlin] PHP Fatal error:  Cannot declare class Option, because the name is already in use in C:\xampp\htdocs\mnu\application\libs\util\Option.php on line 3
+[25-Feb-2022 23:53:11 Europe/Berlin] index called
+[25-Feb-2022 23:53:11 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function RoleModel::addPermissionToRole(), 1 passed in C:\xampp\htdocs\mnu\application\controller\home.php on line 29 and exactly 2 expected in C:\xampp\htdocs\mnu\application\models\rolemodel.php:70
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\controller\home.php(29): RoleModel->addPermissionToRole(3)
+#1 C:\xampp\htdocs\mnu\application\libs\application.php(62): Home->index()
+#2 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\rolemodel.php on line 70
+[25-Feb-2022 23:53:31 Europe/Berlin] index called
+[25-Feb-2022 23:53:31 Europe/Berlin] Role 3 doesn't exists
+[25-Feb-2022 23:54:11 Europe/Berlin] index called
+[25-Feb-2022 23:58:12 Europe/Berlin] index called
+[25-Feb-2022 23:58:12 Europe/Berlin] Permission read_questions doesn't exists
+[25-Feb-2022 23:58:12 Europe/Berlin] Role ROOT::ADMIN doesn't exists
+[25-Feb-2022 23:59:10 Europe/Berlin] index called
+[25-Feb-2022 23:59:10 Europe/Berlin] Permission read_questions doesn't exists
+[25-Feb-2022 23:59:10 Europe/Berlin] Role ROOT::ADMIN doesn't exists

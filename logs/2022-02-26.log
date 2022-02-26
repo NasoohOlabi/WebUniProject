@@ -1,0 +1,736 @@
+[26-Feb-2022 02:04:08 Europe/Berlin] index called
+[26-Feb-2022 02:04:08 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\models\questionmodel.php on line 13
+[26-Feb-2022 02:04:08 Europe/Berlin] SELECT * FROM `question` WHERE |>curser>
+[26-Feb-2022 02:05:18 Europe/Berlin] index called
+[26-Feb-2022 02:05:18 Europe/Berlin] SELECT * FROM `question` WHERE id=1 AND id=2 AND id=3
+[26-Feb-2022 02:19:50 Europe/Berlin] index called
+[26-Feb-2022 02:19:50 Europe/Berlin] Running SELECT * FROM `question` WHERE id=:? AND id=:? AND id=:?
+[26-Feb-2022 02:19:50 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ':'1' AND id=:'2' AND id=:'3'' at line 1 in C:\xampp\htdocs\mnu\application\models\questionmodel.php on line 23
+[26-Feb-2022 02:20:49 Europe/Berlin] index called
+[26-Feb-2022 02:20:49 Europe/Berlin] Running SELECT * FROM `question` WHERE id=? AND id=? AND id=?
+[26-Feb-2022 02:23:17 Europe/Berlin] index called
+[26-Feb-2022 02:23:17 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? AND id= ? AND id= ?
+[26-Feb-2022 02:26:41 Europe/Berlin] index called
+[26-Feb-2022 02:26:41 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? AND id= ? AND id= ?
+[26-Feb-2022 02:27:38 Europe/Berlin] index called
+[26-Feb-2022 02:27:38 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 02:27:50 Europe/Berlin] index called
+[26-Feb-2022 02:27:50 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 02:36:20 Europe/Berlin] index called
+[26-Feb-2022 02:36:20 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 02:36:39 Europe/Berlin] index called
+[26-Feb-2022 02:36:39 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 02:38:15 Europe/Berlin] index called
+[26-Feb-2022 02:38:15 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 02:38:15 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$answers in C:\xampp\htdocs\mnu\application\models\questionmodel.php on line 36
+[26-Feb-2022 02:41:36 Europe/Berlin] index called
+[26-Feb-2022 02:41:36 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 02:41:36 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$answers in C:\xampp\htdocs\mnu\application\models\questionmodel.php on line 36
+[26-Feb-2022 02:41:47 Europe/Berlin] index called
+[26-Feb-2022 02:41:47 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 02:45:42 Europe/Berlin] index called
+[26-Feb-2022 02:45:42 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 02:45:42 Europe/Berlin] Running SELECT * FROM `choice` WHERE question_id = ? OR question_id = ? OR question_id = ?
+[26-Feb-2022 02:46:07 Europe/Berlin] index called
+[26-Feb-2022 02:46:07 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 02:46:07 Europe/Berlin] Running SELECT * FROM `choice` WHERE question_id = ? OR question_id = ? OR question_id = ?
+[26-Feb-2022 03:13:18 Europe/Berlin] index called
+[26-Feb-2022 03:17:10 Europe/Berlin] index called
+[26-Feb-2022 03:18:22 Europe/Berlin] index called
+[26-Feb-2022 03:20:22 Europe/Berlin] index called
+[26-Feb-2022 03:20:44 Europe/Berlin] index called
+[26-Feb-2022 03:20:46 Europe/Berlin] index called
+[26-Feb-2022 03:21:07 Europe/Berlin] index called
+[26-Feb-2022 03:21:10 Europe/Berlin] Running : "SELECT * FROM song"
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 30
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 25
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Notice:  Trying to get property 'amount_of_songs' of non-object in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 28
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Notice:  Undefined variable: PAGE_TITLE in C:\xampp\htdocs\mnu\application\views\_templates\header.php on line 8
+[26-Feb-2022 03:21:10 Europe/Berlin] Running : "SELECT * FROM song"
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 30
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 25
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Notice:  Trying to get property 'amount_of_songs' of non-object in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 28
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Notice:  Undefined variable: PAGE_TITLE in C:\xampp\htdocs\mnu\application\views\_templates\header.php on line 8
+[26-Feb-2022 03:21:10 Europe/Berlin] Running : "SELECT * FROM song"
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 30
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 25
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Notice:  Trying to get property 'amount_of_songs' of non-object in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 28
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Notice:  Undefined variable: PAGE_TITLE in C:\xampp\htdocs\mnu\application\views\_templates\header.php on line 8
+[26-Feb-2022 03:21:10 Europe/Berlin] Running : "SELECT * FROM song"
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 30
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 25
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Notice:  Trying to get property 'amount_of_songs' of non-object in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 28
+[26-Feb-2022 03:21:10 Europe/Berlin] PHP Notice:  Undefined variable: PAGE_TITLE in C:\xampp\htdocs\mnu\application\views\_templates\header.php on line 8
+[26-Feb-2022 03:23:25 Europe/Berlin] index called
+[26-Feb-2022 03:23:28 Europe/Berlin] Running : "SELECT * FROM song"
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 30
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 25
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Notice:  Trying to get property 'amount_of_songs' of non-object in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 28
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Notice:  Undefined variable: PAGE_TITLE in C:\xampp\htdocs\mnu\application\views\_templates\header.php on line 8
+[26-Feb-2022 03:23:28 Europe/Berlin] Running : "SELECT * FROM song"
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 30
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 25
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Notice:  Trying to get property 'amount_of_songs' of non-object in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 28
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Notice:  Undefined variable: PAGE_TITLE in C:\xampp\htdocs\mnu\application\views\_templates\header.php on line 8
+[26-Feb-2022 03:23:28 Europe/Berlin] Running : "SELECT * FROM song"
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 30
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 25
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Notice:  Trying to get property 'amount_of_songs' of non-object in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 28
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Notice:  Undefined variable: PAGE_TITLE in C:\xampp\htdocs\mnu\application\views\_templates\header.php on line 8
+[26-Feb-2022 03:23:28 Europe/Berlin] Running : "SELECT * FROM song"
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 30
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mnu.song' doesn't exist in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 25
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Notice:  Trying to get property 'amount_of_songs' of non-object in C:\xampp\htdocs\mnu\application\models\statsmodel.php on line 28
+[26-Feb-2022 03:23:28 Europe/Berlin] PHP Notice:  Undefined variable: PAGE_TITLE in C:\xampp\htdocs\mnu\application\views\_templates\header.php on line 8
+[26-Feb-2022 03:23:37 Europe/Berlin] index called
+[26-Feb-2022 03:23:55 Europe/Berlin] index called
+[26-Feb-2022 03:24:07 Europe/Berlin] index called
+[26-Feb-2022 03:24:09 Europe/Berlin] index called
+[26-Feb-2022 03:25:13 Europe/Berlin] index called
+[26-Feb-2022 03:26:24 Europe/Berlin] index called
+[26-Feb-2022 03:30:10 Europe/Berlin] index called
+[26-Feb-2022 03:31:28 Europe/Berlin] index called
+[26-Feb-2022 03:31:50 Europe/Berlin] index called
+[26-Feb-2022 03:32:56 Europe/Berlin] index called
+[26-Feb-2022 03:32:57 Europe/Berlin] index called
+[26-Feb-2022 03:32:57 Europe/Berlin] index called
+[26-Feb-2022 03:32:57 Europe/Berlin] index called
+[26-Feb-2022 03:32:57 Europe/Berlin] index called
+[26-Feb-2022 03:32:57 Europe/Berlin] index called
+[26-Feb-2022 03:32:57 Europe/Berlin] index called
+[26-Feb-2022 03:32:57 Europe/Berlin] index called
+[26-Feb-2022 03:32:57 Europe/Berlin] index called
+[26-Feb-2022 03:33:48 Europe/Berlin] index called
+[26-Feb-2022 03:34:47 Europe/Berlin] index called
+[26-Feb-2022 03:34:53 Europe/Berlin] index called
+[26-Feb-2022 03:34:54 Europe/Berlin] index called
+[26-Feb-2022 03:34:54 Europe/Berlin] index called
+[26-Feb-2022 03:34:54 Europe/Berlin] index called
+[26-Feb-2022 03:34:54 Europe/Berlin] index called
+[26-Feb-2022 03:34:54 Europe/Berlin] index called
+[26-Feb-2022 03:34:54 Europe/Berlin] index called
+[26-Feb-2022 03:34:54 Europe/Berlin] index called
+[26-Feb-2022 03:34:54 Europe/Berlin] index called
+[26-Feb-2022 03:35:27 Europe/Berlin] index called
+[26-Feb-2022 03:35:27 Europe/Berlin] index called
+[26-Feb-2022 03:35:27 Europe/Berlin] index called
+[26-Feb-2022 03:35:27 Europe/Berlin] index called
+[26-Feb-2022 03:35:27 Europe/Berlin] index called
+[26-Feb-2022 03:35:27 Europe/Berlin] index called
+[26-Feb-2022 03:35:49 Europe/Berlin] index called
+[26-Feb-2022 03:35:49 Europe/Berlin] index called
+[26-Feb-2022 03:35:49 Europe/Berlin] index called
+[26-Feb-2022 03:35:49 Europe/Berlin] index called
+[26-Feb-2022 03:35:49 Europe/Berlin] index called
+[26-Feb-2022 03:35:50 Europe/Berlin] index called
+[26-Feb-2022 03:36:08 Europe/Berlin] index called
+[26-Feb-2022 03:36:08 Europe/Berlin] index called
+[26-Feb-2022 03:36:08 Europe/Berlin] index called
+[26-Feb-2022 03:36:08 Europe/Berlin] index called
+[26-Feb-2022 03:36:08 Europe/Berlin] index called
+[26-Feb-2022 03:36:08 Europe/Berlin] index called
+[26-Feb-2022 03:38:13 Europe/Berlin] index called
+[26-Feb-2022 03:38:16 Europe/Berlin] index called
+[26-Feb-2022 08:13:56 Europe/Berlin] index called
+[26-Feb-2022 08:29:07 Europe/Berlin] index called
+[26-Feb-2022 08:30:45 Europe/Berlin] index called
+[26-Feb-2022 08:30:47 Europe/Berlin] index called
+[26-Feb-2022 08:30:47 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 08:30:47 Europe/Berlin] Running SELECT * FROM `choice` WHERE question_id = ? OR question_id = ? OR question_id = ?
+[26-Feb-2022 08:41:36 Europe/Berlin] index called
+[26-Feb-2022 08:41:36 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 08:41:36 Europe/Berlin] Running SELECT * FROM `choice` WHERE question_id = ? OR question_id = ? OR question_id = ?
+[26-Feb-2022 08:41:36 Europe/Berlin] PHP Notice:  Trying to get property 'text' of non-object in C:\xampp\htdocs\mnu\application\views\_templates\__question.php on line 3
+[26-Feb-2022 08:41:36 Europe/Berlin] PHP Notice:  Trying to get property 'answers' of non-object in C:\xampp\htdocs\mnu\application\views\_templates\__question.php on line 6
+[26-Feb-2022 08:41:36 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\views\_templates\__question.php on line 6
+[26-Feb-2022 08:49:59 Europe/Berlin] index called
+[26-Feb-2022 08:49:59 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 08:49:59 Europe/Berlin] Running SELECT * FROM `choice` WHERE question_id = ? OR question_id = ? OR question_id = ?
+[26-Feb-2022 08:49:59 Europe/Berlin] PHP Notice:  Trying to get property 'text' of non-object in C:\xampp\htdocs\mnu\application\views\_templates\__question.php on line 3
+[26-Feb-2022 08:49:59 Europe/Berlin] PHP Notice:  Trying to get property 'answers' of non-object in C:\xampp\htdocs\mnu\application\views\_templates\__question.php on line 6
+[26-Feb-2022 08:49:59 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\views\_templates\__question.php on line 6
+[26-Feb-2022 08:50:19 Europe/Berlin] index called
+[26-Feb-2022 08:50:19 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 08:50:19 Europe/Berlin] Running SELECT * FROM `choice` WHERE question_id = ? OR question_id = ? OR question_id = ?
+[26-Feb-2022 08:50:19 Europe/Berlin] PHP Notice:  Trying to get property 'text' of non-object in C:\xampp\htdocs\mnu\application\views\_templates\__question.php on line 3
+[26-Feb-2022 08:50:19 Europe/Berlin] PHP Notice:  Trying to get property 'answers' of non-object in C:\xampp\htdocs\mnu\application\views\_templates\__question.php on line 6
+[26-Feb-2022 08:50:19 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\views\_templates\__question.php on line 6
+[26-Feb-2022 08:52:30 Europe/Berlin] index called
+[26-Feb-2022 08:52:30 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 08:52:30 Europe/Berlin] Running SELECT * FROM `choice` WHERE question_id = ? OR question_id = ? OR question_id = ?
+[26-Feb-2022 09:20:26 Europe/Berlin] index called
+[26-Feb-2022 09:20:26 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 09:20:26 Europe/Berlin] Running SELECT * FROM `choice` WHERE question_id = ? OR question_id = ? OR question_id = ?
+[26-Feb-2022 09:21:47 Europe/Berlin] index called
+[26-Feb-2022 09:26:06 Europe/Berlin] index called
+[26-Feb-2022 09:26:44 Europe/Berlin] index called
+[26-Feb-2022 09:26:44 Europe/Berlin] PHP Fatal error:  Cannot redeclare examsIndex() (previously declared in C:\xampp\htdocs\mnu\application\views\exams\index.php:2) in C:\xampp\htdocs\mnu\application\views\exams\index.php on line 2
+[26-Feb-2022 09:28:19 Europe/Berlin] index called
+[26-Feb-2022 09:28:19 Europe/Berlin] PHP Fatal error:  Cannot redeclare examsIndex() (previously declared in C:\xampp\htdocs\mnu\application\views\exams\index.php:2) in C:\xampp\htdocs\mnu\application\views\exams\index.php on line 2
+[26-Feb-2022 09:28:48 Europe/Berlin] index called
+[26-Feb-2022 09:28:48 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 09:28:48 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 09:28:48 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 09:28:48 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 09:28:48 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 09:28:48 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 09:29:34 Europe/Berlin] index called
+[26-Feb-2022 09:31:32 Europe/Berlin] index called
+[26-Feb-2022 09:31:32 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 09:44:03 Europe/Berlin] index called
+[26-Feb-2022 09:44:03 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$name in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 09:49:04 Europe/Berlin] index called
+[26-Feb-2022 09:49:04 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$name in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 10:08:07 Europe/Berlin] index called
+[26-Feb-2022 10:08:07 Europe/Berlin] PHP Warning:  array_map() expects parameter 1 to be a valid callback, function 'new ExamObject' not found or invalid function name in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 60
+[26-Feb-2022 10:08:07 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 4
+[26-Feb-2022 10:09:04 Europe/Berlin] index called
+[26-Feb-2022 10:09:04 Europe/Berlin] PHP Warning:  array_map() expects parameter 1 to be a valid callback, function 'new ExamObject' not found or invalid function name in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 61
+[26-Feb-2022 10:09:04 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 4
+[26-Feb-2022 10:10:41 Europe/Berlin] index called
+[26-Feb-2022 10:10:41 Europe/Berlin] PHP Warning:  array_map() expects parameter 1 to be a valid callback, non-static method ExamObject::__construct() cannot be called statically in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 61
+[26-Feb-2022 10:10:41 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 4
+[26-Feb-2022 10:11:56 Europe/Berlin] index called
+[26-Feb-2022 10:11:56 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$name in C:\xampp\htdocs\mnu\application\models\phpClasses\SubjectObject.php on line 11
+[26-Feb-2022 10:11:56 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$description in C:\xampp\htdocs\mnu\application\models\phpClasses\SubjectObject.php on line 12
+[26-Feb-2022 10:11:56 Europe/Berlin] PHP Notice:  Undefined property: ExamObject::$subject_name in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 10:14:27 Europe/Berlin] index called
+[26-Feb-2022 10:14:27 Europe/Berlin] PHP Notice:  Undefined property: ExamObject::$subject_name in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 10:15:24 Europe/Berlin] index called
+[26-Feb-2022 11:18:48 Europe/Berlin] index called
+[26-Feb-2022 11:18:48 Europe/Berlin] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 68
+[26-Feb-2022 11:20:36 Europe/Berlin] index called
+[26-Feb-2022 11:20:36 Europe/Berlin] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 6
+[26-Feb-2022 11:20:39 Europe/Berlin] index called
+[26-Feb-2022 11:20:39 Europe/Berlin] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 6
+[26-Feb-2022 11:20:56 Europe/Berlin] index called
+[26-Feb-2022 11:20:56 Europe/Berlin] PHP Fatal error:  Namespace declaration statement has to be the very first statement or after any declare call in the script in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 14
+[26-Feb-2022 11:21:18 Europe/Berlin] index called
+[26-Feb-2022 11:21:18 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'ExamModel' not found in C:\xampp\htdocs\mnu\application\libs\controller.php:50
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\controller\exams.php(24): Controller->loadModel('ExamModel')
+#1 C:\xampp\htdocs\mnu\application\libs\application.php(56): Exams->index()
+#2 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\mnu\application\libs\controller.php on line 50
+[26-Feb-2022 11:28:56 Europe/Berlin] index called
+[26-Feb-2022 11:28:56 Europe/Berlin] PHP Notice:  Undefined property: Either\Result::$right in C:\xampp\htdocs\mnu\application\controller\exams.php on line 42
+[26-Feb-2022 11:28:56 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 4
+[26-Feb-2022 11:32:05 Europe/Berlin] index called
+[26-Feb-2022 11:46:42 Europe/Berlin] index called
+[26-Feb-2022 11:47:18 Europe/Berlin] index called
+[26-Feb-2022 11:49:29 Europe/Berlin] index called
+[26-Feb-2022 11:49:41 Europe/Berlin] index called
+[26-Feb-2022 12:28:49 Europe/Berlin] index called
+[26-Feb-2022 12:28:49 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method ExamModel::experiment() in C:\xampp\htdocs\mnu\application\controller\exams.php:27
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\libs\application.php(56): Exams->index()
+#1 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\mnu\application\controller\exams.php on line 27
+[26-Feb-2022 12:29:04 Europe/Berlin] index called
+[26-Feb-2022 12:29:04 Europe/Berlin] PHP Warning:  First parameter must either be an object or the name of an existing class in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 14
+[26-Feb-2022 12:29:04 Europe/Berlin] PHP Warning:  First parameter must either be an object or the name of an existing class in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 12:29:04 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 134
+[26-Feb-2022 12:29:04 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 134
+[26-Feb-2022 12:29:04 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 134
+[26-Feb-2022 12:29:04 Europe/Berlin] PHP Notice:  Trying to get property 'table' of non-object in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 141
+[26-Feb-2022 12:29:04 Europe/Berlin] PHP Notice:  Trying to get property 'table' of non-object in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 141
+[26-Feb-2022 12:29:04 Europe/Berlin] PHP Notice:  Trying to get property 'table' of non-object in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 141
+[26-Feb-2022 12:30:53 Europe/Berlin] index called
+[26-Feb-2022 12:30:53 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 134
+[26-Feb-2022 12:30:53 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 134
+[26-Feb-2022 12:30:53 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 134
+[26-Feb-2022 12:30:53 Europe/Berlin] PHP Notice:  Trying to get property 'table' of non-object in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 141
+[26-Feb-2022 12:30:53 Europe/Berlin] PHP Notice:  Trying to get property 'table' of non-object in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 141
+[26-Feb-2022 12:30:53 Europe/Berlin] PHP Notice:  Trying to get property 'table' of non-object in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 141
+[26-Feb-2022 12:31:09 Europe/Berlin] index called
+[26-Feb-2022 12:31:09 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 134
+[26-Feb-2022 12:31:09 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 134
+[26-Feb-2022 12:31:09 Europe/Berlin] PHP Warning:  Invalid argument supplied for foreach() in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 134
+[26-Feb-2022 12:31:09 Europe/Berlin] PHP Notice:  Trying to get property 'table' of non-object in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 141
+[26-Feb-2022 12:31:09 Europe/Berlin] PHP Notice:  Trying to get property 'table' of non-object in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 141
+[26-Feb-2022 12:31:09 Europe/Berlin] PHP Notice:  Trying to get property 'table' of non-object in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 141
+[26-Feb-2022 12:31:38 Europe/Berlin] index called
+[26-Feb-2022 12:31:38 Europe/Berlin] PHP Notice:  Undefined property: Subject::$table in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 135
+[26-Feb-2022 12:31:38 Europe/Berlin] PHP Notice:  Undefined property: Subject::$table in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 135
+[26-Feb-2022 12:31:38 Europe/Berlin] PHP Notice:  Undefined property: Subject::$table in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 135
+[26-Feb-2022 12:31:38 Europe/Berlin] PHP Notice:  Undefined property: Subject::$table in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 135
+[26-Feb-2022 12:31:38 Europe/Berlin] PHP Notice:  Undefined property: Subject::$table in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 135
+[26-Feb-2022 12:31:38 Europe/Berlin] PHP Notice:  Undefined property: Subject::$table in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 135
+[26-Feb-2022 12:31:38 Europe/Berlin] PHP Notice:  Undefined property: Subject::$table in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 141
+[26-Feb-2022 12:38:49 Europe/Berlin] index called
+[26-Feb-2022 12:43:33 Europe/Berlin] index called
+[26-Feb-2022 12:43:33 Europe/Berlin] PHP Parse error:  syntax error, unexpected ')' in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 75
+[26-Feb-2022 12:43:42 Europe/Berlin] index called
+[26-Feb-2022 12:44:27 Europe/Berlin] index called
+[26-Feb-2022 13:00:31 Europe/Berlin] index called
+[26-Feb-2022 13:00:31 Europe/Berlin] PHP Fatal error:  Uncaught Error: Undefined class constant 'ID' in C:\xampp\htdocs\mnu\application\models\exammodel.php:74
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\controller\exams.php(27): ExamModel->experiment()
+#1 C:\xampp\htdocs\mnu\application\libs\application.php(56): Exams->index()
+#2 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 74
+[26-Feb-2022 13:00:43 Europe/Berlin] index called
+[26-Feb-2022 13:04:17 Europe/Berlin] index called
+[26-Feb-2022 13:12:03 Europe/Berlin] index called
+[26-Feb-2022 13:13:42 Europe/Berlin] index called
+[26-Feb-2022 13:14:35 Europe/Berlin] index called
+[26-Feb-2022 13:39:37 Europe/Berlin] index called
+[26-Feb-2022 13:40:05 Europe/Berlin] index called
+[26-Feb-2022 13:40:42 Europe/Berlin] index called
+[26-Feb-2022 13:40:59 Europe/Berlin] index called
+[26-Feb-2022 13:41:00 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class '
+>Exam' not found in C:\xampp\htdocs\mnu\application\models\exammodel.php:75
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\controller\exams.php(27): ExamModel->experiment()
+#1 C:\xampp\htdocs\mnu\application\libs\application.php(56): Exams->index()
+#2 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 75
+[26-Feb-2022 13:41:18 Europe/Berlin] index called
+[26-Feb-2022 13:51:44 Europe/Berlin] index called
+[26-Feb-2022 13:53:12 Europe/Berlin] index called
+[26-Feb-2022 13:54:19 Europe/Berlin] index called
+[26-Feb-2022 13:54:32 Europe/Berlin] index called
+[26-Feb-2022 13:54:40 Europe/Berlin] index called
+[26-Feb-2022 13:56:56 Europe/Berlin] index called
+[26-Feb-2022 13:57:25 Europe/Berlin] index called
+[26-Feb-2022 13:57:25 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$id in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 102
+[26-Feb-2022 13:57:25 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$number_of_questions in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 103
+[26-Feb-2022 13:57:25 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$duration in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 104
+[26-Feb-2022 14:02:16 Europe/Berlin] index called
+[26-Feb-2022 14:03:16 Europe/Berlin] index called
+[26-Feb-2022 14:06:20 Europe/Berlin] index called
+[26-Feb-2022 14:19:47 Europe/Berlin] index called
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 17
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 17
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 17
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 17
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 17
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 17
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:19:47 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:20:21 Europe/Berlin] index called
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:20:21 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:21:11 Europe/Berlin] index called
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:21:11 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:26:57 Europe/Berlin] index called
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:26:57 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:28:19 Europe/Berlin] index called
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:28:19 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:56:24 Europe/Berlin] index called
+[26-Feb-2022 14:56:24 Europe/Berlin] Running SELECT * FROM `question` WHERE id= ? OR id= ? OR id= ?
+[26-Feb-2022 14:56:24 Europe/Berlin] Running SELECT * FROM `choice` WHERE question_id = ? OR question_id = ? OR question_id = ?
+[26-Feb-2022 14:57:03 Europe/Berlin] index called
+[26-Feb-2022 14:57:03 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'id' in field list is ambiguous in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 155
+[26-Feb-2022 14:57:03 Europe/Berlin] No Exams available
+[26-Feb-2022 14:57:03 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:57:03 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:57:03 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:57:03 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:57:03 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:57:03 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:57:03 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:57:03 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:57:03 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:59:20 Europe/Berlin] index called
+[26-Feb-2022 14:59:20 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Subjectid' in 'field list' in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 155
+[26-Feb-2022 14:59:20 Europe/Berlin] No Exams available
+[26-Feb-2022 14:59:20 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:59:20 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:59:20 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:59:20 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:59:20 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:59:20 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:59:20 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:59:20 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:59:20 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:59:55 Europe/Berlin] index called
+[26-Feb-2022 14:59:55 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'subject_name' in 'field list' in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 155
+[26-Feb-2022 14:59:55 Europe/Berlin] No Exams available
+[26-Feb-2022 14:59:55 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:59:55 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:59:55 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 14:59:55 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:59:55 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:59:55 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 14:59:55 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:59:55 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 14:59:55 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:02:01 Europe/Berlin] index called
+[26-Feb-2022 15:02:01 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.id, Exam.exam.number_of_questions as  Exam_exam.number_of_questions, Exam.ex...' at line 1 in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 155
+[26-Feb-2022 15:02:01 Europe/Berlin] No Exams available
+[26-Feb-2022 15:02:01 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 15:02:01 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 15:02:01 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 15:02:01 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:02:01 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:02:01 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:02:01 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:02:01 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:02:01 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:02:36 Europe/Berlin] index called
+[26-Feb-2022 15:02:36 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '.id, exam.exam.number_of_questions as  exam_exam.number_of_questions, exam.ex...' at line 1 in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 156
+[26-Feb-2022 15:02:36 Europe/Berlin] No Exams available
+[26-Feb-2022 15:02:36 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 15:02:36 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 15:02:36 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 15:02:36 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:02:36 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:02:36 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:02:36 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:02:36 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:02:36 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:04:03 Europe/Berlin] index called
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 18
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:04:03 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:05:17 Europe/Berlin] index called
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 17
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 17
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:05:17 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:05:42 Europe/Berlin] index called
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:05:42 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:06:23 Europe/Berlin] index called
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 19
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 20
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Array to string conversion in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$Array in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:06:23 Europe/Berlin] PHP Notice:  Trying to access array offset on value of type null in C:\xampp\htdocs\mnu\application\models\subjectmodel.php on line 21
+[26-Feb-2022 15:08:56 Europe/Berlin] index called
+[26-Feb-2022 15:14:53 Europe/Berlin] index called
+[26-Feb-2022 15:47:28 Europe/Berlin] index called
+[26-Feb-2022 15:47:28 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Exam' not found in C:\xampp\htdocs\mnu\application\models\exammodel.php:71
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\controller\exams.php(27): ExamModel->experiment()
+#1 C:\xampp\htdocs\mnu\application\libs\application.php(56): Exams->index()
+#2 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 71
+[26-Feb-2022 15:49:19 Europe/Berlin] index called
+[26-Feb-2022 15:49:19 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%cur1&gt; FROM `Exam` JOIN `Subject` ON exam.subject_id = subject.id ORDER BY ex...' at line 1 in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 165
+[26-Feb-2022 15:49:19 Europe/Berlin] No Exams available
+[26-Feb-2022 15:49:19 Europe/Berlin] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\mnu\application\models\core\schema.php on line 64
+[26-Feb-2022 15:49:19 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$ in C:\xampp\htdocs\mnu\application\models\core\schema.php on line 64
+[26-Feb-2022 15:49:19 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Typed property Subject::$id must be int, null used in C:\xampp\htdocs\mnu\application\models\core\schema.php:64
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\core\schema.php(46): Subject->__construct(Object(stdClass), 'subject_')
+#1 C:\xampp\htdocs\mnu\application\models\exammodel.php(63): Exam->__construct(Object(stdClass))
+#2 [internal function]: ExamModel->{closure}(Object(stdClass))
+#3 C:\xampp\htdocs\mnu\application\models\exammodel.php(64): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\controller\exams.php(30): ExamModel->getAllExams()
+#5 C:\xampp\htdocs\mnu\application\libs\application.php(56): Exams->index()
+#6 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#7 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\core\schema.php on line 64
+[26-Feb-2022 15:51:34 Europe/Berlin] index called
+[26-Feb-2022 15:51:34 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '%cur1&gt; FROM `Exam` JOIN `Subject` ON exam.subject_id = subject.id ORDER BY ex...' at line 1 in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 166
+[26-Feb-2022 15:51:34 Europe/Berlin] No Exams available
+[26-Feb-2022 15:51:34 Europe/Berlin] PHP Notice:  Undefined offset: 0 in C:\xampp\htdocs\mnu\application\models\core\schema.php on line 64
+[26-Feb-2022 15:51:34 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$ in C:\xampp\htdocs\mnu\application\models\core\schema.php on line 64
+[26-Feb-2022 15:51:34 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Typed property Subject::$id must be int, null used in C:\xampp\htdocs\mnu\application\models\core\schema.php:64
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\core\schema.php(46): Subject->__construct(Object(stdClass), 'subject_')
+#1 C:\xampp\htdocs\mnu\application\models\exammodel.php(63): Exam->__construct(Object(stdClass))
+#2 [internal function]: ExamModel->{closure}(Object(stdClass))
+#3 C:\xampp\htdocs\mnu\application\models\exammodel.php(64): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\controller\exams.php(30): ExamModel->getAllExams()
+#5 C:\xampp\htdocs\mnu\application\libs\application.php(56): Exams->index()
+#6 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#7 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\core\schema.php on line 64
+[26-Feb-2022 15:53:52 Europe/Berlin] index called
+[26-Feb-2022 15:53:52 Europe/Berlin] PHP Deprecated:  Non-static method Table::SQL_Columns() should not be called statically in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 133
+[26-Feb-2022 15:53:52 Europe/Berlin] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\xampp\htdocs\mnu\application\models\core\schema.php:16
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(133): Table::SQL_Columns()
+#1 C:\xampp\htdocs\mnu\application\models\exammodel.php(72): BaseModel->join(Array, Array, 'Exam')
+#2 C:\xampp\htdocs\mnu\application\controller\exams.php(27): ExamModel->experiment()
+#3 C:\xampp\htdocs\mnu\application\libs\application.php(56): Exams->index()
+#4 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#5 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\core\schema.php on line 16
+[26-Feb-2022 15:54:13 Europe/Berlin] index called
+[26-Feb-2022 15:54:13 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to a member function SQL_Columns() on string in C:\xampp\htdocs\mnu\application\models\basemodel.php:133
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\exammodel.php(72): BaseModel->join(Array, Array, 'Exam')
+#1 C:\xampp\htdocs\mnu\application\controller\exams.php(27): ExamModel->experiment()
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(56): Exams->index()
+#3 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 133
+[26-Feb-2022 15:56:30 Europe/Berlin] index called
+[26-Feb-2022 16:07:47 Europe/Berlin] index called
+[26-Feb-2022 17:44:04 Europe/Berlin] index called
+[26-Feb-2022 18:20:19 Europe/Berlin] index called
+[26-Feb-2022 18:20:19 Europe/Berlin] PHP Warning:  implode(): Invalid arguments passed in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 153
+[26-Feb-2022 18:20:19 Europe/Berlin] Running : SELECT exam.id as exam_id, exam.number_of_questions as exam_number_of_questions, exam.duration as exam_duration, exam.subject_id as exam_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Exam` JOIN `Subject` ON  ORDER BY exam_id, subject_id;
+[26-Feb-2022 18:20:19 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY exam_id, subject_id' at line 1 in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 165
+[26-Feb-2022 18:20:19 Europe/Berlin] No Exams available
+[26-Feb-2022 18:21:00 Europe/Berlin] index called
+[26-Feb-2022 18:21:00 Europe/Berlin] Running : SELECT exam.id as exam_id, exam.number_of_questions as exam_number_of_questions, exam.duration as exam_duration, exam.subject_id as exam_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Exam` JOIN `Subject` ON exam.subject_id = subject.id ORDER BY exam_id, subject_id;
+[26-Feb-2022 18:21:31 Europe/Berlin] index called
+[26-Feb-2022 18:21:31 Europe/Berlin] Running : SELECT exam.id as exam_id, exam.number_of_questions as exam_number_of_questions, exam.duration as exam_duration, exam.subject_id as exam_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Exam` JOIN `Subject` ON exam.subject_id = subject.id ORDER BY exam_id, subject_id;
+[26-Feb-2022 18:23:05 Europe/Berlin] index called
+[26-Feb-2022 18:23:05 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id FROM `Question` JOIN `Topic` ON question.topic_id = topic.id ORDER BY question_id, topic_id;
+[26-Feb-2022 18:23:05 Europe/Berlin] PHP Notice:  Undefined property: Question::$subject in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 18:23:05 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 18:23:32 Europe/Berlin] index called
+[26-Feb-2022 18:23:32 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id FROM `Question` JOIN `Topic` ON question.topic_id = topic.id ORDER BY question_id, topic_id;
+[26-Feb-2022 18:23:32 Europe/Berlin] PHP Notice:  Undefined property: Question::$subject in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 18:23:32 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 18:23:55 Europe/Berlin] index called
+[26-Feb-2022 18:23:55 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id FROM `Question` JOIN `Topic` ON question.topic_id = topic.id ORDER BY question_id, topic_id;
+[26-Feb-2022 18:23:55 Europe/Berlin] PHP Notice:  Undefined property: Question::$subject in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 18:23:55 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 18:25:21 Europe/Berlin] index called
+[26-Feb-2022 18:25:21 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id ORDER BY question_id, topic_id, subject_id;
+[26-Feb-2022 18:25:21 Europe/Berlin] PHP Notice:  Undefined property: Question::$subject in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 18:25:21 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\application\views\exams\__index.php on line 9
+[26-Feb-2022 18:27:41 Europe/Berlin] index called
+[26-Feb-2022 18:27:41 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id ORDER BY question_id, topic_id, subject_id;
+[26-Feb-2022 18:32:25 Europe/Berlin] index called
+[26-Feb-2022 18:32:25 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id ORDER BY question_id, topic_id, subject_id;
+[26-Feb-2022 19:28:46 Europe/Berlin] index called
+[26-Feb-2022 19:28:46 Europe/Berlin] Running : SELECT  FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id ORDER BY question_id, topic_id, subject_id;
+[26-Feb-2022 19:28:46 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id A...' at line 1 in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 193
+[26-Feb-2022 19:28:46 Europe/Berlin] No Exams available
+[26-Feb-2022 19:32:38 Europe/Berlin] index called
+[26-Feb-2022 19:32:38 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id ORDER BY question_id, topic_id, subject_id;
+[26-Feb-2022 19:32:38 Europe/Berlin] PHP Notice:  Trying to get property 'id' of non-object in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 76
+[26-Feb-2022 19:32:38 Europe/Berlin] Running : SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE  ;
+[26-Feb-2022 19:32:38 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 217
+[26-Feb-2022 19:32:38 Europe/Berlin] No records match SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE  ;
+[26-Feb-2022 19:35:36 Europe/Berlin] index called
+[26-Feb-2022 19:35:36 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id ORDER BY question_id, topic_id, subject_id;
+[26-Feb-2022 19:35:36 Europe/Berlin] PHP Notice:  Trying to get property 'id' of non-object in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 76
+[26-Feb-2022 19:35:36 Europe/Berlin] Running : SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE  ;
+[26-Feb-2022 19:35:36 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 218
+[26-Feb-2022 19:35:36 Europe/Berlin] No records match SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE  ;
+[26-Feb-2022 19:36:44 Europe/Berlin] index called
+[26-Feb-2022 19:36:44 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id ORDER BY question_id, topic_id, subject_id;
+[26-Feb-2022 19:36:44 Europe/Berlin] PHP Notice:  Trying to get property 'id' of non-object in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 76
+[26-Feb-2022 19:36:44 Europe/Berlin] Running : SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE  ;
+[26-Feb-2022 19:36:44 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 219
+[26-Feb-2022 19:36:44 Europe/Berlin] No records match SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE  ;
+[26-Feb-2022 19:37:35 Europe/Berlin] index called
+[26-Feb-2022 19:37:35 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id ORDER BY question_id, topic_id, subject_id;
+[26-Feb-2022 19:37:35 Europe/Berlin] PHP Notice:  Trying to get property 'id' of non-object in C:\xampp\htdocs\mnu\application\models\exammodel.php on line 77
+[26-Feb-2022 19:37:35 Europe/Berlin] Running : SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE  ;
+[26-Feb-2022 19:37:35 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 218
+[26-Feb-2022 19:37:35 Europe/Berlin] No records match SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE  ;
+[26-Feb-2022 19:38:16 Europe/Berlin] index called
+[26-Feb-2022 19:38:16 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id ORDER BY question_id, topic_id, subject_id;
+[26-Feb-2022 19:38:16 Europe/Berlin] Running : SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE choice.id = 1 ;
+[26-Feb-2022 19:38:16 Europe/Berlin] No records match SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE choice.id = 1 ;
+[26-Feb-2022 19:38:33 Europe/Berlin] index called
+[26-Feb-2022 19:38:33 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id ORDER BY question_id, topic_id, subject_id;
+[26-Feb-2022 19:38:33 Europe/Berlin] Running : SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE choice.id = 1 ;
+[26-Feb-2022 19:38:33 Europe/Berlin] No records match SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE choice.id = 1 ;
+[26-Feb-2022 19:39:15 Europe/Berlin] index called
+[26-Feb-2022 19:39:15 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id ORDER BY question_id, topic_id, subject_id;
+[26-Feb-2022 19:39:15 Europe/Berlin] Running : SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE choice.id = 1 ;
+[26-Feb-2022 19:39:15 Europe/Berlin] No records match SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE choice.id = 1 ;
+[26-Feb-2022 19:39:49 Europe/Berlin] index called
+[26-Feb-2022 19:39:49 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id ORDER BY question_id, topic_id, subject_id;
+[26-Feb-2022 19:39:49 Europe/Berlin] Running : SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE choice.id = 1 ;
+[26-Feb-2022 19:39:49 Europe/Berlin] No records match SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE choice.id = 1 ;
+[26-Feb-2022 19:40:38 Europe/Berlin] index called
+[26-Feb-2022 19:40:38 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id ORDER BY question_id, topic_id, subject_id;
+[26-Feb-2022 19:40:38 Europe/Berlin] Running : SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE choice.question_id = 1 ;
+[26-Feb-2022 19:58:40 Europe/Berlin] index called
+[26-Feb-2022 19:58:41 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id ORDER BY question_id, topic_id, subject_id;
+[26-Feb-2022 19:58:41 Europe/Berlin] Running : SELECT choice.id as choice_id, choice.text as choice_text, choice.is_correct as choice_is_correct, choice.question_id as choice_question_id FROM Choice WHERE choice.question_id = 1 ;
+[26-Feb-2022 19:59:54 Europe/Berlin] index called
+[26-Feb-2022 19:59:54 Europe/Berlin] PHP Fatal error:  Uncaught Error: Call to undefined method ExamModel::experiment() in C:\xampp\htdocs\mnu\application\controller\exams.php:27
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\libs\application.php(56): Exams->index()
+#1 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\mnu\application\controller\exams.php on line 27
+[26-Feb-2022 20:04:04 Europe/Berlin] index called
+[26-Feb-2022 20:04:04 Europe/Berlin] PHP Notice:  Undefined variable: exams in C:\xampp\htdocs\mnu\application\controller\exams.php on line 37
+[26-Feb-2022 20:05:52 Europe/Berlin] index called
+[26-Feb-2022 20:06:07 Europe/Berlin] index called
+[26-Feb-2022 20:06:07 Europe/Berlin] PHP Warning:  implode() expects at most 2 parameters, 3 given in C:\xampp\htdocs\mnu\application\models\questionmodel.php on line 23
+[26-Feb-2022 20:06:07 Europe/Berlin] Running SELECT * FROM `question` WHERE 
+[26-Feb-2022 20:06:07 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\mnu\application\models\questionmodel.php on line 28
+[26-Feb-2022 20:06:07 Europe/Berlin] Running SELECT * FROM `choice` WHERE 
+[26-Feb-2022 20:06:07 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1 in C:\xampp\htdocs\mnu\application\models\questionmodel.php on line 36
+[26-Feb-2022 20:06:59 Europe/Berlin] index called
+[26-Feb-2022 20:06:59 Europe/Berlin] Running SELECT * FROM `question` WHERE id = ? OR id = ? OR id = ?
+[26-Feb-2022 20:06:59 Europe/Berlin] Running SELECT * FROM `choice` WHERE question_id  = ? OR question_id  = ? OR question_id  = ?
+[26-Feb-2022 20:07:54 Europe/Berlin] index called
+[26-Feb-2022 20:07:54 Europe/Berlin] Running SELECT * FROM `question` WHERE id = ? OR id = ? OR id = ?
+[26-Feb-2022 20:07:54 Europe/Berlin] Running SELECT * FROM `choice` WHERE question_id  = ? OR question_id  = ? OR question_id  = ?
+[26-Feb-2022 20:08:13 Europe/Berlin] index called
+[26-Feb-2022 20:08:23 Europe/Berlin] index called
+[26-Feb-2022 20:08:40 Europe/Berlin] index called
+[26-Feb-2022 20:24:16 Europe/Berlin] index called
+[26-Feb-2022 20:24:33 Europe/Berlin] index called
+[26-Feb-2022 20:25:01 Europe/Berlin] index called
+[26-Feb-2022 20:25:43 Europe/Berlin] index called
+[26-Feb-2022 20:26:04 Europe/Berlin] index called
+[26-Feb-2022 20:26:51 Europe/Berlin] index called
+[26-Feb-2022 20:27:54 Europe/Berlin] index called
+[26-Feb-2022 20:29:53 Europe/Berlin] index called
+[26-Feb-2022 20:30:40 Europe/Berlin] index called
+[26-Feb-2022 20:31:07 Europe/Berlin] index called
+[26-Feb-2022 20:31:41 Europe/Berlin] index called
+[26-Feb-2022 20:31:59 Europe/Berlin] index called
+[26-Feb-2022 20:34:04 Europe/Berlin] index called
+[26-Feb-2022 21:07:15 Europe/Berlin] Running : SELECT topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id FROM Topic;
+[26-Feb-2022 21:07:15 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$id in C:\xampp\htdocs\mnu\application\views\questionbank\add.php on line 38
+[26-Feb-2022 21:07:15 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$name in C:\xampp\htdocs\mnu\application\views\questionbank\add.php on line 38
+[26-Feb-2022 21:08:46 Europe/Berlin] Running : SELECT topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id FROM Topic;
+[26-Feb-2022 21:08:46 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'foreach' (T_FOREACH) in C:\xampp\htdocs\mnu\application\views\questionbank\add.php on line 38
+[26-Feb-2022 21:09:26 Europe/Berlin] Running : SELECT topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id FROM Topic;
+[26-Feb-2022 21:09:26 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$id in C:\xampp\htdocs\mnu\application\views\questionbank\add.php on line 38
+[26-Feb-2022 21:09:26 Europe/Berlin] PHP Notice:  Undefined property: stdClass::$name in C:\xampp\htdocs\mnu\application\views\questionbank\add.php on line 38
+[26-Feb-2022 21:10:48 Europe/Berlin] Running : SELECT * FROM Topic;
+[26-Feb-2022 21:13:03 Europe/Berlin] Running : SELECT * FROM Topic;
+[26-Feb-2022 21:14:03 Europe/Berlin] Running : SELECT * FROM Topic;
+[26-Feb-2022 21:14:06 Europe/Berlin] Running : SELECT * FROM Topic;
+[26-Feb-2022 21:14:08 Europe/Berlin] Running : SELECT * FROM Topic;
