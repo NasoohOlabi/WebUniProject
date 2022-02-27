@@ -1,0 +1,22 @@
+[27-Feb-2022 07:55:51 Europe/Berlin] index called
+[27-Feb-2022 07:56:50 Europe/Berlin] index called
+[27-Feb-2022 07:57:36 Europe/Berlin] Running : SELECT * FROM Topic;
+[27-Feb-2022 07:57:36 Europe/Berlin] No records match SELECT * FROM Topic;
+[27-Feb-2022 07:57:39 Europe/Berlin] Running : SELECT * FROM Topic;
+[27-Feb-2022 07:57:39 Europe/Berlin] No records match SELECT * FROM Topic;
+[27-Feb-2022 07:57:43 Europe/Berlin] signup called
+[27-Feb-2022 07:57:43 Europe/Berlin] index called
+[27-Feb-2022 08:40:04 Europe/Berlin] index called
+[27-Feb-2022 08:40:04 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'Question' not found in C:\xampp\htdocs\mnu\application\models\questionmodel.php:57
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\controller\home.php(31): QuestionModel->questionDetails(1)
+#1 C:\xampp\htdocs\mnu\application\libs\application.php(62): Home->index()
+#2 C:\xampp\htdocs\mnu\index.php(26): Application->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\questionmodel.php on line 57
+[27-Feb-2022 08:41:39 Europe/Berlin] index called
+[27-Feb-2022 08:41:39 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id AND question.id = 1 ORDER BY question_id, topic_id, subject_id;
+[27-Feb-2022 08:41:39 Europe/Berlin] No Exams available
+[27-Feb-2022 08:42:17 Europe/Berlin] index called
+[27-Feb-2022 08:42:17 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id AND question.id = 1 ORDER BY question_id, topic_id, subject_id;
+[27-Feb-2022 08:42:17 Europe/Berlin] No Exams available

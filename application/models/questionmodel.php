@@ -1,5 +1,6 @@
 <?php
 require_once 'basemodel.php';
+require_once 'core/schema.php';
 class QuestionModel extends BaseModel
 {
     function __construct($db)
@@ -59,7 +60,7 @@ class QuestionModel extends BaseModel
         $question = $query->result[0];
         // var_dump($question);
         $query = $this->select([], "Choice", [Choice::question_id => $question->id]);
-        if ($query instanceof Either\Err) return;
+        if ($query instanceof Either\Err) return $query;
         $question->choices = $query->result;
 
         return $question;
