@@ -1,4 +1,5 @@
 <div id="main-content" class="inlineBlock">
+
     <section class="scrolling-wrapper">
         <div class="card">
             <div class=".card-image-container">

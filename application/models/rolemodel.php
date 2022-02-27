@@ -1,6 +1,7 @@
 <?php
 require_once 'basemodel.php';
 require_once './application/libs/util/Option.php';
+require_once 'core/schema.php';
 class RoleModel extends BaseModel
 {
     function __construct($db)
@@ -30,19 +31,33 @@ class RoleModel extends BaseModel
     function permissionExists($permission)
     {
         if (is_numeric($permission)) {
-            $sql = "SELECT * FROM `permission` WHERE id=:permission;";
+            $result = $this->select([], 'Permission', [Permission::id => $permission]);
         } else if (is_string($permission)) {
-            $sql = "SELECT * FROM `permission` WHERE name=:permission;";
+            $result = $this->select([], 'Permission', [Permission::name => $permission]);
         } else {
-            return new Either\Err("Invalid Argument for permissionExists");
+            throw new Exception("Invalid Argument for permissionExists");
         }
-        $query = $this->db->prepare($sql);
-        $query->execute([":permission" => $permission]);
-        $line = $query->fetchAll();
-        if (count($line)) {
-            return new Either\Result($line[0]->id);
+        if (count($result)) {
+            return true;
         } else {
-            return new Either\Err("Permission $permission doesn't exists");
+            return false;
+        }
+    }
+    function permissionId($permission)
+    {
+        if (is_numeric($permission)) {
+            $result = $this->select([], 'Permission', [Permission::id => $permission]);
+        } else if (is_string($permission)) {
+            $result = $this->select([], 'Permission', [Permission::name => $permission]);
+        } else {
+            throw new Exception("Invalid Argument for permissionId");
+        }
+        if (count($result) == 1) {
+            return $result->id;
+        } elseif (count($result) > 1) {
+            throw new Exception("Internal SQL error: Permission's name and id are unique");
+        } else {
+            throw new Exception("Permission : $permission Doesn't Exists");
         }
     }
     function roleExists($role)
@@ -63,37 +78,40 @@ class RoleModel extends BaseModel
             return new Either\Err("Role $role doesn't exists");
         }
     }
+    function roleId($role)
+    {
+        if (is_numeric($role)) {
+            $result = $this->select([], 'role', [Role::id => $role]);
+        } else if (is_string($role)) {
+            $result = $this->select([], 'role', [Role::name => $role]);
+        } else {
+            throw new Exception("Invalid Argument for roleId");
+        }
+        if (count($result) == 1) {
+            return $result->id;
+        } elseif (count($result) > 1) {
+            throw new Exception("Internal SQL error: Permission's name and id are unique");
+        } else {
+            throw new Exception("Role : $role Doesn't Exists");
+        }
+    }
     function addPermissionToRole($permission, $role)
     {
-        $permission_check = $this->permissionExists($permission);
-        $role_check = $this->roleExists($role);
-        if ($permission_check instanceof Either\Result && $role_check instanceof Either\Result) {
-            $sql = "INSERT INTO `role_has_permission`(`role_id`, `permission_id`) VALUES (:role,:permission)";
-            simpleLog("Running $sql");
-            $succeeded = $this->db->prepare($sql)->execute([":role" => $role_check->result, ":permission" => $permission_check->result]);
-            return ($succeeded) ? $permission_check->combine($role_check) : new Either\Err("$sql was not succeeded");
-        } else {
-            return $permission_check->combine($role_check);
-        }
+        $link = new Role_has_Permission();
+        $link->permission_id = $this->permissionId($permission);
+        $link->role_id = $this->roleId($role);
+        $this->experimental_insert($link);
     }
     function hasPermission($role, $permission)
     {
-        $permission_check = $this->permissionExists($permission);
-        $role_check = $this->roleExists($role);
-        if ($permission_check instanceof Either\Result && $role_check instanceof Either\Result) {
-            $sql = "SELECT * FROM `role_has_permission` WHERE role_id=$role_check->result AND permission_id=$permission_check->result";
-            simpleLog("Running $sql");
-            $stmt = $this->db->prepare($sql);
-            $stmt->execute([":role" => $role_check->result, ":permission" => $permission_check->result]);
-            $rows = $stmt->fetchAll();
-            if (count($rows) == 0) {
-                return false;
-            } else {
-                return true;
-            }
-        } else {
-            simpleLog($permission_check->combine($role_check)->left);
-            return false;
-        }
+        $cnt = $this->select(
+            [],
+            'Role_has_Permission',
+            [
+                Role_has_Permission::role_id => $this->roleId($role),
+                Role_has_Permission::permission_id => $this->permissionId($permission)
+            ]
+        );
+        return !(count($cnt) == 0);
     }
 }

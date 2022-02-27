@@ -120,13 +120,30 @@ class BaseModel
         return new Either\Result();
     }
 
+    function experimental_insert($object)
+    {
+        $schemaClass = get_class($object);
+        $columns = $schemaClass::SQL_Columns();
+
+        unset($columns['id']); // it's auto incremented
+
+        $values = implode(", ", array_map(function ($column_name) use ($object) {
+            return $object[$column_name];
+        }, $columns));
+        $columns_names = implode(", ", $columns);
+
+        $sql = "INSERT INTO `$schemaClass`($columns_names) VALUES ($values)";
+        simpleLog('Running : "' . $sql . '"');
+        return $this->db->prepare($sql)->execute();
+    }
+
     private static function _parse_conditions_from_pairs($pairs)
     {
         if (!is_array($pairs)) return;
         // parsing the conditions 
         $conditions = [];
         foreach ($pairs as $first => $second) {
-            if (is_array($second)) return;
+            if (!is_string($second) && !is_string($second)) return;
             else
                 $conditions[] = "$first = $second";
         }
@@ -207,8 +224,10 @@ class BaseModel
      * @param [phpModelClasses' constants] $pairs
      * @return SQL_answer
      */
-    public function join($schemaClasses, $pairs, $wrapper)
+    public function join($schemaClasses, $pairs, $wrapper = null)
     {
+        if ($wrapper == null)
+            $wrapper = $schemaClasses[0];
         // columns with their aliases ex: exam.id as exam_id
         $columns = BaseModel::_alias_schemaClass_columns_with_table_name($schemaClasses);
 
@@ -238,19 +257,17 @@ class BaseModel
         $lines = $query->fetchAll();
 
         return (count($lines)) ?
-            new Either\Result(array_map(function ($args) use ($wrapper) {
+            array_map(function ($args) use ($wrapper) {
                 return new $wrapper($args,  strtolower($wrapper) . "_");
-            }, $lines)) :
-            new Either\Err("No Exams available");
+            }, $lines) :
+            new Exception("No Exams available");
     }
 
     public function select($columns, $schemaClass, $pairs = null)
     {
-        if (!is_string($schemaClass)) return new Either\Err("Invalid table name $schemaClass should be string.");
+        if (!is_string($schemaClass)) throw new Exception("Invalid table name $schemaClass should be string.");
 
         if (is_array($columns) && count($columns) == 0)
-            // columns with their aliases ex: exam.id as exam_id
-            // $columns = BaseModel::_alias_schemaClass_columns_with_table_name($schemaClass);
             $columns = "*";
 
         if ($pairs == null) {
@@ -267,9 +284,12 @@ class BaseModel
         $query = $this->db->prepare($sql);
         $query->execute();
         $lines = $query->fetchAll();
-
-        return (count($lines)) ?
-            new Either\Result($lines) :
-            new Either\Err("No records match $sql");
+        $lines = array_map(function ($args) use ($schemaClass) {
+            return new $schemaClass($args);
+        }, $lines);
+        if (count($lines))
+            return $lines;
+        else
+            new Exception("No records match $sql");
     }
 }
