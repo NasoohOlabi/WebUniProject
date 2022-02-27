@@ -1,5 +1,6 @@
 <?php
 require_once 'application/views/_templates/header.php';
+require_once './application/libs/util/log.php';
 
 /**
  * Class Home
@@ -20,17 +21,18 @@ class Home extends Controller
         // debug message to show where you are, just for the demo
         // echo 'Message from Controller: You are in the controller home, using the method index()';
 
-        require './application/libs/util/log.php';
         simpleLog("index called");
+
 
 
         $p = $this->loadModel('QuestionModel');
         // echo "<pre>";
-        // // // print("before");
+        // // print("before");
         // var_dump($p->getTheseQuestions([1, 2, 3]));
-        // // $p->insert(array("name" => "admin"));
-        // // print("after");
-        // // var_dump($p->getAll());
+        // $p->insert(array("name" => "admin"));
+        // print("after");
+        // var_dump($p->getAll());
+        // var_dump([[1, 2] => [2, 3]]);
         // echo "</pre>";
 
 
@@ -41,5 +43,12 @@ class Home extends Controller
         require 'application/views/home/index.php';
         require 'application/views/_templates/login_popup.php';
         require 'application/views/_templates/footer.php';
+    }
+    public function signup()
+    {
+        simpleLog("signup called");
+        // load views. within the views we can echo out $songs and $amount_of_songs easily
+        pageHeadTag("Signup");
+        require_once 'application/views/home/signup.php';
     }
 }

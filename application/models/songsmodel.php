@@ -1,9 +1,10 @@
 <?php
-require 'basemodel.php';
+require_once 'basemodel.php';
 class SongsModel extends BaseModel
 {
-    function __construct($db) {
-        parent::__construct($db,"song");
+    function __construct($db)
+    {
+        parent::__construct($db, "song");
     }
 
     /**
@@ -40,6 +41,6 @@ class SongsModel extends BaseModel
      */
     public function deleteSong($song_id)
     {
-		$this->deleteById($song_id);
+        $this->deleteById($song_id);
     }
 }

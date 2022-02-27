@@ -19,7 +19,7 @@ class Exams extends Controller
 
     public function index()
     {
-        require './application/libs/util/log.php';
+        require_once './application/libs/util/log.php';
         simpleLog("index called");
 
         $model = $this->loadModel('ExamModel');

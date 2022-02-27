@@ -1,6 +1,6 @@
 <?php
-require './application/libs/util/Option.php';
-require './application/libs/util/log.php';
+require_once './application/libs/util/Option.php';
+require_once './application/libs/util/log.php';
 class BaseModel
 {
     /**
@@ -122,13 +122,54 @@ class BaseModel
 
     private static function _parse_conditions_from_pairs($pairs)
     {
+        if (!is_array($pairs)) return;
         // parsing the conditions 
         $conditions = [];
         foreach ($pairs as $first => $second) {
-            if ($first && $second)
+            if (is_array($second)) return;
+            else
                 $conditions[] = "$first = $second";
         }
         $conditions = implode(" AND ", $conditions);
+        return $conditions;
+    }
+    // [[Exam::id=>Question::id,Exam::id=>Question::id]]
+    // [[[Exam::id,Question::id],Exam::id=>Question::id,[Exam::id,Question::id]]]
+    /**
+     * [[1=>2,[1,3],3=>2],[4=>5]]
+     * becomes
+     * (1 = 2 AND 1 = 3 AND 3 = 2 ) OR (4 = 5)
+     *
+     * @param [type] $pairs
+     * @return void
+     */
+    private static function _parse_conditions_from_cnf($pairs)
+    {
+        if (!is_array($pairs)) return;
+        // parsing the conditions 
+        $conditions = [];
+        foreach ($pairs as $d1_index => $d1_value) {
+            if (!is_numeric($d1_index) || !is_array($d1_value)) return;
+
+            $bracket = [];
+            foreach ($d1_value as $d2_key => $d2_value) {
+                if (!is_array($d2_key) && !is_array($d2_value)) {
+                    // [[Exam::id=>Question::id,Exam::id=>Question::id]]
+                    $conditions[] = "$d2_key = $d2_value";
+                } elseif (
+                    // [[[Exam::id,Question::id],[Exam::id,Question::id]]]
+                    is_numeric($d2_key) &&
+                    is_array($d2_value) &&
+                    count($d2_value) == 2 &&
+                    !is_array($d2_value[0]) &&
+                    !is_array($d2_value[1])
+                ) {
+                    $bracket[] = "$d2_value[0] = $d2_value[1]";
+                }
+            }
+            $conditions = implode(" AND ", $bracket);
+        }
+        $conditions = '(' . implode(") OR (", $conditions) . ')';
         return $conditions;
     }
     private static function _alias_schemaClass_columns_with_table_name($argument)
@@ -178,8 +219,10 @@ class BaseModel
         }, $schemaClasses));
 
 
-
         $conditions = BaseModel::_parse_conditions_from_pairs($pairs);
+        if ($conditions == null)
+            $conditions = BaseModel::_parse_conditions_from_cnf($pairs);
+
 
 
         $order = implode(", ", array_map(function ($model) {
@@ -214,6 +257,8 @@ class BaseModel
             $sql = "SELECT $columns FROM $schemaClass;";
         } else {
             $conditions = BaseModel::_parse_conditions_from_pairs($pairs);
+            if ($conditions == null)
+                $conditions = BaseModel::_parse_conditions_from_cnf($pairs);
 
             $sql = "SELECT $columns FROM $schemaClass WHERE $conditions ;";
         }
