@@ -48,6 +48,7 @@ class Subject
     const id = 'subject.id';
     const name = 'subject.name';
     const description = 'subject.description';
+
     // this is what we'll inter act with the res is just jargon
     public int $id;
     public string $name;
