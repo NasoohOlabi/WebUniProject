@@ -1,4 +1,4 @@
-<script src="<?= URL ?>/public/js/popping.js"></script>
+<script src="<?= URL ?>public/js/popping.js"></script>
 <div id="main-container-popup" onclick="outerClicked(event,this)">
     <noscript>It seems that you don't have javascript enabled for this
         site...</noscript>

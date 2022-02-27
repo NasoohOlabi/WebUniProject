@@ -2,7 +2,7 @@
 
     <header>
         <a href="<?= URL ?>home">
-            <img src="<?= URL ?>/public/img/logo/MNU-logos_black.png" id="logo-img" />
+            <img src="<?= URL ?>public/img/logo/MNU-logos_black.png" id="logo-img" />
         </a>
         <nav>
             <span>
