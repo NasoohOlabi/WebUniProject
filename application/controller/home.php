@@ -2,6 +2,7 @@
 require_once 'application/views/_templates/header.php';
 require_once './application/libs/util/log.php';
 
+
 /**
  * Class Home
  *
@@ -26,14 +27,14 @@ class Home extends Controller
 
 
         $p = $this->loadModel('QuestionModel');
-        // echo "<pre>";
+        echo "<pre>";
         // // print("before");
-        // var_dump($p->getTheseQuestions([1, 2, 3]));
+        var_dump($p->questionDetails(1));
         // $p->insert(array("name" => "admin"));
         // print("after");
         // var_dump($p->getAll());
         // var_dump([[1, 2] => [2, 3]]);
-        // echo "</pre>";
+        echo "</pre>";
 
 
         // load views. within the views we can echo out $songs and $amount_of_songs easily

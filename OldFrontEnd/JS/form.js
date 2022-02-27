@@ -37,6 +37,13 @@ const validators = {
 	ProfileImg: (fakePath) => fakePath.length > 0,
 };
 
+function persistantTimer(name) {
+	const intervalName = 'window.parsing_input_interval_' + name
+	if (window[intervalName]) {
+		clearInterval(window[intervalName])
+	}
+}
+
 /**
  *	Note that multiple calls to doBeforeAfterSpin will only take into account last 1000 ms
  * @param {(event)=>void} init
