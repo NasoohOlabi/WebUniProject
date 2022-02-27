@@ -143,7 +143,7 @@ class BaseModel
         // parsing the conditions 
         $conditions = [];
         foreach ($pairs as $first => $second) {
-            if (!is_string($second) && !is_string($second)) return;
+            if (!is_string($second) && !is_numeric($second)) return;
             else
                 $conditions[] = "$first = $second";
         }
@@ -291,5 +291,26 @@ class BaseModel
             return $lines;
         else
             new Exception("No records match $sql");
+    }
+    public function count($schemaClass = null, $pairs = null)
+    {
+        if ($schemaClass == null) $schemaClass = $this->table;
+        if (!is_string($schemaClass)) throw new Exception("Invalid table name $schemaClass should be string.");
+
+        if ($pairs == null) {
+            $sql = "SELECT COUNT(*) as num FROM $schemaClass;";
+        } else {
+            $conditions = BaseModel::_parse_conditions_from_pairs($pairs);
+            if ($conditions == null)
+                $conditions = BaseModel::_parse_conditions_from_cnf($pairs);
+
+            $sql = "SELECT COUNT(*) as num FROM $schemaClass WHERE $conditions ;";
+        }
+        simpleLog("Running : $sql");
+
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        $lines = $query->fetchAll();
+        return $lines[0]->num * 1;
     }
 }
