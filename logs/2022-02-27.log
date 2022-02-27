@@ -20,3 +20,34 @@ Stack trace:
 [27-Feb-2022 08:42:17 Europe/Berlin] index called
 [27-Feb-2022 08:42:17 Europe/Berlin] Running : SELECT question.id as question_id, question.text as question_text, question.number_of_choices as question_number_of_choices, question.topic_id as question_topic_id, topic.id as topic_id, topic.name as topic_name, topic.description as topic_description, topic.subject_id as topic_subject_id, subject.id as subject_id, subject.name as subject_name, subject.description as subject_description FROM `Question` JOIN `Topic` JOIN `Subject` ON question.topic_id = topic.id AND topic.subject_id = subject.id AND question.id = 1 ORDER BY question_id, topic_id, subject_id;
 [27-Feb-2022 08:42:17 Europe/Berlin] No Exams available
+[27-Feb-2022 22:38:53 Europe/Berlin] index called
+[27-Feb-2022 22:38:53 Europe/Berlin] Running : SELECT COUNT(*) as num FROM Role_has_Permission WHERE (1 = 2) AND (1 = 3) AND (3 = 2) AND (4 = 5) ;
+[27-Feb-2022 22:38:58 Europe/Berlin] index called
+[27-Feb-2022 22:38:58 Europe/Berlin] Running : SELECT COUNT(*) as num FROM Role_has_Permission WHERE (1 = 2) AND (1 = 3) AND (3 = 2) AND (4 = 5) ;
+[27-Feb-2022 22:38:58 Europe/Berlin] index called
+[27-Feb-2022 22:38:58 Europe/Berlin] Running : SELECT COUNT(*) as num FROM Role_has_Permission WHERE (1 = 2) AND (1 = 3) AND (3 = 2) AND (4 = 5) ;
+[27-Feb-2022 22:38:58 Europe/Berlin] index called
+[27-Feb-2022 22:38:58 Europe/Berlin] Running : SELECT COUNT(*) as num FROM Role_has_Permission WHERE (1 = 2) AND (1 = 3) AND (3 = 2) AND (4 = 5) ;
+[27-Feb-2022 22:38:59 Europe/Berlin] index called
+[27-Feb-2022 22:38:59 Europe/Berlin] Running : SELECT COUNT(*) as num FROM Role_has_Permission WHERE (1 = 2) AND (1 = 3) AND (3 = 2) AND (4 = 5) ;
+[27-Feb-2022 22:39:00 Europe/Berlin] index called
+[27-Feb-2022 22:39:00 Europe/Berlin] Running : SELECT COUNT(*) as num FROM Role_has_Permission WHERE (1 = 2) AND (1 = 3) AND (3 = 2) AND (4 = 5) ;
+[27-Feb-2022 22:39:01 Europe/Berlin] index called
+[27-Feb-2022 22:39:01 Europe/Berlin] Running : SELECT COUNT(*) as num FROM Role_has_Permission WHERE (1 = 2) AND (1 = 3) AND (3 = 2) AND (4 = 5) ;
+[27-Feb-2022 22:39:01 Europe/Berlin] index called
+[27-Feb-2022 22:39:01 Europe/Berlin] Running : SELECT COUNT(*) as num FROM Role_has_Permission WHERE (1 = 2) AND (1 = 3) AND (3 = 2) AND (4 = 5) ;
+[27-Feb-2022 22:39:02 Europe/Berlin] index called
+[27-Feb-2022 22:39:02 Europe/Berlin] Running : SELECT COUNT(*) as num FROM Role_has_Permission WHERE (1 = 2) AND (1 = 3) AND (3 = 2) AND (4 = 5) ;
+[27-Feb-2022 22:39:03 Europe/Berlin] index called
+[27-Feb-2022 22:39:03 Europe/Berlin] Running : SELECT COUNT(*) as num FROM Role_has_Permission WHERE (1 = 2) AND (1 = 3) AND (3 = 2) AND (4 = 5) ;
+[27-Feb-2022 22:39:14 Europe/Berlin] signup called
+[27-Feb-2022 22:39:14 Europe/Berlin] index called
+[27-Feb-2022 22:39:14 Europe/Berlin] Running : SELECT COUNT(*) as num FROM Role_has_Permission WHERE (1 = 2) AND (1 = 3) AND (3 = 2) AND (4 = 5) ;
+[27-Feb-2022 22:39:28 Europe/Berlin] index called
+[27-Feb-2022 22:39:28 Europe/Berlin] Running : SELECT COUNT(*) as num FROM Role_has_Permission WHERE (1 = 2) AND (1 = 3) AND (3 = 2) AND (4 = 5) ;
+[27-Feb-2022 22:39:31 Europe/Berlin] index called
+[27-Feb-2022 22:39:31 Europe/Berlin] Running : SELECT COUNT(*) as num FROM Role_has_Permission WHERE (1 = 2) AND (1 = 3) AND (3 = 2) AND (4 = 5) ;
+[27-Feb-2022 22:40:43 Europe/Berlin] signup called
+[27-Feb-2022 22:40:43 Europe/Berlin] index called
+[27-Feb-2022 22:40:43 Europe/Berlin] Running : SELECT COUNT(*) as num FROM Role_has_Permission WHERE (1 = 2) AND (1 = 3) AND (3 = 2) AND (4 = 5) ;
+[27-Feb-2022 22:42:51 Europe/Berlin] signup called

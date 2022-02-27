@@ -61,7 +61,7 @@
             </form>
         </div>
     </div>
-    <script src="JS/form.js" type="text/javascript"></script>
+    <script src="<?= URL ?>/public/js/form.js" type="text/javascript"></script>
 </body>
 
 </html>
