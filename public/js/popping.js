@@ -10,11 +10,6 @@ function outerClicked(event, element) {
 		popup.style.display = "none";
 	}
 }
-function innerClicked(event, element) {
-	if (amIclicked(event, element)) {
-		alert("Two is clicked");
-	}
-}
 function pop() {
 	const popup = document.getElementById("main-container-popup");
 	popup.style.top = "0";
