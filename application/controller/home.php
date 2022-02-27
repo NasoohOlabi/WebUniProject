@@ -30,10 +30,9 @@ class Home extends Controller
         echo "<pre>";
         // // print("before");
         // var_dump($p->questionDetails(1));
-        var_dump($p->count('Role_has_Permission', [
-            Role_has_Permission::role_id => 1,
-            Role_has_Permission::permission_id => 1
-        ]));
+        // [[1=>2],[[1=>2],[3=>4]]]
+        // print_r([1 => 1, 1 => 2]);
+        var_dump($p->count('Role_has_Permission', [[1 => 2], [1 => 3], [3 => 2], [4 => 5]]));
         // $p->insert(array("name" => "admin"));
         // print("after");
         // var_dump($p->getAll());

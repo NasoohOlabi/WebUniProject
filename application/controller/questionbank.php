@@ -49,9 +49,8 @@ class QuestionBank extends Controller
             return;
         }
         $model = $this->loadModel('ExamModel');
-        $query = $model->select([], "Topic");
-        if ($query instanceof Either\Err) return $query;
-        $topics = $query->result;
+        $topics = $model->select([], "Topic");
+
         var_dump($topics);
 
         // Flash pattern

@@ -31,17 +31,14 @@ class RoleModel extends BaseModel
     function permissionExists($permission)
     {
         if (is_numeric($permission)) {
-            $result = $this->select([], 'Permission', [Permission::id => $permission]);
+            $result = $this->count('Permission', [Permission::id => $permission]);
         } else if (is_string($permission)) {
-            $result = $this->select([], 'Permission', [Permission::name => $permission]);
+            $result = $this->count('Permission', [Permission::name => $permission]);
         } else {
             throw new Exception("Invalid Argument for permissionExists");
         }
-        if (count($result)) {
-            return true;
-        } else {
-            return false;
-        }
+        if ($result > 1) throw new Exception("SQL Error both id and name should be unique");
+        return $result == 1;
     }
     function permissionId($permission)
     {
@@ -63,20 +60,14 @@ class RoleModel extends BaseModel
     function roleExists($role)
     {
         if (is_numeric($role)) {
-            $sql = "SELECT * FROM `role` WHERE id=:role;";
+            $result = $this->count('Role', [Role::id => $role]);
         } else if (is_string($role)) {
-            $sql = "SELECT * FROM `role` WHERE name=:role;";
+            $result = $this->count('Role', [Role::name => $role]);
         } else {
-            return new Either\Err("Role $role doesn't exists");
+            throw new Exception("Invalid Argument for roleExists");
         }
-        $query = $this->db->prepare($sql);
-        $query->execute([":role" => $role]);
-        $line = $query->fetchAll();
-        if (count($line)) {
-            return new Either\Result($line[0]->id);
-        } else {
-            return new Either\Err("Role $role doesn't exists");
-        }
+        if ($result > 1) throw new Exception("SQL Error both id and name should be unique");
+        return $result == 1;
     }
     function roleId($role)
     {
@@ -104,14 +95,15 @@ class RoleModel extends BaseModel
     }
     function hasPermission($role, $permission)
     {
-        $cnt = $this->select(
-            [],
+        $cnt = $this->count(
             'Role_has_Permission',
             [
-                Role_has_Permission::role_id => $this->roleId($role),
-                Role_has_Permission::permission_id => $this->permissionId($permission)
+                [Role_has_Permission::role_id => $this->roleId($role)],
+                [Role_has_Permission::permission_id => $this->permissionId($permission)]
             ]
         );
-        return !(count($cnt) == 0);
+        if ($cnt > 1)
+            throw new Exception("SQL error: Permission's name and id should be unique");
+        return ($cnt == 1);
     }
 }

@@ -56,13 +56,20 @@ class QuestionModel extends BaseModel
 
     function questionDetails($id)
     {
-        $query = $this->join(["Question", "Topic", "Subject"], [Question::topic_id => Topic::id, Topic::subject_id => Subject::id, Question::id => $id], "Question");
+        $query = $this->join(
+            ["Question", "Topic", "Subject"],
+            [
+                [Question::topic_id => Topic::id],
+                [Topic::subject_id => Subject::id],
+                [Question::id => $id]
+            ],
+            "Question"
+        );
         if ($query instanceof Either\Err) return $query;
         $question = $query->result[0];
         // var_dump($question);
         $query = $this->select([], "Choice", [Choice::question_id => $question->id]);
-        if ($query instanceof Either\Err) return $query;
-        $question->choices = $query->result;
+        $question->choices = $query;
 
         return $question;
     }

@@ -137,25 +137,39 @@ class BaseModel
         return $this->db->prepare($sql)->execute();
     }
 
-    private static function _parse_conditions_from_pairs($conditions)
+    private static function _is_term($x)
     {
-        if (!is_array($conditions)) return;
-        // parsing the conditions 
-        $conditions = [];
-        foreach ($conditions as $first => $second) {
-            if (!is_string($second) && !is_numeric($second)) return;
-            else
-                $conditions[] = "$first = $second";
-        }
-        $conditions = implode(" AND ", $conditions);
-        return $conditions;
+        return is_array($x) && count($x) == 1 && !is_array($x[array_keys($x)[0]]);
     }
-    // [[Exam::id=>Question::id,Exam::id=>Question::id]]
-    // [[[Exam::id,Question::id],Exam::id=>Question::id,[Exam::id,Question::id]]]
+    private static function _parse_term($x)
+    {
+        $key = array_keys($x)[0];
+        return "$key = $x[$key]";
+    }
     /**
-     * [[1=>2,[1,3],3=>2],[4=>5]]
+     * [[[1=>2],[1=>3],[3=>2]],[4=>5]]
      * becomes
-     * (1 = 2 AND 1 = 3 AND 3 = 2 ) OR (4 = 5)
+     * (1 = 2 OR 1 = 3 OR 3 = 2) AND (4 = 5)
+     * ---------------------------------------------
+     * [[[1=>2],[1=>3]],[3=>2],[4=>5]]
+     * becomes
+     * (1 = 2 OR 1 = 3) AND (3 = 2) AND (4 = 5)
+     * ---------------------------------------------
+     * [[1=>2]]
+     * becomes
+     * (1 = 2)
+     * ---------------------------------------------
+     * only single term
+     * [1=>2]
+     * becomes
+     * (1 = 2)
+     * ---------------------------------------------
+     * [1=>3,2=>4]
+     * fails!!
+     * ---------------------------------------------
+     * [[1=>3],[2=>4]]
+     * becomes
+     * (1 = 3) AND (2 = 4)
      *
      * @param [type] $conditions
      * @return void
@@ -164,36 +178,29 @@ class BaseModel
     {
         if (!is_array($conditions)) return;
         // parsing the conditions 
-        $conditions = [];
-        foreach ($conditions as $d1_index => $d1_value) {
-            if (!is_numeric($d1_index) || !is_array($d1_value)) return;
-
-            $bracket = [];
-            foreach ($d1_value as $d2_key => $d2_value) {
-                if (!is_array($d2_key) && !is_array($d2_value)) {
-                    // [[Exam::id=>Question::id,Exam::id=>Question::id]]
-                    $conditions[] = "$d2_key = $d2_value";
-                } elseif (
-                    // [[[Exam::id,Question::id],[Exam::id,Question::id]]]
-                    is_numeric($d2_key) &&
-                    is_array($d2_value) &&
-                    count($d2_value) == 2 &&
-                    !is_array($d2_value[0]) &&
-                    !is_array($d2_value[1])
-                ) {
-                    $bracket[] = "$d2_value[0] = $d2_value[1]";
+        if (BaseModel::_is_term($conditions))
+            return BaseModel::_parse_term($conditions);
+        $Acc = [];
+        foreach ($conditions as $value_1d) {
+            if (BaseModel::_is_term($value_1d)) {
+                $Acc[] = BaseModel::_parse_term($value_1d);
+            } elseif (is_array($value_1d)) {
+                $bracket = [];
+                foreach ($value_1d as $value_2d) {
+                    if (BaseModel::_is_term($value_2d)) {
+                        $bracket[] = BaseModel::_parse_term($value_2d);
+                    } else throw new Exception("Conditions Parse Error: parsing `" . json_encode($conditions) . "`");
                 }
-            }
-            $conditions = implode(" AND ", $bracket);
+                $Acc[] = implode(" OR ", $bracket);
+            } else
+                throw new Exception("Conditions Parse Error: parsing `" . json_encode($conditions) . "`");
         }
-        $conditions = '(' . implode(") OR (", $conditions) . ')';
-        return $conditions;
+        $Acc = '(' . implode(") AND (", $Acc) . ')';
+        return $Acc;
     }
     private static function _parse_conditions($conditions)
     {
-        $answer = BaseModel::_parse_conditions_from_pairs($conditions);
-        if ($answer == null)
-            $answer = BaseModel::_parse_conditions_from_cnf($conditions);
+        $answer = BaseModel::_parse_conditions_from_cnf($conditions);
         return $answer;
     }
     private static function _alias_schemaClass_columns_with_table_name($argument)
@@ -260,8 +267,6 @@ class BaseModel
         $query = $this->db->prepare($sql);
         $query->execute();
         $lines = $query->fetchAll();
-
-        var_dump($lines);
 
         return (count($lines)) ?
             array_map(function ($args) use ($wrapper) {
