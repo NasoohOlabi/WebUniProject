@@ -30,14 +30,18 @@ class Home extends Controller
         echo "<pre>";
         // // print("before");
         // var_dump($p->questionDetails(1));
+        var_dump($p->count('Role_has_Permission', [
+            Role_has_Permission::role_id => 1,
+            Role_has_Permission::permission_id => 1
+        ]));
         // $p->insert(array("name" => "admin"));
         // print("after");
         // var_dump($p->getAll());
         // var_dump([[1, 2] => [2, 3]]);
         // var_dump("3" * 5);
-        $v = "22";
-        $v = str_repeat($v, 3);
-        var_dump($v);
+        // $v = "22";
+        // $v = str_repeat($v, 3);
+        // var_dump($v);
 
         echo "</pre>";
 

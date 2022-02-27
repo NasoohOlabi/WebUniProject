@@ -137,12 +137,12 @@ class BaseModel
         return $this->db->prepare($sql)->execute();
     }
 
-    private static function _parse_conditions_from_pairs($pairs)
+    private static function _parse_conditions_from_pairs($conditions)
     {
-        if (!is_array($pairs)) return;
+        if (!is_array($conditions)) return;
         // parsing the conditions 
         $conditions = [];
-        foreach ($pairs as $first => $second) {
+        foreach ($conditions as $first => $second) {
             if (!is_string($second) && !is_numeric($second)) return;
             else
                 $conditions[] = "$first = $second";
@@ -157,15 +157,15 @@ class BaseModel
      * becomes
      * (1 = 2 AND 1 = 3 AND 3 = 2 ) OR (4 = 5)
      *
-     * @param [type] $pairs
+     * @param [type] $conditions
      * @return void
      */
-    private static function _parse_conditions_from_cnf($pairs)
+    private static function _parse_conditions_from_cnf($conditions)
     {
-        if (!is_array($pairs)) return;
+        if (!is_array($conditions)) return;
         // parsing the conditions 
         $conditions = [];
-        foreach ($pairs as $d1_index => $d1_value) {
+        foreach ($conditions as $d1_index => $d1_value) {
             if (!is_numeric($d1_index) || !is_array($d1_value)) return;
 
             $bracket = [];
@@ -188,6 +188,13 @@ class BaseModel
         }
         $conditions = '(' . implode(") OR (", $conditions) . ')';
         return $conditions;
+    }
+    private static function _parse_conditions($conditions)
+    {
+        $answer = BaseModel::_parse_conditions_from_pairs($conditions);
+        if ($answer == null)
+            $answer = BaseModel::_parse_conditions_from_cnf($conditions);
+        return $answer;
     }
     private static function _alias_schemaClass_columns_with_table_name($argument)
     {
@@ -217,14 +224,14 @@ class BaseModel
     }
 
     /**
-     * joins the model table with models from $schemaClasses based on conditions in $pairs
-     * @example $pairs = [EXAM::SUBJECT_ID => Subject::ID]
+     * joins the model table with models from $schemaClasses based on conditions in $conditions
+     * @example $conditions = [EXAM::SUBJECT_ID => Subject::ID]
      *
      * @param [tablenames] $schemaClasses
-     * @param [phpModelClasses' constants] $pairs
+     * @param [phpModelClasses' constants] $conditions
      * @return SQL_answer
      */
-    public function join($schemaClasses, $pairs, $wrapper = null)
+    public function join($schemaClasses, $conditions, $wrapper = null)
     {
         if ($wrapper == null)
             $wrapper = $schemaClasses[0];
@@ -238,9 +245,7 @@ class BaseModel
         }, $schemaClasses));
 
 
-        $conditions = BaseModel::_parse_conditions_from_pairs($pairs);
-        if ($conditions == null)
-            $conditions = BaseModel::_parse_conditions_from_cnf($pairs);
+        $conditions = BaseModel::_parse_conditions($conditions);
 
 
 
@@ -263,19 +268,17 @@ class BaseModel
             new Exception("No Exams available");
     }
 
-    public function select($columns, $schemaClass, $pairs = null)
+    public function select($columns, $schemaClass, $conditions = null)
     {
         if (!is_string($schemaClass)) throw new Exception("Invalid table name $schemaClass should be string.");
 
         if (is_array($columns) && count($columns) == 0)
             $columns = "*";
 
-        if ($pairs == null) {
+        if ($conditions == null) {
             $sql = "SELECT $columns FROM $schemaClass;";
         } else {
-            $conditions = BaseModel::_parse_conditions_from_pairs($pairs);
-            if ($conditions == null)
-                $conditions = BaseModel::_parse_conditions_from_cnf($pairs);
+            $conditions = BaseModel::_parse_conditions($conditions);
 
             $sql = "SELECT $columns FROM $schemaClass WHERE $conditions ;";
         }
@@ -292,18 +295,15 @@ class BaseModel
         else
             new Exception("No records match $sql");
     }
-    public function count($schemaClass = null, $pairs = null)
+    public function count($schemaClass = null, $conditions = null)
     {
         if ($schemaClass == null) $schemaClass = $this->table;
         if (!is_string($schemaClass)) throw new Exception("Invalid table name $schemaClass should be string.");
 
-        if ($pairs == null) {
+        if ($conditions == null) {
             $sql = "SELECT COUNT(*) as num FROM $schemaClass;";
         } else {
-            $conditions = BaseModel::_parse_conditions_from_pairs($pairs);
-            if ($conditions == null)
-                $conditions = BaseModel::_parse_conditions_from_cnf($pairs);
-
+            $conditions = BaseModel::_parse_conditions($conditions);
             $sql = "SELECT COUNT(*) as num FROM $schemaClass WHERE $conditions ;";
         }
         simpleLog("Running : $sql");
