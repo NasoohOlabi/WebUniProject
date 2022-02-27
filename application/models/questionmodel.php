@@ -8,6 +8,7 @@ class QuestionModel extends BaseModel
         parent::__construct($db, "question");
     }
 
+
     /**
      * 
      *
