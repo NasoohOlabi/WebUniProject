@@ -261,6 +261,8 @@ class BaseModel
         $query->execute();
         $lines = $query->fetchAll();
 
+        var_dump($lines);
+
         return (count($lines)) ?
             array_map(function ($args) use ($wrapper) {
                 return new $wrapper($args,  strtolower($wrapper) . "_");
