@@ -52,7 +52,6 @@ class BaseModel
      */
     public function getById($id)
     {
-        $schemaClass = get_class($this->table);
         $result = $this->select([], ["$this->table"], ['id' => $id]);
 
         if (count($result) == 0) {
