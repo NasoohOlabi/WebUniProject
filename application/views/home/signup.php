@@ -6,7 +6,7 @@
             <div class="icon-container">
                 <i class="fas fa-address-card user-icon"></i>
             </div>
-            <form action="" method="post">
+            <form action="<?= URL ?>/signup/register" method="post">
                 <div class="form-block">
                     <input type="text" name="first_name" id="first_name" class="text-input valid-input" placeholder="First Name" required />
                     <small class="invalid-text">
@@ -61,7 +61,7 @@
             </form>
         </div>
     </div>
-    <script src="<?= URL ?>/public/js/form.js" type="text/javascript"></script>
+    <!-- <script src="<?= URL ?>/public/js/form.js" type="text/javascript"></script> -->
 </body>
 
 </html>

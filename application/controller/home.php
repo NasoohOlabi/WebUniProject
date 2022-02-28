@@ -32,7 +32,7 @@ class Home extends Controller
         // var_dump($p->questionDetails(1));
         // [[1=>2],[[1=>2],[3=>4]]]
         // print_r([1 => 1, 1 => 2]);
-        var_dump($p->count('Role_has_Permission', [[1 => 2], [1 => 3], [3 => 2], [4 => 5]]));
+        // var_dump($p->count('Role_has_Permission', [[1 => 2], [1 => 3], [3 => 2], [4 => 5]]));
         // $p->insert(array("name" => "admin"));
         // print("after");
         // var_dump($p->getAll());
@@ -52,12 +52,5 @@ class Home extends Controller
         require 'application/views/home/index.php';
         require 'application/views/_templates/login_popup.php';
         require 'application/views/_templates/footer.php';
-    }
-    public function signup()
-    {
-        simpleLog("signup called");
-        // load views. within the views we can echo out $songs and $amount_of_songs easily
-        pageHeadTag("Signup");
-        require_once 'application/views/home/signup.php';
     }
 }

@@ -10,6 +10,6 @@
                 <button class="nav-btn" onclick="pop()">login</button>
                 <!-- </a> -->
             </span>
-            <span><a href="<?= URL ?>home/signup"><button class="nav-btn">signup</button></a></span>
+            <span><a href="<?= URL ?>signup"><button class="nav-btn">signup</button></a></span>
         </nav>
     </header>
