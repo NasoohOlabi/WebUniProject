@@ -52,14 +52,14 @@ class BaseModel
      */
     public function getById($id)
     {
-        $sql = "SELECT * FROM " . $this->table . " WHERE id = :table_id";
+        $schemaClass = get_class($this->table);
+        $result = $this->select([], ["$this->table"], ['id' => $id]);
 
-        simpleLog('Running : "' . $sql . '"');
+        if (count($result) == 0) {
+            throw new Exception("id $id doesn't exist");
+        }
 
-        $query = $this->db->prepare($sql);
-        $query->execute(array(':table_id' => $id));
-        $arr = $query->fetchAll();
-        return (count($arr) == 0) ? new Either\Err("id $id doesn't exist") : new Either\Result($arr[0]);
+        return  $result[0];
     }
 
     /**
