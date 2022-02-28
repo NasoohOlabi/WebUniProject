@@ -23,15 +23,16 @@ class SignUp extends Controller
 
         $new_user = $this->loadModel('UserModel');
 
+        // <pre> tag is great for debugging! :)
+        echo '<pre>';
 
 
-
-        $first_name = $_POST['first_name'];
-        $last_name = $_POST['last_name'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        $password = $_POST['password'];
-        $account_type = $_POST['AccountType'];
+        $first_name = htmlentities($_POST['first_name']);
+        $last_name =  htmlentities($_POST['last_name']);
+        $email = htmlentities($_POST['email']);
+        $phone = htmlentities($_POST['phone']);
+        $password = htmlentities($_POST['password']);
+        $account_type = htmlentities($_POST['AccountType']);
 
         $profileImg = (isset($_POST['ProfileImg']) && $_POST['ProfileImg'] != '') ? $_POST['ProfileImg'] : null;
 
@@ -53,6 +54,7 @@ class SignUp extends Controller
         var_dump($u);
 
         echo $new_user->userIsFound($email);
+        echo '</pre>';
 
         //TODO: check if user already exists... then add to db if not
 

@@ -13,13 +13,14 @@ class UserModel extends BaseModel
     {
         $username = explode('@', $email)[0];
 
-        $sql = "SELECT * FROM " . $this->table . " WHERE username = " . $username;
+        return ($this->count('User', [], [User::username => $username]) > 0);
+        // $sql = "SELECT * FROM " . $this->table . " WHERE username = " . $username;
 
-        simpleLog('Running : "' . $sql . '"');
+        // simpleLog('UserModel::userIsFound Running : "' . $sql . '"');
 
-        $test = $this->select([], 'User', [User::username => $username]);
+        // $test = $this->select([], 'User', [User::username => $username]);
 
-        print_r($test);
+        // print_r($test);
 
         // $query = $this->db->prepare($sql);
         // $query->execute();
