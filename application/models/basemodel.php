@@ -212,8 +212,11 @@ class BaseModel
             return $acc;
         };
         $answer = ['prepare' => [], 'execute' => []];
-        if (BaseModel::_is_term($unsafe_conditions))
-            return $f($answer, BaseModel::_parse_unsafe_term($unsafe_conditions));
+        if (BaseModel::_is_term($unsafe_conditions)) {
+            $answer = $f($answer, BaseModel::_parse_unsafe_term($unsafe_conditions));
+            $answer['prepare'] = '(' . implode(") AND (", $answer['prepare']) . ')';
+            return $answer;
+        }
 
         foreach ($unsafe_conditions as $value_1d) {
             if (BaseModel::_is_term($value_1d)) {
