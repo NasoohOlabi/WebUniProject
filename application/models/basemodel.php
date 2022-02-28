@@ -304,7 +304,11 @@ class BaseModel
             }, $lines) :
             new Exception("No Exams available");
     }
-    public function select(array $columns, string $schemaClass, $safe_conditions = null, array $unsafe_conditions = null, array $Literal_SQL_Columns = null)
+    public function select(array $columns, string $schemaClass, $safe_conditions = null, array $unsafe_conditions = null)
+    {
+        return $this->__select($columns, $schemaClass, $safe_conditions, $unsafe_conditions);
+    }
+    private function __select(array $columns, string $schemaClass, $safe_conditions = null, array $unsafe_conditions = null, array $Literal_SQL_Columns = null)
     {
         if ($Literal_SQL_Columns != null && isset($Literal_SQL_Columns['overwrite'])) {
             $columns_string = $Literal_SQL_Columns['overwrite'];
@@ -364,7 +368,7 @@ class BaseModel
     public function count($schemaClass = null, $safe_conditions = null, array $unsafe_conditions = null)
     {
         if ($schemaClass == null) $schemaClass = $this->table;
-        $lines = $this->select([], $schemaClass, $safe_conditions, $unsafe_conditions, ['overwrite' => 'COUNT(*) as num', 'stdClass' => true]);
+        $lines = $this->__select([], $schemaClass, $safe_conditions, $unsafe_conditions, ['overwrite' => 'COUNT(*) as num', 'stdClass' => true]);
         return $lines[0]->num * 1; // * 1 for type conversion
     }
 }
