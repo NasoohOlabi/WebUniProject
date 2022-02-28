@@ -34,6 +34,7 @@ class Home extends Controller
         // print_r([1 => 1, 1 => 2]);
         // var_dump($p->count('Role_has_Permission', [[1 => 2], [1 => 3], [3 => 2], [4 => 5]]));
         // $p->insert(array("name" => "admin"));
+        // var_dump(md5("afjk;lsdjlafkjssssssssssssssssssssssssssssssssssk"));
         // print("after");
         // var_dump($p->getAll());
         // var_dump([[1, 2] => [2, 3]]);
