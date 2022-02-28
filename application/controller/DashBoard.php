@@ -71,7 +71,7 @@ class DashBoard extends Controller
 
 
 
-        // $p = $this->loadModel('QuestionModel');
+        $bm = $this->loadModel('RoleModel');
         echo "<pre>";
         // // print("before");
         // var_dump($p->questionDetails(1));
@@ -107,13 +107,17 @@ class DashBoard extends Controller
         require 'application/views/_templates/navbar.php';
         require 'application/views/_templates/aside.php';
         // require ''
-        echo '<div id="main-content" class="inlineBlock">';
+        echo '<div id="main-content" class="inlineBlock"><style>
+        .text-input {
+            width: 100%;
+        }
+    </style>';
         foreach ([
             'Question', 'Role', 'Exam', 'Subject', 'Topic', 'Question',
             'Choice', 'Permission', 'Role_has_Permission', 'User'
         ] as $val) {
             $q = new $val();
-            getThisFromForm($q);
+            getThisFromForm($q, $bm);
         }
         echo '</div></div>';
 

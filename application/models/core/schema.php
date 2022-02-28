@@ -3,7 +3,8 @@
 function properties_exists($stdClass, array $properties, string $prefix)
 {
     foreach ($properties as $property) {
-        if (!property_exists($stdClass, $prefix . $property))
+        // if (!property_exists($stdClass, $prefix . $property))
+        if (!isset($stdClass->{$prefix . $property}))
             return false;
     }
     return true;

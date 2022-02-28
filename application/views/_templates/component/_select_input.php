@@ -5,7 +5,17 @@
         </option>
         <?php
         foreach ($options as $opt) {
-            echo "<option value=\"$opt\">{$ucfirst($opt)}</option>";
+            $v1 = '';
+            $v2 = '';
+            foreach ($opt as $v) {
+                if ($v1 == '')
+                    $v1 = $v;
+                elseif ($v2 == '') {
+                    $v2 = $v;
+                    break;
+                }
+            }
+            echo "<option value=\"$v1\">" . ucfirst($v2) . "</option>";
         }
         ?>
     </select>

@@ -6,7 +6,7 @@
             if ($func == 'text') {
                 text_input($val);
             } elseif ($func == 'select') {
-                select_input($val, [], str_replace("_id", "", ucfirst($val)));
+                select_input($val, $SELECT_OPTIONS[$val], str_replace("_id", "", ucfirst($val)));
             }
         }
         ?>

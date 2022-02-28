@@ -373,7 +373,12 @@ class BaseModel
         }
 
         $lines = $query->fetchAll();
-        if (!isset($Literal_SQL_Columns['stdClass']))
+        if (
+            !isset($Literal_SQL_Columns['stdClass'])
+            || (count($columns) > 0
+                && count($columns) < count($schemaClass::SQL_COLUMNS())
+            )
+        )
             return array_map(function ($args) use ($schemaClass) {
                 return new $schemaClass($args);
             }, $lines);
