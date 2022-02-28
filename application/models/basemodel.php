@@ -52,7 +52,7 @@ class BaseModel
      */
     public function getById($id)
     {
-        $result = $this->select([], ["$this->table"], ['id' => $id]);
+        $result = $this->select([], ["$this->table"], ["$this->table.id" => $id]);
 
         if (count($result) == 0) {
             throw new Exception("id $id doesn't exist");
@@ -279,7 +279,7 @@ class BaseModel
         if (!is_string($schemaClass)) throw new Exception("Invalid table name $schemaClass should be string.");
 
         if (is_array($columns) && count($columns) == 0)
-            $columns = "*";
+            $columns = $schemaClass::SQL_Columns();
 
         if ($conditions == null) {
             $sql = "SELECT $columns FROM $schemaClass;";
