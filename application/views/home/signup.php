@@ -43,9 +43,9 @@
                         <option value="" disabled selected hidden>
                             Account Type
                         </option>
-                        <option value="student">Student</option>
-                        <option value="teacher">Teacher</option>
-                        <option value="admin">Admin</option>
+                        <option value="2">Student</option>
+                        <option value="3">Teacher</option>
+                        <option value="1">Admin</option>
                     </select>
                 </div>
                 <div class="form-block">

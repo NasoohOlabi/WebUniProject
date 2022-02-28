@@ -48,12 +48,14 @@ class SignUp extends Controller
         $u->last_name = $last_name;
         $u->username = explode('@', $email)[0];
         $u->password = md5($password);
-        $u->role_id = 0;
+        $u->role_id = 1;
         $u->profile_picture = $profileImg;
 
         var_dump($u);
 
-        echo $new_user->userIsFound($email);
+        if (!$new_user->userIsFound($email)) {
+            $new_user->experimental_insert($u);
+        }
         echo '</pre>';
 
         //TODO: check if user already exists... then add to db if not
