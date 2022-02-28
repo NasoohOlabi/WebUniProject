@@ -61,7 +61,7 @@ class SignUp extends Controller
         $u->last_name = $last_name;
         $u->username = $username;
         $u->password = md5($password);
-        $u->role_id = 0;
+        $u->role_id = 1;
         $u->profile_picture = $profileImg;
 
         // var_dump($u);

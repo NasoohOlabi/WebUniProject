@@ -21,7 +21,7 @@ class Exam
     public int $number_of_questions;
     public int $duration;
     public int $subject_id;
-    public Subject $subject;
+    public ?Subject $subject;
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null)
@@ -84,7 +84,7 @@ class Topic
     public string $name;
     public string $description;
     public int $subject_id;
-    public Subject $subject;
+    public ?Subject $subject;
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -118,8 +118,8 @@ class Question
     public string $text;
     public int $number_of_choices;
     public int $topic_id;
-    public Topic $topic;
-    public array $choices;
+    public ?Topic $topic;
+    public ?array $choices;
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -240,8 +240,8 @@ class Role_has_Permission
     public int $id;
     public int $role_id;
     public int $permission_id;
-    public Role $role;
-    public Permission $permission;
+    public ?Role $role;
+    public ?Permission $permission;
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -281,7 +281,7 @@ class User
     public string $password;
     public string $first_name;
     public string $last_name;
-    public string $middle_name;
+    public ?string $middle_name;
     public $profile_picture;
     public int $role_id;
 

@@ -123,16 +123,28 @@ class BaseModel
         $schemaClass = get_class($object);
         $columns = $schemaClass::SQL_Columns();
 
-        unset($columns['id']); // it's auto incremented
-
-        $values = implode(", ", array_map(function ($column_name) use ($object) {
-            return $object->$column_name;
-        }, $columns));
+        unset($columns[0]); // it's auto incremented
+        $values =  array_map(function ($column_name) use ($object) {
+            if (property_exists($object, $column_name) && isset($object->{$column_name}))
+                return $object->{$column_name};
+            else
+                return null;
+        }, $columns);
+        foreach ($columns as $key => $value) {
+            if ($values[$key] === null) {
+                unset($columns[$key]);
+                unset($values[$key]);
+            }
+        }
         $columns_names = implode(", ", $columns);
+        $question_marks = implode(", ", array_map(function ($arg) {
+            return "?";
+        }, $columns));
 
-        $sql = "INSERT INTO `$schemaClass` ($columns_names) VALUES ($values)";
+        $sql = "INSERT INTO `$schemaClass` ($columns_names) VALUES ($question_marks)";
         simpleLog('BaseModel::experimental_insert Running : "' . $sql . '"');
-        return $this->db->prepare($sql)->execute();
+        simpleLog("bindings " . json_encode($values));
+        return $this->db->prepare($sql)->execute(array_values($values));
     }
     private static function _is_term($x)
     {
