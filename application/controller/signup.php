@@ -27,6 +27,7 @@ class SignUp extends Controller
         echo '<pre>';
 
 
+
         $first_name = htmlentities($_POST['first_name']);
         $last_name =  htmlentities($_POST['last_name']);
         $email = htmlentities($_POST['email']);
@@ -53,9 +54,24 @@ class SignUp extends Controller
 
         var_dump($u);
 
-        if (!$new_user->userIsFound($email)) {
-            $new_user->experimental_insert($u);
-        }
+        // this is working now 
+        // if (!$new_user->userIsFound($email)) {
+        //     $new_user->experimental_insert($u);
+        // }
+
+        $arr = [];
+
+        $arr['first_name'] = $first_name;
+        $arr['last_name'] = $last_name;
+        $arr['username'] = explode('@', $email)[0];
+        $arr['password'] = md5($password);
+        $arr['role_id'] = 0;
+        $arr['profile_picture'] = '1';
+        $arr['middle_name'] = '';
+
+        var_dump($new_user->insert($arr));
+
+        var_dump($new_user->userIsFound($email));
         echo '</pre>';
 
         //TODO: check if user already exists... then add to db if not
