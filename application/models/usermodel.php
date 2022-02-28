@@ -12,23 +12,42 @@ class UserModel extends BaseModel
     function userIsFound($email)
     {
         $username = explode('@', $email)[0];
-
         return ($this->count('User', [], [User::username => $username]) > 0);
-        // $sql = "SELECT * FROM " . $this->table . " WHERE username = " . $username;
+    }
 
-        // simpleLog('UserModel::userIsFound Running : "' . $sql . '"');
+    function insertUser($first_name, $last_name, $username, $password, $role_id, $profile_picture)
+    {
 
-        // $test = $this->select([], 'User', [User::username => $username]);
+        $password = md5($password);
+        $sql = "INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `profile_picture`, `role_id`) VALUES (NULL, '$username', '$password', '$first_name', '$last_name', '', NULL, $role_id);";
 
-        // print_r($test);
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        $arr = $query->fetchAll();
 
-        // $query = $this->db->prepare($sql);
-        // $query->execute();
-        // $arr = $query->fetchAll();
+        if ($arr) {
+            $_COOKIE['loggedIn'] = true;
+            $_COOKIE['username'] = $username;
+        }
 
-        // if ($arr)
-        //     return true;
+        return $arr;
+    }
 
-        // return false;
+    function validateUser($email, $password)
+    {
+        $password = md5($password);
+        $username = explode('@', $email)[0];
+
+        $sql = "SELECT * FROM `user` WHERE `username` = '$username' AND `password` = '$password';";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        $arr = $query->fetchAll();
+        //var_dump($arr);
+        if (sizeof($arr) == 1) {
+            $_COOKIE['loggedIn'] = true;
+            $_COOKIE['username'] = $username;
+            return true;
+        }
+        return false;
     }
 }

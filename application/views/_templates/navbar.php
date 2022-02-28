@@ -9,8 +9,21 @@
                 <button class="nav-btn" onclick="pop()">login</button>
             </span>
             <span><a href="<?= URL ?>signup"><button class="nav-btn">signup</button></a></span> -->
-            <h5 class="welcome">
+
+            <?php
+            if (isset($_COOKIE['loggedIn'])) {
+                echo ('<h5 class="welcome">
+                Welcome, you\'re logged in
+            </h5>');
+            } else {
+                echo ('<span>
+                <button class="nav-btn" onclick="pop()">login</button>
+            </span>
+            <span><a href="' . URL . 'signup"><button class="nav-btn">signup</button></a></span>');
+            }
+            ?>
+            <!-- <h5 class="welcome">
                 Welcome, admin
-            </h5>
+            </h5> -->
         </nav>
     </header>

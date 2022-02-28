@@ -7,7 +7,7 @@
             <i class="fas fa-user-circle user-icon"></i>
         </div>
 
-        <form action="" method="post" class="login-form">
+        <form action="<?= URL ?>signup/validate" method="post" class="login-form">
             <div class="form-block">
                 <input type="text" name="email" id="email" class="text-input valid-input" placeholder="Email" required />
                 <small class="invalid-text">
