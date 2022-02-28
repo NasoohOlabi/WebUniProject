@@ -32,12 +32,25 @@ class SignUp extends Controller
         $phone = $_POST['phone'];
         $password = $_POST['password'];
         $account_type = $_POST['AccountType'];
-        $profileImg = $_POST['ProfileImg'];
+
+        $profileImg = (isset($_POST['ProfileImg']) && $_POST['ProfileImg'] != '') ? $_POST['ProfileImg'] : null;
 
         $data = [$first_name, $last_name, $email, $phone, $password, $account_type, $profileImg];
 
+        echo $profileImg;
         echo 'SIGNUP HERE';
         print_r($data);
+
+        $u = new User();
+
+        $u->first_name = $first_name;
+        $u->last_name = $last_name;
+        $u->username = explode('@', $email)[0];
+        $u->password = md5($password);
+        $u->role_id = 0;
+        $u->profile_picture = $profileImg;
+
+        var_dump($u);
 
         echo $new_user->userIsFound($email);
 

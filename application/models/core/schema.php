@@ -294,8 +294,6 @@ class User
                     $this->$col = $stdClass->{$prefix . $col};
                 }
             }
-            $this->role = new Role($stdClass);
-            $this->permission = new Permission($stdClass);
         }
     }
     static function SQL_Columns($prefix = "")
