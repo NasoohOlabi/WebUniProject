@@ -182,8 +182,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mnu`.`user` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `username` VARCHAR(45) NULL,
-  `password` VARCHAR(32) NULL,
+  `username` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(32) NOT NULL,
   `first_name` VARCHAR(45) NOT NULL,
   `last_name` VARCHAR(45) NOT NULL,
   `middle_name` VARCHAR(45) NOT NULL,
