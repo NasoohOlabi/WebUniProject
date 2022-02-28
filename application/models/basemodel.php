@@ -278,9 +278,9 @@ class BaseModel
     {
         if (!is_string($schemaClass)) throw new Exception("Invalid table name $schemaClass should be string.");
 
-        if (is_array($columns) && count($columns) == 0)
-            $columns = $schemaClass::SQL_Columns();
-
+        if (is_array($columns) && count($columns) == 0) {
+            $columns = implode(', ', $columns);
+        }
         if ($conditions == null) {
             $sql = "SELECT $columns FROM $schemaClass;";
         } else {
