@@ -39,6 +39,8 @@ class SignUp extends Controller
         echo 'SIGNUP HERE';
         print_r($data);
 
+        echo $new_user->userIsFound($email);
+
         //TODO: check if user already exists... then add to db if not
 
         // if ($new_user->userIsFound()) {

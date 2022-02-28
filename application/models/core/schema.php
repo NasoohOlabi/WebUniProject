@@ -184,7 +184,7 @@ class Permission
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
-            $cols = Choice::SQL_Columns();
+            $cols = Permission::SQL_Columns();
             if (properties_exists($stdClass, $cols, $prefix)) {
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};
@@ -213,7 +213,7 @@ class Role
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
-            $cols = Choice::SQL_Columns();
+            $cols = Role::SQL_Columns();
             if (properties_exists($stdClass, $cols, $prefix)) {
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};
@@ -245,7 +245,50 @@ class Role_has_Permission
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
-            $cols = Choice::SQL_Columns();
+            $cols = Role_has_Permission::SQL_Columns();
+            if (properties_exists($stdClass, $cols, $prefix)) {
+                foreach ($cols as $col) {
+                    $this->$col = $stdClass->{$prefix . $col};
+                }
+            }
+            $this->role = new Role($stdClass);
+            $this->permission = new Permission($stdClass);
+        }
+    }
+    static function SQL_Columns($prefix = "")
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_keys($oClass->getConstants());
+        return ($prefix == "") ? $constants : array_map(function ($args) use ($prefix) {
+            return $prefix . $args;
+        }, $constants);
+    }
+}
+
+class User
+{
+    const id = 'user.id';
+    const username = 'user.username';
+    const password = 'user.password';
+    const first_name = 'user.first_name';
+    const last_name = 'user.first_name';
+    const middle_name = 'user.middle_name';
+    const profile_picture = 'user.profile_picture';
+    const role_id = 'user.role_id';
+    // this is what we'll inter act with the rest is just jargon
+    public int $id;
+    public string $username;
+    public string $password;
+    public string $first_name;
+    public string $last_name;
+    public string $middle_name;
+    public $profile_picture;
+    public int $role_id;
+
+    function __construct($stdClass = null, $prefix = "")
+    {
+        if ($stdClass != null) {
+            $cols = User::SQL_Columns();
             if (properties_exists($stdClass, $cols, $prefix)) {
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};

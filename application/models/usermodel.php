@@ -5,7 +5,7 @@ class UserModel extends BaseModel
 {
     function __construct($db)
     {
-        parent::__construct($db, "users");
+        parent::__construct($db, "user");
         simpleLog("USERMODEL");
     }
 
@@ -17,13 +17,17 @@ class UserModel extends BaseModel
 
         simpleLog('Running : "' . $sql . '"');
 
-        $query = $this->db->prepare($sql);
-        $query->execute();
-        $arr = $query->fetchAll();
+        $test = $this->select([], 'User', [User::username => $username]);
 
-        if ($arr)
-            return true;
+        print_r($test);
 
-        return false;
+        // $query = $this->db->prepare($sql);
+        // $query->execute();
+        // $arr = $query->fetchAll();
+
+        // if ($arr)
+        //     return true;
+
+        // return false;
     }
 }

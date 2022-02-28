@@ -5,11 +5,12 @@
             <img src="<?= URL ?>public/img/logo/MNU-logos_black.png" id="logo-img" />
         </a>
         <nav>
-            <span>
-                <!-- <a href="login.html"> -->
+            <!-- <span>
                 <button class="nav-btn" onclick="pop()">login</button>
-                <!-- </a> -->
             </span>
-            <span><a href="<?= URL ?>signup"><button class="nav-btn">signup</button></a></span>
+            <span><a href="<?= URL ?>signup"><button class="nav-btn">signup</button></a></span> -->
+            <h5 class="welcome">
+                Welcome, admin
+            </h5>
         </nav>
     </header>
