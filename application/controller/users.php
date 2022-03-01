@@ -2,7 +2,7 @@
 require_once 'application/views/_templates/header.php';
 require_once './application/libs/util/log.php';
 require_once './application/models/core/schema.php';
-
+require_once 'application/views/_templates/user_table.php';
 
 /**
  * Class Home
@@ -20,7 +20,12 @@ class Users extends Controller
      */
     public function index()
     {
-        return;
+
+        $user = $this->loadModel('UserModel');
+        $users  = $user->select([], 'User');
+        foreach ($users as $schemaClass) {
+            user_table($schemaClass);
+        }
     }
 
     public function signup()

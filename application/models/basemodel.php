@@ -379,9 +379,12 @@ class BaseModel
                 && count($columns) < count($schemaClass::SQL_COLUMNS())
             )
         )
-            return array_map(function ($args) use ($schemaClass) {
-                return new $schemaClass($args);
-            }, $lines);
+            return array_map(
+                function ($args) use ($schemaClass) {
+                    return new $schemaClass($args);
+                },
+                $lines
+            );
         else
             return $lines;
     }

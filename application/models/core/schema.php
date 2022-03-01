@@ -2,9 +2,9 @@
 
 function properties_exists($stdClass, array $properties, string $prefix)
 {
+    // unset($properties[6]);
     foreach ($properties as $property) {
-        // if (!property_exists($stdClass, $prefix . $property))
-        if (!isset($stdClass->{$prefix . $property}))
+        if (!property_exists($stdClass, $prefix . $property))
             return false;
     }
     return true;
@@ -27,7 +27,10 @@ class Exam extends Table
     public int $duration;
     public int $subject_id;
     public ?Subject $subject;
-    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function get_CRUD_Terms()
+    {
+        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    }
     public function string_identifying_columns(string $prefix)
     {
         return [1, 2];
@@ -62,7 +65,10 @@ class Subject extends Table
     public int $id;
     public string $name;
     public string $description;
-    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function get_CRUD_Terms()
+    {
+        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    }
     public function string_identifying_columns(string $prefix)
     {
         return [1];
@@ -100,7 +106,10 @@ class Topic extends Table
     public string $description;
     public int $subject_id;
     public ?Subject $subject;
-    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function get_CRUD_Terms()
+    {
+        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    }
     public function string_identifying_columns(string $prefix)
     {
         return [1];
@@ -140,7 +149,10 @@ class Question extends Table
     public int $topic_id;
     public ?Topic $topic;
     public ?array $choices;
-    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function get_CRUD_Terms()
+    {
+        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    }
     public function string_identifying_columns(string $prefix)
     {
         return [1];
@@ -178,7 +190,10 @@ class Choice extends Table
     public string $text;
     public int $is_correct;
     public int $question_id;
-    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function get_CRUD_Terms()
+    {
+        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    }
     public function string_identifying_columns(string $prefix)
     {
         return [1];
@@ -211,7 +226,10 @@ class Permission extends Table
     // this is what we'll inter act with the rest is just jargon
     public int $id;
     public string $name;
-    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function get_CRUD_Terms()
+    {
+        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    }
     public function string_identifying_columns(string $prefix)
     {
         return [1];
@@ -245,7 +263,10 @@ class Role extends Table
     // this is what we'll inter act with the rest is just jargon
     public int $id;
     public string $name;
-    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function get_CRUD_Terms()
+    {
+        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    }
     public function string_identifying_columns(string $prefix)
     {
         return [1];
@@ -282,7 +303,10 @@ class Role_has_Permission extends Table
     public int $permission_id;
     public ?Role $role;
     public ?Permission $permission;
-    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function get_CRUD_Terms()
+    {
+        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    }
     public function string_identifying_columns(string $prefix)
     {
         return [1, 2];
@@ -330,7 +354,11 @@ class User extends Table
     public $profile_picture;
     public int $role_id;
 
-    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function get_CRUD_Terms()
+    {
+        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    }
+
     public function string_identifying_columns(string $prefix)
     {
         return [1];
@@ -339,6 +367,8 @@ class User extends Table
     {
         if ($stdClass != null) {
             $cols = User::SQL_Columns();
+            unset($cols[6]);
+            unset($cols[5]);
             if (properties_exists($stdClass, $cols, $prefix)) {
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};

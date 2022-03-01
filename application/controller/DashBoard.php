@@ -35,7 +35,7 @@ class DashBoard extends Controller
         // var_dump($p->count('Role_has_Permission', [[1 => 2], [1 => 3], [3 => 2], [4 => 5]]));
         // $p->insert(array("name" => "admin"));
         // var_dump(md5("afjk;lsdjlafkjssssssssssssssssssssssssssssssssssk"));
-        var_dump("hi");
+        // var_dump("hi");
         // require_once 'application/views/_templates/form.php';
         // $q = new Question();
         // print("after");
