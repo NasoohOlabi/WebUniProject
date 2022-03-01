@@ -24,9 +24,9 @@ class Users extends Controller
         pageHeadTag('Users List');
         $user = $this->loadModel('UserModel');
         $users  = $user->select([], 'User');
-        foreach ($users as $schemaClass) {
-            user_table($schemaClass);
-        }
+        user_table($users);
+        // foreach ($users as $schemaClass) {
+        // }
     }
 
     public function signup()
