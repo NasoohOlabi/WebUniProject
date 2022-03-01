@@ -1,6 +1,8 @@
 <?php
-
 require_once 'application/views/_templates/header.php';
+require_once './application/libs/util/log.php';
+require_once './application/models/core/schema.php';
+
 
 /**
  * Class Home
@@ -10,10 +12,20 @@ require_once 'application/views/_templates/header.php';
  * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
  *
  */
-class SignUp extends Controller
+class Users extends Controller
 {
+    /**
+     * PAGE: index
+     * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
+     */
     public function index()
     {
+        return;
+    }
+
+    public function signup()
+    {
+        session_start();
         pageHeadTag("Signup");
         require_once 'application/views/home/signup.php';
     }
@@ -88,31 +100,20 @@ class SignUp extends Controller
             if ($new_user->insertUser($first_name, $last_name, $username, $password, $role_id, $profileImg)) {
             echo "User Added";
         }
-
-        //TODO: check if user already exists... then add to db if not
-
-        // if ($new_user->userIsFound()) {
-        //     echo "User already exists";
-        // } else {
-        //     echo "New User";
-        // }
-
-
     }
 
     public function validate()
     {
-
+        session_start();
         $new_user = $this->loadModel('UserModel');
 
         $email = htmlentities($_POST['email']);
         $password = htmlentities($_POST['password']);
 
-
+        echo "got the user";
 
         if ($new_user->validateUser($email, $password)) {
-            echo "Logged In... Welcome " . explode('@', $email)[0];
-            print_r($_COOKIE);
+            header("Location:" . URL);
         } else {
             echo "Login failed";
         }

@@ -5,25 +5,19 @@
             <img src="<?= URL ?>public/img/logo/MNU-logos_black.png" id="logo-img" />
         </a>
         <nav>
-            <!-- <span>
-                <button class="nav-btn" onclick="pop()">login</button>
-            </span>
-            <span><a href="<?= URL ?>signup"><button class="nav-btn">signup</button></a></span> -->
 
             <?php
-            if (isset($_COOKIE['loggedIn'])) {
+            if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == 'true') {
                 echo ('<h5 class="welcome">
                 Welcome, you\'re logged in
             </h5>');
             } else {
                 echo ('<span>
-                <button class="nav-btn" onclick="pop()">login</button>
+                <button class="nav-btn" onclick="pop()">Login</button>
             </span>
-            <span><a href="' . URL . 'signup"><button class="nav-btn">signup</button></a></span>');
+            <span><a href="' . URL . 'users\signup"><button class="nav-btn">Signup</button></a></span>');
             }
             ?>
-            <!-- <h5 class="welcome">
-                Welcome, admin
-            </h5> -->
+
         </nav>
     </header>

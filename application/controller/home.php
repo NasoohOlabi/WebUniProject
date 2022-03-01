@@ -21,7 +21,7 @@ class Home extends Controller
     {
         // debug message to show where you are, just for the demo
         // echo 'Message from Controller: You are in the controller home, using the method index()';
-
+        session_start();
         simpleLog("index called");
 
 

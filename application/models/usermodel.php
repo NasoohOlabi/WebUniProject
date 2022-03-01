@@ -26,8 +26,8 @@ class UserModel extends BaseModel
         $arr = $query->fetchAll();
 
         if ($arr) {
-            $_COOKIE['loggedIn'] = true;
-            $_COOKIE['username'] = $username;
+            $_SESSION['loggedIn'] = true;
+            $_SESSION['username'] = $username;
         }
 
         return $arr;
@@ -42,10 +42,9 @@ class UserModel extends BaseModel
         $query = $this->db->prepare($sql);
         $query->execute();
         $arr = $query->fetchAll();
-        //var_dump($arr);
-        if (sizeof($arr) == 1) {
-            $_COOKIE['loggedIn'] = true;
-            $_COOKIE['username'] = $username;
+        if (count($arr) == 1) {
+            $_SESSION['loggedIn'] = true;
+            $_SESSION['username'] = $username;
             return true;
         }
         return false;
