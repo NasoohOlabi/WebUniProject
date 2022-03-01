@@ -1,4 +1,4 @@
-<table>
+<table class=".table">
     <?php
 
     require '__user_header.php';
