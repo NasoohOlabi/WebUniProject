@@ -7,6 +7,20 @@ function endsWith($haystack, $needle)
     $length = strlen($needle);
     return $length > 0 ? substr($haystack, -$length) === $needle : true;
 }
+function stdclastoidstirng($stdClass)
+{
+    $columns = $stdClass::SQL_COLUMNS();
+    $wanted_indexes = $stdClass->string_identifying_columns('');
+    $wanted_names = array_map(function ($i) use ($columns) {
+        return $columns[$i];
+    }, $wanted_indexes);
+    $answer = [];
+    foreach ($wanted_names as $prop) {
+        $answer[] = $stdClass->$prop;
+    }
+    $answer = implode(' ', $answer);
+    return $answer;
+}
 function getThisFromForm($cls, $bm)
 {
     //FIXME: use prepare in basemodel
@@ -20,7 +34,9 @@ function getThisFromForm($cls, $bm)
             $inputs[$field] = "select";
             // not solid nor Layered
             $schemaClass = ucfirst(substr($field, 0, strlen($field) - 3));
-            $SELECT_OPTIONS[$field] = $bm->select([], $schemaClass);
+            $v = $bm->select([], $schemaClass);
+            $v = array_map('stdclastoidstirng', $v);
+            $SELECT_OPTIONS[$field] = $v;
         } else
             $inputs[$field] = 'text';
     }

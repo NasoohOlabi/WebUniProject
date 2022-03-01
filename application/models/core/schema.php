@@ -10,8 +10,12 @@ function properties_exists($stdClass, array $properties, string $prefix)
     return true;
 }
 
-
-class Exam
+abstract class Table
+{
+    abstract public function string_identifying_columns(string $prefix);
+    public array $CRUD_Terms;
+}
+class Exam extends Table
 {
     const id = "exam.id";
     const number_of_questions = "exam.number_of_questions";
@@ -23,6 +27,11 @@ class Exam
     public int $duration;
     public int $subject_id;
     public ?Subject $subject;
+    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function string_identifying_columns(string $prefix)
+    {
+        return [1, 2];
+    }
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null)
@@ -34,7 +43,7 @@ class Exam
             $this->subject = new Subject($stdClass, "subject_");
         }
     }
-    static function SQL_Columns($prefix = "")
+    static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -44,7 +53,7 @@ class Exam
     }
 }
 
-class Subject
+class Subject extends Table
 {
     const id = 'subject.id';
     const name = 'subject.name';
@@ -53,6 +62,11 @@ class Subject
     public int $id;
     public string $name;
     public string $description;
+    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function string_identifying_columns(string $prefix)
+    {
+        return [1];
+    }
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -64,7 +78,7 @@ class Subject
             }
         }
     }
-    static function SQL_Columns($prefix = "")
+    static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -74,7 +88,7 @@ class Subject
     }
 }
 
-class Topic
+class Topic extends Table
 {
     const id = 'topic.id';
     const name = 'topic.name';
@@ -86,6 +100,11 @@ class Topic
     public string $description;
     public int $subject_id;
     public ?Subject $subject;
+    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function string_identifying_columns(string $prefix)
+    {
+        return [1];
+    }
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -98,7 +117,7 @@ class Topic
             $this->subject = new Subject($stdClass, "subject_");
         }
     }
-    static function SQL_Columns($prefix = "")
+    static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -108,7 +127,7 @@ class Topic
     }
 }
 
-class Question
+class Question extends Table
 {
     const id = 'question.id';
     const text = 'question.text';
@@ -121,6 +140,11 @@ class Question
     public int $topic_id;
     public ?Topic $topic;
     public ?array $choices;
+    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function string_identifying_columns(string $prefix)
+    {
+        return [1];
+    }
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -133,7 +157,7 @@ class Question
             $this->topic = new Topic($stdClass, "topic_");
         }
     }
-    static function SQL_Columns($prefix = "")
+    static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -143,7 +167,7 @@ class Question
     }
 }
 
-class Choice
+class Choice extends Table
 {
     const id = 'choice.id';
     const text = 'choice.text';
@@ -154,6 +178,11 @@ class Choice
     public string $text;
     public int $is_correct;
     public int $question_id;
+    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function string_identifying_columns(string $prefix)
+    {
+        return [1];
+    }
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -165,7 +194,7 @@ class Choice
             }
         }
     }
-    static function SQL_Columns($prefix = "")
+    static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -175,13 +204,18 @@ class Choice
     }
 }
 
-class Permission
+class Permission extends Table
 {
     const id = 'permission.id';
     const name = 'permission.name';
     // this is what we'll inter act with the rest is just jargon
     public int $id;
     public string $name;
+    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function string_identifying_columns(string $prefix)
+    {
+        return [1];
+    }
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -193,7 +227,7 @@ class Permission
             }
         }
     }
-    static function SQL_Columns($prefix = "")
+    static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -204,13 +238,18 @@ class Permission
 }
 
 
-class Role
+class Role extends Table
 {
     const id = 'role.id';
     const name = 'role.name';
     // this is what we'll inter act with the rest is just jargon
     public int $id;
     public string $name;
+    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function string_identifying_columns(string $prefix)
+    {
+        return [1];
+    }
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -222,7 +261,7 @@ class Role
             }
         }
     }
-    static function SQL_Columns($prefix = "")
+    static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -232,7 +271,7 @@ class Role
     }
 }
 
-class Role_has_Permission
+class Role_has_Permission extends Table
 {
     const id = 'role_has_permission.id';
     const role_id = 'role_has_permission.role_id';
@@ -243,6 +282,11 @@ class Role_has_Permission
     public int $permission_id;
     public ?Role $role;
     public ?Permission $permission;
+    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function string_identifying_columns(string $prefix)
+    {
+        return [1, 2];
+    }
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -256,7 +300,7 @@ class Role_has_Permission
             $this->permission = new Permission($stdClass);
         }
     }
-    static function SQL_Columns($prefix = "")
+    static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -266,7 +310,7 @@ class Role_has_Permission
     }
 }
 
-class User
+class User extends Table
 {
     const id = 'user.id';
     const username = 'user.username';
@@ -286,6 +330,11 @@ class User
     public $profile_picture;
     public int $role_id;
 
+    public array $CRUD_Terms = ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+    public function string_identifying_columns(string $prefix)
+    {
+        return [1];
+    }
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -297,7 +346,7 @@ class User
             }
         }
     }
-    static function SQL_Columns($prefix = "")
+    static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
