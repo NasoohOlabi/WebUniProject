@@ -27,28 +27,6 @@ class DashBoard extends Controller
 
 
         $p = $this->loadModel('QuestionModel');
-        echo "<pre>";
-        // // print("before");
-        // var_dump($p->questionDetails(1));
-        // [[1=>2],[[1=>2],[3=>4]]]
-        // print_r([1 => 1, 1 => 2]);
-        // var_dump($p->count('Role_has_Permission', [[1 => 2], [1 => 3], [3 => 2], [4 => 5]]));
-        // $p->insert(array("name" => "admin"));
-        // var_dump(md5("afjk;lsdjlafkjssssssssssssssssssssssssssssssssssk"));
-        // var_dump("hi");
-        // require_once 'application/views/_templates/form.php';
-        // $q = new Question();
-        // print("after");
-        // var_dump($p->getAll());
-        // var_dump([[1, 2] => [2, 3]]);
-        // var_dump("3" * 5);
-        // getThisFromForm($q);
-        // $v = "22";
-        // $v = str_repeat($v, 3);
-        // var_dump($v);
-
-        echo "</pre>";
-
 
         // load views. within the views we can echo out $songs and $amount_of_songs easily
         pageHeadTag("index");
@@ -72,46 +50,15 @@ class DashBoard extends Controller
 
 
         $bm = $this->loadModel('RoleModel');
-        echo "<pre>";
-        // // print("before");
-        // var_dump($p->questionDetails(1));
-        // [[1=>2],[[1=>2],[3=>4]]]
-        // print_r([1 => 1, 1 => 2]);
-        // var_dump($p->count('Role_has_Permission', [[1 => 2], [1 => 3], [3 => 2], [4 => 5]]));
-        // $p->insert(array("name" => "admin"));
-        // var_dump(md5("afjk;lsdjlafkjssssssssssssssssssssssssssssssssssk"));
-        // var_dump("hi");
+
         require_once 'application/views/_templates/form.php';
-        // print("after");
-        // var_dump($p->getAll());
-        // var_dump([[1, 2] => [2, 3]]);
-        // var_dump("3" * 5);
-        // $v = "22";
-        // $v = str_repeat($v, 3);
-        // var_dump($v);
-        $f = function (array $acc, array $v) {
-            $acc['prepare'][] = $v['prepare'];
-            $acc['execute'][] = $v['execute'];
-            return $acc;
-        };
-        $answer = ['prepare' => [], 'execute' => []];
-        var_dump($answer);
-        var_dump($f($answer, ['prepare' => 'hi', 'execute' => 'bye']));
-        var_dump($answer);
-
-        echo "</pre>";
-
 
         // load views. within the views we can echo out $songs and $amount_of_songs easily
         pageHeadTag("index");
         require 'application/views/_templates/navbar.php';
         require 'application/views/_templates/aside.php';
         // require ''
-        echo '<div id="main-content" class="inlineBlock"><style>
-        .text-input {
-            width: 100%;
-        }
-    </style>';
+        echo '<div id="main-content" class="inlineBlock">X';
         foreach ([
             'Question', 'Role', 'Exam', 'Subject', 'Topic', 'Question',
             'Choice', 'Permission', 'Role_has_Permission', 'User'
