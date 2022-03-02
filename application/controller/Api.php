@@ -60,14 +60,42 @@ class Api extends Controller
             echo 'Operation Failed';
         }
     }
-    public function read(string $schemaClass = null, string $id)
+    public function read(string $schemaClass = null, string $id = null)
     {
-        // var_dump($schemaClass);
-        // var_dump($id);
-        $Model = $this->loadModel('BaseModel');
+        if ($schemaClass == null) {
+            // invalid request
+            http_response_code(400);
+            echo 'Operation Failed';
+            return;
+        }
         $id = intval($id);
+        function endsWith(string $haystack, string  $needle)
+        {
+            $length = strlen($needle);
+            return $length > 0 ? substr($haystack, -$length) === $needle : true;
+        }
+        $Model = $this->loadModel('BaseModel');
+        $get_dets_r = function (Table $answer) use ($Model, &$get_dets_r) {
+            foreach ($answer as $prop => $val) {
+                if (endsWith($prop, '_id')) {
+                    $subSchemaClass = substr($prop, 0, -3);
+                    $answer->{$subSchemaClass} =
+                        $Model->select([], $subSchemaClass, [], [$subSchemaClass::id => $val])[0];
+                    $answer->{$subSchemaClass} = $get_dets_r($answer->{$subSchemaClass});
+                }
+            }
+            return $answer;
+        };
         try {
-            var_dump($Model->select([], $schemaClass, [], [$schemaClass::id => $id]));
+            $answers = $Model->select([], $schemaClass, [], (($id != null) ? [$schemaClass::id => $id] : []));
+            $answers = array_map($get_dets_r, $answers);
+            // var_dump($answers);
+            if (count($answers) == 1)
+                echo json_encode($answers[0]);
+            elseif (count($answers) > 1)
+                echo json_encode($answers);
+            else
+                echo "id $id Not Found";
         } catch (\Throwable $e) {
             simpleLog('Caught exception: ' . $e->getMessage());
             http_response_code(400);

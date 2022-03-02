@@ -13,6 +13,7 @@ function properties_exists($stdClass, array $properties, string $prefix)
 
 abstract class Table
 {
+    public int $id;
     abstract public function string_identifying_columns(string $prefix = '');
     abstract public function get_CRUD_Terms();
     abstract static function SQL_Columns(string $prefix = "");
@@ -24,7 +25,6 @@ class Exam extends Table
     const duration = 'exam.duration';
     const subject_id = 'exam.subject_id';
     // this is what we'll inter act with the rest is just jargon
-    public int $id;
     public int $number_of_questions;
     public int $duration;
     public int $subject_id;
@@ -64,7 +64,6 @@ class Subject extends Table
     const name = 'subject.name';
     const description = 'subject.description';
     // this is what we'll inter act with the rest is just jargon
-    public int $id;
     public string $name;
     public string $description;
     public function get_CRUD_Terms()
@@ -102,7 +101,6 @@ class Topic extends Table
     const description = 'topic.description';
     const subject_id = 'topic.subject_id';
     // this is what we'll inter act with the rest is just jargon
-    public int $id;
     public string $name;
     public string $description;
     public int $subject_id;
@@ -143,7 +141,6 @@ class Question extends Table
     const number_of_choices = 'question.number_of_choices';
     const topic_id = 'question.topic_id';
     // this is what we'll inter act with the rest is just jargon
-    public int $id;
     public string $text;
     public int $number_of_choices;
     public int $topic_id;
@@ -165,8 +162,10 @@ class Question extends Table
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};
                 }
+                $tmp = new Topic($stdClass, "topic_");
+                if (isset($tmp->id))
+                    $this->topic = $tmp;
             }
-            $this->topic = new Topic($stdClass, "topic_");
         }
     }
     static function SQL_Columns(string $prefix = "")
@@ -185,7 +184,6 @@ class Choice extends Table
     const is_correct = 'choice.is_correct';
     const question_id = 'choice.question_id';
     // this is what we'll inter act with the rest is just jargon
-    public int $id;
     public string $text;
     public int $is_correct;
     public int $question_id;
@@ -222,7 +220,6 @@ class Permission extends Table
     const id = 'permission.id';
     const name = 'permission.name';
     // this is what we'll inter act with the rest is just jargon
-    public int $id;
     public string $name;
     public function get_CRUD_Terms()
     {
@@ -257,7 +254,6 @@ class Role extends Table
     const id = 'role.id';
     const name = 'role.name';
     // this is what we'll inter act with the rest is just jargon
-    public int $id;
     public string $name;
     public function get_CRUD_Terms()
     {
@@ -293,7 +289,6 @@ class Role_has_Permission extends Table
     const role_id = 'role_has_permission.role_id';
     const permission_id = 'role_has_permission.permission_id';
     // this is what we'll inter act with the rest is just jargon
-    public int $id;
     public int $role_id;
     public int $permission_id;
     public ?Role $role;
@@ -315,8 +310,12 @@ class Role_has_Permission extends Table
                     $this->$col = $stdClass->{$prefix . $col};
                 }
             }
-            $this->role = new Role($stdClass);
-            $this->permission = new Permission($stdClass);
+            $tmp = new Role($stdClass, 'role_');
+            if (isset($tmp->id))
+                $this->role = $tmp;
+            $tmp = new Permission($stdClass, 'permission_');
+            if (isset($tmp->id))
+                $this->permission = $tmp;
         }
     }
     static function SQL_Columns(string $prefix = "")
@@ -339,7 +338,6 @@ class User extends Table
     const profile_picture = 'user.profile_picture';
     const role_id = 'user.role_id';
     // this is what we'll inter act with the rest is just jargon
-    public int $id;
     public string $username;
     public string $password;
     public string $first_name;
