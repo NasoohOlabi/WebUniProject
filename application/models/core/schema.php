@@ -2,9 +2,10 @@
 
 function properties_exists($stdClass, array $properties, string $prefix)
 {
-    // unset($properties[6]);
+    if ($stdClass == null) return false;
     foreach ($properties as $property) {
         if (!property_exists($stdClass, $prefix . $property))
+            // if (!isset($stdClass->{$prefix . $property}))
             return false;
     }
     return true;
@@ -12,8 +13,9 @@ function properties_exists($stdClass, array $properties, string $prefix)
 
 abstract class Table
 {
-    abstract public function string_identifying_columns(string $prefix);
-    public array $CRUD_Terms;
+    abstract public function string_identifying_columns(string $prefix = '');
+    abstract public function get_CRUD_Terms();
+    abstract static function SQL_Columns(string $prefix = "");
 }
 class Exam extends Table
 {
@@ -29,9 +31,9 @@ class Exam extends Table
     public ?Subject $subject;
     public function get_CRUD_Terms()
     {
-        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+        return ['create' => 'Form', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
     }
-    public function string_identifying_columns(string $prefix)
+    public function string_identifying_columns(string $prefix = '')
     {
         return [1, 2];
     }
@@ -67,9 +69,9 @@ class Subject extends Table
     public string $description;
     public function get_CRUD_Terms()
     {
-        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+        return ['create' => 'Create', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
     }
-    public function string_identifying_columns(string $prefix)
+    public function string_identifying_columns(string $prefix = '')
     {
         return [1];
     }
@@ -93,7 +95,6 @@ class Subject extends Table
         }, $constants);
     }
 }
-
 class Topic extends Table
 {
     const id = 'topic.id';
@@ -108,9 +109,9 @@ class Topic extends Table
     public ?Subject $subject;
     public function get_CRUD_Terms()
     {
-        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+        return ['create' => 'Create', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
     }
-    public function string_identifying_columns(string $prefix)
+    public function string_identifying_columns(string $prefix = '')
     {
         return [1];
     }
@@ -135,7 +136,6 @@ class Topic extends Table
         }, $constants);
     }
 }
-
 class Question extends Table
 {
     const id = 'question.id';
@@ -153,7 +153,7 @@ class Question extends Table
     {
         return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
     }
-    public function string_identifying_columns(string $prefix)
+    public function string_identifying_columns(string $prefix = '')
     {
         return [1];
     }
@@ -178,7 +178,6 @@ class Question extends Table
         }, $constants);
     }
 }
-
 class Choice extends Table
 {
     const id = 'choice.id';
@@ -192,9 +191,9 @@ class Choice extends Table
     public int $question_id;
     public function get_CRUD_Terms()
     {
-        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+        return ['create' => 'Add', 'read' => 'Take', 'update' => 'Edit', 'delete' => 'Remove'];
     }
-    public function string_identifying_columns(string $prefix)
+    public function string_identifying_columns(string $prefix = '')
     {
         return [1];
     }
@@ -218,7 +217,6 @@ class Choice extends Table
         }, $constants);
     }
 }
-
 class Permission extends Table
 {
     const id = 'permission.id';
@@ -228,9 +226,9 @@ class Permission extends Table
     public string $name;
     public function get_CRUD_Terms()
     {
-        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+        return ['create' => 'Create', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
     }
-    public function string_identifying_columns(string $prefix)
+    public function string_identifying_columns(string $prefix = '')
     {
         return [1];
     }
@@ -254,8 +252,6 @@ class Permission extends Table
         }, $constants);
     }
 }
-
-
 class Role extends Table
 {
     const id = 'role.id';
@@ -265,9 +261,9 @@ class Role extends Table
     public string $name;
     public function get_CRUD_Terms()
     {
-        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+        return ['create' => 'Create', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Remove'];
     }
-    public function string_identifying_columns(string $prefix)
+    public function string_identifying_columns(string $prefix = '')
     {
         return [1];
     }
@@ -291,7 +287,6 @@ class Role extends Table
         }, $constants);
     }
 }
-
 class Role_has_Permission extends Table
 {
     const id = 'role_has_permission.id';
@@ -305,9 +300,9 @@ class Role_has_Permission extends Table
     public ?Permission $permission;
     public function get_CRUD_Terms()
     {
-        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+        return ['create' => 'Give', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Remove'];
     }
-    public function string_identifying_columns(string $prefix)
+    public function string_identifying_columns(string $prefix = '')
     {
         return [1, 2];
     }
@@ -333,7 +328,6 @@ class Role_has_Permission extends Table
         }, $constants);
     }
 }
-
 class User extends Table
 {
     const id = 'user.id';
@@ -356,10 +350,10 @@ class User extends Table
 
     public function get_CRUD_Terms()
     {
-        return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
+        return ['create' => 'Grant', 'read' => 'Take', 'update' => 'Transfer', 'delete' => 'Revoke'];
     }
 
-    public function string_identifying_columns(string $prefix)
+    public function string_identifying_columns(string $prefix = '')
     {
         return [1];
     }
@@ -367,8 +361,6 @@ class User extends Table
     {
         if ($stdClass != null) {
             $cols = User::SQL_Columns();
-            unset($cols[6]);
-            unset($cols[5]);
             if (properties_exists($stdClass, $cols, $prefix)) {
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};

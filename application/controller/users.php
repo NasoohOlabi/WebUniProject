@@ -2,7 +2,7 @@
 require_once 'application/views/_templates/header.php';
 require_once './application/libs/util/log.php';
 require_once './application/models/core/schema.php';
-require_once 'application/views/_templates/user_table.php';
+require_once 'application/views/_templates/schema_table.php';
 
 /**
  * Class Home
@@ -24,7 +24,7 @@ class Users extends Controller
         pageHeadTag('Users List');
         $user = $this->loadModel('UserModel');
         $users  = $user->select([], 'User');
-        user_table($users);
+        schema_table($users);
         // foreach ($users as $schemaClass) {
         // }
     }

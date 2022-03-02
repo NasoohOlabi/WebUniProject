@@ -1,7 +1,7 @@
 
 <?php
 require_once 'component/input.php';
-// function getThisFromForm(StdClass $cls) FIXME: use type annotations
+
 function endsWith($haystack, $needle)
 {
     $length = strlen($needle);
@@ -10,7 +10,7 @@ function endsWith($haystack, $needle)
 function stdclastoidstirng($stdClass)
 {
     $columns = $stdClass::SQL_COLUMNS();
-    $wanted_indexes = $stdClass->string_identifying_columns('');
+    $wanted_indexes = $stdClass->string_identifying_columns();
     $wanted_names = array_map(function ($i) use ($columns) {
         return $columns[$i];
     }, $wanted_indexes);
@@ -21,9 +21,8 @@ function stdclastoidstirng($stdClass)
     $answer = implode(' ', $answer);
     return $answer;
 }
-function getThisFromForm($cls, $bm)
+function getThisFromForm(Table $cls, BaseModel $bm)
 {
-    //FIXME: use prepare in basemodel
     $required_fields = $cls::SQL_Columns();
     unset($required_fields[0]);
     // print_r($required_fields);
@@ -34,8 +33,12 @@ function getThisFromForm($cls, $bm)
             $inputs[$field] = "select";
             // not solid nor Layered
             $schemaClass = ucfirst(substr($field, 0, strlen($field) - 3));
-            $v = $bm->select([], $schemaClass);
-            $v = array_map('stdclastoidstirng', $v);
+            $objects = $bm->select([], $schemaClass);
+            $id_indexed_objects = [];
+            foreach ($objects as $value) {
+                $id_indexed_objects[$value->id] = $value;
+            }
+            $v = array_map('stdclastoidstirng', $id_indexed_objects);
             $SELECT_OPTIONS[$field] = $v;
         } else
             $inputs[$field] = 'text';

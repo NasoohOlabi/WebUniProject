@@ -8,7 +8,7 @@ class BaseModel
      * @param object $db A PDO database connection
      */
     protected $table;
-    function __construct($db, $table)
+    function __construct($db, $table = 'DUAL')
     {
         try {
             $this->db = $db;

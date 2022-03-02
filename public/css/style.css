@@ -376,6 +376,7 @@ button:hover {
 .table th {
   padding: 0.75rem;
   vertical-align: top;
+  text-align: center;
   border-top: 1px solid #dee2e6;
 }
 .table thead th {

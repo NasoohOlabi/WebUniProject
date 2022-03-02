@@ -1,5 +1,5 @@
 <?php
-function user_table($schemaClasses)
+function schema_table(Table $schemaClasses)
 {
-    require 'component/__user_table.php';
+    require 'component/__schema_table.php';
 }

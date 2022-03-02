@@ -1,6 +1,6 @@
 <div class="login-container">
     <h1><?= get_class($cls) ?></h1>
-    <form action="<?= URL . "Api/Add" ?>" method="post" class="login-form">
+    <form action="<?= URL . "Api/create" ?>" method="post" class="login-form">
         <input name="schemaClass" type="text" id="schemaClass" class="text-input valid-input" style="display:none" required value="<?= get_class($cls) ?>" />
         <?php
         foreach ($inputs as $field => $func) {
