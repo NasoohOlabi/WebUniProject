@@ -20,7 +20,8 @@ class Users extends Controller
      */
     public function index()
     {
-
+        require_once 'application/views/_templates/header.php';
+        pageHeadTag('Users List');
         $user = $this->loadModel('UserModel');
         $users  = $user->select([], 'User');
         user_table($users);
