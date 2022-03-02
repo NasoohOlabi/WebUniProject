@@ -25,17 +25,7 @@ class DashBoard extends Controller
 
         simpleLog("dashboard called");
 
-
-
-        $p = $this->loadModel('QuestionModel');
-
-        // load views. within the views we can echo out $songs and $amount_of_songs easily
-        pageHeadTag("index");
-        require 'application/views/_templates/navbar.php';
-        require 'application/views/_templates/aside.php';
-        require 'application/views/home/index.php';
-        require 'application/views/_templates/login_popup.php';
-        require 'application/views/_templates/footer.php';
+        require './application/views/Dashboard/index.php';
     }
     /**
      * PAGE: index
