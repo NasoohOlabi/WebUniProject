@@ -12,11 +12,17 @@ function tableCreateIn_for_(container, header) {
     return tbl;
 }
 function expand2(id_to_toggle) {
-    let toggle = false;
+    let dropped_down = false;
+    let tr = document.getElementById(id_to_toggle);
+    let btn = document.getElementById(id_to_toggle + '-' + 'btn');
     return function (event) {
-        toggle = !toggle
-        event.target.innerText = (!toggle) ? '🔼' : '🔽'
-        document.getElementById(id_to_toggle).style.display = (!toggle) ? 'none' : 'table-row'
+        if (tr == null || btn == null) {
+            tr = document.getElementById(id_to_toggle);
+            btn = document.getElementById(id_to_toggle + '-' + 'btn');
+        }
+        dropped_down = !dropped_down
+        btn.innerText = (!dropped_down) ? '🔽' : '🔼'
+        tr.style.display = (!dropped_down) ? 'none' : 'table-row'
     }
 }
 function pureHeader(names) {
@@ -45,6 +51,7 @@ function pureRows(row, id) {
                 let td = tr.insertCell();
                 let tmp = document.createElement('button');
                 tmp.innerText = '🔽';
+                tmp.id = key + '-' + id + '-' + subrows.length + '-' + 'btn'
                 tmp.onclick = expand2(key + '-' + id + '-' + subrows.length);
                 subrows.push(key + '-' + id + '-' + subrows.length)
                 tmp.style = "background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;"
@@ -103,7 +110,7 @@ function main() {
         const lastChild = home.children[home.children.length - 1]
         if (scrollPos > (lastChild.offsetTop + lastChild.offsetHeight - document.body.clientHeight - 100)) {
             const tbl = document.getElementsByClassName('table')[0]
-            if (!(tbl && AllFetchedRows[window.currentTab].length)) return
+            if (!(tbl && AllFetchedRows[window.currentTab] && AllFetchedRows[window.currentTab].length)) return
             let data = { op: "get after", id: AllFetchedRows[window.currentTab][AllFetchedRows[window.currentTab].length - 1]['id'] }
             fetching_flag = true;
 
@@ -130,6 +137,7 @@ function main() {
                 fetching_flag = false
             }).catch(e => {
                 // just keep the fetching_flag off 
+                // console.log(e)
             });
 
         }
@@ -162,8 +170,10 @@ function switchTo(Tab) {
             'Content-Type': 'application/json'
         }
     }).then(res => {
+        // console.log(res)
         return res.json()
     }).then(lst => {
+        // console.log(lst)
         if (lst.length === 0) return;
         const tbl = tableCreateIn_for_(container, Object.keys(lst[0]));
         for (let index = 0; index < lst.length; index++) {
@@ -176,9 +186,9 @@ function switchTo(Tab) {
             prows.forEach(row =>
                 tbl.appendChild(row))
         }
-
     }).catch(e => {
         //TODO: tell user some how that that's all 
+        // console.log(e)
     });
 }
 window.onload = main
