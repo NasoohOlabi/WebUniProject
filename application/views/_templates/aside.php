@@ -22,6 +22,10 @@
             }
         </script>
         <dl>
+            <dt>DashBoard</dt>
+            <dd><a href="/mnu/dashboard/">DashBoard</a></dd>
+            <dd><a href="/mnu/dashboard/Add">DashBoard Add</a></dd>
+            <dd><a href="/mnu/dashboard/view">DashBoardview</a></dd>
             <dt>Question Bank</dt>
             <!-- <dd><button onclick="clik()">Add Question</button></dd> -->
             <dd><a href="/mnu/QuestionBank/add">Add Question</a></dd>

@@ -28,19 +28,25 @@
         <ul class="menu-links">
           <li class="nav-link">
             <a href="#">
-              <span class="text nav-text">Dashboard</span>
+              <span class="text nav-text" id="dashboard">Dashboard</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#">
-              <span class="text nav-text">Revenue</span>
+            <a href="#" onclick="switchTo('user')">
+              <span class="text nav-text" id="user">Users</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#">
-              <span class="text nav-text">Notifications</span>
+            <a href="#" onclick="switchTo('question')">
+              <span class="text nav-text" id="question">Questions</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#" onclick="switchTo('exam')">
+              <span class="text nav-text" id="exam">Exams</span>
             </a>
           </li>
 
@@ -74,9 +80,23 @@
     </div>
   </nav>
 
-  <section class="home">
-    <div class="text">Dashboard Sidebar</div>
+  <section id="home">
+    <div class="text" id="title">Dashboard</div>
+    <div style="height:fit-content" id="TTTarget"></div>
+    <!-- <?php
+          // foreach ([
+          //   'Question', 'Role', 'Exam', 'Subject', 'Topic', 'Question',
+          //   'Choice', 'Permission', 'Role_has_Permission', 'User'
+          // ] as $val) {
+          //   $entries  = $bm->select([], $val);
+          //   schema_table($entries);
+          // }
+          ?> -->
   </section>
+  <script>
+    var URL = '<?= URL ?>'
+  </script>
+  <script src="<?= URL ?>public/js/dashboard.js"></script>
 </body>
 
 </html>

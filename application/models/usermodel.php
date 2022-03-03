@@ -24,7 +24,7 @@ class UserModel extends BaseModel
         $query = $this->db->prepare($sql);
         $query->execute();
         $arr = $query->fetchAll();
-
+        // TODO: talk about whether assigning sessions is the model's job
         if ($arr) {
             $_SESSION['loggedIn'] = true;
             $_SESSION['username'] = $username;
@@ -43,6 +43,7 @@ class UserModel extends BaseModel
         $query->execute();
         $arr = $query->fetchAll();
         if (count($arr) == 1) {
+            // TODO: talk about whether assigning sessions is the model's job
             $_SESSION['loggedIn'] = true;
             $_SESSION['username'] = $username;
             return true;

@@ -51,7 +51,6 @@ class QuestionBank extends Controller
         $model = $this->loadModel('ExamModel');
         $topics = $model->select([], "Topic");
 
-        var_dump($topics);
 
         // Flash pattern
         if (isset($_SESSION['error'])) {

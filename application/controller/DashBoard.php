@@ -4,6 +4,18 @@ require_once './application/libs/util/log.php';
 require './application/models/core/schema.php';
 require_once 'application/views/_templates/schema_table.php';
 
+
+function simple_auth()
+{
+
+    session_start();
+    if (!(isset($_SESSION['user']) && $_SESSION['user']->role->name == 'ROOT::ADMIN')) {
+        header('Location:' . URL);
+        simpleLog("he is trying to hack us " . json_encode($_SESSION['user']));
+        return;
+    }
+    simpleLog("access Granted to " . json_encode($_SESSION['user']));
+}
 /**
  * Class Home
  *
@@ -22,8 +34,10 @@ class DashBoard extends Controller
     {
         // debug message to show where you are, just for the demo
         // echo 'Message from Controller: You are in the controller home, using the method index()';
+        simple_auth();
 
         simpleLog("dashboard called");
+        $bm = $this->loadModel('BaseModel');
 
         require './application/views/Dashboard/index.php';
     }
@@ -35,6 +49,7 @@ class DashBoard extends Controller
     {
         // debug message to show where you are, just for the demo
         // echo 'Message from Controller: You are in the controller home, using the method index()';
+        simple_auth();
 
         simpleLog("dashboard add called");
 
@@ -67,6 +82,10 @@ class DashBoard extends Controller
     {
         // debug message to show where you are, just for the demo
         // echo 'Message from Controller: You are in the controller home, using the method index()';
+
+
+        simple_auth();
+
 
         simpleLog("dashboard add called");
 

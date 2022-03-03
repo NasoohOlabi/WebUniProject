@@ -345,6 +345,8 @@ class User extends Table
     public ?string $middle_name;
     public $profile_picture;
     public int $role_id;
+    public ?Role $role;
+    public ?array $permissions;
 
     public function get_CRUD_Terms()
     {
@@ -364,6 +366,9 @@ class User extends Table
                     $this->$col = $stdClass->{$prefix . $col};
                 }
             }
+            $tmp = new Role($stdClass, 'role_');
+            if (isset($tmp->id))
+                $this->role = $tmp;
         }
     }
     static function SQL_Columns(string $prefix = "")

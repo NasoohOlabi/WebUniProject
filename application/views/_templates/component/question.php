@@ -5,9 +5,6 @@ function echoQuestion($question)
 }
 function echoQuestions($questions)
 {
-    echo '<pre>';
-    var_dump($questions);
-    echo '</pre>';
     foreach ($questions as $question) {
         echoQuestion($question);
     }

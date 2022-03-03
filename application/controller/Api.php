@@ -25,7 +25,6 @@ class Api extends Controller
 
         // admin session check!
         echo '<pre>';
-        var_dump($_POST);
         echo "APIs are great, make sure to use to be the admin to use this api for now";
         echo '</pre>';
     }
@@ -62,13 +61,22 @@ class Api extends Controller
     }
     public function read(string $schemaClass = null, string $id = null)
     {
+
+        $_POST = json_decode(file_get_contents("php://input"), true);
+        simpleLog('_POST' . json_encode($_POST));
         if ($schemaClass == null) {
             // invalid request
             http_response_code(400);
             echo 'Operation Failed';
             return;
         }
-        $id = intval($id);
+        $more = false;
+        if ($id !== null)
+            $id = intval($id);
+        if (isset($_POST['op']) && $_POST['op'] === 'get after' && isset($_POST['id'])) {
+            $id = $_POST['id'];
+            $more = true;
+        }
         function endsWith(string $haystack, string  $needle)
         {
             $length = strlen($needle);
@@ -87,12 +95,20 @@ class Api extends Controller
             return $answer;
         };
         try {
-            $answers = $Model->select([], $schemaClass, [], (($id != null) ? [$schemaClass::id => $id] : []));
+            if ($more)
+                $answers = $Model->select([], $schemaClass, [], (($id !== null) ? [$schemaClass::id => $id, 'op' => '<'] : []));
+            else
+                $answers = $Model->select([], $schemaClass, [], (($id !== null) ? [$schemaClass::id => $id] : []));
             $answers = array_map($get_dets_r, $answers);
-            // var_dump($answers);
-            if (count($answers) == 1)
-                echo json_encode($answers[0]);
-            elseif (count($answers) > 1)
+            $answers = array_map(function ($row) use ($Model) {
+                if (property_exists($row, 'password'))
+                    unset($row->password);
+                if (get_class($row) === 'Question')
+                    $row->choices = $Model->select([], 'Choice', [], [Choice::question_id => $row->id]);
+
+                return $row;
+            }, $answers);
+            if (count($answers) >= 1)
                 echo json_encode($answers);
             else
                 echo "id $id Not Found";

@@ -27,24 +27,6 @@ class Home extends Controller
 
 
         $p = $this->loadModel('QuestionModel');
-        echo "<pre>";
-        // // print("before");
-        // var_dump($p->questionDetails(1));
-        // [[1=>2],[[1=>2],[3=>4]]]
-        // print_r([1 => 1, 1 => 2]);
-        // var_dump($p->count('Role_has_Permission', [[1 => 2], [1 => 3], [3 => 2], [4 => 5]]));
-        // $p->insert(array("name" => "admin"));
-        // var_dump(md5("afjk;lsdjlafkjssssssssssssssssssssssssssssssssssk"));
-        // print("after");
-        // var_dump($p->getAll());
-        // var_dump([[1, 2] => [2, 3]]);
-        // var_dump("3" * 5);
-        // $v = "22";
-        // $v = str_repeat($v, 3);
-        // var_dump($v);
-
-        echo "</pre>";
-
 
         // load views. within the views we can echo out $songs and $amount_of_songs easily
         pageHeadTag("index");

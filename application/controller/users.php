@@ -116,9 +116,11 @@ class Users extends Controller
         $email = htmlentities($_POST['email']);
         $password = htmlentities($_POST['password']);
 
+        $username = explode('@', $email)[0];
         echo "got the user";
-
+        $Roles = $this->loadModel('RoleModel');
         if ($new_user->validateUser($email, $password)) {
+            $_SESSION['user'] = $Roles->getFullDetails($username, $password);
             header("Location:" . URL);
         } else {
             echo "Login failed";

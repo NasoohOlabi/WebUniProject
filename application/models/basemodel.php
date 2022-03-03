@@ -148,7 +148,8 @@ class BaseModel
     }
     private static function _is_term($x)
     {
-        return is_array($x) && count($x) == 1 && !is_array($x[array_keys($x)[0]]);
+        return (is_array($x) && count($x) == 1 && !is_array($x[array_keys($x)[0]]))
+            || (is_array($x) && count($x) === 2 && !is_array($x[array_keys($x)[0]]) && isset($x['op']));
     }
     private static function _parse_safe_term(array $x, array $no_wrap)
     {
@@ -158,7 +159,8 @@ class BaseModel
             $key = '"' . $key . '"';
         if (!in_array($val, $no_wrap))
             $val = '"' . $val . '"';
-        return "$key = $val";
+        simpleLog(json_encode($x));
+        return "$key " . (isset($x['op']) ? $x['op'] : '=') . " $val";
     }
     /**
      * [[[1=>2],[1=>3],[3=>2]],[4=>5]]
@@ -214,7 +216,8 @@ class BaseModel
     {
         $key = array_keys($x)[0];
         $val = $x[$key];
-        return ['prepare' => "$key = ?", 'execute' => $val];
+        simpleLog(json_encode($x));
+        return ['prepare' => "$key " . (isset($x['op']) ? $x['op'] : '=') . " ?", 'execute' => $val];
     }
     private static function _parse_unsafe_conditions(array $unsafe_conditions)
     {
@@ -282,7 +285,7 @@ class BaseModel
             return "`$schemaClass`";
         }, $schemaClasses));
         if (count($safe_conditions) > 0)
-            $safe_conditions = BaseModel::_parse_conditions($safe_conditions, $columns);
+            $parsed_safe_conditions = BaseModel::_parse_conditions($safe_conditions, $columns);
 
         if (count($unsafe_conditions) > 0) {
             $unsafe_conditions_parsed = BaseModel::_parse_unsafe_conditions($unsafe_conditions);
@@ -297,12 +300,12 @@ class BaseModel
         $column_names_aliased_string = implode(", ", BaseModel::_alias_dotted_columns($columns));
         if (count($unsafe_conditions) > 0) {
             if (count($safe_conditions) > 0)
-                $sql = "SELECT $column_names_aliased_string FROM $tables ON $safe_conditions WHERE $unsafe_sql_string ORDER BY $order;";
+                $sql = "SELECT $column_names_aliased_string FROM $tables ON $parsed_safe_conditions WHERE $unsafe_sql_string ORDER BY $order;";
             else
                 $sql = "SELECT $column_names_aliased_string FROM $tables WHERE $unsafe_sql_string ORDER BY $order;";
         } else {
             if (count($safe_conditions) > 0)
-                $sql = "SELECT $column_names_aliased_string FROM $tables ON $safe_conditions ORDER BY $order;";
+                $sql = "SELECT $column_names_aliased_string FROM $tables ON $parsed_safe_conditions ORDER BY $order;";
             else
                 $sql = "SELECT $column_names_aliased_string FROM $tables ORDER BY $order;";
         }
@@ -319,14 +322,15 @@ class BaseModel
             }, $lines) :
             new Exception("No Exams available");
     }
-    public function select(array $columns, string $schemaClass, $safe_conditions = null, array $unsafe_conditions = null)
+    public function select(array $columns, string $schemaClass, $safe_conditions = null, array $unsafe_conditions = null, int $limit = 10)
     {
-        return $this->__select($columns, $schemaClass, $safe_conditions, $unsafe_conditions);
+        return $this->__select($columns, $schemaClass, $safe_conditions, $unsafe_conditions, ($limit > 0) ? ['limit' => $limit] : []);
     }
-    private function __select(array $columns, string $schemaClass, $safe_conditions = null, array $unsafe_conditions = null, array $Literal_SQL_Columns = null)
+    private function __select(array $columns, string $schemaClass, $safe_conditions = null, array $unsafe_conditions = null, array $Advanced_Options = null)
     {
-        if ($Literal_SQL_Columns != null && isset($Literal_SQL_Columns['overwrite'])) {
-            $columns_string = $Literal_SQL_Columns['overwrite'];
+
+        if ($Advanced_Options != null && is_array($Advanced_Options) && isset($Advanced_Options['overwrite'])) {
+            $columns_string = $Advanced_Options['overwrite'];
             if (count($columns) == 0) {
                 $columns_array = BaseModel::_get_classes_dotted_columns([$schemaClass]);
             } else {
@@ -347,19 +351,20 @@ class BaseModel
             $unsafe_sql_string = $unsafe_conditions_parsed['prepare'];
             $unsafe_bindings = $unsafe_conditions_parsed['execute'];
         }
-
+        $limit_part = '';
+        if (isset($Advanced_Options['limit'])) $limit_part = " LIMIT {$Advanced_Options['limit']}";
         if ($safe_conditions == null || count($safe_conditions) == 0) {
             if ($unsafe_conditions == null || count($unsafe_conditions) == 0) {
-                $sql = "SELECT $columns_string FROM $schemaClass;";
+                $sql = "SELECT $columns_string FROM $schemaClass ORDER BY $schemaClass.id DESC $limit_part;";
             } else {
-                $sql = "SELECT $columns_string FROM $schemaClass WHERE $unsafe_sql_string;";
+                $sql = "SELECT $columns_string FROM $schemaClass WHERE $unsafe_sql_string ORDER BY $schemaClass.id DESC $limit_part;";
             }
         } else {
             $safe_conditions = BaseModel::_parse_conditions($safe_conditions, $columns_array);
             if ($unsafe_conditions == null || count($unsafe_conditions) == 0) {
-                $sql = "SELECT $columns_string FROM $schemaClass WHERE $safe_conditions;";
+                $sql = "SELECT $columns_string FROM $schemaClass WHERE $safe_conditions ORDER BY $schemaClass.id DESC $limit_part;";
             } else {
-                $sql = "SELECT $columns_string FROM $schemaClass WHERE $safe_conditions AND $unsafe_sql_string;";
+                $sql = "SELECT $columns_string FROM $schemaClass WHERE $safe_conditions AND $unsafe_sql_string ORDER BY $schemaClass.id DESC $limit_part;";
             }
         }
         simpleLog("BaseModel::select Running : ($sql)");
@@ -374,7 +379,7 @@ class BaseModel
 
         $lines = $query->fetchAll();
         if (
-            !isset($Literal_SQL_Columns['stdClass'])
+            !isset($Advanced_Options['stdClass'])
             || (count($columns) > 0
                 && count($columns) < count($schemaClass::SQL_COLUMNS())
             )
