@@ -17,7 +17,7 @@
         </span>
 
         <div class=" text logo-text">
-          <span class="name">Username</span>
+          <span class="name"><?php echo $_SESSION['user']->username ?></span>
           <span class="profession">Admin Account</span>
         </div>
       </div>
@@ -72,7 +72,7 @@
 
       <div class="bottom-content">
         <li class="">
-          <a href="#">
+          <a href="<?= URL ?>users/logout">
             <span class="text nav-text">Logout</span>
           </a>
         </li>

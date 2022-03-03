@@ -126,4 +126,14 @@ class Users extends Controller
             echo "Login failed";
         }
     }
+
+    function logout()
+    {
+        session_start();
+        if (isset($_SESSION['user'])) {
+            simpleLog("User " . $_SESSION['user']->username . "logged out.");
+        }
+        session_unset();
+        header("Location:" . URL);
+    }
 }

@@ -184,8 +184,6 @@ body.dark #home .text {
   color: var(--text-color);
 }
 
-
-
 .table {
   width: 80%;
   margin-bottom: 2rem;
@@ -206,7 +204,15 @@ body.dark #home .text {
   border-top: 2px solid #dee2e6;
 }
 
-#TTTarget{
+#TTTarget {
   width: fit-content;
   padding: 10px 10%;
+  margin: 30px auto;
+}
+
+.bottom-content {
+  bottom: 0;
+  position: absolute;
+  left: 25%;
+  right: 25%;
 }
