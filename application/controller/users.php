@@ -52,7 +52,19 @@ class Users extends Controller
         $account_type = htmlentities($_POST['AccountType']);
         $username = explode('@', $email)[0];
         $role_id = null;
-        $profileImg = (isset($_POST['ProfileImg']) && $_POST['ProfileImg'] != '') ? $_POST['ProfileImg'] : null;
+        $profileImg = null;
+
+        if (isset($_FILES['ProfileImg']) && $_FILES['ProfileImg']['name'] != '') {
+            $fname = $username . '.' . pathinfo($_FILES['ProfileImg']['name'], PATHINFO_EXTENSION);
+            $target_dir = "./DB/ProfilePics/";
+            $target_file = $target_dir . $fname;
+            if (!move_uploaded_file($_FILES["ProfileImg"]["tmp_name"], $target_file)) {
+                simpleLog("Error storing image");
+                echo "Error storing image";
+                return;
+            };
+            $profileImg = $fname;
+        }
 
 
         switch ($account_type) {
@@ -67,12 +79,6 @@ class Users extends Controller
                 break;
         }
 
-        $data = [$first_name, $last_name, $email, $phone, $password, $account_type, $profileImg];
-
-        // echo $profileImg;
-        // echo 'SIGNUP HERE';
-        // print_r($data);
-
         $u = new User();
 
         $u->first_name = $first_name;
@@ -82,7 +88,6 @@ class Users extends Controller
         $u->role_id = 1;
         $u->profile_picture = $profileImg;
 
-        // var_dump($u);
 
         $arr = [];
 
@@ -94,9 +99,8 @@ class Users extends Controller
         $arr['profile_picture'] = '1';
         $arr['middle_name'] = '';
 
-        //var_dump($new_user->insert($arr));
-        //var_dump($new_user->userIsFound($email));
 
+        simpleLog("Register function running");
 
         echo '</pre>';
 
@@ -106,6 +110,9 @@ class Users extends Controller
             if ($new_user->insertUser($first_name, $last_name, $username, $password, $role_id, $profileImg)) {
             echo "User Added";
         }
+
+        $_POST = array();
+        $_FILES = array();
     }
 
     public function validate()

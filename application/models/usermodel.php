@@ -18,9 +18,13 @@ class UserModel extends BaseModel
     function insertUser($first_name, $last_name, $username, $password, $role_id, $profile_picture)
     {
 
-        //TODO: insert profile picture too
         $password = md5($password);
-        $sql = "INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `profile_picture`, `role_id`) VALUES (NULL, '$username', '$password', '$first_name', '$last_name', '', NULL, $role_id);";
+        if ($profile_picture == null)
+            $profile_picture = "NULL";
+        else
+            $profile_picture = "'" . $profile_picture . "'";
+
+        $sql = "INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `profile_picture`, `role_id`) VALUES (NULL, '$username', '$password', '$first_name', '$last_name', '', $profile_picture, $role_id);";
 
         $query = $this->db->prepare($sql);
         $query->execute();

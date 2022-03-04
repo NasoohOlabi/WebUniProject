@@ -1,10 +1,19 @@
 <?php
+$profile_pic = $_SESSION['user']->profile_picture;
+$has_picture = ($profile_pic == null || $profile_pic == '' ? false : true);
 $role = $_SESSION['user']->role->name;
 $isRootAdmin = ($role == 'ROOT::ADMIN' ? true : false);
 $user_first_name = $_SESSION['user']->first_name;
 $user_initial = strtoupper($user_first_name[0]);
 
-$dashboard_option = '<a href="' . URL . 'DashBoard"><i class="fa fa-cogs" aria-hidden="true"></i>Dashboard</a>'
+$dashboard_option = '<a href="' . URL . 'DashBoard"><i class="fa fa-cogs" aria-hidden="true"></i>Dashboard</a>';
+
+$profile_pic_style = '';
+
+if ($has_picture == true) {
+    $profile_pic_style = 'style = "background-image: url(' . URL . 'DB/ProfilePics/' . $profile_pic . ')";';
+}
+
 ?>
 
 <body>
@@ -48,7 +57,7 @@ $dashboard_option = '<a href="' . URL . 'DashBoard"><i class="fa fa-cogs" aria-h
         </a>
         <nav>
             <div class="dropdown">
-                <div class="profile-pic dropbtn" onclick="toggle_menu()" id="dropbtn"><?php echo $user_initial ?></div>
+                <div class="profile-pic dropbtn" onclick="toggle_menu()" id="dropbtn" <?php echo $profile_pic_style ?>><?php if (!$has_picture) echo $user_initial ?></div>
                 <div class="dropdown-content" id="menu">
                     <a href="#" class="link"><i class="fa fa-user" aria-hidden="true"></i>Account</a>
                     <?php if ($isRootAdmin) echo $dashboard_option ?>
