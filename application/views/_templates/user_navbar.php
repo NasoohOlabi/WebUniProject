@@ -3,6 +3,8 @@ $role = $_SESSION['user']->role->name;
 $isRootAdmin = ($role == 'ROOT::ADMIN' ? true : false);
 $user_first_name = $_SESSION['user']->first_name;
 $user_initial = strtoupper($user_first_name[0]);
+
+$dashboard_option = '<a href="' . URL . 'DashBoard"><i class="fa fa-cogs" aria-hidden="true"></i>Dashboard</a>'
 ?>
 
 <body>
@@ -49,7 +51,7 @@ $user_initial = strtoupper($user_first_name[0]);
                 <div class="profile-pic dropbtn" onclick="toggle_menu()" id="dropbtn"><?php echo $user_initial ?></div>
                 <div class="dropdown-content" id="menu">
                     <a href="#" class="link"><i class="fa fa-user" aria-hidden="true"></i>Account</a>
-                    <?php if ($isRootAdmin) echo '<a href="<?= URL ?>DashBoard"><i class="fa fa-cogs" aria-hidden="true"></i>Dashboard</a>' ?>
+                    <?php if ($isRootAdmin) echo $dashboard_option ?>
                     <a href="<?= URL ?>users/logout" class="link"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
                 </div>
             </div>
