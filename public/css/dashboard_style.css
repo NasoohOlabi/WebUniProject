@@ -145,7 +145,8 @@ header .image-text .profession {
 }
 .sidebar li a:hover .icon,
 .sidebar li a:hover .text {
-  color: var(--text-color);
+  color: black;
+  font-weight: 600;
 }
 
 .sidebar .menu-bar {
