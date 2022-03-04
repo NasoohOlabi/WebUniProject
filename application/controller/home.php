@@ -1,6 +1,7 @@
 <?php
 require_once 'application/views/_templates/header.php';
 require_once './application/libs/util/log.php';
+require_once 'application/models/core/schema.php';
 
 
 /**
@@ -30,7 +31,13 @@ class Home extends Controller
 
         // load views. within the views we can echo out $songs and $amount_of_songs easily
         pageHeadTag("index");
-        require 'application/views/_templates/navbar.php';
+
+        if (isset($_SESSION['loggedIn']))
+            require 'application/views/_templates/user_navbar.php';
+        else
+            require 'application/views/_templates/navbar.php';
+
+
         require 'application/views/_templates/aside.php';
         require 'application/views/home/index.php';
         require 'application/views/_templates/login_popup.php';

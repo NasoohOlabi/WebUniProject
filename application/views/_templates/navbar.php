@@ -6,18 +6,9 @@
         </a>
         <nav>
 
-            <?php
-            if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == 'true') {
-                echo ('<h5 class="welcome">
-                Welcome, you\'re logged in
-            </h5>');
-            } else {
-                echo ('<span>
-                <button class="nav-btn" onclick="pop()">Login</button>
+            <span>
+                <button class="nav-btn" onclick="pop()"><i class="fa fa-lock" aria-hidden="true"></i>Login</button>
             </span>
-            <span><a href="' . URL . 'users\signup"><button class="nav-btn">Signup</button></a></span>');
-            }
-            ?>
 
         </nav>
     </header>

@@ -1,0 +1,57 @@
+<?php
+$role = $_SESSION['user']->role->name;
+$isRootAdmin = ($role == 'ROOT::ADMIN' ? true : false);
+$user_first_name = $_SESSION['user']->first_name;
+$user_initial = strtoupper($user_first_name[0]);
+?>
+
+<body>
+    <script>
+        var toggle = false;
+
+        function toggle_menu() {
+
+            var drop_menu = document.getElementsByClassName('dropdown-content')[0];
+            var profile_pic = document.getElementsByClassName('profile-pic')[0];
+
+            if (!toggle) {
+                drop_menu.style.display = "block";
+                profile_pic.style.boxShadow = "0 3px 10px rgb(0 0 0)";
+                toggle = true;
+            } else {
+                drop_menu.style.display = "none";
+                profile_pic.style.boxShadow = "0 0 0";
+                toggle = false;
+            }
+        }
+
+
+
+        document.addEventListener('click', function(event) {
+            if (!toggle) return;
+            var profile_pic = document.getElementsByClassName('profile-pic')[0];
+            var drop_menu = document.getElementsByClassName('dropdown-content')[0];
+            var ignoreClickOnMeElement = document.getElementById('menu');
+            var isClickInsideElement = ignoreClickOnMeElement.contains(event.target) || profile_pic.contains(event.target);
+            if (!isClickInsideElement) {
+                drop_menu.style.display = "none";
+                profile_pic.style.boxShadow = "0 0 0";
+                toggle = false;
+            }
+        });
+    </script>
+    <header>
+        <a href="<?= URL ?>home" id="logo">
+            <img src="<?= URL ?>public/img/logo/MNU-logos_black.png" id="logo-img" />
+        </a>
+        <nav>
+            <div class="dropdown">
+                <div class="profile-pic dropbtn" onclick="toggle_menu()" id="dropbtn"><?php echo $user_initial ?></div>
+                <div class="dropdown-content" id="menu">
+                    <a href="#" class="link"><i class="fa fa-user" aria-hidden="true"></i>Account</a>
+                    <?php if ($isRootAdmin) echo '<a href="<?= URL ?>DashBoard"><i class="fa fa-cogs" aria-hidden="true"></i>Dashboard</a>' ?>
+                    <a href="<?= URL ?>users/logout" class="link"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>

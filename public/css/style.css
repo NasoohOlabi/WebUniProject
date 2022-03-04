@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/cpr6hdo.css");
+
 :root {
   --secondary-background-color: #539e9e;
   --secondary-dark-background-color: #427e7e;
@@ -12,7 +14,7 @@
   --spinner-color: white;
   --background: #ecf0f1;
   --primary: #86bbbb;
-  --navbar-height: 48px;
+  --navbar-height: 60px;
 }
 
 /*##############################################*/
@@ -21,6 +23,7 @@ header {
   padding: 0px;
   display: flex;
   height: var(--navbar-height);
+  align-items: center;
 }
 nav {
   display: flex;
@@ -38,9 +41,10 @@ nav > span {
   border-radius: 10%;
   background-color: var(--primary);
   border: none;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-size: 1rem;
+  font-family: montserrat, sans-serif;
   font-weight: bold;
+  font-style: normal;
+  font-size: 1.2em;
   color: var(--background);
 }
 .nav-btn:hover {
@@ -48,12 +52,14 @@ nav > span {
   border: none;
 }
 #logo-img {
-  /* height: var(--navbar-height); */
-  height: 175px;
+  height: calc(var(--navbar-height) - 6px);
   background-color: var(--primary);
-  object-fit: cover;
-  object-position: -10px -65px;
   display: inline;
+  object-position: 0 0;
+}
+
+#logo {
+  height: calc(var(--navbar-height) - 6px);
 }
 /*##############################################*/
 .scrolling-wrapper {
@@ -144,6 +150,7 @@ aside {
   padding: 5%;
   background-color: var(--primary);
   box-shadow: 0px -1px 6px 2px #ffffff4a;
+  border-radius: 30px;
 }
 
 #spinner {
@@ -180,10 +187,83 @@ aside {
     stroke-dashoffset: -124;
   }
 }
+
+.profile-pic {
+  background: #f44336;
+  color: #eeeeee;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-right: 10px;
+  font-family: monospace;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 10%;
+  top: 110%;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  box-shadow: 0 1px 0 rgb(0 0 0 / 15%);
+}
+
+.fa-user {
+  margin-right: 8px;
+}
+
+.fa-sign-out {
+  margin-right: 5px;
+}
+
+#menu i {
+  color: #009688;
+}
+
+.fa-lock {
+  margin-right: 10px;
+}
+
+.fa-cogs {
+  margin-right: 4px;
+}
+
 /*##############################################*/
 .text-input {
   display: block;
-  width: calc(calc(100% - 2 * 0.75rem) - 2px);;
+  width: calc(calc(100% - 2 * 0.75rem) - 2px);
   height: calc(1.5em + 0.75rem + 2px);
   padding: var(--standard-padding);
   font-size: 1rem;
