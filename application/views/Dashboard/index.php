@@ -11,16 +11,18 @@
 <body>
   <nav class="sidebar">
     <header>
-      <div class="image-text">
-        <span class="image">
-          <img src="<?= URL ?>public/img/logo/MNU-logos_black.png" alt="" />
-        </span>
+      <a href="<?= URL ?>home/ " style="text-decoration: none;">
+        <div class="image-text">
+          <span class="image">
+            <img src="<?= URL ?>public/img/logo/MNU-logos_black.png" alt="" />
+          </span>
 
-        <div class=" text logo-text">
-          <span class="name"><?php echo $_SESSION['user']->username ?></span>
-          <span class="profession">Admin Account</span>
+          <div class=" text logo-text">
+            <span class="name"><?php echo $_SESSION['user']->username ?></span>
+            <span class="profession">Admin Account</span>
+          </div>
         </div>
-      </div>
+      </a>
     </header>
 
     <div class="menu-bar">
@@ -82,7 +84,8 @@
 
   <section id="home">
     <div class="text" id="title">Dashboard</div>
-    <div style="height:fit-content" id="TTTarget"></div>
+    <div style="
+    height:fit-content" id="TTTarget"></div>
     <!-- <?php
           // foreach ([
           //   'Question', 'Role', 'Exam', 'Subject', 'Topic', 'Question',
