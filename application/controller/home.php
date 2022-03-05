@@ -40,6 +40,12 @@ class Home extends Controller
             require 'application/views/_templates/aside.php';
             require 'application/views/home/index.php';
             require 'application/views/_templates/login_popup.php';
+            if (isset($_GET['login_failed'])) {
+                echo '<script type="text/javascript">',
+                'pop();',
+                'toggleError();',
+                '</script>';
+            }
         }
 
         require 'application/views/_templates/footer.php';

@@ -129,7 +129,7 @@ class Users extends Controller
             $_SESSION['user'] = $Roles->getFullDetails($username, $password);
             header("Location:" . URL);
         } else {
-            echo "Login failed. Please check your account details.";
+            header("Location:" . URL . 'home?login_failed=true');
         }
     }
 
