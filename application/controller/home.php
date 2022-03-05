@@ -32,15 +32,16 @@ class Home extends Controller
         // load views. within the views we can echo out $songs and $amount_of_songs easily
         pageHeadTag("index");
 
-        if (isset($_SESSION['loggedIn']))
+        if (isset($_SESSION['loggedIn'])) {
             require 'application/views/_templates/user_navbar.php';
-        else
+            require 'application/views/home/user_index.php';
+        } else {
             require 'application/views/_templates/navbar.php';
+            require 'application/views/_templates/aside.php';
+            require 'application/views/home/index.php';
+            require 'application/views/_templates/login_popup.php';
+        }
 
-
-        require 'application/views/_templates/aside.php';
-        require 'application/views/home/index.php';
-        require 'application/views/_templates/login_popup.php';
         require 'application/views/_templates/footer.php';
     }
 }

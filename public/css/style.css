@@ -470,3 +470,37 @@ button:hover {
 .table tbody + tbody {
   border-top: 2px solid #dee2e6;
 }
+
+/*##############################################*/
+
+/* User Index */
+
+#welcome-header {
+  color: #3f51b5;
+  font-family: var(--primary-font);
+  text-align: center;
+  font-weight: normal;
+  margin-top: 80px;
+  font-size: 4em;
+}
+
+#main-content hr {
+  color: black;
+  width: 60em;
+  border-width: 2px;
+}
+
+#login-status-par {
+  color: black;
+  text-align: center;
+}
+
+#login-status-par span {
+  font-weight: 500;
+}
+
+#login-status-par a {
+  color: #f44336;
+  font-weight: 500;
+  text-decoration: underline;
+}
