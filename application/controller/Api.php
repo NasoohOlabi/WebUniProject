@@ -48,11 +48,11 @@ class Api extends Controller
     public function read(string $schemaClass = null, string $id = null)
     {
         $_POST = json_decode(file_get_contents("php://input"), true);
-        simpleLog('_POST' . json_encode($_POST));
         if ($schemaClass == null) {
             // invalid request
             http_response_code(400);
             echo 'Operation Failed';
+            simpleLog('$_POST ' . json_encode($_POST) . ' failed', 'Api/read/');
             return;
         }
         $more = false;
@@ -96,12 +96,14 @@ class Api extends Controller
 
                 return $row;
             }, $answers);
+            simpleLog('$_POST ' . json_encode($_POST) . ' served', 'Api/read/');
             if (count($answers) >= 1)
                 echo json_encode($answers);
             else
                 echo "id $id Not Found";
         } catch (\Throwable $e) {
-            simpleLog('Caught exception: ' . $e->getMessage());
+            simpleLog('$_POST ' .
+                json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage(), 'Api/read/');
             http_response_code(400);
             echo 'Operation Failed';
         }
