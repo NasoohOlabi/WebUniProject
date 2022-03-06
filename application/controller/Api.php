@@ -3,30 +3,15 @@ require_once 'application/views/_templates/header.php';
 require_once './application/libs/util/log.php';
 require_once './application/models/core/schema.php';
 
-
-/**
- * Class Home
- *
- * Please note:
- * Don't use the same name for class and method, as this might trigger an (unintended) __construct of the class.
- * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
- *
- */
 class Api extends Controller
 {
-    /**
-     * PAGE: index
-     * This method handles what happens when you move to http://yourproject/home/index (which is the default page btw)
-     */
     public function index()
     {
-
-        simpleLog("Api/index called");
-
         // admin session check!
         echo '<pre>';
         echo "APIs are great, make sure to use to be the admin to use this api for now";
         echo '</pre>';
+        pageHit("Api/index called");
     }
     public function create($var = null)
     {
@@ -50,7 +35,7 @@ class Api extends Controller
             // The constructor checks if the required field are satisfied
             // and also obviously checks is $className is sth we have
             $v = new $className((object) $_POST);
-            simpleLog(json_encode($v));
+            simpleLog(json_encode($v), 'Api/create/');
             $Model = $this->loadModel('BaseModel');
             $Model->experimental_insert($v);
         } catch (\Throwable $e) {
@@ -58,10 +43,10 @@ class Api extends Controller
             http_response_code(400);
             echo 'Operation Failed';
         }
+        pageHit("createApi");
     }
     public function read(string $schemaClass = null, string $id = null)
     {
-
         $_POST = json_decode(file_get_contents("php://input"), true);
         simpleLog('_POST' . json_encode($_POST));
         if ($schemaClass == null) {
@@ -77,6 +62,9 @@ class Api extends Controller
             $id = $_POST['id'];
             $more = true;
         }
+        $limit = 30;
+        if (isset($_POST['limit']) && is_numeric($_POST['limit']) && $_POST['limit'] < 100 && $_POST['limit'] > 0)
+            $limit = $_POST['limit'];
         function endsWith(string $haystack, string  $needle)
         {
             $length = strlen($needle);
@@ -96,9 +84,9 @@ class Api extends Controller
         };
         try {
             if ($more)
-                $answers = $Model->select([], $schemaClass, [], (($id !== null) ? [$schemaClass::id => $id, 'op' => '<'] : []));
+                $answers = $Model->select([], $schemaClass, [], (($id !== null) ? [$schemaClass::id => $id, 'op' => '<'] : []), $limit);
             else
-                $answers = $Model->select([], $schemaClass, [], (($id !== null) ? [$schemaClass::id => $id] : []));
+                $answers = $Model->select([], $schemaClass, [], (($id !== null) ? [$schemaClass::id => $id] : []), $limit);
             $answers = array_map($get_dets_r, $answers);
             $answers = array_map(function ($row) use ($Model) {
                 if (property_exists($row, 'password'))
@@ -117,6 +105,11 @@ class Api extends Controller
             http_response_code(400);
             echo 'Operation Failed';
         }
+        pageHit("readApi");
+    }
+    public function like($var = null)
+    {
+        # read sth like $var as in sql like()
     }
     public function update($var = null)
     {
