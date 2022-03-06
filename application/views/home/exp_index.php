@@ -16,7 +16,7 @@
     .content h2 {
         position: relative;
         bottom: 10em;
-        color: #ffc107;
+        color: hsl(180deg 28% 85%);
         text-align: center;
         font-family: var(--primary-font);
         font-size: 3em;
