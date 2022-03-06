@@ -20,7 +20,7 @@ class DashBoard extends Controller
 {
 
     public array $forms = [
-        'Question', 'Role', 'Exam', 'Subject', 'Topic', 'Question',
+        'Question', 'Role', 'Exam', 'Subject', 'Topic',
         'Choice', 'Permission', 'Role_has_Permission', 'User'
     ];
 
@@ -54,7 +54,7 @@ class DashBoard extends Controller
                 $q = new $val();
                 FormForThis($q, $bm);
             }
-        } else if (array_search($form, $this->forms)) {
+        } else if (in_array($form, $this->forms)) {
             $q = new $form();
             FormForThis($q, $bm);
         } else {
