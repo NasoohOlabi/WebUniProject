@@ -5,6 +5,7 @@ require './application/models/core/schema.php';
 require_once 'application/views/_templates/schema_table.php';
 require_once 'application/views/_templates/form.php';
 
+
 function is_ROOT__ADMIN()
 {
     session_start();
@@ -17,6 +18,13 @@ function is_ROOT__ADMIN()
 }
 class DashBoard extends Controller
 {
+
+    public array $forms = [
+        'Question', 'Role', 'Exam', 'Subject', 'Topic', 'Question',
+        'Choice', 'Permission', 'Role_has_Permission', 'User'
+    ];
+
+
     public function index()
     {
         is_ROOT__ADMIN();
@@ -28,8 +36,9 @@ class DashBoard extends Controller
         pageHit("dashboard.index");
     }
 
-    public function add()
+    public function add($form = null)
     {
+
         is_ROOT__ADMIN();
 
         $bm = $this->loadModel('BaseModel');
@@ -38,18 +47,28 @@ class DashBoard extends Controller
         require 'application/views/_templates/user_navbar.php';
         //require 'application/views/_templates/aside.php';
         echo '<div id="main-content" class="inlineBlock">';
-        foreach ([
-            'Question', 'Role', 'Exam', 'Subject', 'Topic', 'Question',
-            'Choice', 'Permission', 'Role_has_Permission', 'User'
-        ] as $val) {
-            $q = new $val();
+
+        if (!$form) {
+
+            foreach ($forms as $val) {
+                $q = new $val();
+                FormForThis($q, $bm);
+            }
+        } else if (array_search($form, $this->forms)) {
+            $q = new $form();
             FormForThis($q, $bm);
+        } else {
+            return;
         }
+
         echo '</div></div>';
 
         require 'application/views/_templates/footer.php';
+
         pageHit("dashboard.Add");
     }
+
+
     public function view()
     {
         // debug message to show where you are, just for the demo
@@ -63,10 +82,7 @@ class DashBoard extends Controller
         require 'application/views/_templates/aside.php';
         echo '<div id="main-content" class="inlineBlock">';
 
-        foreach ([
-            'Question', 'Role', 'Exam', 'Subject', 'Topic', 'Question',
-            'Choice', 'Permission', 'Role_has_Permission', 'User'
-        ] as $val) {
+        foreach ($this->forms as $val) {
             $entries  = $bm->select([], $val);
             schema_table($entries);
         }

@@ -86,7 +86,8 @@
   <section id="home">
     <div class="text" id="title">Dashboard</div>
     <div style="
-    height:fit-content" id="TTTarget"></div>
+    height:fit-content" id="TTTarget">
+    </div>
   </section>
   <script>
     var URL = '<?= URL ?>'

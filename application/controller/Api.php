@@ -38,6 +38,7 @@ class Api extends Controller
             simpleLog(json_encode($v), 'Api/create/');
             $Model = $this->loadModel('BaseModel');
             $Model->experimental_insert($v);
+            header('Location:' . URL . 'DashBoard/');
         } catch (\Throwable $e) {
             simpleLog('Caught exception: ' . $e->getMessage());
             http_response_code(400);

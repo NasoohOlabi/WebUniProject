@@ -67,7 +67,6 @@ function pureRows(row, id) {
           tr.id = window.currentTab + " " + value;
         }
       }
-      // document.createElement('<i class="fa fa-trash" aria-hidden="true"></i>');
     }
   }
   subrows
@@ -227,6 +226,7 @@ function switchTo(Tab) {
     document.getElementById(Tab).innerText;
   const container = document.getElementById("TTTarget");
   container.innerHTML = "";
+
   getFromHQ(
     {},
     (lst) => {
@@ -245,6 +245,11 @@ function switchTo(Tab) {
       // console.log(e)
     }
   );
+  const addBtn = document.createElement("div");
+  addBtn.className = "add-btn";
+  addBtn.innerText = "+";
+  addBtn.onclick = add;
+  container.appendChild(addBtn);
 }
 
 function deleteRow(evt) {
@@ -258,6 +263,7 @@ function deleteRow(evt) {
     const saveBtn = document.createElement("button");
     saveBtn.innerText = "Save Changes";
     saveBtn.className = "modify-btn";
+    saveBtn.onclick = confirmChanges;
     const cancelBtn = document.createElement("button");
     cancelBtn.innerText = "Discard";
     cancelBtn.className = "modify-btn";
@@ -291,6 +297,25 @@ function reset() {
 
   const modifyDiv = document.getElementById("modify-div");
   modifyDiv.parentNode.removeChild(modifyDiv);
+}
+
+function confirmChanges() {
+  var answer = window.confirm("Are you sure you want to save changes?");
+  if (!answer) return;
+}
+
+function add() {
+  if (modifyMode) {
+    var answer = window.confirm(
+      "You have unsaved changes. Are you sure you want to leave this page?"
+    );
+    if (!answer) return;
+  }
+  window.location.assign(
+    "DashBoard/add/" +
+      window.currentTab[0].toUpperCase() +
+      window.currentTab.substring(1)
+  );
 }
 
 window.onload = main;

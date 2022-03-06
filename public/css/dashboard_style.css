@@ -251,3 +251,22 @@ body.dark #home .text {
 .modify-btn:hover {
   background-color: #f44336;
 }
+
+.add-btn {
+  background-color: #009688;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins";
+  font-size: 3em;
+  font-weight: 600;
+  color: #e6e6e6;
+  position: fixed;
+  bottom: 0px;
+  top: 85%;
+  right: 5%;
+  cursor: pointer;
+}
