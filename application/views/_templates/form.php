@@ -21,7 +21,7 @@ function stdclastoidstirng($stdClass)
     $answer = implode(' ', $answer);
     return $answer;
 }
-function getThisFromForm(Table $cls, BaseModel $bm)
+function FormForThis(Table $cls, BaseModel $bm)
 {
     $required_fields = $cls::SQL_Columns();
     unset($required_fields[0]);
