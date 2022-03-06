@@ -55,4 +55,20 @@ class UserModel extends BaseModel
         }
         return false;
     }
+    function getFullDetails(string $username, string $password)
+    {
+        $answer =
+            $this->join(
+                ['User', 'Role'],
+                [User::role_id => Role::id],
+                [[User::username => $username], [User::password => md5($password)]]
+            )[0];
+        $answer->permissions = $this->join(
+            ['Permission', 'Role_has_Permission'],
+            [Permission::id => Role_has_Permission::permission_id],
+            [Role_has_Permission::role_id => $answer->role_id]
+        );
+        simpleLog("$username details looked up : " . json_encode($answer));
+        return $answer;
+    }
 }

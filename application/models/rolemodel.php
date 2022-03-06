@@ -106,23 +106,4 @@ class RoleModel extends BaseModel
             throw new Exception("SQL error: Permission's name and id should be unique");
         return ($cnt == 1);
     }
-    function getFullDetails(string $username, string $password)
-    {
-        $answer =
-            $this->join(
-                ['User', 'Role'],
-                [User::role_id => Role::id],
-                [[User::username => $username], [User::password => md5($password)]]
-            )[0];
-        simpleLog(
-            "[1]>>>>>>rolemodel::fulldetails of " . json_encode($answer)
-        );
-        $answer->permissions = $this->join(
-            ['Permission', 'Role_has_Permission'],
-            [Permission::id => Role_has_Permission::permission_id],
-            [Role_has_Permission::role_id => $answer->role_id]
-        );
-        simpleLog("[2]>>>>>>rolemodel::fulldetails of " . json_encode($answer));
-        return $answer;
-    }
 }

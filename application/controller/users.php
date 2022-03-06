@@ -20,7 +20,7 @@ class Users extends Controller
      */
     public function index()
     {
-        require_once 'application/views/_templates/header.php';
+        // TODO: remove this page or add auth to it
         pageHeadTag('Users List');
         $user = $this->loadModel('UserModel');
         $users  = $user->select([], 'User');
@@ -118,15 +118,14 @@ class Users extends Controller
     public function validate()
     {
         session_start();
-        $new_user = $this->loadModel('UserModel');
+        $users_model = $this->loadModel('UserModel');
 
         $email = htmlentities($_POST['email']);
         $password = htmlentities($_POST['password']);
 
         $username = explode('@', $email)[0];
-        $Roles = $this->loadModel('RoleModel');
-        if ($new_user->validateUser($email, $password)) {
-            $_SESSION['user'] = $Roles->getFullDetails($username, $password);
+        if ($users_model->validateUser($email, $password)) {
+            $_SESSION['user'] = $users_model->getFullDetails($username, $password);
             header("Location:" . URL);
         } else {
             header("Location:" . URL . 'home?login_failed=true');
