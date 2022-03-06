@@ -2,7 +2,7 @@
 <div id="main-container-popup" onclick="outerClicked(event,this)">
     <noscript>It seems that you don't have javascript enabled for this
         site...</noscript>
-    <div class="login-container" onclick="innerClicked(event,this)">
+    <div class="login-container">
         <div class="icon-container">
             <i class="fas fa-user-circle user-icon"></i>
         </div>
