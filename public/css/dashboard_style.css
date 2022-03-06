@@ -217,3 +217,37 @@ body.dark #home .text {
   left: 25%;
   right: 25%;
 }
+
+.modify-btn {
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid var(--secondary-background-color);
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  color: #ffffff;
+  background-color: #009688;
+  display: inline;
+  width: 25%;
+  height: 3em;
+  margin: 0 1%;
+  cursor: pointer;
+}
+
+#modify-div {
+  text-align: center;
+}
+
+.fa-trash {
+  color: #009688;
+  cursor: pointer;
+}
+
+.fa-trash:hover {
+  color: #f44336;
+}
+.modify-btn:hover {
+  background-color: #f44336;
+}

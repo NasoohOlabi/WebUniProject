@@ -1,10 +1,11 @@
 var AllFetchedRows = [];
-
+var deleteList = [];
+var modifyMode = false;
 
 function tableCreateIn_for_(container, header) {
   let tbl = document.createElement("table");
   tbl.className = "table";
-  tbl.appendChild(pureHeader(header))
+  tbl.appendChild(pureHeader(header));
   container.appendChild(tbl);
   return tbl;
 }
@@ -62,8 +63,11 @@ function pureRows(row, id) {
         } else if (key.substring(key.length - 2) !== "id") {
           let td = tr.insertCell();
           td.appendChild(document.createTextNode(value));
+        } else if (key == "id") {
+          tr.id = window.currentTab + " " + value;
         }
       }
+      // document.createElement('<i class="fa fa-trash" aria-hidden="true"></i>');
     }
   }
   subrows
@@ -79,6 +83,12 @@ function pureRows(row, id) {
     .forEach((table_tr) => {
       answer.push(table_tr);
     });
+  trashbtn = document.createElement("i");
+  trashbtn.className = "fa fa-trash";
+  trashbtn.ariaHidden = "true";
+  let td = tr.insertCell();
+  td.appendChild(trashbtn);
+  trashbtn.addEventListener("click", deleteRow);
   return answer;
 }
 
@@ -118,9 +128,9 @@ function main() {
     if (
       scrollPos >
       lastChild.offsetTop +
-      lastChild.offsetHeight -
-      document.body.clientHeight -
-      100
+        lastChild.offsetHeight -
+        document.body.clientHeight -
+        100
     ) {
       const tbl = document.getElementsByClassName("table")[0];
       if (
@@ -138,36 +148,38 @@ function main() {
         ]["id"],
       };
       fetching_flag = true;
-      getFromHQ(data, (lst) => {
-        for (let index = 0; index < lst.length; index++) {
-          const element = lst[index];
-          if (AllFetchedRows[window.currentTab])
-            AllFetchedRows[window.currentTab].push(element);
-          else AllFetchedRows[window.currentTab] = [element];
-          const prows = pureRows(element, index);
-          prows.forEach((row) => tbl.appendChild(row));
+      getFromHQ(
+        data,
+        (lst) => {
+          for (let index = 0; index < lst.length; index++) {
+            const element = lst[index];
+            if (AllFetchedRows[window.currentTab])
+              AllFetchedRows[window.currentTab].push(element);
+            else AllFetchedRows[window.currentTab] = [element];
+            const prows = pureRows(element, index);
+            prows.forEach((row) => tbl.appendChild(row));
+          }
+          fetching_flag = false;
+        },
+        (e) => {
+          // just keep the fetching_flag off
+          // console.log(e)
         }
-        fetching_flag = false;
-      }, (e) => {
-        // just keep the fetching_flag off
-        // console.log(e)
-      });
+      );
     }
   }
   let lastKnownScrollPosition = 0;
   let ticking = false;
-  document.addEventListener("scroll",
-    function (e) {
-      lastKnownScrollPosition = window.scrollY;
-      if (!ticking) {
-        window.requestAnimationFrame(
-          function () {
-            doSomething(lastKnownScrollPosition);
-            ticking = false;
-          });
-        ticking = true;
-      }
-    });
+  document.addEventListener("scroll", function (e) {
+    lastKnownScrollPosition = window.scrollY;
+    if (!ticking) {
+      window.requestAnimationFrame(function () {
+        doSomething(lastKnownScrollPosition);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
 }
 
 function getFromHQ(POST_PAYLOAD, success, failure) {
@@ -176,34 +188,36 @@ function getFromHQ(POST_PAYLOAD, success, failure) {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(POST_PAYLOAD)
-  }).then((res) => {
-    return res.json();
-  }).then((lst) => {
-    console.log(lst)
-    if (!(lst instanceof Array) || lst.length === 0) return;
-    console.log(lst)
-    lst = lst.map((row) => {
-      if (!(row instanceof Object)) return;
-      for (const field in row) {
-        if (!Object.hasOwnProperty.call(row, field)) return
-        const attribute = row[field];
-        if (attribute instanceof Array)
-          continue
-        else if (attribute instanceof Object) {
-          for (const attribute_key in attribute) {
-            if (!Object.hasOwnProperty.call(attribute, attribute_key)) return
-            const attribute_attribute = attribute[attribute_key];
-            row[field + ' ' + attribute_key] = attribute_attribute
-          }
-          delete row[field]
-        }
-      }
-      return row;
+    body: JSON.stringify(POST_PAYLOAD),
+  })
+    .then((res) => {
+      return res.json();
     })
-    console.log(lst)
-    success(lst)
-  }).catch(failure)
+    .then((lst) => {
+      console.log(lst);
+      if (!(lst instanceof Array) || lst.length === 0) return;
+      console.log(lst);
+      lst = lst.map((row) => {
+        if (!(row instanceof Object)) return;
+        for (const field in row) {
+          if (!Object.hasOwnProperty.call(row, field)) return;
+          const attribute = row[field];
+          if (attribute instanceof Array) continue;
+          else if (attribute instanceof Object) {
+            for (const attribute_key in attribute) {
+              if (!Object.hasOwnProperty.call(attribute, attribute_key)) return;
+              const attribute_attribute = attribute[attribute_key];
+              row[field + " " + attribute_key] = attribute_attribute;
+            }
+            delete row[field];
+          }
+        }
+        return row;
+      });
+      console.log(lst);
+      success(lst);
+    })
+    .catch(failure);
 }
 
 function switchTo(Tab) {
@@ -213,7 +227,8 @@ function switchTo(Tab) {
     document.getElementById(Tab).innerText;
   const container = document.getElementById("TTTarget");
   container.innerHTML = "";
-  getFromHQ({},
+  getFromHQ(
+    {},
     (lst) => {
       const tbl = tableCreateIn_for_(container, Object.keys(lst[0]));
       for (let index = 0; index < lst.length; index++) {
@@ -224,9 +239,58 @@ function switchTo(Tab) {
         const prows = pureRows(element, index);
         prows.forEach((row) => tbl.appendChild(row));
       }
-    }, (e) => {
+    },
+    (e) => {
       //TODO: tell user some how that that's all
       // console.log(e)
-    })
+    }
+  );
 }
+
+function deleteRow(evt) {
+  if (!modifyMode) {
+    deleteList = [];
+    const target = document.getElementById("TTTarget");
+
+    const modifyDiv = document.createElement("div");
+    modifyDiv.id = "modify-div";
+
+    const saveBtn = document.createElement("button");
+    saveBtn.innerText = "Save Changes";
+    saveBtn.className = "modify-btn";
+    const cancelBtn = document.createElement("button");
+    cancelBtn.innerText = "Discard";
+    cancelBtn.className = "modify-btn";
+    cancelBtn.onclick = reset;
+
+    modifyDiv.appendChild(saveBtn);
+    modifyDiv.appendChild(cancelBtn);
+
+    target.appendChild(modifyDiv);
+
+    modifyMode = true;
+  }
+
+  let clickedRowId = evt.target.parentNode.parentNode.id;
+  let rowTable = clickedRowId.split(" ")[0];
+  let rowId = clickedRowId.split(" ")[1];
+  //console.log(rowTable, rowId);
+  deleteList.push({ table: rowTable, id: rowId, trId: clickedRowId });
+
+  document.getElementById(clickedRowId).style.display = "none";
+}
+
+function reset() {
+  for (const elem of deleteList) {
+    const tr = document.getElementById(elem.trId);
+    tr.style.display = "table-row";
+  }
+
+  deleteList = [];
+  modifyMode = false;
+
+  const modifyDiv = document.getElementById("modify-div");
+  modifyDiv.parentNode.removeChild(modifyDiv);
+}
+
 window.onload = main;
