@@ -86,15 +86,6 @@
     <div class="text" id="title">Dashboard</div>
     <div style="
     height:fit-content" id="TTTarget"></div>
-    <!-- <?php
-          // foreach ([
-          //   'Question', 'Role', 'Exam', 'Subject', 'Topic', 'Question',
-          //   'Choice', 'Permission', 'Role_has_Permission', 'User'
-          // ] as $val) {
-          //   $entries  = $bm->select([], $val);
-          //   schema_table($entries);
-          // }
-          ?> -->
   </section>
   <script>
     var URL = '<?= URL ?>'
