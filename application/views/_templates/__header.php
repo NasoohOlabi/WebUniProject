@@ -10,4 +10,5 @@
     <link rel="stylesheet" href="<?= URL ?>public/css/style.css" />
     <link rel="stylesheet" href="<?= URL ?>public/css/util.style.css" />
     <script src="https://use.fontawesome.com/f392b27f2a.js"></script>
+    <script src="<?= URL ?>public/js/Main.js"></script>
 </head>

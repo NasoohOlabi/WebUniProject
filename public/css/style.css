@@ -23,7 +23,6 @@ header {
   padding: 0px;
   display: flex;
   height: var(--navbar-height);
-  align-items: center;
 }
 nav {
   display: flex;
@@ -51,11 +50,42 @@ nav > span {
   background-color: var(--secondary-background-color);
   border: none;
 }
-#logo-img {
+/* #logo-img {
   height: calc(var(--navbar-height) - 6px);
   background-color: var(--primary);
   display: inline;
   object-position: 0 0;
+} */
+#logo{
+  display: flex;
+  margin:0;
+}
+#logo-img {
+  height: var(--navbar-height) ;
+  width: var(--navbar-height) ;
+  zoom:125%;
+  margin:-5px;
+  filter: brightness(0);
+}
+#logo-separator{
+  height: calc(var(--navbar-height) * 0.8);
+  width:1.5px;
+  margin-top:calc(var(--navbar-height) * 0.1);
+  margin-left:calc( - var(--navbar-height) * 0.1);
+  background-color: black;
+}
+#logo-text{
+  color: black;
+  font-size: xx-large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  height: calc(var(--navbar-height) * 0.8);
+  width:fit-content;
+  margin-top:calc(var(--navbar-height) * 0.1);
+  margin-left:calc( - var(--navbar-height) * 0.1);
 }
 
 #logo {

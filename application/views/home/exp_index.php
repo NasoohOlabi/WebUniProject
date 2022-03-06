@@ -1,6 +1,5 @@
 <style>
     .univ-photo {
-        background-image: url(https://umaine.edu/news/wp-content/uploads/sites/3/2021/05/McNamara-news-feature.jpg);
         width: 100%;
         height: 45.8em;
         background-position: center;
@@ -31,10 +30,6 @@
 </style>
 
 <div class="content">
-    <div class="univ-photo"></div>
+    <div class="univ-photo" style="background-image: url(<?= URL ?>/public/img/background.png);"></div>
     <h2>Welcome To The University of MNU</h2>
-
-
-
-
 </div>
