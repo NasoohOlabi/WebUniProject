@@ -1,17 +1,15 @@
 var AllFetchedRows = [];
 
+
 function tableCreateIn_for_(container, header) {
   let tbl = document.createElement("table");
   tbl.className = "table";
-  let tr = tbl.insertRow();
-  tr.innerHTML = header
-    .filter((x) => x.substring(x.length - 2) !== "id")
-    .map((v) => "<th>" + v + "</th>")
-    .join("");
+  tbl.appendChild(pureHeader(header))
   container.appendChild(tbl);
   return tbl;
 }
-function expand2(id_to_toggle) {
+
+function eventHandler(id_to_toggle) {
   let dropped_down = false;
   let tr = document.getElementById(id_to_toggle);
   let btn = document.getElementById(id_to_toggle + "-" + "btn");
@@ -25,6 +23,7 @@ function expand2(id_to_toggle) {
     tr.style.display = !dropped_down ? "none" : "table-row";
   };
 }
+
 function pureHeader(names) {
   let tr = document.createElement("tr");
   tr.innerHTML = names
@@ -33,14 +32,11 @@ function pureHeader(names) {
     .join("");
   return tr;
 }
+
 function pureRows(row, id) {
   const answer = [];
   let tr = document.createElement("tr");
   answer.push(tr);
-  // let rows = arr[Tab]
-  // if (!rows.map)
-  // rows = [rows]
-  // let row = rows[ind]
   let subrows = [];
   const number_of_keys = Object.keys(row).filter(
     (x) => x.substring(x.length - 2) !== "id"
@@ -53,7 +49,7 @@ function pureRows(row, id) {
         let tmp = document.createElement("button");
         tmp.innerText = "🔽";
         tmp.id = key + "-" + id + "-" + subrows.length + "-" + "btn";
-        tmp.onclick = expand2(key + "-" + id + "-" + subrows.length);
+        tmp.onclick = eventHandler(key + "-" + id + "-" + subrows.length);
         subrows.push(key + "-" + id + "-" + subrows.length);
         tmp.style =
           "background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;";
@@ -85,6 +81,7 @@ function pureRows(row, id) {
     });
   return answer;
 }
+
 function pureSubTable(objs, trId, parent_number_of_keys) {
   if (parent_number_of_keys === 0) return;
   let tr = document.createElement("tr");
@@ -108,20 +105,22 @@ function pureSubTable(objs, trId, parent_number_of_keys) {
 
   return tr;
 }
+
 function main() {
   const home = document.getElementById("home");
   if (!home) return;
   window.currentTab = "User";
   let fetching_flag = false;
+
   function doSomething(scrollPos) {
     if (fetching_flag) return;
     const lastChild = home.children[home.children.length - 1];
     if (
       scrollPos >
       lastChild.offsetTop +
-        lastChild.offsetHeight -
-        document.body.clientHeight -
-        100
+      lastChild.offsetHeight -
+      document.body.clientHeight -
+      100
     ) {
       const tbl = document.getElementsByClassName("table")[0];
       if (
@@ -139,48 +138,74 @@ function main() {
         ]["id"],
       };
       fetching_flag = true;
-
-      fetch(URL + `Api/read/${window.currentTab}/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-        .then((res) => {
-          return res.json();
-        })
-        .then((lst) => {
-          if (lst.length === 0) return;
-          for (let index = 0; index < lst.length; index++) {
-            const element = lst[index];
-            if (AllFetchedRows[window.currentTab])
-              AllFetchedRows[window.currentTab].push(element);
-            else AllFetchedRows[window.currentTab] = [element];
-            const prows = pureRows(element, index);
-            prows.forEach((row) => tbl.appendChild(row));
-          }
-          fetching_flag = false;
-        })
-        .catch((e) => {
-          // just keep the fetching_flag off
-          // console.log(e)
-        });
+      getFromHQ(data, (lst) => {
+        for (let index = 0; index < lst.length; index++) {
+          const element = lst[index];
+          if (AllFetchedRows[window.currentTab])
+            AllFetchedRows[window.currentTab].push(element);
+          else AllFetchedRows[window.currentTab] = [element];
+          const prows = pureRows(element, index);
+          prows.forEach((row) => tbl.appendChild(row));
+        }
+        fetching_flag = false;
+      }, (e) => {
+        // just keep the fetching_flag off
+        // console.log(e)
+      });
     }
   }
   let lastKnownScrollPosition = 0;
   let ticking = false;
-  document.addEventListener("scroll", function (e) {
-    lastKnownScrollPosition = window.scrollY;
-    if (!ticking) {
-      window.requestAnimationFrame(function () {
-        doSomething(lastKnownScrollPosition);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
+  document.addEventListener("scroll",
+    function (e) {
+      lastKnownScrollPosition = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(
+          function () {
+            doSomething(lastKnownScrollPosition);
+            ticking = false;
+          });
+        ticking = true;
+      }
+    });
 }
+
+function getFromHQ(POST_PAYLOAD, success, failure) {
+  fetch(URL + `Api/read/${window.currentTab}/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(POST_PAYLOAD)
+  }).then((res) => {
+    return res.json();
+  }).then((lst) => {
+    console.log(lst)
+    if (!(lst instanceof Array) || lst.length === 0) return;
+    console.log(lst)
+    lst = lst.map((row) => {
+      if (!(row instanceof Object)) return;
+      for (const field in row) {
+        if (!Object.hasOwnProperty.call(row, field)) return
+        const attribute = row[field];
+        if (attribute instanceof Array)
+          continue
+        else if (attribute instanceof Object) {
+          for (const attribute_key in attribute) {
+            if (!Object.hasOwnProperty.call(attribute, attribute_key)) return
+            const attribute_attribute = attribute[attribute_key];
+            row[field + ' ' + attribute_key] = attribute_attribute
+          }
+          delete row[field]
+        }
+      }
+      return row;
+    })
+    console.log(lst)
+    success(lst)
+  }).catch(failure)
+}
+
 function switchTo(Tab) {
   if (window.currentTab === Tab) return;
   window.currentTab = Tab;
@@ -188,19 +213,8 @@ function switchTo(Tab) {
     document.getElementById(Tab).innerText;
   const container = document.getElementById("TTTarget");
   container.innerHTML = "";
-  fetch(URL + `Api/read/${Tab}/`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((res) => {
-      // console.log(res)
-      return res.json();
-    })
-    .then((lst) => {
-      // console.log(lst)
-      if (lst.length === 0) return;
+  getFromHQ({},
+    (lst) => {
       const tbl = tableCreateIn_for_(container, Object.keys(lst[0]));
       for (let index = 0; index < lst.length; index++) {
         const element = lst[index];
@@ -210,10 +224,9 @@ function switchTo(Tab) {
         const prows = pureRows(element, index);
         prows.forEach((row) => tbl.appendChild(row));
       }
-    })
-    .catch((e) => {
+    }, (e) => {
       //TODO: tell user some how that that's all
       // console.log(e)
-    });
+    })
 }
 window.onload = main;
