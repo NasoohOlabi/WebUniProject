@@ -322,7 +322,7 @@ class BaseModel
             }, $lines) :
             new Exception("No Exams available");
     }
-    public function select(array $columns, string $schemaClass, $safe_conditions = null, array $unsafe_conditions = null, int $limit = 10)
+    public function select(array $columns, string $schemaClass, $safe_conditions = null, array $unsafe_conditions = null, int $limit = 100)
     {
         return $this->__select($columns, $schemaClass, $safe_conditions, $unsafe_conditions, ($limit > 0) ? ['limit' => $limit] : []);
     }
