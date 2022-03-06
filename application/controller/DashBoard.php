@@ -35,8 +35,8 @@ class DashBoard extends Controller
         $bm = $this->loadModel('BaseModel');
 
         pageHeadTag("index");
-        require 'application/views/_templates/navbar.php';
-        require 'application/views/_templates/aside.php';
+        require 'application/views/_templates/user_navbar.php';
+        //require 'application/views/_templates/aside.php';
         echo '<div id="main-content" class="inlineBlock">';
         foreach ([
             'Question', 'Role', 'Exam', 'Subject', 'Topic', 'Question',

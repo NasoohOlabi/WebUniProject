@@ -56,36 +56,36 @@ nav > span {
   display: inline;
   object-position: 0 0;
 } */
-#logo{
+#logo {
   display: flex;
-  margin:0;
+  margin: 0;
 }
 #logo-img {
-  height: var(--navbar-height) ;
-  width: var(--navbar-height) ;
-  zoom:125%;
-  margin:-5px;
+  height: var(--navbar-height);
+  width: var(--navbar-height);
+  zoom: 125%;
+  margin: -5px;
   filter: brightness(0);
 }
-#logo-separator{
+#logo-separator {
   height: calc(var(--navbar-height) * 0.8);
-  width:1.5px;
-  margin-top:calc(var(--navbar-height) * 0.1);
-  margin-left:calc( - var(--navbar-height) * 0.1);
+  width: 1.5px;
+  margin-top: calc(var(--navbar-height) * 0.1);
+  margin-left: calc(- var(--navbar-height) * 0.1);
   background-color: black;
 }
-#logo-text{
+#logo-text {
   color: black;
   font-size: xx-large;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 10px;
   height: calc(var(--navbar-height) * 0.8);
-  width:fit-content;
-  margin-top:calc(var(--navbar-height) * 0.1);
-  margin-left:calc( - var(--navbar-height) * 0.1);
+  width: fit-content;
+  margin-top: calc(var(--navbar-height) * 0.1);
+  margin-left: calc(- var(--navbar-height) * 0.1);
 }
 
 #logo {
@@ -174,7 +174,7 @@ aside {
 }
 
 .login-container {
-  margin: 5% 0px;
+  margin: 5% auto;
   width: 25%;
   min-width: 300px;
   padding: 5%;
