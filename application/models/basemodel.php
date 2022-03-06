@@ -146,6 +146,40 @@ class BaseModel
         simpleLog("bindings " . json_encode($values));
         return $this->db->prepare($sql)->execute(array_values($values));
     }
+    function experimental_update($object)
+    {
+        $schemaClass = get_class($object);
+        $columns = $schemaClass::SQL_Columns();
+
+        $values =  array_map(function ($column_name) use ($object) {
+            if (property_exists($object, $column_name) && isset($object->{$column_name}))
+                return $object->{$column_name};
+            else
+                return null;
+        }, $columns);
+
+        $id = null;
+
+        foreach ($columns as $key => $value) {
+            if ($value === 'id')
+                $id = $values[$key];
+            if ($values[$key] === null) {
+                unset($columns[$key]);
+                unset($values[$key]);
+            }
+        }
+
+        $syntax_columns = implode(', ', array_map(function ($col) {
+            return '`' . $col . '` = ?';
+        }, $columns));
+
+        $values[] = $id;
+
+        $sql = "UPDATE `user` SET $syntax_columns WHERE id = ?";
+        simpleLog('BaseModel::experimental_update Running : "' . $sql . '"');
+        simpleLog("bindings " . json_encode($values));
+        return $this->db->prepare($sql)->execute(array_values($values));
+    }
     private static function _is_term($x)
     {
         return (is_array($x) && count($x) == 1 && !is_array($x[array_keys($x)[0]]))
