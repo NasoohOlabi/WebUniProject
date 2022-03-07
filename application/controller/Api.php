@@ -110,8 +110,9 @@ class Api extends Controller
     {
         # read sth like $var as in sql like()
     }
-    public function update($var = null)
+    public function update($schemaClass)
     {
+        $_POST = json_decode(file_get_contents("php://input"), true);
         try {
             // Clean inputs
             $_POST = array_map('htmlentities', $_POST);
@@ -121,16 +122,17 @@ class Api extends Controller
                 return (is_string($v) && strlen($v) == 0) ? NULL : $v;
             }, $_POST);
             // Get the name of what are we updating
-            $className = $_POST['schemaClass'];
+            $className = $schemaClass;
             // Passwords get special treatment and get hashed
             if (isset($_POST['password']))
                 $_POST['password'] = md5($_POST['password']);
             // and also obviously checks is $className is sth we have
+            simpleLog('api update>>>>>>>POST>>>>>' . json_encode((object)$_POST));
             $v = new $className((object) $_POST);
-            simpleLog(json_encode($v), 'Api/update/');
+            simpleLog('api update>>>>>>>>>' . json_encode($v));
             $Model = $this->loadModel('BaseModel');
             $Model->experimental_update($v);
-            header('Location:' . URL . 'DashBoard/');
+            echo json_encode($v);
         } catch (\Throwable $e) {
             simpleLog('Caught exception: ' . $e->getMessage());
             http_response_code(400);

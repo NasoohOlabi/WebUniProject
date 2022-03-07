@@ -27,7 +27,6 @@ function pageHit(string $page)
     fclose($file);
     // if (fsize($page) > 1000000) {
     $fileSize = fsize($page);
-    simpleLog("file size is $fileSize");
     if (fsize($page) > 1000000) {
         compressHits($page);
     }

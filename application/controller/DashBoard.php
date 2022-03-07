@@ -21,7 +21,8 @@ class DashBoard extends Controller
 
     public array $forms = [
         'Question', 'Role', 'Exam', 'Subject', 'Topic',
-        'Choice', 'Permission', 'Role_has_Permission', 'User'
+        'Choice', 'Permission', 'Role_has_Permission', 'User', 'Exam_Center',
+        'Student', 'Exam_Has_Question', 'Student_Took_Exam', 'Exam_Center_Has_Exam'
     ];
 
 
@@ -51,7 +52,6 @@ class DashBoard extends Controller
         echo '<div id="main-content" class="inlineBlock">';
 
         if (!$form) {
-
             foreach ($forms as $val) {
                 $q = new $val();
                 FormForThis($q, $bm);
@@ -68,6 +68,33 @@ class DashBoard extends Controller
         require 'application/views/_templates/footer.php';
 
         pageHit("dashboard.Add");
+    }
+
+    public function update($form)
+    {
+
+        is_ROOT__ADMIN();
+
+        $_POST = array_map('htmlentities', $_POST);
+
+
+        $bm = $this->loadModel('BaseModel');
+
+        pageHeadTag("index");
+        require 'application/views/_templates/user_navbar.php';
+        //require 'application/views/_templates/aside.php';
+        echo '<div id="main-content" class="inlineBlock">';
+
+        if (in_array($form, $this->forms)) {
+            $q = new $form((object)$_POST);
+            FormForThis($q, $bm);
+        }
+
+        echo '</div></div>';
+
+        require 'application/views/_templates/footer.php';
+
+        pageHit("dashboard.update");
     }
 
 

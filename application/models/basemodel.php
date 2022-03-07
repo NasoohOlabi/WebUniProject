@@ -175,7 +175,7 @@ class BaseModel
 
         $values[] = $id;
 
-        $sql = "UPDATE `user` SET $syntax_columns WHERE id = ?";
+        $sql = "UPDATE `$schemaClass` SET $syntax_columns WHERE id = ?";
         simpleLog('BaseModel::experimental_update Running : "' . $sql . '"');
         simpleLog("bindings " . json_encode($values));
         return $this->db->prepare($sql)->execute(array_values($values));

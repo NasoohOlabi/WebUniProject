@@ -2,10 +2,10 @@ var AllFetchedRows = [];
 var deleteList = [];
 var modifyMode = false;
 
-function tableCreateIn_for_(container, header) {
+function tableCreateIn_for_(container, id, header) {
   let tbl = document.createElement("table");
   tbl.className = "table";
-  tbl.appendChild(pureHeader(header));
+  tbl.appendChild(pureHeader(id, header));
   container.appendChild(tbl);
   return tbl;
 }
@@ -25,12 +25,13 @@ function eventHandler(id_to_toggle) {
   };
 }
 
-function pureHeader(names) {
+function pureHeader(id, names) {
   let tr = document.createElement("tr");
   tr.innerHTML = names
     .filter((x) => x.substring(x.length - 2) !== "id")
     .map((v) => "<th>" + v + "</th>")
     .join("");
+  tr.id = id;
   return tr;
 }
 
@@ -51,7 +52,7 @@ function pureRows(row, id) {
         tmp.innerText = "🔽";
         tmp.id = key + "-" + id + "-" + subrows.length + "-" + "btn";
         tmp.onclick = eventHandler(key + "-" + id + "-" + subrows.length);
-        subrows.push(key + "-" + id + "-" + subrows.length);
+        subrows.push(key.replace(' ', '-') + "-" + id + "-" + subrows.length);
         tmp.style =
           "background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;";
         td.appendChild(tmp);
@@ -64,7 +65,7 @@ function pureRows(row, id) {
           let td = tr.insertCell();
           td.appendChild(document.createTextNode(value));
         } else if (key == "id") {
-          tr.id = window.currentTab + " " + value;
+          tr.id = window.currentTab + "-" + value;
         }
       }
     }
@@ -85,9 +86,15 @@ function pureRows(row, id) {
   trashbtn = document.createElement("i");
   trashbtn.className = "fa fa-trash";
   trashbtn.ariaHidden = "true";
-  let td = tr.insertCell();
-  td.appendChild(trashbtn);
+  let td_trash = tr.insertCell();
+  td_trash.appendChild(trashbtn);
   trashbtn.addEventListener("click", deleteRow);
+  edit_btn = document.createElement("i");
+  edit_btn.className = "fa fa-pencil";
+  edit_btn.ariaHidden = "true";
+  let td_edit = tr.insertCell();
+  td_edit.appendChild(edit_btn);
+  edit_btn.addEventListener("click", editRow(row, tr.id));
   return answer;
 }
 
@@ -101,8 +108,8 @@ function pureSubTable(objs, trId, parent_number_of_keys) {
   container_td.colSpan = parent_number_of_keys;
   const contained_table = document.createElement("table");
   container_td.appendChild(contained_table);
-
-  contained_table.appendChild(pureHeader(Object.keys(objs[0])));
+  let tbl_name = trId.split('-')[1]
+  contained_table.appendChild(pureHeader(tbl_name, Object.keys(objs[0])));
 
   objs
     .map((obj, index) => pureRows(obj, index))
@@ -127,9 +134,9 @@ function main() {
     if (
       scrollPos >
       lastChild.offsetTop +
-        lastChild.offsetHeight -
-        document.body.clientHeight -
-        100
+      lastChild.offsetHeight -
+      document.body.clientHeight -
+      100
     ) {
       const tbl = document.getElementsByClassName("table")[0];
       if (
@@ -193,27 +200,27 @@ function getFromHQ(POST_PAYLOAD, success, failure) {
       return res.json();
     })
     .then((lst) => {
-      console.log(lst);
+      // console.log(lst);
       if (!(lst instanceof Array) || lst.length === 0) return;
-      console.log(lst);
-      lst = lst.map((row) => {
-        if (!(row instanceof Object)) return;
-        for (const field in row) {
-          if (!Object.hasOwnProperty.call(row, field)) return;
-          const attribute = row[field];
-          if (attribute instanceof Array) continue;
-          else if (attribute instanceof Object) {
-            for (const attribute_key in attribute) {
-              if (!Object.hasOwnProperty.call(attribute, attribute_key)) return;
-              const attribute_attribute = attribute[attribute_key];
-              row[field + " " + attribute_key] = attribute_attribute;
-            }
-            delete row[field];
-          }
-        }
-        return row;
-      });
-      console.log(lst);
+      // console.log(lst);
+      // lst = lst.map((row) => {
+      //   if (!(row instanceof Object)) return;
+      //   for (const field in row) {
+      //     if (!Object.hasOwnProperty.call(row, field)) return;
+      //     const attribute = row[field];
+      //     if (attribute instanceof Array) continue;
+      //     else if (attribute instanceof Object) {
+      //       for (const attribute_key in attribute) {
+      //         if (!Object.hasOwnProperty.call(attribute, attribute_key)) return;
+      //         const attribute_attribute = attribute[attribute_key];
+      //         row[field + " " + attribute_key] = attribute_attribute;
+      //       }
+      //       delete row[field];
+      //     }
+      //   }
+      //   return row;
+      // });
+      // console.log(lst);
       success(lst);
     })
     .catch(failure);
@@ -230,7 +237,7 @@ function switchTo(Tab) {
   getFromHQ(
     {},
     (lst) => {
-      const tbl = tableCreateIn_for_(container, Object.keys(lst[0]));
+      const tbl = tableCreateIn_for_(container, window.currentTab, Object.keys(lst[0]));
       for (let index = 0; index < lst.length; index++) {
         const element = lst[index];
         if (AllFetchedRows[window.currentTab])
@@ -251,7 +258,54 @@ function switchTo(Tab) {
   addBtn.onclick = add;
   container.appendChild(addBtn);
 }
+function editRow(row, id) {
+  return (evt) => {
+    var arr = [].slice.call(document.getElementById(id).children);
+    let tic = arr.pop();
+    let x = arr.pop();
+    if (tic.children[0].className.includes('fa-pencil')) {
+      for (const child of arr) {
+        child.contentEditable = true;
+      }
+      tic.children[0].className = tic.children[0].className.replace('fa-pencil', 'fa-check');
+      x.children[0].className = x.children[0].className.replace('fa-trash', 'fa-close')
+    }
+    else {
+      let data = row;
+      let sql_id = id.split('-').pop();
+      let header = [].slice.call(evt.currentTarget.parentElement.parentElement.parentElement.children[0].children)
+      header = header.map(e => e.innerText)
+      // header.forEach(e => {
+      //   console.log(e)
+      // })
+      // arr.forEach(e => {
+      //   console.log(e.innerText)
+      // })
+      // console.log(row)
+      data['id'] = sql_id
+      header.forEach((key, i) => {
+        data[key] = arr[i].innerText
+      })
 
+      console.log(data)
+
+      fetch(URL + `Api/update/${window.currentTab}/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      })
+        .then((res) => {
+          console.log(res);
+          return res.json();
+        })
+
+      tic.children[0].className = tic.children[0].className.replace('fa-check', 'fa-pencil');
+      x.children[0].className = x.children[0].className.replace('fa-close', 'fa-trash')
+    }
+  }
+}
 function deleteRow(evt) {
   if (!modifyMode) {
     deleteList = [];
@@ -313,8 +367,8 @@ function add() {
   }
   window.location.assign(
     "DashBoard/add/" +
-      window.currentTab[0].toUpperCase() +
-      window.currentTab.substring(1)
+    window.currentTab[0].toUpperCase() +
+    window.currentTab.substring(1)
   );
 }
 
