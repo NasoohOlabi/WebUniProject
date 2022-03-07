@@ -54,20 +54,20 @@
           </li>
 
           <li class="nav-link">
-            <a href="#">
-              <span class="text nav-text">Analytics</span>
+            <a href="#" onclick="switchTo('exam_center')">
+              <span class="text nav-text" id="exam_center">Exam Centers</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#">
-              <span class="text nav-text">Likes</span>
+            <a href="#" onclick="switchTo('subject')">
+              <span class="text nav-text" id="subject">Subjects</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#">
-              <span class="text nav-text">Wallets</span>
+            <a href="#" onclick="switchTo('topic')">
+              <span class="text nav-text" id="topic">Topics</span>
             </a>
           </li>
         </ul>
