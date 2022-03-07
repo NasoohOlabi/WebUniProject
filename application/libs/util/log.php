@@ -15,9 +15,27 @@ function simpleLog($msg, $directory = null, $filename = null)
 }
 function pageHit($page)
 {
-    $log_file = 'logs/page/' . $page . ".log";
+    $filename = '\..\..\..\logs\page\\' . $page . ".txt";
     // setting the logging file in php.ini
-    ini_set('error_log', $log_file);
+    // ini_set('error_log', $log_file);
     // logging the error
-    error_log("$page hit");
+    // error_log("$page hit");
+    // var_dump(__DIR__);
+    $myfile = fopen(__DIR__ . $filename, 'a');
+    fwrite($myfile, 'a');
+    fclose($myfile);
+}
+function fsize($page)
+{
+    $filename = '\..\..\..\logs\page\\' . $page . ".txt";
+    return filesize(__DIR__ . $filename);
+}
+function compressHits(string $page)
+{
+    $filename = '\..\..\..\logs\page\\' . $page . ".txt";
+    rename($filename, '\..\..\..\logs\page\old' . $page . ".txt");
+    //TODO: get file size
+    // read from permanent accumulator file int `x`
+    // add `x` to file size
+    // overwrite the sum in accumulator file
 }
