@@ -11,7 +11,7 @@ class Api extends Controller
         echo '<pre>';
         echo "APIs are great, make sure to use to be the admin to use this api for now";
         echo '</pre>';
-        pageHit("Api/index called");
+        pageHit("Api.index");
     }
     public function create($var = null)
     {
@@ -44,7 +44,7 @@ class Api extends Controller
             http_response_code(400);
             echo 'Operation Failed';
         }
-        pageHit("createApi");
+        pageHit("Api.create");
     }
     public function read(string $schemaClass = null, string $id = null)
     {
@@ -66,11 +66,7 @@ class Api extends Controller
         $limit = 30;
         if (isset($_POST['limit']) && is_numeric($_POST['limit']) && $_POST['limit'] < 100 && $_POST['limit'] > 0)
             $limit = $_POST['limit'];
-        function endsWith(string $haystack, string  $needle)
-        {
-            $length = strlen($needle);
-            return $length > 0 ? substr($haystack, -$length) === $needle : true;
-        }
+
         $Model = $this->loadModel('BaseModel');
         $get_dets_r = function (Table $answer) use ($Model, &$get_dets_r) {
             foreach ($answer as $prop => $val) {
@@ -108,7 +104,7 @@ class Api extends Controller
             http_response_code(400);
             echo 'Operation Failed';
         }
-        pageHit("readApi");
+        pageHit("Api.read");
     }
     public function like($var = null)
     {
@@ -140,7 +136,7 @@ class Api extends Controller
             http_response_code(400);
             echo 'Operation Failed';
         }
-        pageHit("updateApi");
+        pageHit("Api.update");
     }
     public function delete($var = null)
     {
@@ -166,6 +162,6 @@ class Api extends Controller
             http_response_code(400);
             echo 'Operation Failed';
         }
-        pageHit("deleteApi");
+        pageHit("Api.delete");
     }
 }

@@ -25,8 +25,8 @@ class Users extends Controller
         $user = $this->loadModel('UserModel');
         $users  = $user->select([], 'User');
         schema_table($users);
-        // foreach ($users as $schemaClass) {
-        // }
+
+        pageHit('Users.index');
     }
 
     public function signup()
@@ -34,6 +34,7 @@ class Users extends Controller
         session_start();
         pageHeadTag("Signup");
         require_once 'application/views/home/signup.php';
+        pageHit('Users.signup');
     }
 
     public function register()
@@ -113,6 +114,7 @@ class Users extends Controller
 
         $_POST = array();
         $_FILES = array();
+        pageHit('Users.index');
     }
 
     public function validate()
@@ -130,6 +132,8 @@ class Users extends Controller
         } else {
             header("Location:" . URL . 'home?login_failed=true');
         }
+
+        pageHit('Users.validate');
     }
 
     function logout()
@@ -140,5 +144,7 @@ class Users extends Controller
         }
         session_unset();
         header("Location:" . URL);
+
+        pageHit('Users.logout');
     }
 }

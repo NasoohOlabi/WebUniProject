@@ -23,5 +23,11 @@ require 'application/config/config.php';
 require 'application/libs/application.php';
 require 'application/libs/controller.php';
 
+function endsWith(string $haystack, string $needle)
+{
+    $length = strlen($needle);
+    return $length > 0 ? substr($haystack, -$length) === $needle : true;
+}
+
 // start the application
 $app = new Application();

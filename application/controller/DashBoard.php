@@ -32,6 +32,8 @@ class DashBoard extends Controller
         simpleLog("dashboard called");
         $bm = $this->loadModel('BaseModel');
 
+        $stats = hitStats();
+
         require './application/views/Dashboard/index.php';
         pageHit("dashboard.index");
     }

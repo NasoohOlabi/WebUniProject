@@ -49,5 +49,6 @@ class Home extends Controller
         }
 
         //require 'application/views/_templates/footer.php';
+        pageHit('home.index');
     }
 }

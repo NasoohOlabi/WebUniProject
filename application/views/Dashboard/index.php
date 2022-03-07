@@ -87,6 +87,13 @@
     <div class="text" id="title">Dashboard</div>
     <div style="
     height:fit-content" id="TTTarget">
+      <?php
+      if ($stats) {
+        foreach ($stats as $page => $number) {
+          echo '<p>' . $page . '</p><div style = "display:inline-block;background-color:red;height:50px;width:' . $number . 'px"></div><span>' . $number . '</span>';
+        }
+      }
+      ?>
     </div>
   </section>
   <script>

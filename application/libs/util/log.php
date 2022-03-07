@@ -13,19 +13,26 @@ function simpleLog($msg, $directory = null, $filename = null)
     // logging the error
     error_log($msg);
 }
-function pageHit($page)
+function pageHit(string $page)
 {
+    $directoryName = '\..\..\..\logs\page';
+    //Check if the directory already exists.
+    if (!is_dir(__DIR__ . $directoryName)) {
+        //Directory does not exist, so lets create it.
+        mkdir(__DIR__ . $directoryName, 0755);
+    }
     $filename = '\..\..\..\logs\page\\' . $page . ".txt";
-    // setting the logging file in php.ini
-    // ini_set('error_log', $log_file);
-    // logging the error
-    // error_log("$page hit");
-    // var_dump(__DIR__);
-    $myfile = fopen(__DIR__ . $filename, 'a');
-    fwrite($myfile, 'a');
-    fclose($myfile);
+    $file = fopen(__DIR__ . $filename, 'a');
+    fwrite($file, 'a');
+    fclose($file);
+    // if (fsize($page) > 1000000) {
+    $fileSize = fsize($page);
+    simpleLog("file size is $fileSize");
+    if (fsize($page) > 1000000) {
+        compressHits($page);
+    }
 }
-function fsize($page)
+function fsize(string $page)
 {
     $filename = '\..\..\..\logs\page\\' . $page . ".txt";
     return filesize(__DIR__ . $filename);
@@ -33,9 +40,63 @@ function fsize($page)
 function compressHits(string $page)
 {
     $filename = '\..\..\..\logs\page\\' . $page . ".txt";
-    rename($filename, '\..\..\..\logs\page\old' . $page . ".txt");
+    if (!file_exists(__DIR__ . '\..\..\..\logs\page\\' . $page . "_hits.txt")) {
+        rename(__DIR__ . $filename, __DIR__ . '\..\..\..\logs\page\\' . $page . "_hits.txt");
+        $size = fsize($page . '_hits');
+        $file = fopen(__DIR__ . '\..\..\..\logs\page\\' . $page . "_hits.txt", 'w');
+        fwrite($file, $size);
+        fclose($file);
+    } else {
+        rename(__DIR__ . $filename, __DIR__ . '\..\..\..\logs\page\\' . $page . "_tmp_hits.txt");
+        $size = fsize($page . '_tmp_hits');
+        unlink(__DIR__ . '\..\..\..\logs\page\\' . $page . "_tmp_hits.txt");
+        $file = fopen(__DIR__ . '\..\..\..\logs\page\\' . $page . "_hits.txt", 'r');
+        $number = fgets($file);
+        fclose($file);
+        $file = fopen(__DIR__ . '\..\..\..\logs\page\\' . $page . "_hits.txt", 'w');
+        fwrite($file, $size + $number);
+        fclose($file);
+    }
     //TODO: get file size
     // read from permanent accumulator file int `x`
     // add `x` to file size
     // overwrite the sum in accumulator file
+}
+function readHits(string $page)
+{
+    $file = fopen(__DIR__ . '\..\..\..\logs\page\\' . $page . "_hits.txt", 'r');
+    $number = fgets($file);
+    fclose($file);
+    return $number * 1;
+}
+function hitStats()
+{
+    $files = scandir(__DIR__ . '\..\..\..\logs\page\\');
+    $hit_files = [];
+    $non_hit_files = [];
+    foreach ($files as $file) {
+        if (endsWith($file, '_hits.txt')) {
+            $hit_files[] = substr($file, 0, strlen($file) - strlen('_hits.txt'));
+        } elseif (endsWith($file, '.txt')) {
+            $non_hit_files[] = substr($file, 0, strlen($file) - 4);
+        }
+    }
+    $non_hit_cnt = [];
+    foreach ($non_hit_files as $non_hit_file) {
+        $non_hit_cnt[$non_hit_file] = fsize($non_hit_file);
+    }
+    $hit_cnt = [];
+    foreach ($hit_files as $hit_file) {
+        $hit_cnt[$hit_file] = readHits($hit_file);
+    }
+
+    foreach ($non_hit_cnt as $page => $hits) {
+        if (isset($hit_cnt[$page])) {
+            $hit_cnt[$page] += $hits;
+        } else {
+            $hit_cnt[$page] = $hits;
+        }
+    }
+
+    return $hit_cnt;
 }

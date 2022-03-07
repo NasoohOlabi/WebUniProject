@@ -1,26 +1,12 @@
 <?php
 require_once 'application/views/_templates/header.php';
 require_once 'application/views/exams/index.php';
+require_once './application/libs/util/log.php';
 
-/**
- * Class Home
- *
- * Please note:
- * Don't use the same name for class and method, as this might trigger an (unintended) __construct of the class.
- * This is really weird behaviour, but documented here: http://php.net/manual/en/language.oop5.decon.php
- *
- */
 class Exams extends Controller
 {
-    // public function index()
-    // {
-    //     return ".";
-    // }
-
     public function index()
     {
-        require_once './application/libs/util/log.php';
-        simpleLog("index called");
 
         $model = $this->loadModel('ExamModel');
         $exams = $model->getAllExams();
@@ -39,5 +25,7 @@ class Exams extends Controller
 
         require 'application/views/_templates/login_popup.php';
         require 'application/views/_templates/footer.php';
+
+        pageHit("Exams.index");
     }
 }
