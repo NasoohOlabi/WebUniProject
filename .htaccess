@@ -26,8 +26,8 @@ RewriteCond %{REQUEST_FILENAME} !-l
 
 RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
 
-<FilesMatch "\.(ttf|otf|eot|woff)$">
+<FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css)$">
 <IfModule mod_headers.c>
-Header set Access-Control-Allow-Origin "\*"
+Header set Access-Control-Allow-Origin "*"
 </IfModule>
 </FilesMatch>

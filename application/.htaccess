@@ -3,8 +3,8 @@
     Deny from all
 </Files>
 
-<FilesMatch "\.(ttf|otf|eot|woff)$">
+<FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css)$">
 <IfModule mod_headers.c>
-Header set Access-Control-Allow-Origin "\*"
+Header set Access-Control-Allow-Origin "*"
 </IfModule>
 </FilesMatch>
