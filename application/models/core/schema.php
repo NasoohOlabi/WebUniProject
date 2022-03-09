@@ -14,7 +14,7 @@ function properties_exists($stdClass, array $properties, string $prefix)
 abstract class Table
 {
     public int $id;
-    abstract public function string_identifying_columns(string $prefix = '');
+    public array $identifying_fields;
     abstract public function get_CRUD_Terms();
     abstract static function SQL_Columns(string $prefix = "");
 }
@@ -33,10 +33,7 @@ class Exam extends Table
     {
         return ['create' => 'Form', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
     }
-    public function string_identifying_columns(string $prefix = '')
-    {
-        return [1, 2];
-    }
+    public array $identifying_fields =  ['id', 'number_of_questions', 'duration'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null)
@@ -70,10 +67,7 @@ class Subject extends Table
     {
         return ['create' => 'Create', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
     }
-    public function string_identifying_columns(string $prefix = '')
-    {
-        return [1];
-    }
+    public array $identifying_fields =  ['name'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -109,10 +103,7 @@ class Topic extends Table
     {
         return ['create' => 'Create', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
     }
-    public function string_identifying_columns(string $prefix = '')
-    {
-        return [1];
-    }
+    public array $identifying_fields =  ['name'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -150,10 +141,7 @@ class Question extends Table
     {
         return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
     }
-    public function string_identifying_columns(string $prefix = '')
-    {
-        return [1];
-    }
+    public array $identifying_fields =  ['text'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -191,10 +179,7 @@ class Choice extends Table
     {
         return ['create' => 'Add', 'read' => 'Take', 'update' => 'Edit', 'delete' => 'Remove'];
     }
-    public function string_identifying_columns(string $prefix = '')
-    {
-        return [1];
-    }
+    public array $identifying_fields =  ['text'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -225,10 +210,7 @@ class Permission extends Table
     {
         return ['create' => 'Create', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
     }
-    public function string_identifying_columns(string $prefix = '')
-    {
-        return [1];
-    }
+    public array $identifying_fields =  ['name'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -259,10 +241,7 @@ class Role extends Table
     {
         return ['create' => 'Create', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Remove'];
     }
-    public function string_identifying_columns(string $prefix = '')
-    {
-        return [1];
-    }
+    public array $identifying_fields =  ['name'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -297,10 +276,7 @@ class Role_has_Permission extends Table
     {
         return ['create' => 'Give', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Remove'];
     }
-    public function string_identifying_columns(string $prefix = '')
-    {
-        return [1, 2];
-    }
+    public array $identifying_fields =  ['role_id', 'permission_id'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -343,7 +319,7 @@ class User extends Table
     public string $first_name;
     public string $last_name;
     public ?string $middle_name;
-    public $profile_picture;
+    public ?string $profile_picture;
     public int $role_id;
     public ?Role $role;
     public ?array $permissions;
@@ -353,10 +329,7 @@ class User extends Table
         return ['create' => 'Grant', 'read' => 'Take', 'update' => 'Transfer', 'delete' => 'Revoke'];
     }
 
-    public function string_identifying_columns(string $prefix = '')
-    {
-        return [1];
-    }
+    public array $identifying_fields =  ['username'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -392,10 +365,7 @@ class Student extends Table
         return ['create' => 'Enroll', 'read' => 'Take', 'update' => 'edit enrollment', 'delete' => 'Unenroll'];
     }
 
-    public function string_identifying_columns(string $prefix = '')
-    {
-        return [0, 1];
-    }
+    public array $identifying_fields =  ['id', 'enroll_date'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -430,10 +400,7 @@ class Exam_Center extends Table
         return ['create' => 'Enlist', 'read' => 'Take', 'update' => 'change', 'delete' => 'Decommission'];
     }
 
-    public function string_identifying_columns(string $prefix = '')
-    {
-        return [1];
-    }
+    public array $identifying_fields =  ['name'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -470,10 +437,7 @@ class Exam_Center_Has_Exam extends Table
     {
         return ['create' => 'Give', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Remove'];
     }
-    public function string_identifying_columns(string $prefix = '')
-    {
-        return [0, 1];
-    }
+    public array $identifying_fields =  ['id', 'date'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -520,10 +484,7 @@ class Student_Took_Exam extends Table
     {
         return ['create' => '', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Remove'];
     }
-    public function string_identifying_columns(string $prefix = '')
-    {
-        return [0, 1];
-    }
+    public array $identifying_fields =  ['id', 'date'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -568,10 +529,7 @@ class Exam_Has_Question extends Table
     {
         return ['create' => 'Give', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Remove'];
     }
-    public function string_identifying_columns(string $prefix = '')
-    {
-        return [0, 1, 2];
-    }
+    public array $identifying_fields =  ['question_id', 'exam_id'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {

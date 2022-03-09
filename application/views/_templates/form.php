@@ -5,10 +5,7 @@ require_once 'component/input.php';
 function stdclastoidstirng($stdClass)
 {
     $columns = $stdClass::SQL_COLUMNS();
-    $wanted_indexes = $stdClass->string_identifying_columns();
-    $wanted_names = array_map(function ($i) use ($columns) {
-        return $columns[$i];
-    }, $wanted_indexes);
+    $wanted_names = $stdClass->identifying_fields;
     $answer = [];
     foreach ($wanted_names as $prop) {
         $answer[] = $stdClass->$prop;
