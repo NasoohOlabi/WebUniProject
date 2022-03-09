@@ -45,6 +45,25 @@ class BaseModel
         $query->execute(array(':table_id' => $id));
     }
     /**
+     * delete certain record from database by the table id
+     */
+    public function wipeByIds(string $schemaClass, $ids)
+    {
+        $ids = array_filter($ids, function ($id) {
+            return is_numeric($id);
+        });
+        $sql_syntax = array_map(function ($id) {
+            return "id = ?";
+        }, $ids);
+        $sql_syntax = implode(" OR ", $sql_syntax);
+
+        $sql = "DELETE FROM `$schemaClass` WHERE $sql_syntax";
+
+        simpleLog('BaseModel::wipeByIds Running : "' . $sql . '" Bindings :' . json_encode($ids));
+        $query = $this->db->prepare($sql);
+        $query->execute($ids);
+    }
+    /**
      * returns Option with the row with this particular id
      *
      * @param [int] $id

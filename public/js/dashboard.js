@@ -2,7 +2,27 @@ var AllFetchedRows = [];
 var deleteList = [];
 var modifyMode = false;
 var statistics = null;
-
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 function UpperCaseFirstLetter(str, separator = " ") {
   const arr = str.split(separator);
 
@@ -175,7 +195,7 @@ function subTable_tr(objs, trId, parent_number_of_keys) {
 function main() {
   const home = document.getElementById("home");
   if (!home) return;
-  window.currentTab = "User";
+  // window.currentTab = "User";
   let fetching_flag = false;
 
   function doSomething(scrollPos) {
@@ -237,7 +257,12 @@ function main() {
     }
   });
   window.currentTab = "";
-  switchTo("Dashboard");
+  if (getCookie('currentTab') == '') {
+    setCookie('currentTab', 'Dashboard', 3)
+    switchTo("Dashboard");
+  } else {
+    switchTo(getCookie('currentTab'))
+  }
 }
 function getFromHQ(POST_PAYLOAD, success, failure) {
   fetch(URL + `Api/read/${window.currentTab}/`, {
@@ -265,6 +290,10 @@ function switchTo(Tab) {
       document.getElementById(Tab).innerText;
     const container = document.getElementById("TTTarget");
     container.innerHTML = "";
+
+    setCookie('currentTab', Tab, 3)
+    window.currentTab = Tab
+
     if (Tab == "Dashboard") {
       console.log("DASH");
       if (!window.statistics) loadStats();
@@ -299,11 +328,9 @@ function switchTo(Tab) {
         // console.log(e)
       }
     );
-    const addBtn = document.createElement("div");
-    addBtn.className = "add-btn";
-    addBtn.innerText = "+";
-    addBtn.onclick = add;
-    container.appendChild(addBtn);
+    // const addBtn = document.createElement("div");
+    const addBtn = `<div class="add-btn" onclick="add()">+</div>`
+    container.innerHTML += addBtn
   } catch (error) {
     console.error(error);
   }
@@ -541,13 +568,33 @@ function confirmChanges() {
     confirmButtonText: "Yes, delete it!",
   }).then((result) => {
     if (result.isConfirmed) {
-      Swal.fire("Deleted!", "Your file has been deleted.", "success");
+      Swal.fire("Deleted!", "Your choices has been deleted.", "success");
+      // call delete api here ... right?
+      console.log('deleteList : ');
+      console.log(deleteList);
+      const delete_ids = deleteList.map(elem => elem.id)
+      AllFetchedRows[window.currentTab] = AllFetchedRows[window.currentTab]
+        .filter(row => !delete_ids.includes(row.id))
+
+      const payload = { ids: delete_ids }
+      fetch(URL + `Api/delete/${window.currentTab}/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload)
+      })
+        .then((res) => {
+          console.log(res);
+          document.getElementById('modify-div').remove()
+          res.json()
+        })
     }
   });
-  if (!answer) return;
 }
 
 function add() {
+  console.log('event caught');
   if (modifyMode) {
     var answer = window.confirm(
       "You have unsaved changes. Are you sure you want to leave this page?"

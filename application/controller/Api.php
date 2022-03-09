@@ -149,25 +149,37 @@ class Api extends Controller
         }
         pageHit("Api.update");
     }
-    public function delete($var = null)
+    public function delete(string $schemaClass)
     {
+
+        $_POST = json_decode(file_get_contents("php://input"), true);
         try {
-            // Clean inputs
-            $_POST = array_map('htmlentities', $_POST);
-            $_POST = array_map('trim', $_POST);
-            // Consider empty strings as null
-            $_POST = array_map(function ($v) {
-                return (is_string($v) && strlen($v) == 0) ? NULL : $v;
-            }, $_POST);
-            // Get the name of what are we updating
-            $className = $_POST['schemaClass'];
-            // and also obviously checks is $className is sth we have
-            $v = new $className((object) $_POST);
-            simpleLog(json_encode($v), 'Api/delete/');
-            $Model = $this->loadModel('BaseModel');
-            //TODO: check if what he submitted has the same fields
-            $Model->deleteById($v->id);
-            header('Location:' . URL . 'DashBoard/');
+            if (isset($_POST['ids'])) {
+                $Model
+                    = $this->loadModel('BaseModel');
+                $Model->wipeByIds($schemaClass, $_POST['ids']);
+                // foreach ($_POST['ids'] as  $id) {
+                //     if (is_numeric($id))
+                //         $Model->deleteById($id * 1);
+                // }
+            } else {
+                // Clean inputs
+                $_POST = array_map('htmlentities', $_POST);
+                $_POST = array_map('trim', $_POST);
+                // Consider empty strings as null
+                $_POST = array_map(function ($v) {
+                    return (is_string($v) && strlen($v) == 0) ? NULL : $v;
+                }, $_POST);
+                // Get the name of what are we updating
+                $className = $_POST['schemaClass'];
+                // and also obviously checks is $className is sth we have
+                $v = new $className((object) $_POST);
+                simpleLog(json_encode($v), 'Api/delete/');
+                $Model = $this->loadModel('BaseModel');
+                //TODO: check if what he submitted has the same fields
+                $Model->deleteById($v->id);
+                header('Location:' . URL . 'DashBoard/');
+            }
         } catch (\Throwable $e) {
             simpleLog('Caught exception: ' . $e->getMessage());
             http_response_code(400);
