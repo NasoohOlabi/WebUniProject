@@ -106,7 +106,7 @@ function TableRow(
     .map((key) => {
       const value = row_item[key];
       let td = inline_keys
-        ? `<td><strong>${inline_key_prefix} ${key}:</strong></td>`
+        ? `<td style="border-top:none"><strong>${inline_key_prefix} ${key}:</strong></td>`
         : "";
       if (value instanceof Object) {
         // just making sure key is a single word
@@ -115,7 +115,9 @@ function TableRow(
         const id_of_tr_this_btn_will_expand =
           key.replace(" ", "-") + "-" + row_number + "-" + subTables.length;
         subTables.push(id_of_tr_this_btn_will_expand);
-        td += `<td>
+        td += `<td
+          ${(inline_keys) ? 'style = "border-top:none"' : ''}
+        >
         <button
           id="${id_of_tr_this_btn_will_expand}-btn" 
           style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;"
@@ -124,9 +126,13 @@ function TableRow(
           </button>
         </td>`;
       } else if (key == `is_correct`) {
-        td += `<td>${value ? "✔" : "❌"}</td>`;
+        td += `<td
+          ${(inline_keys) ? 'style = "border-top:none"' : ''}
+          >${value ? "✔" : "❌"}</td>`;
       } else {
-        td += `<td>${value}</td>`;
+        td += `<td
+          ${(inline_keys) ? 'style = "border-top:none"' : ''}
+          >${value}</td>`;
       }
 
       return td;
@@ -172,7 +178,7 @@ function subTable_tr(objs, trId, parent_number_of_keys) {
   if (objs.length === 1) {
     const prefixed_header_trs = TableRow(objs[0], 0, true, trId.split("-")[0]);
 
-    return `<tr id="${trId}" style="display:none">
+    return `<tr id="${trId}" style="display:none" class="inner-shadowed">
               <td colspan=${parent_number_of_keys + 2}>
                 <table style="width:100%">
                   <tbody>

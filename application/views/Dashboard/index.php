@@ -72,10 +72,41 @@
               <span class="text nav-text" id="topic">Topics</span>
             </a>
           </li>
+
+          <li class="nav-link">
+            <a href="#" onclick="switchTo('topic')">
+              <span class="text nav-text" id="topic">Topics</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#" onclick="switchTo('topic')">
+              <span class="text nav-text" id="topic">Topics</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#" onclick="switchTo('topic')">
+              <span class="text nav-text" id="topic">Topics</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#" onclick="switchTo('topic')">
+              <span class="text nav-text" id="topic">Topics</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#" onclick="switchTo('topic')">
+              <span class="text nav-text" id="topic">Topics</span>
+            </a>
+          </li>
+
         </ul>
       </div>
 
-      <div class="bottom-content">
+      <div class="bottom-content top-shadowed">
         <li class="">
           <a href="<?= URL ?>users/logout">
             <span class="text nav-text">Logout</span>

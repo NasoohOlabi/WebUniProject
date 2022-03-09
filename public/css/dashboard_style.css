@@ -213,9 +213,19 @@ body.dark #home .text {
 
 .bottom-content {
   bottom: 0;
-  position: absolute;
-  left: 25%;
-  right: 25%;
+  position: sticky;
+  width: calc(100% + 28px);
+  margin: 0px -14px;
+}
+.top-shadowed {
+  background-color: var(--sidebar-color);
+  box-shadow: 0px -1px 7px rgba(50, 50, 50, 0.75);
+}
+.inner-shadowed{
+  box-shadow: inset 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.inner-shadowed .inner-shadowed{
+  box-shadow:none !important;
 }
 
 .modify-btn {
