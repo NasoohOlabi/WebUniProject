@@ -3,6 +3,10 @@ require_once 'application/views/_templates/header.php';
 require_once './application/libs/util/log.php';
 require_once './application/models/core/schema.php';
 
+function is_display_key($key)
+{
+    return !endsWith($key, 'id') && $key !== 'identifying_fields' && $key !== 'profile_picture';
+}
 class Api extends Controller
 {
     public function index()
@@ -110,11 +114,20 @@ class Api extends Controller
     {
         # read sth like $var as in sql like()
     }
-    public function update($schemaClass)
+    public function update(string $schemaClass)
     {
         $_POST = json_decode(file_get_contents("php://input"), true);
         try {
             // Clean inputs
+            try {
+                $wanted_columns = $schemaClass::SQL_Columns();
+            } catch (\Throwable $e) {
+                throw new Exception("invalid url $schemaClass");
+            }
+            simpleLog('api update>>>preprocessed>>>>POST>>>>>' . json_encode((object)$_POST));
+            $_POST = array_filter($_POST, function ($key) use ($wanted_columns) {
+                return in_array(strtolower($key), $wanted_columns);
+            }, ARRAY_FILTER_USE_KEY);
             $_POST = array_map('htmlentities', $_POST);
             $_POST = array_map('trim', $_POST);
             // Consider empty strings as null
@@ -127,7 +140,9 @@ class Api extends Controller
             if (isset($_POST['password']))
                 $_POST['password'] = md5($_POST['password']);
             // and also obviously checks is $className is sth we have
-            simpleLog('api update>>>>>>>POST>>>>>' . json_encode((object)$_POST));
+            simpleLog(
+                'api update>>>>processed>>>POST>>>>>' . json_encode((object)$_POST)
+            );
             $v = new $className((object) $_POST);
             simpleLog('api update>>>>>>>>>' . json_encode($v));
             $Model = $this->loadModel('BaseModel');

@@ -2,11 +2,13 @@
 
 function properties_exists($stdClass, array $properties, string $prefix)
 {
+    // simpleLog("properties_exists: checking " . json_encode($stdClass) . " to contain the following " . json_encode($properties));
     if ($stdClass == null) return false;
     foreach ($properties as $property) {
-        if (!property_exists($stdClass, $prefix . $property))
-            // if (!isset($stdClass->{$prefix . $property}))
+        if (!property_exists($stdClass, $prefix . $property)) {
+            // simpleLog("this one failed $prefix" . "$property");
             return false;
+        }
     }
     return true;
 }
