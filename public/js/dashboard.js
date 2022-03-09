@@ -1,6 +1,7 @@
 var AllFetchedRows = [];
 var deleteList = [];
 var modifyMode = false;
+var statistics = null;
 
 function UpperCaseFirstLetter(str, separator = " ") {
   const arr = str.split(separator);
@@ -204,6 +205,8 @@ function main() {
       ticking = true;
     }
   });
+  window.currentTab = "";
+  switchTo("Dashboard");
 }
 function getFromHQ(POST_PAYLOAD, success, failure) {
   fetch(URL + `Api/read/${window.currentTab}/`, {
@@ -268,18 +271,26 @@ function editRow(row, id) {
     var arr = [].slice.call(document.getElementById(id).children);
     let tic = arr.pop();
     let x = arr.pop();
-    if (tic.children[0].className.includes('fa-pencil')) {
+    if (tic.children[0].className.includes("fa-pencil")) {
       for (const child of arr) {
         child.contentEditable = true;
       }
-      tic.children[0].className = tic.children[0].className.replace('fa-pencil', 'fa-check');
-      x.children[0].className = x.children[0].className.replace('fa-trash', 'fa-close')
-    }
-    else {
+      tic.children[0].className = tic.children[0].className.replace(
+        "fa-pencil",
+        "fa-check"
+      );
+      x.children[0].className = x.children[0].className.replace(
+        "fa-trash",
+        "fa-close"
+      );
+    } else {
       let data = row;
-      let sql_id = id.split('-').pop();
-      let header = [].slice.call(evt.currentTarget.parentElement.parentElement.parentElement.children[0].children)
-      header = header.map(e => e.innerText)
+      let sql_id = id.split("-").pop();
+      let header = [].slice.call(
+        evt.currentTarget.parentElement.parentElement.parentElement.children[0]
+          .children
+      );
+      header = header.map((e) => e.innerText);
       // header.forEach(e => {
       //   console.log(e)
       // })
@@ -287,12 +298,12 @@ function editRow(row, id) {
       //   console.log(e.innerText)
       // })
       // console.log(row)
-      data['id'] = sql_id
+      data["id"] = sql_id;
       header.forEach((key, i) => {
-        data[key] = arr[i].innerText
-      })
+        data[key] = arr[i].innerText;
+      });
 
-      console.log(data)
+      console.log(data);
 
       fetch(URL + `Api/update/${window.currentTab}/`, {
         method: "POST",
@@ -300,16 +311,21 @@ function editRow(row, id) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-      })
-        .then((res) => {
-          console.log(res);
-          return res.json();
-        })
+      }).then((res) => {
+        console.log(res);
+        return res.json();
+      });
 
-      tic.children[0].className = tic.children[0].className.replace('fa-check', 'fa-pencil');
-      x.children[0].className = x.children[0].className.replace('fa-close', 'fa-trash')
+      tic.children[0].className = tic.children[0].className.replace(
+        "fa-check",
+        "fa-pencil"
+      );
+      x.children[0].className = x.children[0].className.replace(
+        "fa-close",
+        "fa-trash"
+      );
     }
-  }
+  };
 }
 function deleteRow(evt) {
   if (!modifyMode) {
@@ -370,11 +386,140 @@ function add() {
     );
     if (!answer) return;
   }
-  window.location.assign(
-    "DashBoard/add/" +
-    window.currentTab[0].toUpperCase() +
-    window.currentTab.substring(1)
-  );
+  let newTab = window.currentTab.toLowerCase();
+  newTab = newTab.split("_");
+  console.log(newTab);
+  let newTabStr = "";
+  for (const part of newTab) {
+    newTabStr += part.charAt(0).toUpperCase() + part.slice(1) + "_";
+  }
+  newTabStr = newTabStr.slice(0, -1);
+  window.location = URL + "DashBoard/add/" + newTabStr;
+}
+
+function loadStats() {
+  var url = URL + "Api/getStats";
+  console.log(url);
+  var reply = {};
+
+  fetch(url, {
+    method: "POST",
+    body: JSON.stringify(reply),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((response) => success(response))
+    .catch((error) => failure(error));
+
+  function success(json) {
+    console.log("AFTER: " + JSON.stringify(json));
+    window.statistics = cleanStats(json);
+    console.log(statistics);
+    if (window.currentTab == "Dashboard") {
+      viewStats();
+    }
+  }
+
+  function failure(error) {
+    console.log("ERROR: " + error);
+  }
+}
+
+function cleanStats(data) {
+  for (const key in data) {
+    if (Object.hasOwnProperty.call(data, key)) {
+      let oldKey = key;
+      let newKey = null;
+      switch (oldKey) {
+        case "Api.create":
+          newKey = "Database Add Request";
+          break;
+        case "Api.read":
+          newKey = "Database Read Request";
+          break;
+        case "Api.update":
+          newKey = "Database Update Request";
+          break;
+        case "Users.logout":
+          newKey = "Logout Request";
+          break;
+        case "Users.validate":
+          newKey = "Login Request";
+          break;
+        case "dashboard.Add":
+          newKey = "Add Form Visit";
+          break;
+        case "dashboard.index":
+          newKey = "Dashboard Visit";
+          break;
+        case "home.index":
+          newKey = "Homepage Visit";
+          break;
+
+        default:
+          break;
+      }
+
+      if (newKey) {
+        delete Object.assign(data, { [newKey]: data[oldKey] })[oldKey];
+      }
+    }
+  }
+  return data;
+}
+
+function viewStats() {
+  let viewedData = [];
+
+  console.log(window.statistics);
+
+  for (const key in window.statistics) {
+    if (Object.hasOwnProperty.call(window.statistics, key)) {
+      viewedData.push({ y: window.statistics[key], name: key });
+    }
+  }
+
+  console.log(viewedData);
+
+  var chart = new CanvasJS.Chart("chartContainer", {
+    theme: "dark2",
+    exportFileName: "Website Statistics",
+    exportEnabled: false,
+    animationEnabled: true,
+    title: {
+      text: "Website Statistics",
+    },
+    legend: {
+      cursor: "pointer",
+      itemclick: explodePie,
+    },
+    data: [
+      {
+        type: "doughnut",
+        innerRadius: 90,
+        showInLegend: true,
+        toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+        indexLabel: "{name} - #percent%",
+        dataPoints: viewedData,
+      },
+    ],
+  });
+  chart.render();
+
+  function explodePie(e) {
+    if (
+      typeof e.dataSeries.dataPoints[e.dataPointIndex].exploded ===
+      "undefined" ||
+      !e.dataSeries.dataPoints[e.dataPointIndex].exploded
+    ) {
+      e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+    } else {
+      e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+    }
+    e.chart.render();
+  }
 }
 
 window.onload = main;

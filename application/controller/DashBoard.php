@@ -65,8 +65,6 @@ class DashBoard extends Controller
 
         echo '</div></div>';
 
-        require 'application/views/_templates/footer.php';
-
         pageHit("dashboard.Add");
     }
 
