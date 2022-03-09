@@ -245,8 +245,8 @@ function switchTo(Tab) {
     }
 
     let parentChartDiv = document.getElementById("chartContainer");
-
-    parentChartDiv.removeChild(parentChartDiv.children[0]);
+    if (parentChartDiv)
+      parentChartDiv.removeChild(parentChartDiv.children[0]);
 
     getFromHQ(
       {},
