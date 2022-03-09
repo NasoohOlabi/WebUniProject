@@ -314,10 +314,17 @@ function editRow(tableName, row_number, id) {
       let sql_id = id.split("-").pop();
       let header = Object.keys(data).filter(is_display_key)
       data["id"] = sql_id;
+      // for (let i = 0; i < arr.length; i++) {
+      //   data[header[i]] = arr[i].innerText
+      // }
       header.forEach((key, i) => {
-        data[key] = arr[i].innerText;
+        if (!(data[key] instanceof Object))
+          data[key] = arr[i].innerText;
       });
 
+      arr.forEach(tag => {
+        tag.contentEditable = false
+      })
 
       fetch(URL + `Api/update/${window.currentTab}/`, {
         method: "POST",
@@ -393,7 +400,8 @@ function deleteRow(evt) {
     }
     let header = Object.keys(data).filter(is_display_key)
     header.forEach((key, i) => {
-      arr[i].innerText = data[key];
+      if (!(data[key] instanceof Object))
+        arr[i].innerText = data[key];
     });
     tic.children[0].className = tic.children[0].className.replace(
       "fa-check",
