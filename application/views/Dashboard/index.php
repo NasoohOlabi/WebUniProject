@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="<?= URL ?>public/css/dashboard_style.css" />
   <link rel="stylesheet" href="<?= URL ?>public/css/all.min.css" />
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>

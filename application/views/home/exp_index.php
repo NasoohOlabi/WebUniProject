@@ -1,7 +1,7 @@
 <style>
     .univ-photo {
         width: 100%;
-        height: 45.8em;
+        height: 40.8em;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -15,7 +15,7 @@
 
     .content h2 {
         position: relative;
-        bottom: 10em;
+        bottom: 9em;
         color: hsl(180deg 28% 85%);
         text-align: center;
         font-family: var(--primary-font);
