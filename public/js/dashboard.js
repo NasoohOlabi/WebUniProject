@@ -513,7 +513,7 @@ function viewStats() {
         type: "doughnut",
         innerRadius: 90,
         showInLegend: true,
-        toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+        toolTipContent: "<b>{name}</b>: {y} Hits (#percent%)",
         indexLabel: "{name} - #percent%",
         dataPoints: viewedData,
       },
