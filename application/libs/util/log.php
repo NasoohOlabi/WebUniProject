@@ -26,9 +26,11 @@ function pageHit(string $page)
     fwrite($file, 'a');
     fclose($file);
     // if (fsize($page) > 1000000) {
-    $fileSize = fsize($page);
-    if (fsize($page) > 1000000) {
-        compressHits($page);
+    if (rand(1, 5000000) === 10) {
+        $fileSize = fsize($page);
+        if ($fileSize > 1000000) {
+            compressHits($page);
+        }
     }
 }
 function fsize(string $page)
