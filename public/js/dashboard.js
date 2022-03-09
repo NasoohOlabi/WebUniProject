@@ -246,7 +246,7 @@ function switchTo(Tab) {
 
     let parentChartDiv = document.getElementById("chartContainer");
     if (parentChartDiv)
-      parentChartDiv.removeChild(parentChartDiv.children[0]);
+      parentChartDiv.innerHTML = "";
 
     getFromHQ(
       {},
