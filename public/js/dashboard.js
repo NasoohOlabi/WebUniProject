@@ -6,9 +6,9 @@ var statistics = null;
 function UpperCaseFirstLetter(str, separator = " ") {
   const arr = str.split(separator);
 
-  const upperCasedWords = arr.map(word => {
-    return word.charAt(0).toUpperCase() + word.slice(1)
-  })
+  const upperCasedWords = arr.map((word) => {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  });
 
   return upperCasedWords.join(separator);
 }
@@ -26,7 +26,7 @@ function select(input_name, SELECT_OPTIONS, SELECTED_ELEMENT, place_holder) {
   return `<select name="${input_name}" class="form-select valid-input" aria-label="${place_holder}">
         ${objects.map(object => `<option value="${object.id}" ${(SELECTED_ELEMENT.id === object.id) ? 'selected' : ''}>${identifying_string(object)}</option>`)}
         ?>
-    </select>`
+    </select>`;
 }
 function MainTable(id, header) {
   return `<table class="table" >
@@ -38,10 +38,16 @@ function MainTable(id, header) {
           </table>`
 }
 function is_display_key(key) {
-  return !key.endsWith('id') && key !== 'identifying_fields' && key !== 'profile_picture'
+  return (
+    !key.endsWith("id") &&
+    key !== "identifying_fields" &&
+    key !== "profile_picture"
+  );
 }
 function is_not_unicode_sth(elem) {
-  return !(elem.children[0] && ['🔽', '🔼'].includes(elem.children[0].innerText))
+  return !(
+    elem.children[0] && ["🔽", "🔼"].includes(elem.children[0].innerText)
+  );
 }
 function toggleDropDown(id_to_toggle) {
   let dropped_down = false;
@@ -53,7 +59,7 @@ function toggleDropDown(id_to_toggle) {
       btn = document.getElementById(id_to_toggle + "-" + "btn");
     }
     dropped_down = !dropped_down;
-    btn.value = !dropped_down ? "🔽" : "🔼"
+    btn.value = !dropped_down ? "🔽" : "🔼";
     tr.style.display = !dropped_down ? "none" : "table-row";
   };
   btn.onclick();
@@ -62,26 +68,32 @@ function Header(id, names) {
   const th_s = names
     .filter(is_display_key)
     .map((v) => "<th>" + v + "</th>")
-    .join("")
+    .join("");
   return `<tr id ="${id}">${th_s}</tr>`;
 }
-function TableRow(row_item, row_number, inline_keys = false, inline_key_prefix = '') {
-  let number_of_display_columns = Object.keys(row_item).filter(
-    is_display_key
-  ).length;
-  if (inline_keys) number_of_display_columns *= 2
-  const subTables = []
+function TableRow(
+  row_item,
+  row_number,
+  inline_keys = false,
+  inline_key_prefix = ""
+) {
+  let number_of_display_columns =
+    Object.keys(row_item).filter(is_display_key).length;
+  if (inline_keys) number_of_display_columns *= 2;
+  const subTables = [];
   let td_s = Object.keys(row_item)
     .filter(is_display_key)
-    .map(key => {
+    .map((key) => {
       const value = row_item[key];
-      let td = (inline_keys) ? `<td><strong>${inline_key_prefix
-        } ${key}:</strong></td>` : "";
+      let td = inline_keys
+        ? `<td><strong>${inline_key_prefix} ${key}:</strong></td>`
+        : "";
       if (value instanceof Object) {
         // just making sure key is a single word
-        // key.replace(' ', '-') 
+        // key.replace(' ', '-')
         // since key is a field in the object this row represent
-        const id_of_tr_this_btn_will_expand = key.replace(' ', '-') + "-" + row_number + "-" + subTables.length
+        const id_of_tr_this_btn_will_expand =
+          key.replace(" ", "-") + "-" + row_number + "-" + subTables.length;
         subTables.push(id_of_tr_this_btn_will_expand);
         td += `<td>
         <button
@@ -90,15 +102,15 @@ function TableRow(row_item, row_number, inline_keys = false, inline_key_prefix =
           onclick="toggleDropDown('${id_of_tr_this_btn_will_expand}')">
             🔽
           </button>
-        </td>`
+        </td>`;
       } else if (key == `is_correct`) {
-        td += `<td>${value ? "✔" : "❌"}</td>`
+        td += `<td>${value ? "✔" : "❌"}</td>`;
       } else {
         td += `<td>${value}</td>`;
       }
 
       return td;
-    })
+    });
 
   const tds_text = td_s.join('')
   // trashbtn.addEventListener("click", deleteRow);
@@ -122,21 +134,23 @@ function TableRow(row_item, row_number, inline_keys = false, inline_key_prefix =
     .map((identifier) => {
       const key = identifier.split("-")[0];
       const res = subTable_tr(
-        row_item[key].length && row_item[key].length > 1 ? row_item[key] : [row_item[key]],
+        row_item[key].length && row_item[key].length > 1
+          ? row_item[key]
+          : [row_item[key]],
         identifier,
         number_of_display_columns
       );
       return res;
     })
-    .join('\n')
-  return `${tr}\n${subTablesWrappedInTr_s}`
+    .join("\n");
+  return `${tr}\n${subTablesWrappedInTr_s}`;
 }
 function subTable_tr(objs, trId, parent_number_of_keys) {
   if (parent_number_of_keys === 0) return;
   if (objs.length === 0) return;
 
   if (objs.length === 1) {
-    const prefixed_header_trs = TableRow(objs[0], 0, true, trId.split('-')[0])
+    const prefixed_header_trs = TableRow(objs[0], 0, true, trId.split("-")[0]);
 
     return `<tr id="${trId}" style="display:none">
               <td colspan=${parent_number_of_keys + 2}>
@@ -146,15 +160,14 @@ function subTable_tr(objs, trId, parent_number_of_keys) {
                   </tbody>
                 </table>
               </td>
-            </tr>`
+            </tr>`;
   }
-  const tr_s = objs
-    .map((obj, index) => TableRow(obj, index))
+  const tr_s = objs.map((obj, index) => TableRow(obj, index));
   return `<tr id="${trId}" style="display:none">
               <td colspan=${parent_number_of_keys + 2}>
                 <table style="width:100%">
-                  ${Header(trId.split('-')[1], Object.keys(objs[0]))}
-                  ${tr_s.join('')}
+                  ${Header(trId.split("-")[1], Object.keys(objs[0]))}
+                  ${tr_s.join("")}
                 </table>
               </td>
           </tr>`;
@@ -255,28 +268,30 @@ function switchTo(Tab) {
     if (Tab == "Dashboard") {
       console.log("DASH");
       if (!window.statistics) loadStats();
-      console.log('window.statistics : ');
+      console.log("window.statistics : ");
       console.log(window.statistics);
       viewStats();
       return;
     }
 
     let parentChartDiv = document.getElementById("chartContainer");
-    if (parentChartDiv)
-      parentChartDiv.innerHTML = "";
+    if (parentChartDiv) parentChartDiv.innerHTML = "";
 
     getFromHQ(
       {},
       (lst) => {
-        container.innerHTML += MainTable(window.currentTab, Object.keys(lst[0]))
-        const tbl = document.getElementById('MainTable')
+        container.innerHTML += MainTable(
+          window.currentTab,
+          Object.keys(lst[0])
+        );
+        const tbl = document.getElementById("MainTable");
         for (let index = 0; index < lst.length; index++) {
           const element = lst[index];
           if (AllFetchedRows[window.currentTab])
             AllFetchedRows[window.currentTab].push(element);
           else AllFetchedRows[window.currentTab] = [element];
           const row = TableRow(element, index);
-          tbl.innerHTML += row
+          tbl.innerHTML += row;
         }
       },
       (e) => {
@@ -289,9 +304,8 @@ function switchTo(Tab) {
     addBtn.innerText = "+";
     addBtn.onclick = add;
     container.appendChild(addBtn);
-
   } catch (error) {
-    console.error(error)
+    console.error(error);
   }
 }
 function editRow(tableName, row_number, id) {
@@ -299,9 +313,9 @@ function editRow(tableName, row_number, id) {
     var arr = [].slice.call(document.getElementById(id).children);
     let tic = arr.pop();
     let x = arr.pop();
-    console.log('arr : ');
+    console.log("arr : ");
     console.log(arr);
-    arr = arr.filter(is_not_unicode_sth)
+    arr = arr.filter(is_not_unicode_sth);
     if (tic.children[0].className.includes("fa-pencil")) {
       for (const child of arr) {
         child.contentEditable = true;
@@ -315,41 +329,58 @@ function editRow(tableName, row_number, id) {
         "fa-close"
       );
     } else {
-      let data = AllFetchedRows[tableName][row_number];
-      let sql_id = id.split("-").pop();
-      let header = Object.keys(data).filter(is_display_key)
-      data["id"] = sql_id;
-      // for (let i = 0; i < arr.length; i++) {
-      //   data[header[i]] = arr[i].innerText
-      // }
-      header.forEach((key, i) => {
-        if (!(data[key] instanceof Object))
-          data[key] = arr[i].innerText;
+      //Alert before procceed
+
+      Swal.fire({
+        title: "Are you sure you want to edit this row?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, modify it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          let data = AllFetchedRows[tableName][row_number];
+          let sql_id = id.split("-").pop();
+          let header = Object.keys(data).filter(is_display_key);
+          data["id"] = sql_id;
+          // for (let i = 0; i < arr.length; i++) {
+          //   data[header[i]] = arr[i].innerText
+          // }
+          header.forEach((key, i) => {
+            if (!(data[key] instanceof Object)) data[key] = arr[i].innerText;
+          });
+
+          arr.forEach((tag) => {
+            tag.contentEditable = false;
+          });
+
+          fetch(URL + `Api/update/${window.currentTab}/`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          }).then((res) => {
+            console.log(res);
+            return res.json();
+          });
+
+          tic.children[0].className = tic.children[0].className.replace(
+            "fa-check",
+            "fa-pencil"
+          );
+          x.children[0].className = x.children[0].className.replace(
+            "fa-close",
+            "fa-trash"
+          );
+
+          Swal.fire("Modified!", "Your changes have been saved.", "success");
+        } else {
+          console.log("no");
+        }
       });
-
-      arr.forEach(tag => {
-        tag.contentEditable = false
-      })
-
-      fetch(URL + `Api/update/${window.currentTab}/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }).then((res) => {
-        console.log(res);
-        return res.json();
-      });
-
-      tic.children[0].className = tic.children[0].className.replace(
-        "fa-check",
-        "fa-pencil"
-      );
-      x.children[0].className = x.children[0].className.replace(
-        "fa-close",
-        "fa-trash"
-      );
     }
   };
 }
@@ -409,6 +440,7 @@ function edit_sub_Row(row_number, field) {
 }
 function deleteRow(evt) {
   if (evt.target.className.includes("fa-trash")) {
+    console.log("yes");
     if (!modifyMode) {
       deleteList = [];
       const target = document.getElementById("TTTarget");
@@ -434,33 +466,33 @@ function deleteRow(evt) {
     }
 
     let clickedRowId = evt.target.parentNode.parentNode.id;
-    let rowTable = clickedRowId.split(" ")[0];
-    let rowId = clickedRowId.split(" ")[1];
-    //console.log(rowTable, rowId);
+    console.log("almost:", clickedRowId);
+    let rowTable = clickedRowId.split("-")[0];
+    let rowId = clickedRowId.split("-")[1];
+    console.log(rowTable, rowId);
     deleteList.push({ table: rowTable, id: rowId, trId: clickedRowId });
 
     document.getElementById(clickedRowId).style.display = "none";
   } else {
-    const id = evt.target.parentElement.parentElement.id
+    const id = evt.target.parentElement.parentElement.id;
     var arr = [].slice.call(document.getElementById(id).children);
     let tic = arr.pop();
     let x = arr.pop();
-    arr = arr.filter(is_not_unicode_sth)
-    arr.forEach(tag => {
-      tag.contentEditable = false
-    })
-    let data = AllFetchedRows[id.split('-')[0]];
+    arr = arr.filter(is_not_unicode_sth);
+    arr.forEach((tag) => {
+      tag.contentEditable = false;
+    });
+    let data = AllFetchedRows[id.split("-")[0]];
     for (let i = 0; i < data.length; i++) {
-      const row = data[i]
+      const row = data[i];
       if (row.id == id.split("-")[1]) {
-        data = row
-        break
+        data = row;
+        break;
       }
     }
-    let header = Object.keys(data).filter(is_display_key)
+    let header = Object.keys(data).filter(is_display_key);
     header.forEach((key, i) => {
-      if (!(data[key] instanceof Object))
-        arr[i].innerText = data[key];
+      if (!(data[key] instanceof Object)) arr[i].innerText = data[key];
     });
     tic.children[0].className = tic.children[0].className.replace(
       "fa-check",
@@ -487,7 +519,19 @@ function reset() {
 }
 
 function confirmChanges() {
-  var answer = window.confirm("Are you sure you want to save changes?");
+  Swal.fire({
+    title: "Are you sure you want to save your changes?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire("Deleted!", "Your file has been deleted.", "success");
+    }
+  });
   if (!answer) return;
 }
 
@@ -526,11 +570,11 @@ function loadStats() {
     .catch((error) => failure(error));
 
   function success(json) {
-    console.log('json : ');
+    console.log("json : ");
     console.log(json);
     // console.log("AFTER: " + JSON.stringify(json));
     window.statistics = cleanStats(json);
-    console.log('window.statistics : ');
+    console.log("window.statistics : ");
     console.log(window.statistics);
     if (window.currentTab == "Dashboard") {
       viewStats();
@@ -574,7 +618,7 @@ function cleanStats(data) {
           break;
 
         default:
-          newKey = oldKey
+          newKey = oldKey;
           break;
       }
 
@@ -589,7 +633,7 @@ function cleanStats(data) {
 function viewStats() {
   let viewedData = [];
 
-  console.log('window.statistics : ');
+  console.log("window.statistics : ");
   console.log(window.statistics);
 
   for (const key in window.statistics) {
@@ -598,7 +642,7 @@ function viewStats() {
     }
   }
 
-  console.log('viewedData : ');
+  console.log("viewedData : ");
   console.log(viewedData);
 
   var chart = new CanvasJS.Chart("chartContainer", {
