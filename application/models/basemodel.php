@@ -146,36 +146,24 @@ class BaseModel
         simpleLog("bindings " . json_encode($values));
         return $this->db->prepare($sql)->execute(array_values($values));
     }
-    function experimental_update($object)
+    function experimental_update(string $schemaClass, int $id, stdClass $these)
     {
-        $schemaClass = get_class($object);
         $columns = $schemaClass::SQL_Columns();
+        $columns_to_update = array_filter($columns, function ($column_name) use ($these) {
+            return property_exists($these, $column_name);
+        });
+        $values =  array_map(function ($column_name) use ($these) {
+            return $these->{$column_name};
+        }, $columns_to_update);
 
-        $values =  array_map(function ($column_name) use ($object) {
-            if (property_exists($object, $column_name) && isset($object->{$column_name}))
-                return $object->{$column_name};
-            else
-                return null;
-        }, $columns);
 
-        $id = null;
-
-        foreach ($columns as $key => $value) {
-            if ($value === 'id')
-                $id = $values[$key];
-            if ($values[$key] === null) {
-                unset($columns[$key]);
-                unset($values[$key]);
-            }
-        }
-
-        $syntax_columns = implode(', ', array_map(function ($col) {
+        $sql_syntax_columns = implode(', ', array_map(function ($col) {
             return '`' . $col . '` = ?';
-        }, $columns));
+        }, $columns_to_update));
 
         $values[] = $id;
 
-        $sql = "UPDATE `$schemaClass` SET $syntax_columns WHERE id = ?";
+        $sql = "UPDATE `$schemaClass` SET $sql_syntax_columns WHERE id = ?";
         simpleLog('BaseModel::experimental_update Running : "' . $sql . '"');
         simpleLog("bindings " . json_encode($values));
         return $this->db->prepare($sql)->execute(array_values($values));

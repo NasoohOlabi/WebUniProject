@@ -134,20 +134,14 @@ class Api extends Controller
             $_POST = array_map(function ($v) {
                 return (is_string($v) && strlen($v) == 0) ? NULL : $v;
             }, $_POST);
-            // Get the name of what are we updating
-            $className = $schemaClass;
             // Passwords get special treatment and get hashed
             if (isset($_POST['password']))
                 $_POST['password'] = md5($_POST['password']);
-            // and also obviously checks is $className is sth we have
             simpleLog(
-                'api update>>>>processed>>>POST>>>>>' . json_encode((object)$_POST)
+                'api update>>>>cleaned>>>POST>>>>>' . json_encode((object)$_POST)
             );
-            $v = new $className((object) $_POST);
-            simpleLog('api update>>>>>>>>>' . json_encode($v));
             $Model = $this->loadModel('BaseModel');
-            $Model->experimental_update($v);
-            echo json_encode($v);
+            $Model->experimental_update($schemaClass, $_POST['id'], (object) $_POST);
         } catch (\Throwable $e) {
             simpleLog('Caught exception: ' . $e->getMessage());
             http_response_code(400);
