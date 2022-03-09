@@ -40,7 +40,6 @@ function MainTable(id, header) {
 function is_display_key(key) {
   return !key.endsWith('id') && key !== 'identifying_fields' && key !== 'profile_picture'
 }
-
 function toggleDropDown(id_to_toggle) {
   let dropped_down = false;
   let tr = document.getElementById(id_to_toggle);
@@ -99,7 +98,18 @@ function TableRow(row_item, id, inline_keys = false, inline_key_prefix = '') {
     })
 
   const td_text = td_s.join('')
-  const tr = `<tr id="${window.currentTab + "-" + row_item['id']}">${td_text}</tr>`
+  // trashbtn.addEventListener("click", deleteRow);
+
+  // edit_btn.addEventListener("click", editRow(row, tr.id));
+  const trId = window.currentTab + "-" + row_item['id']
+  const tr = `<tr id="${trId}">${td_text}
+    <td>
+      <i class="fa fa-trash" aria-hidden="true" id="${trId}-left"></i>
+    </td>
+    <td>
+      <i class="fa fa-pencil" aria-hidden="true" onclick="editRow(${row_item}, ${trId})" id="${trId}-right"></i>
+    </td>
+    </tr>`
   const subTablesWrappedInTr_s = subTables
     .map((identifier) => {
       const key = identifier.split("-")[0];
@@ -228,8 +238,6 @@ function getFromHQ(POST_PAYLOAD, success, failure) {
 
 function switchTo(Tab) {
   try {
-
-
     if (window.currentTab === Tab) return;
     window.currentTab = Tab;
     document.getElementById("title").innerText =
@@ -251,7 +259,7 @@ function switchTo(Tab) {
     getFromHQ(
       {},
       (lst) => {
-        container.innerHTML = MainTable(window.currentTab, Object.keys(lst[0]))
+        container.innerHTML += MainTable(window.currentTab, Object.keys(lst[0]))
         const tbl = document.getElementById('MainTable')
         for (let index = 0; index < lst.length; index++) {
           const element = lst[index];
