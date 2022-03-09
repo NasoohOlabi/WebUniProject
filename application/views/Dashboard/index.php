@@ -74,32 +74,32 @@
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('topic')">
-              <span class="text nav-text" id="topic">Topics</span>
+            <a href="#" onclick="switchTo('role')">
+              <span class="text nav-text" id="role">Roles</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('topic')">
-              <span class="text nav-text" id="topic">Topics</span>
+            <a href="#" onclick="switchTo('permission')">
+              <span class="text nav-text" id="permission">Permission</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('topic')">
-              <span class="text nav-text" id="topic">Topics</span>
+            <a href="#" onclick="switchTo('role_has_permission')">
+              <span class="text nav-text" id="role_has_permission">Roles Permissions</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('topic')">
-              <span class="text nav-text" id="topic">Topics</span>
+            <a href="#" onclick="switchTo('student')">
+              <span class="text nav-text" id="student">Students</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('topic')">
-              <span class="text nav-text" id="topic">Topics</span>
+            <a href="#" onclick="switchTo('student_took_exam')">
+              <span class="text nav-text" id="student_took_exam">Exams Taken</span>
             </a>
           </li>
 
