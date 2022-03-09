@@ -12,7 +12,7 @@ function UpperCaseFirstLetter(str, separator = " ") {
 
   return upperCasedWords.join(separator);
 }
-function select(input_name, SELECT_OPTIONS) {
+function select(input_name, SELECT_OPTIONS, SELECTED_ELEMENT, place_holder) {
   const objects = SELECT_OPTIONS;
   const identifying_string = (o) => {
     const arr = (o.identifying_fields) ?
@@ -22,19 +22,19 @@ function select(input_name, SELECT_OPTIONS) {
 
     return JSON.stringify(arr).replaceAll('[', '').replaceAll('"', '').replaceAll(']', '').replaceAll(',', ' ')
   }
+
   return `<select name="${input_name}" class="form-select valid-input" aria-label="${place_holder}">
-        <option value="" disabled selected hidden>
-            ${place_holder}
-        </option>
-        ${objects.map(object => `<option value="${object.id}">${identifying_string(object)}</option>`)}
+        ${objects.map(object => `<option value="${object.id}" ${(SELECTED_ELEMENT.id === object.id) ? 'selected' : ''}>${identifying_string(object)}</option>`)}
         ?>
     </select>`
 }
 function MainTable(id, header) {
-  return `<table class="table" id="MainTable">
+  return `<table class="table" >
             <thead>
             ${Header(id, header)}
             </thead>
+            <tbody id="MainTable">
+            </tbody>
           </table>`
 }
 function is_display_key(key) {
@@ -100,19 +100,24 @@ function TableRow(row_item, row_number, inline_keys = false, inline_key_prefix =
       return td;
     })
 
-  const td_text = td_s.join('')
+  const tds_text = td_s.join('')
   // trashbtn.addEventListener("click", deleteRow);
 
   // edit_btn.addEventListener("click", editRow(row, tr.id));
   const trId = window.currentTab + "-" + row_item['id']
-  const tr = `<tr id="${trId}">${td_text}
-    <td>
+  const delete_edit_icons = (inline_keys)
+    ?
+    `<td>
+      <i class="fa fa-pencil" aria-hidden="true" onclick="edit_sub_Row(${row_number},'${inline_key_prefix}')(event)" id="${trId}-switcher"></i>
+    </td>`
+    :
+    `<td>
       <i class="fa fa-trash" aria-hidden="true" onclick="deleteRow(event)" id="${trId}-left"></i>
     </td>
     <td>
       <i class="fa fa-pencil" aria-hidden="true" onclick="editRow('${window.currentTab}',${row_number}, '${trId}')(event)" id="${trId}-right"></i>
-    </td>
-    </tr>`
+    </td>`
+  const tr = `<tr id="${trId}">${tds_text}${delete_edit_icons}</tr>`
   const subTablesWrappedInTr_s = subTables
     .map((identifier) => {
       const key = identifier.split("-")[0];
@@ -134,7 +139,7 @@ function subTable_tr(objs, trId, parent_number_of_keys) {
     const prefixed_header_trs = TableRow(objs[0], 0, true, trId.split('-')[0])
 
     return `<tr id="${trId}" style="display:none">
-              <td colspan=${parent_number_of_keys}>
+              <td colspan=${parent_number_of_keys + 2}>
                 <table style="width:100%">
                   <tbody>
                       ${prefixed_header_trs}
@@ -146,7 +151,7 @@ function subTable_tr(objs, trId, parent_number_of_keys) {
   const tr_s = objs
     .map((obj, index) => TableRow(obj, index))
   return `<tr id="${trId}" style="display:none">
-              <td colspan=${parent_number_of_keys}>
+              <td colspan=${parent_number_of_keys + 2}>
                 <table style="width:100%">
                   ${Header(trId.split('-')[1], Object.keys(objs[0]))}
                   ${tr_s.join('')}
@@ -347,6 +352,60 @@ function editRow(tableName, row_number, id) {
       );
     }
   };
+}
+
+function cancel_sub_edit(row_number, field) {
+  return (evt) => {
+    const html_element = evt.target.parentElement.parentElement;
+    console.log('unchanged 😉');
+    html_element.innerHTML = TableRow(AllFetchedRows[window.currentTab][row_number][field], row_number, true, field)
+
+  }
+}
+/**
+ * 
+ * @param {number} row_number 
+ * @param {string} field role, subject, topic
+ * @returns 
+ */
+function edit_sub_Row(row_number, field) {
+  return (evt) => {
+    const html_element = evt.target.parentElement.parentElement;
+    if (evt.target.className.includes('fa-pencil')) {
+      console.log('evt.target.parentElement.parentElement.innerHTML.split("<i ") : ');
+      const step1 = html_element.innerHTML.split('<i ')
+      console.log(step1);
+      step1[0] = step1[0].substring(0, step1[0].lastIndexOf('<td>'))
+      step1[1] = "<td><i " + step1[1]
+      const first_part = step1[0]
+      const second_part = step1[1]
+      console.log('first_part : ');
+      console.log(first_part);
+      console.log('second_part : ');
+      console.log(second_part);
+
+      fetch(URL + `Api/read/${field}/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        }
+      }).then((res) => {
+        console.log(res);
+        return res.json();
+      }).then(SELECT_OPTIONS => {
+
+        html_element.innerHTML = `<td>
+      ${select(field + "_id", SELECT_OPTIONS, AllFetchedRows[window.currentTab][row_number][field], field)} 
+      </td><td>
+        <i class="fa fa-close" aria-hidden="true" onclick="cancel_sub_edit(${row_number},'${field}')(event)" ></i>
+      </td>
+      ${second_part.replace('fa-pencil', 'fa-check')}`
+      })
+    } else {
+      console.log('change 😉');
+      html_element.innerHTML = TableRow(AllFetchedRows[window.currentTab][row_number][field], row_number, true, field)
+    }
+  }
 }
 function deleteRow(evt) {
   if (evt.target.className.includes("fa-trash")) {
