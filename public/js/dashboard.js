@@ -236,6 +236,17 @@ function switchTo(Tab) {
       document.getElementById(Tab).innerText;
     const container = document.getElementById("TTTarget");
     container.innerHTML = "";
+    if (Tab == "Dashboard") {
+      console.log("DASH");
+      if (!window.statistics) loadStats();
+      console.log("STATS\n", window.statistics);
+      viewStats();
+      return;
+    }
+
+    let parentChartDiv = document.getElementById("chartContainer");
+
+    parentChartDiv.removeChild(parentChartDiv.children[0]);
 
     getFromHQ(
       {},
