@@ -139,7 +139,7 @@ aside {
 #main-content {
   width: 100%;
   display: flex;
-  min-height: 100vh;
+  min-height: calc(100vh - var(--navbar-height));
   flex-direction: column;
   background-color: var(--background);
 }

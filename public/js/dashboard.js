@@ -52,7 +52,7 @@ function pureRows(row, id) {
         tmp.innerText = "🔽";
         tmp.id = key + "-" + id + "-" + subrows.length + "-" + "btn";
         tmp.onclick = eventHandler(key + "-" + id + "-" + subrows.length);
-        subrows.push(key.replace(' ', '-') + "-" + id + "-" + subrows.length);
+        subrows.push(key.replace(" ", "-") + "-" + id + "-" + subrows.length);
         tmp.style =
           "background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;";
         td.appendChild(tmp);
@@ -108,7 +108,7 @@ function pureSubTable(objs, trId, parent_number_of_keys) {
   container_td.colSpan = parent_number_of_keys;
   const contained_table = document.createElement("table");
   container_td.appendChild(contained_table);
-  let tbl_name = trId.split('-')[1]
+  let tbl_name = trId.split("-")[1];
   contained_table.appendChild(pureHeader(tbl_name, Object.keys(objs[0])));
 
   objs
@@ -134,9 +134,9 @@ function main() {
     if (
       scrollPos >
       lastChild.offsetTop +
-      lastChild.offsetHeight -
-      document.body.clientHeight -
-      100
+        lastChild.offsetHeight -
+        document.body.clientHeight -
+        100
     ) {
       const tbl = document.getElementsByClassName("table")[0];
       if (
@@ -237,7 +237,11 @@ function switchTo(Tab) {
   getFromHQ(
     {},
     (lst) => {
-      const tbl = tableCreateIn_for_(container, window.currentTab, Object.keys(lst[0]));
+      const tbl = tableCreateIn_for_(
+        container,
+        window.currentTab,
+        Object.keys(lst[0])
+      );
       for (let index = 0; index < lst.length; index++) {
         const element = lst[index];
         if (AllFetchedRows[window.currentTab])
@@ -263,18 +267,26 @@ function editRow(row, id) {
     var arr = [].slice.call(document.getElementById(id).children);
     let tic = arr.pop();
     let x = arr.pop();
-    if (tic.children[0].className.includes('fa-pencil')) {
+    if (tic.children[0].className.includes("fa-pencil")) {
       for (const child of arr) {
         child.contentEditable = true;
       }
-      tic.children[0].className = tic.children[0].className.replace('fa-pencil', 'fa-check');
-      x.children[0].className = x.children[0].className.replace('fa-trash', 'fa-close')
-    }
-    else {
+      tic.children[0].className = tic.children[0].className.replace(
+        "fa-pencil",
+        "fa-check"
+      );
+      x.children[0].className = x.children[0].className.replace(
+        "fa-trash",
+        "fa-close"
+      );
+    } else {
       let data = row;
-      let sql_id = id.split('-').pop();
-      let header = [].slice.call(evt.currentTarget.parentElement.parentElement.parentElement.children[0].children)
-      header = header.map(e => e.innerText)
+      let sql_id = id.split("-").pop();
+      let header = [].slice.call(
+        evt.currentTarget.parentElement.parentElement.parentElement.children[0]
+          .children
+      );
+      header = header.map((e) => e.innerText);
       // header.forEach(e => {
       //   console.log(e)
       // })
@@ -282,12 +294,12 @@ function editRow(row, id) {
       //   console.log(e.innerText)
       // })
       // console.log(row)
-      data['id'] = sql_id
+      data["id"] = sql_id;
       header.forEach((key, i) => {
-        data[key] = arr[i].innerText
-      })
+        data[key] = arr[i].innerText;
+      });
 
-      console.log(data)
+      console.log(data);
 
       fetch(URL + `Api/update/${window.currentTab}/`, {
         method: "POST",
@@ -295,16 +307,21 @@ function editRow(row, id) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
-      })
-        .then((res) => {
-          console.log(res);
-          return res.json();
-        })
+      }).then((res) => {
+        console.log(res);
+        return res.json();
+      });
 
-      tic.children[0].className = tic.children[0].className.replace('fa-check', 'fa-pencil');
-      x.children[0].className = x.children[0].className.replace('fa-close', 'fa-trash')
+      tic.children[0].className = tic.children[0].className.replace(
+        "fa-check",
+        "fa-pencil"
+      );
+      x.children[0].className = x.children[0].className.replace(
+        "fa-close",
+        "fa-trash"
+      );
     }
-  }
+  };
 }
 function deleteRow(evt) {
   if (!modifyMode) {
@@ -365,11 +382,15 @@ function add() {
     );
     if (!answer) return;
   }
-  window.location.assign(
-    "DashBoard/add/" +
-    window.currentTab[0].toUpperCase() +
-    window.currentTab.substring(1)
-  );
+  let newTab = window.currentTab.toLowerCase();
+  newTab = newTab.split("_");
+  console.log(newTab);
+  let newTabStr = "";
+  for (const part of newTab) {
+    newTabStr += part.charAt(0).toUpperCase() + part.slice(1) + "_";
+  }
+  newTabStr = newTabStr.slice(0, -1);
+  window.location = URL + "DashBoard/add/" + newTabStr;
 }
 
 window.onload = main;
