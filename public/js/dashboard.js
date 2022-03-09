@@ -403,17 +403,11 @@ function edit_sub_Row(row_number, field) {
   return (evt) => {
     const html_element = evt.target.parentElement.parentElement;
     if (evt.target.className.includes('fa-pencil')) {
-      console.log('evt.target.parentElement.parentElement.innerHTML.split("<i ") : ');
       const step1 = html_element.innerHTML.split('<i ')
-      console.log(step1);
       step1[0] = step1[0].substring(0, step1[0].lastIndexOf('<td>'))
       step1[1] = "<td><i " + step1[1]
       const first_part = step1[0]
       const second_part = step1[1]
-      console.log('first_part : ');
-      console.log(first_part);
-      console.log('second_part : ');
-      console.log(second_part);
 
       fetch(URL + `Api/read/${field}/`, {
         method: "POST",
@@ -424,7 +418,7 @@ function edit_sub_Row(row_number, field) {
         console.log(res);
         return res.json();
       }).then(SELECT_OPTIONS => {
-
+        AllFetchedRows[field] = SELECT_OPTIONS
         html_element.innerHTML = `<td>
       ${select(field + "_id", SELECT_OPTIONS, AllFetchedRows[window.currentTab][row_number][field], field)} 
       </td><td>
@@ -433,7 +427,25 @@ function edit_sub_Row(row_number, field) {
       ${second_part.replace('fa-pencil', 'fa-check')}`
       })
     } else {
-      console.log('change 😉');
+      const v = evt.target.parentElement.parentElement.children[0].children[0].value
+      const fk_column = `${field}_id`
+      const payload = {
+        id: AllFetchedRows[window.currentTab][row_number].id
+      }
+      payload[fk_column] = v
+      fetch(URL + `Api/update/${window.currentTab}/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload)
+      }).then((res) => {
+        console.log(res);
+        const new_sub_obj = AllFetchedRows[field].filter(e => e.id == v)[0]
+        AllFetchedRows[window.currentTab][row_number][field] = new_sub_obj
+        html_element.innerHTML = TableRow(new_sub_obj, row_number, true, field)
+        return res.json();
+      })
       html_element.innerHTML = TableRow(AllFetchedRows[window.currentTab][row_number][field], row_number, true, field)
     }
   }
