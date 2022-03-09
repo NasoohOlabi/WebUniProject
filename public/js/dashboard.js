@@ -2,126 +2,144 @@ var AllFetchedRows = [];
 var deleteList = [];
 var modifyMode = false;
 
-function tableCreateIn_for_(container, id, header) {
-  let tbl = document.createElement("table");
-  tbl.className = "table";
-  tbl.appendChild(pureHeader(id, header));
-  container.appendChild(tbl);
-  return tbl;
+function UpperCaseFirstLetter(str, separator = " ") {
+  const arr = str.split(separator);
+
+  const upperCasedWords = arr.map(word => {
+    return word.charAt(0).toUpperCase() + word.slice(1)
+  })
+
+  return upperCasedWords.join(separator);
+}
+function select(input_name, SELECT_OPTIONS) {
+  const objects = SELECT_OPTIONS;
+  const identifying_string = (o) => {
+    const arr = (o.identifying_fields) ?
+      o.identifying_fields.map(field => o[field])
+      :
+      Object.values(o).filter(v => !(v instanceof Object))
+
+    return JSON.stringify(arr).replaceAll('[', '').replaceAll('"', '').replaceAll(']', '').replaceAll(',', ' ')
+  }
+  return `<select name="${input_name}" class="form-select valid-input" aria-label="${place_holder}">
+        <option value="" disabled selected hidden>
+            ${place_holder}
+        </option>
+        ${objects.map(object => `<option value="${object.id}">${identifying_string(object)}</option>`)}
+        ?>
+    </select>`
+}
+function MainTable(id, header) {
+  return `<table class="table" id="MainTable">
+            <thead>
+            ${Header(id, header)}
+            </thead>
+          </table>`
+}
+function is_display_key(key) {
+  return !key.endsWith('id') && key !== 'identifying_fields' && key !== 'profile_picture'
 }
 
-function eventHandler(id_to_toggle) {
+function toggleDropDown(id_to_toggle) {
   let dropped_down = false;
   let tr = document.getElementById(id_to_toggle);
   let btn = document.getElementById(id_to_toggle + "-" + "btn");
-  return function (event) {
-    if (tr == null || btn == null) {
+  btn.onclick = function () {
+    if (!(tr && btn)) {
       tr = document.getElementById(id_to_toggle);
       btn = document.getElementById(id_to_toggle + "-" + "btn");
     }
     dropped_down = !dropped_down;
-    btn.innerText = !dropped_down ? "🔽" : "🔼";
+    btn.value = !dropped_down ? "🔽" : "🔼"
     tr.style.display = !dropped_down ? "none" : "table-row";
   };
+  btn.onclick();
 }
-
-function pureHeader(id, names) {
-  let tr = document.createElement("tr");
-  tr.innerHTML = names
-    .filter((x) => x.substring(x.length - 2) !== "id")
+function Header(id, names) {
+  const th_s = names
+    .filter(is_display_key)
     .map((v) => "<th>" + v + "</th>")
-    .join("");
-  tr.id = id;
-  return tr;
+    .join("")
+  return `<tr id ="${id}">${th_s}</tr>`;
 }
-
-function pureRows(row, id) {
-  const answer = [];
-  let tr = document.createElement("tr");
-  answer.push(tr);
-  let subrows = [];
-  const number_of_keys = Object.keys(row).filter(
-    (x) => x.substring(x.length - 2) !== "id"
+function TableRow(row_item, id, inline_keys = false, inline_key_prefix = '') {
+  let number_of_display_columns = Object.keys(row_item).filter(
+    is_display_key
   ).length;
-  for (const key in row) {
-    if (Object.hasOwnProperty.call(row, key)) {
-      const value = row[key];
+  if (inline_keys) number_of_display_columns *= 2
+  const subTables = []
+  let td_s = Object.keys(row_item)
+    .filter(is_display_key)
+    .map(key => {
+      const value = row_item[key];
+      let td = (inline_keys) ? `<td><strong>${inline_key_prefix
+        } ${key}:</strong></td>` : "";
       if (value instanceof Object) {
-        let td = tr.insertCell();
-        let tmp = document.createElement("button");
-        tmp.innerText = "🔽";
-        tmp.id = key + "-" + id + "-" + subrows.length + "-" + "btn";
-        tmp.onclick = eventHandler(key + "-" + id + "-" + subrows.length);
-        subrows.push(key.replace(' ', '-') + "-" + id + "-" + subrows.length);
-        tmp.style =
-          "background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;";
-        td.appendChild(tmp);
+        // just making sure key is a single word
+        // key.replace(' ', '-') 
+        // since key is a field in the object this row represent
+        const id_of_tr_this_btn_will_expand = key.replace(' ', '-') + "-" + id + "-" + subTables.length
+        subTables.push(id_of_tr_this_btn_will_expand);
+        td += `<td>
+        <button
+          id="${id_of_tr_this_btn_will_expand}-btn" 
+          style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;"
+          onclick="toggleDropDown('${id_of_tr_this_btn_will_expand}')">
+            🔽
+          </button>
+        </td>`
+      } else if (key == `is_correct`) {
+        td += `<td>${value ? "✔" : "❌"}</td>`
       } else {
-        if (key == `is_correct`) {
-          let td = tr.insertCell();
-          let v = value ? "✔" : "❌";
-          td.appendChild(document.createTextNode(v));
-        } else if (key.substring(key.length - 2) !== "id") {
-          let td = tr.insertCell();
-          td.appendChild(document.createTextNode(value));
-        } else if (key == "id") {
-          tr.id = window.currentTab + "-" + value;
-        }
+        td += `<td>${value}</td>`;
       }
-    }
-  }
-  subrows
+
+      return td;
+    })
+
+  const td_text = td_s.join('')
+  const tr = `<tr id="${window.currentTab + "-" + row_item['id']}">${td_text}</tr>`
+  const subTablesWrappedInTr_s = subTables
     .map((identifier) => {
       const key = identifier.split("-")[0];
-      const res = pureSubTable(
-        row[key].length && row[key].length > 1 ? row[key] : [row[key]],
+      const res = subTable_tr(
+        row_item[key].length && row_item[key].length > 1 ? row_item[key] : [row_item[key]],
         identifier,
-        number_of_keys
+        number_of_display_columns
       );
       return res;
     })
-    .forEach((table_tr) => {
-      answer.push(table_tr);
-    });
-  trashbtn = document.createElement("i");
-  trashbtn.className = "fa fa-trash";
-  trashbtn.ariaHidden = "true";
-  let td_trash = tr.insertCell();
-  td_trash.appendChild(trashbtn);
-  trashbtn.addEventListener("click", deleteRow);
-  edit_btn = document.createElement("i");
-  edit_btn.className = "fa fa-pencil";
-  edit_btn.ariaHidden = "true";
-  let td_edit = tr.insertCell();
-  td_edit.appendChild(edit_btn);
-  edit_btn.addEventListener("click", editRow(row, tr.id));
-  return answer;
+    .join('\n')
+  return `${tr}\n${subTablesWrappedInTr_s}`
 }
-
-function pureSubTable(objs, trId, parent_number_of_keys) {
+function subTable_tr(objs, trId, parent_number_of_keys) {
   if (parent_number_of_keys === 0) return;
-  let tr = document.createElement("tr");
-  tr.id = trId;
-  tr.style.display = "none";
   if (objs.length === 0) return;
-  const container_td = tr.insertCell();
-  container_td.colSpan = parent_number_of_keys;
-  const contained_table = document.createElement("table");
-  container_td.appendChild(contained_table);
-  let tbl_name = trId.split('-')[1]
-  contained_table.appendChild(pureHeader(tbl_name, Object.keys(objs[0])));
 
-  objs
-    .map((obj, index) => pureRows(obj, index))
-    .forEach((trs) => {
-      trs.forEach((tr) => {
-        contained_table.appendChild(tr);
-      });
-    });
+  if (objs.length === 1) {
+    const prefixed_header_trs = TableRow(objs[0], 0, true, trId.split('-')[0])
 
-  return tr;
+    return `<tr id="${trId}" style="display:none">
+              <td colspan=${parent_number_of_keys}>
+                <table style="width:100%">
+                  <tbody>
+                      ${prefixed_header_trs}
+                  </tbody>
+                </table>
+              </td>
+            </tr>`
+  }
+  const tr_s = objs
+    .map((obj, index) => TableRow(obj, index))
+  return `<tr id="${trId}" style="display:none">
+              <td colspan=${parent_number_of_keys}>
+                <table style="width:100%">
+                  ${Header(trId.split('-')[1], Object.keys(objs[0]))}
+                  ${tr_s.join('')}
+                </table>
+              </td>
+          </tr>`;
 }
-
 function main() {
   const home = document.getElementById("home");
   if (!home) return;
@@ -162,7 +180,7 @@ function main() {
             if (AllFetchedRows[window.currentTab])
               AllFetchedRows[window.currentTab].push(element);
             else AllFetchedRows[window.currentTab] = [element];
-            const prows = pureRows(element, index);
+            const prows = TableRow(element, index);
             prows.forEach((row) => tbl.appendChild(row));
           }
           fetching_flag = false;
@@ -187,7 +205,6 @@ function main() {
     }
   });
 }
-
 function getFromHQ(POST_PAYLOAD, success, failure) {
   fetch(URL + `Api/read/${window.currentTab}/`, {
     method: "POST",
@@ -200,63 +217,51 @@ function getFromHQ(POST_PAYLOAD, success, failure) {
       return res.json();
     })
     .then((lst) => {
-      // console.log(lst);
       if (!(lst instanceof Array) || lst.length === 0) return;
-      // console.log(lst);
-      // lst = lst.map((row) => {
-      //   if (!(row instanceof Object)) return;
-      //   for (const field in row) {
-      //     if (!Object.hasOwnProperty.call(row, field)) return;
-      //     const attribute = row[field];
-      //     if (attribute instanceof Array) continue;
-      //     else if (attribute instanceof Object) {
-      //       for (const attribute_key in attribute) {
-      //         if (!Object.hasOwnProperty.call(attribute, attribute_key)) return;
-      //         const attribute_attribute = attribute[attribute_key];
-      //         row[field + " " + attribute_key] = attribute_attribute;
-      //       }
-      //       delete row[field];
-      //     }
-      //   }
-      //   return row;
-      // });
-      // console.log(lst);
       success(lst);
     })
     .catch(failure);
 }
 
 function switchTo(Tab) {
-  if (window.currentTab === Tab) return;
-  window.currentTab = Tab;
-  document.getElementById("title").innerText =
-    document.getElementById(Tab).innerText;
-  const container = document.getElementById("TTTarget");
-  container.innerHTML = "";
+  try {
 
-  getFromHQ(
-    {},
-    (lst) => {
-      const tbl = tableCreateIn_for_(container, window.currentTab, Object.keys(lst[0]));
-      for (let index = 0; index < lst.length; index++) {
-        const element = lst[index];
-        if (AllFetchedRows[window.currentTab])
-          AllFetchedRows[window.currentTab].push(element);
-        else AllFetchedRows[window.currentTab] = [element];
-        const prows = pureRows(element, index);
-        prows.forEach((row) => tbl.appendChild(row));
+
+    if (window.currentTab === Tab) return;
+    window.currentTab = Tab;
+    document.getElementById("title").innerText =
+      document.getElementById(Tab).innerText;
+    const container = document.getElementById("TTTarget");
+    container.innerHTML = "";
+
+    getFromHQ(
+      {},
+      (lst) => {
+        container.innerHTML = MainTable(window.currentTab, Object.keys(lst[0]))
+        const tbl = document.getElementById('MainTable')
+        for (let index = 0; index < lst.length; index++) {
+          const element = lst[index];
+          if (AllFetchedRows[window.currentTab])
+            AllFetchedRows[window.currentTab].push(element);
+          else AllFetchedRows[window.currentTab] = [element];
+          const row = TableRow(element, index);
+          tbl.innerHTML += row
+        }
+      },
+      (e) => {
+        //TODO: tell user some how that that's all
+        // console.log(e)
       }
-    },
-    (e) => {
-      //TODO: tell user some how that that's all
-      // console.log(e)
-    }
-  );
-  const addBtn = document.createElement("div");
-  addBtn.className = "add-btn";
-  addBtn.innerText = "+";
-  addBtn.onclick = add;
-  container.appendChild(addBtn);
+    );
+    const addBtn = document.createElement("div");
+    addBtn.className = "add-btn";
+    addBtn.innerText = "+";
+    addBtn.onclick = add;
+    container.appendChild(addBtn);
+
+  } catch (error) {
+    console.error(error)
+  }
 }
 function editRow(row, id) {
   return (evt) => {
