@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="<?= URL ?>public/css/dashboard_style.css" />
   <link rel="stylesheet" href="<?= URL ?>public/css/all.min.css" />
+  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 
 <body>
@@ -30,8 +31,8 @@
       <div class="menu">
         <ul class="menu-links">
           <li class="nav-link">
-            <a href="#">
-              <span class="text nav-text" id="dashboard">Dashboard</span>
+            <a href="#" onclick="switchTo('Dashboard')">
+              <span class="text nav-text" id="Dashboard">Dashboard</span>
             </a>
           </li>
 
@@ -87,14 +88,8 @@
     <div class="text" id="title">Dashboard</div>
     <div style="
     height:fit-content" id="TTTarget">
-      <?php
-      if ($stats) {
-        foreach ($stats as $page => $number) {
-          echo '<p>' . $page . '</p><div style = "display:inline-block;background-color:red;height:50px;width:' . $number . 'px"></div><span>' . $number . '</span>';
-        }
-      }
-      ?>
     </div>
+    <div id="chartContainer" style="height: fit-content; width: 100%;"></div>
   </section>
   <script>
     var URL = '<?= URL ?>'

@@ -166,4 +166,32 @@ class Api extends Controller
         }
         pageHit("Api.delete");
     }
+
+    function getStats()
+    {
+
+        $data = hitStats();
+
+        if (!$data) http_response_code(404);
+
+        $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
+
+        if ($contentType === "application/json") {
+            $content = trim(file_get_contents("php://input"));
+
+            $decoded = json_decode($content, true);
+
+            foreach ($data as $key => $value) {
+                $decoded[$key] = $value;
+            }
+
+            //$decoded['bar'] = "Hello World AGAIN!";    // Add some data to be returned.
+
+            $reply = json_encode($decoded);
+        }
+
+        header("Content-Type: application/json; charset=UTF-8");
+        echo $reply;
+        // ----------------------------------------------------------------------------------------------
+    }
 }

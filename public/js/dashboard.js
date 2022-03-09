@@ -1,6 +1,7 @@
 var AllFetchedRows = [];
 var deleteList = [];
 var modifyMode = false;
+var statistics = null;
 
 function tableCreateIn_for_(container, id, header) {
   let tbl = document.createElement("table");
@@ -125,7 +126,8 @@ function pureSubTable(objs, trId, parent_number_of_keys) {
 function main() {
   const home = document.getElementById("home");
   if (!home) return;
-  window.currentTab = "User";
+  //window.currentTab = "Dashboard";
+
   let fetching_flag = false;
 
   function doSomething(scrollPos) {
@@ -186,6 +188,8 @@ function main() {
       ticking = true;
     }
   });
+  window.currentTab = "";
+  switchTo("Dashboard");
 }
 
 function getFromHQ(POST_PAYLOAD, success, failure) {
@@ -227,12 +231,25 @@ function getFromHQ(POST_PAYLOAD, success, failure) {
 }
 
 function switchTo(Tab) {
+  console.log("Here");
   if (window.currentTab === Tab) return;
   window.currentTab = Tab;
   document.getElementById("title").innerText =
     document.getElementById(Tab).innerText;
   const container = document.getElementById("TTTarget");
   container.innerHTML = "";
+
+  if (Tab == "Dashboard") {
+    console.log("DASH");
+    if (!window.statistics) loadStats();
+    console.log("STATS\n", window.statistics);
+    viewStats();
+    return;
+  }
+
+  let parentChartDiv = document.getElementById("chartContainer");
+
+  parentChartDiv.removeChild(parentChartDiv.children[0]);
 
   getFromHQ(
     {},
@@ -391,6 +408,131 @@ function add() {
   }
   newTabStr = newTabStr.slice(0, -1);
   window.location = URL + "DashBoard/add/" + newTabStr;
+}
+
+function loadStats() {
+  var url = URL + "Api/getStats";
+  console.log(url);
+  var reply = {};
+
+  fetch(url, {
+    method: "POST",
+    body: JSON.stringify(reply),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((res) => res.json())
+    .then((response) => success(response))
+    .catch((error) => failure(error));
+
+  function success(json) {
+    console.log("AFTER: " + JSON.stringify(json));
+    window.statistics = cleanStats(json);
+    console.log(statistics);
+    if (window.currentTab == "Dashboard") {
+      viewStats();
+    }
+  }
+
+  function failure(error) {
+    console.log("ERROR: " + error);
+  }
+}
+
+function cleanStats(data) {
+  for (const key in data) {
+    if (Object.hasOwnProperty.call(data, key)) {
+      let oldKey = key;
+      let newKey = null;
+      switch (oldKey) {
+        case "Api.create":
+          newKey = "Database Add Request";
+          break;
+        case "Api.read":
+          newKey = "Database Read Request";
+          break;
+        case "Api.update":
+          newKey = "Database Update Request";
+          break;
+        case "Users.logout":
+          newKey = "Logout Request";
+          break;
+        case "Users.validate":
+          newKey = "Login Request";
+          break;
+        case "dashboard.Add":
+          newKey = "Add Form Visit";
+          break;
+        case "dashboard.index":
+          newKey = "Dashboard Visit";
+          break;
+        case "home.index":
+          newKey = "Homepage Visit";
+          break;
+
+        default:
+          break;
+      }
+
+      if (newKey) {
+        delete Object.assign(data, { [newKey]: data[oldKey] })[oldKey];
+      }
+    }
+  }
+  return data;
+}
+
+function viewStats() {
+  let viewedData = [];
+
+  console.log(window.statistics);
+
+  for (const key in window.statistics) {
+    if (Object.hasOwnProperty.call(window.statistics, key)) {
+      viewedData.push({ y: window.statistics[key], name: key });
+    }
+  }
+
+  console.log(viewedData);
+
+  var chart = new CanvasJS.Chart("chartContainer", {
+    theme: "dark2",
+    exportFileName: "Website Statistics",
+    exportEnabled: false,
+    animationEnabled: true,
+    title: {
+      text: "Website Statistics",
+    },
+    legend: {
+      cursor: "pointer",
+      itemclick: explodePie,
+    },
+    data: [
+      {
+        type: "doughnut",
+        innerRadius: 90,
+        showInLegend: true,
+        toolTipContent: "<b>{name}</b>: ${y} (#percent%)",
+        indexLabel: "{name} - #percent%",
+        dataPoints: viewedData,
+      },
+    ],
+  });
+  chart.render();
+
+  function explodePie(e) {
+    if (
+      typeof e.dataSeries.dataPoints[e.dataPointIndex].exploded ===
+        "undefined" ||
+      !e.dataSeries.dataPoints[e.dataPointIndex].exploded
+    ) {
+      e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+    } else {
+      e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+    }
+    e.chart.render();
+  }
 }
 
 window.onload = main;
