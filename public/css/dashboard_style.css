@@ -121,6 +121,7 @@ header .image-text .profession {
 
 .sidebar .menu {
   margin-top: 40px;
+  overflow-y: auto;
 }
 
 .sidebar li a {
@@ -189,6 +190,8 @@ body.dark #home .text {
   width: 80%;
   margin-bottom: 2rem;
   color: #212529;
+  margin-left: auto;
+  margin-right: auto;
 }
 .table td,
 .table th {
@@ -221,11 +224,11 @@ body.dark #home .text {
   background-color: var(--sidebar-color);
   box-shadow: 0px -1px 7px rgba(50, 50, 50, 0.75);
 }
-.inner-shadowed{
+.inner-shadowed {
   box-shadow: inset 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
-.inner-shadowed .inner-shadowed{
-  box-shadow:none !important;
+.inner-shadowed .inner-shadowed {
+  box-shadow: none !important;
 }
 
 .modify-btn {
@@ -240,14 +243,14 @@ body.dark #home .text {
   color: #ffffff;
   background-color: #009688;
   display: inline;
-  width: 25%;
-  height: 3em;
+  padding: 1em;
   margin: 0 1%;
   cursor: pointer;
 }
 
 #modify-div {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .fa-trash {
@@ -301,4 +304,23 @@ body.dark #home .text {
   border-color: #80bdff;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
