@@ -19,11 +19,7 @@ function is_ROOT__ADMIN()
 class DashBoard extends Controller
 {
 
-    public array $forms = [
-        'Question', 'Role', 'Exam', 'Subject', 'Topic',
-        'Choice', 'Permission', 'Role_has_Permission', 'User', 'Exam_Center',
-        'Student', 'Exam_Has_Question', 'Student_Took_Exam', 'Exam_Center_Has_Exam'
-    ];
+    public array $forms = ['question', 'role', 'exam', 'subject', 'topic', 'choice', 'permission', 'role_has_permission', 'user', 'exam_center', 'student', 'exam_has_question', 'student_took_exam', 'exam_center_has_exam'];
 
 
     public function index()
@@ -56,7 +52,7 @@ class DashBoard extends Controller
                 $q = new $val();
                 FormForThis($q, $bm);
             }
-        } else if (in_array($form, $this->forms)) {
+        } else if (in_array(strtolower($form), $this->forms)) {
             $q = new $form();
             FormForThis($q, $bm);
         } else {
