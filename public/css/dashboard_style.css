@@ -228,7 +228,7 @@ body.dark #home .text {
   box-shadow: inset 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 .inner-shadowed .inner-shadowed {
-  box-shadow: none !important;
+  box-shadow: none;
 }
 
 .modify-btn {
