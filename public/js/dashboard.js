@@ -2,12 +2,22 @@ var AllFetchedRows = [];
 var deleteList = [];
 var modifyMode = false;
 var statistics = null;
+
+// @ts-check
+/**
+ * @param cname {string}
+ * @param cvalue {string}
+ * @param exdays {number}
+ */
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   let expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
+/**
+ * @param cname {string}
+ */
 function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
@@ -23,6 +33,12 @@ function getCookie(cname) {
   }
   return "";
 }
+/**
+ * 
+ * @param {string} str 
+ * @param {string} separator = " "
+ * @returns 
+ */
 function UpperCaseFirstLetter(str, separator = " ") {
   const arr = str.split(separator);
 
@@ -32,6 +48,14 @@ function UpperCaseFirstLetter(str, separator = " ") {
 
   return upperCasedWords.join(separator);
 }
+/**
+ * 
+ * @param {string} input_name 
+ * @param {string} SELECT_OPTIONS 
+ * @param {object[]} SELECTED_ELEMENT 
+ * @param {string} place_holder 
+ * @returns 
+ */
 function select(input_name, SELECT_OPTIONS, SELECTED_ELEMENT, place_holder) {
   const objects = SELECT_OPTIONS;
   const identifying_string = (o) => {
@@ -48,6 +72,12 @@ function select(input_name, SELECT_OPTIONS, SELECTED_ELEMENT, place_holder) {
         ?>
     </select>`;
 }
+/**
+ * 
+ * @param {number} id 
+ * @param {string[]} header 
+ * @returns 
+ */
 function MainTable(id, header) {
   return `<table class="table" >
             <thead>
@@ -57,6 +87,11 @@ function MainTable(id, header) {
             </tbody>
           </table>`
 }
+/**
+ * 
+ * @param {string} key 
+ * @returns {boolean}
+ */
 function is_display_key(key) {
   return (
     !key.endsWith("id") &&
@@ -64,11 +99,20 @@ function is_display_key(key) {
     key !== "profile_picture"
   );
 }
+/**
+ * 
+ * @param {htmlNode} elem 
+ * @returns {boolean}
+ */
 function is_not_unicode_sth(elem) {
   return !(
     elem.children[0] && ["🔽", "🔼"].includes(elem.children[0].innerText)
   );
 }
+/**
+ * 
+ * @param {number} id_to_toggle 
+ */
 function toggleDropDown(id_to_toggle) {
   let dropped_down = false;
   let tr = document.getElementById(id_to_toggle);
@@ -84,6 +128,12 @@ function toggleDropDown(id_to_toggle) {
   };
   btn.onclick();
 }
+/**
+ * 
+ * @param {number} id 
+ * @param {string[]} names 
+ * @returns 
+ */
 function Header(id, names) {
   const th_s = names
     .filter(is_display_key)
@@ -91,6 +141,14 @@ function Header(id, names) {
     .join("");
   return `<tr id ="${id}">${th_s}</tr>`;
 }
+/**
+ * 
+ * @param {object} row_item 
+ * @param {number} row_number 
+ * @param {boolean} inline_keys 
+ * @param {string} inline_key_prefix 
+ * @returns {string} tr element
+ */
 function TableRow(
   row_item,
   row_number,
@@ -171,6 +229,13 @@ function TableRow(
     .join("\n");
   return `${tr}\n${subTablesWrappedInTr_s}`;
 }
+/**
+ * 
+ * @param {object[]} objs 
+ * @param {string} trId 
+ * @param {number} parent_number_of_keys 
+ * @returns {string} tr containing table
+ */
 function subTable_tr(objs, trId, parent_number_of_keys) {
   if (parent_number_of_keys === 0) return;
   if (objs.length === 0) return;
@@ -198,6 +263,10 @@ function subTable_tr(objs, trId, parent_number_of_keys) {
               </td>
           </tr>`;
 }
+/**
+ * 
+ * @returns {void} window.onload
+ */
 function main() {
   const home = document.getElementById("home");
   if (!home) return;
@@ -270,6 +339,12 @@ function main() {
     switchTo(getCookie('currentTab'))
   }
 }
+/**
+ * 
+ * @param {object} POST_PAYLOAD 
+ * @param {function} success 
+ * @param {function} failure 
+ */
 function getFromHQ(POST_PAYLOAD, success, failure) {
   fetch(URL + `Api/read/${window.currentTab}/`, {
     method: "POST",
@@ -287,7 +362,11 @@ function getFromHQ(POST_PAYLOAD, success, failure) {
     })
     .catch(failure);
 }
-
+/**
+ * 
+ * @param {string} Tab will be set to window.currentTab
+ * @returns {void}
+ */
 function switchTo(Tab) {
   try {
     if (window.currentTab === Tab) return;
@@ -341,6 +420,7 @@ function switchTo(Tab) {
     console.error(error);
   }
 }
+
 function editRow(tableName, row_number, id) {
   return (evt) => {
     var arr = [].slice.call(document.getElementById(id).children);
