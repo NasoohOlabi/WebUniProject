@@ -2,9 +2,11 @@ const isDarkMode = () =>
   window.matchMedia &&
   window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+const ourURL = window.location.origin + '/mnu/'
+
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", function () {
-    navigator.serviceWorker.register("./public/js/sw.js").then(
+    navigator.serviceWorker.register(ourURL + "public/js/sw.js").then(
       function (registration) {
         // Registration was successful
         console.log(

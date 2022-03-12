@@ -110,7 +110,8 @@ function is_display_key(key) {
   return (
     !key.endsWith("id") &&
     key !== "identifying_fields" &&
-    key !== "profile_picture"
+    key !== "profile_picture" &&
+    key !== "dependents"
   );
 }
 /**
@@ -297,7 +298,7 @@ function main() {
       document.body.clientHeight -
       100
     ) {
-      const tbl = document.getElementsByClassName("table")[0];
+      const tbl = document.getElementById("MainTable");
       if (
         !(
           tbl &&
@@ -321,8 +322,8 @@ function main() {
             if (AllFetchedRows[currentTab])
               AllFetchedRows[currentTab].push(element);
             else AllFetchedRows[currentTab] = [element];
-            const prows = TableRow(element, index);
-            prows.forEach((row) => tbl.appendChild(row));
+            const row = TableRow(element, index);
+            tbl.innerHTML += row;
           }
           fetching_flag = false;
         },
@@ -533,13 +534,17 @@ function editRow(tableName, row_number, id) {
     }
   };
 }
-
+/**
+ * 
+ * @param {number} row_number 
+ * @param {string} field 
+ * @returns 
+ */
 function cancel_sub_edit(row_number, field) {
   return (evt) => {
     const html_element = evt.target.parentElement.parentElement;
     console.log('unchanged 😉');
     html_element.innerHTML = TableRow(AllFetchedRows[currentTab][row_number][field], row_number, true, field)
-
   }
 }
 /**

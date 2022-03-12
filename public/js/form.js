@@ -13,6 +13,11 @@
  * A set of validator functions to use while validating forms
  */
 const validators = {
+	/**
+	 * 
+	 * @param {string} email 
+	 * @returns {boolean}
+	 */
 	email: (email) => {
 		// validate email format
 		const emailRegex =
@@ -20,6 +25,11 @@ const validators = {
 		const anotherRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		return emailRegex.test(email);
 	},
+	/**
+	 * 
+	 * @param {string} password 
+	 * @returns {boolean}
+	 */
 	password: (password) => {
 		// validate password format
 		return (
@@ -28,14 +38,41 @@ const validators = {
 			/[0-9]/.test(password)
 		);
 	},
+	/**
+	 * 
+	 * @param {string} first_name 
+	 * @returns {boolean}
+	 */
 	first_name: (first_name) => first_name.length > 0,
+	/**
+	 * 
+	 * @param {string} last_name 
+	 * @returns {boolean}
+	 */
 	last_name: (last_name) => last_name.length > 0,
+	/**
+	 * 
+	 * @param {string} confirm_password 
+	 * @param {string} password 
+	 * @returns {boolean}
+	 */
 	"confirm-password": (confirm_password, password) =>
 		password === confirm_password,
+	/**
+ * 
+ * @param {string} PhoneNumber 
+ * @returns {boolean}
+ */
 	phone: (PhoneNumber) => /09[0-9]{8}/.test(PhoneNumber),
-	AccountType: (type) => type.length > 0,
-	ProfileImg: (fakePath) => fakePath.length > 0,
+	/**
+	 * 
+	 * @param {string} type 
+	 * @returns {boolean}
+	 */
+	AccountType: (type) => type.length > 0
 };
+
+let parsing_input_interval = 0;
 
 /**
  *	Note that multiple calls to doBeforeAfterSpin will only take into account last 1000 ms
@@ -44,24 +81,25 @@ const validators = {
  * @returns function that execute init and then execute callBack after 1000 ms
  */
 const doBeforeAfterSpin = (init, callBack) => (event) => {
+	const scope = event.target.parentElement.parentElement.parentElement
 	init(event);
-	if (window.parsing_input_interval) {
-		clearInterval(window.parsing_input_interval);
+	if (parsing_input_interval) {
+		clearInterval(parsing_input_interval);
 	}
-	if (document.getElementById("spinner"))
-		document.getElementById("spinner").style.display = "inline";
-	document.querySelector(".form-block > button").disabled = true;
-	document.getElementById("submit-btn").disabled = true;
-	window.parsing_input_interval = setTimeout(() => {
-		if (document.getElementById("spinner"))
-			document.getElementById("spinner").style.display = "none";
+	if (scope.querySelector("#spinner"))
+		scope.querySelector("#spinner").style.display = "inline";
+	scope.querySelector(".form-block > button").disabled = true;
+	scope.querySelector("#submit-btn").disabled = true;
+	parsing_input_interval = setTimeout(() => {
+		if (scope.querySelector("#spinner"))
+			scope.querySelector("#spinner").style.display = "none";
 		callBack(event);
 	}, 1000);
 };
 /**
  * Adds callBack as eventLister to listOfEventNames events to the nodes in HtmlCollection
  * @param {string[]} listOfEventNames
- * @param {HtmlCollection} collection
+ * @param {HTMLCollectionOf<Element>} collection
  * @param {(event)=>void} callBack
  */
 const addEventsListenersToHTMLCollection = (
@@ -79,21 +117,29 @@ const addEventsListenersToHTMLCollection = (
  *
  * @returns Object with {(input/select).name : value}
  */
-function readInputs() {
+/**
+ * 
+ * @param {HTMLElement} form 
+ * @returns {object} with {(input/select).name : value}
+ */
+function readInputs(form) {
 	const dic = {};
-	for (let elem of document.getElementsByTagName("input")) {
+	form.querySelectorAll("input").forEach(elem => {
 		dic[elem.name] = elem.value.trim();
-	}
-	for (let elem of document.getElementsByTagName("select")) {
+	})
+	form.querySelectorAll("select").forEach(elem => {
 		dic[elem.name] = elem.value.trim();
-	}
+	})
 	return dic;
 }
 /**
  * object of key form_element.name mapped to string value
- * @param {string : boolean} form::element
+ * @param {{string : boolean}}  form_obj
  */
 function isValidForm(form_obj) {
+	/**
+	 * @type {{string?:boolean}}
+	 */
 	const res = {};
 	for (const key in form_obj) {
 		if (Object.hasOwnProperty.call(form_obj, key)) {
@@ -106,9 +152,11 @@ function isValidForm(form_obj) {
 			) {
 				// no need to validate login password
 				res[key] = true;
-			} else {
+			} else if (validators[key]) {
 				const receivedValue = form_obj[key];
 				res[key] = validators[key](receivedValue);
+			} else {
+				res[key] = true
 			}
 		}
 	}
@@ -125,25 +173,28 @@ function removeErrorMsgUnderThisElem(elem) {
 /**
  * Highlight elements that needs to be red Highlighted
  * and removes highlighting on those that don't need it accordingly
- * @param {} flags
+ * @param {{string?:boolean}} flags 
+ * @param {Element} scopeElement 
+ * @param {{string?:boolean}} Touched 
  */
-function setFormStatus(flags) {
-	for (let elem of document.getElementsByClassName("text-input")) {
-		if (window[elem.id + " is Touched"] && !flags[elem.id]) {
+function setFormStatus(flags, scopeElement, Touched = {}) {
+	scopeElement.querySelectorAll(".text-input").forEach(elem => {
+		if (Touched[elem.id + " is Touched"] && !flags[elem.id]) {
 			showErrorMsgUnderThisElem(elem);
 		} else {
 			removeErrorMsgUnderThisElem(elem);
 		}
-	}
+	})
 }
 
 function main() {
 	// Unfilled, untouched fields shouldn't be highlighted in red
+	const Touched = {}
 	addEventsListenersToHTMLCollection(
 		["focus"],
 		document.getElementsByClassName("text-input"),
 		(event) => {
-			window[event.currentTarget.id + " is Touched"] = true;
+			Touched[event.target.id + " is Touched"] = true;
 		}
 	);
 
@@ -153,16 +204,33 @@ function main() {
 		["input", "focusout"],
 		document.getElementsByClassName("text-input"),
 		doBeforeAfterSpin(
+			/**
+			 * 
+			 * @param {Event} event 
+			 */
 			(event) => {
-				removeErrorMsgUnderThisElem(event.currentTarget);
+				removeErrorMsgUnderThisElem(event.target);
 			},
+			/**
+			 * 
+			 * @param {Event} event 
+			 */
 			(event) => {
-				const read_form = readInputs();
+				const scope = event.target.parentElement.parentElement
+				const read_form = readInputs(scope);
 				const validFormFlag = isValidForm(read_form);
-				setFormStatus(validFormFlag);
+				setFormStatus(validFormFlag, scope, Touched);
 			}
 		)
 	);
+	document.querySelectorAll('form .form-block button').forEach(element => {
+		element.addEventListener("onclick", (event) => {
+			const scope = event.target.parentElement.parentElement
+			const read_form = readInputs(scope);
+			const validFormFlag = isValidForm(read_form);
+			setFormStatus(validFormFlag, scope, Touched);
+		})
+	})
 }
 
 window.onload = main;
