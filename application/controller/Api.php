@@ -19,6 +19,7 @@ class Api extends Controller
     }
     public function create($className = null)
     {
+        $_POST = json_decode(file_get_contents("php://input"), true);
         try {
             // Clean inputs
             $_POST = array_map('htmlentities', $_POST);

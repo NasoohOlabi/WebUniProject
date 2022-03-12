@@ -15,15 +15,11 @@
 const validators = {
 	/**
 	 * 
-	 * @param {string} email 
+	 * @param {string} username 
 	 * @returns {boolean}
 	 */
-	email: (email) => {
-		// validate email format
-		const emailRegex =
-			/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		const anotherRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-		return emailRegex.test(email);
+	username: (username) => {
+		return username.length !== 0;
 	},
 	/**
 	 * 
@@ -88,8 +84,6 @@ const doBeforeAfterSpin = (init, callBack) => (event) => {
 	}
 	if (scope.querySelector("#spinner"))
 		scope.querySelector("#spinner").style.display = "inline";
-	scope.querySelector(".form-block > button").disabled = true;
-	scope.querySelector("#submit-btn").disabled = true;
 	parsing_input_interval = setTimeout(() => {
 		if (scope.querySelector("#spinner"))
 			scope.querySelector("#spinner").style.display = "none";
@@ -120,9 +114,12 @@ const addEventsListenersToHTMLCollection = (
 /**
  * 
  * @param {HTMLElement} form 
- * @returns {object} with {(input/select).name : value}
+ * @returns {{[index:string]:string}} with {(input/select).name : value}
  */
 function readInputs(form) {
+	/**
+	 * @type {{[index:string]:string}}
+	 */
 	const dic = {};
 	form.querySelectorAll("input").forEach(elem => {
 		dic[elem.name] = elem.value.trim();
@@ -134,11 +131,11 @@ function readInputs(form) {
 }
 /**
  * object of key form_element.name mapped to string value
- * @param {{string : boolean}}  form_obj
+ * @param {{string? : boolean}}  form_obj
  */
 function isValidForm(form_obj) {
 	/**
-	 * @type {{string?:boolean}}
+	 * @type {{[index:string]:boolean}}
 	 */
 	const res = {};
 	for (const key in form_obj) {
@@ -162,6 +159,17 @@ function isValidForm(form_obj) {
 	}
 	return res;
 }
+/**
+ * 
+ * @param {Element} scope 
+ * @returns 
+ */
+function formNameInScope(scope) {
+	console.log('scope : ');
+	console.log(scope);
+	const elem = scope.querySelector("h1")
+	return elem.innerText
+}
 function showErrorMsgUnderThisElem(elem) {
 	elem.className = "text-input invalid-input";
 	elem.nextElementSibling.style.display = "block";
@@ -173,11 +181,11 @@ function removeErrorMsgUnderThisElem(elem) {
 /**
  * Highlight elements that needs to be red Highlighted
  * and removes highlighting on those that don't need it accordingly
- * @param {{string?:boolean}} flags 
+ * @param {{[index:string]:boolean}} flags 
  * @param {Element} scopeElement 
- * @param {{string?:boolean}} Touched 
+ * @param {{[index:string]:boolean}} Touched 
  */
-function setFormStatus(flags, scopeElement, Touched = {}) {
+function showFormStatus(flags, scopeElement, Touched = {}) {
 	scopeElement.querySelectorAll(".text-input").forEach(elem => {
 		if (Touched[elem.id + " is Touched"] && !flags[elem.id]) {
 			showErrorMsgUnderThisElem(elem);
@@ -189,6 +197,9 @@ function setFormStatus(flags, scopeElement, Touched = {}) {
 
 function main() {
 	// Unfilled, untouched fields shouldn't be highlighted in red
+	/**
+	 * @type {{[index:string]:boolean}}
+	 */
 	const Touched = {}
 	addEventsListenersToHTMLCollection(
 		["focus"],
@@ -216,21 +227,35 @@ function main() {
 			 * @param {Event} event 
 			 */
 			(event) => {
-				const scope = event.target.parentElement.parentElement
+				const scope = event.target.parentElement.parentElement.parentElement
 				const read_form = readInputs(scope);
 				const validFormFlag = isValidForm(read_form);
-				setFormStatus(validFormFlag, scope, Touched);
+				showFormStatus(validFormFlag, scope, Touched);
 			}
 		)
 	);
-	document.querySelectorAll('form .form-block button').forEach(element => {
-		element.addEventListener("onclick", (event) => {
-			const scope = event.target.parentElement.parentElement
-			const read_form = readInputs(scope);
-			const validFormFlag = isValidForm(read_form);
-			setFormStatus(validFormFlag, scope, Touched);
+	const buttons = document.querySelectorAll('form .form-block button:not(default-form)')
+	if (buttons.length !== 0)
+		buttons.forEach(element => {
+			element.addEventListener("click", (event) => {
+				event.preventDefault();
+				const scope = event.target.parentElement.parentElement.parentElement
+				const read_form = readInputs(scope);
+				const validFormFlag = isValidForm(read_form);
+				showFormStatus(validFormFlag, scope, Touched);
+				const name = formNameInScope(scope)
+				if (Object.values(validFormFlag).every(e => e)) { // all fields are valid
+					fetch(ourURL + `Api/create/${name}`, {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify(read_form)
+					}
+					)
+				}
+			})
 		})
-	})
 }
 
-window.onload = main;
+addLoadEvent(main);

@@ -714,7 +714,11 @@ function confirmChanges() {
         .then((res) => {
           console.log(res);
           document.getElementById('modify-div').remove()
-          res.json()
+          try {
+            return res.json()
+          } catch (error) {
+            return res.text()
+          }
         })
     }
   });
@@ -871,4 +875,4 @@ function viewStats() {
   }
 }
 
-window.onload = main;
+addLoadEvent(main);

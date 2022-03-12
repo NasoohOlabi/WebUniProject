@@ -122,11 +122,10 @@ class Users extends Controller
         session_start();
         $users_model = $this->loadModel('UserModel');
 
-        $email = htmlentities($_POST['email']);
+        $username = htmlentities($_POST['username']);
         $password = htmlentities($_POST['password']);
 
-        $username = explode('@', $email)[0];
-        if ($users_model->validateUser($email, $password)) {
+        if ($users_model->validateUser($username, $password)) {
             $_SESSION['user'] = $users_model->getFullDetails($username, $password);
             header("Location:" . URL);
         } else {

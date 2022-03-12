@@ -3,22 +3,23 @@
     <noscript>It seems that you don't have javascript enabled for this
         site...</noscript>
     <div class="login-container">
+        <h1 style="display:none">Login</h1>
         <div class="icon-container">
             <i class="fas fa-user-circle user-icon"></i>
         </div>
 
         <form action="<?= URL ?>users/validate" method="post" class="login-form">
             <div class="form-block">
-                <input type="text" name="email" id="email" class="text-input valid-input" placeholder="Email" required />
+                <input type="text" name="username" id="username" class="text-input valid-input" placeholder="Username" required />
                 <small class="invalid-text">
-                    Please enter a valid email</small>
+                    Please enter a valid username</small>
             </div>
             <div class="form-block">
                 <input type="password" name="password" id="password" class="text-input valid-input" placeholder="Password" required />
                 <small class="invalid-text">Please enter a valid password</small>
             </div>
             <div class="form-block">
-                <button type="submit" id="submit-btn">
+                <button type="submit" id="submit-btn" class="default-form">
                     Login
                     <svg id="spinner" viewBox="0 0 50 50">
                         <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>

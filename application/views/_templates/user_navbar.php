@@ -20,6 +20,8 @@ if ($has_picture == true) {
     <script>
         var toggle = false;
 
+        var profile_pic = document.getElementsByClassName('profile-pic')[0];
+
         function toggle_menu() {
 
             var drop_menu = document.getElementsByClassName('dropdown-content')[0];
@@ -38,7 +40,7 @@ if ($has_picture == true) {
 
 
 
-        document.addEventListener('click', function(event) {
+        profile_pic.addEventListener('click', function(event) {
             if (!toggle) return;
             var profile_pic = document.getElementsByClassName('profile-pic')[0];
             var drop_menu = document.getElementsByClassName('dropdown-content')[0];
@@ -71,4 +73,5 @@ if ($has_picture == true) {
                 </div>
             </div>
         </nav>
+
     </header>
