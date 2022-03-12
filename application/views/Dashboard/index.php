@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="<?= URL ?>public/css/dashboard_style.css" />
   <link rel="stylesheet" href="<?= URL ?>public/css/all.min.css" />
-  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="<?= URL ?>public/js/canvasjs.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -119,9 +119,11 @@
   <section id="home">
     <div class="text" id="title">Dashboard</div>
     <div style="
-    height:fit-content" id="TTTarget">
+    height:fit-content" id="JS-App-Root">
     </div>
-    <div id="chartContainer" style="height: fit-content; width: 100%;"></div>
+    <div style="position:relative;width:65px;top:10px;height:10px;background-color:var(--body-color);z-index:20"></div>
+    <div id="chartContainer" style="height: fit-content; width: 100%;">
+    </div>
   </section>
   <script>
     var URL = '<?= URL ?>'

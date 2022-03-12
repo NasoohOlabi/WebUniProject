@@ -141,7 +141,11 @@ class Api extends Controller
                 'api update>>>>cleaned>>>POST>>>>>' . json_encode((object)$_POST)
             );
             $Model = $this->loadModel('BaseModel');
-            $Model->experimental_update($schemaClass, $_POST['id'], (object) $_POST);
+            if ($Model->experimental_update($schemaClass, $_POST['id'], (object) $_POST)) {
+                echo 'updated';
+            } else {
+                echo 'update unsuccessful';
+            }
         } catch (\Throwable $e) {
             simpleLog('Caught exception: ' . $e->getMessage());
             http_response_code(400);

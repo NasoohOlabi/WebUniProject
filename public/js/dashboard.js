@@ -2,8 +2,22 @@ var AllFetchedRows = [];
 var deleteList = [];
 var modifyMode = false;
 var statistics = null;
+var currentTab = (getCookie('currentTab') == '') ? (() => {
+  setCookie('currentTab', 'Dashboard', 3)
+  switchTo("Dashboard");
+  return "Dashboard";
+})() : (() => {
+  const curr = getCookie('currentTab')
+  switchTo(curr)
+  return curr
+})()
 
-// @ts-check
+class Topic {
+
+}
+
+
+
 /**
  * @param cname {string}
  * @param cvalue {string}
@@ -51,8 +65,8 @@ function UpperCaseFirstLetter(str, separator = " ") {
 /**
  * 
  * @param {string} input_name 
- * @param {string} SELECT_OPTIONS 
- * @param {object[]} SELECTED_ELEMENT 
+ * @param {{id:number}[]} SELECT_OPTIONS 
+ * @param {{id:number}} SELECTED_ELEMENT 
  * @param {string} place_holder 
  * @returns 
  */
@@ -74,7 +88,7 @@ function select(input_name, SELECT_OPTIONS, SELECTED_ELEMENT, place_holder) {
 }
 /**
  * 
- * @param {number} id 
+ * @param {string} id 
  * @param {string[]} header 
  * @returns 
  */
@@ -101,7 +115,7 @@ function is_display_key(key) {
 }
 /**
  * 
- * @param {htmlNode} elem 
+ * @param {HTMLTableElement} elem 
  * @returns {boolean}
  */
 function is_not_unicode_sth(elem) {
@@ -111,13 +125,13 @@ function is_not_unicode_sth(elem) {
 }
 /**
  * 
- * @param {number} id_to_toggle 
+ * @param {string} id_to_toggle 
  */
 function toggleDropDown(id_to_toggle) {
   let dropped_down = false;
   let tr = document.getElementById(id_to_toggle);
   let btn = document.getElementById(id_to_toggle + "-" + "btn");
-  btn.onclick = function () {
+  const f = function () {
     if (!(tr && btn)) {
       tr = document.getElementById(id_to_toggle);
       btn = document.getElementById(id_to_toggle + "-" + "btn");
@@ -126,11 +140,12 @@ function toggleDropDown(id_to_toggle) {
     btn.value = !dropped_down ? "🔽" : "🔼";
     tr.style.display = !dropped_down ? "none" : "table-row";
   };
-  btn.onclick();
+  btn.onclick = f;
+  f();
 }
 /**
  * 
- * @param {number} id 
+ * @param {string} id 
  * @param {string[]} names 
  * @returns 
  */
@@ -200,7 +215,7 @@ function TableRow(
   // trashbtn.addEventListener("click", deleteRow);
 
   // edit_btn.addEventListener("click", editRow(row, tr.id));
-  const trId = window.currentTab + "-" + row_item['id']
+  const trId = currentTab + "-" + row_item['id']
   const delete_edit_icons = (inline_keys)
     ?
     `<td>
@@ -211,7 +226,7 @@ function TableRow(
       <i class="fa fa-trash" aria-hidden="true" onclick="deleteRow(event)" id="${trId}-left"></i>
     </td>
     <td>
-      <i class="fa fa-pencil" aria-hidden="true" onclick="editRow('${window.currentTab}',${row_number}, '${trId}')(event)" id="${trId}-right"></i>
+      <i class="fa fa-pencil" aria-hidden="true" onclick="editRow('${currentTab}',${row_number}, '${trId}')(event)" id="${trId}-right"></i>
     </td>`
   const tr = `<tr id="${trId}">${tds_text}${delete_edit_icons}</tr>`
   const subTablesWrappedInTr_s = subTables
@@ -270,7 +285,6 @@ function subTable_tr(objs, trId, parent_number_of_keys) {
 function main() {
   const home = document.getElementById("home");
   if (!home) return;
-  // window.currentTab = "User";
   let fetching_flag = false;
 
   function doSomething(scrollPos) {
@@ -287,15 +301,15 @@ function main() {
       if (
         !(
           tbl &&
-          AllFetchedRows[window.currentTab] &&
-          AllFetchedRows[window.currentTab].length
+          AllFetchedRows[currentTab] &&
+          AllFetchedRows[currentTab].length
         )
       )
         return;
       let data = {
         op: "get after",
-        id: AllFetchedRows[window.currentTab][
-          AllFetchedRows[window.currentTab].length - 1
+        id: AllFetchedRows[currentTab][
+          AllFetchedRows[currentTab].length - 1
         ]["id"],
       };
       fetching_flag = true;
@@ -304,9 +318,9 @@ function main() {
         (lst) => {
           for (let index = 0; index < lst.length; index++) {
             const element = lst[index];
-            if (AllFetchedRows[window.currentTab])
-              AllFetchedRows[window.currentTab].push(element);
-            else AllFetchedRows[window.currentTab] = [element];
+            if (AllFetchedRows[currentTab])
+              AllFetchedRows[currentTab].push(element);
+            else AllFetchedRows[currentTab] = [element];
             const prows = TableRow(element, index);
             prows.forEach((row) => tbl.appendChild(row));
           }
@@ -331,53 +345,64 @@ function main() {
       ticking = true;
     }
   });
-  window.currentTab = "";
-  if (getCookie('currentTab') == '') {
-    setCookie('currentTab', 'Dashboard', 3)
-    switchTo("Dashboard");
-  } else {
-    switchTo(getCookie('currentTab'))
-  }
 }
 /**
  * 
  * @param {object} POST_PAYLOAD 
  * @param {function} success 
- * @param {function} failure 
+ * @param {(reason: any) => PromiseLike<never>} failure 
  */
 function getFromHQ(POST_PAYLOAD, success, failure) {
-  fetch(URL + `Api/read/${window.currentTab}/`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(POST_PAYLOAD),
-  })
-    .then((res) => {
-      return res.json();
+  try {
+    fetch(URL + `Api/read/${currentTab}/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(POST_PAYLOAD),
     })
-    .then((lst) => {
-      if (!(lst instanceof Array) || lst.length === 0) return;
-      success(lst);
-    })
-    .catch(failure);
+      .then((res) => {
+        if (!res.ok) {
+          return res.text()
+        } else
+          return res.json()
+      })
+      .then((answer) => {
+        if (!(answer instanceof Array)) {
+          Swal.fire({
+            title: "There has been a problem!",
+            text: answer,
+            icon: "error",
+            showCancelButton: false,
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "OK"
+          });
+          return
+        }
+        success(answer);
+      })
+      .catch(failure);
+  }
+  catch (error) {
+    console.log(error)
+  }
 }
 /**
  * 
- * @param {string} Tab will be set to window.currentTab
+ * @param {string} Tab will be set to currentTab
  * @returns {void}
  */
 function switchTo(Tab) {
   try {
-    if (window.currentTab === Tab) return;
-    window.currentTab = Tab;
+    if (currentTab === Tab) return;
+    currentTab = Tab;
     document.getElementById("title").innerText =
       document.getElementById(Tab).innerText;
-    const container = document.getElementById("TTTarget");
+    const container = document.getElementById("JS-App-Root");
     container.innerHTML = "";
 
     setCookie('currentTab', Tab, 3)
-    window.currentTab = Tab
+    currentTab = Tab
 
     if (Tab == "Dashboard") {
       console.log("DASH");
@@ -395,15 +420,15 @@ function switchTo(Tab) {
       {},
       (lst) => {
         container.innerHTML += MainTable(
-          window.currentTab,
+          currentTab,
           Object.keys(lst[0])
         );
         const tbl = document.getElementById("MainTable");
         for (let index = 0; index < lst.length; index++) {
           const element = lst[index];
-          if (AllFetchedRows[window.currentTab])
-            AllFetchedRows[window.currentTab].push(element);
-          else AllFetchedRows[window.currentTab] = [element];
+          if (AllFetchedRows[currentTab])
+            AllFetchedRows[currentTab].push(element);
+          else AllFetchedRows[currentTab] = [element];
           const row = TableRow(element, index);
           tbl.innerHTML += row;
         }
@@ -454,44 +479,55 @@ function editRow(tableName, row_number, id) {
         confirmButtonText: "Yes, modify it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          let data = AllFetchedRows[tableName][row_number];
+          let data = { ...AllFetchedRows[tableName][row_number] };
           let sql_id = id.split("-").pop();
           let header = Object.keys(data).filter(is_display_key);
           data["id"] = sql_id;
-          // for (let i = 0; i < arr.length; i++) {
-          //   data[header[i]] = arr[i].innerText
-          // }
+
           header.forEach((key, i) => {
             if (!(data[key] instanceof Object)) data[key] = arr[i].innerText;
           });
 
-          arr.forEach((tag) => {
-            tag.contentEditable = false;
-          });
 
-          fetch(URL + `Api/update/${window.currentTab}/`, {
+
+          fetch(URL + `Api/update/${currentTab}/`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
             },
             body: JSON.stringify(data),
           }).then((res) => {
-            console.log(res);
-            return res.json();
-          });
+            return res.text();
+          }).then(res => {
+            try {
+              return JSON.parse(res)
+            } catch (error) {
+              return res
+            }
+          }).then(res => {
+            if (res == 'updated') {
+              arr.forEach((tag) => {
+                tag.contentEditable = false;
+              });
+              tic.children[0].className = tic.children[0].className.replace(
+                "fa-check",
+                "fa-pencil"
+              );
+              x.children[0].className = x.children[0].className.replace(
+                "fa-close",
+                "fa-trash"
+              );
 
-          tic.children[0].className = tic.children[0].className.replace(
-            "fa-check",
-            "fa-pencil"
-          );
-          x.children[0].className = x.children[0].className.replace(
-            "fa-close",
-            "fa-trash"
-          );
+              Swal.fire("Modified!", "Your changes have been saved.", "success");
+            }
+            else if (res == 'update unsuccessful') {
+              Swal.fire("Was not Modified!", "Your changes have not been saved.", "error");
+              deleteRow(evt);
+            }
+          })
 
-          Swal.fire("Modified!", "Your changes have been saved.", "success");
         } else {
-          console.log("no");
+          deleteRow(evt);
         }
       });
     }
@@ -502,7 +538,7 @@ function cancel_sub_edit(row_number, field) {
   return (evt) => {
     const html_element = evt.target.parentElement.parentElement;
     console.log('unchanged 😉');
-    html_element.innerHTML = TableRow(AllFetchedRows[window.currentTab][row_number][field], row_number, true, field)
+    html_element.innerHTML = TableRow(AllFetchedRows[currentTab][row_number][field], row_number, true, field)
 
   }
 }
@@ -533,7 +569,7 @@ function edit_sub_Row(row_number, field) {
       }).then(SELECT_OPTIONS => {
         AllFetchedRows[field] = SELECT_OPTIONS
         html_element.innerHTML = `<td>
-      ${select(field + "_id", SELECT_OPTIONS, AllFetchedRows[window.currentTab][row_number][field], field)} 
+      ${select(field + "_id", SELECT_OPTIONS, AllFetchedRows[currentTab][row_number][field], field)} 
       </td><td>
         <i class="fa fa-close" aria-hidden="true" onclick="cancel_sub_edit(${row_number},'${field}')(event)" ></i>
       </td>
@@ -543,10 +579,10 @@ function edit_sub_Row(row_number, field) {
       const v = evt.target.parentElement.parentElement.children[0].children[0].value
       const fk_column = `${field}_id`
       const payload = {
-        id: AllFetchedRows[window.currentTab][row_number].id
+        id: AllFetchedRows[currentTab][row_number].id
       }
       payload[fk_column] = v
-      fetch(URL + `Api/update/${window.currentTab}/`, {
+      fetch(URL + `Api/update/${currentTab}/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -555,11 +591,11 @@ function edit_sub_Row(row_number, field) {
       }).then((res) => {
         console.log(res);
         const new_sub_obj = AllFetchedRows[field].filter(e => e.id == v)[0]
-        AllFetchedRows[window.currentTab][row_number][field] = new_sub_obj
+        AllFetchedRows[currentTab][row_number][field] = new_sub_obj
         html_element.innerHTML = TableRow(new_sub_obj, row_number, true, field)
         return res.json();
       })
-      html_element.innerHTML = TableRow(AllFetchedRows[window.currentTab][row_number][field], row_number, true, field)
+      html_element.innerHTML = TableRow(AllFetchedRows[currentTab][row_number][field], row_number, true, field)
     }
   }
 }
@@ -568,7 +604,7 @@ function deleteRow(evt) {
     console.log("yes");
     if (!modifyMode) {
       deleteList = [];
-      const target = document.getElementById("TTTarget");
+      const target = document.getElementById("JS-App-Root");
 
       const modifyDiv = document.createElement("div");
       modifyDiv.id = "modify-div";
@@ -659,11 +695,11 @@ function confirmChanges() {
       console.log('deleteList : ');
       console.log(deleteList);
       const delete_ids = deleteList.map(elem => elem.id)
-      AllFetchedRows[window.currentTab] = AllFetchedRows[window.currentTab]
+      AllFetchedRows[currentTab] = AllFetchedRows[currentTab]
         .filter(row => !delete_ids.includes(row.id))
 
       const payload = { ids: delete_ids }
-      fetch(URL + `Api/delete/${window.currentTab}/`, {
+      fetch(URL + `Api/delete/${currentTab}/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -687,7 +723,7 @@ function add() {
     );
     if (!answer) return;
   }
-  let newTab = window.currentTab.toLowerCase();
+  let newTab = currentTab.toLowerCase();
   newTab = newTab.split("_");
   console.log(newTab);
   let newTabStr = "";
@@ -721,7 +757,7 @@ function loadStats() {
     window.statistics = cleanStats(json);
     console.log("window.statistics : ");
     console.log(window.statistics);
-    if (window.currentTab == "Dashboard") {
+    if (currentTab == "Dashboard") {
       viewStats();
     }
   }
@@ -791,7 +827,8 @@ function viewStats() {
   console.log(viewedData);
 
   var chart = new CanvasJS.Chart("chartContainer", {
-    theme: "dark2",
+    theme: "light1",
+    backgroundColor: "#e4e9f7",
     exportFileName: "Website Statistics",
     exportEnabled: false,
     animationEnabled: true,
