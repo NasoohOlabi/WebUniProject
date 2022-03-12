@@ -42,24 +42,10 @@ class DashBoard extends Controller
 
         $bm = $this->loadModel('BaseModel');
 
-        pageHeadTag("index");
+        pageHeadTag("Add $form");
         require 'application/views/_templates/user_navbar.php';
-        //require 'application/views/_templates/aside.php';
-        echo '<div id="main-content" class="inlineBlock">';
 
-        if (!$form) {
-            foreach ($forms as $val) {
-                $q = new $val();
-                FormForThis($q, $bm);
-            }
-        } else if (in_array(strtolower($form), $this->forms)) {
-            $q = new $form();
-            FormForThis($q, $bm);
-        } else {
-            return;
-        }
-
-        echo '</div></div>';
+        require './application/views/Dashboard/add.php';
 
         pageHit("dashboard.Add");
     }

@@ -137,7 +137,7 @@ class BaseModel
         $this->db->prepare($sql)->execute($bindings);
         return new Either\Result();
     }
-    function experimental_insert($object)
+    function experimental_insert(&$object)
     {
         $schemaClass = get_class($object);
         $columns = $schemaClass::SQL_Columns();
@@ -163,7 +163,13 @@ class BaseModel
         $sql = "INSERT INTO `$schemaClass` ($columns_names) VALUES ($question_marks)";
         simpleLog('BaseModel::experimental_insert Running : "' . $sql . '"');
         simpleLog("bindings " . json_encode($values));
-        return $this->db->prepare($sql)->execute(array_values($values));
+        $flag = $this->db->prepare($sql)->execute(array_values($values));
+        if ($flag) {
+            $object->id = $this->db->lastInsertId();
+            return true;
+        } else {
+            return false;
+        }
     }
     function experimental_update(string $schemaClass, int $id, stdClass $these)
     {

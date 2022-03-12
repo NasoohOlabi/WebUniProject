@@ -17,6 +17,7 @@ abstract class Table
 {
     public int $id;
     public array $identifying_fields;
+    public array $dependents = [];
     abstract public function get_CRUD_Terms();
     abstract static function SQL_Columns(string $prefix = "");
 }
@@ -139,6 +140,7 @@ class Question extends Table
     public int $topic_id;
     public ?Topic $topic;
     public ?array $choices;
+    public array $dependents = ['Choice'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
