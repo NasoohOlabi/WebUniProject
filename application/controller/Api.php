@@ -5,7 +5,8 @@ require_once './application/models/core/schema.php';
 
 function is_display_key($key)
 {
-    return !endsWith($key, 'id') && $key !== 'identifying_fields' && $key !== 'profile_picture';
+    return !endsWith($key, 'id') && $key !== 'identifying_fields' && $key !== 'profile_picture' &&
+        $key !== "dependents";
 }
 class Api extends Controller
 {
