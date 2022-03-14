@@ -5,9 +5,10 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
   <link rel="stylesheet" href="<?= URL ?>public/css/dashboard_style.css" />
   <link rel="stylesheet" href="<?= URL ?>public/css/all.min.css" />
-  <script src="<?= URL ?>public/js/Main.js" />
+  <script src="<?= URL ?>public/js/Main.js"></script>
   <script src="<?= URL ?>public/js/canvasjs.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
