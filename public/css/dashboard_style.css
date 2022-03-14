@@ -196,6 +196,7 @@ body.dark #home .text {
 .table td,
 .table th {
 	padding: 0.75rem;
+	/* padding: 100px 0; if you want to tryout incremental loading*/
 	vertical-align: top;
 	text-align: center;
 	border-top: 1px solid #dee2e6;

@@ -285,18 +285,18 @@ function subTable_tr(identifiers, trId, parent_number_of_keys) {
 function main() {
   const home = document.getElementById("home");
   if (!home) return;
-  let fetching_flag = false;
+  let fetching_flag = {};
+  fetching_flag[currentTab] = false;
 
   function doSomething(scrollPos) {
-    if (fetching_flag) return;
+    if (fetching_flag[currentTab]) return;
     const lastChild = home.children[home.children.length - 1];
     if (!(lastChild instanceof HTMLElement)) return;
     if (
       scrollPos >
       lastChild.offsetTop +
       lastChild.offsetHeight -
-      document.body.clientHeight -
-      100
+      (2 * document.body.clientHeight)
     ) {
       const tbl = document.getElementById("MainTable");
       if (
@@ -315,7 +315,7 @@ function main() {
         op: "get after",
         id: min_id,
       };
-      fetching_flag = true;
+      fetching_flag[currentTab] = true;
       getFromHQ(
         'read', currentTab,
         data,
@@ -324,7 +324,7 @@ function main() {
             const row = TableRow(identifier);
             tbl.innerHTML += row;
           })
-          fetching_flag = false;
+          fetching_flag[currentTab] = false;
         }
       );
     }
