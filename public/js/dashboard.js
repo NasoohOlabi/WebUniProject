@@ -109,8 +109,10 @@ function MainTable(id, header) {
 function is_display_key(key) {
   return (
     !key.endsWith("id") &&
-    !key.endsWith("s") &&
+    key !== "identifying_fields" &&
     key !== "profile_picture" &&
+    key !== "dependents" &&
+    key !== "students" &&
     !key.toLowerCase().includes('has')
   );
 }
