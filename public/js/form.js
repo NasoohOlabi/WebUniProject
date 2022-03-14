@@ -165,8 +165,6 @@ function isValidForm(form_obj) {
  * @returns 
  */
 function formNameInScope(scope) {
-	console.log('scope : ');
-	console.log(scope);
 	const elem = scope.querySelector("h1")
 	return elem.innerText
 }
@@ -236,7 +234,7 @@ function main() {
 			)
 		);
 		if (formNameInScope(form) == "Login") return;
-		const buttons = form.('form .form-block button:not(default-form)')
+		const buttons = form.querySelectorAll('form .form-block button:not(default-form)')
 		if (buttons.length !== 0)
 			buttons.forEach(element => {
 				element.addEventListener("click", (event) => {

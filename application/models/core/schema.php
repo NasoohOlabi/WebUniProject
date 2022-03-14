@@ -7,6 +7,8 @@ function properties_exists($stdClass, array $properties, string $prefix)
     foreach ($properties as $property) {
         if (!property_exists($stdClass, $prefix . $property)) {
             // simpleLog("this one failed $prefix" . "$property");
+            if ($prefix == '')
+                throw new Exception("Constructing : " . json_encode($stdClass) . " to contain the following " . json_encode($properties) . " this one failed $prefix" . "$property");
             return false;
         }
     }
@@ -20,6 +22,7 @@ abstract class Table
     public array $dependents = [];
     abstract public function get_CRUD_Terms();
     abstract static function SQL_Columns(string $prefix = "");
+    abstract static function access(string $name);
 }
 class Exam extends Table
 {
@@ -32,6 +35,7 @@ class Exam extends Table
     public int $duration;
     public int $subject_id;
     public ?Subject $subject;
+    public array $dependents = ['Exam_Center_Has_Exam', 'Exam_Has_Question'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Form', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
@@ -56,8 +60,13 @@ class Exam extends Table
             return $prefix . $args;
         }, $constants);
     }
+    static function access(string $name)
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = $oClass->getConstants();
+        return $constants[$name];
+    }
 }
-
 class Subject extends Table
 {
     const id = 'subject.id';
@@ -66,6 +75,7 @@ class Subject extends Table
     // this is what we'll inter act with the rest is just jargon
     public string $name;
     public string $description;
+    public array $dependents = ['Exam', 'Topic'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Create', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
@@ -90,6 +100,12 @@ class Subject extends Table
             return $prefix . $args;
         }, $constants);
     }
+    static function access(string $name)
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = $oClass->getConstants();
+        return $constants[$name];
+    }
 }
 class Topic extends Table
 {
@@ -102,6 +118,7 @@ class Topic extends Table
     public string $description;
     public int $subject_id;
     public ?Subject $subject;
+    public array $dependents = ['Question'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Create', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
@@ -127,6 +144,12 @@ class Topic extends Table
             return $prefix . $args;
         }, $constants);
     }
+    static function access(string $name)
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = $oClass->getConstants();
+        return $constants[$name];
+    }
 }
 class Question extends Table
 {
@@ -140,7 +163,7 @@ class Question extends Table
     public int $topic_id;
     public ?Topic $topic;
     public ?array $choices;
-    public array $dependents = ['Choice'];
+    public array $dependents = ['Choice', 'Exam_Has_Question'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
@@ -168,6 +191,12 @@ class Question extends Table
             return $prefix . $args;
         }, $constants);
     }
+    static function access(string $name)
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = $oClass->getConstants();
+        return $constants[$name];
+    }
 }
 class Choice extends Table
 {
@@ -179,6 +208,7 @@ class Choice extends Table
     public string $text;
     public int $is_correct;
     public int $question_id;
+    public array $dependents = ['Student_Took_Exam'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Add', 'read' => 'Take', 'update' => 'Edit', 'delete' => 'Remove'];
@@ -203,6 +233,12 @@ class Choice extends Table
             return $prefix . $args;
         }, $constants);
     }
+    static function access(string $name)
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = $oClass->getConstants();
+        return $constants[$name];
+    }
 }
 class Permission extends Table
 {
@@ -210,6 +246,7 @@ class Permission extends Table
     const name = 'permission.name';
     // this is what we'll inter act with the rest is just jargon
     public string $name;
+    public array $dependents = ['Role_has_Permission'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Create', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
@@ -234,6 +271,12 @@ class Permission extends Table
             return $prefix . $args;
         }, $constants);
     }
+    static function access(string $name)
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = $oClass->getConstants();
+        return $constants[$name];
+    }
 }
 class Role extends Table
 {
@@ -241,6 +284,7 @@ class Role extends Table
     const name = 'role.name';
     // this is what we'll inter act with the rest is just jargon
     public string $name;
+    public array $dependents = ['User', 'Role_Has_Permission'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Create', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Remove'];
@@ -265,12 +309,18 @@ class Role extends Table
             return $prefix . $args;
         }, $constants);
     }
+    static function access(string $name)
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = $oClass->getConstants();
+        return $constants[$name];
+    }
 }
-class Role_has_Permission extends Table
+class Role_Has_Permission extends Table
 {
-    const id = 'role_has_permission.id';
-    const role_id = 'role_has_permission.role_id';
-    const permission_id = 'role_has_permission.permission_id';
+    const id = 'Role_Has_Permission.id';
+    const role_id = 'Role_Has_Permission.role_id';
+    const permission_id = 'Role_Has_Permission.permission_id';
     // this is what we'll inter act with the rest is just jargon
     public int $role_id;
     public int $permission_id;
@@ -284,7 +334,7 @@ class Role_has_Permission extends Table
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
-            $cols = Role_has_Permission::SQL_Columns();
+            $cols = Role_Has_Permission::SQL_Columns();
             if (properties_exists($stdClass, $cols, $prefix)) {
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};
@@ -305,6 +355,12 @@ class Role_has_Permission extends Table
         return ($prefix == "") ? $constants : array_map(function ($args) use ($prefix) {
             return $prefix . $args;
         }, $constants);
+    }
+    static function access(string $name)
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = $oClass->getConstants();
+        return $constants[$name];
     }
 }
 class User extends Table
@@ -327,7 +383,7 @@ class User extends Table
     public int $role_id;
     public ?Role $role;
     public ?array $permissions;
-
+    public array $dependents = [['Student' => 'id']];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Grant', 'read' => 'Take', 'update' => 'Transfer', 'delete' => 'Revoke'];
@@ -356,6 +412,12 @@ class User extends Table
             return $prefix . $args;
         }, $constants);
     }
+    static function access(string $name)
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = $oClass->getConstants();
+        return $constants[$name];
+    }
 }
 class Student extends Table
 {
@@ -363,7 +425,7 @@ class Student extends Table
     const enroll_date = 'student.enroll_date';
     // this is what we'll inter act with the rest is just jargon
     public string $enroll_date;
-
+    public array $dependents = ['Student_Took_Exam', ['User' => 'id']];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Enroll', 'read' => 'Take', 'update' => 'edit enrollment', 'delete' => 'Unenroll'];
@@ -389,6 +451,12 @@ class Student extends Table
             return $prefix . $args;
         }, $constants);
     }
+    static function access(string $name)
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = $oClass->getConstants();
+        return $constants[$name];
+    }
 }
 class Exam_Center extends Table
 {
@@ -398,6 +466,7 @@ class Exam_Center extends Table
     // this is what we'll inter act with the rest is just jargon
     public string $name;
     public string $description;
+    public array $dependents = ['Student_Took_Exam', 'Exam_Center_Has_Exam '];
 
     public function get_CRUD_Terms()
     {
@@ -424,6 +493,12 @@ class Exam_Center extends Table
             return $prefix . $args;
         }, $constants);
     }
+    static function access(string $name)
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = $oClass->getConstants();
+        return $constants[$name];
+    }
 }
 class Exam_Center_Has_Exam extends Table
 {
@@ -437,6 +512,7 @@ class Exam_Center_Has_Exam extends Table
     public int $exam_center_id;
     public ?Exam $exam;
     public ?Exam_Center $exam_center;
+
     public function get_CRUD_Terms()
     {
         return ['create' => 'Give', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Remove'];
@@ -466,6 +542,12 @@ class Exam_Center_Has_Exam extends Table
         return ($prefix == "") ? $constants : array_map(function ($args) use ($prefix) {
             return $prefix . $args;
         }, $constants);
+    }
+    static function access(string $name)
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = $oClass->getConstants();
+        return $constants[$name];
     }
 }
 
@@ -517,6 +599,12 @@ class Student_Took_Exam extends Table
             return $prefix . $args;
         }, $constants);
     }
+    static function access(string $name)
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = $oClass->getConstants();
+        return $constants[$name];
+    }
 }
 
 class Exam_Has_Question extends Table
@@ -558,5 +646,11 @@ class Exam_Has_Question extends Table
         return ($prefix == "") ? $constants : array_map(function ($args) use ($prefix) {
             return $prefix . $args;
         }, $constants);
+    }
+    static function access(string $name)
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = $oClass->getConstants();
+        return $constants[$name];
     }
 }

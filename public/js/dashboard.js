@@ -109,9 +109,9 @@ function MainTable(id, header) {
 function is_display_key(key) {
   return (
     !key.endsWith("id") &&
-    key !== "identifying_fields" &&
+    !key.endsWith("s") &&
     key !== "profile_picture" &&
-    key !== "dependents"
+    !key.toLowerCase().includes('has')
   );
 }
 /**
@@ -291,6 +291,7 @@ function main() {
   function doSomething(scrollPos) {
     if (fetching_flag) return;
     const lastChild = home.children[home.children.length - 1];
+    if (!(lastChild instanceof HTMLElement)) return;
     if (
       scrollPos >
       lastChild.offsetTop +
@@ -326,10 +327,6 @@ function main() {
             tbl.innerHTML += row;
           }
           fetching_flag = false;
-        },
-        (e) => {
-          // just keep the fetching_flag off
-          // console.log(e)
         }
       );
     }
@@ -353,7 +350,7 @@ function main() {
  * @param {function} success 
  * @param {(reason: any) => PromiseLike<never>} failure 
  */
-function getFromHQ(POST_PAYLOAD, success, failure) {
+function getFromHQ(POST_PAYLOAD, success, failure = null) {
   try {
     fetch(URL + `Api/read/${currentTab}/`, {
       method: "POST",
@@ -363,24 +360,26 @@ function getFromHQ(POST_PAYLOAD, success, failure) {
       body: JSON.stringify(POST_PAYLOAD),
     })
       .then((res) => {
-        if (!res.ok) {
-          return res.text()
-        } else
-          return res.json()
+        return res.text()
       })
       .then((answer) => {
-        if (!(answer instanceof Array)) {
-          Swal.fire({
-            title: "There has been a problem!",
-            text: answer,
-            icon: "error",
-            showCancelButton: false,
-            confirmButtonColor: "#3085d6",
-            confirmButtonText: "OK"
-          });
-          return
+        try {
+          const response_object = JSON.parse(answer)
+          if (!(response_object instanceof Array)) {
+            Swal.fire({
+              title: "There has been a problem!",
+              text: response_object,
+              icon: "error",
+              showCancelButton: false,
+              confirmButtonColor: "#3085d6",
+              confirmButtonText: "OK"
+            });
+            return
+          }
+          success(response_object);
+        } catch (error) {
+          console.log(answer)
         }
-        success(answer);
       })
       .catch(failure);
   }
@@ -569,16 +568,22 @@ function edit_sub_Row(row_number, field) {
           "Content-Type": "application/json",
         }
       }).then((res) => {
-        console.log(res);
-        return res.json();
-      }).then(SELECT_OPTIONS => {
-        AllFetchedRows[field] = SELECT_OPTIONS
-        html_element.innerHTML = `<td>
-      ${select(field + "_id", SELECT_OPTIONS, AllFetchedRows[currentTab][row_number][field], field)} 
-      </td><td>
-        <i class="fa fa-close" aria-hidden="true" onclick="cancel_sub_edit(${row_number},'${field}')(event)" ></i>
-      </td>
-      ${second_part.replace('fa-pencil', 'fa-check')}`
+        return res.text();
+      }).then(response_text => {
+        try {
+
+          const SELECT_OPTIONS = JSON.parse(response_text)
+
+          AllFetchedRows[field] = SELECT_OPTIONS
+          html_element.innerHTML = `<td>
+            ${select(field + "_id", SELECT_OPTIONS, AllFetchedRows[currentTab][row_number][field], field)} 
+            </td><td>
+              <i class="fa fa-close" aria-hidden="true" onclick="cancel_sub_edit(${row_number},'${field}')(event)" ></i>
+            </td>
+            ${second_part.replace('fa-pencil', 'fa-check')}`
+        } catch (error) {
+          console.log(response_text)
+        }
       })
     } else {
       const v = evt.target.parentElement.parentElement.children[0].children[0].value
@@ -712,13 +717,11 @@ function confirmChanges() {
         body: JSON.stringify(payload)
       })
         .then((res) => {
-          console.log(res);
+          return res.text()
+        }).then(response_text => {
+          console.log(response_text);
           document.getElementById('modify-div').remove()
-          try {
-            return res.json()
-          } catch (error) {
-            return res.text()
-          }
+
         })
     }
   });

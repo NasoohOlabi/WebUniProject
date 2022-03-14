@@ -50,7 +50,7 @@ class Api extends Controller
         } catch (\Throwable $e) {
             simpleLog('Caught exception: ' . $e->getMessage());
             http_response_code(400);
-            echo 'Operation Failed';
+            echo 'Operation Failed : ' . 'Caught exception: ' . str_replace('::', ' ', str_replace('$', ' ', $e->getMessage()));
         }
         pageHit("Api.create");
     }
@@ -96,9 +96,21 @@ class Api extends Controller
             $answers = array_map(function ($row) use ($Model) {
                 if (property_exists($row, 'password'))
                     unset($row->password);
-                if (get_class($row) === 'Question')
-                    $row->choices = $Model->select([], 'Choice', [], [Choice::question_id => $row->id]);
+                // TODO: generify this
+                // if (get_class($row) === 'Question')
+                //     $row->choices = $Model->select([], 'Choice', [], [Choice::question_id => $row->id]);
+                if (count($row->dependents) === 0) return $row;
 
+
+                foreach ($row->dependents as $dep) {
+                    if (is_array($dep) && count($dep) == 1) {
+                        foreach ($dep as $key => $value) {
+                            $row->{strtolower($key) . 's'} = $Model->select([], $key, [], [$key::access($value) => $row->id]);
+                        }
+                    } else {
+                        $row->{strtolower($dep) . 's'} = $Model->select([], $dep, [], [$dep::access(strtolower(get_class($row)) . '_id') => $row->id]);
+                    }
+                }
                 return $row;
             }, $answers);
             simpleLog('$_POST ' . json_encode($_POST) . ' served', 'Api/read/');
@@ -108,9 +120,10 @@ class Api extends Controller
                 echo "id $id Not Found";
         } catch (\Throwable $e) {
             simpleLog('$_POST ' .
-                json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage(), 'Api/read/');
+                json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage(), ' Api/read/');
             http_response_code(400);
-            echo 'Operation Failed';
+            echo 'Operation Failed ' . ' $_POST ' .
+                json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage(), ' Api/read/';
         }
         pageHit("Api.read");
     }

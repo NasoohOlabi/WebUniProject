@@ -561,7 +561,7 @@ button:hover {
 	background-color: var(--secondary-dark-background-color);
 }
 
-#add-dependant-btn {
+.add-dependant-btn {
 	background-color: var(--secondary-background-color);
 	border: none;
 	width: fit-content;
@@ -570,6 +570,6 @@ button:hover {
 	border-radius: 10px;
 	font-size: 5em;
 }
-#add-dependant-btn:hover {
+.add-dependant-btn:hover {
 	background-color: var(--secondary-dark-background-color);
 }

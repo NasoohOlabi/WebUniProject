@@ -39,19 +39,19 @@ if ($has_picture == true) {
         }
 
 
-
-        profile_pic.addEventListener('click', function(event) {
-            if (!toggle) return;
-            var profile_pic = document.getElementsByClassName('profile-pic')[0];
-            var drop_menu = document.getElementsByClassName('dropdown-content')[0];
-            var ignoreClickOnMeElement = document.getElementById('menu');
-            var isClickInsideElement = ignoreClickOnMeElement.contains(event.target) || profile_pic.contains(event.target);
-            if (!isClickInsideElement) {
-                drop_menu.style.display = "none";
-                profile_pic.style.boxShadow = "0 0 0";
-                toggle = false;
-            }
-        });
+        if (profile_pic && profile_pic.addEventListener)
+            profile_pic.addEventListener('click', function(event) {
+                if (!toggle) return;
+                var profile_pic = document.getElementsByClassName('profile-pic')[0];
+                var drop_menu = document.getElementsByClassName('dropdown-content')[0];
+                var ignoreClickOnMeElement = document.getElementById('menu');
+                var isClickInsideElement = ignoreClickOnMeElement.contains(event.target) || profile_pic.contains(event.target);
+                if (!isClickInsideElement) {
+                    drop_menu.style.display = "none";
+                    profile_pic.style.boxShadow = "0 0 0";
+                    toggle = false;
+                }
+            });
     </script>
     <header>
         <a href="<?= URL ?>home" id="logo">

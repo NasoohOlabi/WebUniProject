@@ -1,7 +1,17 @@
 
 <?php
 require_once 'component/input.php';
-
+function PageForThis(Table $cls, BaseModel $bm, array $omit = [])
+{
+    FormForThis($cls, $bm, $omit);
+    if (count($cls->dependents) > 0) {
+        foreach ($cls->dependents as $sub_cls) {
+            require '__pageForThis1.php';
+            FormForThis(new $sub_cls(), $bm, [strtolower(get_class($cls)) . "_id"]);
+            require '__pageForThis2.php';
+        }
+    }
+}
 function stdclastoidstirng($stdClass)
 {
     $columns = $stdClass::SQL_COLUMNS();
@@ -13,7 +23,7 @@ function stdclastoidstirng($stdClass)
     $answer = implode(' ', $answer);
     return $answer;
 }
-function FormForThis(Table $cls, BaseModel $bm)
+function FormForThis(Table $cls, BaseModel $bm, array $omit = [])
 {
     $required_fields = $cls::SQL_Columns();
     unset($required_fields[0]);
@@ -21,6 +31,7 @@ function FormForThis(Table $cls, BaseModel $bm)
     $inputs = [];
     $SELECT_OPTIONS = [];
     foreach ($required_fields as  $field) {
+        if (in_array($field, $omit)) continue;
         if (endsWith($field, "_id")) {
             $inputs[$field] = "select";
             // not solid nor Layered
@@ -36,87 +47,4 @@ function FormForThis(Table $cls, BaseModel $bm)
             $inputs[$field] = 'text';
     }
     require '__form.php';
-    if (count($cls->dependents) > 0) {
-        echo '<style>.scrolling-wrapper div {margin:1em;}</style>';
-        foreach ($cls->dependents as $sub_cls) {
-
-            echo '<script>';
-            echo 'let i = 2;  ';
-            echo
-            'addLoadEvent(()=>{
-                document.getElementById("add-dependant-btn").onclick = (event)=>{
-                console.log("catchMe");
-                const btn = document.getElementById("add-dependant-btn");
-                btn.insertAdjacentHTML("beforebegin",`';
-            FormForThis(new $sub_cls(), $bm);
-            echo '`.replaceAll(`  `,``).replaceAll(`\n`,``).replace(/<div class="form-block"><select name="' . strtolower(get_class($cls)) . '_id".*<\/select><\/div>/s , ""))
-                    for (let btn of document.querySelectorAll(`form .form-block button`)){
-                        btn.style.display = `none`;
-                    }
-                }
-                const sv_btn = document.getElementsByClassName("save-btn")[0]
-                if (sv_btn){
-                    sv_btn.addEventListener("click",()=>{
-                        let parent_sql_id = -1;
-                        
-                        const form = document.querySelector(".login-container")
-                        
-                        fetch(ourURL+`Api/create/${formNameInScope(form)}`,{
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify(readInputs(form))
-                        }).then(res=>{
-                            try{
-                                return res.json()
-                            }catch(error){
-                                return res.text()
-                            }
-                        }).then(res =>{
-                            // if (res instanceof Object){
-                                const lst = [].slice.call(document.querySelectorAll(".login-container"))
-                                lst.shift()
-                                console.log("res")
-                                console.log(res)
-                                parent_sql_id = res.id
-                                lst.forEach(sub_form =>{
-                                    const payload = readInputs(sub_form)
-                                    payload[formNameInScope(form).toLowerCase()+"_id"] = parent_sql_id
-                                    fetch(ourURL + `Api/create/${formNameInScope(sub_form)}`,{
-                                        method: "POST",
-                                        headers: {
-                                            "Content-Type": "application/json",
-                                        },
-                                        body: JSON.stringify(payload)
-                                    }).then(res=>{
-                                        try{
-                                            return res.json()
-                                        }catch(error){
-                                            return res.text()
-                                        }
-                                    }).then(res=>{
-                                        console.log(res)
-                                    })
-                                })
-                            // }
-                        })
-                    }  ) 
-                }
-            
-    
-    
-    })';
-            echo '</script>';
-            echo '<div class="form-block"><button onclick="
-            document.getElementById(`' . $sub_cls . '-title`).style.display = (document.getElementById(`' . $sub_cls . '-title`).style.display == `none`)?`block`:`none`;
-            document.getElementById(`' . $sub_cls . '-container`).style.display = (document.getElementById(`' . $sub_cls . '-container`).style.display == `none`)?`flex`:`none`;
-            document.querySelector(`.form-block button`).style.display = (document.getElementById(`' . $sub_cls . '-container`).style.display == `none`)?`block`:`none`
-            ">Add Choice For This Question</button></div>';
-            echo '<h2 style="display:none;" id="' . $sub_cls . '-title">' . $sub_cls . 's</h2>';
-            echo '<div id="' . $sub_cls . '-container" class="scrolling-wrapper" style="display:none;">';
-            echo '<button id="add-dependant-btn">+</button>';
-            echo '</div>';
-        }
-    }
 }
