@@ -174,19 +174,37 @@ class BaseModel
     function experimental_update(string $schemaClass, int $id, stdClass $these)
     {
         $columns = $schemaClass::SQL_Columns();
+        simpleLog(json_encode($columns));
+
+        if (($key = array_search('id', $columns)) !== false) {
+            unset($columns[$key]);
+        }
+        $columns = array_values($columns);
+        simpleLog(json_encode($columns));
+
         $columns_to_update = array_filter($columns, function ($column_name) use ($these) {
             return property_exists($these, $column_name);
         });
-        $values =  array_map(function ($column_name) use ($these) {
-            return $these->{$column_name};
-        }, $columns_to_update);
 
+
+        simpleLog(json_encode($columns_to_update));
+
+        // $values =  array_map(function ($column_name) use ($these) {
+        //     return $these->{$column_name};
+        // }, $columns_to_update);
+
+        $values = [];
+        foreach ($columns_to_update as $col) {
+            $values[] = $these->{$col};
+        }
+
+        simpleLog(json_encode($values));
 
         $sql_syntax_columns = implode(', ', array_map(function ($col) {
             return '`' . $col . '` = ?';
         }, $columns_to_update));
 
-        $values[] = $id;
+        $values[] = $id * 1;
 
         $sql = "UPDATE `$schemaClass` SET $sql_syntax_columns WHERE id = ?";
         simpleLog('BaseModel::experimental_update Running : "' . $sql . '"');
@@ -206,7 +224,7 @@ class BaseModel
             $key = '"' . $key . '"';
         if (!in_array($val, $no_wrap))
             $val = '"' . $val . '"';
-        simpleLog(json_encode($x));
+        // simpleLog(json_encode($x));
         return "$key " . (isset($x['op']) ? $x['op'] : '=') . " $val";
     }
     /**
@@ -263,7 +281,7 @@ class BaseModel
     {
         $key = array_keys($x)[0];
         $val = $x[$key];
-        simpleLog(json_encode($x));
+        // simpleLog(json_encode($x));
         return ['prepare' => "$key " . (isset($x['op']) ? $x['op'] : '=') . " ?", 'execute' => $val];
     }
     private static function _parse_unsafe_conditions(array $unsafe_conditions)
@@ -414,7 +432,7 @@ class BaseModel
                 $sql = "SELECT $columns_string FROM $schemaClass WHERE $safe_conditions AND $unsafe_sql_string ORDER BY $schemaClass.id DESC $limit_part;";
             }
         }
-        simpleLog("BaseModel::select Running : ($sql)");
+        // simpleLog("BaseModel::select Running : ($sql)");
 
         $query = $this->db->prepare($sql);
 

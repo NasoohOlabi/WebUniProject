@@ -116,6 +116,8 @@ class Api extends Controller
             simpleLog('$_POST ' . json_encode($_POST) . ' served', 'Api/read/');
             if (count($answers) >= 1)
                 echo json_encode($answers);
+            elseif ($more)
+                echo "that's all we have";
             else
                 echo "id $id Not Found";
         } catch (\Throwable $e) {
