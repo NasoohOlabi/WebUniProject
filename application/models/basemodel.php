@@ -137,7 +137,7 @@ class BaseModel
         $this->db->prepare($sql)->execute($bindings);
         return new Either\Result();
     }
-    function experimental_insert($object)
+    function experimental_insert(&$object)
     {
         $schemaClass = get_class($object);
         $columns = $schemaClass::SQL_Columns();
@@ -160,27 +160,50 @@ class BaseModel
             return "?";
         }, $columns));
 
+        $values  = array_values($values);
+
         $sql = "INSERT INTO `$schemaClass` ($columns_names) VALUES ($question_marks)";
         simpleLog('BaseModel::experimental_insert Running : "' . $sql . '"');
         simpleLog("bindings " . json_encode($values));
-        return $this->db->prepare($sql)->execute(array_values($values));
+        $flag = $this->db->prepare($sql)->execute(array_values($values));
+        if ($flag) {
+            $object->id = $this->db->lastInsertId();
+            return true;
+        } else {
+            return false;
+        }
     }
     function experimental_update(string $schemaClass, int $id, stdClass $these)
     {
         $columns = $schemaClass::SQL_Columns();
+        simpleLog(json_encode($columns));
+
+        if (($key = array_search('id', $columns)) !== false) {
+            unset($columns[$key]);
+        }
+        $columns = array_values($columns);
+        simpleLog(json_encode($columns));
+
         $columns_to_update = array_filter($columns, function ($column_name) use ($these) {
             return property_exists($these, $column_name);
         });
-        $values =  array_map(function ($column_name) use ($these) {
-            return $these->{$column_name};
-        }, $columns_to_update);
 
+
+        simpleLog(json_encode($columns_to_update));
+
+
+        $values = [];
+        foreach ($columns_to_update as $col) {
+            $values[] = $these->{$col};
+        }
+
+        simpleLog(json_encode($values));
 
         $sql_syntax_columns = implode(', ', array_map(function ($col) {
             return '`' . $col . '` = ?';
         }, $columns_to_update));
 
-        $values[] = $id;
+        $values[] = $id * 1;
 
         $sql = "UPDATE `$schemaClass` SET $sql_syntax_columns WHERE id = ?";
         simpleLog('BaseModel::experimental_update Running : "' . $sql . '"');
@@ -194,13 +217,14 @@ class BaseModel
     }
     private static function _parse_safe_term(array $x, array $no_wrap)
     {
+        simpleLog("no_wrap " . json_encode($no_wrap));
         $key = array_keys($x)[0];
         $val = $x[$key];
         if (!in_array($key, $no_wrap))
             $key = '"' . $key . '"';
         if (!in_array($val, $no_wrap))
             $val = '"' . $val . '"';
-        simpleLog(json_encode($x));
+        // simpleLog(json_encode($x));
         return "$key " . (isset($x['op']) ? $x['op'] : '=') . " $val";
     }
     /**
@@ -253,11 +277,12 @@ class BaseModel
         $Acc = '(' . implode(") AND (", $Acc) . ')';
         return $Acc;
     }
+
     private static function _parse_unsafe_term(array $x)
     {
         $key = array_keys($x)[0];
         $val = $x[$key];
-        simpleLog(json_encode($x));
+        // simpleLog(json_encode($x));
         return ['prepare' => "$key " . (isset($x['op']) ? $x['op'] : '=') . " ?", 'execute' => $val];
     }
     private static function _parse_unsafe_conditions(array $unsafe_conditions)
@@ -357,11 +382,13 @@ class BaseModel
         $query->execute($unsafe_bindings);
         $lines = $query->fetchAll();
 
+        simpleLog("lines >>>>>>>>>>>> " . json_encode($lines));
+
         return (count($lines)) ?
             array_map(function ($args) use ($wrapper) {
                 return new $wrapper($args,  strtolower($wrapper) . "_");
             }, $lines) :
-            new Exception("No Exams available");
+            new Exception("No $wrapper available");
     }
     public function select(array $columns, string $schemaClass, $safe_conditions = null, array $unsafe_conditions = null, int $limit = 100)
     {
@@ -408,7 +435,7 @@ class BaseModel
                 $sql = "SELECT $columns_string FROM $schemaClass WHERE $safe_conditions AND $unsafe_sql_string ORDER BY $schemaClass.id DESC $limit_part;";
             }
         }
-        simpleLog("BaseModel::select Running : ($sql)");
+        // simpleLog("BaseModel::select Running : ($sql)");
 
         $query = $this->db->prepare($sql);
 

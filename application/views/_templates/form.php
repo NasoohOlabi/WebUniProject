@@ -1,7 +1,17 @@
 
 <?php
 require_once 'component/input.php';
-
+function PageForThis(Table $cls, BaseModel $bm, array $omit = [])
+{
+    FormForThis($cls, $bm, $omit);
+    if (count($cls->dependents) > 0) {
+        foreach ($cls->dependents as $sub_cls) {
+            require '__pageForThis1.php';
+            FormForThis(new $sub_cls(), $bm, [strtolower(get_class($cls)) . "_id"]);
+            require '__pageForThis2.php';
+        }
+    }
+}
 function stdclastoidstirng($stdClass)
 {
     $columns = $stdClass::SQL_COLUMNS();
@@ -13,7 +23,7 @@ function stdclastoidstirng($stdClass)
     $answer = implode(' ', $answer);
     return $answer;
 }
-function FormForThis(Table $cls, BaseModel $bm)
+function FormForThis(Table $cls, BaseModel $bm, array $omit = [])
 {
     $required_fields = $cls::SQL_Columns();
     unset($required_fields[0]);
@@ -21,6 +31,7 @@ function FormForThis(Table $cls, BaseModel $bm)
     $inputs = [];
     $SELECT_OPTIONS = [];
     foreach ($required_fields as  $field) {
+        if (in_array($field, $omit)) continue;
         if (endsWith($field, "_id")) {
             $inputs[$field] = "select";
             // not solid nor Layered

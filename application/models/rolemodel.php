@@ -15,16 +15,16 @@ class RoleModel extends BaseModel
     }
     function getAllRolesWithPermissions()
     {
-        $sql = "SELECT role.name as role, permission.name as permission FROM `role_has_permission` JOIN `role` JOIN permission WHERE role_id=role.id AND permission_id=permission.id;";
+        $sql = "SELECT role.name as role, permission.name as permission FROM `Role_Has_Permission` JOIN `role` JOIN permission WHERE role_id=role.id AND permission_id=permission.id;";
         $this->db->prepare($sql)->execute();
     }
     function getRolePermissions($role)
     {
         if (is_numeric($role)) {
-            $sql = "SELECT role.name as role, permission.name as permission FROM `role_has_permission` JOIN `role` JOIN permission WHERE role_id=:role AND permission_id=permission.id;";
+            $sql = "SELECT role.name as role, permission.name as permission FROM `Role_Has_Permission` JOIN `role` JOIN permission WHERE role_id=:role AND permission_id=permission.id;";
             $this->db->prepare($sql)->execute([":role" => $role]);
         } else if (is_string($role)) {
-            $sql = "SELECT role.name as role, permission.name as permission FROM `role_has_permission` JOIN `role` JOIN permission WHERE role.name=:role AND role_id=role.id AND permission_id=permission.id;";
+            $sql = "SELECT role.name as role, permission.name as permission FROM `Role_Has_Permission` JOIN `role` JOIN permission WHERE role.name=:role AND role_id=role.id AND permission_id=permission.id;";
             $this->db->prepare($sql)->execute([":role" => $role]);
         }
     }
@@ -88,7 +88,7 @@ class RoleModel extends BaseModel
     }
     function addPermissionToRole($permission, $role)
     {
-        $link = new Role_has_Permission();
+        $link = new Role_Has_Permission();
         $link->permission_id = $this->permissionId($permission);
         $link->role_id = $this->roleId($role);
         $this->experimental_insert($link);
@@ -96,10 +96,10 @@ class RoleModel extends BaseModel
     function hasPermission($role, $permission)
     {
         $cnt = $this->count(
-            'Role_has_Permission',
+            'Role_Has_Permission',
             [
-                [Role_has_Permission::role_id => $this->roleId($role)],
-                [Role_has_Permission::permission_id => $this->permissionId($permission)]
+                [Role_Has_Permission::role_id => $this->roleId($role)],
+                [Role_Has_Permission::permission_id => $this->permissionId($permission)]
             ]
         );
         if ($cnt > 1)

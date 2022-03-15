@@ -5,7 +5,8 @@ require_once './application/models/core/schema.php';
 
 function is_display_key($key)
 {
-    return !endsWith($key, 'id') && $key !== 'identifying_fields' && $key !== 'profile_picture';
+    return !endsWith($key, 'id') && $key !== 'identifying_fields' && $key !== 'profile_picture' &&
+        $key !== "dependents";
 }
 class Api extends Controller
 {
@@ -17,8 +18,9 @@ class Api extends Controller
         echo '</pre>';
         pageHit("Api.index");
     }
-    public function create($var = null)
+    public function create($className = null)
     {
+        $_POST = json_decode(file_get_contents("php://input"), true);
         try {
             // Clean inputs
             $_POST = array_map('htmlentities', $_POST);
@@ -27,8 +29,6 @@ class Api extends Controller
             $_POST = array_map(function ($v) {
                 return (is_string($v) && strlen($v) == 0) ? NULL : $v;
             }, $_POST);
-            // Get the name of what are we creating
-            $className = $_POST['schemaClass'];
             // Passwords get special treatment and get hashed
             if (isset($_POST['password']))
                 $_POST['password'] = md5($_POST['password']);
@@ -41,12 +41,16 @@ class Api extends Controller
             $v = new $className((object) $_POST);
             simpleLog(json_encode($v), 'Api/create/');
             $Model = $this->loadModel('BaseModel');
-            $Model->experimental_insert($v);
-            header('Location:' . URL . 'DashBoard/');
+            if ($Model->experimental_insert($v)) {
+                echo json_encode($v);
+            } else {
+                echo "create $className failed";
+            }
+            // header('Location:' . URL . 'DashBoard/');
         } catch (\Throwable $e) {
             simpleLog('Caught exception: ' . $e->getMessage());
             http_response_code(400);
-            echo 'Operation Failed';
+            echo 'Operation Failed : ' . 'Caught exception: ' . str_replace('::', ' ', str_replace('$', ' ', $e->getMessage()));
         }
         pageHit("Api.create");
     }
@@ -92,21 +96,36 @@ class Api extends Controller
             $answers = array_map(function ($row) use ($Model) {
                 if (property_exists($row, 'password'))
                     unset($row->password);
-                if (get_class($row) === 'Question')
-                    $row->choices = $Model->select([], 'Choice', [], [Choice::question_id => $row->id]);
+                // TODO: generify this
+                // if (get_class($row) === 'Question')
+                //     $row->choices = $Model->select([], 'Choice', [], [Choice::question_id => $row->id]);
+                if (count($row->dependents) === 0) return $row;
 
+
+                foreach ($row->dependents as $dep) {
+                    if (is_array($dep) && count($dep) == 1) {
+                        foreach ($dep as $key => $value) {
+                            $row->{strtolower($key) . 's'} = $Model->select([], $key, [], [$key::access($value) => $row->id]);
+                        }
+                    } else {
+                        $row->{strtolower($dep) . 's'} = $Model->select([], $dep, [], [$dep::access(strtolower(get_class($row)) . '_id') => $row->id]);
+                    }
+                }
                 return $row;
             }, $answers);
             simpleLog('$_POST ' . json_encode($_POST) . ' served', 'Api/read/');
             if (count($answers) >= 1)
                 echo json_encode($answers);
+            elseif ($more)
+                echo "that's all we have";
             else
                 echo "id $id Not Found";
         } catch (\Throwable $e) {
             simpleLog('$_POST ' .
-                json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage(), 'Api/read/');
+                json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage(), ' Api/read/');
             http_response_code(400);
-            echo 'Operation Failed';
+            echo 'Operation Failed ' . ' $_POST ' .
+                json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage(), ' Api/read/';
         }
         pageHit("Api.read");
     }

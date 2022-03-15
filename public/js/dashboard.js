@@ -1,7 +1,13 @@
-var AllFetchedRows = [];
 var deleteList = [];
 var modifyMode = false;
 var statistics = null;
+/**
+ * @type {{[index: string]:object}}
+ */
+var Model = {}
+const schemaClasses = ['question', 'role', 'exam', 'subject', 'topic', 'choice', 'permission', 'role_has_permission', 'user', 'exam_center', 'student', 'exam_has_question', 'student_took_exam', 'exam_center_has_exam']
+
+
 var currentTab = (getCookie('currentTab') == '') ? (() => {
   setCookie('currentTab', 'Dashboard', 3)
   switchTo("Dashboard");
@@ -11,12 +17,6 @@ var currentTab = (getCookie('currentTab') == '') ? (() => {
   switchTo(curr)
   return curr
 })()
-
-class Topic {
-
-}
-
-
 
 /**
  * @param cname {string}
@@ -93,13 +93,13 @@ function select(input_name, SELECT_OPTIONS, SELECTED_ELEMENT, place_holder) {
  * @returns 
  */
 function MainTable(id, header) {
-  return `<table class="table" >
+  return `<div id="MainTable-container"><table class="table" >
             <thead>
             ${Header(id, header)}
             </thead>
             <tbody id="MainTable">
             </tbody>
-          </table>`
+          </table></div>`
 }
 /**
  * 
@@ -110,7 +110,10 @@ function is_display_key(key) {
   return (
     !key.endsWith("id") &&
     key !== "identifying_fields" &&
-    key !== "profile_picture"
+    key !== "profile_picture" &&
+    key !== "dependents" &&
+    key !== "students" &&
+    !key.toLowerCase().includes('has')
   );
 }
 /**
@@ -137,7 +140,7 @@ function toggleDropDown(id_to_toggle) {
       btn = document.getElementById(id_to_toggle + "-" + "btn");
     }
     dropped_down = !dropped_down;
-    btn.value = !dropped_down ? "🔽" : "🔼";
+    btn.innerText = !dropped_down ? "🔽" : "🔼";
     tr.style.display = !dropped_down ? "none" : "table-row";
   };
   btn.onclick = f;
@@ -153,23 +156,28 @@ function Header(id, names) {
   const th_s = names
     .filter(is_display_key)
     .map((v) => "<th>" + v + "</th>")
-    .join("");
-  return `<tr id ="${id}">${th_s}</tr>`;
+
+  th_s.push('<th colspan="2"><th>')
+
+  const html_string = th_s.join("");
+
+  return `<tr id ="${id}">
+      ${html_string}
+    </tr>`;
 }
 /**
  * 
- * @param {object} row_item 
- * @param {number} row_number 
+ * @param {string} identifier
  * @param {boolean} inline_keys 
  * @param {string} inline_key_prefix 
  * @returns {string} tr element
  */
 function TableRow(
-  row_item,
-  row_number,
+  identifier,
   inline_keys = false,
   inline_key_prefix = ""
 ) {
+  const row_item = Model[identifier]
   let number_of_display_columns =
     Object.keys(row_item).filter(is_display_key).length;
   if (inline_keys) number_of_display_columns *= 2;
@@ -181,12 +189,12 @@ function TableRow(
       let td = inline_keys
         ? `<td style="border-top:none"><strong>${inline_key_prefix} ${key}:</strong></td>`
         : "";
-      if (value instanceof Object) {
+      if (value instanceof Array) {
         // just making sure key is a single word
         // key.replace(' ', '-')
         // since key is a field in the object this row represent
         const id_of_tr_this_btn_will_expand =
-          key.replace(" ", "-") + "-" + row_number + "-" + subTables.length;
+          identifier + "-" + key;
         subTables.push(id_of_tr_this_btn_will_expand);
         td += `<td
           ${(inline_keys) ? 'style = "border-top:none"' : ''}
@@ -212,30 +220,26 @@ function TableRow(
     });
 
   const tds_text = td_s.join('')
-  // trashbtn.addEventListener("click", deleteRow);
 
-  // edit_btn.addEventListener("click", editRow(row, tr.id));
-  const trId = currentTab + "-" + row_item['id']
   const delete_edit_icons = (inline_keys)
     ?
     `<td>
-      <i class="fa fa-pencil" aria-hidden="true" onclick="edit_sub_Row(${row_number},'${inline_key_prefix}')(event)" id="${trId}-switcher"></i>
+      <i class="fa fa-pencil" aria-hidden="true" onclick="edit_sub_Row('${identifier}','${inline_key_prefix}')(event)" id="${identifier}-switcher"></i>
     </td>`
     :
     `<td>
-      <i class="fa fa-trash" aria-hidden="true" onclick="deleteRow(event)" id="${trId}-left"></i>
+      <i class="fa fa-trash" aria-hidden="true" onclick="deleteRow(event)" id="${identifier}-left"></i>
     </td>
     <td>
-      <i class="fa fa-pencil" aria-hidden="true" onclick="editRow('${currentTab}',${row_number}, '${trId}')(event)" id="${trId}-right"></i>
+      <i class="fa fa-pencil" aria-hidden="true" onclick="editRow('${identifier}')(event)" id="${identifier}-right"></i>
     </td>`
-  const tr = `<tr id="${trId}">${tds_text}${delete_edit_icons}</tr>`
+  const tr = `<tr id="${identifier}">${tds_text}${delete_edit_icons}</tr>`
   const subTablesWrappedInTr_s = subTables
     .map((identifier) => {
-      const key = identifier.split("-")[0];
+      const id_list = identifier.split("-")
+      const key = id_list[id_list.length - 1];
       const res = subTable_tr(
-        row_item[key].length && row_item[key].length > 1
-          ? row_item[key]
-          : [row_item[key]],
+        row_item[key],
         identifier,
         number_of_display_columns
       );
@@ -246,17 +250,28 @@ function TableRow(
 }
 /**
  * 
- * @param {object[]} objs 
+ * @param {string[]} identifiers 
  * @param {string} trId 
  * @param {number} parent_number_of_keys 
  * @returns {string} tr containing table
  */
-function subTable_tr(objs, trId, parent_number_of_keys) {
+function subTable_tr(identifiers, trId, parent_number_of_keys) {
   if (parent_number_of_keys === 0) return;
-  if (objs.length === 0) return;
-
-  if (objs.length === 1) {
-    const prefixed_header_trs = TableRow(objs[0], 0, true, trId.split("-")[0]);
+  if (identifiers.length > 1 || trId.split('-').pop().endsWith('s')) {
+    if (identifiers.length === 0) return;
+    const tr_s = identifiers.map((identifier) => TableRow(identifier));
+    return `<tr id="${trId}" style="display:none" class="inner-shadowed">
+              <td colspan=${parent_number_of_keys + 2}>
+                <table style="width:100%">
+                  ${Header(trId.split("-")[1], Object.keys(Model[identifiers[0]]))}
+                  ${tr_s.join("")}
+                </table>
+              </td>
+          </tr>`;
+  }
+  else if (identifiers.length === 1) {
+    const identifier = identifiers[0]
+    const prefixed_header_trs = TableRow(identifier, true, identifier.split("-")[0]);
 
     return `<tr id="${trId}" style="display:none" class="inner-shadowed">
               <td colspan=${parent_number_of_keys + 2}>
@@ -268,15 +283,6 @@ function subTable_tr(objs, trId, parent_number_of_keys) {
               </td>
             </tr>`;
   }
-  const tr_s = objs.map((obj, index) => TableRow(obj, index));
-  return `<tr id="${trId}" style="display:none">
-              <td colspan=${parent_number_of_keys + 2}>
-                <table style="width:100%">
-                  ${Header(trId.split("-")[1], Object.keys(objs[0]))}
-                  ${tr_s.join("")}
-                </table>
-              </td>
-          </tr>`;
 }
 /**
  * 
@@ -285,50 +291,46 @@ function subTable_tr(objs, trId, parent_number_of_keys) {
 function main() {
   const home = document.getElementById("home");
   if (!home) return;
-  let fetching_flag = false;
+  let fetching_flag = {};
+  fetching_flag[currentTab] = false;
 
   function doSomething(scrollPos) {
-    if (fetching_flag) return;
+    if (fetching_flag[currentTab]) return;
     const lastChild = home.children[home.children.length - 1];
+    if (!(lastChild instanceof HTMLElement)) return;
     if (
       scrollPos >
       lastChild.offsetTop +
       lastChild.offsetHeight -
-      document.body.clientHeight -
-      100
+      (2 * document.body.clientHeight)
     ) {
-      const tbl = document.getElementsByClassName("table")[0];
+      const tbl = document.getElementById("MainTable");
       if (
         !(
           tbl &&
-          AllFetchedRows[currentTab] &&
-          AllFetchedRows[currentTab].length
+          Object.keys(Model).some(key => key.startsWith(currentTab))
         )
       )
         return;
+
+      const min_id = Math.min(...Object.keys(Model)
+        .filter(key => key.startsWith(currentTab))
+        .map(key => parseInt(key.split('-').pop()))
+      )
       let data = {
         op: "get after",
-        id: AllFetchedRows[currentTab][
-          AllFetchedRows[currentTab].length - 1
-        ]["id"],
+        id: min_id,
       };
-      fetching_flag = true;
+      fetching_flag[currentTab] = true;
       getFromHQ(
+        'read', currentTab,
         data,
         (lst) => {
-          for (let index = 0; index < lst.length; index++) {
-            const element = lst[index];
-            if (AllFetchedRows[currentTab])
-              AllFetchedRows[currentTab].push(element);
-            else AllFetchedRows[currentTab] = [element];
-            const prows = TableRow(element, index);
-            prows.forEach((row) => tbl.appendChild(row));
-          }
-          fetching_flag = false;
-        },
-        (e) => {
-          // just keep the fetching_flag off
-          // console.log(e)
+          lst.forEach(identifier => {
+            const row = TableRow(identifier);
+            tbl.innerHTML += row;
+          })
+          fetching_flag[currentTab] = false;
         }
       );
     }
@@ -347,14 +349,36 @@ function main() {
   });
 }
 /**
- * 
+ * @param {string} ApiEndPoint
+ * @param {string} kind
  * @param {object} POST_PAYLOAD 
- * @param {function} success 
+ * @param {(identifiers :string[]) => void} success 
  * @param {(reason: any) => PromiseLike<never>} failure 
+ * @param {(identifiers :string) => void} unclean 
  */
-function getFromHQ(POST_PAYLOAD, success, failure) {
+function getFromHQ(ApiEndPoint, kind, POST_PAYLOAD, success = null, failure = null, unclean = null) {
+  /**
+   * @param {object} object
+   */
+  let clean_format = (object) => {
+    Object.keys(object).forEach(key => {
+      if (key.endsWith('s') && schemaClasses.includes(key.slice(0, -1)) && object[key] instanceof Array) {
+        const subClassName = key.slice(0, -1)
+        object[key] = object[key].map(subItem => {
+          Model[subClassName + '-' + subItem.id] = clean_format(subItem)
+          return subClassName + '-' + subItem.id
+        })
+      }
+      else if (key.endsWith('_id') && object[key.slice(0, -3)] instanceof Object) {
+        const subClassName = key.slice(0, -3)
+        Model[subClassName + '-' + object[subClassName].id] = clean_format(object[subClassName])
+        object[subClassName] = [subClassName + '-' + object[subClassName].id]
+      }
+    })
+    return object
+  }
   try {
-    fetch(URL + `Api/read/${currentTab}/`, {
+    fetch(URL + `Api/${ApiEndPoint}/${kind}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -362,24 +386,40 @@ function getFromHQ(POST_PAYLOAD, success, failure) {
       body: JSON.stringify(POST_PAYLOAD),
     })
       .then((res) => {
-        if (!res.ok) {
-          return res.text()
-        } else
-          return res.json()
+        return res.text()
       })
       .then((answer) => {
-        if (!(answer instanceof Array)) {
-          Swal.fire({
-            title: "There has been a problem!",
-            text: answer,
-            icon: "error",
-            showCancelButton: false,
-            confirmButtonColor: "#3085d6",
-            confirmButtonText: "OK"
-          });
-          return
+        try {
+          const objects = JSON.parse(answer)
+          if (success !== null) {
+            if (!(objects instanceof Array)) {
+              Swal.fire({
+                title: "There has been a problem!",
+                text: objects,
+                icon: "error",
+                showCancelButton: false,
+                confirmButtonColor: "#3085d6",
+                confirmButtonText: "OK"
+              });
+              return
+            }
+            objects.forEach(object => {
+              clean_format(object)
+            })
+            const identifiers = objects.map(object => {
+              Model[kind + '-' + object.id] = object
+              return kind + '-' + object.id
+            })
+            success(identifiers)
+          }
+          if (unclean !== null)
+            success(objects)
+        } catch (error) {
+          if (answer == "that's all we have")
+            return;
+          console.log(error)
+          console.log(answer)
         }
-        success(answer);
       })
       .catch(failure);
   }
@@ -417,21 +457,26 @@ function switchTo(Tab) {
     if (parentChartDiv) parentChartDiv.innerHTML = "";
 
     getFromHQ(
+      'read', currentTab,
       {},
+      /**
+       * 
+       * @param {string[]} lst 
+       */
       (lst) => {
+
         container.innerHTML += MainTable(
           currentTab,
-          Object.keys(lst[0])
-        );
-        const tbl = document.getElementById("MainTable");
-        for (let index = 0; index < lst.length; index++) {
-          const element = lst[index];
-          if (AllFetchedRows[currentTab])
-            AllFetchedRows[currentTab].push(element);
-          else AllFetchedRows[currentTab] = [element];
-          const row = TableRow(element, index);
-          tbl.innerHTML += row;
-        }
+          Object.keys(Model[lst[0]])
+        )
+        let tbl = document.getElementById("MainTable")
+
+        lst.forEach(identifier => {
+          const row = TableRow(identifier);
+          if (tbl)
+            tbl.innerHTML += row;
+        })
+
       },
       (e) => {
         //TODO: tell user some how that that's all
@@ -446,14 +491,14 @@ function switchTo(Tab) {
   }
 }
 
-function editRow(tableName, row_number, id) {
+function editRow(identifier) {
   return (evt) => {
-    var arr = [].slice.call(document.getElementById(id).children);
+    var arr = [].slice.call(document.getElementById(identifier).children);
     let tic = arr.pop();
     let x = arr.pop();
+    arr = arr.filter(is_not_unicode_sth);
     console.log("arr : ");
     console.log(arr);
-    arr = arr.filter(is_not_unicode_sth);
     if (tic.children[0].className.includes("fa-pencil")) {
       for (const child of arr) {
         child.contentEditable = true;
@@ -479,8 +524,8 @@ function editRow(tableName, row_number, id) {
         confirmButtonText: "Yes, modify it!",
       }).then((result) => {
         if (result.isConfirmed) {
-          let data = { ...AllFetchedRows[tableName][row_number] };
-          let sql_id = id.split("-").pop();
+          let data = { ...Model[identifier] };
+          let sql_id = identifier.split("-").pop();
           let header = Object.keys(data).filter(is_display_key);
           data["id"] = sql_id;
 
@@ -488,23 +533,7 @@ function editRow(tableName, row_number, id) {
             if (!(data[key] instanceof Object)) data[key] = arr[i].innerText;
           });
 
-
-
-          fetch(URL + `Api/update/${currentTab}/`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(data),
-          }).then((res) => {
-            return res.text();
-          }).then(res => {
-            try {
-              return JSON.parse(res)
-            } catch (error) {
-              return res
-            }
-          }).then(res => {
+          getFromHQ('update', identifier.split('-')[0], data, null, null, (res) => {
             if (res == 'updated') {
               arr.forEach((tag) => {
                 tag.contentEditable = false;
@@ -533,22 +562,32 @@ function editRow(tableName, row_number, id) {
     }
   };
 }
-
-function cancel_sub_edit(row_number, field) {
+/**
+ *  
+ * @param {string} identifier 
+ * @param {string} field 
+ * @param {string} old_first_part 
+ * @returns 
+ */
+function cancel_sub_edit(identifier, field, old_first_part) {
   return (evt) => {
     const html_element = evt.target.parentElement.parentElement;
+    const step1 = html_element.innerHTML.split('<i ')
+    step1[0] = step1[0].substring(0, step1[0].lastIndexOf('<td>'))
+    step1[1] = "<td><i " + step1[1]
+    const first_part = step1[0]
+    const second_part = step1[1]
     console.log('unchanged 😉');
-    html_element.innerHTML = TableRow(AllFetchedRows[currentTab][row_number][field], row_number, true, field)
-
+    html_element.innerHTML = old_first_part, second_part
   }
 }
 /**
  * 
- * @param {number} row_number 
+ * @param {string} identifier 
  * @param {string} field role, subject, topic
  * @returns 
  */
-function edit_sub_Row(row_number, field) {
+function edit_sub_Row(identifier, field) {
   return (evt) => {
     const html_element = evt.target.parentElement.parentElement;
     if (evt.target.className.includes('fa-pencil')) {
@@ -558,44 +597,42 @@ function edit_sub_Row(row_number, field) {
       const first_part = step1[0]
       const second_part = step1[1]
 
-      fetch(URL + `Api/read/${field}/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        }
-      }).then((res) => {
-        console.log(res);
-        return res.json();
-      }).then(SELECT_OPTIONS => {
-        AllFetchedRows[field] = SELECT_OPTIONS
+      console.log(Model)
+
+      getFromHQ('read', field, {}, (identifiers) => {
+        const SELECT_OPTIONS = identifiers.map(identifier => Model[identifier])
         html_element.innerHTML = `<td>
-      ${select(field + "_id", SELECT_OPTIONS, AllFetchedRows[currentTab][row_number][field], field)} 
-      </td><td>
-        <i class="fa fa-close" aria-hidden="true" onclick="cancel_sub_edit(${row_number},'${field}')(event)" ></i>
-      </td>
-      ${second_part.replace('fa-pencil', 'fa-check')}`
+              ${select(field + "_id", SELECT_OPTIONS, Model[identifier], field)} 
+              </td><td>
+                <i class="fa fa-close" aria-hidden="true" id="${identifier}-cancel" ></i>
+              </td>
+              ${second_part.replace('fa-pencil', 'fa-check')}`
+        document.getElementById(identifier + '-cancel').onclick = cancel_sub_edit(identifier, field, first_part + second_part)
+
       })
+
     } else {
-      const v = evt.target.parentElement.parentElement.children[0].children[0].value
+      console.log(`identifier : `);
+      console.log(identifier);
+      const tr = evt.target.parentElement.parentElement
+      const v = tr.children[0].children[0].value
+      const subTable_tr = tr.parentElement.parentElement.parentElement.parentElement
+      const godFather = subTable_tr.id.split('-')[0]
+      const godFather_id = subTable_tr.id.split('-')[1]
       const fk_column = `${field}_id`
       const payload = {
-        id: AllFetchedRows[currentTab][row_number].id
+        id: godFather_id
       }
       payload[fk_column] = v
-      fetch(URL + `Api/update/${currentTab}/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload)
-      }).then((res) => {
+      getFromHQ('update', godFather, payload, (res) => {
         console.log(res);
-        const new_sub_obj = AllFetchedRows[field].filter(e => e.id == v)[0]
-        AllFetchedRows[currentTab][row_number][field] = new_sub_obj
-        html_element.innerHTML = TableRow(new_sub_obj, row_number, true, field)
-        return res.json();
+        const new_sub_obj = Model[field + '-' + v]
+        Model[identifier][field] = new_sub_obj
+        html_element.innerHTML = TableRow(field + '-' + v, true, field)
+        return res;
       })
-      html_element.innerHTML = TableRow(AllFetchedRows[currentTab][row_number][field], row_number, true, field)
+
+      html_element.innerHTML = TableRow(field + '-' + v, true, field)
     }
   }
 }
@@ -635,6 +672,7 @@ function deleteRow(evt) {
 
     document.getElementById(clickedRowId).style.display = "none";
   } else {
+    // trId
     const id = evt.target.parentElement.parentElement.id;
     var arr = [].slice.call(document.getElementById(id).children);
     let tic = arr.pop();
@@ -643,14 +681,8 @@ function deleteRow(evt) {
     arr.forEach((tag) => {
       tag.contentEditable = false;
     });
-    let data = AllFetchedRows[id.split("-")[0]];
-    for (let i = 0; i < data.length; i++) {
-      const row = data[i];
-      if (row.id == id.split("-")[1]) {
-        data = row;
-        break;
-      }
-    }
+    let data = Model[id];
+
     let header = Object.keys(data).filter(is_display_key);
     header.forEach((key, i) => {
       if (!(data[key] instanceof Object)) arr[i].innerText = data[key];
@@ -695,11 +727,11 @@ function confirmChanges() {
       console.log('deleteList : ');
       console.log(deleteList);
       const delete_ids = deleteList.map(elem => elem.id)
-      AllFetchedRows[currentTab] = AllFetchedRows[currentTab]
-        .filter(row => !delete_ids.includes(row.id))
+
+
 
       const payload = { ids: delete_ids }
-      fetch(URL + `Api/delete/${currentTab}/`, {
+      fetch(URL + `Api / delete /${currentTab}/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -707,9 +739,13 @@ function confirmChanges() {
         body: JSON.stringify(payload)
       })
         .then((res) => {
-          console.log(res);
+          return res.text()
+        }).then(response_text => {
+          console.log(response_text);
           document.getElementById('modify-div').remove()
-          res.json()
+          delete_ids.forEach(delete_id => {
+            delete Model[currentTab + '-' + delete_id]
+          })
         })
     }
   });
@@ -866,4 +902,4 @@ function viewStats() {
   }
 }
 
-window.onload = main;
+addLoadEvent(main);

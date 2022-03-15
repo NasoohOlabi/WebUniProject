@@ -13,13 +13,19 @@
  * A set of validator functions to use while validating forms
  */
 const validators = {
-	email: (email) => {
-		// validate email format
-		const emailRegex =
-			/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-		const anotherRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-		return emailRegex.test(email);
+	/**
+	 * 
+	 * @param {string} username 
+	 * @returns {boolean}
+	 */
+	username: (username) => {
+		return username.length !== 0;
 	},
+	/**
+	 * 
+	 * @param {string} password 
+	 * @returns {boolean}
+	 */
 	password: (password) => {
 		// validate password format
 		return (
@@ -28,14 +34,41 @@ const validators = {
 			/[0-9]/.test(password)
 		);
 	},
+	/**
+	 * 
+	 * @param {string} first_name 
+	 * @returns {boolean}
+	 */
 	first_name: (first_name) => first_name.length > 0,
+	/**
+	 * 
+	 * @param {string} last_name 
+	 * @returns {boolean}
+	 */
 	last_name: (last_name) => last_name.length > 0,
+	/**
+	 * 
+	 * @param {string} confirm_password 
+	 * @param {string} password 
+	 * @returns {boolean}
+	 */
 	"confirm-password": (confirm_password, password) =>
 		password === confirm_password,
+	/**
+ * 
+ * @param {string} PhoneNumber 
+ * @returns {boolean}
+ */
 	phone: (PhoneNumber) => /09[0-9]{8}/.test(PhoneNumber),
-	AccountType: (type) => type.length > 0,
-	ProfileImg: (fakePath) => fakePath.length > 0,
+	/**
+	 * 
+	 * @param {string} type 
+	 * @returns {boolean}
+	 */
+	AccountType: (type) => type.length > 0
 };
+
+let parsing_input_interval = 0;
 
 /**
  *	Note that multiple calls to doBeforeAfterSpin will only take into account last 1000 ms
@@ -44,24 +77,23 @@ const validators = {
  * @returns function that execute init and then execute callBack after 1000 ms
  */
 const doBeforeAfterSpin = (init, callBack) => (event) => {
+	const scope = event.target.parentElement.parentElement.parentElement
 	init(event);
-	if (window.parsing_input_interval) {
-		clearInterval(window.parsing_input_interval);
+	if (parsing_input_interval) {
+		clearInterval(parsing_input_interval);
 	}
-	if (document.getElementById("spinner"))
-		document.getElementById("spinner").style.display = "inline";
-	document.querySelector(".form-block > button").disabled = true;
-	document.getElementById("submit-btn").disabled = true;
-	window.parsing_input_interval = setTimeout(() => {
-		if (document.getElementById("spinner"))
-			document.getElementById("spinner").style.display = "none";
+	if (scope.querySelector("#spinner"))
+		scope.querySelector("#spinner").style.display = "inline";
+	parsing_input_interval = setTimeout(() => {
+		if (scope.querySelector("#spinner"))
+			scope.querySelector("#spinner").style.display = "none";
 		callBack(event);
 	}, 1000);
 };
 /**
  * Adds callBack as eventLister to listOfEventNames events to the nodes in HtmlCollection
  * @param {string[]} listOfEventNames
- * @param {HtmlCollection} collection
+ * @param {HTMLCollectionOf<Element>} collection
  * @param {(event)=>void} callBack
  */
 const addEventsListenersToHTMLCollection = (
@@ -79,21 +111,32 @@ const addEventsListenersToHTMLCollection = (
  *
  * @returns Object with {(input/select).name : value}
  */
-function readInputs() {
+/**
+ * 
+ * @param {HTMLElement} form 
+ * @returns {{[index:string]:string}} with {(input/select).name : value}
+ */
+function readInputs(form) {
+	/**
+	 * @type {{[index:string]:string}}
+	 */
 	const dic = {};
-	for (let elem of document.getElementsByTagName("input")) {
+	form.querySelectorAll("input").forEach(elem => {
 		dic[elem.name] = elem.value.trim();
-	}
-	for (let elem of document.getElementsByTagName("select")) {
+	})
+	form.querySelectorAll("select").forEach(elem => {
 		dic[elem.name] = elem.value.trim();
-	}
+	})
 	return dic;
 }
 /**
  * object of key form_element.name mapped to string value
- * @param {string : boolean} form::element
+ * @param {{string? : boolean}}  form_obj
  */
 function isValidForm(form_obj) {
+	/**
+	 * @type {{[index:string]:boolean}}
+	 */
 	const res = {};
 	for (const key in form_obj) {
 		if (Object.hasOwnProperty.call(form_obj, key)) {
@@ -106,13 +149,24 @@ function isValidForm(form_obj) {
 			) {
 				// no need to validate login password
 				res[key] = true;
-			} else {
+			} else if (validators[key]) {
 				const receivedValue = form_obj[key];
 				res[key] = validators[key](receivedValue);
+			} else {
+				res[key] = true
 			}
 		}
 	}
 	return res;
+}
+/**
+ * 
+ * @param {Element} scope 
+ * @returns 
+ */
+function formNameInScope(scope) {
+	const elem = scope.querySelector("h1")
+	return elem.innerText
 }
 function showErrorMsgUnderThisElem(elem) {
 	elem.className = "text-input invalid-input";
@@ -125,44 +179,84 @@ function removeErrorMsgUnderThisElem(elem) {
 /**
  * Highlight elements that needs to be red Highlighted
  * and removes highlighting on those that don't need it accordingly
- * @param {} flags
+ * @param {{[index:string]:boolean}} flags 
+ * @param {Element} scopeElement 
+ * @param {{[index:string]:boolean}} Touched 
  */
-function setFormStatus(flags) {
-	for (let elem of document.getElementsByClassName("text-input")) {
-		if (window[elem.id + " is Touched"] && !flags[elem.id]) {
+function showFormStatus(flags, scopeElement, Touched = {}) {
+	scopeElement.querySelectorAll(".text-input").forEach(elem => {
+		if (Touched[elem.id + " is Touched"] && !flags[elem.id]) {
 			showErrorMsgUnderThisElem(elem);
 		} else {
 			removeErrorMsgUnderThisElem(elem);
 		}
-	}
+	})
 }
 
 function main() {
-	// Unfilled, untouched fields shouldn't be highlighted in red
-	addEventsListenersToHTMLCollection(
-		["focus"],
-		document.getElementsByClassName("text-input"),
-		(event) => {
-			window[event.currentTarget.id + " is Touched"] = true;
-		}
-	);
-
-	// Immediately after performing an input or a focusout the red highlighting will be removed
-	// After 1s of performing an input or a focusout the form will validate it self
-	addEventsListenersToHTMLCollection(
-		["input", "focusout"],
-		document.getElementsByClassName("text-input"),
-		doBeforeAfterSpin(
+	document.querySelectorAll(".login-container").forEach(form => {
+		// Unfilled, untouched fields shouldn't be highlighted in red
+		/**
+		 * @type {{[index:string]:boolean}}
+		 */
+		const Touched = {}
+		addEventsListenersToHTMLCollection(
+			["focus"],
+			form.getElementsByClassName("text-input"),
 			(event) => {
-				removeErrorMsgUnderThisElem(event.currentTarget);
-			},
-			(event) => {
-				const read_form = readInputs();
-				const validFormFlag = isValidForm(read_form);
-				setFormStatus(validFormFlag);
+				Touched[event.target.id + " is Touched"] = true;
 			}
-		)
-	);
+		);
+
+		// Immediately after performing an input or a focusout the red highlighting will be removed
+		// After 1s of performing an input or a focusout the form will validate it self
+		addEventsListenersToHTMLCollection(
+			["input", "focusout"],
+			form.getElementsByClassName("text-input"),
+			doBeforeAfterSpin(
+				/**
+				 * 
+				 * @param {Event} event 
+				 */
+				(event) => {
+					removeErrorMsgUnderThisElem(event.target);
+				},
+				/**
+				 * 
+				 * @param {Event} event 
+				 */
+				(event) => {
+					const scope = event.target.parentElement.parentElement.parentElement
+					const read_form = readInputs(scope);
+					const validFormFlag = isValidForm(read_form);
+					showFormStatus(validFormFlag, scope, Touched);
+				}
+			)
+		);
+		if (formNameInScope(form) == "Login") return;
+		const buttons = form.querySelectorAll('form .form-block button:not(default-form)')
+		if (buttons.length !== 0)
+			buttons.forEach(element => {
+				element.addEventListener("click", (event) => {
+					event.preventDefault();
+					const scope = event.target.parentElement.parentElement.parentElement
+					const read_form = readInputs(scope);
+					const validFormFlag = isValidForm(read_form);
+					showFormStatus(validFormFlag, scope, Touched);
+					const name = formNameInScope(scope)
+					if (Object.values(validFormFlag).every(e => e)) { // all fields are valid
+						fetch(ourURL + `Api/create/${name}`, {
+							method: "POST",
+							headers: {
+								"Content-Type": "application/json",
+							},
+							body: JSON.stringify(read_form)
+						}
+						)
+					}
+				})
+			})
+	})
 }
 
-window.onload = main;
+addLoadEvent(main);

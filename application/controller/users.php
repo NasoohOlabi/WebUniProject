@@ -81,6 +81,8 @@ class Users extends Controller
                 break;
         }
 
+        $role_id = 1;
+
         $u = new User();
 
         $u->first_name = $first_name;
@@ -97,7 +99,7 @@ class Users extends Controller
         $arr['last_name'] = $last_name;
         $arr['username'] = $username;
         $arr['password'] = md5($password);
-        $arr['role_id'] = 0;
+        $arr['role_id'] = 1;
         $arr['profile_picture'] = '1';
         $arr['middle_name'] = '';
 
@@ -123,11 +125,10 @@ class Users extends Controller
         session_start();
         $users_model = $this->loadModel('UserModel');
 
-        $email = htmlentities($_POST['email']);
+        $username = htmlentities($_POST['username']);
         $password = htmlentities($_POST['password']);
 
-        $username = explode('@', $email)[0];
-        if ($users_model->validateUser($email, $password)) {
+        if ($users_model->validateUser($username, $password)) {
             $_SESSION['user'] = $users_model->getFullDetails($username, $password);
             header("Location:" . URL);
         } else {

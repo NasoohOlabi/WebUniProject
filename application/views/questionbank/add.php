@@ -59,5 +59,5 @@
             })
         })
     }
-    window.onload = main();
+    addLoadEvent(main);
 </script>
