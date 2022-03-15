@@ -93,13 +93,13 @@ function select(input_name, SELECT_OPTIONS, SELECTED_ELEMENT, place_holder) {
  * @returns 
  */
 function MainTable(id, header) {
-  return `<table class="table" >
+  return `<div id="MainTable-container"><table class="table" >
             <thead>
             ${Header(id, header)}
             </thead>
             <tbody id="MainTable">
             </tbody>
-          </table>`
+          </table></div>`
 }
 /**
  * 
@@ -156,8 +156,14 @@ function Header(id, names) {
   const th_s = names
     .filter(is_display_key)
     .map((v) => "<th>" + v + "</th>")
-    .join("");
-  return `<tr id ="${id}">${th_s}</tr>`;
+
+  th_s.push('<th colspan="2"><th>')
+
+  const html_string = th_s.join("");
+
+  return `<tr id ="${id}">
+      ${html_string}
+    </tr>`;
 }
 /**
  * 
@@ -254,7 +260,7 @@ function subTable_tr(identifiers, trId, parent_number_of_keys) {
   if (identifiers.length > 1 || trId.split('-').pop().endsWith('s')) {
     if (identifiers.length === 0) return;
     const tr_s = identifiers.map((identifier) => TableRow(identifier));
-    return `<tr id="${trId}" style="display:none">
+    return `<tr id="${trId}" style="display:none" class="inner-shadowed">
               <td colspan=${parent_number_of_keys + 2}>
                 <table style="width:100%">
                   ${Header(trId.split("-")[1], Object.keys(Model[identifiers[0]]))}
@@ -351,8 +357,6 @@ function main() {
  * @param {(identifiers :string) => void} unclean 
  */
 function getFromHQ(ApiEndPoint, kind, POST_PAYLOAD, success = null, failure = null, unclean = null) {
-  console.log(`ApiEndPoint : `);
-  console.log(ApiEndPoint);
   /**
    * @param {object} object
    */

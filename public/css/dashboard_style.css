@@ -204,9 +204,23 @@ body.dark #home .text {
 .table thead th {
 	vertical-align: bottom;
 	border-bottom: 2px solid #dee2e6;
+	position: sticky;
 }
 .table tbody + tbody {
 	border-top: 2px solid #dee2e6;
+}
+
+#MainTable-container {
+	position: relative;
+}
+#MainTable-container thead th {
+	position: sticky;
+	top: 0;
+	background-color: var(--body-color);
+}
+#MainTable-container > .table {
+	border-collapse: collapse;
+	width: 100%;
 }
 
 #JS-App-Root {

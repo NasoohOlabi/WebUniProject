@@ -49,7 +49,9 @@ class Exam extends Table
             foreach ($cols as $col) {
                 $this->$col = $stdClass->{$prefix . $col};
             }
-            $this->subject = new Subject($stdClass, "subject_");
+            $tmp = new Subject($stdClass, "subject_");
+            if (isset($tmp->id))
+                $this->subject = $tmp;
         }
     }
     static function SQL_Columns(string $prefix = "")
