@@ -323,9 +323,9 @@ class Role extends Table
 }
 class Role_Has_Permission extends Table
 {
-    const id = 'Role_Has_Permission.id';
-    const role_id = 'Role_Has_Permission.role_id';
-    const permission_id = 'Role_Has_Permission.permission_id';
+    const id = 'role_has_permission.id';
+    const role_id = 'role_has_permission.role_id';
+    const permission_id = 'role_has_permission.permission_id';
     // this is what we'll inter act with the rest is just jargon
     public int $role_id;
     public int $permission_id;
@@ -471,7 +471,7 @@ class Exam_Center extends Table
     // this is what we'll inter act with the rest is just jargon
     public string $name;
     public string $description;
-    public array $dependents = ['Student_Took_Exam', 'Exam_Center_Has_Exam '];
+    public array $dependents = ['Student_Took_Exam', 'Exam_Center_Has_Exam'];
 
     public function get_CRUD_Terms()
     {

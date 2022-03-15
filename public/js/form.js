@@ -194,7 +194,7 @@ function showFormStatus(flags, scopeElement, Touched = {}) {
 }
 
 function main() {
-	document.querySelectorAll("login-container").forEach(form => {
+	document.querySelectorAll(".login-container").forEach(form => {
 		// Unfilled, untouched fields shouldn't be highlighted in red
 		/**
 		 * @type {{[index:string]:boolean}}

@@ -160,6 +160,8 @@ class BaseModel
             return "?";
         }, $columns));
 
+        $values  = array_values($values);
+
         $sql = "INSERT INTO `$schemaClass` ($columns_names) VALUES ($question_marks)";
         simpleLog('BaseModel::experimental_insert Running : "' . $sql . '"');
         simpleLog("bindings " . json_encode($values));
@@ -189,9 +191,6 @@ class BaseModel
 
         simpleLog(json_encode($columns_to_update));
 
-        // $values =  array_map(function ($column_name) use ($these) {
-        //     return $these->{$column_name};
-        // }, $columns_to_update);
 
         $values = [];
         foreach ($columns_to_update as $col) {
@@ -218,6 +217,7 @@ class BaseModel
     }
     private static function _parse_safe_term(array $x, array $no_wrap)
     {
+        simpleLog("no_wrap " . json_encode($no_wrap));
         $key = array_keys($x)[0];
         $val = $x[$key];
         if (!in_array($key, $no_wrap))
@@ -277,6 +277,7 @@ class BaseModel
         $Acc = '(' . implode(") AND (", $Acc) . ')';
         return $Acc;
     }
+
     private static function _parse_unsafe_term(array $x)
     {
         $key = array_keys($x)[0];
@@ -381,11 +382,13 @@ class BaseModel
         $query->execute($unsafe_bindings);
         $lines = $query->fetchAll();
 
+        simpleLog("lines >>>>>>>>>>>> " . json_encode($lines));
+
         return (count($lines)) ?
             array_map(function ($args) use ($wrapper) {
                 return new $wrapper($args,  strtolower($wrapper) . "_");
             }, $lines) :
-            new Exception("No Exams available");
+            new Exception("No $wrapper available");
     }
     public function select(array $columns, string $schemaClass, $safe_conditions = null, array $unsafe_conditions = null, int $limit = 100)
     {

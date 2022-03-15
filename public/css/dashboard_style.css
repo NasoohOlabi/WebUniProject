@@ -340,3 +340,6 @@ body.dark #home .text {
 ::-webkit-scrollbar-thumb:hover {
 	background: #555;
 }
+.canvasjs-chart-credit {
+	display: none;
+}

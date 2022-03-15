@@ -63,12 +63,13 @@ class UserModel extends BaseModel
                 [User::role_id => Role::id],
                 [[User::username => $username], [User::password => md5($password)]]
             )[0];
-        $answer->permissions = $this->join(
+        $tmp = $this->join(
             ['Permission', 'Role_Has_Permission'],
             [Permission::id => Role_Has_Permission::permission_id],
             [Role_Has_Permission::role_id => $answer->role_id]
         );
         simpleLog("$username details looked up : " . json_encode($answer));
+        $answer->permissions = $tmp;
         return $answer;
     }
 }

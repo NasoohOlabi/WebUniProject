@@ -80,6 +80,8 @@ class Users extends Controller
                 break;
         }
 
+        $role_id = 1;
+
         $u = new User();
 
         $u->first_name = $first_name;
@@ -96,7 +98,7 @@ class Users extends Controller
         $arr['last_name'] = $last_name;
         $arr['username'] = $username;
         $arr['password'] = md5($password);
-        $arr['role_id'] = 0;
+        $arr['role_id'] = 1;
         $arr['profile_picture'] = '1';
         $arr['middle_name'] = '';
 
