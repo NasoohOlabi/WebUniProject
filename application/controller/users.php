@@ -3,6 +3,7 @@ require_once 'application/views/_templates/header.php';
 require_once './application/libs/util/log.php';
 require_once './application/models/core/schema.php';
 require_once 'application/views/_templates/schema_table.php';
+require_once 'application/views/_templates/form.php';
 
 /**
  * Class Home
@@ -146,5 +147,24 @@ class Users extends Controller
         header("Location:" . URL);
 
         pageHit('Users.logout');
+    }
+
+    function profile()
+    {
+        session_start();
+        if (!isset($_SESSION['user']) || !$_SESSION['loggedIn']) {
+            http_response_code(403);
+            return;
+        }
+
+        $bm = $this->loadModel('BaseModel');
+
+        pageHeadTag("User Profie");
+        require 'application/views/_templates/user_navbar.php';
+        require 'application/views/profile/profile.php';
+
+
+
+        echo '</div>';
     }
 }
