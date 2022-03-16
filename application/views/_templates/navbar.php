@@ -14,7 +14,7 @@
         <nav>
 
             <span>
-                <button class="nav-btn" onclick="pop()"><i class="fa fa-lock" aria-hidden="true"></i>Login</button>
+                <button class="nav-btn" onclick="pop()"><i class="fa fa-lock" aria-hidden="true"></i><?= LANGUAGE::t('Login') ?></button>
             </span>
 
         </nav>

@@ -234,7 +234,7 @@ function main() {
 			)
 		);
 		if (formNameInScope(form) == "Login") return;
-		const buttons = form.querySelectorAll('form .form-block button:not(default-form)')
+		const buttons = form.querySelectorAll('form .form-block button:not(.default-form)')
 		if (buttons.length !== 0)
 			buttons.forEach(element => {
 				element.addEventListener("click", (event) => {
