@@ -392,7 +392,7 @@ noscript {
 }
 
 button:hover {
-	border: 1px solid white;
+	outline: 1px solid white;
 }
 .require_onced {
 	color: black;
@@ -602,10 +602,38 @@ button:hover {
 	border: none;
 	width: fit-content;
 	padding: 0.1rem 0.3rem;
-	margin: 10rem 0.1rem;
+	margin: 10rem 5%;
 	border-radius: 10px;
 	font-size: 5em;
 }
 .add-dependant-btn:hover {
 	background-color: var(--secondary-dark-background-color);
+}
+
+.add-tile-dependant-btn {
+	background-color: var(--secondary-background-color);
+	border: none;
+	width: calc(100% - 2em);
+	padding: 0.4rem 1.2rem;
+	border-radius: 10px;
+	font-size: large;
+	margin: 0 1em;
+}
+.add-tile-dependant-btn:hover {
+	background-color: var(--secondary-dark-background-color);
+}
+
+.login-container.mini {
+	padding: 1em;
+	min-width: fit-content;
+	display: inline-block;
+}
+
+.remove-div-x-btn {
+	background-color: transparent;
+	float: var(--opp-dir);
+	border: none;
+}
+.remove-div-x-btn:hover {
+	outline: none;
 }

@@ -1,14 +1,57 @@
 
 <?php
 require_once 'component/input.php';
+function TileForThis($the_one, $sub_cls, $bm)
+{
+    $parent_class_name = get_class($the_one);
+    $not_has_Nor_the_one = array_values(array_filter(explode('_has_', strtolower($sub_cls)), function ($table) use ($parent_class_name) {
+        return $table != strtolower($parent_class_name);
+    }));
+    $the_other = (count($not_has_Nor_the_one) == 1) ? ucfirst($not_has_Nor_the_one[0]) : false;
+    $schemaClass = implode('_', array_map('ucfirst', explode('_', $sub_cls)));
+    $objects = ($the_other)
+        ? $bm->join([$the_other, $sub_cls], [$the_other::id => $sub_cls::access(strtolower($the_other) . '_id')])
+        : $bm->select([], $schemaClass);
+
+    $id_indexed_objects = [];
+    foreach ($objects as $value) {
+        $id_indexed_objects[$value->id] = $value;
+    }
+    $v = array_map('stdclastoidstirng', $id_indexed_objects);
+    $SELECT_OPTIONS = $v;
+
+    $cls = $the_one;
+    require '__tiles_for_this.php';
+}
 function PageForThis(Table $cls, BaseModel $bm, array $omit = [])
 {
     FormForThis($cls, $bm, $omit);
     if (count($cls->dependents) > 0) {
+        // $dep = $cls->dependents;
+        // if (is_array($dep) && count($dep) == 1) {
+        //     foreach ($dep as $key => $value) {
+        //         $row->{strtolower($key) . 's'} = $Model->select([], $key, [], [$key::access($value) => $row->id]);
+        //     }
+        // } else {
+        //     $row->{strtolower($dep) . 's'} = $Model->select([], $dep, [], [$dep::access(strtolower(get_class($row)) . '_id') => $row->id]);
+        // }
         foreach ($cls->dependents as $sub_cls) {
-            require '__pageForThis1.php';
-            FormForThis(new $sub_cls(), $bm, [strtolower(get_class($cls)) . "_id"]);
-            require '__pageForThis2.php';
+            $dep = $cls->dependents;
+            if (is_array($dep) && count($dep) == 1) {
+                foreach ($dep as $key => $value) {
+                    require '__pageForThis1.php';
+                    FormForThis(new $key(), $bm, [$value]);
+                    require '__pageForThis2.php';
+                }
+            } else {
+                if (str_contains(strtolower($sub_cls), '_has_')) {
+                    TileForThis($cls, $sub_cls, $bm);
+                } else {
+                    require '__pageForThis1.php';
+                    FormForThis(new $sub_cls(), $bm, [strtolower(get_class($cls)) . "_id"]);
+                    require '__pageForThis2.php';
+                }
+            }
         }
     }
 }

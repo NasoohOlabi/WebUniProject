@@ -1,4 +1,4 @@
-`)
+</div>`)
 for (let btn of document.querySelectorAll(`form .form-block button`)){
 btn.style.display = `none`;
 }

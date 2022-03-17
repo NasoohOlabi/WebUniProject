@@ -28,6 +28,11 @@ function endsWith(string $haystack, string $needle)
     $length = strlen($needle);
     return $length > 0 ? substr($haystack, -$length) === $needle : true;
 }
-
+if (!function_exists('str_contains')) {
+    function str_contains(string $haystack, string $needle)
+    {
+        return $needle !== '' && mb_strpos($haystack, $needle) !== false;
+    }
+}
 // start the application
 $app = new Application();

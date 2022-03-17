@@ -42,7 +42,7 @@ class DashBoard extends Controller
 
         $bm = $this->loadModel('BaseModel');
 
-        pageHeadTag("Add $form");
+        pageHeadTag("Add $form", ['Swal' => true]);
         require 'application/views/_templates/user_navbar.php';
 
         require './application/views/Dashboard/add.php';

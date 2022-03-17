@@ -5,6 +5,8 @@
         foreach ($inputs as $field => $func) {
             if ($func == 'text') {
                 text_input($field);
+            } elseif ($func == 'date') {
+                date_input($field);
             } elseif ($func == 'select') {
                 select_input($field, $SELECT_OPTIONS[$field], str_replace("_id", "", ucfirst($field)));
             }

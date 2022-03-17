@@ -1,5 +1,5 @@
 <?php
-function pageHeadTag($title, $options)
+function pageHeadTag($title, $options = [])
 {
     $language = (isset($_COOKIE['lang'])) ? $_COOKIE['lang'] : 'en';
     if ($language == 'ar') {
