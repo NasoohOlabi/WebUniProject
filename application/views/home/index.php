@@ -1,36 +1,35 @@
-<div id="main-content" class="inlineBlock">
+<style>
+    .univ-photo {
+        width: 100%;
+        height: 40.8em;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: blur(2px);
+    }
 
-    <section class="scrolling-wrapper">
-        <div class="card">
-            <div class=".card-image-container">
-                <img src="<?= URL ?>public/img/welcome-poster-spectrum-brush-strokes-260nw-1146069941.jpg" />
-            </div>
-            <h2>Welcome the university site</h2>
-        </div>
-        <div class="card">
-            <div class=".card-image-container">
-                <img src="<?= URL ?>public/img/Climate-front-sub.jpg" />
-            </div>
-            <h2>Card</h2>
-        </div>
-        <div class="card">
-            <div class=".card-image-container">
-                <img src="<?= URL ?>public/img/MIT-Water.jpg" />
-            </div>
-            <h2>Card</h2>
-        </div>
-        <div class="card">
-            <div class=".card-image-container">
-                <img src="<?= URL ?>public/img/MIT-Water.jpg" />
-            </div>
-            <h2>Card</h2>
-        </div>
-        <div class="card">
-            <div class=".card-image-container">
-                <img src="<?= URL ?>public/img/MIT-Water.jpg" />
-            </div>
-            <h2>Card</h2>
-        </div>
-    </section>
-</div>
-</div>
+    .univ-photo div {
+        z-index: 2;
+        position: absolute;
+    }
+
+    .content h2 {
+        position: relative;
+        bottom: 9em;
+        color: hsl(180deg 28% 85%);
+        text-align: center;
+        font-family: var(--primary-font);
+        font-size: 3em;
+        backdrop-filter: blur(10px);
+        padding: 20px;
+    }
+
+    .content {
+        max-height: 90vh;
+    }
+</style>
+
+<div class="content">
+    <div class="univ-photo" style="background-image: url(<?= URL ?>/public/img/background.png);"></div>
+    <h2><?= LANGUAGE::t('Welcome To The University of MNU') ?></h2>
+</div>y

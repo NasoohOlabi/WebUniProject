@@ -30,7 +30,7 @@ class Home extends Controller
         $p = $this->loadModel('QuestionModel');
 
         // load views. within the views we can echo out $songs and $amount_of_songs easily
-        pageHeadTag("index");
+        pageHeadTag("index", 'ar', ['noform' => true]);
 
         if (isset($_SESSION['loggedIn'])) {
             require 'application/views/_templates/user_navbar.php';
@@ -38,7 +38,7 @@ class Home extends Controller
         } else {
             require 'application/views/_templates/navbar.php';
             //require 'application/views/_templates/aside.php';
-            require 'application/views/home/exp_index.php';
+            require 'application/views/home/index.php';
             require 'application/views/_templates/login_popup.php';
             if (isset($_GET['login_failed'])) {
                 echo '<script type="text/javascript">',

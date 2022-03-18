@@ -18,7 +18,9 @@
     ?>
 </div>
 <script>
+    var submissions = {}
     addLoadEvent(() => {
+
         const sv_btn = document.getElementsByClassName("save-btn")[0]
         if (sv_btn) {
             sv_btn.addEventListener("click", () => {
@@ -26,6 +28,8 @@
 
                 const form = document.querySelector(".login-container")
                 try {
+                    const n1 = formNameInScope(form)
+                    const n2 = readInputs(form)
                     fetch(ourURL + `Api/create/${formNameInScope(form)}`, {
                         method: "POST",
                         headers: {
@@ -37,14 +41,30 @@
                     }).then(res => {
                         try {
                             let respose_object = JSON.parse(res)
-                            const lst = [].slice.call(document.querySelectorAll(".login-container"))
-                            lst.shift()
+                            let lst = [].slice.call(document.querySelectorAll(".scrolling-wrapper"))
+
+                            // const what_we_are_creating =
+                            lst = lst.filter(wrapper => {
+                                return !wrapper.id.split('-')[0].toLowerCase().includes('_has_')
+                            })
+
                             if (lst.length === 0) return;
+
                             parent_sql_id = respose_object.id
+
+                            Object.values(submissions).forEach(cb => {
+                                cb(parent_sql_id)
+                            })
+
+
+                            lst = lst
+                                .filter(wrapper => wrapper.querySelectorAll('form').length > 0)
+                                .flatMap(wrapper => [].slice.call(wrapper.querySelectorAll('.login-container')))
                             lst.forEach(sub_form => {
                                 const payload = readInputs(sub_form)
                                 payload[formNameInScope(form).toLowerCase() + "_id"] = parent_sql_id
-                                fetch(ourURL + `Api/create/${formNameInScope(sub_form)}`, {
+                                const n1 = formNameInScope(sub_form)
+                                fetch(ourURL + `Api/create/${n1}`, {
                                     method: "POST",
                                     headers: {
                                         "Content-Type": "application/json",
@@ -56,7 +76,18 @@
                                     console.log(res)
                                 })
                             })
+                            Swal.fire({
+                                title: "Created!",
+                                text: `${n1.replace('_',' ')} was easily created.`,
+                                icon: "info",
+                                showCancelButton: false,
+                                confirmButtonColor: "#3085d6",
+                                cancelButtonColor: "#d33"
+                            })
+                            lst.forEach(sub_form => sub_form.remove())
+
                         } catch (error) {
+                            console.log(error)
                             console.log(res)
                         }
                         if (res instanceof Object) {

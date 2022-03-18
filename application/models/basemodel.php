@@ -353,7 +353,8 @@ class BaseModel
         if (count($safe_conditions) > 0)
             $parsed_safe_conditions = BaseModel::_parse_conditions($safe_conditions, $columns);
 
-        if (count($unsafe_conditions) > 0) {
+        $unsafe_bindings = [];
+        if ($unsafe_conditions != null && count($unsafe_conditions) > 0) {
             $unsafe_conditions_parsed = BaseModel::_parse_unsafe_conditions($unsafe_conditions);
             $unsafe_sql_string = $unsafe_conditions_parsed['prepare'];
             $unsafe_bindings = $unsafe_conditions_parsed['execute'];
@@ -364,7 +365,7 @@ class BaseModel
         }, $schemaClasses));
 
         $column_names_aliased_string = implode(", ", BaseModel::_alias_dotted_columns($columns));
-        if (count($unsafe_conditions) > 0) {
+        if ($unsafe_conditions != null && count($unsafe_conditions) > 0) {
             if (count($safe_conditions) > 0)
                 $sql = "SELECT $column_names_aliased_string FROM $tables ON $parsed_safe_conditions WHERE $unsafe_sql_string ORDER BY $order;";
             else
@@ -435,7 +436,7 @@ class BaseModel
                 $sql = "SELECT $columns_string FROM $schemaClass WHERE $safe_conditions AND $unsafe_sql_string ORDER BY $schemaClass.id DESC $limit_part;";
             }
         }
-        // simpleLog("BaseModel::select Running : ($sql)");
+        simpleLog("BaseModel::select Running : ($sql)");
 
         $query = $this->db->prepare($sql);
 

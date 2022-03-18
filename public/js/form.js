@@ -130,6 +130,19 @@ function readInputs(form) {
 	return dic;
 }
 /**
+ * 
+ * @param {HTMLElement} form 
+ * @returns {void} with {(input/select).name : value}
+ */
+function cleanInputs(form) {
+	form.querySelectorAll("input").forEach(elem => {
+		elem.value = '';
+	})
+	form.querySelectorAll("select").forEach(elem => {
+		elem.value = '';
+	})
+}
+/**
  * object of key form_element.name mapped to string value
  * @param {{string? : boolean}}  form_obj
  */
@@ -234,7 +247,7 @@ function main() {
 			)
 		);
 		if (formNameInScope(form) == "Login") return;
-		const buttons = form.querySelectorAll('form .form-block button:not(default-form)')
+		const buttons = form.querySelectorAll('form .form-block button:not(.default-form)')
 		if (buttons.length !== 0)
 			buttons.forEach(element => {
 				element.addEventListener("click", (event) => {
@@ -252,7 +265,15 @@ function main() {
 							},
 							body: JSON.stringify(read_form)
 						}
-						)
+						).then(response => response.text()).then(response_text => {
+							console.log(response_text)
+							cleanInputs(scope)
+							Swal.fire(
+								"Done!",
+								`${name.split('_').map(word => word[0].toUpperCase() + word.substring(1)).join('_')}.`,
+								"info"
+							)
+						})
 					}
 				})
 			})

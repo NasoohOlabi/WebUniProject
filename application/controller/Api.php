@@ -108,7 +108,9 @@ class Api extends Controller
                             $row->{strtolower($key) . 's'} = $Model->select([], $key, [], [$key::access($value) => $row->id]);
                         }
                     } else {
+                        simpleLog(get_class($row) . ' dep ' . $dep);
                         $row->{strtolower($dep) . 's'} = $Model->select([], $dep, [], [$dep::access(strtolower(get_class($row)) . '_id') => $row->id]);
+                        simpleLog("$row->name dep " . json_encode($row->{strtolower($dep) . 's'}));
                     }
                 }
                 return $row;
