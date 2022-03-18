@@ -1,13 +1,18 @@
 const filesToCache = [
+  "public/js/canvasjs.js",
+  "public/js/dashboard.js",
   "public/js/font-awesome.js",
   "public/js/form.js",
   "public/js/popping.js",
   "public/js/Main.js",
+  "public/js/sweetalert2.js",
   "public/css/all.min.css",
   "public/css/dashboard_style.css",
   "public/css/style.css",
   "public/css/util.style.css",
   "public/img/background.png",
+  "public/img/hero-bg.jpg",
+  "public/webfonts/*",
 ];
 
 const staticCacheName = "pages-cache-v1";
