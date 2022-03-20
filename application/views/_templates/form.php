@@ -87,6 +87,10 @@ function FormForThis(Table $cls, BaseModel $bm, array $omit = [])
             }
             $v = array_map('stdclastoidstirng', $id_indexed_objects);
             $SELECT_OPTIONS[$field] = $v;
+        } elseif ($field === 'profile_picture') {
+            $inputs[$field] = 'profile_picture';
+        } elseif (str_contains($field, 'date')) {
+            $inputs[$field] = 'date';
         } else
             $inputs[$field] = 'text';
     }

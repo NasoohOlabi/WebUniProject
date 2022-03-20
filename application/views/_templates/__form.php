@@ -5,6 +5,8 @@
         foreach ($inputs as $field => $func) {
             if ($func == 'text') {
                 text_input($field);
+            } elseif ($func == 'profile_picture') {
+                picture_input();
             } elseif ($func == 'date') {
                 date_input($field);
             } elseif ($func == 'select') {
