@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="<?= URL ?>public/css/all.min.css" />
   <script src="<?= URL ?>public/js/Main.js"></script>
   <script src="<?= URL ?>public/js/canvasjs.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="<?= URL ?>public/js/sweetalert2.js"></script>
 </head>
 
 <body>

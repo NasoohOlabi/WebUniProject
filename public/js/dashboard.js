@@ -25,15 +25,15 @@ const schemaClasses = [
 var currentTab =
   getCookie("currentTab") == ""
     ? (() => {
-      setCookie("currentTab", "Dashboard", 3);
-      switchTo("Dashboard");
-      return "Dashboard";
-    })()
+        setCookie("currentTab", "Dashboard", 3);
+        switchTo("Dashboard");
+        return "Dashboard";
+      })()
     : (() => {
-      const curr = getCookie("currentTab");
-      switchTo(curr);
-      return curr;
-    })();
+        const curr = getCookie("currentTab");
+        switchTo(curr);
+        return curr;
+      })();
 
 /**
  * @param cname {string}
@@ -122,10 +122,11 @@ function select(input_name, SELECT_OPTIONS, SELECTED_ELEMENT, place_holder) {
 
   return `<select name="${input_name}" class="form-select valid-input" aria-label="${place_holder}">
         ${objects.map(
-    (object) =>
-      `<option value="${object.id}" ${SELECTED_ELEMENT.id === object.id ? "selected" : ""
-      }>${identifying_string(object)}</option>`
-  )}
+          (object) =>
+            `<option value="${object.id}" ${
+              SELECTED_ELEMENT.id === object.id ? "selected" : ""
+            }>${identifying_string(object)}</option>`
+        )}
         ?>
     </select>`;
 }
@@ -227,10 +228,7 @@ function TableRow(identifier, inline_keys = false, inline_key_prefix = "") {
     .map((name_id) => name_id.split("-")[0]);
   let td_s = Object.keys(row_item)
     .filter(is_display_key)
-    .filter(
-      (key) =>
-        !ancestors.some((elem) => elem.includes(key))
-    )
+    .filter((key) => !ancestors.some((elem) => elem.includes(key)))
     .map((key) => {
       const value = row_item[key];
       let td = inline_keys
@@ -324,9 +322,9 @@ function subTable_tr(
               <td colspan=${parent_number_of_keys + 2}>
                 <table style="width:100%">
                   ${Header(
-      trId.split("-")[1],
-      Object.keys(Model[identifiers[0]])
-    )}
+                    trId.split("-")[1],
+                    Object.keys(Model[identifiers[0]])
+                  )}
                   ${tr_s.join("")}
                 </table>
               </td>
@@ -367,15 +365,12 @@ function main() {
     if (
       scrollPos >
       lastChild.offsetTop +
-      lastChild.offsetHeight -
-      2 * document.body.clientHeight
+        lastChild.offsetHeight -
+        2 * document.body.clientHeight
     ) {
       const tbl = document.getElementById("MainTable");
       if (
-        !(
-          tbl &&
-          Object.keys(Model).some((key) => key.startsWith(currentTab))
-        )
+        !(tbl && Object.keys(Model).some((key) => key.startsWith(currentTab)))
       )
         return;
 
@@ -449,9 +444,7 @@ function getFromHQ(
         Model[subClassName + "-" + object[subClassName].id] = clean_format(
           object[subClassName]
         );
-        object[subClassName] = [
-          subClassName + "-" + object[subClassName].id,
-        ];
+        object[subClassName] = [subClassName + "-" + object[subClassName].id];
       }
     });
     return object;
@@ -607,8 +600,7 @@ function editRow(identifier) {
           data["id"] = sql_id;
 
           header.forEach((key, i) => {
-            if (!(data[key] instanceof Object))
-              data[key] = arr[i].innerText;
+            if (!(data[key] instanceof Object)) data[key] = arr[i].innerText;
           });
 
           getFromHQ("update", identifier.split("-")[0], data, {
@@ -617,16 +609,14 @@ function editRow(identifier) {
                 arr.forEach((tag) => {
                   tag.contentEditable = false;
                 });
-                tic.children[0].className =
-                  tic.children[0].className.replace(
-                    "fa-check",
-                    "fa-pencil"
-                  );
-                x.children[0].className =
-                  x.children[0].className.replace(
-                    "fa-close",
-                    "fa-trash"
-                  );
+                tic.children[0].className = tic.children[0].className.replace(
+                  "fa-check",
+                  "fa-pencil"
+                );
+                x.children[0].className = x.children[0].className.replace(
+                  "fa-close",
+                  "fa-trash"
+                );
 
                 Swal.fire(
                   "Modified!",
@@ -693,11 +683,11 @@ function edit_sub_Row(identifier) {
             );
             html_element.innerHTML = `<td>
               ${select(
-              field + "_id",
-              SELECT_OPTIONS,
-              Model[model_identifier],
-              field
-            )} 
+                field + "_id",
+                SELECT_OPTIONS,
+                Model[model_identifier],
+                field
+              )} 
               </td>
               <td>
                 <i class="fa fa-close" aria-hidden="true" id="${identifier}-cancel" ></i>
@@ -709,10 +699,7 @@ function edit_sub_Row(identifier) {
               cancel_sub_edit(identifier, first_part + second_part),
               identifier + "-cancel"
             );
-            set_OnClick_For_Id(
-              edit_sub_Row(identifier),
-              identifier + "-save"
-            );
+            set_OnClick_For_Id(edit_sub_Row(identifier), identifier + "-save");
           },
         }
       );
@@ -850,22 +837,30 @@ function delete_re(identifiers, depth = 0) {
           // .flatMap((obj) => obj.dependents.map((dep) => Model[dep]))
           text: `${currentTab} was not alone! we need backup to delete his bloodline including " ${identifiers
             .map((identifier) =>
-
-              Model[identifier]['dependents']
-                .map(x => x.toLowerCase() + 's')
-                .filter(field => Model[identifier][field] != undefined && Model[identifier][field].length > 0)
-                .map(field => {
-                  return field.replaceAll('_', ' ').replaceAll('-', ' ') + ' [ ' + Model[identifier][field]
-                    .map(sub_identifier => Model[sub_identifier]['identifying_fields']
-                      .map(id_field => Model[sub_identifier][id_field])
-                      .join('& ')
-                    )
-                    .join(' ') + ' ] '
-                }
+              Model[identifier]["dependents"]
+                .map((x) => x.toLowerCase() + "s")
+                .filter(
+                  (field) =>
+                    Model[identifier][field] != undefined &&
+                    Model[identifier][field].length > 0
                 )
-                .join(', ')
-            ).join(' And ')
-            } "`,
+                .map((field) => {
+                  return (
+                    field.replaceAll("_", " ").replaceAll("-", " ") +
+                    " [ " +
+                    Model[identifier][field]
+                      .map((sub_identifier) =>
+                        Model[sub_identifier]["identifying_fields"]
+                          .map((id_field) => Model[sub_identifier][id_field])
+                          .join("& ")
+                      )
+                      .join(" ") +
+                    " ] "
+                  );
+                })
+                .join(", ")
+            )
+            .join(" And ")} "`,
           icon: "error",
           showCancelButton: true,
           confirmButtonColor: "#3085d6",
@@ -890,7 +885,7 @@ function delete_re(identifiers, depth = 0) {
                 delete_re([identifiers[index]]);
               });
           } else {
-            reset()
+            reset();
           }
         });
       } else {
@@ -923,9 +918,9 @@ function confirmChanges() {
         .map((elem) => elem.trId)
         .map((identifier) => identifier.split("::").pop());
 
-      delete_re(delete_ids)
+      delete_re(delete_ids);
 
-      modifyMode = false
+      modifyMode = false;
     }
   });
 }
@@ -1070,7 +1065,7 @@ function viewStats() {
   function explodePie(e) {
     if (
       typeof e.dataSeries.dataPoints[e.dataPointIndex].exploded ===
-      "undefined" ||
+        "undefined" ||
       !e.dataSeries.dataPoints[e.dataPointIndex].exploded
     ) {
       e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
