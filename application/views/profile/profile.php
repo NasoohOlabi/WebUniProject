@@ -20,16 +20,6 @@ $middle_name = $_SESSION['user']->middle_name ? $_SESSION['user']->middle_name :
 
 ?>
 
-<!-- <script>
-    var loadFile = function(event) {
-        console.log("yes");
-        var image = document.getElementById("prof-pic");
-        let url = URL.createObjectURL(event.target.files[0]);
-        console.log(url.split('blob:')[1]);
-        image.style.backgroundImage = "url(" + url.split('blob:')[1] + ")";
-    };
-</script> -->
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
@@ -71,6 +61,10 @@ $middle_name = $_SESSION['user']->middle_name ? $_SESSION['user']->middle_name :
             });
 
         }
+    }
+
+    function submit() {
+        window.location.replace(URL + 'api/update/user');
     }
 </script>
 
@@ -143,7 +137,16 @@ $middle_name = $_SESSION['user']->middle_name ? $_SESSION['user']->middle_name :
     }
 
     .login-container {
-        margin: 2% auto;
+        margin: 1% auto;
+        padding: 2% 3%;
+    }
+
+    .form-block button {
+        margin: 1em auto;
+    }
+
+    #main-content {
+        justify-content: center;
     }
 </style>
 
@@ -189,7 +192,7 @@ $middle_name = $_SESSION['user']->middle_name ? $_SESSION['user']->middle_name :
                     Please enter a valid middle_name</small>
             </div>
             <div class="form-block">
-                <button type="submit" id="submit-btn">
+                <button type="submit" id="submit-btn" onclick="submit()">
                     Save Changes <svg id="spinner" viewBox="0 0 50 50">
                         <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
                     </svg>
