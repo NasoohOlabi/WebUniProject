@@ -172,12 +172,21 @@ class BaseModel
             simpleLog('BaseModel::experimental_insert Running : "' . $sql . '"');
         if (I_AM_DEBUGGING)
             simpleLog("bindings " . json_encode($values));
-        $flag = $this->db->prepare($sql)->execute(array_values($values));
+        $query = $this->db->prepare($sql);
+
+        $flag = $query->execute(array_values($values));
+
+
+
         if ($flag) {
             $object->id = $this->db->lastInsertId();
             return true;
         } else {
-            return false;
+            $error = $query->errorInfo();
+
+            // see if anything is output here
+            simpleLog('error>>>>>>>>>>>' . json_encode($error));
+            throw new Exception($error[2]);
         }
     }
     function experimental_update(string $schemaClass, int $id, stdClass $these)

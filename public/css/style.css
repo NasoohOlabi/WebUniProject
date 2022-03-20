@@ -428,8 +428,8 @@ noscript {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #c3cfda;
-  background-color: var(--primary-background-color);
+  color: black;
+  background-color: var(--primary);
   background-clip: padding-box;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;

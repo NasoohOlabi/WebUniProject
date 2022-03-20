@@ -27,76 +27,104 @@
                 let parent_sql_id = -1;
 
                 const form = document.querySelector(".login-container")
-                try {
-                    const n1 = formNameInScope(form)
-                    const n2 = readInputs(form)
-                    fetch(ourURL + `Api/create/${formNameInScope(form)}`, {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
-                        body: JSON.stringify(readInputs(form))
-                    }).then(res => {
-                        return res.text()
-                    }).then(res => {
-                        try {
-                            let respose_object = JSON.parse(res)
-                            let lst = [].slice.call(document.querySelectorAll(".scrolling-wrapper"))
+                const n1 = formNameInScope(form)
+                const read_inputs = readInputs(form)
+                fetch(ourURL + `Api/create/${formNameInScope(form)}`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(read_inputs)
+                }).then(res => {
+                    return res.text()
+                }).then(res => {
+                    if (res.startsWith('Operation Failed :')) {
+                        let unique_problem = /'(\w|_|-| )*_UNIQUE'/.exec(res)
+                        if (unique_problem) {
+                            const word = unique_problem[0].substring(1, unique_problem[0].length - (`_UNIQUE'`.length))
 
-                            // const what_we_are_creating =
-                            lst = lst.filter(wrapper => {
-                                return !wrapper.id.split('-')[0].toLowerCase().includes('_has_')
-                            })
-
-                            if (lst.length === 0) return;
-
-                            parent_sql_id = respose_object.id
-
-                            Object.values(submissions).forEach(cb => {
-                                cb(parent_sql_id)
-                            })
-
-
-                            lst = lst
-                                .filter(wrapper => wrapper.querySelectorAll('form').length > 0)
-                                .flatMap(wrapper => [].slice.call(wrapper.querySelectorAll('.login-container')))
-                            lst.forEach(sub_form => {
-                                const payload = readInputs(sub_form)
-                                payload[formNameInScope(form).toLowerCase() + "_id"] = parent_sql_id
-                                const n1 = formNameInScope(sub_form)
-                                fetch(ourURL + `Api/create/${n1}`, {
-                                    method: "POST",
-                                    headers: {
-                                        "Content-Type": "application/json",
-                                    },
-                                    body: JSON.stringify(payload)
-                                }).then(res => {
-                                    return res.text()
-                                }).then(res => {
-                                    console.log(res)
-                                })
-                            })
                             Swal.fire({
-                                title: "Created!",
-                                text: `${n1.replace('_',' ')} was easily created.`,
-                                icon: "info",
+                                title: "Sorry!",
+                                text: `${n1.replace('_', ' ')} wasn 't created ${word} : '${read_inputs[word]}' already exists!`,
+                                icon: "error",
                                 showCancelButton: false,
                                 confirmButtonColor: "#3085d6",
                                 cancelButtonColor: "#d33"
                             })
-                            lst.forEach(sub_form => sub_form.remove())
-
-                        } catch (error) {
-                            console.log(error)
-                            console.log(res)
                         }
-                        if (res instanceof Object) {
+                    }
+                    try {
+                        let respose_object = JSON.parse(res)
+                    } catch (error) {
+                        console.log(error)
+                        console.log(res)
+                        return
+                    }
+                    let lst = [].slice.call(document.querySelectorAll(".scrolling-wrapper"))
 
-                        }
+                    // const what_we_are_creating =
+                    lst = lst.filter(wrapper => {
+                        return !wrapper.id.split('-')[0].toLowerCase().includes('_has_')
                     })
-                } catch (error) {
 
-                }
+                    if (lst.length === 0) return;
+
+                    parent_sql_id = respose_object.id
+
+                    Object.values(submissions).forEach(cb => {
+                        cb(parent_sql_id)
+                    })
+
+
+                    lst = lst
+                        .filter(wrapper => wrapper.querySelectorAll('form').length > 0)
+                        .flatMap(wrapper => [].slice.call(wrapper.querySelectorAll('.login-container')))
+                    lst.forEach(sub_form => {
+                        const payload = readInputs(sub_form)
+                        payload[formNameInScope(form).toLowerCase() + "_id"] = parent_sql_id
+                        const n1 = formNameInScope(sub_form)
+                        fetch(ourURL + `Api/create/${n1}`, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify(payload)
+                        }).then(res => {
+                            return res.text()
+                        }).then(res => {
+                            if (res.startsWith('Operation Failed :')) {
+                                let unique_problem = /'(\w|_|-| )*_UNIQUE'/.exec(res)
+                                if (unique_problem) {
+                                    const word = unique_problem[0].substring(1, unique_problem[0].length - (`_UNIQUE'`.length))
+
+                                    Swal.fire({
+                                        title: "Sorry!",
+                                        text: `${n1.replace('_', ' ')} wasn 't created ${word} : '${payload[word]}' already exists!`,
+                                        icon: "error",
+                                        showCancelButton: false,
+                                        confirmButtonColor: "#3085d6",
+                                        cancelButtonColor: "#d33"
+                                    })
+                                }
+                            } else {
+                                Swal.fire({
+                                    title: "Created!",
+                                    text: `${n1.replace('_',' ')} was easily created.`,
+                                    icon: "info",
+                                    showCancelButton: false,
+                                    confirmButtonColor: "#3085d6",
+                                    cancelButtonColor: "#d33"
+                                })
+                            }
+                        })
+                    })
+
+                    lst.forEach(sub_form => sub_form.remove())
+
+                    if (res instanceof Object) {
+
+                    }
+                })
             })
         }
     })

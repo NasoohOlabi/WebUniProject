@@ -16,3 +16,7 @@ function date_input(string $name)
 {
     require '_date_input.php';
 }
+function picture_input()
+{
+    require '_picture_input.php';
+}

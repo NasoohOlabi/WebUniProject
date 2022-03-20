@@ -35,10 +35,11 @@ function PageForThis(Table $cls, BaseModel $bm, array $omit = [])
         // } else {
         //     $row->{strtolower($dep) . 's'} = $Model->select([], $dep, [], [$dep::access(strtolower(get_class($row)) . '_id') => $row->id]);
         // }
-        foreach ($cls->dependents as $sub_cls) {
-            $dep = $cls->dependents;
+        foreach ($cls->dependents as $dep) {
+            $sub_cls = $dep;
             if (is_array($dep) && count($dep) == 1) {
                 foreach ($dep as $key => $value) {
+                    $sub_cls = $key;
                     require '__pageForThis1.php';
                     FormForThis(new $key(), $bm, [$value]);
                     require '__pageForThis2.php';
@@ -86,6 +87,10 @@ function FormForThis(Table $cls, BaseModel $bm, array $omit = [])
             }
             $v = array_map('stdclastoidstirng', $id_indexed_objects);
             $SELECT_OPTIONS[$field] = $v;
+        } elseif ($field === 'profile_picture') {
+            $inputs[$field] = 'profile_picture';
+        } elseif (str_contains($field, 'date')) {
+            $inputs[$field] = 'date';
         } else
             $inputs[$field] = 'text';
     }
