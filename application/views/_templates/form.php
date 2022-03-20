@@ -35,10 +35,11 @@ function PageForThis(Table $cls, BaseModel $bm, array $omit = [])
         // } else {
         //     $row->{strtolower($dep) . 's'} = $Model->select([], $dep, [], [$dep::access(strtolower(get_class($row)) . '_id') => $row->id]);
         // }
-        foreach ($cls->dependents as $sub_cls) {
-            $dep = $cls->dependents;
+        foreach ($cls->dependents as $dep) {
+            $sub_cls = $dep;
             if (is_array($dep) && count($dep) == 1) {
                 foreach ($dep as $key => $value) {
+                    $sub_cls = $key;
                     require '__pageForThis1.php';
                     FormForThis(new $key(), $bm, [$value]);
                     require '__pageForThis2.php';

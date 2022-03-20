@@ -58,7 +58,7 @@ class Api extends Controller
             if ($Model->experimental_insert($v)) {
                 echo json_encode($v);
             } else {
-                echo "create $className failed";
+                echo "create $className failed ";
             }
             // header('Location:' . URL . 'DashBoard/');
         } catch (\Throwable $e) {

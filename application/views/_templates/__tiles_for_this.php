@@ -77,8 +77,6 @@
                     if (![].slice.call(datalist.options).map(option => option.value).includes(input_text)) return;
                     let selected_option;
                     for (const option of datalist.options) {
-                        console.log('option.value', option.value);
-                        console.log('option.pepe', option.pepe);
                         if (option.value == input_text) {
                             if (loner)
                                 option.disabled = true;

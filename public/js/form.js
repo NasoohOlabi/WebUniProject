@@ -59,12 +59,28 @@ function main() {
 						}
 						).then(response => response.text()).then(response_text => {
 							console.log(response_text)
-							cleanInputs(scope)
-							Swal.fire(
-								"Done!",
-								`${name.split('_').map(word => word[0].toUpperCase() + word.substring(1)).join('_')}.`,
-								"info"
-							)
+							if (response_text.startsWith('Operation Failed :')) {
+								let unique_problem = /'(\w|_|-| )*_UNIQUE'/.exec(response_text)
+								if (unique_problem) {
+									const word = unique_problem[0].substring(1, unique_problem[0].length - (`_UNIQUE'`.length))
+
+									Swal.fire({
+										title: "Sorry!",
+										text: `${name} wasn 't created ${word} : '${read_form[word]}' already exists!`,
+										icon: "error",
+										showCancelButton: false,
+										confirmButtonColor: "#3085d6",
+										cancelButtonColor: "#d33"
+									})
+								}
+							} else {
+								cleanInputs(scope)
+								Swal.fire(
+									"Done!",
+									`${name.split('_').map(word => word[0].toUpperCase() + word.substring(1)).join('_')}.`,
+									"info"
+								)
+							}
 						})
 					}
 				})
