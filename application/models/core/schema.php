@@ -2,11 +2,13 @@
 
 function properties_exists($stdClass, array $properties, string $prefix)
 {
-    // simpleLog("properties_exists: checking " . json_encode($stdClass) . " to contain the following " . json_encode($properties));
+    if (I_AM_DEBUGGING)
+        simpleLog("properties_exists: checking " . json_encode($stdClass) . " to contain the following " . json_encode($properties));
     if ($stdClass == null) return false;
     foreach ($properties as $property) {
         if (!property_exists($stdClass, $prefix . $property)) {
-            // simpleLog("this one failed $prefix" . "$property");
+            if (I_AM_DEBUGGING)
+                simpleLog("this one failed $prefix" . "$property");
             if ($prefix == '')
                 throw new Exception("Constructing : " . json_encode($stdClass) . " to contain the following " . json_encode($properties) . " this one failed $prefix" . "$property");
             return false;
@@ -54,6 +56,12 @@ class Exam extends Table
                 $this->subject = $tmp;
         }
     }
+    static function SQL_Dotted_Columns()
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_values($oClass->getConstants());
+        return  $constants;
+    }
     static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
@@ -93,6 +101,12 @@ class Subject extends Table
                 }
             }
         }
+    }
+    static function SQL_Dotted_Columns()
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_values($oClass->getConstants());
+        return  $constants;
     }
     static function SQL_Columns(string $prefix = "")
     {
@@ -141,6 +155,12 @@ class Topic extends Table
             }
         }
     }
+    static function SQL_Dotted_Columns()
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_values($oClass->getConstants());
+        return  $constants;
+    }
     static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
@@ -188,6 +208,12 @@ class Question extends Table
             }
         }
     }
+    static function SQL_Dotted_Columns()
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_values($oClass->getConstants());
+        return  $constants;
+    }
     static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
@@ -230,6 +256,12 @@ class Choice extends Table
             }
         }
     }
+    static function SQL_Dotted_Columns()
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_values($oClass->getConstants());
+        return  $constants;
+    }
     static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
@@ -268,6 +300,12 @@ class Permission extends Table
             }
         }
     }
+    static function SQL_Dotted_Columns()
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_values($oClass->getConstants());
+        return  $constants;
+    }
     static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
@@ -305,6 +343,12 @@ class Role extends Table
                 }
             }
         }
+    }
+    static function SQL_Dotted_Columns()
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_values($oClass->getConstants());
+        return  $constants;
     }
     static function SQL_Columns(string $prefix = "")
     {
@@ -353,6 +397,12 @@ class Role_Has_Permission extends Table
                 $this->permission = $tmp;
         }
     }
+    static function SQL_Dotted_Columns()
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_values($oClass->getConstants());
+        return  $constants;
+    }
     static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
@@ -374,7 +424,7 @@ class User extends Table
     const username = 'user.username';
     const password = 'user.password';
     const first_name = 'user.first_name';
-    const last_name = 'user.first_name';
+    const last_name = 'user.last_name';
     const middle_name = 'user.middle_name';
     const profile_picture = 'user.profile_picture';
     const role_id = 'user.role_id';
@@ -408,6 +458,12 @@ class User extends Table
             if (isset($tmp->id))
                 $this->role = $tmp;
         }
+    }
+    static function SQL_Dotted_Columns()
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_values($oClass->getConstants());
+        return  $constants;
     }
     static function SQL_Columns(string $prefix = "")
     {
@@ -447,6 +503,12 @@ class Student extends Table
                 }
             }
         }
+    }
+    static function SQL_Dotted_Columns()
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_values($oClass->getConstants());
+        return  $constants;
     }
     static function SQL_Columns(string $prefix = "")
     {
@@ -489,6 +551,12 @@ class Exam_Center extends Table
                 }
             }
         }
+    }
+    static function SQL_Dotted_Columns()
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_values($oClass->getConstants());
+        return  $constants;
     }
     static function SQL_Columns(string $prefix = "")
     {
@@ -539,6 +607,12 @@ class Exam_Center_Has_Exam extends Table
             if (isset($tmp->id))
                 $this->exam_center = $tmp;
         }
+    }
+    static function SQL_Dotted_Columns()
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_values($oClass->getConstants());
+        return  $constants;
     }
     static function SQL_Columns(string $prefix = "")
     {
@@ -596,6 +670,12 @@ class Student_Took_Exam extends Table
                 $this->exam_center = $tmp;
         }
     }
+    static function SQL_Dotted_Columns()
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_values($oClass->getConstants());
+        return  $constants;
+    }
     static function SQL_Columns(string $prefix = "")
     {
         $oClass = new ReflectionClass(__CLASS__);
@@ -643,6 +723,12 @@ class Exam_Has_Question extends Table
             if (isset($tmp->id))
                 $this->question = $tmp;
         }
+    }
+    static function SQL_Dotted_Columns()
+    {
+        $oClass = new ReflectionClass(__CLASS__);
+        $constants = array_values($oClass->getConstants());
+        return  $constants;
     }
     static function SQL_Columns(string $prefix = "")
     {

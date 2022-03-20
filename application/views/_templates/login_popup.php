@@ -10,7 +10,8 @@
 
         <form action="<?= URL ?>users/validate" method="post" class="login-form">
             <div class="form-block">
-                <input type="text" name="username" id="username" class="text-input valid-input" placeholder="<?= LANGUAGE::t('Username') ?>" required onclick="this.dir='ltr';this.placeholder=''" />
+                <!-- onclick="this.dir='ltr';this.placeholder=''" -->
+                <input type="text" name="username" id="username" class="text-input valid-input" placeholder="<?= LANGUAGE::t('Username') ?>" required />
                 <small class="invalid-text">
                     <?= LANGUAGE::t('Please enter a valid username') ?></small>
             </div>
@@ -19,7 +20,7 @@
                 <small class="invalid-text"><?= LANGUAGE::t('Please enter a valid password') ?></small>
             </div>
             <div class="form-block">
-                <button type="submit" id="submit-btn" class="default-form">
+                <button type="submit" id="submit-btn" class="default-form white-outline-hover">
                     <?= LANGUAGE::t('Login') ?>
                     <svg id="spinner" viewBox="0 0 50 50">
                         <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>

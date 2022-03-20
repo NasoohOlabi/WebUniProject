@@ -9,9 +9,8 @@ class UserModel extends BaseModel
         simpleLog("USERMODEL");
     }
 
-    function userIsFound($email)
+    function userIsFound($username)
     {
-        $username = explode('@', $email)[0];
         return ($this->count('User', [], [User::username => $username]) > 0);
     }
 

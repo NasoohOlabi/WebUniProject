@@ -32,4 +32,4 @@
 <div class="content">
     <div class="univ-photo" style="background-image: url(<?= URL ?>/public/img/background.png);"></div>
     <h2><?= LANGUAGE::t('Welcome To The University of MNU') ?></h2>
-</div>y
+</div>

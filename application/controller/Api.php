@@ -8,6 +8,18 @@ function is_display_key($key)
     return !endsWith($key, 'id') && $key !== 'identifying_fields' && $key !== 'profile_picture' &&
         $key !== "dependents";
 }
+if (!function_exists('is_ROOT__ADMIN')) {
+    function is_ROOT__ADMIN()
+    {
+        session_start();
+        if (!(isset($_SESSION['user']) && $_SESSION['user']->role->name == 'ROOT::ADMIN')) {
+            header('Location:' . URL);
+            simpleLog("he is trying to hack us " . json_encode($_SESSION['user']), 'users/');
+            return;
+        }
+        simpleLog("access Granted to " . json_encode($_SESSION['user']), 'users/');
+    }
+}
 class Api extends Controller
 {
     public function index()
@@ -20,6 +32,7 @@ class Api extends Controller
     }
     public function create($className = null)
     {
+        Is_ROOT__ADMIN();
         $_POST = json_decode(file_get_contents("php://input"), true);
         try {
             // Clean inputs
@@ -39,7 +52,8 @@ class Api extends Controller
             // The constructor checks if the required field are satisfied
             // and also obviously checks is $className is sth we have
             $v = new $className((object) $_POST);
-            simpleLog(json_encode($v), 'Api/create/');
+            if (I_AM_DEBUGGING)
+                simpleLog(json_encode($v), 'Api/create/');
             $Model = $this->loadModel('BaseModel');
             if ($Model->experimental_insert($v)) {
                 echo json_encode($v);
@@ -48,7 +62,8 @@ class Api extends Controller
             }
             // header('Location:' . URL . 'DashBoard/');
         } catch (\Throwable $e) {
-            simpleLog('Caught exception: ' . $e->getMessage());
+            if (I_AM_DEBUGGING)
+                simpleLog('Caught exception: ' . $e->getMessage());
             http_response_code(400);
             echo 'Operation Failed : ' . 'Caught exception: ' . str_replace('::', ' ', str_replace('$', ' ', $e->getMessage()));
         }
@@ -56,12 +71,14 @@ class Api extends Controller
     }
     public function read(string $schemaClass = null, string $id = null)
     {
+        Is_ROOT__ADMIN();
         $_POST = json_decode(file_get_contents("php://input"), true);
         if ($schemaClass == null) {
             // invalid request
             http_response_code(400);
             echo 'Operation Failed';
-            simpleLog('$_POST ' . json_encode($_POST) . ' failed', 'Api/read/');
+            if (I_AM_DEBUGGING)
+                simpleLog('$_POST ' . json_encode($_POST) . ' failed', 'Api/read/');
             return;
         }
         $more = false;
@@ -96,11 +113,8 @@ class Api extends Controller
             $answers = array_map(function ($row) use ($Model) {
                 if (property_exists($row, 'password'))
                     unset($row->password);
-                // TODO: generify this
-                // if (get_class($row) === 'Question')
-                //     $row->choices = $Model->select([], 'Choice', [], [Choice::question_id => $row->id]);
-                if (count($row->dependents) === 0) return $row;
 
+                if (count($row->dependents) === 0) return $row;
 
                 foreach ($row->dependents as $dep) {
                     if (is_array($dep) && count($dep) == 1) {
@@ -108,14 +122,17 @@ class Api extends Controller
                             $row->{strtolower($key) . 's'} = $Model->select([], $key, [], [$key::access($value) => $row->id]);
                         }
                     } else {
-                        simpleLog(get_class($row) . ' dep ' . $dep);
+                        if (I_AM_DEBUGGING)
+                            simpleLog(get_class($row) . ' dep ' . $dep);
                         $row->{strtolower($dep) . 's'} = $Model->select([], $dep, [], [$dep::access(strtolower(get_class($row)) . '_id') => $row->id]);
-                        simpleLog("$row->name dep " . json_encode($row->{strtolower($dep) . 's'}));
+                        if (I_AM_DEBUGGING)
+                            simpleLog(get_class($row) . " dep " . json_encode($row->{strtolower($dep) . 's'}));
                     }
                 }
                 return $row;
             }, $answers);
-            simpleLog('$_POST ' . json_encode($_POST) . ' served', 'Api/read/');
+            if (I_AM_DEBUGGING)
+                simpleLog('$_POST ' . json_encode($_POST) . ' served', 'Api/read/');
             if (count($answers) >= 1)
                 echo json_encode($answers);
             elseif ($more)
@@ -123,8 +140,9 @@ class Api extends Controller
             else
                 echo "id $id Not Found";
         } catch (\Throwable $e) {
-            simpleLog('$_POST ' .
-                json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage(), ' Api/read/');
+            if (I_AM_DEBUGGING)
+                simpleLog('$_POST ' .
+                    json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage(), ' Api/read/');
             http_response_code(400);
             echo 'Operation Failed ' . ' $_POST ' .
                 json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage(), ' Api/read/';
@@ -137,6 +155,7 @@ class Api extends Controller
     }
     public function update(string $schemaClass)
     {
+        Is_ROOT__ADMIN();
         $_POST = json_decode(file_get_contents("php://input"), true);
         try {
             // Clean inputs
@@ -145,7 +164,8 @@ class Api extends Controller
             } catch (\Throwable $e) {
                 throw new Exception("invalid url $schemaClass");
             }
-            simpleLog('api update>>>preprocessed>>>>POST>>>>>' . json_encode((object)$_POST));
+            if (I_AM_DEBUGGING)
+                simpleLog('api update>>>preprocessed>>>>POST>>>>>' . json_encode((object)$_POST));
             $_POST = array_filter($_POST, function ($key) use ($wanted_columns) {
                 return in_array(strtolower($key), $wanted_columns);
             }, ARRAY_FILTER_USE_KEY);
@@ -158,9 +178,10 @@ class Api extends Controller
             // Passwords get special treatment and get hashed
             if (isset($_POST['password']))
                 $_POST['password'] = md5($_POST['password']);
-            simpleLog(
-                'api update>>>>cleaned>>>POST>>>>>' . json_encode((object)$_POST)
-            );
+            if (I_AM_DEBUGGING)
+                simpleLog(
+                    'api update>>>>cleaned>>>POST>>>>>' . json_encode((object)$_POST)
+                );
             $Model = $this->loadModel('BaseModel');
             if ($Model->experimental_update($schemaClass, $_POST['id'], (object) $_POST)) {
                 echo 'updated';
@@ -168,7 +189,8 @@ class Api extends Controller
                 echo 'update unsuccessful';
             }
         } catch (\Throwable $e) {
-            simpleLog('Caught exception: ' . $e->getMessage());
+            if (I_AM_DEBUGGING)
+                simpleLog('Caught exception: ' . $e->getMessage());
             http_response_code(400);
             echo 'Operation Failed';
         }
@@ -176,7 +198,7 @@ class Api extends Controller
     }
     public function delete(string $schemaClass)
     {
-
+        Is_ROOT__ADMIN();
         $_POST = json_decode(file_get_contents("php://input"), true);
         try {
             if (isset($_POST['ids'])) {
@@ -199,14 +221,16 @@ class Api extends Controller
                 $className = $_POST['schemaClass'];
                 // and also obviously checks is $className is sth we have
                 $v = new $className((object) $_POST);
-                simpleLog(json_encode($v), 'Api/delete/');
+                if (I_AM_DEBUGGING)
+                    simpleLog(json_encode($v), 'Api/delete/');
                 $Model = $this->loadModel('BaseModel');
                 //TODO: check if what he submitted has the same fields
                 $Model->deleteById($v->id);
                 header('Location:' . URL . 'DashBoard/');
             }
         } catch (\Throwable $e) {
-            simpleLog('Caught exception: ' . $e->getMessage());
+            if (I_AM_DEBUGGING)
+                simpleLog('Caught exception: ' . $e->getMessage());
             http_response_code(400);
             echo 'Operation Failed';
         }
@@ -215,6 +239,7 @@ class Api extends Controller
 
     function getStats()
     {
+        Is_ROOT__ADMIN();
 
         $data = hitStats();
 
