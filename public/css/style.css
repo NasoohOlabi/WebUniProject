@@ -98,7 +98,9 @@ nav > span {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  align-items: center;
 }
+
 section::-webkit-scrollbar {
   display: none;
 }
@@ -185,6 +187,11 @@ aside {
   border-radius: 30px;
   border: 2px solid #009688;
   height: fit-content;
+}
+
+.login-container h1 {
+  font-family: "Segoe UI";
+  color: #245e7a;
 }
 
 #spinner {
