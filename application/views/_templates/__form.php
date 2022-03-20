@@ -3,13 +3,13 @@
     <form action="<?= URL . "Api/create/" . get_class($cls) ?>" method="post" class="login-form">
         <?php
         foreach ($inputs as $field => $func) {
-            if ($func == 'text') {
+            if ($func === 'text') {
                 text_input($field);
-            } elseif ($func == 'profile_picture') {
+            } elseif ($func === 'profile_picture') {
                 picture_input();
-            } elseif ($func == 'date') {
+            } elseif ($func === 'date') {
                 date_input($field);
-            } elseif ($func == 'select') {
+            } elseif ($func === 'select') {
                 select_input($field, $SELECT_OPTIONS[$field], str_replace("_id", "", ucfirst($field)));
             }
         }
