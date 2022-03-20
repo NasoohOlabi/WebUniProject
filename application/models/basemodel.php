@@ -1,6 +1,7 @@
 <?php
 require_once './application/libs/util/Option.php';
 require_once './application/libs/util/log.php';
+require_once 'basemodel_util.php';
 class BaseModel
 {
     /**
@@ -26,7 +27,8 @@ class BaseModel
         $sql = "SELECT * FROM " . $this->table;
         $query = $this->db->prepare($sql);
 
-        simpleLog('BaseModel::getAll Running : "' . $sql . '"');
+        if (I_AM_DEBUGGING)
+            simpleLog('BaseModel::getAll Running : "' . $sql . '"');
 
         $query->execute();
         return $query->fetchAll();
@@ -39,7 +41,8 @@ class BaseModel
     {
         $sql = "DELETE FROM " . $this->table . " WHERE id = :table_id";
 
-        simpleLog('BaseModel::deleteById Running : "' . $sql . '"');
+        if (I_AM_DEBUGGING)
+            simpleLog('BaseModel::deleteById Running : "' . $sql . '"');
 
         $query = $this->db->prepare($sql);
         $query->execute(array(':table_id' => $id));
@@ -59,7 +62,8 @@ class BaseModel
 
         $sql = "DELETE FROM `$schemaClass` WHERE $sql_syntax";
 
-        simpleLog('BaseModel::wipeByIds Running : "' . $sql . '" Bindings :' . json_encode($ids));
+        if (I_AM_DEBUGGING)
+            simpleLog('BaseModel::wipeByIds Running : "' . $sql . '" Bindings :' . json_encode($ids));
         $query = $this->db->prepare($sql);
         $query->execute($ids);
     }
@@ -132,7 +136,8 @@ class BaseModel
 
         $sql = "INSERT INTO `$this->table`($columns_names) VALUES ($values)";
 
-        simpleLog('BaseModel::insert Running : "' . $sql . '"');
+        if (I_AM_DEBUGGING)
+            simpleLog('BaseModel::insert Running : "' . $sql . '"');
 
         $this->db->prepare($sql)->execute($bindings);
         return new Either\Result();
@@ -163,8 +168,10 @@ class BaseModel
         $values  = array_values($values);
 
         $sql = "INSERT INTO `$schemaClass` ($columns_names) VALUES ($question_marks)";
-        simpleLog('BaseModel::experimental_insert Running : "' . $sql . '"');
-        simpleLog("bindings " . json_encode($values));
+        if (I_AM_DEBUGGING)
+            simpleLog('BaseModel::experimental_insert Running : "' . $sql . '"');
+        if (I_AM_DEBUGGING)
+            simpleLog("bindings " . json_encode($values));
         $flag = $this->db->prepare($sql)->execute(array_values($values));
         if ($flag) {
             $object->id = $this->db->lastInsertId();
@@ -176,20 +183,23 @@ class BaseModel
     function experimental_update(string $schemaClass, int $id, stdClass $these)
     {
         $columns = $schemaClass::SQL_Columns();
-        simpleLog(json_encode($columns));
+        if (I_AM_DEBUGGING)
+            simpleLog(json_encode($columns));
 
         if (($key = array_search('id', $columns)) !== false) {
             unset($columns[$key]);
         }
         $columns = array_values($columns);
-        simpleLog(json_encode($columns));
+        if (I_AM_DEBUGGING)
+            simpleLog(json_encode($columns));
 
         $columns_to_update = array_filter($columns, function ($column_name) use ($these) {
             return property_exists($these, $column_name);
         });
 
 
-        simpleLog(json_encode($columns_to_update));
+        if (I_AM_DEBUGGING)
+            simpleLog(json_encode($columns_to_update));
 
 
         $values = [];
@@ -197,7 +207,8 @@ class BaseModel
             $values[] = $these->{$col};
         }
 
-        simpleLog(json_encode($values));
+        if (I_AM_DEBUGGING)
+            simpleLog(json_encode($values));
 
         $sql_syntax_columns = implode(', ', array_map(function ($col) {
             return '`' . $col . '` = ?';
@@ -206,266 +217,118 @@ class BaseModel
         $values[] = $id * 1;
 
         $sql = "UPDATE `$schemaClass` SET $sql_syntax_columns WHERE id = ?";
-        simpleLog('BaseModel::experimental_update Running : "' . $sql . '"');
-        simpleLog("bindings " . json_encode($values));
+        if (I_AM_DEBUGGING)
+            simpleLog('BaseModel::experimental_update Running : "' . $sql . '"');
+        if (I_AM_DEBUGGING)
+            simpleLog("bindings " . json_encode($values));
         return $this->db->prepare($sql)->execute(array_values($values));
     }
-    private static function _is_term($x)
-    {
-        return (is_array($x) && count($x) == 1 && !is_array($x[array_keys($x)[0]]))
-            || (is_array($x) && count($x) === 2 && !is_array($x[array_keys($x)[0]]) && isset($x['op']));
-    }
-    private static function _parse_safe_term(array $x, array $no_wrap)
-    {
-        simpleLog("no_wrap " . json_encode($no_wrap));
-        $key = array_keys($x)[0];
-        $val = $x[$key];
-        if (!in_array($key, $no_wrap))
-            $key = '"' . $key . '"';
-        if (!in_array($val, $no_wrap))
-            $val = '"' . $val . '"';
-        // simpleLog(json_encode($x));
-        return "$key " . (isset($x['op']) ? $x['op'] : '=') . " $val";
-    }
-    /**
-     * [[[1=>2],[1=>3],[3=>2]],[4=>5]]
-     * becomes
-     * (1 = 2 OR 1 = 3 OR 3 = 2) AND (4 = 5)
-     * ---------------------------------------------
-     * [[[1=>2],[1=>3]],[3=>2],[4=>5]]
-     * becomes
-     * (1 = 2 OR 1 = 3) AND (3 = 2) AND (4 = 5)
-     * ---------------------------------------------
-     * [[1=>2]]
-     * becomes
-     * (1 = 2)
-     * ---------------------------------------------
-     * only single term
-     * [1=>2]
-     * becomes
-     * (1 = 2)
-     * ---------------------------------------------
-     * [1=>3,2=>4]
-     * fails!!
-     * ---------------------------------------------
-     * [[1=>3],[2=>4]]
-     * becomes
-     * (1 = 3) AND (2 = 4)
-     *
-     * @param [type] $safe_conditions
-     * @return void
-     */
-    private static function _parse_conditions(array $safe_conditions, array $no_wrap)
-    {
-        if (BaseModel::_is_term($safe_conditions))
-            return BaseModel::_parse_safe_term($safe_conditions, $no_wrap);
-        $Acc = [];
-        foreach ($safe_conditions as $value_1d) {
-            if (BaseModel::_is_term($value_1d)) {
-                $Acc[] = BaseModel::_parse_safe_term($value_1d, $no_wrap);
-            } elseif (is_array($value_1d)) {
-                $bracket = [];
-                foreach ($value_1d as $value_2d) {
-                    if (BaseModel::_is_term($value_2d)) {
-                        $bracket[] = BaseModel::_parse_safe_term($value_2d, $no_wrap);
-                    } else throw new Exception("Conditions Parse Error: parsing `" . json_encode($safe_conditions) . "`");
-                }
-                $Acc[] = implode(" OR ", $bracket);
-            } else
-                throw new Exception("Conditions Parse Error: parsing `" . json_encode($safe_conditions) . "`");
-        }
-        $Acc = '(' . implode(") AND (", $Acc) . ')';
-        return $Acc;
-    }
 
-    private static function _parse_unsafe_term(array $x)
+    private function __select_stmt(array $columns, array $schemaClasses, array $safe_conditions = [], array $unsafe_conditions = [], array $options = [])
     {
-        $key = array_keys($x)[0];
-        $val = $x[$key];
-        // simpleLog(json_encode($x));
-        return ['prepare' => "$key " . (isset($x['op']) ? $x['op'] : '=') . " ?", 'execute' => $val];
-    }
-    private static function _parse_unsafe_conditions(array $unsafe_conditions)
-    {
-        $f = function (array $acc, array $v) {
-            $acc['prepare'][] = $v['prepare'];
-            $acc['execute'][] = $v['execute'];
-            return $acc;
-        };
-        $answer = ['prepare' => [], 'execute' => []];
-        if (BaseModel::_is_term($unsafe_conditions)) {
-            $answer = $f($answer, BaseModel::_parse_unsafe_term($unsafe_conditions));
-            $answer['prepare'] = '(' . implode(") AND (", $answer['prepare']) . ')';
-            return $answer;
-        }
 
-        foreach ($unsafe_conditions as $value_1d) {
-            if (BaseModel::_is_term($value_1d)) {
-                $answer =  $f($answer, BaseModel::_parse_unsafe_term($value_1d));
-            } elseif (is_array($value_1d)) {
-                $sub_answer = ['prepare' => [], 'execute' => []];
-                foreach ($value_1d as $value_2d) {
-                    if (BaseModel::_is_term($value_2d)) {
-                        $sub_answer[] = $f($sub_answer, BaseModel::_parse_unsafe_term($value_2d));
-                    } else throw new Exception("Conditions Parse Error: parsing `" . json_encode($unsafe_conditions) . "`");
-                }
-                $answer['prepare'][] = implode(" OR ", $sub_answer['prepare']);
-                foreach ($sub_answer as $exec) {
-                    $answer['execute'][] = $exec;
-                }
-            } else
-                throw new Exception("Conditions Parse Error: parsing `" . json_encode($unsafe_conditions) . "`");
-        }
-        $answer['prepare'] = '(' . implode(") AND (", $answer['prepare']) . ')';
-        return $answer;
-    }
-    /**
-     * ['Question','Role'] => ['question.id','question...','role.id',...]
-     */
-    private static function _get_classes_dotted_columns(array $schemaClasses)
-    {
-        $answer = [];
-        foreach ($schemaClasses as $schemaClass) {
-            $schemaClass = strtolower($schemaClass);
-            foreach ($schemaClass::SQL_Columns() as  $value) {
-                $answer[] = $schemaClass . '.' . $value;
-            }
-        }
-        return $answer;
-    }
-    private static function _alias_dotted_columns(array $columns)
-    {
-        return array_map(function ($value) {
-            return "$value as " . str_replace('.', '_', $value);
-        }, $columns);
-    }
-    public function join(array $schemaClasses, array $safe_conditions, array $unsafe_conditions = null, string $wrapper = null)
-    {
-        if ($wrapper == null)
-            $wrapper = $schemaClasses[0];
+        if (count($schemaClasses) == 0) throw new Exception("No Classes to select from");
 
-        $columns = BaseModel::_get_classes_dotted_columns($schemaClasses);
+        if (I_AM_DEBUGGING)
+            simpleLog("__select_stmt columns: " . json_encode($columns) . " schemaClasses: " . json_encode($schemaClasses) . " safe_conditions: " . json_encode($safe_conditions) . " unsafe_conditions: " . json_encode($unsafe_conditions) . " options: " . json_encode($options));
+
+        $wrapper = (isset($options['wrapper'])
+            && is_string($options['wrapper'])
+        )
+            ? $options['wrapper']
+            : $schemaClasses[0];
+
+        $limit = (isset($options['limit']) && is_numeric($options['limit']))
+            ? $options['limit']
+            : 100;
+
+        $limit_sql = " LIMIT $limit ";
+
+        $columns = (count($columns) == 0)
+            ? _get_classes_dotted_columns($schemaClasses)
+            : $columns;
+
+        $columns_sql = (isset($options['overwrite columns'])
+            && is_string($options['overwrite columns'])
+        ) ? $options['overwrite columns']
+            :  implode(", ", _alias_dotted_columns($columns));
 
         // insert tables names with JOIN ex: `exam` JOIN `subjects`
-        $tables = implode(" JOIN ", array_map(function ($schemaClass) {
+        $tables_sql = implode(" JOIN ", array_map(function ($schemaClass) {
             return "`$schemaClass`";
         }, $schemaClasses));
-        if (count($safe_conditions) > 0)
-            $parsed_safe_conditions = BaseModel::_parse_conditions($safe_conditions, $columns);
 
-        $unsafe_bindings = [];
-        if ($unsafe_conditions != null && count($unsafe_conditions) > 0) {
-            $unsafe_conditions_parsed = BaseModel::_parse_unsafe_conditions($unsafe_conditions);
-            $unsafe_sql_string = $unsafe_conditions_parsed['prepare'];
-            $unsafe_bindings = $unsafe_conditions_parsed['execute'];
-        }
+        $parsed_safe_conditions = (count($safe_conditions) > 0) ?
+            _parse_conditions($safe_conditions) : '';
 
-        $order = implode(", ", array_map(function ($schemaClass) {
+
+        $parsed_unsafe_conditions = (count($unsafe_conditions) > 0) ? _parse_unsafe_conditions($unsafe_conditions) : [];
+
+        $unsafe_conditions_sql = (isset($parsed_unsafe_conditions['prepare']))
+            ? $parsed_unsafe_conditions['prepare']
+            : '';
+
+        $unsafe_bindings = (isset($parsed_unsafe_conditions['execute']))
+            ? $parsed_unsafe_conditions['execute']
+            : [];
+
+        $order_by_ids = implode(", ", array_filter(array_map(function ($schemaClass) {
             return str_replace(".", "_", $schemaClass::id);
-        }, $schemaClasses));
+        }, $schemaClasses), function ($elem) use ($columns_sql) {
+            return str_contains($columns_sql, $elem);
+        }));
 
-        $column_names_aliased_string = implode(", ", BaseModel::_alias_dotted_columns($columns));
-        if ($unsafe_conditions != null && count($unsafe_conditions) > 0) {
-            if (count($safe_conditions) > 0)
-                $sql = "SELECT $column_names_aliased_string FROM $tables ON $parsed_safe_conditions WHERE $unsafe_sql_string ORDER BY $order;";
-            else
-                $sql = "SELECT $column_names_aliased_string FROM $tables WHERE $unsafe_sql_string ORDER BY $order;";
-        } else {
-            if (count($safe_conditions) > 0)
-                $sql = "SELECT $column_names_aliased_string FROM $tables ON $parsed_safe_conditions ORDER BY $order;";
-            else
-                $sql = "SELECT $column_names_aliased_string FROM $tables ORDER BY $order;";
-        }
+        $order_by_ids_sql = (strlen($order_by_ids) > 0)
+            ? "ORDER BY $order_by_ids"
+            : '';
 
-        simpleLog("BaseModel::join Running : $sql");
+        $ON_safe_conditions = (strlen($parsed_safe_conditions) > 0)
+            ? "ON $parsed_safe_conditions"
+            : '';
+        $WHERE_unsafe_conditions = (strlen($unsafe_conditions_sql) > 0)
+            ? "WHERE $unsafe_conditions_sql"
+            : '';
+
+        $sql = "SELECT $columns_sql FROM $tables_sql $ON_safe_conditions $WHERE_unsafe_conditions $order_by_ids_sql $limit_sql;";
+
+
+        if (I_AM_DEBUGGING)
+            simpleLog("BaseModel::__select_stmt Running : $sql with bindings : " . json_encode($unsafe_bindings));
+
 
         $query = $this->db->prepare($sql);
         $query->execute($unsafe_bindings);
         $lines = $query->fetchAll();
 
-        simpleLog("lines >>>>>>>>>>>> " . json_encode($lines));
+        if (I_AM_DEBUGGING)
+            simpleLog("got from db >>>>>>>>>>>> " . json_encode($lines));
 
-        return (count($lines)) ?
-            array_map(function ($args) use ($wrapper) {
+        $result = (isset($options['stdClass']) && $options['stdClass'])
+            ? $lines
+            : array_map(function ($args) use ($wrapper) {
                 return new $wrapper($args,  strtolower($wrapper) . "_");
-            }, $lines) :
-            new Exception("No $wrapper available");
+            }, $lines);
+
+        if (I_AM_DEBUGGING)
+            simpleLog("returning >>>>>>>>>>>> " . json_encode($result));
+
+        return $result;
     }
-    public function select(array $columns, string $schemaClass, $safe_conditions = null, array $unsafe_conditions = null, int $limit = 100)
+    public function join(array $schemaClasses, array $safe_conditions = [], array $unsafe_conditions = [], string $wrapper = null)
     {
-        return $this->__select($columns, $schemaClass, $safe_conditions, $unsafe_conditions, ($limit > 0) ? ['limit' => $limit] : []);
+        return $this->__select_stmt([], $schemaClasses, $safe_conditions, $unsafe_conditions, ['wrapper' => $wrapper]);
     }
-    private function __select(array $columns, string $schemaClass, $safe_conditions = null, array $unsafe_conditions = null, array $Advanced_Options = null)
+    public function select(array $columns, string $schemaClass, $safe_conditions = [], array $unsafe_conditions = [], int $limit = 100)
     {
-
-        if ($Advanced_Options != null && is_array($Advanced_Options) && isset($Advanced_Options['overwrite'])) {
-            $columns_string = $Advanced_Options['overwrite'];
-            if (count($columns) == 0) {
-                $columns_array = BaseModel::_get_classes_dotted_columns([$schemaClass]);
-            } else {
-                $columns_array = $columns;
-            }
-        } else {
-            if (count($columns) == 0) {
-                $columns_string = '*';
-                $columns_array = BaseModel::_get_classes_dotted_columns([$schemaClass]);
-            } else {
-                $columns_string = implode(', ', $columns);
-                $columns_array = $columns;
-            }
-        }
-
-        if ($unsafe_conditions != null && count($unsafe_conditions) > 0) {
-            $unsafe_conditions_parsed = BaseModel::_parse_unsafe_conditions($unsafe_conditions);
-            $unsafe_sql_string = $unsafe_conditions_parsed['prepare'];
-            $unsafe_bindings = $unsafe_conditions_parsed['execute'];
-        }
-        $limit_part = '';
-        if (isset($Advanced_Options['limit'])) $limit_part = " LIMIT {$Advanced_Options['limit']}";
-        if ($safe_conditions == null || count($safe_conditions) == 0) {
-            if ($unsafe_conditions == null || count($unsafe_conditions) == 0) {
-                $sql = "SELECT $columns_string FROM $schemaClass ORDER BY $schemaClass.id DESC $limit_part;";
-            } else {
-                $sql = "SELECT $columns_string FROM $schemaClass WHERE $unsafe_sql_string ORDER BY $schemaClass.id DESC $limit_part;";
-            }
-        } else {
-            $safe_conditions = BaseModel::_parse_conditions($safe_conditions, $columns_array);
-            if ($unsafe_conditions == null || count($unsafe_conditions) == 0) {
-                $sql = "SELECT $columns_string FROM $schemaClass WHERE $safe_conditions ORDER BY $schemaClass.id DESC $limit_part;";
-            } else {
-                $sql = "SELECT $columns_string FROM $schemaClass WHERE $safe_conditions AND $unsafe_sql_string ORDER BY $schemaClass.id DESC $limit_part;";
-            }
-        }
-        simpleLog("BaseModel::select Running : ($sql)");
-
-        $query = $this->db->prepare($sql);
-
-        if ($unsafe_conditions == null || count($unsafe_conditions) == 0) {
-            $query->execute();
-        } else {
-            $query->execute($unsafe_bindings);
-        }
-
-        $lines = $query->fetchAll();
-        if (
-            !isset($Advanced_Options['stdClass'])
-            || (count($columns) > 0
-                && count($columns) < count($schemaClass::SQL_COLUMNS())
-            )
-        )
-            return array_map(
-                function ($args) use ($schemaClass) {
-                    return new $schemaClass($args);
-                },
-                $lines
-            );
-        else
-            return $lines;
+        return $this->__select_stmt($columns, [$schemaClass], $safe_conditions, $unsafe_conditions, ['limit' => $limit]);
     }
-    public function count($schemaClass = null, $safe_conditions = null, array $unsafe_conditions = null)
+
+    public function count(string $schemaClass = null, array $safe_conditions = [], array $unsafe_conditions = [])
     {
         if ($schemaClass == null) $schemaClass = $this->table;
-        $lines = $this->__select([], $schemaClass, $safe_conditions, $unsafe_conditions, ['overwrite' => 'COUNT(*) as num', 'stdClass' => true]);
-        return $lines[0]->num * 1; // * 1 for type conversion
+
+        $answer =  $this->__select_stmt([], [$schemaClass], $safe_conditions, $unsafe_conditions, ['overwrite columns' => 'COUNT(*) as num', 'stdClass' => true])[0];
+
+        return $answer->num * 1; // * 1 for type conversion
     }
 }

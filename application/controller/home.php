@@ -23,14 +23,13 @@ class Home extends Controller
         // debug message to show where you are, just for the demo
         // echo 'Message from Controller: You are in the controller home, using the method index()';
         session_start();
+
         simpleLog("index called");
-
-
 
         $p = $this->loadModel('QuestionModel');
 
         // load views. within the views we can echo out $songs and $amount_of_songs easily
-        pageHeadTag("index", 'ar', ['noform' => true]);
+        pageHeadTag("index", ['noform' => true]);
 
         if (isset($_SESSION['loggedIn'])) {
             require 'application/views/_templates/user_navbar.php';

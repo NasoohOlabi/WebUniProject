@@ -27,3 +27,41 @@ function toggleError() {
     else elem.style.display = "none";
   }
 }
+
+function not_empty(str) {
+  return str.length > 0
+}
+
+function main() {
+  const inputs = document.getElementById('main-container-popup').getElementsByClassName('text-input')
+  let cleanUpFunction = removeErrorMsgUnderThisElem;
+  addEventsListenersToHTMLCollection(['input'], inputs, doBeforeAfterSpin(
+    (event) => {
+      if (event.target.value.length === 0)
+        showErrorMsgUnderThisElem(event.target)
+      else
+        cleanUpFunction(event.target)
+      cleanUpFunction = removeErrorMsgUnderThisElem
+    },
+    (event) => {
+      if (event.target.id === 'username') {
+        fetch(ourURL + `users/exist/${event.target.value}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          }
+        }).then(res => res.text())
+          .then(response_text => {
+            response_text = response_text.trim()
+            if (response_text.includes('Username Doesn\'t exist')) {
+              cleanUpFunction = showErrorMsgUnderThisElem(event.target, response_text)
+            } else if (response_text.includes('Username Exists')) {
+              cleanUpFunction(event.target)
+            }
+          })
+      }
+    }
+  ))
+}
+
+addLoadEvent(main)

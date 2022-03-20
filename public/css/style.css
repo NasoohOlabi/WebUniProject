@@ -391,7 +391,7 @@ noscript {
   cursor: pointer;
 }
 
-button:hover {
+.white-outline-hover:hover {
   outline: 1px solid white;
 }
 .require_onced {

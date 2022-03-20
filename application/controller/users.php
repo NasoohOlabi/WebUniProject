@@ -150,6 +150,14 @@ class Users extends Controller
         pageHit('Users.logout');
     }
 
+    function exist(string $username)
+    {
+        $users_model = $this->loadModel('UserModel');
+        $user_found = $users_model->userIsFound($username);
+        $response = ($user_found) ? 'Username Exists' : 'Username Doesn\'t exist';
+        echo trim($response);
+    }
+
     function profile()
     {
         session_start();

@@ -20,6 +20,8 @@ ini_set("display_errors", 1);
  */
 define('URL', 'http://127.0.0.1:80/mnu/');
 
+define('I_AM_DEBUGGING', false);
+
 /**
  * Configuration for: Database
  * This is the place where you define your database credentials, database type etc.
