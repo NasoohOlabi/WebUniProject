@@ -187,7 +187,7 @@ body.dark #home .text {
 }
 
 .table {
-	width: 80%;
+	width: 100%;
 	margin-bottom: 2rem;
 	color: #212529;
 	margin-left: auto;
@@ -200,6 +200,7 @@ body.dark #home .text {
 	vertical-align: top;
 	text-align: center;
 	border-top: 1px solid #dee2e6;
+	vertical-align: middle;
 }
 .table thead th {
 	vertical-align: bottom;

@@ -124,15 +124,18 @@ class Users extends Controller
     {
         session_start();
         $users_model = $this->loadModel('UserModel');
+        $_POST = json_decode(file_get_contents("php://input"), true);
 
         $username = htmlentities($_POST['username']);
         $password = htmlentities($_POST['password']);
+
+        simpleLog("username = $username and password = $password");
 
         if ($users_model->validateUser($username, $password)) {
             $_SESSION['user'] = $users_model->getFullDetails($username, $password);
             header("Location:" . URL);
         } else {
-            header("Location:" . URL . 'home?login_failed=true');
+            echo "Operation Failed : incorrect username or password";
         }
 
         pageHit('Users.validate');

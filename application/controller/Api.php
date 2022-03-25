@@ -58,13 +58,12 @@ class Api extends Controller
             if ($Model->experimental_insert($v)) {
                 echo json_encode($v);
             } else {
-                echo "create $className failed ";
+                echo "Operation Failed : create $className failed ";
             }
             // header('Location:' . URL . 'DashBoard/');
         } catch (\Throwable $e) {
             if (I_AM_DEBUGGING)
                 simpleLog('Caught exception: ' . $e->getMessage());
-            http_response_code(400);
             echo 'Operation Failed : ' . 'Caught exception: ' . str_replace('::', ' ', str_replace('$', ' ', $e->getMessage()));
         }
         pageHit("Api.create");
@@ -75,8 +74,7 @@ class Api extends Controller
         $_POST = json_decode(file_get_contents("php://input"), true);
         if ($schemaClass == null) {
             // invalid request
-            http_response_code(400);
-            echo 'Operation Failed';
+            echo 'Operation Failed : ';
             if (I_AM_DEBUGGING)
                 simpleLog('$_POST ' . json_encode($_POST) . ' failed', 'Api/read/');
             return;
@@ -143,8 +141,7 @@ class Api extends Controller
             if (I_AM_DEBUGGING)
                 simpleLog('$_POST ' .
                     json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage(), ' Api/read/');
-            http_response_code(400);
-            echo 'Operation Failed ' . ' $_POST ' .
+            echo 'Operation Failed : ' . ' $_POST ' .
                 json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage(), ' Api/read/';
         }
         pageHit("Api.read");
@@ -191,8 +188,7 @@ class Api extends Controller
         } catch (\Throwable $e) {
             if (I_AM_DEBUGGING)
                 simpleLog('Caught exception: ' . $e->getMessage());
-            http_response_code(400);
-            echo 'Operation Failed';
+            echo 'Operation Failed : ';
         }
         pageHit("Api.update");
     }
@@ -231,8 +227,7 @@ class Api extends Controller
         } catch (\Throwable $e) {
             if (I_AM_DEBUGGING)
                 simpleLog('Caught exception: ' . $e->getMessage());
-            http_response_code(400);
-            echo 'Operation Failed';
+            echo 'Operation Failed : ';
         }
         pageHit("Api.delete");
     }

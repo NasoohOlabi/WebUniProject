@@ -182,12 +182,12 @@ function formNameInScope(scope) {
     const elem = scope.querySelector("h1")
     return elem.innerText
 }
-function showErrorMsgUnderThisElem(elem, error = null) {
+function showErrorMsgUnderThisElem(elem, error_msg = null) {
     elem.className = "text-input invalid-input";
     elem.nextElementSibling.style.display = "block";
     const old_innerText = elem.nextElementSibling.innerText
-    if (error)
-        elem.nextElementSibling.innerText = error;
+    if (error_msg)
+        elem.nextElementSibling.innerText = error_msg;
     return (element) => {
         element.className = "text-input valid-input";
         element.nextElementSibling.innerText = old_innerText
