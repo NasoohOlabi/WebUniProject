@@ -42,21 +42,22 @@
                         let unique_problem = /'(\w|_|-| )*_UNIQUE'/.exec(res)
                         if (unique_problem) {
                             const word = unique_problem[0].substring(1, unique_problem[0].length - (`_UNIQUE'`.length))
-
-                            Swal.fire({
-                                title: "Sorry!",
-                                text: `${n1.replace('_', ' ')} wasn 't created ${word} : '${read_inputs[word]}' already exists!`,
-                                icon: "error",
-                                showCancelButton: false,
-                                confirmButtonColor: "#3085d6",
-                                cancelButtonColor: "#d33"
-                            })
+                            Swal.fire(
+                                "Sorry!",
+                                `${n1.replace('_', ' ')} wasn 't created ${word} : '${read_inputs[word]}' already exists!`,
+                                "error"
+                            );
                         }
                     }
                     try {
                         let response_object = JSON.parse(res)
                         parent_sql_id = response_object.id
                     } catch (error) {
+                        Swal.fire(
+                            "Was not Added!",
+                            "Your changes have not been saved. error {${error}}  res {${res}}",
+                            "error"
+                        );
                         console.log(error)
                         console.log(res)
                         return
