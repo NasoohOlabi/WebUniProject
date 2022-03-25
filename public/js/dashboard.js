@@ -1,5 +1,6 @@
 var deleteList = [];
 var modifyMode = false;
+var fetching_flag = {};
 var statistics = null;
 /**
  * @type {{[index: string]:object}}
@@ -363,7 +364,6 @@ function subTable_tr(
 function main() {
     const home = document.getElementById("home");
     if (!home) return;
-    let fetching_flag = {};
     fetching_flag[currentTab] = false;
 
     function doSomething(scrollPos) {
@@ -376,7 +376,6 @@ function main() {
             lastChild.offsetHeight -
             2 * document.body.clientHeight
         ) {
-            console.log(`Scroll event`);
             const tbl = document.getElementById("MainTable");
             if (
                 !(tbl && Object.keys(Model).some((key) => key.startsWith(currentTab)))
@@ -401,6 +400,11 @@ function main() {
                     });
                     fetching_flag[currentTab] = false;
                 },
+                unclean: (response_text) => {
+                    if (response_text === "that's all we have") {
+                        console.log(response_text)
+                    }
+                }
             });
         }
     }
@@ -511,6 +515,7 @@ function getFromHQ(
  * @returns {void}
  */
 function switchTo(Tab) {
+    fetching_flag[currentTab] = false;
     try {
         if (currentTab === Tab) return;
         currentTab = Tab;
@@ -530,6 +535,11 @@ function switchTo(Tab) {
             viewStats();
             return;
         }
+
+        Object.keys(Model)
+            .filter((key) => key.startsWith(currentTab)).forEach(key => {
+                delete Model[key]
+            })
 
         let parentChartDiv = document.getElementById("chartContainer");
         if (parentChartDiv) parentChartDiv.innerHTML = "";
