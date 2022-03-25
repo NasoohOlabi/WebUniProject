@@ -1,5 +1,7 @@
 <div class="login-container">
-    <h1><?= get_class($cls) ?></h1>
+    <div class="form-block">
+        <h1><?= get_class($cls) ?></h1>
+    </div>
     <form action="<?= URL . "Api/create/" . get_class($cls) ?>" method="post" class="login-form">
         <?php
         foreach ($inputs as $field => $func) {

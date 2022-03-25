@@ -936,7 +936,6 @@ function confirmChanges() {
 }
 
 function add() {
-    console.log("event caught");
     if (modifyMode) {
         var answer = window.confirm(
             "You have unsaved changes. Are you sure you want to leave this page?"
@@ -951,7 +950,10 @@ function add() {
         newTabStr += part.charAt(0).toUpperCase() + part.slice(1) + "_";
     }
     newTabStr = newTabStr.slice(0, -1);
-    window.location = URL + "DashBoard/add/" + newTabStr;
+    if (currentTab == 'user')
+        window.location = ourURL + "users/signup/" + newTabStr;
+    else
+        window.location = ourURL + "DashBoard/add/" + newTabStr;
 }
 
 function loadStats() {

@@ -1,4 +1,6 @@
-</div>`)
+</div>`.replace(`<div class="form-block">
+    <input name="ProfileImg" class="file-input" type="file" id="formFile" accept="image/png, image/jpeg" />
+</div>`,''))
 for (let btn of document.querySelectorAll(`form .form-block button`)){
 btn.style.display = `none`;
 }

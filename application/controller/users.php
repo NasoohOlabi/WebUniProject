@@ -34,30 +34,25 @@ class Users extends Controller
     {
         session_start();
         pageHeadTag("Signup");
+        $database = $this->loadModel('UserModel');
         require_once 'application/views/home/signup.php';
         pageHit('Users.signup');
     }
 
     public function register()
     {
+        session_start();
 
         $new_user = $this->loadModel('UserModel');
 
-        // <pre> tag is great for debugging! :)
-        echo '<pre>';
-
-        $first_name = htmlentities($_POST['first_name']);
-        $last_name =  htmlentities($_POST['last_name']);
-        $email = htmlentities($_POST['email']);
-        $phone = htmlentities($_POST['phone']);
-        $password = htmlentities($_POST['password']);
-        $account_type = htmlentities($_POST['AccountType']);
-        $username = explode('@', $email)[0];
-        $role_id = null;
-        $profileImg = null;
+        $_POST = array_map('htmlentities', $_POST);
+        $_POST = array_map('trim', $_POST);
+        $_POST = array_map(function ($v) {
+            return (is_string($v) && strlen($v) == 0) ? NULL : $v;
+        }, $_POST);
 
         if (isset($_FILES['ProfileImg']) && $_FILES['ProfileImg']['name'] != '') {
-            $fname = $username . '.' . pathinfo($_FILES['ProfileImg']['name'], PATHINFO_EXTENSION);
+            $fname = $_POST['username'] . '.' . pathinfo($_FILES['ProfileImg']['name'], PATHINFO_EXTENSION);
             $target_dir = "./DB/ProfilePics/";
             $target_file = $target_dir . $fname;
             if (!move_uploaded_file($_FILES["ProfileImg"]["tmp_name"], $target_file)) {
@@ -68,51 +63,32 @@ class Users extends Controller
             $profileImg = $fname;
         }
 
+        $_POST['id'] = -1;
+        if (isset($_POST['password']))
+            $_POST['password'] = md5($_POST['password']);
 
-        switch ($account_type) {
-            case 'admin':
-                $role_id = 1;
-                break;
-            case 'teacher':
-                $role_id = 2;
-                break;
-            default:
-                $role_id = 3;
-                break;
+        try {
+            $u = new User((object) $_POST);
+        } catch (\Throwable $th) {
+            $_SESSION['success'] = false;
+            $_SESSION['msg'] = "Missing Fields!";
+            header("Location:" . URL . 'users/signup/User');
+            return;
         }
-
-        $role_id = 1;
-
-        $u = new User();
-
-        $u->first_name = $first_name;
-        $u->last_name = $last_name;
-        $u->username = $username;
-        $u->password = md5($password);
-        $u->role_id = 1;
-        $u->profile_picture = $profileImg;
-
-
-        $arr = [];
-
-        $arr['first_name'] = $first_name;
-        $arr['last_name'] = $last_name;
-        $arr['username'] = $username;
-        $arr['password'] = md5($password);
-        $arr['role_id'] = 1;
-        $arr['profile_picture'] = '1';
-        $arr['middle_name'] = '';
-
 
         simpleLog("Register function running");
 
-        echo '</pre>';
 
-        if ($new_user->userIsFound($email))
-            echo "User already exists";
-        else
-            if ($new_user->insertUser($first_name, $last_name, $username, $password, $role_id, $profileImg)) {
-            echo "User Added";
+        if ($new_user->userIsFound($u->username)) {
+            $_SESSION['success'] = false;
+            $_SESSION['msg'] = "User already exists";
+            header("Location:" . URL . 'users/signup/User');
+        } else {
+            if ($new_user->experimental_insert($u)) {
+                $_SESSION['success'] = true;
+                $_SESSION['msg'] = "User Added";
+                header("Location:" . URL . 'users/signup/User');
+            }
         }
 
         $_POST = array();

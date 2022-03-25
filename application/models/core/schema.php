@@ -1,5 +1,17 @@
 <?php
-
+function _minus_(array $big, array $small)
+{
+    if (I_AM_DEBUGGING)
+        simpleLog("big: " . json_encode($big) . " small: " . json_encode($small));
+    foreach ($big as $key => $value) {
+        if (in_array($value, $small)) {
+            unset($big[$key]);
+        }
+    }
+    if (I_AM_DEBUGGING)
+        simpleLog("big: " . json_encode(array_values($big)) . " small: " . json_encode($small));
+    return array_values($big);
+}
 function properties_exists($stdClass, array $properties, string $prefix)
 {
     if (I_AM_DEBUGGING)
@@ -47,7 +59,7 @@ class Exam extends Table
     {
         if ($stdClass != null)
             $cols = Exam::SQL_Columns();
-        if (properties_exists($stdClass, Exam::SQL_Columns(), $prefix)) {
+        if (properties_exists($stdClass, $cols, $prefix)) {
             foreach ($cols as $col) {
                 $this->$col = $stdClass->{$prefix . $col};
             }
@@ -62,7 +74,7 @@ class Exam extends Table
         $constants = array_values($oClass->getConstants());
         return  $constants;
     }
-    static function SQL_Columns(string $prefix = "")
+    static function SQL_Columns(string $prefix = "", $not_nulls = false)
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -108,7 +120,7 @@ class Subject extends Table
         $constants = array_values($oClass->getConstants());
         return  $constants;
     }
-    static function SQL_Columns(string $prefix = "")
+    static function SQL_Columns(string $prefix = "", $not_nulls = false)
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -148,10 +160,10 @@ class Topic extends Table
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};
                 }
-            }
-            $tmp = new Subject($stdClass, "subject_");
-            if (isset($tmp->id)) {
-                $this->subject = $tmp;
+                $tmp = new Subject($stdClass, "subject_");
+                if (isset($tmp->id)) {
+                    $this->subject = $tmp;
+                }
             }
         }
     }
@@ -161,7 +173,7 @@ class Topic extends Table
         $constants = array_values($oClass->getConstants());
         return  $constants;
     }
-    static function SQL_Columns(string $prefix = "")
+    static function SQL_Columns(string $prefix = "", $not_nulls = false)
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -214,7 +226,7 @@ class Question extends Table
         $constants = array_values($oClass->getConstants());
         return  $constants;
     }
-    static function SQL_Columns(string $prefix = "")
+    static function SQL_Columns(string $prefix = "", $not_nulls = false)
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -262,7 +274,7 @@ class Choice extends Table
         $constants = array_values($oClass->getConstants());
         return  $constants;
     }
-    static function SQL_Columns(string $prefix = "")
+    static function SQL_Columns(string $prefix = "", $not_nulls = false)
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -306,7 +318,7 @@ class Permission extends Table
         $constants = array_values($oClass->getConstants());
         return  $constants;
     }
-    static function SQL_Columns(string $prefix = "")
+    static function SQL_Columns(string $prefix = "", $not_nulls = false)
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -350,7 +362,7 @@ class Role extends Table
         $constants = array_values($oClass->getConstants());
         return  $constants;
     }
-    static function SQL_Columns(string $prefix = "")
+    static function SQL_Columns(string $prefix = "", $not_nulls = false)
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -388,13 +400,13 @@ class Role_Has_Permission extends Table
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};
                 }
+                $tmp = new Role($stdClass, 'role_');
+                if (isset($tmp->id))
+                    $this->role = $tmp;
+                $tmp = new Permission($stdClass, 'permission_');
+                if (isset($tmp->id))
+                    $this->permission = $tmp;
             }
-            $tmp = new Role($stdClass, 'role_');
-            if (isset($tmp->id))
-                $this->role = $tmp;
-            $tmp = new Permission($stdClass, 'permission_');
-            if (isset($tmp->id))
-                $this->permission = $tmp;
         }
     }
     static function SQL_Dotted_Columns()
@@ -403,7 +415,7 @@ class Role_Has_Permission extends Table
         $constants = array_values($oClass->getConstants());
         return  $constants;
     }
-    static function SQL_Columns(string $prefix = "")
+    static function SQL_Columns(string $prefix = "", $not_nulls = false)
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -441,22 +453,25 @@ class User extends Table
     public array $dependents = [['Student' => 'id']];
     public function get_CRUD_Terms()
     {
-        return ['create' => 'Grant', 'read' => 'Take', 'update' => 'Transfer', 'delete' => 'Revoke'];
+        return ['create' => 'Join', 'read' => 'Take', 'update' => 'Transfer', 'delete' => 'Revoke'];
     }
-
     public array $identifying_fields =  ['username'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
-            $cols = User::SQL_Columns();
+            $cols = _minus_(User::SQL_Columns(), ['middle_name', 'profile_picture']);
             if (properties_exists($stdClass, $cols, $prefix)) {
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};
                 }
+
+                $this->profile_picture = (isset($stdClass->{$prefix . 'profile_picture'})) ? $stdClass->{$prefix . 'profile_picture'} : null;
+                $this->middle_name = (isset($stdClass->{$prefix . 'middle_name'})) ? $stdClass->{$prefix . 'middle_name'} : null;
+
+                $tmp = new Role($stdClass, 'role_');
+                if (isset($tmp->id))
+                    $this->role = $tmp;
             }
-            $tmp = new Role($stdClass, 'role_');
-            if (isset($tmp->id))
-                $this->role = $tmp;
         }
     }
     static function SQL_Dotted_Columns()
@@ -465,7 +480,7 @@ class User extends Table
         $constants = array_values($oClass->getConstants());
         return  $constants;
     }
-    static function SQL_Columns(string $prefix = "")
+    static function SQL_Columns(string $prefix = "", $not_nulls = false)
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -510,7 +525,7 @@ class Student extends Table
         $constants = array_values($oClass->getConstants());
         return  $constants;
     }
-    static function SQL_Columns(string $prefix = "")
+    static function SQL_Columns(string $prefix = "", $not_nulls = false)
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -558,7 +573,7 @@ class Exam_Center extends Table
         $constants = array_values($oClass->getConstants());
         return  $constants;
     }
-    static function SQL_Columns(string $prefix = "")
+    static function SQL_Columns(string $prefix = "", $not_nulls = false)
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -599,13 +614,13 @@ class Exam_Center_Has_Exam extends Table
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};
                 }
+                $tmp = new Exam($stdClass, 'exam_');
+                if (isset($tmp->id))
+                    $this->exam = $tmp;
+                $tmp = new Exam_Center($stdClass, 'exam_center_');
+                if (isset($tmp->id))
+                    $this->exam_center = $tmp;
             }
-            $tmp = new Exam($stdClass, 'exam_');
-            if (isset($tmp->id))
-                $this->exam = $tmp;
-            $tmp = new Exam_Center($stdClass, 'exam_center_');
-            if (isset($tmp->id))
-                $this->exam_center = $tmp;
         }
     }
     static function SQL_Dotted_Columns()
@@ -614,7 +629,7 @@ class Exam_Center_Has_Exam extends Table
         $constants = array_values($oClass->getConstants());
         return  $constants;
     }
-    static function SQL_Columns(string $prefix = "")
+    static function SQL_Columns(string $prefix = "", $not_nulls = false)
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -658,16 +673,16 @@ class Student_Took_Exam extends Table
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};
                 }
+                $tmp = new Choice($stdClass, 'choice_');
+                if (isset($tmp->id))
+                    $this->choice = $tmp;
+                $tmp = new Student($stdClass, 'student_');
+                if (isset($tmp->id))
+                    $this->student = $tmp;
+                $tmp = new Exam_Center($stdClass, 'exam_center_');
+                if (isset($tmp->id))
+                    $this->exam_center = $tmp;
             }
-            $tmp = new Choice($stdClass, 'choice_');
-            if (isset($tmp->id))
-                $this->choice = $tmp;
-            $tmp = new Student($stdClass, 'student_');
-            if (isset($tmp->id))
-                $this->student = $tmp;
-            $tmp = new Exam_Center($stdClass, 'exam_center_');
-            if (isset($tmp->id))
-                $this->exam_center = $tmp;
         }
     }
     static function SQL_Dotted_Columns()
@@ -676,7 +691,7 @@ class Student_Took_Exam extends Table
         $constants = array_values($oClass->getConstants());
         return  $constants;
     }
-    static function SQL_Columns(string $prefix = "")
+    static function SQL_Columns(string $prefix = "", $not_nulls = false)
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());
@@ -691,7 +706,6 @@ class Student_Took_Exam extends Table
         return $constants[$name];
     }
 }
-
 class Exam_Has_Question extends Table
 {
     const id = 'exam_has_question.id';
@@ -715,13 +729,13 @@ class Exam_Has_Question extends Table
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};
                 }
+                $tmp = new Exam($stdClass, 'exam_');
+                if (isset($tmp->id))
+                    $this->exam = $tmp;
+                $tmp = new Question($stdClass, 'question_');
+                if (isset($tmp->id))
+                    $this->question = $tmp;
             }
-            $tmp = new Exam($stdClass, 'exam_');
-            if (isset($tmp->id))
-                $this->exam = $tmp;
-            $tmp = new Question($stdClass, 'question_');
-            if (isset($tmp->id))
-                $this->question = $tmp;
         }
     }
     static function SQL_Dotted_Columns()
@@ -730,7 +744,7 @@ class Exam_Has_Question extends Table
         $constants = array_values($oClass->getConstants());
         return  $constants;
     }
-    static function SQL_Columns(string $prefix = "")
+    static function SQL_Columns(string $prefix = "", $not_nulls = false)
     {
         $oClass = new ReflectionClass(__CLASS__);
         $constants = array_keys($oClass->getConstants());

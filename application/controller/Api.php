@@ -49,9 +49,11 @@ class Api extends Controller
             // Note that the constructor needs the field id
             // While the insert Operation drops id and doesn't take in consideration
             $_POST['id'] = -1;
+
             // The constructor checks if the required field are satisfied
             // and also obviously checks is $className is sth we have
             $v = new $className((object) $_POST);
+
             if (I_AM_DEBUGGING)
                 simpleLog(json_encode($v), 'Api/create/');
             $Model = $this->loadModel('BaseModel');

@@ -54,7 +54,8 @@
                         }
                     }
                     try {
-                        let respose_object = JSON.parse(res)
+                        let response_object = JSON.parse(res)
+                        parent_sql_id = response_object.id
                     } catch (error) {
                         console.log(error)
                         console.log(res)
@@ -69,7 +70,6 @@
 
                     if (lst.length === 0) return;
 
-                    parent_sql_id = respose_object.id
 
                     Object.values(submissions).forEach(cb => {
                         cb(parent_sql_id)
@@ -107,19 +107,12 @@
                                     })
                                 }
                             } else {
-                                Swal.fire({
-                                    title: "Created!",
-                                    text: `${n1.replace('_',' ')} was easily created.`,
-                                    icon: "info",
-                                    showCancelButton: false,
-                                    confirmButtonColor: "#3085d6",
-                                    cancelButtonColor: "#d33"
-                                })
+                                Swal.fire("Created!", `${n1.replace('_',' ')} was easily created.`, "success");
                             }
                         })
                     })
 
-                    lst.forEach(sub_form => sub_form.remove())
+                    lst.forEach(sub_form => sub_form.parentElement.remove())
 
                     if (res instanceof Object) {
 

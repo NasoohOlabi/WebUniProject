@@ -78,7 +78,7 @@ function main() {
                                 Swal.fire(
                                     "Done!",
                                     `${name.split('_').map(word => word[0].toUpperCase() + word.substring(1)).join('_')}.`,
-                                    "info"
+                                    "success"
                                 )
                             }
                         })
