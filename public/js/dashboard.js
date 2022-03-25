@@ -198,7 +198,8 @@ function toggleDropDown(id_to_toggle) {
  * @returns
  */
 function Header(id, names) {
-    const th_s = names.filter(is_display_key)
+    const processed_names = (names.includes('profile_picture')) ? ["profile_picture", 'username', 'first_name', 'middle_name', 'last_name', 'role'] : names
+    const th_s = processed_names.filter(is_display_key)
         .map(item => item
             .replaceAll('_', ' ')
             .split(' ')
@@ -224,7 +225,8 @@ function Header(id, names) {
  */
 function TableRow(identifier, inline_keys = false, inline_key_prefix = "") {
     const row_item = Model[identifier.split("::").pop()];
-    const display_keys = Object.keys(row_item).filter(is_display_key)
+    let display_keys = Object.keys(row_item).filter(is_display_key)
+    display_keys = (display_keys.includes('profile_picture')) ? ["profile_picture", 'username', 'first_name', 'middle_name', 'last_name', 'role'] : display_keys
     let number_of_display_columns =
         display_keys.length;
     if (inline_keys) number_of_display_columns *= 2;
