@@ -238,7 +238,7 @@ function TableRow(identifier, inline_keys = false, inline_key_prefix = "") {
         .map((key) => {
             const value = row_item[key];
             if (key == 'profile_picture') {
-                return `<td class="profile-pic"><img src="${ourURL}DB/ProfilePics/${row_item['username']}.jpg" width="50" height="50"/></td>`
+                return `<td class="profile-pic"><img src="${ourURL}DB/ProfilePics/${((row_item['profile_picture']) ? row_item['profile_picture'] : 'newuser2.png')}" width="50" height="50"/></td>`
             }
             let td = inline_keys
                 ? `<td style="border-top:none"><strong>${inline_key_prefix} ${key}:</strong></td>`

@@ -53,6 +53,7 @@ class Users extends Controller
 
         if (isset($_FILES['ProfileImg']) && $_FILES['ProfileImg']['name'] != '') {
             $fname = $_POST['username'] . '.' . pathinfo($_FILES['ProfileImg']['name'], PATHINFO_EXTENSION);
+            $_POST['profile_picture'] = $fname;
             $target_dir = "./DB/ProfilePics/";
             $target_file = $target_dir . $fname;
             if (!move_uploaded_file($_FILES["ProfileImg"]["tmp_name"], $target_file)) {
