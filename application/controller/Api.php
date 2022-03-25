@@ -86,9 +86,12 @@ class Api extends Controller
             $id = intval($id);
         if (isset($_POST['op']) && $_POST['op'] === 'get after' && isset($_POST['id'])) {
             $id = $_POST['id'];
+            simpleLog("more is requested specifically after " . $_POST['id']);
             $more = true;
         }
         $limit = 30;
+        if (strtolower($schemaClass) == 'user')
+            $limit = 8;
         if (isset($_POST['limit']) && is_numeric($_POST['limit']) && $_POST['limit'] < 100 && $_POST['limit'] > 0)
             $limit = $_POST['limit'];
 
@@ -106,7 +109,7 @@ class Api extends Controller
         };
         try {
             if ($more)
-                $answers = $Model->select([], $schemaClass, [], (($id !== null) ? [$schemaClass::id => $id, 'op' => '<'] : []), $limit);
+                $answers = $Model->select([], $schemaClass, [], (($id !== null) ? [$schemaClass::id => $id, 'op' => '>'] : []), $limit);
             else
                 $answers = $Model->select([], $schemaClass, [], (($id !== null) ? [$schemaClass::id => $id] : []), $limit);
             $answers = array_map($get_dets_r, $answers);

@@ -376,13 +376,14 @@ function main() {
             lastChild.offsetHeight -
             2 * document.body.clientHeight
         ) {
+            console.log(`Scroll event`);
             const tbl = document.getElementById("MainTable");
             if (
                 !(tbl && Object.keys(Model).some((key) => key.startsWith(currentTab)))
             )
                 return;
 
-            const min_id = Math.min(
+            const min_id = Math.max(
                 ...Object.keys(Model)
                     .filter((key) => key.startsWith(currentTab))
                     .map((key) => parseInt(key.split("-").pop()))

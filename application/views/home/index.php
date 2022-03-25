@@ -1,7 +1,7 @@
 <style>
     .univ-photo {
         width: 100%;
-        height: 40.8em;
+        height: calc(100vh - var(--navbar-height));
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -25,7 +25,7 @@
     }
 
     .content {
-        max-height: 90vh;
+        height: calc(100vh - var(--navbar-height));
     }
 </style>
 

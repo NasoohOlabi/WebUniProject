@@ -14,7 +14,7 @@ function outerClicked(event, element) {
 }
 function pop() {
     const popup = document.getElementById("main-container-popup");
-    popup.style.top = "0";
+    popup.style.top = "0px";
     popup.style.display = "flex";
     document.getElementById('username').focus()
 }
