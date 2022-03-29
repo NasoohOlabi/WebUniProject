@@ -11,7 +11,7 @@ class UserModel extends BaseModel
 
     function userIsFound($username)
     {
-        return ($this->count('User', [], [User::username => $username]) > 0);
+        return ($this->count('User', [], [User::username => $username], true) > 0);
     }
 
     function insertUser($first_name, $last_name, $username, $password, $role_id, $profile_picture)
@@ -60,12 +60,14 @@ class UserModel extends BaseModel
             $this->join(
                 ['User', 'Role'],
                 [User::role_id => Role::id],
-                [[User::username => $username], [User::password => md5($password)]]
+                [[User::username => $username], [User::password => md5($password)]],
+                true
             )[0];
         $tmp = $this->join(
             ['Permission', 'Role_Has_Permission'],
             [Permission::id => Role_Has_Permission::permission_id],
-            [Role_Has_Permission::role_id => $answer->role_id]
+            [Role_Has_Permission::role_id => $answer->role_id],
+            true
         );
         simpleLog("$username details looked up : " . json_encode($answer));
         $answer->permissions = $tmp;

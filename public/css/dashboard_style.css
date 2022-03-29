@@ -329,3 +329,9 @@ body.dark #home .text {
 .canvasjs-chart-credit {
 	display: none;
 }
+
+.permission-clickable {
+	cursor: pointer;
+	text-decoration: underline;
+	font-style: italic;
+}

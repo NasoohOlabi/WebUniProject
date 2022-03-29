@@ -123,8 +123,8 @@ function _get_classes_dotted_columns(array $schemaClasses)
             $answer[] = $value;
         }
     }
-    if (I_AM_DEBUGGING)
-        simpleLog("_get_classes_dotted_columns input: " . json_encode($schemaClasses) . " answer: " . json_encode($answer));
+
+    simpleLog("_get_classes_dotted_columns input: " . json_encode($schemaClasses) . " answer: " . json_encode($answer));
     return $answer;
 }
 function _alias_dotted_columns(array $columns)

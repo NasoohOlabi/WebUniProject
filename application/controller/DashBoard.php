@@ -9,13 +9,14 @@ require_once 'application/views/_templates/form.php';
 function is_ROOT__ADMIN()
 {
     session_start();
-    if (!(isset($_SESSION['user']) && $_SESSION['user']->role->name == 'ROOT::ADMIN')) {
-        header('Location:' . URL);
-        simpleLog("he is trying to hack us " . json_encode($_SESSION['user']), 'users/');
-        return;
-    }
-    simpleLog("access Granted to " . json_encode($_SESSION['user']), 'users/');
+    // if (!(isset($_SESSION['user']) && $_SESSION['user']->role->name == 'ROOT::ADMIN')) {
+    //     header('Location:' . URL);
+    //     simpleLog("he is trying to hack us " . json_encode($_SESSION['user']), 'users/');
+    //     return;
+    // }
+    // simpleLog("access Granted to " . json_encode($_SESSION['user']), 'users/');
 }
+
 class DashBoard extends Controller
 {
 
@@ -35,17 +36,26 @@ class DashBoard extends Controller
         pageHit("dashboard.index");
     }
 
-    public function add($form = null)
+    public function add($form, $parent_id)
     {
 
         is_ROOT__ADMIN();
 
         $bm = $this->loadModel('BaseModel');
-
         pageHeadTag("Add $form", ['Swal' => true]);
+        
         require 'application/views/_templates/user_navbar.php';
 
-        require './application/views/Dashboard/add.php';
+        if (is_numeric($parent_id) && strtolower($form) === 'role_has_permission') {
+            $cls = new Role();
+            $cls->id = $parent_id;
+            
+            require 'application/views/Dashboard/tags.php';
+        } else {
+
+            require './application/views/Dashboard/add.php';
+        }
+
 
         pageHit("dashboard.Add");
     }

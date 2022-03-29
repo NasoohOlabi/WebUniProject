@@ -23,6 +23,9 @@
             </h1>
         </div>
         <form>
+
+            <input hidden name="parent_id" type="text" value="<?= $cls->id ?>" class="add-tile-dependant-btn">
+
             <?php
             if (in_array('date', $sub_cls::SQL_Columns())) {
                 date_input('date');

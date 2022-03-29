@@ -27,8 +27,8 @@ class BaseModel
         $sql = "SELECT * FROM " . $this->table;
         $query = $this->db->prepare($sql);
 
-        if (I_AM_DEBUGGING)
-            simpleLog('BaseModel::getAll Running : "' . $sql . '"');
+
+        simpleLog('BaseModel::getAll Running : "' . $sql . '"');
 
         $query->execute();
         return $query->fetchAll();
@@ -41,8 +41,8 @@ class BaseModel
     {
         $sql = "DELETE FROM " . $this->table . " WHERE id = :table_id";
 
-        if (I_AM_DEBUGGING)
-            simpleLog('BaseModel::deleteById Running : "' . $sql . '"');
+
+        simpleLog('BaseModel::deleteById Running : "' . $sql . '"');
 
         $query = $this->db->prepare($sql);
         $query->execute(array(':table_id' => $id));
@@ -62,8 +62,8 @@ class BaseModel
 
         $sql = "DELETE FROM `$schemaClass` WHERE $sql_syntax";
 
-        if (I_AM_DEBUGGING)
-            simpleLog('BaseModel::wipeByIds Running : "' . $sql . '" Bindings :' . json_encode($ids));
+
+        simpleLog('BaseModel::wipeByIds Running : "' . $sql . '" Bindings :' . json_encode($ids));
         $query = $this->db->prepare($sql);
         $query->execute($ids);
     }
@@ -136,8 +136,8 @@ class BaseModel
 
         $sql = "INSERT INTO `$this->table`($columns_names) VALUES ($values)";
 
-        if (I_AM_DEBUGGING)
-            simpleLog('BaseModel::insert Running : "' . $sql . '"');
+
+        simpleLog('BaseModel::insert Running : "' . $sql . '"');
 
         $this->db->prepare($sql)->execute($bindings);
         return new Either\Result();
@@ -168,10 +168,10 @@ class BaseModel
         $values  = array_values($values);
 
         $sql = "INSERT INTO `$schemaClass` ($columns_names) VALUES ($question_marks)";
-        if (I_AM_DEBUGGING)
-            simpleLog('BaseModel::experimental_insert Running : "' . $sql . '"');
-        if (I_AM_DEBUGGING)
-            simpleLog("bindings " . json_encode($values));
+
+        simpleLog('BaseModel::experimental_insert Running : "' . $sql . '"');
+
+        simpleLog("bindings " . json_encode($values));
         $query = $this->db->prepare($sql);
 
         $flag = $query->execute(array_values($values));
@@ -192,23 +192,23 @@ class BaseModel
     function experimental_update(string $schemaClass, int $id, stdClass $these)
     {
         $columns = $schemaClass::SQL_Columns();
-        if (I_AM_DEBUGGING)
-            simpleLog(json_encode($columns));
+
+        simpleLog(json_encode($columns));
 
         if (($key = array_search('id', $columns)) !== false) {
             unset($columns[$key]);
         }
         $columns = array_values($columns);
-        if (I_AM_DEBUGGING)
-            simpleLog(json_encode($columns));
+
+        simpleLog(json_encode($columns));
 
         $columns_to_update = array_filter($columns, function ($column_name) use ($these) {
             return property_exists($these, $column_name);
         });
 
 
-        if (I_AM_DEBUGGING)
-            simpleLog(json_encode($columns_to_update));
+
+        simpleLog(json_encode($columns_to_update));
 
 
         $values = [];
@@ -216,8 +216,8 @@ class BaseModel
             $values[] = $these->{$col};
         }
 
-        if (I_AM_DEBUGGING)
-            simpleLog(json_encode($values));
+
+        simpleLog(json_encode($values));
 
         $sql_syntax_columns = implode(', ', array_map(function ($col) {
             return '`' . $col . '` = ?';
@@ -226,26 +226,35 @@ class BaseModel
         $values[] = $id * 1;
 
         $sql = "UPDATE `$schemaClass` SET $sql_syntax_columns WHERE id = ?";
-        if (I_AM_DEBUGGING)
-            simpleLog('BaseModel::experimental_update Running : "' . $sql . '"');
-        if (I_AM_DEBUGGING)
-            simpleLog("bindings " . json_encode($values));
+
+        simpleLog('BaseModel::experimental_update Running : "' . $sql . '"');
+
+        simpleLog("bindings " . json_encode($values));
         return $this->db->prepare($sql)->execute(array_values($values));
     }
 
     private function __select_stmt(array $columns, array $schemaClasses, array $safe_conditions = [], array $unsafe_conditions = [], array $options = [])
     {
-
-        if (count($schemaClasses) == 0) throw new Exception("No Classes to select from");
-
-        if (I_AM_DEBUGGING)
-            simpleLog("__select_stmt columns: " . json_encode($columns) . " schemaClasses: " . json_encode($schemaClasses) . " safe_conditions: " . json_encode($safe_conditions) . " unsafe_conditions: " . json_encode($unsafe_conditions) . " options: " . json_encode($options));
-
         $wrapper = (isset($options['wrapper'])
             && is_string($options['wrapper'])
         )
             ? $options['wrapper']
             : $schemaClasses[0];
+
+        $override = (isset($options['override'])
+            && is_bool($options['override']) && $options['override']
+        );
+
+        if (!$override && !userHasPermissions(["read_" . strtolower($wrapper)])) {
+            require_once 'core/AccessDeniedException.php';
+            throw new AccessDeniedException("You don't have access to $wrapper");
+        }
+
+        if (count($schemaClasses) == 0) throw new Exception("No Classes to select from");
+
+
+        simpleLog("__select_stmt columns: " . json_encode($columns) . " schemaClasses: " . json_encode($schemaClasses) . " safe_conditions: " . json_encode($safe_conditions) . " unsafe_conditions: " . json_encode($unsafe_conditions) . " options: " . json_encode($options));
+
 
         $limit = (isset($options['limit']) && is_numeric($options['limit']))
             ? $options['limit']
@@ -301,16 +310,16 @@ class BaseModel
         $sql = "SELECT $columns_sql FROM $tables_sql $ON_safe_conditions $WHERE_unsafe_conditions $order_by_ids_sql $limit_sql;";
 
 
-        if (I_AM_DEBUGGING)
-            simpleLog("BaseModel::__select_stmt Running : $sql with bindings : " . json_encode($unsafe_bindings));
+
+        simpleLog("BaseModel::__select_stmt Running : $sql with bindings : " . json_encode($unsafe_bindings));
 
 
         $query = $this->db->prepare($sql);
         $query->execute($unsafe_bindings);
         $lines = $query->fetchAll();
 
-        if (I_AM_DEBUGGING)
-            simpleLog("got from db >>>>>>>>>>>> " . json_encode($lines));
+
+        simpleLog("got from db >>>>>>>>>>>> " . json_encode($lines));
 
         $result = (isset($options['stdClass']) && $options['stdClass'])
             ? $lines
@@ -318,25 +327,30 @@ class BaseModel
                 return new $wrapper($args,  strtolower($wrapper) . "_");
             }, $lines);
 
-        if (I_AM_DEBUGGING)
-            simpleLog("returning >>>>>>>>>>>> " . json_encode($result));
+
+        simpleLog("returning >>>>>>>>>>>> " . json_encode($result));
 
         return $result;
     }
-    public function join(array $schemaClasses, array $safe_conditions = [], array $unsafe_conditions = [], string $wrapper = null)
-    {
-        return $this->__select_stmt([], $schemaClasses, $safe_conditions, $unsafe_conditions, ['wrapper' => $wrapper]);
-    }
-    public function select(array $columns, string $schemaClass, $safe_conditions = [], array $unsafe_conditions = [], int $limit = 100)
-    {
-        return $this->__select_stmt($columns, [$schemaClass], $safe_conditions, $unsafe_conditions, ['limit' => $limit]);
-    }
 
-    public function count(string $schemaClass = null, array $safe_conditions = [], array $unsafe_conditions = [])
-    {
-        if ($schemaClass == null) $schemaClass = $this->table;
 
-        $answer =  $this->__select_stmt([], [$schemaClass], $safe_conditions, $unsafe_conditions, ['overwrite columns' => 'COUNT(*) as num', 'stdClass' => true])[0];
+    public function join(
+        array $schemaClasses,
+        array $safe_conditions = [],
+        array $unsafe_conditions = [],
+        bool $override = false
+    ) {
+        return $this->__select_stmt([], $schemaClasses, $safe_conditions, $unsafe_conditions, ['override' => $override]);
+    }
+    public function select(array $columns, string $schemaClass, $safe_conditions = [], array $unsafe_conditions = [], int $limit = 100, bool $override = false)
+    {
+        return $this->__select_stmt($columns, [$schemaClass], $safe_conditions, $unsafe_conditions, ['limit' => $limit, 'override' => $override]);
+    }
+    public function count(string $schemaClass = null, array $safe_conditions = [], array $unsafe_conditions = [], bool $override = false)
+    {
+        $schemaClass = $schemaClass ?? $this->schemaClass;
+
+        $answer =  $this->__select_stmt([], [$schemaClass], $safe_conditions, $unsafe_conditions, ['override' => $override, 'overwrite columns' => 'COUNT(*) as num', 'stdClass' => true])[0];
 
         return $answer->num * 1; // * 1 for type conversion
     }

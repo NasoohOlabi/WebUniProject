@@ -23,7 +23,7 @@
           </span>
 
           <div class=" text logo-text">
-            <span class="name"><?php echo $_SESSION['user']->username ?></span>
+            <span class="name"><?php echo (isset($_SESSION['user'])) ? $_SESSION['user']->username : 'John Doe' ?></span>
             <span class="profession">Admin Account</span>
           </div>
         </div>
@@ -83,13 +83,7 @@
 
           <li class="nav-link">
             <a href="#" onclick="switchTo('permission')">
-              <span class="text nav-text" id="permission">Permission</span>
-            </a>
-          </li>
-
-          <li class="nav-link">
-            <a href="#" onclick="switchTo('role_has_permission')">
-              <span class="text nav-text" id="role_has_permission">Roles Permissions</span>
+              <span class="text nav-text" id="permission">Permissions</span>
             </a>
           </li>
 
