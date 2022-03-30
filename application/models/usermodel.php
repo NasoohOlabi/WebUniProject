@@ -54,23 +54,45 @@ class UserModel extends BaseModel
         }
         return false;
     }
-    function getFullDetails(string $username, string $password)
+    function getFullDetails($arg1 = null, $arg2 = null)
     {
-        $answer =
-            $this->join(
-                ['User', 'Role'],
-                [User::role_id => Role::id],
-                [[User::username => $username], [User::password => md5($password)]],
+        if ($arg1 && $arg2 && is_string($arg1) && is_string($arg2)) {
+            $username = $arg1;
+            $password = $arg2;
+            $answer =
+                $this->join(
+                    ['User', 'Role'],
+                    [User::role_id => Role::id],
+                    [[User::username => $username], [User::password => md5($password)]],
+                    true
+                )[0];
+            $tmp = $this->join(
+                ['Permission', 'Role_Has_Permission'],
+                [Permission::id => Role_Has_Permission::permission_id],
+                [Role_Has_Permission::role_id => $answer->role_id],
                 true
-            )[0];
-        $tmp = $this->join(
-            ['Permission', 'Role_Has_Permission'],
-            [Permission::id => Role_Has_Permission::permission_id],
-            [Role_Has_Permission::role_id => $answer->role_id],
-            true
-        );
-        simpleLog("$username details looked up : " . json_encode($answer));
-        $answer->permissions = $tmp;
-        return $answer;
+            );
+            simpleLog("$username details looked up : " . json_encode($answer));
+            $answer->permissions = $tmp;
+            return $answer;
+        } elseif ($arg1 && is_numeric($arg1)) {
+            $id = $arg1;
+            $answer =
+                $this->join(
+                    ['User', 'Role'],
+                    [User::role_id => Role::id],
+                    [User::id => $id],
+                    true
+                )[0];
+            $tmp = $this->join(
+                ['Permission', 'Role_Has_Permission'],
+                [Permission::id => Role_Has_Permission::permission_id],
+                [Role_Has_Permission::role_id => $answer->role_id],
+                true
+            );
+            simpleLog("$answer->username details looked up : " . json_encode($answer));
+            $answer->permissions = $tmp;
+            return $answer;
+        }
     }
 }
