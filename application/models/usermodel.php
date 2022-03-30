@@ -56,6 +56,7 @@ class UserModel extends BaseModel
     }
     function getFullDetails($arg1 = null, $arg2 = null)
     {
+        $answer = null; // for scoping reasons ... I think
         if ($arg1 && $arg2 && is_string($arg1) && is_string($arg2)) {
             $username = $arg1;
             $password = $arg2;
