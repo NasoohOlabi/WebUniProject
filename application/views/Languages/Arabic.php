@@ -17,7 +17,8 @@ class LANGUAGE extends AbstractLanguage
         'Dashboard' => 'لوحة الإدارة',
         'Welcome To The University Website' => 'مرحبا بك في موقع الجامعة',
         'Arabic' => 'العربية',
-        'English' => 'الإنكليزية'
+        'English' => 'الإنكليزية',
+        'Home' => 'الصفحة الرئيسية'
 
 
     ];
