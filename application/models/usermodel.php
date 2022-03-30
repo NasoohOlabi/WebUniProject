@@ -66,15 +66,6 @@ class UserModel extends BaseModel
                     [[User::username => $username], [User::password => md5($password)]],
                     true
                 )[0];
-            $tmp = $this->join(
-                ['Permission', 'Role_Has_Permission'],
-                [Permission::id => Role_Has_Permission::permission_id],
-                [Role_Has_Permission::role_id => $answer->role_id],
-                true
-            );
-            simpleLog("$username details looked up : " . json_encode($answer));
-            $answer->permissions = $tmp;
-            return $answer;
         } elseif ($arg1 && is_numeric($arg1)) {
             $id = $arg1;
             $answer =
@@ -84,15 +75,19 @@ class UserModel extends BaseModel
                     [User::id => $id],
                     true
                 )[0];
-            $tmp = $this->join(
-                ['Permission', 'Role_Has_Permission'],
-                [Permission::id => Role_Has_Permission::permission_id],
-                [Role_Has_Permission::role_id => $answer->role_id],
-                true
-            );
-            simpleLog("$answer->username details looked up : " . json_encode($answer));
-            $answer->permissions = $tmp;
-            return $answer;
+        } else {
+            return;
         }
+
+
+        $tmp = $this->join(
+            ['Permission', 'Role_Has_Permission'],
+            [Permission::id => Role_Has_Permission::permission_id],
+            [Role_Has_Permission::role_id => $answer->role_id],
+            true
+        );
+        simpleLog("$username details looked up : " . json_encode($answer));
+        $answer->permissions = $tmp;
+        return $answer;
     }
 }
