@@ -73,9 +73,11 @@ class BaseModel
      * @param [int] $id
      * @return Option
      */
-    public function getById($id)
+    public function getById($id, string $t = null)
     {
-        $result = $this->select([], "$this->table", ["$this->table.id" => $id]);
+        $table = $t ?? $this->tabele;
+
+        $result = $this->select([], "$table", ["$table.id" => $id]);
 
         if (count($result) == 0) {
             throw new Exception("id $id doesn't exist");
@@ -233,7 +235,7 @@ class BaseModel
         return $this->db->prepare($sql)->execute(array_values($values));
     }
 
-    private function __select_stmt(array $columns, array $schemaClasses, array $safe_conditions = [], array $unsafe_conditions = [], array $options = [])
+    private function __select_stmt(array $columns, array $schemaClasses, array $ON_conditions = [], array $WHERE_conditions = [], array $options = [])
     {
         $wrapper = (isset($options['wrapper'])
             && is_string($options['wrapper'])
@@ -253,7 +255,7 @@ class BaseModel
         if (count($schemaClasses) == 0) throw new Exception("No Classes to select from");
 
 
-        simpleLog("__select_stmt columns: " . json_encode($columns) . " schemaClasses: " . json_encode($schemaClasses) . " safe_conditions: " . json_encode($safe_conditions) . " unsafe_conditions: " . json_encode($unsafe_conditions) . " options: " . json_encode($options));
+        simpleLog("__select_stmt columns: " . json_encode($columns) . " schemaClasses: " . json_encode($schemaClasses) . " ON_conditions: " . json_encode($ON_conditions) . " WHERE_conditions: " . json_encode($WHERE_conditions) . " options: " . json_encode($options));
 
 
         $limit = (isset($options['limit']) && is_numeric($options['limit']))
@@ -276,18 +278,18 @@ class BaseModel
             return "`$schemaClass`";
         }, $schemaClasses));
 
-        $parsed_safe_conditions = (count($safe_conditions) > 0) ?
-            _parse_conditions($safe_conditions) : '';
+        $parsed_ON_conditions = (count($ON_conditions) > 0) ?
+            _parse_conditions($ON_conditions) : '';
 
 
-        $parsed_unsafe_conditions = (count($unsafe_conditions) > 0) ? _parse_unsafe_conditions($unsafe_conditions) : [];
+        $parsed_WHERE_conditions = (count($WHERE_conditions) > 0) ? _parse_WHERE_conditions($WHERE_conditions) : [];
 
-        $unsafe_conditions_sql = (isset($parsed_unsafe_conditions['prepare']))
-            ? $parsed_unsafe_conditions['prepare']
+        $WHERE_conditions_sql = (isset($parsed_WHERE_conditions['prepare']))
+            ? $parsed_WHERE_conditions['prepare']
             : '';
 
-        $unsafe_bindings = (isset($parsed_unsafe_conditions['execute']))
-            ? $parsed_unsafe_conditions['execute']
+        $unsafe_bindings = (isset($parsed_WHERE_conditions['execute']))
+            ? $parsed_WHERE_conditions['execute']
             : [];
 
         $order_by_ids = implode(", ", array_filter(array_map(function ($schemaClass) {
@@ -300,14 +302,14 @@ class BaseModel
             ? "ORDER BY $order_by_ids"
             : '';
 
-        $ON_safe_conditions = (strlen($parsed_safe_conditions) > 0)
-            ? "ON $parsed_safe_conditions"
+        $ON_ON_conditions = (strlen($parsed_ON_conditions) > 0)
+            ? "ON $parsed_ON_conditions"
             : '';
-        $WHERE_unsafe_conditions = (strlen($unsafe_conditions_sql) > 0)
-            ? "WHERE $unsafe_conditions_sql"
+        $WHERE_WHERE_conditions = (strlen($WHERE_conditions_sql) > 0)
+            ? "WHERE $WHERE_conditions_sql"
             : '';
 
-        $sql = "SELECT $columns_sql FROM $tables_sql $ON_safe_conditions $WHERE_unsafe_conditions $order_by_ids_sql $limit_sql;";
+        $sql = "SELECT $columns_sql FROM $tables_sql $ON_ON_conditions $WHERE_WHERE_conditions $order_by_ids_sql $limit_sql;";
 
 
 
@@ -336,21 +338,21 @@ class BaseModel
 
     public function join(
         array $schemaClasses,
-        array $safe_conditions = [],
-        array $unsafe_conditions = [],
+        array $ON_conditions = [],
+        array $WHERE_conditions = [],
         bool $override = false
     ) {
-        return $this->__select_stmt([], $schemaClasses, $safe_conditions, $unsafe_conditions, ['override' => $override]);
+        return $this->__select_stmt([], $schemaClasses, $ON_conditions, $WHERE_conditions, ['override' => $override]);
     }
-    public function select(array $columns, string $schemaClass, $safe_conditions = [], array $unsafe_conditions = [], int $limit = 100, bool $override = false)
+    public function select(array $columns, string $schemaClass,  array $WHERE_conditions = [], int $limit = 100, bool $override = false)
     {
-        return $this->__select_stmt($columns, [$schemaClass], $safe_conditions, $unsafe_conditions, ['limit' => $limit, 'override' => $override]);
+        return $this->__select_stmt($columns, [$schemaClass], [], $WHERE_conditions, ['limit' => $limit, 'override' => $override]);
     }
-    public function count(string $schemaClass = null, array $safe_conditions = [], array $unsafe_conditions = [], bool $override = false)
+    public function count(string $schemaClass = null, array $ON_conditions = [], array $WHERE_conditions = [], bool $override = false)
     {
         $schemaClass = $schemaClass ?? $this->schemaClass;
 
-        $answer =  $this->__select_stmt([], [$schemaClass], $safe_conditions, $unsafe_conditions, ['override' => $override, 'overwrite columns' => 'COUNT(*) as num', 'stdClass' => true])[0];
+        $answer =  $this->__select_stmt([], [$schemaClass], $ON_conditions, $WHERE_conditions, ['override' => $override, 'overwrite columns' => 'COUNT(*) as num', 'stdClass' => true])[0];
 
         return $answer->num * 1; // * 1 for type conversion
     }
