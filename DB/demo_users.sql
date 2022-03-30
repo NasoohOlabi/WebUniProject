@@ -1,3 +1,7 @@
+INSERT INTO `permission`(`name`) VALUES ('grant_permission'), ('create_permission'), ('delete_permission'), ('create_question'), ('read_question'), ('write_question'), ('delete_question'), ('create_user'), ('read_user'), ('write_user'), ('delete_user'), ('create_role'), ('read_role'), ('change_role_permissions'), ('delete_role'), ('assign_role'), ('enroll_student'), ('read_student'), ('write_student'), ('delete_student'), ('create_topic'), ('read_topic'), ('write_topic'), ('delete_topic'), ('create_subject'), ('read_subject'), ('write_subject'), ('delete_subject'), ('add_exam_center'), ('read_exam_center'), ('write_exam_center'), ('delete_exam_center'), ('generate_exam'), ('read_exam'), ('take_exam'), ('write_exam');
+-- give admin all permissions
+INSERT INTO `role_has_permission`(`role_id`, `permission_id`) VALUES (60, 12), (60, 14), (60, 15), (60, 16), (60, 17), (60, 18), (60, 19), (60, 20), (60, 21), (60, 22), (60, 23), (60, 24), (60, 25), (60, 26), (60, 27), (60, 28), (60, 29), (60, 30), (60, 31), (60, 32), (60, 33), (60, 34), (60, 35), (60, 36);
+
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `profile_picture`, `role_id`) VALUES
 (68, 'MSmith', 'e268f98f247841960366c10ea099a67e', 'Michell', 'Smith', 'car', 'MSmith.jpg', 2),
 (69, 'BrandonFreeman', 'e268f98f247841960366c10ea099a67e', 'Brandon', 'Freeman', 'M.', 'BrandonFreeman.jpg', 1),

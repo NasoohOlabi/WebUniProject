@@ -11,7 +11,7 @@ class UserModel extends BaseModel
 
     function userIsFound($username)
     {
-        return ($this->count('User', [], [User::username => $username]) > 0);
+        return ($this->count('User', [], [User::username => $username], true) > 0);
     }
 
     function insertUser($first_name, $last_name, $username, $password, $role_id, $profile_picture)
@@ -54,29 +54,41 @@ class UserModel extends BaseModel
         }
         return false;
     }
-    function getFullDetails(string $username, string $password, bool $update_flag = null)
-    {
 
-        if ($update_flag) {
+    function getFullDetails($arg1 = null, $arg2 = null)
+    {
+        $answer = null; // for scoping reasons ... I think
+        if ($arg1 && $arg2 && is_string($arg1) && is_string($arg2)) {
+            simpleLog("getFullDetails with username $arg1 and password $arg2");
+            $username = $arg1;
+            $password = $arg2;
             $answer =
                 $this->join(
                     ['User', 'Role'],
                     [User::role_id => Role::id],
-                    [[User::id => $_SESSION['user']->id]]
+                    [[User::username => $username], [User::password => md5($password)]],
+                    true
+                )[0];
+        } elseif ($arg1 && is_numeric($arg1)) {
+            simpleLog("getFullDetails with id $arg1");
+            $id = $arg1;
+            $answer =
+                $this->join(
+                    ['User', 'Role'],
+                    [User::role_id => Role::id],
+                    [User::id => $id],
+                    true
                 )[0];
         } else {
-            $answer =
-                $this->join(
-                    ['User', 'Role'],
-                    [User::role_id => Role::id],
-                    [[User::username => $username], [User::password => md5($password)]]
-                )[0];
+            return;
         }
+
 
         $tmp = $this->join(
             ['Permission', 'Role_Has_Permission'],
             [Permission::id => Role_Has_Permission::permission_id],
-            [Role_Has_Permission::role_id => $answer->role_id]
+            [Role_Has_Permission::role_id => $answer->role_id],
+            true
         );
         simpleLog("$username details looked up : " . json_encode($answer));
         $answer->permissions = $tmp;

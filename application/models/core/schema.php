@@ -1,26 +1,28 @@
 <?php
 function _minus_(array $big, array $small)
 {
-    if (I_AM_DEBUGGING)
-        simpleLog("big: " . json_encode($big) . " small: " . json_encode($small));
+
+    simpleLog("big: " . json_encode($big) . " small: " . json_encode($small));
     foreach ($big as $key => $value) {
         if (in_array($value, $small)) {
             unset($big[$key]);
         }
     }
-    if (I_AM_DEBUGGING)
-        simpleLog("big: " . json_encode(array_values($big)) . " small: " . json_encode($small));
+
+    simpleLog("big: " . json_encode(array_values($big)) . " small: " . json_encode($small));
     return array_values($big);
 }
 function properties_exists($stdClass, array $properties, string $prefix)
 {
-    if (I_AM_DEBUGGING)
-        simpleLog("properties_exists: checking " . json_encode($stdClass) . " to contain the following " . json_encode($properties));
+
+    simpleLog("properties_exists: checking " . json_encode($stdClass) . " to contain the following " . json_encode(array_map(function ($elem) use ($prefix) {
+        return $prefix . $elem;
+    }, $properties)));
     if ($stdClass == null) return false;
     foreach ($properties as $property) {
         if (!property_exists($stdClass, $prefix . $property)) {
-            if (I_AM_DEBUGGING)
-                simpleLog("this one failed $prefix" . "$property");
+
+            simpleLog("this one failed $prefix" . "$property");
             if ($prefix == '')
                 throw new Exception("Constructing : " . json_encode($stdClass) . " to contain the following " . json_encode($properties) . " this one failed $prefix" . "$property");
             return false;
@@ -295,7 +297,7 @@ class Permission extends Table
     const name = 'permission.name';
     // this is what we'll inter act with the rest is just jargon
     public string $name;
-    public array $dependents = ['Role_has_Permission'];
+    public array $dependents = ['Role_Has_Permission'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Create', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
@@ -392,6 +394,7 @@ class Role_Has_Permission extends Table
         return ['create' => 'Give', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Remove'];
     }
     public array $identifying_fields =  ['role_id', 'permission_id'];
+    public array $dependents =  [];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {

@@ -32,6 +32,9 @@ class Home extends Controller
 
         if (isset($_SESSION['loggedIn'])) {
             require 'application/views/_templates/user_navbar.php';
+            echo '<pre>';
+            var_dump(json_encode($_SESSION));
+            echo '</pre>';
             require 'application/views/home/user_index.php';
         } else {
             require 'application/views/_templates/navbar.php';

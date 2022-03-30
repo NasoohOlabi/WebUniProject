@@ -11,7 +11,8 @@ function simpleLog($msg, $directory = null, $filename = null)
     // setting the logging file in php.ini
     ini_set('error_log', $log_file);
     // logging the error
-    error_log($msg);
+    if (I_AM_DEBUGGING)
+        error_log($msg);
 }
 function pageHit(string $page)
 {

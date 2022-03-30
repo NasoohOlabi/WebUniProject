@@ -87,15 +87,20 @@ setInterval(() => {
     while (tasks.length > 0) {
         tasks.shift()();
     }
-}, 60);
+}, 300);
 
 /**
  * @param {(event:any)=>void} callback
  * @param {string} id
  */
-function set_OnClick_For_Id(callback, id) {
+function set_OnClick_For_Id(callback, id, retries = 60) {
+    if (retries === 0) { console.log('retries excustid'); return }
     tasks.push(() => {
-        document.getElementById(id).onclick = callback;
+        if (document.getElementById(id)) {
+            document.getElementById(id).onclick = callback;
+        } else {
+            set_OnClick_For_Id(callback, id, retries - 1);
+        }
     });
 }
 
@@ -178,18 +183,60 @@ function toggleDropDown(id_to_toggle) {
     let tr = document.getElementById(id_to_toggle);
     let btn = document.getElementById(id_to_toggle + "-" + "btn");
     const f = function () {
+        // if you can't see them look for them
         if (!(tr && btn)) {
             tr = document.getElementById(id_to_toggle);
             btn = document.getElementById(id_to_toggle + "-" + "btn");
         }
-        if (tr && btn) {
-            dropped_down = !dropped_down;
-            btn.innerText = !dropped_down ? "🔽" : "🔼";
+        dropped_down = !dropped_down;
+        if (btn) btn.innerText = !dropped_down ? "🔽" : "🔼";
+
+        // if you can't see even after you looked them abort
+        if (tr && btn)
             tr.style.display = !dropped_down ? "none" : "table-row";
-        }
+
     };
     btn.onclick = f;
     f();
+}
+/**
+ * @param {string} identifier
+ */
+function revoker(identifier) {
+    return (event) => {
+        const perm = Model[identifier.split('::')[1]].name
+        getFromHQ('delete', `role_has_permission/${identifier.split('::')[1].split('-')[0]}`, {
+            unclean: (txt) => {
+                if (txt == 'deleted') {
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${perm} revoked`,
+                        showConfirmButton: false,
+                        timer: 1000
+                    })
+                }
+            }
+        })
+    }
+}
+/**
+ * 
+ * @param {string} identifier 
+ */
+function permissionSubRow(identifier) {
+    console.log('HI');
+    const row_item = Model[identifier.split("::").pop()];
+    let display_keys = Object.keys(row_item).filter(is_display_key)
+    if (row_item['role'] == undefined) display_keys = display_keys.filter(x => x != 'role')
+
+
+    const tr = `<tr id="${identifier}"><td>${row_item['name']}</td><td><span class="permission-clickable" id="${identifier}-revoke">Revoke</span></td></tr>`;
+
+    // TODO: add a event handler to revoke permission
+    set_OnClick_For_Id(revoker(identifier), identifier + "-revoke");
+
+    return tr;
 }
 /**
  *
@@ -198,7 +245,11 @@ function toggleDropDown(id_to_toggle) {
  * @returns
  */
 function Header(id, names) {
-    const processed_names = (names.includes('profile_picture')) ? ["profile_picture", 'username', 'first_name', 'middle_name', 'last_name', 'role'] : names
+    const processed_names = (names.includes('profile_picture'))
+        ? ((names.includes('role'))
+            ? ["profile_picture", 'username', 'first_name', 'middle_name', 'last_name', 'role']
+            : ["profile_picture", 'username', 'first_name', 'middle_name', 'last_name'])
+        : names
     const th_s = processed_names.filter(is_display_key)
         .map(item => item
             .replaceAll('_', ' ')
@@ -224,16 +275,21 @@ function Header(id, names) {
  * @returns {string} tr element
  */
 function TableRow(identifier, inline_keys = false, inline_key_prefix = "") {
+    const v = identifier.split('::');
+    if (v && v.length == 2 && v[0].startsWith('role') && v[1].startsWith('permission')) return permissionSubRow(identifier);
     const row_item = Model[identifier.split("::").pop()];
     let display_keys = Object.keys(row_item).filter(is_display_key)
-    display_keys = (display_keys.includes('profile_picture')) ? ["profile_picture", 'username', 'first_name', 'middle_name', 'last_name', 'role'] : display_keys
+    display_keys = (display_keys.includes('profile_picture'))
+        ? ["profile_picture", 'username', 'first_name', 'middle_name', 'last_name', 'role']
+        : display_keys
+    if (row_item['role'] == undefined) display_keys = display_keys.filter(x => x != 'role')
     let number_of_display_columns =
         display_keys.length;
     if (inline_keys) number_of_display_columns *= 2;
     const subTables = [];
     const ancestors = identifier
         .split("::")
-        .splice(1)
+        .slice(0, -1)
         .map((name_id) => name_id.split("-")[0]);
     let td_s = display_keys
         .filter((key) => !ancestors.some((elem) => elem.includes(key)))
@@ -252,14 +308,14 @@ function TableRow(identifier, inline_keys = false, inline_key_prefix = "") {
                 const id_of_tr_this_btn_will_expand = identifier + "::" + key;
                 subTables.push(id_of_tr_this_btn_will_expand);
                 td += `<td
-          ${inline_keys ? 'style = "border-top:none"' : ""}
-        >
-        <button
-          id="${id_of_tr_this_btn_will_expand}-btn" 
-          style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;">
-            🔽
-          </button>
-        </td>`;
+                        ${inline_keys ? 'style = "border-top:none"' : ""}
+                        >
+                        <button
+                        id="${id_of_tr_this_btn_will_expand}-btn" 
+                        style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;">
+                            🔽
+                        </button>
+                        </td>`;
                 set_OnClick_For_Id(() => {
                     toggleDropDown(id_of_tr_this_btn_will_expand);
                 }, id_of_tr_this_btn_will_expand + "-btn");
@@ -310,6 +366,14 @@ function TableRow(identifier, inline_keys = false, inline_key_prefix = "") {
         .join("\n");
     return `${tr}\n${subTablesWrappedInTr_s}`;
 }
+function GrantPemission(identifier) {
+    return (evt) => {
+        console.log(`identifier : `);
+        console.log(identifier);
+        const One2Many_one_id = identifier.split("::")[0].split('-')[1];
+        
+    }
+}
 /**
  *
  * @param {string[]} identifiers
@@ -323,19 +387,29 @@ function subTable_tr(
     parent_number_of_keys,
     parentIdentifier
 ) {
-    if (parent_number_of_keys === 0) return;
+    console.log(`(${identifiers}.length === 0 && ${trId}.includes('permissions')) : `);
+    console.log((identifiers.length === 0 && trId.includes('permissions')));
+    if (parent_number_of_keys === 0) return
     if (identifiers.length > 1 || trId.split("-").pop().endsWith("s")) {
-        if (identifiers.length === 0) return;
+        if (identifiers.length === 0 && !trId.includes('permissions')) return;
         const tr_s = identifiers.map((identifier) =>
             TableRow(parentIdentifier + "::" + identifier)
         );
+        const header = (trId.includes('permissions'))
+            ? `<th>Name</th><th colspan="2"><span id="${trId}-Grant" class="permission-clickable">Grant Permission</span></th>`
+            : Header(
+                trId.split("-")[1],
+                Object.keys(Model[identifiers[0]])
+            )
+
+        set_OnClick_For_Id(GrantPemission(trId), trId + "-Grant");
+
         return `<tr id="${trId}" style="display:none" class="inner-shadowed">
               <td colspan=${parent_number_of_keys + 2}>
                 <table style="width:100%">
-                  ${Header(
-            trId.split("-")[1],
-            Object.keys(Model[identifiers[0]])
-        )}
+                <thead>
+                  ${header}
+                </thead>
                   ${tr_s.join("")}
                 </table>
               </td>
@@ -398,7 +472,12 @@ function main() {
                 success: (lst) => {
                     lst.forEach((identifier) => {
                         const row = TableRow(identifier);
-                        tbl.innerHTML += row;
+                        var wrapper = document.createElement('div');
+                        wrapper.innerHTML = '<table><thead><th>hi</th></thead><tbody>' + row + '</tbody></table>';
+                        const DOM_rows = wrapper.querySelectorAll('div > table > tbody > tr');
+                        DOM_rows.forEach(elem => {
+                            tbl.appendChild(elem)
+                        })
                     });
                     fetching_flag[currentTab] = false;
                 },
@@ -502,6 +581,10 @@ function getFromHQ(
                     }
                 } catch (error) {
                     if (answer == "that's all we have") return;
+                    if (answer.includes("You don't have access to")) {
+                        Swal.fire("Sorry", answer.substring(answer.indexOf('You')), 'info')
+                    }
+                    // console.log(error);
                     if (!(error instanceof SyntaxError)) console.log(error);
                     console.log(answer);
                 }
@@ -841,7 +924,7 @@ function delete_re(identifiers, depth = 0) {
         identifier.split("-").pop()
     );
     const payload = { ids: delete_ids };
-    fetch(URL + `Api / delete /${identifiers[0].split("-")[0]}/`, {
+    fetch(URL + `Api/delete/${identifiers[0].split("-")[0]}/`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -910,7 +993,7 @@ function delete_re(identifiers, depth = 0) {
                     } else {
                         reset();
                     }
-                });
+                })
             } else {
                 if (document.getElementById("modify-div")) {
                     document.getElementById("modify-div").remove();
@@ -932,16 +1015,19 @@ function confirmChanges() {
         confirmButtonText: "Yes, delete it!",
     }).then((result) => {
         if (result.isConfirmed) {
+            const delete_ids = deleteList
+                .map((elem) => elem.trId)
+                .map((identifier) => identifier.split("::").pop());
+            delete_re(delete_ids);
+
+
+
             Swal.fire("Deleted!", "Your choices has been deleted.", "success");
             // call delete api here ... right?
             console.log("deleteList : ");
             console.log(deleteList);
 
-            const delete_ids = deleteList
-                .map((elem) => elem.trId)
-                .map((identifier) => identifier.split("::").pop());
 
-            delete_re(delete_ids);
 
             modifyMode = false;
         }
