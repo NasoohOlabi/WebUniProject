@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="<?= URL ?>public/css/all.min.css" />
     <link rel="stylesheet" href="<?= URL ?>public/css/style.css" />
     <link rel="stylesheet" href="<?= URL ?>public/css/util.style.css" />
-    <!-- <script src="https://use.fontawesome.com/f392b27f2a.js"></script> -->
     <script src="<?= URL ?>public/js/Main.js"></script>
     <?= (isset($options['Swal']) && $options['Swal']) ?  '<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>' : '' ?>
     <?= (isset($options['noform_util']) && $options['noform_util']) ?  '' : '<script src="' . URL . 'public/js/form_util.js"></script>'  ?>

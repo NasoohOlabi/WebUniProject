@@ -158,6 +158,9 @@ class Api extends Controller
     public function update(string $schemaClass)
     {
         Is_ROOT__ADMIN();
+
+        // var_dump(file_get_contents("php://input"));
+        // var_dump(json_decode(file_get_contents("php://input")));
         $_POST = json_decode(file_get_contents("php://input"), true);
         try {
             // Clean inputs
@@ -184,9 +187,15 @@ class Api extends Controller
                 simpleLog(
                     'api update>>>>cleaned>>>POST>>>>>' . json_encode((object)$_POST)
                 );
+
             $Model = $this->loadModel('BaseModel');
+            if (!isset($_POST['id'])) {
+                $_POST['id'] = $_SESSION['user']->id;
+            }
             if ($Model->experimental_update($schemaClass, $_POST['id'], (object) $_POST)) {
                 echo 'updated';
+                $users_model = $this->loadModel('UserModel');
+                $_SESSION['user'] = $users_model->getFullDetails('', '', true);
             } else {
                 echo 'update unsuccessful';
             }

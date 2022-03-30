@@ -54,14 +54,25 @@ class UserModel extends BaseModel
         }
         return false;
     }
-    function getFullDetails(string $username, string $password)
+    function getFullDetails(string $username, string $password, bool $update_flag = null)
     {
-        $answer =
-            $this->join(
-                ['User', 'Role'],
-                [User::role_id => Role::id],
-                [[User::username => $username], [User::password => md5($password)]]
-            )[0];
+
+        if ($update_flag) {
+            $answer =
+                $this->join(
+                    ['User', 'Role'],
+                    [User::role_id => Role::id],
+                    [[User::id => $_SESSION['user']->id]]
+                )[0];
+        } else {
+            $answer =
+                $this->join(
+                    ['User', 'Role'],
+                    [User::role_id => Role::id],
+                    [[User::username => $username], [User::password => md5($password)]]
+                )[0];
+        }
+
         $tmp = $this->join(
             ['Permission', 'Role_Has_Permission'],
             [Permission::id => Role_Has_Permission::permission_id],

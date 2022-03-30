@@ -640,6 +640,10 @@ noscript {
   background-color: transparent;
   float: var(--opp-dir);
   border: none;
+  position: relative;
+  bottom: 4.5em;
+  left: 4.5em;
+  cursor: pointer;
 }
 .remove-div-x-btn:hover {
   outline: none;
