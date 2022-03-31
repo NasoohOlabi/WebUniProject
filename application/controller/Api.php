@@ -109,7 +109,7 @@ class Api extends Controller
 
 						// you have fk and so answer should be one since id is unique
 						$answer->{$subSchemaClass} =
-							$Model->select([], $subSchemaClass, [], [$subSchemaClass::id => $val])[0];
+							$Model->select([], $subSchemaClass,  [$subSchemaClass::id => $val])[0];
 						$answer->{$subSchemaClass} = $fetch_fk_values($answer->{$subSchemaClass});
 					}
 				}
@@ -122,8 +122,8 @@ class Api extends Controller
 		};
 		try {
 			$answers = ($more)
-				? $answers = $Model->select([], $schemaClass, [], (($id !== null) ? [$schemaClass::id => $id, 'op' => '>'] : []), $limit)
-				: $answers = $Model->select([], $schemaClass, [], (($id !== null) ? [$schemaClass::id => $id] : []), $limit);
+				? $answers = $Model->select([], $schemaClass, (($id !== null) ? [$schemaClass::id => $id, 'op' => '>'] : []), $limit)
+				: $answers = $Model->select([], $schemaClass, (($id !== null) ? [$schemaClass::id => $id] : []), $limit);
 
 			$answers = array_map($fetch_fk_values, $answers);
 			$answers = array_map(function ($row) use ($Model, $schemaClass) {
@@ -136,7 +136,7 @@ class Api extends Controller
 					if (is_array($dep) && count($dep) == 1) {
 						foreach ($dep as $key => $value) {
 							try {
-								$row->{strtolower($key) . 's'} = $Model->select([], $key, [], [$key::access($value) => $row->id]);
+								$row->{strtolower($key) . 's'} = $Model->select([], $key,  [$key::access($value) => $row->id]);
 							} catch (AccessDeniedException $th) {
 								simpleLog("Access Denied Exception $th");
 								simpleLog("You have access to $schemaClass but: " . $th->getMessage());
@@ -151,7 +151,7 @@ class Api extends Controller
 							// those are SchemaClass names
 							// not sql names
 							$one_name = get_class($row);
-							$many_name = (str_contains(strtolower($dep), 'Center') && $one_name == 'Exam')
+							$many_name = ($dep === 'Exam_Center_Has_Exam' && $one_name == 'Exam')
 								? 'Exam_Center'
 								: str_replace('_Has_', '', str_replace($one_name, '', $dep));
 
@@ -187,7 +187,7 @@ class Api extends Controller
 							$fk_col = $dep::access(strtolower(get_class($row)) . '_id');
 							simpleLog(get_class($row) . ' dep fetch ' . $dep);
 							try {
-								$row->{strtolower($dep) . 's'} = $Model->select([], $dep, [], [$fk_col => $row->id]);
+								$row->{strtolower($dep) . 's'} = $Model->select([], $dep,  [$fk_col => $row->id]);
 							} catch (AccessDeniedException $th) {
 								simpleLog("Access Denied Exception $th");
 								simpleLog("You have access to $schemaClass but: " . $th->getMessage());

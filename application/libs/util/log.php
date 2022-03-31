@@ -59,10 +59,6 @@ function compressHits(string $page)
         fwrite($file, $size + $number);
         fclose($file);
     }
-    //TODO: get file size
-    // read from permanent accumulator file int `x`
-    // add `x` to file size
-    // overwrite the sum in accumulator file
 }
 function readHits(string $page)
 {

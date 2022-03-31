@@ -23,6 +23,32 @@ function TileForThis($the_one, $sub_cls, $bm)
     $cls = $the_one;
     require '__tiles_for_this.php';
 }
+function Permissions_Tiles($cls, $bm)
+{
+    $parent_class_name = 'Role';
+    $sub_cls = 'Permission';
+
+    $schemaClass = implode('_', array_map('ucfirst', explode('_', $sub_cls)));
+    $objects =  $bm->select([], $schemaClass);
+
+    $id_indexed_objects = [];
+    foreach ($objects as $value) {
+        $id_indexed_objects[$value->id] = $value;
+    }
+    $v = array_map('stdclastoidstirng', $id_indexed_objects);
+
+    $SELECT_OPTIONS = $v;
+
+    $CONTEXT_TILES_IDs = array_map(function ($permission) {
+        return ['id' => $permission->id, 'name' => $permission->name];
+    }, $bm->join(
+        ['Permission', 'Role_Has_Permission', 'Role'],
+        [[Role_Has_Permission::permission_id => Permission::id], [Role_Has_Permission::role_id => Role::id]],
+        [Role::id => $cls->id]
+    ));
+
+    require 'component/__Permissions__tiles.php';
+}
 function PageForThis(Table $cls, BaseModel $bm, array $omit = [])
 {
     FormForThis($cls, $bm, $omit);

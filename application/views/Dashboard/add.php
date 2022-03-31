@@ -55,7 +55,7 @@
                     } catch (error) {
                         Swal.fire(
                             "Was not Added!",
-                            "Your changes have not been saved. error {${error}}  res {${res}}",
+                            `Your changes have not been saved. error ${error}  res ${res}`,
                             "error"
                         );
                         console.log(error)
