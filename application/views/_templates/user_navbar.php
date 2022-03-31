@@ -66,7 +66,14 @@ if ($has_picture == true) {
             <div class="dropdown<?= (LANGUAGE::$direction == 'rtl') ? '-rtl' : '' ?>">
                 <div class="profile-pic dropbtn" onclick="toggle_menu()" id="dropbtn" <?php echo $profile_pic_style ?>><?php if (!$has_picture) echo $user_initial ?></div>
                 <div class="dropdown-content<?= (LANGUAGE::$direction == 'rtl') ? '-rtl' : '' ?>" id="menu">
-                    <a href="#" class="link">
+
+                    <a href="<?= URL ?>" class="link">
+                        <?= (LANGUAGE::$direction == 'rtl') ? LANGUAGE::t('Home') : '' ?>
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <?= (LANGUAGE::$direction == 'ltr') ? LANGUAGE::t('Home') : '' ?>
+                    </a>
+
+                    <a href="<?= URL ?>users/profile" class="link">
                         <?= (LANGUAGE::$direction == 'rtl') ? LANGUAGE::t('Account') : '' ?>
                         <i class="fa fa-user" aria-hidden="true"></i>
                         <?= (LANGUAGE::$direction == 'ltr') ? LANGUAGE::t('Account') : '' ?>

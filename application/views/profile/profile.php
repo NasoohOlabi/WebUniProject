@@ -1,5 +1,4 @@
 <?php
-
 $profile_pic = $_SESSION['user']->profile_picture;
 $has_picture = ($profile_pic == null || $profile_pic == '' ? false : true);
 
@@ -17,6 +16,9 @@ $first_name = $user_first_name ? $user_first_name : "";
 $last_name = $_SESSION['user']->last_name ? $_SESSION['user']->last_name : "";
 $username = $_SESSION['user']->username ? $_SESSION['user']->username : "";
 $middle_name = $_SESSION['user']->middle_name ? $_SESSION['user']->middle_name : "";
+
+$user_id = $_SESSION['user']->id;
+$_POST['id'] = $user_id;
 
 ?>
 
@@ -63,8 +65,40 @@ $middle_name = $_SESSION['user']->middle_name ? $_SESSION['user']->middle_name :
         }
     }
 
-    function submit() {
-        window.location.replace(URL + 'api/update/user');
+    function sssubmit() {
+
+        console.log("Submitting");
+
+        let payload = {};
+
+        inputs = document.getElementsByClassName("text-input");
+
+        Array.from(inputs).forEach(input => {
+            input.value ? payload[input.id] = input.value : null;
+        });
+
+        try {
+            fetch(`<?= URL ?>Api/update/user`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(payload),
+                }).then(response => response.text())
+                .then(txt => {
+                    console.log(txt);
+                    try {
+                        const successful_insert = JSON.parse(txt)
+                        console.log(successful_insert)
+                    } catch (error) {
+                        console.log('so close')
+                        console.log(error)
+                    }
+                })
+        } catch (error) {
+            console.log('ops!')
+            console.log(error)
+        }
     }
 </script>
 
@@ -160,28 +194,28 @@ $middle_name = $_SESSION['user']->middle_name ? $_SESSION['user']->middle_name :
                 <i class="fa fa-camera" aria-hidden="true"></i>
             </div>
         </div>
-        <form action="http://127.0.0.1:80/mnu/Api/create" method="post" class="login-form">
+        <form method="post" class="login-form">
             <div class="form-block">
                 <label for="username">Username</label>
-                <input type="text" name="username" id="username" class="text-input valid-input" placeholder="Username" value="<?php echo $username ?>" required />
+                <input type="text" name="username" id="username" class="text-input valid-input" placeholder="Username" value="<?php echo $username ?>" />
                 <small class="invalid-text">
                     Please enter a valid username</small>
             </div>
             <div class="form-block">
                 <label for="password">Password</label>
-                <input type="text" name="password" id="password" class="text-input valid-input" placeholder="Password" required />
+                <input type="text" name="password" id="password" class="text-input valid-input" placeholder="Password" />
                 <small class="invalid-text">
                     Please enter a valid password</small>
             </div>
             <div class="form-block">
                 <label for="first_name">First Name</label>
-                <input type="text" name="first_name" id="first_name" class="text-input valid-input" placeholder="First_name" value="<?php echo $first_name ?>" required />
+                <input type="text" name="first_name" id="first_name" class="text-input valid-input" placeholder="First_name" value="<?php echo $first_name ?>" />
                 <small class="invalid-text">
                     Please enter a valid first_name</small>
             </div>
             <div class="form-block">
                 <label for="last_name">Last Name</label>
-                <input type="text" name="last_name" id="last_name" class="text-input valid-input" placeholder="Last_name" value="<?php echo $last_name ?>" required />
+                <input type="text" name="last_name" id="last_name" class="text-input valid-input" placeholder="Last_name" value="<?php echo $last_name ?>" />
                 <small class="invalid-text">
                     Please enter a valid last_name</small>
             </div>
@@ -192,7 +226,7 @@ $middle_name = $_SESSION['user']->middle_name ? $_SESSION['user']->middle_name :
                     Please enter a valid middle_name</small>
             </div>
             <div class="form-block">
-                <button type="submit" id="submit-btn" onclick="submit()">
+                <button type="submit" id="submit-btn" onclick="sssubmit()">
                     Save Changes <svg id="spinner" viewBox="0 0 50 50">
                         <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
                     </svg>

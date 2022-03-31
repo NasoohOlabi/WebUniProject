@@ -250,8 +250,19 @@ class Api extends Controller
 			simpleLog(
 				'api update>>>>cleaned>>>POST>>>>>' . json_encode((object)$_POST)
 			);
+
+			if (!isset($_POST['id'])) {
+				$_POST['id'] = $_SESSION['user']->id;
+			}
+
+			simpleLog(
+				'api update>>>>cleaned>>>POST>>>>>id added>>>>>' . json_encode((object)$_POST)
+			);
+
 			$Model = $this->loadModel('BaseModel');
 			if ($Model->experimental_update($schemaClass, $_POST['id'], (object) $_POST)) {
+				$users_model = $this->loadModel('UserModel');
+				$_SESSION['user'] = $users_model->getFullDetails($_SESSION['user']->id);
 				echo 'updated';
 			} else {
 				echo 'update unsuccessful';

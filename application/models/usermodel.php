@@ -54,10 +54,12 @@ class UserModel extends BaseModel
         }
         return false;
     }
+
     function getFullDetails($arg1, $arg2 = null)
     {
         $answer = null; // for scoping reasons ... I think
         if ($arg1 && $arg2 && is_string($arg1) && is_string($arg2)) {
+            simpleLog("getFullDetails with username $arg1 and password $arg2");
             $username = $arg1;
             $password = $arg2;
             $answer =
@@ -68,6 +70,7 @@ class UserModel extends BaseModel
                     true
                 )[0];
         } elseif ($arg1 && is_numeric($arg1)) {
+            simpleLog("getFullDetails with id $arg1");
             $id = $arg1;
             $answer =
                 $this->join(

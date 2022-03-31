@@ -317,6 +317,10 @@ aside {
 	box-shadow: 0 1px 0 rgb(0 0 0 / 15%);
 }
 
+.fa-home {
+	margin-right: 0.2em;
+}
+
 .fa-user {
 	margin-right: 8px;
 }
@@ -640,6 +644,10 @@ noscript {
 	background-color: transparent;
 	float: var(--opp-dir);
 	border: none;
+	position: relative;
+	bottom: 4.5em;
+	left: 4.5em;
+	cursor: pointer;
 }
 .remove-div-x-btn:hover {
 	outline: none;
