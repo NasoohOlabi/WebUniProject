@@ -3,6 +3,7 @@ const filesToCache = [
   "public/js/dashboard.js",
   "public/js/font-awesome.js",
   "public/js/form.js",
+  "public/js/jquery.min.js",
   "public/js/popping.js",
   "public/js/Main.js",
   "public/js/sweetalert2.js",

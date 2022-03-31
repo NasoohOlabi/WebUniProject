@@ -549,6 +549,10 @@ noscript {
   border-top: 2px solid #dee2e6;
 }
 
+.hidden {
+  display: none;
+}
+
 /*##############################################*/
 
 /* User Index */

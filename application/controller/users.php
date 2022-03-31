@@ -148,7 +148,7 @@ class Users extends Controller
 
         $bm = $this->loadModel('BaseModel');
 
-        pageHeadTag("User Profie", ['noform_util' => true]);
+        pageHeadTag("User Profie", ['noform_util' => true, 'noform' => true]);
         require 'application/views/_templates/user_navbar.php';
         require 'application/views/profile/profile.php';
 

@@ -1,4 +1,7 @@
 <?php
+
+use function PHPSTORM_META\type;
+
 require_once 'application/views/_templates/header.php';
 require_once './application/libs/util/log.php';
 require_once './application/models/core/schema.php';
@@ -225,12 +228,48 @@ class Api extends Controller
 	{
 		Is_ROOT__ADMIN();
 		$_POST = json_decode(file_get_contents("php://input"), true);
+
+		$username = isset($_POST['username']) ? $_POST['username'] : $_SESSION['user']->username;
+
 		try {
 			// Clean inputs
 			try {
 				$wanted_columns = $schemaClass::SQL_Columns();
 			} catch (\Throwable $e) {
 				throw new Exception("invalid url $schemaClass");
+			}
+
+			if (isset($_POST['profile_picture'])) {
+				$data = $_POST['profile_picture'];
+
+
+
+
+
+				if (preg_match('/^data:image\/(\w+);base64,/', $data, $type)) {
+
+
+					$data = substr($data, strpos($data, ',') + 1);
+					$type = strtolower($type[1]); // jpg, png, gif
+					$target = "./DB/ProfilePics/$username.$type";
+
+
+					if (!in_array($type, ['jpg', 'jpeg', 'gif', 'png'])) {
+						throw new \Exception('invalid image type');
+					}
+
+					simpleLog("Saving image to: $target");
+
+					$whandle = fopen($target, 'w');
+					stream_filter_append($whandle, 'convert.base64-decode', STREAM_FILTER_WRITE);
+					fwrite($whandle, $data);
+					fclose($whandle);
+				} else {
+					simpleLog("Picture decode failed");
+					throw new \Exception('did not match data URI with image data');
+				}
+
+				$_POST['profile_picture'] = $username . "." . $type;
 			}
 
 			simpleLog('api update>>>preprocessed>>>>POST>>>>>' . json_encode((object)$_POST));

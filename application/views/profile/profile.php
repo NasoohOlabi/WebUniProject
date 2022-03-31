@@ -4,7 +4,7 @@ $has_picture = ($profile_pic == null || $profile_pic == '' ? false : true);
 
 
 $user_first_name = $_SESSION['user']->first_name;
-$user_initial = strtoupper($user_first_name[0]);
+//$user_initial = strtoupper($user_first_name[0]);
 
 $profile_pic_style = '';
 
@@ -22,8 +22,9 @@ $_POST['id'] = $user_id;
 
 ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="<?= URL ?>public/js/jquery.min.js"></script>
 <script>
+    var picture = null;
     $(document).ready(function() {
         $("#file").change(function() {
             var length = this.files.length;
@@ -59,13 +60,19 @@ $_POST['id'] = $user_id;
             $('#prof-pic').css({
                 'background': "none",
                 'background-image': "url(" + e.target.result + ")",
-                'border': "1px solid white"
+                'border': "1px solid white",
+                'background-position': 'center',
+                'background-repeat': 'no-repeat',
+                'background-size': 'cover'
             });
 
+            $(this).addClass('active');
+            $('#file').next().addClass('hidden');
+            picture = e.target.result;
         }
     }
 
-    function sssubmit() {
+    function submitChanges() {
 
         console.log("Submitting");
 
@@ -76,6 +83,10 @@ $_POST['id'] = $user_id;
         Array.from(inputs).forEach(input => {
             input.value ? payload[input.id] = input.value : null;
         });
+
+        if (picture) {
+            payload['profile_picture'] = picture;
+        }
 
         try {
             fetch(`<?= URL ?>Api/update/user`, {
@@ -110,6 +121,11 @@ $_POST['id'] = $user_id;
         font-size: 3em;
         position: relative;
         z-index: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        align-items: center;
+        justify-content: center;
     }
 
     #file {
@@ -188,9 +204,9 @@ $_POST['id'] = $user_id;
 
     <div class="login-container">
         <div class="form-block">
-            <div class="profile-pic dropbtn" id="prof-pic">
+            <div class="profile-pic dropbtn" id="prof-pic" <?php echo $profile_pic_style ?>>
                 <input id="file" type="file" title="Profile Picture" />
-                <?php echo $profile_pic_style ?><?php if (!$has_picture) echo $user_initial ?>
+                <?php if (!$has_picture) echo ("<span>" . $user_initial . "</span>"); ?>
                 <i class="fa fa-camera" aria-hidden="true"></i>
             </div>
         </div>
@@ -226,7 +242,7 @@ $_POST['id'] = $user_id;
                     Please enter a valid middle_name</small>
             </div>
             <div class="form-block">
-                <button type="submit" id="submit-btn" onclick="sssubmit()">
+                <button type="submit" id="submit-btn" onclick="submitChanges()">
                     Save Changes <svg id="spinner" viewBox="0 0 50 50">
                         <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
                     </svg>
