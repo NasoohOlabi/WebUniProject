@@ -45,15 +45,15 @@ function _parse_safe_term(array $x)
  * becomes
  * (1 = 3) OR (2 = 4)
  *
- * @param [type] $safe_conditions
+ * @param [type] $ON_conditions
  * @return void
  */
-function _parse_conditions(array $safe_conditions)
+function _parse_conditions(array $ON_conditions)
 {
-    if (_is_term($safe_conditions))
-        return _parse_safe_term($safe_conditions);
+    if (_is_term($ON_conditions))
+        return _parse_safe_term($ON_conditions);
     $Acc = [];
-    foreach ($safe_conditions as $value_1d) {
+    foreach ($ON_conditions as $value_1d) {
         if (_is_term($value_1d)) {
             $Acc[] = _parse_safe_term($value_1d);
         } elseif (is_array($value_1d)) {
@@ -61,11 +61,11 @@ function _parse_conditions(array $safe_conditions)
             foreach ($value_1d as $value_2d) {
                 if (_is_term($value_2d)) {
                     $bracket[] = _parse_safe_term($value_2d);
-                } else throw new Exception("Conditions Parse Error: parsing `" . json_encode($safe_conditions) . "`");
+                } else throw new Exception("Conditions Parse Error: parsing `" . json_encode($ON_conditions) . "`");
             }
             $Acc[] = implode(" OR ", $bracket);
         } else
-            throw new Exception("Conditions Parse Error: parsing `" . json_encode($safe_conditions) . "`");
+            throw new Exception("Conditions Parse Error: parsing `" . json_encode($ON_conditions) . "`");
     }
     $Acc = '(' . implode(") AND (", $Acc) . ')';
     return $Acc;
@@ -77,7 +77,7 @@ function _parse_unsafe_term(array $x)
     // simpleLog(json_encode($x));
     return ['prepare' => "$key " . (isset($x['op']) ? $x['op'] : '=') . " ?", 'execute' => $val];
 }
-function _parse_unsafe_conditions(array $unsafe_conditions)
+function _parse_WHERE_conditions(array $WHERE_conditions)
 {
     $f = function (array $acc, array $v) {
         $acc['prepare'][] = $v['prepare'];
@@ -85,13 +85,13 @@ function _parse_unsafe_conditions(array $unsafe_conditions)
         return $acc;
     };
     $answer = ['prepare' => [], 'execute' => []];
-    if (_is_term($unsafe_conditions)) {
-        $answer = $f($answer, _parse_unsafe_term($unsafe_conditions));
+    if (_is_term($WHERE_conditions)) {
+        $answer = $f($answer, _parse_unsafe_term($WHERE_conditions));
         $answer['prepare'] = '(' . implode(") AND (", $answer['prepare']) . ')';
         return $answer;
     }
 
-    foreach ($unsafe_conditions as $value_1d) {
+    foreach ($WHERE_conditions as $value_1d) {
         if (_is_term($value_1d)) {
             $answer = $f($answer, _parse_unsafe_term($value_1d));
         } elseif (is_array($value_1d)) {
@@ -99,14 +99,14 @@ function _parse_unsafe_conditions(array $unsafe_conditions)
             foreach ($value_1d as $value_2d) {
                 if (_is_term($value_2d)) {
                     $sub_answer[] = $f($sub_answer, _parse_unsafe_term($value_2d));
-                } else throw new Exception("Conditions Parse Error: parsing `" . json_encode($unsafe_conditions) . "`");
+                } else throw new Exception("Conditions Parse Error: parsing `" . json_encode($WHERE_conditions) . "`");
             }
             $answer['prepare'][] = implode(" OR ", $sub_answer['prepare']);
             foreach ($sub_answer as $exec) {
                 $answer['execute'][] = $exec;
             }
         } else
-            throw new Exception("Conditions Parse Error: parsing `" . json_encode($unsafe_conditions) . "`");
+            throw new Exception("Conditions Parse Error: parsing `" . json_encode($WHERE_conditions) . "`");
     }
     $answer['prepare'] = '(' . implode(") AND (", $answer['prepare']) . ')';
     return $answer;

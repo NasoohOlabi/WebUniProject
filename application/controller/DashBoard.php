@@ -36,25 +36,15 @@ class DashBoard extends Controller
         pageHit("dashboard.index");
     }
 
-    public function add($form, $parent_id)
+    public function add($form)
     {
 
-        is_ROOT__ADMIN();
-
+        session_start();
         $bm = $this->loadModel('BaseModel');
         pageHeadTag("Add $form", ['Swal' => true]);
-        
+
         require 'application/views/_templates/user_navbar.php';
-
-        if (is_numeric($parent_id) && strtolower($form) === 'role_has_permission') {
-            $cls = new Role();
-            $cls->id = $parent_id;
-            
-            require 'application/views/Dashboard/tags.php';
-        } else {
-
-            require './application/views/Dashboard/add.php';
-        }
+        require './application/views/Dashboard/add.php';
 
 
         pageHit("dashboard.Add");
@@ -62,28 +52,55 @@ class DashBoard extends Controller
 
     public function update($form)
     {
+        session_start();
+        $parent_id = isset($_GET['parent_id'])
+            ? (int) $_GET['parent_id']
+            : null;
 
-        is_ROOT__ADMIN();
+        if (is_numeric($parent_id) && strtolower($form) === 'role_has_permission') {
 
-        $_POST = array_map('htmlentities', $_POST);
+            $_POST =
+                json_decode(file_get_contents("php://input"), true);
+
+            if (isset($_POST['permission_ids'])) {
+
+                $bm = $this->loadModel('PermissionModel');
+
+                $bm->updatePermissions($parent_id, $_POST['permission_ids']);
+
+                $_SESSION['flash_message'] = 'Permissions Updated';
+                header('Location:' . URL . 'dashboard');
+            }
+
+            $bm = $this->loadModel('BaseModel');
+            pageHeadTag("Add $form", ['Swal' => true]);
+
+            require 'application/views/_templates/user_navbar.php';
+            $cls = $bm->getById($parent_id, "Role");
+
+            require 'application/views/Dashboard/tags.php';
+        } else {
 
 
-        $bm = $this->loadModel('BaseModel');
+            $_POST = array_map('htmlentities', $_POST);
 
-        pageHeadTag("index");
-        require 'application/views/_templates/user_navbar.php';
-        //require 'application/views/_templates/aside.php';
-        echo '<div id="main-content" class="inlineBlock">';
 
-        if (in_array($form, $this->forms)) {
-            $q = new $form((object)$_POST);
-            FormForThis($q, $bm);
+            $bm = $this->loadModel('BaseModel');
+
+            pageHeadTag("index");
+            require 'application/views/_templates/user_navbar.php';
+            //require 'application/views/_templates/aside.php';
+            echo '<div id="main-content" class="inlineBlock">';
+
+            if (in_array($form, $this->forms)) {
+                $q = new $form((object)$_POST);
+                FormForThis($q, $bm);
+            }
+
+            echo '</div></div>';
+
+            require 'application/views/_templates/footer.php';
         }
-
-        echo '</div></div>';
-
-        require 'application/views/_templates/footer.php';
-
         pageHit("dashboard.update");
     }
 

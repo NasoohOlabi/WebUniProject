@@ -30,6 +30,23 @@
       </a>
     </header>
 
+    <?php
+    if (isset($_SESSION['flash_message'])) {
+      $msg = $_SESSION['flash_message'];
+      echo "<script>
+                Swal.fire({
+                  position: 'top-end',
+                  icon: 'success',
+                  title: '$msg',
+                  showConfirmButton: false,
+                  timer: 1000
+                })
+              </script>";
+      unset($_SESSION['flash_message']);
+    }
+    ?>
+
+
     <div class="menu-bar">
       <div class="menu">
         <ul class="menu-links">

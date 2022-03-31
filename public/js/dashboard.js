@@ -205,19 +205,27 @@ function toggleDropDown(id_to_toggle) {
 function revoker(identifier) {
     return (event) => {
         const perm = Model[identifier.split('::')[1]].name
-        getFromHQ('delete', `role_has_permission/${identifier.split('::')[1].split('-')[0]}`, {
-            unclean: (txt) => {
-                if (txt == 'deleted') {
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: `${perm} revoked`,
-                        showConfirmButton: false,
-                        timer: 1000
-                    })
+        getFromHQ(
+            'permissions/revoke',
+            `role_has_permission/${identifier.split('::')[1].split('-')[0]}`, {
+            permission_id: identifier.split('::')[1].split('-')[1],
+            role_id: identifier.split('::')[0].split('-')[1]
+        },
+            {
+                unclean: (txt) => {
+                    const obj = JSON.parse(txt);
+                    if (obj.message == 'deleted') {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: `${perm} revoked`,
+                            showConfirmButton: false,
+                            timer: 1000
+                        })
+                        document.getElementById(identifier).remove();
+                    }
                 }
-            }
-        })
+            })
     }
 }
 /**
@@ -225,7 +233,6 @@ function revoker(identifier) {
  * @param {string} identifier 
  */
 function permissionSubRow(identifier) {
-    console.log('HI');
     const row_item = Model[identifier.split("::").pop()];
     let display_keys = Object.keys(row_item).filter(is_display_key)
     if (row_item['role'] == undefined) display_keys = display_keys.filter(x => x != 'role')
@@ -366,12 +373,14 @@ function TableRow(identifier, inline_keys = false, inline_key_prefix = "") {
         .join("\n");
     return `${tr}\n${subTablesWrappedInTr_s}`;
 }
-function GrantPemission(identifier) {
+function EditPermissions(identifier) {
     return (evt) => {
         console.log(`identifier : `);
         console.log(identifier);
         const One2Many_one_id = identifier.split("::")[0].split('-')[1];
-        
+
+        window.location = ourURL + 'dashboard/update/role_has_permission?parent_id=' + One2Many_one_id;
+
     }
 }
 /**
@@ -387,8 +396,6 @@ function subTable_tr(
     parent_number_of_keys,
     parentIdentifier
 ) {
-    console.log(`(${identifiers}.length === 0 && ${trId}.includes('permissions')) : `);
-    console.log((identifiers.length === 0 && trId.includes('permissions')));
     if (parent_number_of_keys === 0) return
     if (identifiers.length > 1 || trId.split("-").pop().endsWith("s")) {
         if (identifiers.length === 0 && !trId.includes('permissions')) return;
@@ -396,13 +403,13 @@ function subTable_tr(
             TableRow(parentIdentifier + "::" + identifier)
         );
         const header = (trId.includes('permissions'))
-            ? `<th>Name</th><th colspan="2"><span id="${trId}-Grant" class="permission-clickable">Grant Permission</span></th>`
+            ? `<th>Name</th><th colspan="2"><span id="${trId}-Edit" class="permission-clickable">Edit Permissions</span></th>`
             : Header(
                 trId.split("-")[1],
                 Object.keys(Model[identifiers[0]])
             )
 
-        set_OnClick_For_Id(GrantPemission(trId), trId + "-Grant");
+        set_OnClick_For_Id(EditPermissions(trId), trId + "-Edit");
 
         return `<tr id="${trId}" style="display:none" class="inner-shadowed">
               <td colspan=${parent_number_of_keys + 2}>
@@ -544,7 +551,14 @@ function getFromHQ(
         return object;
     };
     try {
-        fetch(URL + `Api/${ApiEndPoint}/${kind}`, {
+        const uurl = (ApiEndPoint.includes('/'))
+            ? (
+                (ApiEndPoint.startsWith('/'))
+                    ? ApiEndPoint.substring(1)
+                    : ApiEndPoint
+            )
+            : `Api/${ApiEndPoint}/${kind}`
+        fetch(URL + uurl, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
