@@ -64,3 +64,4 @@ INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `mi
 (80, 'SandraNeal', 'e268f98f247841960366c10ea099a67e', 'Sandra', 'Neal', 'Kim', 'SandraNeal.jpg', 2),
 (81, 'ToniRhodes', 'e268f98f247841960366c10ea099a67e', 'Toni', 'Rhodes', 'Jordan', 'ToniRhodes.jpg', 2),
 (82, 'MarcDemo', 'e268f98f247841960366c10ea099a67e', 'Marc', 'Demo', 'Angry', 'MarcDemo.jpg', 2);
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `profile_picture`, `role_id`) VALUES (NULL, 'testadmin', '202cb962ac59075b964b07152d234b70', 'TestCenter', 'Admin', '', NULL, '4');
