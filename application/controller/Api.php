@@ -85,9 +85,10 @@ class Api extends Controller
 			return;
 		}
 
-		$more = false;
 		if ($id !== null)
 			$id = intval($id);
+
+		$more = false;
 		if (isset($_POST['op']) && $_POST['op'] === 'get after' && isset($_POST['id'])) {
 			$id = $_POST['id'];
 			simpleLog("more is requested specifically after " . $_POST['id']);
@@ -134,6 +135,7 @@ class Api extends Controller
 
 				foreach ($row->dependents as $dep) {
 					if (is_array($dep) && count($dep) == 1) {
+						// One2Many getting the many...
 						foreach ($dep as $key => $value) {
 							try {
 								$row->{strtolower($key) . 's'} = $Model->select([], $key,  [$key::access($value) => $row->id]);
