@@ -62,3 +62,4 @@ INSERT INTO `exam_center`(`name`, `description`)
 VALUES ('Hiast Center', 'A center in the Higher...');
 INSERT INTO `exam_center_has_exam`(`date`, `exam_id`, `exam_center_id`)
 VALUES (curdate(), 1, 1);
+INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `profile_picture`, `role_id`) VALUES (NULL, 'testadmin', '202cb962ac59075b964b07152d234b70', 'TestCenter', 'Admin', '', NULL, '4');

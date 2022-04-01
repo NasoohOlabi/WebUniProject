@@ -104,6 +104,8 @@ $_POST['id'] = $user_id;
                     } catch (error) {
                         console.log('so close')
                         console.log(error)
+                    } finally {
+                        location.reload(true);
                     }
                 })
         } catch (error) {
