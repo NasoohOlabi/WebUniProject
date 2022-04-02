@@ -101,8 +101,8 @@ INSERT INTO `choice` (`id`, `text`, `is_correct`, `question_id`) VALUES
 (8, "f\'(2)=3", 0, 3),
 (9, "f\'(2)=4", 1, 3);
 
-INSERT INTO `exam` (`id`, `name`, `number_of_questions`, `duration`, `subject_id`) VALUES
-(1, "", 1, 60, 1);
+INSERT INTO `exam` (`id`, `number_of_questions`, `duration`, `subject_id`) VALUES
+(1, 1, 60, 1);
 
 INSERT INTO `role` (`id`, `name`) VALUES
 (1, 'ROOT::ADMIN'),
