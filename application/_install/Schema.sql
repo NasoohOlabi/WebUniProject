@@ -107,13 +107,11 @@ DROP TABLE IF EXISTS `exam` ;
 
 CREATE TABLE IF NOT EXISTS `exam` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
   `number_of_questions` SMALLINT(3) UNSIGNED NOT NULL,
   `duration` SMALLINT(3) UNSIGNED NOT NULL,
   `subject_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
-  UNIQUE INDEX `name_UNIQUE` (`name` ASC),
   INDEX `fk_exams_subjects1_idx` (`subject_id` ASC),
   CONSTRAINT `fk_exams_subjects1`
     FOREIGN KEY (`subject_id`)
@@ -347,4 +345,3 @@ DEFAULT CHARACTER SET = utf8mb4;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS
--- last query doesn't need a semicolon
