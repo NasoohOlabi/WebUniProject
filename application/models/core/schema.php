@@ -2,27 +2,27 @@
 function _minus_(array $big, array $small)
 {
 
-    simpleLog("big: " . json_encode($big) . " small: " . json_encode($small));
+    // simpleLog("big: " . json_encode($big) . " small: " . json_encode($small));
     foreach ($big as $key => $value) {
         if (in_array($value, $small)) {
             unset($big[$key]);
         }
     }
 
-    simpleLog("big: " . json_encode(array_values($big)) . " small: " . json_encode($small));
+    // simpleLog("big: " . json_encode(array_values($big)) . " small: " . json_encode($small));
     return array_values($big);
 }
 function properties_exists($stdClass, array $properties, string $prefix)
 {
 
-    simpleLog("properties_exists: checking " . json_encode($stdClass) . " to contain the following " . json_encode(array_map(function ($elem) use ($prefix) {
-        return $prefix . $elem;
-    }, $properties)));
+    // simpleLog("properties_exists: checking " . json_encode($stdClass) . " to contain the following " . json_encode(array_map(function ($elem) use ($prefix) {
+    //     return $prefix . $elem;
+    // }, $properties)));
     if ($stdClass == null) return false;
     foreach ($properties as $property) {
         if (!property_exists($stdClass, $prefix . $property)) {
 
-            simpleLog("this one failed $prefix" . "$property");
+            // simpleLog("this one failed $prefix" . "$property");
             if ($prefix == '')
                 throw new Exception("Constructing : " . json_encode($stdClass) . " to contain the following " . json_encode($properties) . " this one failed $prefix" . "$property");
             return false;
@@ -713,17 +713,16 @@ class Exam_Has_Question extends Table
 {
     const id = 'exam_has_question.id';
     const question_id = 'exam_has_question.question_id';
-    const exam_id = 'exam_has_question.exam_id';
+    const exam_center_has_exam_id = 'exam_has_question.exam_center_has_exam_id';
     // this is what we'll inter act with the rest is just jargon
     public int $question_id;
     public int $exam_id;
-    public ?Exam $exam;
     public ?Question $question;
     public function get_CRUD_Terms()
     {
         return ['create' => 'Give', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Remove'];
     }
-    public array $identifying_fields =  ['question_id', 'exam_id'];
+    public array $identifying_fields =  ['question_id', 'exam_center_has_exam_id'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
@@ -732,12 +731,6 @@ class Exam_Has_Question extends Table
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};
                 }
-                $tmp = new Exam($stdClass, 'exam_');
-                if (isset($tmp->id))
-                    $this->exam = $tmp;
-                $tmp = new Question($stdClass, 'question_');
-                if (isset($tmp->id))
-                    $this->question = $tmp;
             }
         }
     }

@@ -11,8 +11,8 @@
  * Configuration for: Error reporting
  * Useful to show every little problem during development, but only show hard errors in production
  */
-// error_reporting( E_ALL);
-error_reporting(E_ERROR | E_PARSE);
+error_reporting(E_ALL);
+// error_reporting(E_ERROR | E_PARSE);
 
 ini_set("display_errors", 1);
 
@@ -23,6 +23,7 @@ ini_set("display_errors", 1);
 define('URL', 'http://127.0.0.1:80/mnu/');
 
 define('I_AM_DEBUGGING', true);
+// define('I_AM_DEBUGGING', false);
 
 /**
  * Configuration for: Database

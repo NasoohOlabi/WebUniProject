@@ -199,7 +199,7 @@ class Api extends Controller
 								continue;
 								// return $row;
 							}
-							simpleLog(get_class($row) . " dep " . json_encode($row->{strtolower($dep) . 's'}));
+							// simpleLog(get_class($row) . " dep " . json_encode($row->{strtolower($dep) . 's'}));
 						}
 					}
 				}
@@ -315,7 +315,7 @@ class Api extends Controller
 		}
 		pageHit("Api.update");
 	}
-	public function delete(string $schemaClass, int $id)
+	public function delete(?string $schemaClass = null, ?int $id = null)
 	{
 		Is_ROOT__ADMIN();
 		$_POST = json_decode(file_get_contents("php://input"), true);

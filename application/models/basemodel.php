@@ -254,8 +254,9 @@ class BaseModel
 
         if (count($schemaClasses) == 0) throw new Exception("No Classes to select from");
 
+        $stamp = $_SERVER['REQUEST_TIME'] . '_' . rand(0, 1000);
 
-        simpleLog("__select_stmt columns: " . json_encode($columns) . " schemaClasses: " . json_encode($schemaClasses) . " ON_conditions: " . json_encode($ON_conditions) . " WHERE_conditions: " . json_encode($WHERE_conditions) . " options: " . json_encode($options));
+        simpleLog("OP::$stamp BaseModel::__select_stmt columns: " . json_encode($columns) . " schemaClasses: " . json_encode($schemaClasses) . " ON_conditions: " . json_encode($ON_conditions) . " WHERE_conditions: " . json_encode($WHERE_conditions) . " options: " . json_encode($options),"selects");
 
 
         $limit = (isset($options['limit']) && is_numeric($options['limit']))
@@ -313,7 +314,7 @@ class BaseModel
 
 
 
-        simpleLog("BaseModel::__select_stmt Running : $sql with bindings : " . json_encode($unsafe_bindings));
+        simpleLog("OP::$stamp BaseModel::__select_stmt Running : $sql with bindings : " . json_encode($unsafe_bindings), "selects");
 
 
         $query = $this->db->prepare($sql);
@@ -321,7 +322,7 @@ class BaseModel
         $lines = $query->fetchAll();
 
 
-        simpleLog("got from db >>>>>>>>>>>> " . json_encode($lines));
+        // simpleLog("got from db >>>>>>>>>>>> " . json_encode($lines));
 
         $result = (isset($options['stdClass']) && $options['stdClass'])
             ? $lines
@@ -330,7 +331,7 @@ class BaseModel
             }, $lines);
 
 
-        simpleLog("returning >>>>>>>>>>>> " . json_encode($result));
+        // simpleLog("returning >>>>>>>>>>>> " . json_encode($result));
 
         return $result;
     }

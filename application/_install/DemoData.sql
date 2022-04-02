@@ -1,10 +1,23 @@
+DELETE FROM `user` WHERE id < 100;
+DELETE FROM `role_has_permission` WHERE id < 100;
+DELETE FROM `role` WHERE id < 100;
+DELETE FROM `choice` WHERE id < 100;
+DELETE FROM `question` WHERE id < 100;
+DELETE FROM `permission` WHERE id < 100;
+DELETE FROM `exam_center` WHERE id < 100;
+DELETE FROM `topic` WHERE id < 100;
+DELETE FROM `subject` WHERE id < 100;
 
-INSERT INTO `choice` (`id`, `text`, `is_correct`, `question_id`) VALUES
-(1, 'INT', 0, 1),
-(2, 'Long int', 0, 1),
-(3, 'Float', 1, 1),
-(4, '2', 1, 2),
-(5, '1', 0, 2);
+INSERT INTO `subject` (`id`, `name`, `description`) VALUES
+(1, 'Computer Science', 'It is the study of Computers and other stuff'),
+(2, 'Math', 'the study of numbers'),
+(3, 'Physics', 'the study of not numbers'),
+(4, 'Law', 'the study of Law');
+
+INSERT INTO `topic` (`id`, `name`, `description`, `subject_id`) VALUES
+(1, 'Types', 'it is about static type systems.', 1),
+(2, 'Relativity', 'Hard', 3),
+(3, 'Local Law', 'the study of Local Law', 4);
 
 INSERT INTO `exam_center` (`id`, `name`, `description`) VALUES
 (1, 'Hiast Center', 'A center in the hiast...'),
@@ -51,6 +64,13 @@ INSERT INTO `permission` (`id`, `name`) VALUES
 INSERT INTO `question` (`id`, `text`, `number_of_choices`, `topic_id`) VALUES
 (1, 'Which is bigger?', 3, 1),
 (2, 'What is 1+1 equals to?', 3, 2);
+
+INSERT INTO `choice` (`id`, `text`, `is_correct`, `question_id`) VALUES
+(1, 'INT', 0, 1),
+(2, 'Long int', 0, 1),
+(3, 'Float', 1, 1),
+(4, '2', 1, 2),
+(5, '1', 0, 2);
 
 INSERT INTO `role` (`id`, `name`) VALUES
 (8, 'Admin'),
@@ -100,17 +120,6 @@ INSERT INTO `role_has_permission` (`id`, `role_id`, `permission_id`) VALUES
 (35, 1, 35),
 (36, 1, 36);
 
-INSERT INTO `subject` (`id`, `name`, `description`) VALUES
-(1, 'Computer Science', 'It is the study of Computers and other stuff'),
-(2, 'Math', 'the study of numbers'),
-(3, 'Physics', 'the study of not numbers'),
-(4, 'Law', 'the study of Law');
-
-INSERT INTO `topic` (`id`, `name`, `description`, `subject_id`) VALUES
-(1, 'Types', 'it is about static type systems.', 1),
-(2, 'Relativity', 'Hard', 3),
-(3, 'Local Law', 'the study of Local Law', 4);
-
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `profile_picture`, `role_id`) VALUES
 (1, 'NasoohOlabi', '81dc9bdb52d04dc20036dbd8313ed055', 'Nasooh', 'Olabi', 'Yaser', 'NasoohOlabi.jpg', 1),
 (2, 'NassouhAlOlabi', '202cb962ac59075b964b07152d234b70', 'Nassouh', 'AlOlabi', 'Yasser', NULL, 1),
@@ -129,4 +138,5 @@ INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `mi
 (15, 'SandraNeal', 'e268f98f247841960366c10ea099a67e', 'Sandra', 'Neal', 'Kim', 'SandraNeal.jpg', 1),
 (16, 'ToniRhodes', 'e268f98f247841960366c10ea099a67e', 'Toni', 'Rhodes', 'Jordan', 'ToniRhodes.jpg', 1),
 (17, 'MarcDemo', 'e268f98f247841960366c10ea099a67e', 'Marc', 'Demo', 'Angry', 'MarcDemo.jpg', 1),
-(18, 'testadmin', '202cb962ac59075b964b07152d234b70', 'TestCenter', 'Admin', NULL, NULL, 6);
+(18, 'testadmin', '202cb962ac59075b964b07152d234b70', 'TestCenter', 'Admin', NULL, NULL, 6)
+-- last query doesn't need a semicolon
