@@ -1,24 +1,21 @@
 <?php
-require_once './application/views/_templates/header.php';
-require_once './application/libs/util/log.php';
-
-// require_once URL . 'application/models/core/schema.php'; //WTF
-
+require_once 'application/views/_templates/header.php';
+require_once 'application/libs/util/log.php';
+require_once 'application/models/core/schema.php';
 
 
-// require_once './application/views/_templates/schema_table.php';
-// require_once './application/models/basemodel.php';
-// require_once './application/models/exammodel.php';
 
-class Exam extends Controller
+require_once 'application/views/_templates/schema_table.php';
+
+class Exams extends Controller
 {
     public function index()
     {
 
         //TODO: remove =null
 
-        // $model = $this->loadModel('ExamModel');
-        // $Exam = $model->getAllExam();
+        $model = $this->loadModel('ExamModel');
+        $Exam = $model->getAll();
 
 
 
