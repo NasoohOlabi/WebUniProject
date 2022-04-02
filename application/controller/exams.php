@@ -2,9 +2,6 @@
 require_once 'application/views/_templates/header.php';
 require_once 'application/libs/util/log.php';
 require_once 'application/models/core/schema.php';
-
-
-
 require_once 'application/views/_templates/schema_table.php';
 
 class Exams extends Controller
@@ -14,37 +11,22 @@ class Exams extends Controller
 
         //TODO: remove =null
 
-        $model = $this->loadModel('ExamModel');
-        $Exam = $model->getAll();
-
-
-
-        // if ((session_status() === PHP_SESSION_NONE) || (!isset($_SESSION['inExam']) || (!$_SESSION['inExam']))) { //TODO ACTIVATE AFTER DONE
-        //     http_response_code(403);
-        // }
+        // $model = $this->loadModel('ExamModel');
+        // $Exam = $model->getAll();
 
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
 
-        // var_dump($_SESSION);
+        $_SESSION['inExam'] = true; //TODO: REMOVE
 
-        //WEIRD BUG:
-        // echo "HELLO WORLD";
-
-
-        // $exam_model = $this->loadModel('ExamModel');
-
-        // echo "here";
-
-        // var_dump($exam_model);
-
-        // echo "hi";
+        $exam_model = $this->loadModel('ExamModel');
 
 
-        // if (!$exam_model->inExam()) {
-        //     http_response_code(403);
-        // }
+        if (!$exam_model->inExam()) {
+            http_response_code(403);
+            return;
+        }
 
 
         pageHeadTag("Exam");
@@ -74,6 +56,7 @@ class Exams extends Controller
 
         if (!$exam_model->inExam()) {
             http_response_code(403);
+            return;
         }
 
         /* ... */
