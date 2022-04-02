@@ -18,24 +18,21 @@ INSERT INTO `subject` (`id`, `name`, `description`) VALUES
 (6, "Biology", "this is biology"),
 (7, "Chemistry", "this is chemistry"),
 (8, "Civics", "this is civics"),
-(9, "Music", "this is music"),
-(10, "Art", "this is art"),
-(11, "PE", "this is PE"),
-(12, "Religious Studies", "this is religious studies"),
-(13, "Theatre", "this is theatre"),
-(14, "Film", "this is film"),
-(15, "Drama", "this is drama"),
-(16, "Music", "this is music"),
-(17, "Art", "this is art"),
-(18, "PE", "this is PE"),
-(19, "Health", "this is health"),
-(20, "Business", "this is business"),
-(21, "Economics", "this is economics"),
-(22, "Psychology", "this is psychology"),
-(23, "Sociology", "this is sociology"),
-(24, "Political Science", "this is political science"),
-(25, "History", "this is history"),
-(26, "Philosophy", "this is philosophy");
+(9, "Religious Studies", "this is religious studies"),
+(10, "Theatre", "this is theatre"),
+(11, "Film", "this is film"),
+(12, "Drama", "this is drama"),
+(13, "Music", "this is music"),
+(14, "Art", "this is art"),
+(15, "PE", "this is PE"),
+(16, "Health", "this is health"),
+(17, "Business", "this is business"),
+(18, "Economics", "this is economics"),
+(19, "Psychology", "this is psychology"),
+(20, "Sociology", "this is sociology"),
+(21, "Political Science", "this is political science"),
+(22, "History", "this is history"),
+(23, "Philosophy", "this is philosophy");
 
 
 INSERT INTO `topic` (`id`, `name`, `description`, `subject_id`) VALUES
@@ -43,8 +40,7 @@ INSERT INTO `topic` (`id`, `name`, `description`, `subject_id`) VALUES
 (2, "Algebra", "This is another topic in the math subject", 2),
 (3, 'Local Law', 'the study of Local Law', 4),
 (4, "Analysis", "This topic is part of the mathematics subject", 2),
-(5, "Relativity", "testing", 3),
-;
+(5, "Relativity", "testing", 3);
 
 INSERT INTO `exam_center` (`id`, `name`, `description`) VALUES
 (1, 'Hiast Center', 'A center in the hiast...'),
@@ -100,24 +96,24 @@ INSERT INTO `choice` (`id`, `text`, `is_correct`, `question_id`) VALUES
 (3, 'Float', 1, 1),
 (4, '2', 1, 2),
 (5, '1', 0, 2),
-(1, "f\'(2)=1", 0, 3),
-(2, "f\'(2)=2", 0, 3),
-(3, "f\'(2)=3", 0, 3),
-(4, "f\'(2)=4", 1, 3);
+(6, "f\'(2)=1", 0, 3),
+(7, "f\'(2)=2", 0, 3),
+(8, "f\'(2)=3", 0, 3),
+(9, "f\'(2)=4", 1, 3);
 
 INSERT INTO `exam` (`id`, `name`, `number_of_questions`, `duration`, `subject_id`) VALUES
 (1, "", 1, 60, 1);
 
 INSERT INTO `role` (`id`, `name`) VALUES
 (1, 'ROOT::ADMIN'),
-(8, 'Admin'),
-(5, 'Guest'),
-(4, 'Parent'),
 (2, 'Student'),
 (3, 'Teacher'),
+(4, 'Parent'),
+(5, 'Guest'),
 (6, 'TestAdmin'),
 (7, "TestAdminn"),
-(8, 'Text Center Admin');
+(8, 'Admin'),
+(9, 'Text Center Admin');
 
 INSERT INTO `role_has_permission` (`id`, `role_id`, `permission_id`) VALUES
 (1, 1, 1),
@@ -186,8 +182,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `mi
 (26, "newuser2", "202cb962ac59075b964b07152d234b70", "New", "modified", "", "newuser2.png", 2),
 (27, "omar.a", "202cb962ac59075b964b07152d234b70", "Omar", "Ahmad", "middleName", NULL, 2),
 (28, "bob", "202cb962ac59075b964b07152d234b70", "Newacc", "Lname", "MyMiddleName", "bob.jpeg", 2),
-(29, "radmin", "a9b7b5912b7043805c326b62c636e069", "Root", "Admin", "", NULL, 1)
-(30, "profpic", "a9b7b5912b7043805c326b62c636e069", "With", "Profile", "", "profpic.jpg", 2),
-(31, "centeradmin", "123", "TestCenter", "Admin", "", NULL, 6),
-(32, "testadmin", "202cb962ac59075b964b07152d234b70", "TestCenter", "Admin", "", NULL, 6),
+(29, "radmin", "a9b7b5912b7043805c326b62c636e069", "Root", "Admin", "", NULL, 1),
+(30, "profpic", "a9b7b5912b7043805c326b62c636e069", "With", "Profile", NULL, "profpic.jpg", 2),
+(31, "centeradmin", "123", "TestCenter", "Admin", "", NULL, 6)
 -- last query doesn't need a semicolon
