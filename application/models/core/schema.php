@@ -46,12 +46,12 @@ class Exam extends Table
     const number_of_questions = "exam.number_of_questions";
     const duration = 'exam.duration';
     const subject_id = 'exam.subject_id';
-    // this is what we'll inter act with the rest is just jargon
+    // this is what we'll interact with the rest is just jargon
     public int $number_of_questions;
     public int $duration;
     public int $subject_id;
     public ?Subject $subject;
-    public array $dependents = ['Exam_Center_Has_Exam', 'Exam_Has_Question'];
+    public array $dependents = ['Student_Exam'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Form', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
@@ -96,7 +96,7 @@ class Subject extends Table
     const id = 'subject.id';
     const name = 'subject.name';
     const description = 'subject.description';
-    // this is what we'll inter act with the rest is just jargon
+    // this is what we'll interact with the rest is just jargon
     public string $name;
     public string $description;
     public array $dependents = ['Exam', 'Topic'];
@@ -143,7 +143,7 @@ class Topic extends Table
     const name = 'topic.name';
     const description = 'topic.description';
     const subject_id = 'topic.subject_id';
-    // this is what we'll inter act with the rest is just jargon
+    // this is what we'll interact with the rest is just jargon
     public string $name;
     public string $description;
     public int $subject_id;
@@ -196,13 +196,13 @@ class Question extends Table
     const text = 'question.text';
     const number_of_choices = 'question.number_of_choices';
     const topic_id = 'question.topic_id';
-    // this is what we'll inter act with the rest is just jargon
+    // this is what we'll interact with the rest is just jargon
     public string $text;
     public int $number_of_choices;
     public int $topic_id;
     public ?Topic $topic;
     public ?array $choices;
-    public array $dependents = ['Choice', 'Exam_Has_Question'];
+    public array $dependents = ['Choice', 'Student_Exam_Has_Question'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Write', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Delete'];
@@ -249,11 +249,11 @@ class Choice extends Table
     const text = 'choice.text';
     const is_correct = 'choice.is_correct';
     const question_id = 'choice.question_id';
-    // this is what we'll inter act with the rest is just jargon
+    // this is what we'll interact with the rest is just jargon
     public string $text;
     public int $is_correct;
     public int $question_id;
-    public array $dependents = ['Student_Took_Exam'];
+    public array $dependents = ['Student_Exam_Has_Choice'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Add', 'read' => 'Take', 'update' => 'Edit', 'delete' => 'Remove'];
@@ -295,7 +295,7 @@ class Permission extends Table
 {
     const id = 'permission.id';
     const name = 'permission.name';
-    // this is what we'll inter act with the rest is just jargon
+    // this is what we'll interact with the rest is just jargon
     public string $name;
     public array $dependents = ['Role_Has_Permission'];
     public function get_CRUD_Terms()
@@ -339,7 +339,7 @@ class Role extends Table
 {
     const id = 'role.id';
     const name = 'role.name';
-    // this is what we'll inter act with the rest is just jargon
+    // this is what we'll interact with the rest is just jargon
     public string $name;
     public array $dependents = ['User', 'Role_Has_Permission'];
     public function get_CRUD_Terms()
@@ -384,7 +384,7 @@ class Role_Has_Permission extends Table
     const id = 'role_has_permission.id';
     const role_id = 'role_has_permission.role_id';
     const permission_id = 'role_has_permission.permission_id';
-    // this is what we'll inter act with the rest is just jargon
+    // this is what we'll interact with the rest is just jargon
     public int $role_id;
     public int $permission_id;
     public ?Role $role;
@@ -443,7 +443,7 @@ class User extends Table
     const middle_name = 'user.middle_name';
     const profile_picture = 'user.profile_picture';
     const role_id = 'user.role_id';
-    // this is what we'll inter act with the rest is just jargon
+    // this is what we'll interact with the rest is just jargon
     public string $username;
     public string $password;
     public string $first_name;
@@ -502,9 +502,11 @@ class Student extends Table
 {
     const id = 'student.id';
     const enroll_date = 'student.enroll_date';
-    // this is what we'll inter act with the rest is just jargon
+    const user_id = 'student.user_id';
+    // this is what we'll interact with the rest is just jargon
     public string $enroll_date;
-    public array $dependents = ['Student_Took_Exam', ['User' => 'id']];
+    public int $user_id;
+    public array $dependents = ['Student_Exam_Has_Choice', 'User'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Enroll', 'read' => 'Take', 'update' => 'edit enrollment', 'delete' => 'Unenroll'];
@@ -548,10 +550,10 @@ class Exam_Center extends Table
     const id = 'exam_center.id';
     const name = 'exam_center.name';
     const description = 'exam_center.description';
-    // this is what we'll inter act with the rest is just jargon
+    // this is what we'll interact with the rest is just jargon
     public string $name;
     public string $description;
-    public array $dependents = ['Student_Took_Exam', 'Exam_Center_Has_Exam'];
+    public array $dependents = ['Student_Exam_Has_Choice', 'Student_Exam'];
 
     public function get_CRUD_Terms()
     {
@@ -591,18 +593,25 @@ class Exam_Center extends Table
         return $constants[$name];
     }
 }
-class Exam_Center_Has_Exam extends Table
+class Student_Exam extends Table
 {
-    const id = 'exam_center_has_exam.id';
-    const date = 'exam_center_has_exam.date';
-    const exam_id = 'exam_center_has_exam.exam_id';
-    const exam_center_id = 'exam_center_has_exam.exam_center_id';
-    // this is what we'll inter act with the rest is just jargon
+    const id = 'student_exam.id';
+    const date = 'student_exam.date';
+    const exam_id = 'student_exam.exam_id';
+    const student_id = 'student_exam.student_id';
+    const exam_center_id = 'student_exam.exam_center_id';
+    const qs_hash = 'student_exam.qs_hash';
+    // this is what we'll interact with the rest is just jargon
     public string $date;
     public int $exam_id;
     public int $exam_center_id;
+    public int $student_id;
+    public string $qs_hash;
     public ?Exam $exam;
     public ?Exam_Center $exam_center;
+    public ?Student $student;
+
+    public array $dependents = ['Student_Exam_Has_Choice', 'Student_Exam_Has_Question'];
 
     public function get_CRUD_Terms()
     {
@@ -612,7 +621,7 @@ class Exam_Center_Has_Exam extends Table
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
-            $cols = Exam_Center_Has_Exam::SQL_Columns();
+            $cols = Student_Exam::SQL_Columns();
             if (properties_exists($stdClass, $cols, $prefix)) {
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};
@@ -623,6 +632,9 @@ class Exam_Center_Has_Exam extends Table
                 $tmp = new Exam_Center($stdClass, 'exam_center_');
                 if (isset($tmp->id))
                     $this->exam_center = $tmp;
+                $tmp = new Student($stdClass, 'student_');
+                if (isset($tmp->id))
+                    $this->student = $tmp;
             }
         }
     }
@@ -648,21 +660,16 @@ class Exam_Center_Has_Exam extends Table
     }
 }
 
-class Student_Took_Exam extends Table
+class Student_Exam_Has_Choice extends Table
 {
-    const id = 'student_took_exam.id';
-    const date = 'student_took_exam.date';
-    const choice_id = 'student_took_exam.choice_id';
-    const student_id = 'student_took_exam.student_id';
-    const exam_center_id = 'student_took_exam.exam_center_id';
-    // this is what we'll inter act with the rest is just jargon
-    public string $date;
+    const id = 'student_exam_has_choice.id';
+    const choice_id = 'student_exam_has_choice.choice_id';
+    const student_exam_id = 'student_exam_has_choice.student_exam_id';
+    // this is what we'll interact with the rest is just jargon
     public int $choice_id;
-    public int $student_id;
-    public int $exam_center_id;
-    public ?Student $student;
+    public int $student_exam_id;
+    public ?Student_Exam $student_exam;
     public ?Choice $choice;
-    public ?Exam_Center $exam_center;
     public function get_CRUD_Terms()
     {
         return ['create' => '', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Remove'];
@@ -671,7 +678,7 @@ class Student_Took_Exam extends Table
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
-            $cols = Student_Took_Exam::SQL_Columns();
+            $cols = Student_Exam_Has_Choice::SQL_Columns();
             if (properties_exists($stdClass, $cols, $prefix)) {
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};
@@ -679,12 +686,9 @@ class Student_Took_Exam extends Table
                 $tmp = new Choice($stdClass, 'choice_');
                 if (isset($tmp->id))
                     $this->choice = $tmp;
-                $tmp = new Student($stdClass, 'student_');
+                $tmp = new Student_Exam($stdClass, 'student_exam_');
                 if (isset($tmp->id))
-                    $this->student = $tmp;
-                $tmp = new Exam_Center($stdClass, 'exam_center_');
-                if (isset($tmp->id))
-                    $this->exam_center = $tmp;
+                    $this->student_exam = $tmp;
             }
         }
     }
@@ -709,24 +713,26 @@ class Student_Took_Exam extends Table
         return $constants[$name];
     }
 }
-class Exam_Has_Question extends Table
+class Student_Exam_Has_Question extends Table
 {
-    const id = 'exam_has_question.id';
-    const question_id = 'exam_has_question.question_id';
-    const exam_center_has_exam_id = 'exam_has_question.exam_center_has_exam_id';
-    // this is what we'll inter act with the rest is just jargon
+    const id = 'student_exam_has_question.id';
+    const question_id = 'student_exam_has_question.question_id';
+    const student_exam_id = 'student_exam_has_question.student_exam_id';
+    // this is what we'll interact with the rest is just jargon
+    public int $id;
     public int $question_id;
-    public int $exam_id;
+    public int $student_exam_id;
     public ?Question $question;
+    public ?Student_Exam $student_exam;
     public function get_CRUD_Terms()
     {
         return ['create' => 'Give', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Remove'];
     }
-    public array $identifying_fields =  ['question_id', 'exam_center_has_exam_id'];
+    public array $identifying_fields =  ['question_id', 'student_exam_id'];
     function __construct($stdClass = null, $prefix = "")
     {
         if ($stdClass != null) {
-            $cols = Exam_Has_Question::SQL_Columns();
+            $cols = Student_Exam_Has_Question::SQL_Columns();
             if (properties_exists($stdClass, $cols, $prefix)) {
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};

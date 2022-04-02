@@ -111,8 +111,8 @@
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('student_took_exam')">
-              <span class="text nav-text" id="student_took_exam">Exams Taken</span>
+            <a href="#" onclick="switchTo('student_exam')">
+              <span class="text nav-text" id="student_exam">Exams Taken</span>
             </a>
           </li>
 

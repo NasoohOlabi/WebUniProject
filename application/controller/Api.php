@@ -61,7 +61,7 @@ class Api extends Controller
 			$v = new $className((object) $_POST);
 
 
-			simpleLog(json_encode($v), 'Api/create/');
+			simpleLog(json_encode($v), 'api/create/');
 			$Model = $this->loadModel('BaseModel');
 			if ($Model->experimental_insert($v)) {
 				echo json_encode($v);
@@ -71,7 +71,7 @@ class Api extends Controller
 			// header('Location:' . URL . 'DashBoard/');
 		} catch (\Throwable $e) {
 
-			simpleLog('Caught exception: ' . $e->getMessage());
+			simpleLog('Caught exception: ' . $e->getMessage(), 'api');
 			echo 'Operation Failed : ' . 'Caught exception: ' . str_replace('::', ' ', str_replace('$', ' ', $e->getMessage()));
 		}
 		pageHit("Api.create");
@@ -84,7 +84,7 @@ class Api extends Controller
 			// invalid request
 			echo 'Operation Failed : ';
 
-			simpleLog('$_POST ' . json_encode($_POST) . ' failed', 'Api/read/');
+			simpleLog(' schemaClass == null $_POST ' . json_encode($_POST) . ' failed', 'api/read/');
 			return;
 		}
 
@@ -94,7 +94,7 @@ class Api extends Controller
 		$more = false;
 		if (isset($_POST['op']) && $_POST['op'] === 'get after' && isset($_POST['id'])) {
 			$id = $_POST['id'];
-			simpleLog("more is requested specifically after " . $_POST['id']);
+			simpleLog("more is requested specifically after " . $_POST['id'], 'api/read/');
 			$more = true;
 		}
 
@@ -119,8 +119,8 @@ class Api extends Controller
 				}
 				return $answer;
 			} catch (AccessDeniedException $th) {
-				simpleLog("Access Denied Exception $th");
-				simpleLog("You have access to $schemaClass but: " . $th->getMessage());
+				simpleLog("Access Denied Exception $th", 'api/read/');
+				simpleLog("You have access to $schemaClass but: " . $th->getMessage(), 'api/read/');
 				return $answer;
 			}
 		};
@@ -143,8 +143,8 @@ class Api extends Controller
 							try {
 								$row->{strtolower($key) . 's'} = $Model->select([], $key,  [$key::access($value) => $row->id]);
 							} catch (AccessDeniedException $th) {
-								simpleLog("Access Denied Exception $th");
-								simpleLog("You have access to $schemaClass but: " . $th->getMessage());
+								simpleLog("Access Denied Exception $th", 'api/read/');
+								simpleLog("You have access to $schemaClass but: " . $th->getMessage(), 'api/read/');
 								// return $row;
 								continue;
 							}
@@ -156,9 +156,7 @@ class Api extends Controller
 							// those are SchemaClass names
 							// not sql names
 							$one_name = get_class($row);
-							$many_name = ($dep === 'Exam_Center_Has_Exam' && $one_name == 'Exam')
-								? 'Exam_Center'
-								: str_replace('_Has_', '', str_replace($one_name, '', $dep));
+							$many_name =  str_replace('_Has_', '', str_replace($one_name, '', $dep));
 
 							$middle_table = $dep;
 							$middle_table_one_col =
@@ -166,7 +164,7 @@ class Api extends Controller
 							$middle_table_many_col =
 								$dep::access(strtolower($many_name) . '_id');
 
-							simpleLog('->>jump over many2many table :: $dep<<<----' . "dep: $dep one_name: $one_name many_name: $many_name middle_table: $middle_table middle_table_one_col: $middle_table_one_col middle_table_many_col: $middle_table_many_col row->id: " . json_encode($row->id));
+							simpleLog('->>jump over many2many table :: $dep<<<----' . "dep: $dep one_name: $one_name many_name: $many_name middle_table: $middle_table middle_table_one_col: $middle_table_one_col middle_table_many_col: $middle_table_many_col row->id: " . json_encode($row->id), 'api/read');
 
 							try {
 								$row->{strtolower($many_name) . 's'} =
@@ -183,19 +181,20 @@ class Api extends Controller
 										]
 									);
 							} catch (AccessDeniedException $th) {
-								simpleLog("Access Denied Exception $th");
-								simpleLog("You have access to $schemaClass but: " . $th->getMessage());
+								simpleLog("Access Denied Exception $th", 'api/read/');
+								simpleLog("You have access to $schemaClass but: " . $th->getMessage(), 'api/read/');
 								continue;
 								// return $row;
 							}
 						} else {
 							$fk_col = $dep::access(strtolower(get_class($row)) . '_id');
-							simpleLog(get_class($row) . ' dep fetch ' . $dep);
+							simpleLog(get_class($row) . ' dep fetch ' .
+								$dep, 'api/read/');
 							try {
 								$row->{strtolower($dep) . 's'} = $Model->select([], $dep,  [$fk_col => $row->id]);
 							} catch (AccessDeniedException $th) {
-								simpleLog("Access Denied Exception $th");
-								simpleLog("You have access to $schemaClass but: " . $th->getMessage());
+								simpleLog("Access Denied Exception $th", 'api/read/');
+								simpleLog("You have access to $schemaClass but: " . $th->getMessage(), 'api/read/');
 								continue;
 								// return $row;
 							}
@@ -206,7 +205,8 @@ class Api extends Controller
 				return $row;
 			}, $answers);
 
-			simpleLog('$_POST ' . json_encode($_POST) . ' served', 'Api/read/');
+			simpleLog('$_POST ' . json_encode($_POST) .
+				' served', 'api/read/');
 			if (count($answers) >= 1)
 				echo json_encode($answers);
 			elseif ($more)
@@ -216,7 +216,7 @@ class Api extends Controller
 		} catch (\Throwable $e) {
 
 			simpleLog('$_POST ' .
-				json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage());
+				json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage(), 'api/read/');
 			echo 'Operation Failed : ' . ' $_POST ' .
 				json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage();
 		}
@@ -260,21 +260,24 @@ class Api extends Controller
 						throw new \Exception('invalid image type');
 					}
 
-					simpleLog("Saving image to: $target");
+					simpleLog("Saving image to: $target", 'api');
 
 					$whandle = fopen($target, 'w');
 					stream_filter_append($whandle, 'convert.base64-decode', STREAM_FILTER_WRITE);
 					fwrite($whandle, $data);
 					fclose($whandle);
 				} else {
-					simpleLog("Picture decode failed");
+					simpleLog(
+						"Picture decode failed",
+						'api'
+					);
 					throw new \Exception('did not match data URI with image data');
 				}
 
 				$_POST['profile_picture'] = $username . "." . $type;
 			}
 
-			simpleLog('api update>>>preprocessed>>>>POST>>>>>' . json_encode((object)$_POST));
+			simpleLog('api update>>>preprocessed>>>>POST>>>>>' . json_encode((object)$_POST), 'api');
 			$_POST = array_filter($_POST, function ($key) use ($wanted_columns) {
 				return in_array(strtolower($key), $wanted_columns);
 			}, ARRAY_FILTER_USE_KEY);
@@ -289,7 +292,8 @@ class Api extends Controller
 				$_POST['password'] = md5($_POST['password']);
 
 			simpleLog(
-				'api update>>>>cleaned>>>POST>>>>>' . json_encode((object)$_POST)
+				'api update>>>>cleaned>>>POST>>>>>' . json_encode((object)$_POST),
+				'api'
 			);
 
 			if (!isset($_POST['id'])) {
@@ -297,7 +301,8 @@ class Api extends Controller
 			}
 
 			simpleLog(
-				'api update>>>>cleaned>>>POST>>>>>id added>>>>>' . json_encode((object)$_POST)
+				'api update>>>>cleaned>>>POST>>>>>id added>>>>>' . json_encode((object)$_POST),
+				'api'
 			);
 
 			$Model = $this->loadModel('BaseModel');
@@ -310,7 +315,7 @@ class Api extends Controller
 			}
 		} catch (\Throwable $e) {
 
-			simpleLog('Caught exception: ' . $e->getMessage());
+			simpleLog('Caught exception: ' . $e->getMessage(), 'api');
 			echo 'Operation Failed : ';
 		}
 		pageHit("Api.update");
@@ -344,7 +349,7 @@ class Api extends Controller
 					// and also obviously checks is $className is sth we have
 					$v = new $className((object) $_POST);
 
-					simpleLog(json_encode($v), 'Api/delete/');
+					simpleLog(json_encode($v), 'api/delete');
 					$Model = $this->loadModel('BaseModel');
 					//TODO: check if what he submitted has the same fields
 					$Model->deleteById($v->id);
@@ -353,7 +358,7 @@ class Api extends Controller
 			}
 		} catch (\Throwable $e) {
 
-			simpleLog('Caught exception: ' . $e->getMessage());
+			simpleLog('Caught exception: ' . $e->getMessage(), 'api');
 			echo 'Operation Failed : ';
 		}
 		pageHit("Api.delete");
