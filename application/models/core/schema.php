@@ -553,7 +553,7 @@ class Exam_Center extends Table
     // this is what we'll interact with the rest is just jargon
     public string $name;
     public string $description;
-    public array $dependents = ['Student_Exam_Has_Choice', 'Student_Exam'];
+    public array $dependents = ['Student_Exam'];
 
     public function get_CRUD_Terms()
     {
