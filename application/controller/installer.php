@@ -13,6 +13,13 @@ class installer extends Controller
 		} elseif ($op == 'all') {
 			$installer->installSchema();
 			$installer->installDemo();
+		} else {
+			// return 400 error
+			header('HTTP/1.1 400 Bad Request');
+			return;
 		}
+		// return 200 success
+		header('HTTP/1.1 200 OK');
+		echo 'OK';
 	}
 }
