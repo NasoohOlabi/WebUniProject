@@ -8,6 +8,7 @@ class ExamModel extends BaseModel
     function __construct($db)
     {
         parent::__construct($db, "exam");
+        simpleLog("Exam Model Loaded");
     }
 
     function subject($id)
@@ -63,5 +64,10 @@ class ExamModel extends BaseModel
                 return new Exam($args);
             }, $exams)) :
             new Either\Err("No Exams available");
+    }
+
+    public function inExam()
+    {
+        return (isset($_SESSION['inExam']) && ($_SESSION['inExam']));
     }
 }

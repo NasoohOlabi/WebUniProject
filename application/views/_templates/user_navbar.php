@@ -1,5 +1,9 @@
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 $profile_pic = $_SESSION['user']->profile_picture;
+// var_dump($_SESSION['user']);
 $has_picture = ($profile_pic == null || $profile_pic == '' ? false : true);
 $role = $_SESSION['user']->role->name;
 $isRootAdmin = ($role == 'ROOT::ADMIN' ? true : false);
@@ -10,9 +14,13 @@ $dashboard_option = '<a href="' . URL . 'DashBoard">' . ((LANGUAGE::$direction =
 
 $profile_pic_style = '';
 
+// var_dump($has_picture);
+
 if ($has_picture == true) {
     $profile_pic_style = 'style = "background-image: url(' . URL . 'DB/ProfilePics/' . $profile_pic . ')";';
 }
+
+
 ?>
 
 <body>

@@ -704,3 +704,68 @@ noscript {
   border: 1px solid #f44336 !important;
   padding: 0.5em 2em;
 }
+
+/*##############################################*/
+
+/* Question page */
+
+.question-content {
+  width: 55em;
+  background-color: white;
+  height: fit-content;
+  border-radius: 3em;
+  font-family: "Montserrat", sans-serif;
+  padding-bottom: 2em;
+}
+
+.question-main-content {
+  background-color: var(--background);
+  height: calc(100vh - var(--navbar-height));
+}
+
+.question-container {
+  height: calc(100vh - var(--navbar-height));
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.question-header {
+  margin-left: 2.7em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-style: italic;
+}
+
+.question-text {
+  margin-left: 5em;
+  margin-right: 2em;
+}
+
+.question-form {
+  margin-left: 5em;
+  margin-top: 2em;
+}
+
+.choice-text {
+  font-size: 1.2em;
+}
+
+.question-choice {
+  margin-right: 0.5em;
+  accent-color: green;
+}
+
+.exam-nav-btn {
+  width: 6em !important;
+  float: right;
+  margin-right: 4em;
+}
+
+.exam-nav-container {
+  height: 2.4em;
+}
+
+.choice-container {
+  margin-bottom: 2.5em;
+}
