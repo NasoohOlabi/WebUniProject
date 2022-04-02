@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `subject` (
   PRIMARY KEY (`id`),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC))
 ENGINE = InnoDB
-AUTO_INCREMENT = 100
+AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `topic` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 100
+AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS `question` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 100
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `choice` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 100
+AUTO_INCREMENT = 6
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -121,7 +121,6 @@ CREATE TABLE IF NOT EXISTS `exam` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 100
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -133,84 +132,12 @@ DROP TABLE IF EXISTS `exam_center` ;
 CREATE TABLE IF NOT EXISTS `exam_center` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `description` VARCHAR(45) NULL DEFAULT NULL,
+  `description` TEXT NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC))
 ENGINE = InnoDB
-AUTO_INCREMENT = 100
-DEFAULT CHARACTER SET = utf8mb4;
-
-
--- -----------------------------------------------------
--- Table `exam_center_has_exam`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `exam_center_has_exam` ;
-
-CREATE TABLE IF NOT EXISTS `exam_center_has_exam` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `date` DATE NOT NULL,
-  `exam_id` INT(11) NOT NULL,
-  `exam_center_id` INT(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `exam_id_UNIQUE` (`exam_id` ASC, `exam_center_id` ASC),
-  INDEX `fk_exam_center_has_exam_exams1_idx` (`exam_id` ASC),
-  INDEX `fk_exam_center_has_exam_exam_centers1_idx` (`exam_center_id` ASC),
-  CONSTRAINT `fk_exam_center_has_exam_exam_centers1`
-    FOREIGN KEY (`exam_center_id`)
-    REFERENCES `exam_center` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_exam_center_has_exam_exams1`
-    FOREIGN KEY (`exam_id`)
-    REFERENCES `exam` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-AUTO_INCREMENT = 100
-DEFAULT CHARACTER SET = utf8mb4;
-
-
--- -----------------------------------------------------
--- Table `exam_has_question`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `exam_has_question` ;
-
-CREATE TABLE IF NOT EXISTS `exam_has_question` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `question_id` INT(11) NOT NULL,
-  `exam_center_has_exam_id` INT(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_exam_has_question_questions1_idx` (`question_id` ASC),
-  INDEX `fk_exam_has_question_exam_center_has_exam1_idx` (`exam_center_has_exam_id` ASC),
-  CONSTRAINT `fk_exam_has_question_exam_center_has_exam1`
-    FOREIGN KEY (`exam_center_has_exam_id`)
-    REFERENCES `exam_center_has_exam` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_exam_has_question_questions1`
-    FOREIGN KEY (`question_id`)
-    REFERENCES `question` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-AUTO_INCREMENT = 100
-DEFAULT CHARACTER SET = utf8mb4;
-
-
--- -----------------------------------------------------
--- Table `permission`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `permission` ;
-
-CREATE TABLE IF NOT EXISTS `permission` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE INDEX `id_UNIQUE` (`id` ASC),
-  UNIQUE INDEX `name_UNIQUE` (`name` ASC))
-ENGINE = InnoDB
-AUTO_INCREMENT = 100
+AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -226,34 +153,7 @@ CREATE TABLE IF NOT EXISTS `role` (
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   UNIQUE INDEX `name_UNIQUE` (`name` ASC))
 ENGINE = InnoDB
-AUTO_INCREMENT = 100
-DEFAULT CHARACTER SET = utf8mb4;
-
-
--- -----------------------------------------------------
--- Table `role_has_permission`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `role_has_permission` ;
-
-CREATE TABLE IF NOT EXISTS `role_has_permission` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `role_id` INT(11) NOT NULL,
-  `permission_id` INT(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  INDEX `fk_role_has_permission_roles1_idx` (`role_id` ASC),
-  INDEX `fk_role_has_permission_permissions1_idx` (`permission_id` ASC),
-  CONSTRAINT `fk_role_has_permission_permissions1`
-    FOREIGN KEY (`permission_id`)
-    REFERENCES `permission` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_role_has_permission_roles1`
-    FOREIGN KEY (`role_id`)
-    REFERENCES `role` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-AUTO_INCREMENT = 100
+AUTO_INCREMENT = 9
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -281,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `user` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 100
+AUTO_INCREMENT = 19
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -293,54 +193,152 @@ DROP TABLE IF EXISTS `student` ;
 CREATE TABLE IF NOT EXISTS `student` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `enroll_date` DATE NOT NULL,
+  `user_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
-  CONSTRAINT `user_id`
-    FOREIGN KEY (`id`)
+  INDEX `fk_student_user1_idx` (`user_id` ASC),
+  CONSTRAINT `fk_student_user1`
+    FOREIGN KEY (`user_id`)
     REFERENCES `user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 100
 DEFAULT CHARACTER SET = utf8mb4;
 
 
 -- -----------------------------------------------------
--- Table `student_took_exam`
+-- Table `student_exam`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `student_took_exam` ;
+DROP TABLE IF EXISTS `student_exam` ;
 
-CREATE TABLE IF NOT EXISTS `student_took_exam` (
+CREATE TABLE IF NOT EXISTS `student_exam` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `date` DATE NOT NULL,
+  `exam_id` INT(11) NOT NULL,
   `exam_center_id` INT(11) NOT NULL,
-  `choice_id` INT(11) NOT NULL,
   `student_id` INT(11) NOT NULL,
+  `qs_hash` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`),
-  INDEX `fk_student_took_exam_exam_centers1_idx` (`exam_center_id` ASC),
-  INDEX `fk_student_took_exam_choices1_idx` (`choice_id` ASC),
-  INDEX `fk_student_took_exam_students1_idx` (`student_id` ASC),
-  CONSTRAINT `fk_student_took_exam_choices1`
-    FOREIGN KEY (`choice_id`)
-    REFERENCES `choice` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_student_took_exam_exam_centers1`
+  UNIQUE INDEX `exam_id_UNIQUE` (`exam_id` ASC, `exam_center_id` ASC),
+  INDEX `fk_exam_center_has_exam_exams1_idx` (`exam_id` ASC),
+  INDEX `fk_exam_center_has_exam_exam_centers1_idx` (`exam_center_id` ASC),
+  INDEX `fk_student_exam_student1_idx` (`student_id` ASC),
+  UNIQUE INDEX `qs_hash_UNIQUE` (`qs_hash` ASC),
+  CONSTRAINT `fk_exam_center_has_exam_exam_centers1`
     FOREIGN KEY (`exam_center_id`)
     REFERENCES `exam_center` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_student_took_exam_students1`
+  CONSTRAINT `fk_exam_center_has_exam_exams1`
+    FOREIGN KEY (`exam_id`)
+    REFERENCES `exam` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_student_exam_student1`
     FOREIGN KEY (`student_id`)
     REFERENCES `student` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 100
+DEFAULT CHARACTER SET = utf8mb4;
+
+
+-- -----------------------------------------------------
+-- Table `student_exam_has_question`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `student_exam_has_question` ;
+
+CREATE TABLE IF NOT EXISTS `student_exam_has_question` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `question_id` INT(11) NOT NULL,
+  `student_exam_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_exam_has_question_questions1_idx` (`question_id` ASC),
+  INDEX `fk_exam_has_question_exam_center_has_exam1_idx` (`student_exam_id` ASC),
+  CONSTRAINT `fk_exam_has_question_exam_center_has_exam1`
+    FOREIGN KEY (`student_exam_id`)
+    REFERENCES `student_exam` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_exam_has_question_questions1`
+    FOREIGN KEY (`question_id`)
+    REFERENCES `question` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4;
+
+
+-- -----------------------------------------------------
+-- Table `permission`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `permission` ;
+
+CREATE TABLE IF NOT EXISTS `permission` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `id_UNIQUE` (`id` ASC),
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC))
+ENGINE = InnoDB
+AUTO_INCREMENT = 37
+DEFAULT CHARACTER SET = utf8mb4;
+
+
+-- -----------------------------------------------------
+-- Table `role_has_permission`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `role_has_permission` ;
+
+CREATE TABLE IF NOT EXISTS `role_has_permission` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `role_id` INT(11) NOT NULL,
+  `permission_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_role_has_permission_roles1_idx` (`role_id` ASC),
+  INDEX `fk_role_has_permission_permissions1_idx` (`permission_id` ASC),
+  CONSTRAINT `fk_role_has_permission_permissions1`
+    FOREIGN KEY (`permission_id`)
+    REFERENCES `permission` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_role_has_permission_roles1`
+    FOREIGN KEY (`role_id`)
+    REFERENCES `role` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 37
+DEFAULT CHARACTER SET = utf8mb4;
+
+
+-- -----------------------------------------------------
+-- Table `student_exam_has_choice`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `student_exam_has_choice` ;
+
+CREATE TABLE IF NOT EXISTS `student_exam_has_choice` (
+  `id` INT(11) NOT NULL,
+  `student_exam_id` INT(11) NOT NULL,
+  `choice_id` INT(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_student_exam_has_choice_choice1_idx` (`choice_id` ASC),
+  INDEX `fk_student_exam_has_choice_student_exam1_idx` (`student_exam_id` ASC),
+  UNIQUE INDEX `student_exam_id_UNIQUE` (`student_exam_id` ASC, `choice_id` ASC),
+  CONSTRAINT `fk_student_exam_has_choice_student_exam1`
+    FOREIGN KEY (`student_exam_id`)
+    REFERENCES `student_exam` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_student_exam_has_choice_choice1`
+    FOREIGN KEY (`choice_id`)
+    REFERENCES `choice` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS
--- last query doesn't need a semicolon
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
