@@ -649,8 +649,8 @@ noscript {
   float: var(--opp-dir);
   border: none;
   position: relative;
-  bottom: 4.5em;
-  left: 4.5em;
+  bottom: 0.5rem;
+  left: 0.5rem;
   cursor: pointer;
 }
 .remove-div-x-btn:hover {
