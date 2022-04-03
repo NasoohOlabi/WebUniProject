@@ -967,7 +967,10 @@ function reset() {
  *
  * @param {string[]} identifiers
  */
-function delete_re(identifiers, depth = 0) {
+function delete_re(depth = 0) {
+    const identifiers = deleteList
+        .map((elem) => elem.trId)
+        .map((identifier) => identifier.split("::").pop());
     if (!identifiers || identifiers.length == 0) return;
     const delete_ids = identifiers.map((identifier) =>
         identifier.split("-").pop()
@@ -985,70 +988,86 @@ function delete_re(identifiers, depth = 0) {
         })
         .then((response_text) => {
             console.log(response_text);
-            if (response_text.includes("NO ACTION")) {
-                Swal.fire({
-                    title: "Couldn't delete!",
-                    // .map((identifier) => Model[identifier]['identifying_fields'].map(field=>Model[identifier][field]))
-                    // .flatMap((obj) => obj.dependents.map((dep) => Model[dep]))
-                    text: `${currentTab} was not alone! we need backup to delete his bloodline including " ${identifiers
-                        .map((identifier) =>
-                            Model[identifier]["dependents"]
-                                .map((x) => x.toLowerCase() + "s")
-                                .filter(
-                                    (field) =>
-                                        Model[identifier][field] != undefined &&
-                                        Model[identifier][field].length > 0
-                                )
-                                .map((field) => {
-                                    return (
-                                        field.replaceAll("_", " ").replaceAll("-", " ") +
-                                        " [ " +
-                                        Model[identifier][field]
-                                            .map((sub_identifier) =>
-                                                Model[sub_identifier]["identifying_fields"]
-                                                    .map((id_field) => Model[sub_identifier][id_field])
-                                                    .join("& ")
-                                            )
-                                            .join(" ") +
-                                        " ] "
-                                    );
-                                })
-                                .join(", ")
-                        )
-                        .join(" And ")} "`,
-                    icon: "error",
-                    showCancelButton: true,
-                    confirmButtonColor: "#3085d6",
-                    cancelButtonColor: "#d33",
-                    confirmButtonText: "Yes, do whatever's necessary!",
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        identifiers
-                            .map((identifier) => Model[identifier])
-                            .forEach((item, index) => {
-                                Object.keys(item).forEach((key) => {
-                                    if (
-                                        item[key] instanceof Array &&
-                                        item[key].length > 0 &&
-                                        item[key][0].split("-").length == 2
-                                    ) {
-                                        const identifiers = item[key];
-                                        delete_re(identifiers, depth + 1);
-                                    }
+            if (response_text.includes("NO ACTION") || response_text.includes("Operation Failed")) {
+                if (response_text.includes("Operation Failed")) {
+                    Swal.fire("Failed", response_text, "error");
+                    deleteList.map((elem) => document.getElementById(elem.trId).style.display = "table-row");
+
+                    if (document.getElementById("modify-div"))
+                        document.getElementById("modify-div").remove();
+                }
+                else {
+                    Swal.fire({
+                        title: "Couldn't delete!",
+                        // .map((identifier) => Model[identifier]['identifying_fields'].map(field=>Model[identifier][field]))
+                        // .flatMap((obj) => obj.dependents.map((dep) => Model[dep]))
+                        text: `${currentTab} was not alone! we need backup to delete his bloodline including " ${identifiers
+                            .map((identifier) =>
+                                Model[identifier]["dependents"]
+                                    .map((x) => x.toLowerCase() + "s")
+                                    .filter(
+                                        (field) =>
+                                            Model[identifier][field] != undefined &&
+                                            Model[identifier][field].length > 0
+                                    )
+                                    .map((field) => {
+                                        return (
+                                            field.replaceAll("_", " ").replaceAll("-", " ") +
+                                            " [ " +
+                                            Model[identifier][field]
+                                                .map((sub_identifier) =>
+                                                    Model[sub_identifier]["identifying_fields"]
+                                                        .map((id_field) => Model[sub_identifier][id_field])
+                                                        .join("& ")
+                                                )
+                                                .join(" ") +
+                                            " ] "
+                                        );
+                                    })
+                                    .join(", ")
+                            )
+                            .join(" And ")} "`,
+                        icon: "error",
+                        showCancelButton: true,
+                        confirmButtonColor: "#3085d6",
+                        cancelButtonColor: "#d33",
+                        confirmButtonText: "Yes, do whatever's necessary!",
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            identifiers
+                                .map((identifier) => Model[identifier])
+                                .forEach((item, index) => {
+                                    Object.keys(item).forEach((key) => {
+                                        if (
+                                            item[key] instanceof Array &&
+                                            item[key].length > 0 &&
+                                            item[key][0].split("-").length == 2
+                                        ) {
+                                            const identifiers = item[key];
+                                            delete_re(identifiers, depth + 1);
+                                        }
+                                    });
+                                    // delete parent
+                                    delete_re([identifiers[index]]);
                                 });
-                                // delete parent
-                                delete_re([identifiers[index]]);
-                            });
-                    } else {
-                        reset();
-                    }
-                })
+                        } else {
+                            reset();
+                        }
+                    })
+                }
             } else {
                 if (document.getElementById("modify-div")) {
                     document.getElementById("modify-div").remove();
                     delete_ids.forEach((delete_id) => {
                         delete Model[currentTab + "-" + delete_id];
                     });
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${currentTab}${(identifiers.length === 1) ? '' : 's'} deleted!`,
+                        showConfirmButton: false,
+                        timer: 750
+                    })
                 }
             }
         });
@@ -1064,19 +1083,8 @@ function confirmChanges() {
         confirmButtonText: "Yes, delete it!",
     }).then((result) => {
         if (result.isConfirmed) {
-            const delete_ids = deleteList
-                .map((elem) => elem.trId)
-                .map((identifier) => identifier.split("::").pop());
-            delete_re(delete_ids);
 
-
-
-            Swal.fire("Deleted!", "Your choices has been deleted.", "success");
-            // call delete api here ... right?
-            console.log("deleteList : ");
-            console.log(deleteList);
-
-
+            delete_re(deleteList);
 
             modifyMode = false;
         }

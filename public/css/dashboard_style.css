@@ -250,8 +250,16 @@ body.dark #home .text {
 }
 
 #modify-div {
+	background: var(--body-color);
+	position: fixed;
 	display: flex;
 	justify-content: center;
+	bottom: 0;
+	left: 250px;
+	width: calc(100vw - 250px);
+	padding: 1%;
+	/* box-shadow: 0px -1px 7px rgb(50 50 50 / 75%); */
+	/* margin: auto; */
 }
 
 .fa-trash {
@@ -283,6 +291,7 @@ body.dark #home .text {
 	top: 85%;
 	right: 5%;
 	cursor: pointer;
+	z-index: 999;
 }
 .form-select {
 	text-align: center;
