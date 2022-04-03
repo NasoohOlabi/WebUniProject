@@ -1,3 +1,4 @@
+DELETE FROM `student` WHERE id < 100;
 DELETE FROM `user` WHERE id < 100;
 DELETE FROM `exam` WHERE id < 100;
 DELETE FROM `role_has_permission` WHERE id < 100;
@@ -40,7 +41,8 @@ INSERT INTO `topic` (`id`, `name`, `description`, `subject_id`) VALUES
 (2, "Algebra", "This is another topic in the math subject", 2),
 (3, 'Local Law', 'the study of Local Law', 4),
 (4, "Analysis", "This topic is part of the mathematics subject", 2),
-(5, "Relativity", "testing", 3);
+(5, "Relativity", "testing", 3),
+(6, 'Geometry', 'The study of shapes', 2);
 
 INSERT INTO `exam_center` (`id`, `name`, `description`) VALUES
 (1, 'Hiast Center', 'A center in the hiast...'),
@@ -87,8 +89,15 @@ INSERT INTO `permission` (`id`, `name`) VALUES
 INSERT INTO `question` (`id`, `text`, `number_of_choices`, `topic_id`) VALUES
 (1, 'Which is bigger?', 3, 1),
 (2, 'What is 1+1 equals to?', 3, 2),
-(3, "Let f(x)=x^2. What is f\'(2)?", 4, 2),
-(4, "What is physics", 5, 5);
+(3, "Let f(x)=x^2. What is f\'(2)?", 4, 4),
+(4, "What is physics", 5, 5),
+(5, 'if x+1=3 then x = ?', 3, 2),
+(6, 'Is f(x) = -x non decreasing?', 2, 4),
+(7, 'what is 3+2 ?', 3, 2),
+(8, 'Is f(x) = x*x non decreasing?', 2, 4),
+(9, 'The area of Square?', 2, 6),
+(10, 'The area of Rectangle?', 2, 6),
+(11, 'The area of Circle?', 2, 6);
 
 INSERT INTO `choice` (`id`, `text`, `is_correct`, `question_id`) VALUES
 (1, 'INT', 0, 1),
@@ -99,10 +108,28 @@ INSERT INTO `choice` (`id`, `text`, `is_correct`, `question_id`) VALUES
 (6, "f\'(2)=1", 0, 3),
 (7, "f\'(2)=2", 0, 3),
 (8, "f\'(2)=3", 0, 3),
-(9, "f\'(2)=4", 1, 3);
+(9, "f\'(2)=4", 1, 3),
+(10, 'x = 2', 1, 5),
+(11, 'x = -1', 0, 5),
+(12, 'x = 10', 0, 5),
+(13, 'Yes', 0, 6),
+(14, 'No', 1, 6),
+(15, '5', 1, 7),
+(16, '1', 0, 7),
+(17, '4', 0, 7),
+(18, 'No', 1, 8),
+(19, 'Yes', 0, 8),
+(20, 'length*length', 1, 9),
+(21, 'length+length', 0, 9),
+(22, 'width*height', 1, 10),
+(23, '2(width+height)', 0, 10),
+(24, 'pi*radius*radius', 1, 11),
+(25, '2*pi*radius*radius', 0, 11);
+
 
 INSERT INTO `exam` (`id`, `number_of_questions`, `duration`, `subject_id`) VALUES
-(1, 1, 60, 1);
+(1, 1, 60, 1),
+(2, 3, 60, 2);
 
 INSERT INTO `role` (`id`, `name`) VALUES
 (1, 'ROOT::ADMIN'),
@@ -184,5 +211,8 @@ INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `mi
 (28, "bob", "202cb962ac59075b964b07152d234b70", "Newacc", "Lname", "MyMiddleName", "bob.jpeg", 2),
 (29, "radmin", "a9b7b5912b7043805c326b62c636e069", "Root", "Admin", "", NULL, 1),
 (30, "profpic", "a9b7b5912b7043805c326b62c636e069", "With", "Profile", NULL, "profpic.jpg", 2),
-(31, "centeradmin", "123", "TestCenter", "Admin", "", NULL, 6)
+(31, "centeradmin", "123", "TestCenter", "Admin", "", NULL, 6);
+
+INSERT INTO `student` (`id`, `enroll_date`, `user_id`) VALUES
+(1, '2022-04-12', 5)
 -- last query doesn't need a semicolon

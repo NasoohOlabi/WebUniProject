@@ -219,7 +219,6 @@ CREATE TABLE IF NOT EXISTS `student_exam` (
   `student_id` INT(11) NOT NULL,
   `qs_hash` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE INDEX `exam_id_UNIQUE` (`exam_id` ASC, `exam_center_id` ASC),
   INDEX `fk_exam_center_has_exam_exams1_idx` (`exam_id` ASC),
   INDEX `fk_exam_center_has_exam_exam_centers1_idx` (`exam_center_id` ASC),
   INDEX `fk_student_exam_student1_idx` (`student_id` ASC),
