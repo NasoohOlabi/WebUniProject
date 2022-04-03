@@ -684,10 +684,25 @@ function editRow(identifier) {
         var arr = [].slice.call(document.getElementById(identifier).children);
         let tic = arr.pop();
         let x = arr.pop();
-        arr = arr.filter(is_not_unicode_sth).filter(t => t.className != 'profile-pic');
+        arr = arr
+            .filter(is_not_unicode_sth)
+            .filter(t => t.className != 'profile-pic');
+
         if (tic.children[0].className.includes("fa-pencil")) {
             for (const child of arr) {
-                child.contentEditable = true;
+                if (child.innerText != "✔" && child.innerText != "❌") {
+                    child.contentEditable = true;
+                } else {
+                    child.style.cursor = 'pointer'
+                    // add event lister and on click toggle between "✔" and "❌"
+                    child.addEventListener('click', (e) => {
+                        if (child.innerText == "✔") {
+                            child.innerText = "❌"
+                        } else {
+                            child.innerText = "✔"
+                        }
+                    })
+                }
             }
             tic.children[0].className = tic.children[0].className.replace(
                 "fa-pencil",
@@ -710,7 +725,9 @@ function editRow(identifier) {
                 confirmButtonText: "Yes, modify it!",
             }).then((result) => {
                 if (result.isConfirmed) {
-                    let data = { ...Model[identifier] };
+                    const child_identifier = identifier.split("::").pop();
+
+                    let data = { ...Model[child_identifier] };
                     let sql_id = identifier.split("-").pop();
                     let header = Object.keys(data)
                         .filter(is_display_key)
@@ -718,10 +735,18 @@ function editRow(identifier) {
                     data["id"] = sql_id;
 
                     header.forEach((key, i) => {
-                        if (!(data[key] instanceof Object)) data[key] = arr[i].innerText;
+                        if (!(data[key] instanceof Object)) {
+                            if (arr[i].innerText == "✔" || arr[i].innerText == "❌") {
+                                data[key] = arr[i].innerText == "✔" ? 1 : 0;
+                            }
+                            else
+                                data[key] = arr[i].innerText;
+                        }
                     });
 
-                    getFromHQ("update", identifier.split("-")[0], data, {
+                    const child_name = child_identifier.split('-')[0];
+
+                    getFromHQ("update", child_name, data, {
                         unclean: (res) => {
                             if (res == "updated") {
                                 arr.forEach((tag) => {
@@ -840,11 +865,19 @@ function edit_sub_Row(identifier) {
                         const id_lst = identifier.split("::");
                         const my_identifier = id_lst[id_lst.length - 1];
                         const my_name = my_identifier.split("-")[0];
+                        const new_identifier = id_lst.slice(0, id_lst.length - 1).join("::") + "::" + my_name + '-' + v;
                         document.getElementById(identifier).outerHTML = TableRow(
-                            identifier,
+                            new_identifier,
                             true,
                             my_name
                         );
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: 'success',
+                            title: `${father_name} updated`,
+                            showConfirmButton: false,
+                            timer: 750
+                        })
                     }
                 },
             });
