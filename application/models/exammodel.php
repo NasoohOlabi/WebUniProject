@@ -64,22 +64,22 @@ class ExamModel extends BaseModel
          * and so if the sample size is 5, we'll have 5 different combinations of samples of size 4
          * assuming $number_of_questions_per_topic is 4
          * this function will take and array of question_id and will return
-         * [13,12,45 ...]
+         * [13,12,45]
          * and so the returned array will 
          * [
-         *      hash of sample of all the questions in the input array except for 13 meaning [12,45,...],
-         *      hash of sample of all the questions in the input array except for 12 meaning [13,45,...],
-         *      and so on
+         *      hash of sample of all the questions in the input array except for 13 meaning "12,45",
+         *      hash of sample of all the questions in the input array except for 12 meaning "13,45",
+         *      hash of sample of all the questions in the input array except for 45 meaning "13,12",
          * ]
          */
         $questions_ids_string_md5 = function (array $question_ids, int $without_index = null) {
             if ($without_index === null)
-                return implode("|", $question_ids);
+                return implode(",", $question_ids);
             else {
                 $initial_array = array_values($question_ids);
                 unset($initial_array[$without_index]);
                 $final_array = array_values($initial_array);
-                return implode("|", $final_array);
+                return implode(",", $final_array);
             }
         };
 
@@ -96,10 +96,10 @@ class ExamModel extends BaseModel
         /**
          * recursively try combinations of exams based on the combinations topic sampled questions
          * ex:
-         *                                                topics [ 2, 4, 5, 6]
-         *   question_ids without question_id in the index         1  1  1  1  
-         *   question_ids without question_id in the index         2  2  2  2  
-         *   question_ids without question_id in the index         3  3  3  3  
+         *                                                topics [    2,    4, 5, 6]
+         *   question_ids without question_id in the index         "12,45"  1  1  1  
+         *   question_ids without question_id in the index         "13,45"  2  2  2  
+         *   question_ids without question_id in the index         "13,12"  3  3  3  
          * 
          * we'll go through exams like this
          * 
