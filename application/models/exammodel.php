@@ -23,10 +23,13 @@ class ExamModel extends BaseModel
     }
     function questionsRandomSampleTopic(int $number_of_questions, int $topic_id)
     {
-        $sql = "SELECT id FROM `question` WHERE topic_id = :topic_id ORDER BY RAND() LIMIT :number_of_questions";
+        $sql = "SELECT id FROM `question` WHERE question.topic_id = $topic_id ORDER BY RAND() LIMIT $number_of_questions;";
         $query = $this->db->prepare($sql);
-        $query->execute([":topic_id" => $topic_id, ":number_of_questions" => $number_of_questions]);
-        $questions = $query->fetchAll();
+        // $query->execute([$topic_id, $number_of_questions]);
+        $query->execute();
+        $questions = array_map(function ($question) {
+            return $question->id;
+        }, $query->fetchAll());
         return $questions;
     }
 
@@ -38,8 +41,11 @@ class ExamModel extends BaseModel
         $sql = "SELECT id FROM `topic` WHERE subject_id = :subject_id";
         $query = $this->db->prepare($sql);
         $query->execute([":subject_id" => $subject_id]);
-        $topic_ids = $query->fetchAll();
+        $topic_ids = array_map(function ($row) {
+            return $row->id;
+        }, $query->fetchAll());
         $number_of_questions_per_topic = $number_of_questions / count($topic_ids);
+
 
         /**
          * topic_questions is an array of arrays indexed by topic_ids
@@ -66,16 +72,17 @@ class ExamModel extends BaseModel
          *      and so on
          * ]
          */
-        $questions_ids_string_md5 = function (array $question_ids, ?int $without_index = null) {
-            if ($without_index == null)
-                return md5(implode("", $question_ids));
+        $questions_ids_string_md5 = function (array $question_ids, int $without_index = null) {
+            if ($without_index === null)
+                return implode("|", $question_ids);
             else {
-                $initial_array = $question_ids;
+                $initial_array = array_values($question_ids);
                 unset($initial_array[$without_index]);
                 $final_array = array_values($initial_array);
-                return md5(implode("", $final_array));
+                return implode("|", $final_array);
             }
         };
+
 
         // using the previously defined function to get the md5 hash of the sample of questions
         $topic_to_hashes_to_exams_without_index = [];
@@ -89,10 +96,10 @@ class ExamModel extends BaseModel
         /**
          * recursively try combinations of exams based on the combinations topic sampled questions
          * ex:
-         *                                                       topics [ 2, 4, 5, 6]
-         *  hash of question_ids without question_id in the index         1  1  1  1  
-         *  hash of question_ids without question_id in the index         2  2  2  2  
-         *  hash of question_ids without question_id in the index         3  3  3  3  
+         *                                                topics [ 2, 4, 5, 6]
+         *   question_ids without question_id in the index         1  1  1  1  
+         *   question_ids without question_id in the index         2  2  2  2  
+         *   question_ids without question_id in the index         3  3  3  3  
          * 
          * we'll go through exams like this
          * 
@@ -107,14 +114,15 @@ class ExamModel extends BaseModel
          * 
          */
         $r = function (int $topic_ids_index = 0, array $acc = []) use (&$r, $topic_ids, $topic_to_hashes_to_exams_without_index) {
-            if ($topic_ids_index > count($topic_ids)) {
+            if ($topic_ids_index >= count($topic_ids)) {
                 // check if the md5 of the implode of acc exist in sql table student_exam in column qs_hash
                 $sql = "SELECT COUNT(*) as num FROM `student_exam` WHERE qs_hash = :qs_hash";
                 $query = $this->db->prepare($sql);
-                $potentially_unique_qs_hash = md5(implode("", $acc));
+                $potentially_unique_qs = implode("&", $acc);
+                $potentially_unique_qs_hash = md5($potentially_unique_qs);
                 $query->execute([":qs_hash" => $potentially_unique_qs_hash]);
-                $exams = $query->fetchAll();
-                if ($exams->num == 0) {
+                $number_of_exams = $query->fetchAll()[0]->num;
+                if ($number_of_exams == 0) {
                     $answer = [];
                     foreach (array_keys($acc) as $topic_id_not_taken_q_ind) {
                         $broken_down = explode("::", $topic_id_not_taken_q_ind);
@@ -130,7 +138,7 @@ class ExamModel extends BaseModel
                     $acc["$topic_id::$index"] = $hash;
                     $try = $r($topic_ids_index + 1, $acc);
                     if ($try != null) return $try;
-                    unset($acc[$topic_id::$index]);
+                    unset($acc["$topic_id::$index"]);
                 }
             }
         };
@@ -139,6 +147,9 @@ class ExamModel extends BaseModel
         // try to find a unique exam
         // using the previously defined function 
         $what_to_throw_for_topic_id = $r();
+
+        if ($what_to_throw_for_topic_id === null)
+            throw new Exception("couldn't generate a unique exam");
 
         // we'll take the result of the function 
         // and using it we'll clean the topic_questions array
@@ -152,9 +163,9 @@ class ExamModel extends BaseModel
 
         // insert the unique student_exam using the unique hash
         $insert_time = date("Y-m-d");
-        $sql = "INSERT INTO `student_exam` (`date`,`exam_id`,`student_id`,`exam_center_id`,`qs_hash`) VALUES (:date, :exam_id, :student_id, :exam_center_id, :qs_hash)";
+        $sql = "INSERT INTO `student_exam` (`date`,`exam_id`,`student_id`,`exam_center_id`,`qs_hash`) VALUES (?, ?, ?, ?, ?)";
         $query = $this->db->prepare($sql);
-        $query->execute([':date' =>  $insert_time, ':exam_id' => $exam->id, ':student_id' => $student->id, ':exam_center_id' => $exam_center->id, ":qs_hash" => $what_to_throw_for_topic_id['unique hash']]);
+        $query->execute([$insert_time, $exam->id, $student->id, $exam_center->id, $what_to_throw_for_topic_id['unique hash']]);
         $student_exam_id = $this->db->lastInsertId();
 
         // link questions to the student exam using the topic_questions array
