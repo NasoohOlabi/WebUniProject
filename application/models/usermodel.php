@@ -79,6 +79,7 @@ class UserModel extends BaseModel
                     [User::id => $id],
                     true
                 )[0];
+            $username = $answer->username;
         } else {
             return;
         }
