@@ -506,7 +506,7 @@ class Student extends Table
     // this is what we'll interact with the rest is just jargon
     public string $enroll_date;
     public int $user_id;
-    public array $dependents = ['Student_Exam_Has_Choice', 'User'];
+    public array $dependents = ['Student_Exam'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Enroll', 'read' => 'Take', 'update' => 'edit enrollment', 'delete' => 'Unenroll'];
