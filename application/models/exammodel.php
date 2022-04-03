@@ -21,11 +21,167 @@ class ExamModel extends BaseModel
             new Either\Result($subjects[0]) :
             new Either\Err("id $id doesn't exist in table subject");
     }
-    function questionsRandomSample()
+    function questionsRandomSampleTopic(int $number_of_questions, int $topic_id)
     {
-        $sql = "SELECT * FROM question AS t1 JOIN (SELECT id FROM question ORDER BY RAND() LIMIT 10) as t2 ON t1.id=t2.id";
-        // TODO: fill the rest
+        $sql = "SELECT id FROM `question` WHERE topic_id = :topic_id ORDER BY RAND() LIMIT :number_of_questions";
+        $query = $this->db->prepare($sql);
+        $query->execute([":topic_id" => $topic_id, ":number_of_questions" => $number_of_questions]);
+        $questions = $query->fetchAll();
+        return $questions;
+    }
 
+    function InsertOneOfAKind_student_exam(Exam $exam, Student $student, Exam_Center $exam_center)
+    {
+        $number_of_questions =  $exam->number_of_questions;
+        $subject_id = $exam->subject_id;
+
+        $sql = "SELECT id FROM `topic` WHERE subject_id = :subject_id";
+        $query = $this->db->prepare($sql);
+        $query->execute([":subject_id" => $subject_id]);
+        $topic_ids = $query->fetchAll();
+        $number_of_questions_per_topic = $number_of_questions / count($topic_ids);
+
+        /**
+         * topic_questions is an array of arrays indexed by topic_ids
+         * and so it maps a topic_id to an array of question_ids
+         * that where picked at random corresponding to that topic_d
+         */
+        $topic_questions = [];
+        foreach ($topic_ids as $topic_id) {
+            $topic_questions[$topic_id] = $this->questionsRandomSampleTopic($number_of_questions_per_topic + 1, $topic_id);
+        }
+
+
+        /**
+         * since questionsRandomSampleTopic gave us one more question than we need for a certain topic
+         * we'll go through different combinations of question by removing one question from the array
+         * and so if the sample size is 5, we'll have 5 different combinations of samples of size 4
+         * assuming $number_of_questions_per_topic is 4
+         * this function will take and array of question_id and will return
+         * [13,12,45 ...]
+         * and so the returned array will 
+         * [
+         *      hash of sample of all the questions in the input array except for 13 meaning [12,45,...],
+         *      hash of sample of all the questions in the input array except for 12 meaning [13,45,...],
+         *      and so on
+         * ]
+         */
+        $questions_ids_string_md5 = function (array $question_ids, ?int $without_index = null) {
+            if ($without_index == null)
+                return md5(implode("", $question_ids));
+            else {
+                $initial_array = $question_ids;
+                unset($initial_array[$without_index]);
+                $final_array = array_values($initial_array);
+                return md5(implode("", $final_array));
+            }
+        };
+
+        // using the previously defined function to get the md5 hash of the sample of questions
+        $topic_to_hashes_to_exams_without_index = [];
+        foreach ($topic_questions as $topic_id => $question_ids) {
+            foreach ($question_ids as $index => $question) {
+                $topic_to_hashes_to_exams_without_index[$topic_id][$index] = $questions_ids_string_md5($question_ids, $index);
+            }
+        }
+
+
+        /**
+         * recursively try combinations of exams based on the combinations topic sampled questions
+         * ex:
+         *                                                       topics [ 2, 4, 5, 6]
+         *  hash of question_ids without question_id in the index         1  1  1  1  
+         *  hash of question_ids without question_id in the index         2  2  2  2  
+         *  hash of question_ids without question_id in the index         3  3  3  3  
+         * 
+         * we'll go through exams like this
+         * 
+         * E := exam with topic 2 sample without q at index 1 
+         *            and topic 4 sample without q at index 1 
+         *            and topic 5 sample without q at index 1 
+         *            and topic 6 sample without q at index 1
+         * 
+         * if E unique we'll stop looking for more
+         * otherwise we'll try to find more using the same way recursively
+         * 
+         * 
+         */
+        $r = function (int $topic_ids_index = 0, array $acc = []) use (&$r, $topic_ids, $topic_to_hashes_to_exams_without_index) {
+            if ($topic_ids_index > count($topic_ids)) {
+                // check if the md5 of the implode of acc exist in sql table student_exam in column qs_hash
+                $sql = "SELECT COUNT(*) as num FROM `student_exam` WHERE qs_hash = :qs_hash";
+                $query = $this->db->prepare($sql);
+                $potentially_unique_qs_hash = md5(implode("", $acc));
+                $query->execute([":qs_hash" => $potentially_unique_qs_hash]);
+                $exams = $query->fetchAll();
+                if ($exams->num == 0) {
+                    $answer = [];
+                    foreach (array_keys($acc) as $topic_id_not_taken_q_ind) {
+                        $broken_down = explode("::", $topic_id_not_taken_q_ind);
+                        $answer[$broken_down[0]] = $broken_down[1];
+                    }
+                    return ['unique hash' => $potentially_unique_qs_hash, 'result' => $answer];
+                } else {
+                    return null;
+                }
+            } else {
+                $topic_id = $topic_ids[$topic_ids_index];
+                foreach ($topic_to_hashes_to_exams_without_index[$topic_id] as $index => $hash) {
+                    $acc["$topic_id::$index"] = $hash;
+                    $try = $r($topic_ids_index + 1, $acc);
+                    if ($try != null) return $try;
+                    unset($acc[$topic_id::$index]);
+                }
+            }
+        };
+
+
+        // try to find a unique exam
+        // using the previously defined function 
+        $what_to_throw_for_topic_id = $r();
+
+        // we'll take the result of the function 
+        // and using it we'll clean the topic_questions array
+        foreach ($what_to_throw_for_topic_id['result'] as $topic_id => $throw_away_question_id_ind) {
+            $question_ids = $topic_questions[$topic_id];
+
+            unset($question_ids[$throw_away_question_id_ind]);
+
+            $topic_questions[$topic_id] = array_values($question_ids);
+        }
+
+        // insert the unique student_exam using the unique hash
+        $insert_time = date("Y-m-d");
+        $sql = "INSERT INTO `student_exam` (`date`,`exam_id`,`student_id`,`exam_center_id`,`qs_hash`) VALUES (:date, :exam_id, :student_id, :exam_center_id, :qs_hash)";
+        $query = $this->db->prepare($sql);
+        $query->execute([':date' =>  $insert_time, ':exam_id' => $exam->id, ':student_id' => $student->id, ':exam_center_id' => $exam_center->id, ":qs_hash" => $what_to_throw_for_topic_id['unique hash']]);
+        $student_exam_id = $this->db->lastInsertId();
+
+        // link questions to the student exam using the topic_questions array
+        foreach ($topic_questions as $topic_id => $question_ids) {
+            $sql = "INSERT INTO `student_exam_has_question` (`student_exam_id`, `question_id`) VALUES ";
+            $values = [];
+            foreach ($question_ids as $question_id) {
+                $values[] = "($student_exam_id, $question_id)";
+            }
+            $sql .= implode(",", $values);
+            $query = $this->db->prepare($sql);
+            $query->execute();
+        }
+
+        $student_exam = new Student_Exam();
+        $student_exam->id = $student_exam_id;
+        $student_exam->exam = $exam;
+        $student_exam->student = $student;
+        $student_exam->exam_center = $exam_center;
+        $student_exam->student_id = $student->id;
+        $student_exam->exam_id = $exam->id;
+        $student_exam->exam_center_id = $exam_center->id;
+        $student_exam->qs_hash = $what_to_throw_for_topic_id['unique hash'];
+        $student_exam->date = $insert_time;
+
+        // return the student_exam
+        return $student_exam;
     }
     /**
      * join exams with their corresponding subject
