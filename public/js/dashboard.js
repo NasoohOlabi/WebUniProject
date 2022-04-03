@@ -18,9 +18,9 @@ const schemaClasses = [
     "user",
     "exam_center",
     "student",
-    "exam_has_question",
-    "student_took_exam",
-    "exam_center_has_exam",
+    "student_exam_has_question",
+    "student_exam",
+    "student_exam_has_choice",
 ];
 
 var currentTab =
@@ -157,11 +157,12 @@ function MainTable(id, header) {
  */
 function is_display_key(key) {
     return (
-        !key.endsWith("id") &&
-        key !== "identifying_fields" &&
-        key !== "dependents" &&
-        key !== "students" &&
-        !key.toLowerCase().includes("has")
+        !key.endsWith("id")
+        && key !== "identifying_fields"
+        && key !== "dependents"
+        && key !== "students"
+        && !key.toLowerCase().includes("has")
+        && key !== "number_of_choices"
     );
 }
 /**
@@ -931,7 +932,8 @@ function deleteRow(evt) {
         arr.forEach((tag) => {
             tag.contentEditable = false;
         });
-        let data = Model[id];
+
+        let data = Model[id.split("::").pop()];
 
         let header = Object.keys(data).filter(is_display_key).filter(t => t != 'profile_picture');
         header.forEach((key, i) => {

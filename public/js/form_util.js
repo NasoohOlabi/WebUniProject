@@ -167,7 +167,8 @@ function isValidForm(form_obj) {
                 const receivedValue = form_obj[key];
                 res[key] = validators[key](receivedValue);
             } else {
-                res[key] = true
+                const receivedValue = form_obj[key];
+                res[key] = receivedValue.length !== 0
             }
         }
     }
