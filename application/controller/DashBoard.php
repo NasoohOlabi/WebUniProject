@@ -55,7 +55,7 @@ class DashBoard extends Controller
             );
             return;
         }
-        
+
         $bm = $this->loadModel('BaseModel');
         pageHeadTag("Add $form", ['Swal' => true]);
 
@@ -99,6 +99,8 @@ class DashBoard extends Controller
                 $bm = $this->loadModel('PermissionModel');
 
                 $bm->updatePermissions($parent_id, $_POST['permission_ids']);
+
+                $_SESSION['user']->permissions = $bm->select([], 'Permission', [], [Permission::id => $parent_id], 1000, true);
 
                 $_SESSION['flash_message'] = 'Permissions Updated';
                 header('Location:' . URL . 'dashboard');
@@ -154,7 +156,7 @@ class DashBoard extends Controller
                 Language::t('You probably forgot to login!')
             );
             return;
-        }        
+        }
 
         $bm = $this->loadModel('BaseModel');
         // load views. within the views we can echo out $songs and $amount_of_songs easily
