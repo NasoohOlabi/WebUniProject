@@ -63,7 +63,10 @@ function PageForThis(Table $cls, BaseModel $bm, array $omit = [])
         // }
         foreach ($cls->dependents as $dep) {
             $sub_cls = $dep;
-            if (is_array($dep) && count($dep) == 1) {
+            if ($dep === 'Student_Exam' || $dep === 'Student_Exam_Has_Question') {
+                continue;
+            } elseif (is_array($dep) && count($dep) == 1) {
+                // if (is_array($dep) && count($dep) == 1) {
                 foreach ($dep as $key => $value) {
                     $sub_cls = $key;
                     require '__pageForThis1.php';

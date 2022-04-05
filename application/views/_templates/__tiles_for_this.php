@@ -14,7 +14,7 @@
             
             document.querySelector(`.form-block button`).style.display = 
             (document.getElementById(`<?= $sub_cls ?>-container`).style.display == `none`)?`block`:`none`
-            ">Add <?= str_replace('_', ' ', $sub_cls) ?> For This <?= str_replace('_', ' ', get_class($cls)) ?></button></div>
+            ">Add <?= ($sub_cls === 'Role_Has_Permission') ? 'Permissions' : str_replace('_', ' ', $sub_cls) ?> For This <?= str_replace('_', ' ', get_class($cls)) ?></button></div>
 <h2 style="display:none;" id="<?= $sub_cls ?>-title"><?= str_replace('_', ' ', $sub_cls) ?>s</h2>
 <div id="<?= $sub_cls ?>-container" class="scrolling-wrapper" style="display:none;">
     <div class="login-container">
