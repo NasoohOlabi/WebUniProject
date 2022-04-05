@@ -6,6 +6,10 @@ var statistics = null;
  * @type {{[index: string]:object}}
  */
 var Model = {};
+var Exams_Taken_or_Future_Exams = (getCookie('Exams_Taken_or_Future_Exams') !== '')
+    ? getCookie('Exams_Taken_or_Future_Exams')
+    : 'Future Exams'
+
 const schemaClasses = [
     "question",
     "role",
@@ -572,7 +576,7 @@ function getFromHQ(
             .then((answer) => {
                 try {
                     if (unclean != null) unclean(answer);
-                    const objects = JSON.parse(answer);
+                    let objects = JSON.parse(answer);
                     if (success != null) {
                         if (!(objects instanceof Array)) {
                             Swal.fire({
@@ -586,8 +590,17 @@ function getFromHQ(
                             return;
                         }
                         objects.forEach((object) => {
-                            clean_format(object);
-                        });
+                            clean_format(object)
+                        })
+
+                        if (currentTab === 'student_exam') {
+                            if (Exams_Taken_or_Future_Exams === 'Future Exams') {
+                                objects = objects.filter(o => o.choices.length === 0)
+                            }
+                            else if (Exams_Taken_or_Future_Exams === 'Exams Taken') {
+                                objects = objects.filter(o => o.choices.length !== 0)
+                            }
+                        }
                         const identifiers = objects.map((object) => {
                             Model[kind + "-" + object.id] = object;
                             return kind + "-" + object.id;
@@ -617,13 +630,20 @@ function getFromHQ(
  * @param {string} Tab will be set to currentTab
  * @returns {void}
  */
-function switchTo(Tab) {
+function switchTo(Tab, evt = null) {
     fetching_flag[currentTab] = false;
     try {
-        if (currentTab === Tab) return;
+        if (currentTab === Tab && Tab !== 'student_exam') return;
         currentTab = Tab;
+
+        const txt = (evt != null) ? evt.target.innerText : Exams_Taken_or_Future_Exams
+
         document.getElementById("title").innerText =
-            document.getElementById(Tab).innerText;
+            txt;
+
+        Exams_Taken_or_Future_Exams = txt
+        setCookie('Exams_Taken_or_Future_Exams', txt, 3)
+
         const container = document.getElementById("JS-App-Root");
         container.innerHTML = "";
 
@@ -658,6 +678,14 @@ function switchTo(Tab) {
                      * @param {string[]} lst
                      */
                     (lst) => {
+                        if (lst.length === 0) {
+                            const empty = document.createElement('h1')
+                            empty.innerText = `There is no ${document.getElementById('title').innerText}`
+                            const p = document.getElementById('JS-App-Root')
+                            p.innerHTML = ''
+                            p.appendChild(empty)
+                            return
+                        }
                         container.innerHTML += MainTable(
                             currentTab,
                             Object.keys(Model[lst[0]])
@@ -676,8 +704,10 @@ function switchTo(Tab) {
             }
         );
         // const addBtn = document.createElement("div");
-        const addBtn = `<div class="add-btn" onclick="add()">+</div>`;
-        container.innerHTML += addBtn;
+        if (currentTab !== 'student_exam') {
+            const addBtn = `<div class="add-btn" onclick="add()">+</div>`;
+            container.innerHTML += addBtn;
+        }
     } catch (error) {
         console.error(error);
     }
