@@ -78,7 +78,7 @@ $___userHasPermissionConstantHierarchy = [
         'read_student',
         'read_user'
     ],
-    'reassign_role'=>[
+    'reassign_role' => [
         'write_user' // hacky and not ideal
     ]
 ];
@@ -100,30 +100,33 @@ function sessionUserHasPermissions(array $required_permissions)
     $hierarchy_keys = array_keys($hierarchy);
 
     require_once 'application/libs/util/log.php';
-    simpleLog("----->>>>required_permissions: " . json_encode($required_permissions));
-
+    
     $user_permissions = (session_status() === PHP_SESSION_NONE || !isset($_SESSION['user']))
         ? ['read_role'] // <---- basic permissions for the public goes here 
         : array_map(function ($elem) {
             return $elem->name;
         }, $_SESSION['user']->permissions);
 
-    foreach ($user_permissions as $permission) {
-        if (in_array($permission, $hierarchy_keys)) {
-            foreach ($hierarchy[$permission] as  $subsequent_permission) {
-                $user_permissions[] = $subsequent_permission;
+        foreach ($user_permissions as $permission) {
+            if (in_array($permission, $hierarchy_keys)) {
+                foreach ($hierarchy[$permission] as  $subsequent_permission) {
+                    $user_permissions[] = $subsequent_permission;
+                }
             }
         }
-    }
-
-    simpleLog("----->>>>user_permissions: " . json_encode($user_permissions));
-
-    foreach ($required_permissions as $required_permission) {
-        // A required permission isn't in the user permission list
-        if (!in_array($required_permission, $user_permissions)) {
+        
+        // simpleLog("----->>>>user_permissions: " . json_encode($user_permissions));
+        
+        foreach ($required_permissions as $required_permission) {
+            // A required permission isn't in the user permission list
+            if (!in_array($required_permission, $user_permissions)) {
+                simpleLog("----->>>>required_permissions: " . json_encode($required_permissions));
+                simpleLog("this one is missing " . $required_permission);
             return false;
         }
     }
+
+    return true; // stupid bug!
 }
 function sessionUserHasRole($arg1)
 {
