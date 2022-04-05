@@ -85,7 +85,7 @@ INSERT INTO `permission` (`id`, `name`) VALUES
 (32, 'write_question'),
 (33, 'write_student'),
 (34, 'write_subject'),
-(35, 'write_topic'),(38,'reassign_role')
+(35, 'write_topic'),(38,'reassign_role'),
 (36, 'write_user');
 -- ########################################### 10 lines separator
 -- max id: 38
