@@ -32,8 +32,7 @@ INSERT INTO `subject` (`id`, `name`, `description`) VALUES
 (19, "Psychology", "this is psychology"),
 (20, "Sociology", "this is sociology"),
 (21, "Political Science", "this is political science"),
-(22, "History", "this is history"),
-(23, "Philosophy", "this is philosophy");
+(22, "History", "this is history");
 
 
 INSERT INTO `topic` (`id`, `name`, `description`, `subject_id`) VALUES
@@ -51,13 +50,14 @@ INSERT INTO `exam_center` (`id`, `name`, `description`) VALUES
 INSERT INTO `permission` (`id`, `name`) VALUES
 (1, 'add_exam_center'),
 (2, 'assign_role'),
-(3, 'change_role_permissions'),
 (4, 'create_permission'),
 (5, 'create_question'),
 (6, 'create_role'),
 (7, 'create_subject'),
 (8, 'create_topic'),
 (9, 'create_user'),
+(18, 'enroll_student'),(19, 'generate_exam'),
+-- ########################################### 10 lines separator
 (10, 'delete_exam_center'),
 (11, 'delete_permission'),
 (12, 'delete_question'),
@@ -66,9 +66,8 @@ INSERT INTO `permission` (`id`, `name`) VALUES
 (15, 'delete_subject'),
 (16, 'delete_topic'),
 (17, 'delete_user'),
-(18, 'enroll_student'),
-(19, 'generate_exam'),
-(20, 'grant_permission'),
+(37, 'delete_exam'),
+-- ########################################### 10 lines separator
 (21, 'read_exam'),
 (22, 'read_exam_center'),
 (23, 'read_question'),
@@ -78,13 +77,19 @@ INSERT INTO `permission` (`id`, `name`) VALUES
 (27, 'read_topic'),
 (28, 'read_user'),
 (29, 'take_exam'),
+-- ########################################### 10 lines separator
+(3, 'change_role_permissions'),
+(20, 'grant_permission'),
 (30, 'write_exam'),
 (31, 'write_exam_center'),
 (32, 'write_question'),
 (33, 'write_student'),
 (34, 'write_subject'),
-(35, 'write_topic'),
+(35, 'write_topic'),(38,'reassign_role')
 (36, 'write_user');
+-- ########################################### 10 lines separator
+-- max id: 38
+
 
 INSERT INTO `question` (`id`, `text`, `number_of_choices`, `topic_id`) VALUES
 (1, 'Which is bigger?', 3, 1),

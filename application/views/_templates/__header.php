@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="<?= $language ?>" dir="<?= LANGUAGE::$direction ?>">
+<html lang="<?= Language::$lang ?>" dir="<?= Language::$direction ?>">
 
 <head>
     <meta charset="UTF-8" />
@@ -13,5 +13,5 @@
     <?= (isset($options['Swal']) && $options['Swal']) ?  '<script src="' . URL . 'public/js/sweetalert2.js"></script>' : '' ?>
     <?= (isset($options['noform_util']) && $options['noform_util']) ?  '' : '<script src="' . URL . 'public/js/form_util.js"></script>'  ?>
     <?= (isset($options['noform']) && $options['noform']) ?  '' : '<script src="' . URL . 'public/js/form.js"></script>'  ?>
-    <?= (LANGUAGE::$direction == 'rtl') ? '<style>:root{--opp-dir:left;--norm-dir:right;}</style>' : '' ?>
+    <?= (Language::$direction == 'rtl') ? '<style>:root{--opp-dir:left;--norm-dir:right;}</style>' : '' ?>
 </head>

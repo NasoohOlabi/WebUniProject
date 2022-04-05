@@ -1,8 +1,6 @@
 <?php
-require 'AbstractLanguage.php';
-class LANGUAGE extends AbstractLanguage
-{
-    static array $texts =
+
+$texts =
     [
         'Welcome To The University of MNU' => 'مرحبا بك في جامعة MNU',
         'Login' => 'تسجيل الدخول',
@@ -22,9 +20,5 @@ class LANGUAGE extends AbstractLanguage
 
 
     ];
-    static string $direction = 'rtl';
-    static function t($key)
-    {
-        return LANGUAGE::$texts[$key];
-    }
-}
+$direction = 'rtl';
+$lang = 'ar';

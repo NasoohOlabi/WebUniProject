@@ -28,7 +28,7 @@ class Home extends Controller
         $p = $this->loadModel('QuestionModel');
 
         // load views. within the views we can echo out $songs and $amount_of_songs easily
-        pageHeadTag("index", ['noform' => true]);
+        pageHeadTag("index", ['noform' => true, 'Swal' => true]);
 
         if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
             require 'application/views/_templates/user_navbar.php';

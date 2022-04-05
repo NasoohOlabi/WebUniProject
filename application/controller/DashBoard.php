@@ -4,18 +4,8 @@ require_once './application/libs/util/log.php';
 require './application/models/core/schema.php';
 require_once 'application/views/_templates/schema_table.php';
 require_once 'application/views/_templates/form.php';
+require_once 'application/views/Languages/language.php';
 
-
-function is_ROOT__ADMIN()
-{
-    session_start();
-    // if (!(isset($_SESSION['user']) && $_SESSION['user']->role->name == 'ROOT::ADMIN')) {
-    //     header('Location:' . URL);
-    //     simpleLog("he is trying to hack us " . json_encode($_SESSION['user']), 'users/');
-    //     return;
-    // }
-    // simpleLog("access Granted to " . json_encode($_SESSION['user']), 'users/');
-}
 
 class DashBoard extends Controller
 {
@@ -25,7 +15,20 @@ class DashBoard extends Controller
 
     public function index()
     {
-        is_ROOT__ADMIN();
+        session_start();
+        if (isset($_SESSION['user'])) {
+            if (!sessionUserHasRole('ROOT::ADMIN')) {
+                $this->redirectToIndex_flash_message(
+                    Language::t('You don\'t have permission to access this page!')
+                );
+                return;
+            }
+        } else {
+            $this->redirectToIndex_flash_message(
+                Language::t('You probably forgot to login!')
+            );
+            return;
+        }
 
         simpleLog("dashboard called");
         $bm = $this->loadModel('BaseModel');
@@ -38,8 +41,21 @@ class DashBoard extends Controller
 
     public function add($form)
     {
-
         session_start();
+        if (isset($_SESSION['user'])) {
+            if (!sessionUserHasRole('ROOT::ADMIN')) {
+                $this->redirectToIndex_flash_message(
+                    Language::t('You don\'t have permission to access this page!')
+                );
+                return;
+            }
+        } else {
+            $this->redirectToIndex_flash_message(
+                Language::t('You probably forgot to login!')
+            );
+            return;
+        }
+        
         $bm = $this->loadModel('BaseModel');
         pageHeadTag("Add $form", ['Swal' => true]);
 
@@ -53,6 +69,22 @@ class DashBoard extends Controller
     public function update($form)
     {
         session_start();
+        if (isset($_SESSION['user'])) {
+            if (!sessionUserHasRole('ROOT::ADMIN')) {
+                $this->redirectToIndex_flash_message(
+                    Language::t('You don\'t have permission to access this page!')
+                );
+                return;
+            }
+        } else {
+            $this->redirectToIndex_flash_message(
+                Language::t('You probably forgot to login!')
+            );
+            return;
+        }
+
+
+
         $parent_id = isset($_GET['parent_id'])
             ? (int) $_GET['parent_id']
             : null;
@@ -109,7 +141,20 @@ class DashBoard extends Controller
     {
         // debug message to show where you are, just for the demo
         // echo 'Message from Controller: You are in the controller home, using the method index()';
-        is_ROOT__ADMIN();
+        session_start();
+        if (isset($_SESSION['user'])) {
+            if (!sessionUserHasRole('ROOT::ADMIN')) {
+                $this->redirectToIndex_flash_message(
+                    Language::t('You don\'t have permission to access this page!')
+                );
+                return;
+            }
+        } else {
+            $this->redirectToIndex_flash_message(
+                Language::t('You probably forgot to login!')
+            );
+            return;
+        }        
 
         $bm = $this->loadModel('BaseModel');
         // load views. within the views we can echo out $songs and $amount_of_songs easily

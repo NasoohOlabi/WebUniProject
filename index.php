@@ -36,22 +36,66 @@ if (!function_exists('str_contains')) {
 }
 
 // require 'application/model/permissions.php';
+// long name so I don't pollute the global namespace
+$___userHasPermissionConstantHierarchy = [
+    'read_question' => [
+        'read_choice'
+    ],
+    'read_subject' => [
+        'read_topic',
+    ],
+    'read_role' => [
+        'read_permission',
+        'read_role_has_permission'
+    ],
+    'add_exam_center' => [
+        'create_exam_center'
+    ],
+    'enroll_student' => [
+        'create_student'
+    ],
+    'generate_exam' => [
+        'create_exam',
+        'create_student_exam'
+    ],
+    'change_role_permissions' => [
+        'create_role_has_permission',
+        'delete_role_has_permission',
+        'read_role_has_permission'
+    ],
+    'grant_permission' => [
+        'read_role_has_permission',
+        'create_role_has_permission'
+    ],
+    'take_exam' => [
+        'read_student_exam',
+        'read_exam',
+        'read_choice',
+        'read_question',
+        'read_subject',
+        'read_topic',
+        'read_exam_center',
+        'read_student',
+        'read_user'
+    ],
+    'reassign_role'=>[
+        'write_user' // hacky and not ideal
+    ]
+];
 
-function userHasPermissions(array $required_permissions)
+function sessionUserHasPermissions(array $required_permissions)
 {
-    return true; //TODO
-    $hierarchy = [
-        'read_question' => [
-            'read_choice'
-        ],
-        'read_subject' => [
-            'read_topic',
-        ],
-        'read_role' => [
-            'read_permission',
-            'read_role_has_permission'
-        ]
-    ];
+    require_once 'application/models/core/AccessDeniedException.php';
+
+    if ($required_permissions === []) {
+        return true;
+    }
+    if (in_array('delete_permission', $required_permissions)) {
+        throw new AccessDeniedException("Sorry, We don't delete Permissions!");
+    }
+
+    global $___userHasPermissionConstantHierarchy;
+    $hierarchy = $___userHasPermissionConstantHierarchy;
 
     $hierarchy_keys = array_keys($hierarchy);
 
@@ -80,8 +124,11 @@ function userHasPermissions(array $required_permissions)
             return false;
         }
     }
-
-    return true;
+}
+function sessionUserHasRole($arg1)
+{
+    $arr = (is_string($arg1)) ? [$arg1] : $arg1;
+    return  in_array($_SESSION['user']->role->name, $arr);
 }
 
 // start the application

@@ -10,7 +10,7 @@ $isRootAdmin = ($role == 'ROOT::ADMIN' ? true : false);
 $user_first_name = $_SESSION['user']->first_name;
 $user_initial = strtoupper($user_first_name[0]);
 
-$dashboard_option = '<a href="' . URL . 'DashBoard">' . ((LANGUAGE::$direction == 'rtl') ? LANGUAGE::t('Dashboard') : '') . '<i class="fa fa-cogs" aria-hidden="true"></i>' . ((LANGUAGE::$direction == 'ltr') ? LANGUAGE::t('Dashboard') : '') . '</a>';
+$dashboard_option = '<a href="' . URL . 'DashBoard">' . ((Language::$direction == 'rtl') ? Language::t('Dashboard') : '') . '<i class="fa fa-cogs" aria-hidden="true"></i>' . ((Language::$direction == 'ltr') ? Language::t('Dashboard') : '') . '</a>';
 
 $profile_pic_style = '';
 
@@ -31,7 +31,7 @@ if ($has_picture == true) {
 
         function toggle_menu() {
 
-            var drop_menu = document.getElementsByClassName('dropdown-content<?= (LANGUAGE::$direction == 'rtl') ? '-rtl' : '' ?>')[0];
+            var drop_menu = document.getElementsByClassName('dropdown-content<?= (Language::$direction == 'rtl') ? '-rtl' : '' ?>')[0];
             var profile_pic = document.getElementsByClassName('profile-pic')[0];
 
             if (!toggle) {
@@ -50,7 +50,7 @@ if ($has_picture == true) {
             profile_pic.addEventListener('click', function(event) {
                 if (!toggle) return;
                 var profile_pic = document.getElementsByClassName('profile-pic')[0];
-                var drop_menu = document.getElementsByClassName('dropdown-content<?= (LANGUAGE::$direction != 'rtl') ? '-rtl' : '' ?>')[0];
+                var drop_menu = document.getElementsByClassName('dropdown-content<?= (Language::$direction != 'rtl') ? '-rtl' : '' ?>')[0];
                 var ignoreClickOnMeElement = document.getElementById('menu');
                 var isClickInsideElement = ignoreClickOnMeElement.contains(event.target) || profile_pic.contains(event.target);
                 if (!isClickInsideElement) {
@@ -71,34 +71,34 @@ if ($has_picture == true) {
             </div>
         </a>
         <nav>
-            <div class="dropdown<?= (LANGUAGE::$direction == 'rtl') ? '-rtl' : '' ?>">
+            <div class="dropdown<?= (Language::$direction == 'rtl') ? '-rtl' : '' ?>">
                 <div class="profile-pic dropbtn" onclick="toggle_menu()" id="dropbtn" <?php echo $profile_pic_style ?>><?php if (!$has_picture) echo $user_initial ?></div>
-                <div class="dropdown-content<?= (LANGUAGE::$direction == 'rtl') ? '-rtl' : '' ?>" id="menu">
+                <div class="dropdown-content<?= (Language::$direction == 'rtl') ? '-rtl' : '' ?>" id="menu">
 
                     <a href="<?= URL ?>" class="link">
-                        <?= (LANGUAGE::$direction == 'rtl') ? LANGUAGE::t('Home') : '' ?>
+                        <?= (Language::$direction == 'rtl') ? Language::t('Home') : '' ?>
                         <i class="fa fa-home" aria-hidden="true"></i>
-                        <?= (LANGUAGE::$direction == 'ltr') ? LANGUAGE::t('Home') : '' ?>
+                        <?= (Language::$direction == 'ltr') ? Language::t('Home') : '' ?>
                     </a>
 
                     <a href="<?= URL ?>users/profile" class="link">
-                        <?= (LANGUAGE::$direction == 'rtl') ? LANGUAGE::t('Account') : '' ?>
+                        <?= (Language::$direction == 'rtl') ? Language::t('Account') : '' ?>
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        <?= (LANGUAGE::$direction == 'ltr') ? LANGUAGE::t('Account') : '' ?>
+                        <?= (Language::$direction == 'ltr') ? Language::t('Account') : '' ?>
                     </a>
 
                     <a href="#" class="link">
-                        <?= (LANGUAGE::$direction == 'rtl') ? LANGUAGE::t('English') : '' ?>
+                        <?= (Language::$direction == 'rtl') ? Language::t('English') : '' ?>
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        <?= (LANGUAGE::$direction == 'ltr') ? LANGUAGE::t('Arabic') : '' ?>
+                        <?= (Language::$direction == 'ltr') ? Language::t('Arabic') : '' ?>
                     </a>
 
                     <?php if ($isRootAdmin) echo $dashboard_option ?>
 
                     <a href="<?= URL ?>users/logout" class="link">
-                        <?= (LANGUAGE::$direction == 'rtl') ? LANGUAGE::t('Logout') : '' ?>
+                        <?= (Language::$direction == 'rtl') ? Language::t('Logout') : '' ?>
                         <i class="fa fa-sign-out" aria-hidden="true"></i>
-                        <?= (LANGUAGE::$direction == 'ltr') ? LANGUAGE::t('Logout') : '' ?>
+                        <?= (Language::$direction == 'ltr') ? Language::t('Logout') : '' ?>
                     </a>
                 </div>
             </div>

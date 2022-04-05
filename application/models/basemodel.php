@@ -24,6 +24,8 @@ class BaseModel
      */
     public function getAll()
     {
+        sessionUserHasPermissions(['read_' . $this->table]);
+
         $sql = "SELECT * FROM " . $this->table;
         $query = $this->db->prepare($sql);
 
@@ -39,8 +41,9 @@ class BaseModel
      */
     public function deleteById($id)
     {
-        $sql = "DELETE FROM " . $this->table . " WHERE id = :table_id";
+        sessionUserHasPermissions(['delete_' . $this->table]);
 
+        $sql = "DELETE FROM " . $this->table . " WHERE id = :table_id";
 
         simpleLog('BaseModel::deleteById Running : "' . $sql . '"');
 
@@ -52,6 +55,8 @@ class BaseModel
      */
     public function wipeByIds(string $schemaClass, $ids)
     {
+        sessionUserHasPermissions(['delete_' . $schemaClass]);
+
         $ids = array_filter($ids, function ($id) {
             return is_numeric($id);
         });
@@ -75,7 +80,9 @@ class BaseModel
      */
     public function getById($id, string $t = null)
     {
-        $table = $t ?? $this->tabele;
+        $table = $t ?? $this->table;
+
+        sessionUserHasPermissions(['read_' . $this->table]);
 
         $result = $this->select([], "$table", ["$table.id" => $id]);
 
@@ -116,6 +123,8 @@ class BaseModel
      */
     function insert($dict)
     {
+        sessionUserHasPermissions(['create_' . $this->table]);
+
         $col = $this->columns();
         $bindings = array();
         $columns_names = [];
@@ -148,6 +157,8 @@ class BaseModel
     {
         $schemaClass = get_class($object);
         $columns = $schemaClass::SQL_Columns();
+
+        sessionUserHasPermissions(['create_' . $schemaClass]);
 
         unset($columns[0]); // it's auto incremented
         $values =  array_map(function ($column_name) use ($object) {
@@ -193,6 +204,8 @@ class BaseModel
     }
     function experimental_update(string $schemaClass, int $id, stdClass $these)
     {
+        sessionUserHasPermissions(['update_' . $schemaClass]);
+
         $columns = $schemaClass::SQL_Columns();
 
         simpleLog(json_encode($columns));
@@ -247,16 +260,15 @@ class BaseModel
             && is_bool($options['override']) && $options['override']
         );
 
-        if (!$override && !userHasPermissions(["read_" . strtolower($wrapper)])) {
-            require_once 'core/AccessDeniedException.php';
-            throw new AccessDeniedException("You don't have access to $wrapper");
-        }
+        if (!$override)
+            sessionUserHasPermissions(["read_" . strtolower($wrapper)]);
+
 
         if (count($schemaClasses) == 0) throw new Exception("No Classes to select from");
 
         $stamp = $_SERVER['REQUEST_TIME'] . '_' . rand(0, 1000);
 
-        simpleLog("OP::$stamp BaseModel::__select_stmt columns: " . json_encode($columns) . " schemaClasses: " . json_encode($schemaClasses) . " ON_conditions: " . json_encode($ON_conditions) . " WHERE_conditions: " . json_encode($WHERE_conditions) . " options: " . json_encode($options),"selects");
+        simpleLog("OP::$stamp BaseModel::__select_stmt columns: " . json_encode($columns) . " schemaClasses: " . json_encode($schemaClasses) . " ON_conditions: " . json_encode($ON_conditions) . " WHERE_conditions: " . json_encode($WHERE_conditions) . " options: " . json_encode($options), "selects");
 
 
         $limit = (isset($options['limit']) && is_numeric($options['limit']))

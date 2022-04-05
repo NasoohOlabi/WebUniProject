@@ -244,10 +244,6 @@ class Api extends Controller
 			if (isset($_POST['profile_picture'])) {
 				$data = $_POST['profile_picture'];
 
-
-
-
-
 				if (preg_match('/^data:image\/(\w+);base64,/', $data, $type)) {
 
 
@@ -305,6 +301,12 @@ class Api extends Controller
 				'api'
 			);
 
+			if (isset($_POST['role_id'])) {
+				if (!sessionUserHasPermissions(['reassign_role'])) {
+					throw new AccessDeniedException("You don't have permission to change roles");
+				}
+			}
+
 			$Model = $this->loadModel('BaseModel');
 			if ($Model->experimental_update($schemaClass, $_POST['id'], (object) $_POST)) {
 				$users_model = $this->loadModel('UserModel');
@@ -316,7 +318,7 @@ class Api extends Controller
 		} catch (\Throwable $e) {
 
 			simpleLog('Caught exception: ' . $e->getMessage(), 'api');
-			echo 'Operation Failed : ';
+			echo 'Operation Failed : ' . $e->getMessage();
 		}
 		pageHit("Api.update");
 	}
@@ -357,9 +359,8 @@ class Api extends Controller
 				}
 			}
 		} catch (\Throwable $e) {
-
 			simpleLog('Caught exception: ' . $e->getMessage(), 'api');
-			echo 'Operation Failed : ';
+			echo 'Operation Failed : ' . $e->getMessage();
 		}
 		pageHit("Api.delete");
 	}

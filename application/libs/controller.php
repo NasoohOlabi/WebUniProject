@@ -49,40 +49,9 @@ class Controller
         // return new model (and pass the database connection to the model)
         return new $model_name($this->db);
     }
-    public function response($status, $message)
+    public function redirectToIndex_flash_message($message)
     {
-        header("HTTP/1.1 " . $status . " " . $this->requestStatus($status));
-        echo json_encode(array("status" => $status, "message" => $message));
-    }
-    public function requestStatus($status)
-    {
-        $status_message = "";
-        switch ($status) {
-            case 200:
-                $status_message = "OK";
-                break;
-            case 400:
-                $status_message = "Bad Request";
-                break;
-            case 401:
-                $status_message = "Unauthorized";
-                break;
-            case 403:
-                $status_message = "Forbidden";
-                break;
-            case 404:
-                $status_message = "Not Found";
-                break;
-            case 405:
-                $status_message = "Method Not Allowed";
-                break;
-            case 500:
-                $status_message = "Internal Server Error";
-                break;
-            case 501:
-                $status_message = "Not Implemented";
-                break;
-        }
-        return $status_message;
+        header("Location: " . URL . "index");
+        $_SESSION['flash_message'] = $message;
     }
 }

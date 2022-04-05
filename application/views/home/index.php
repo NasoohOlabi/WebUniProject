@@ -31,5 +31,21 @@
 
 <div class="content">
     <div class="univ-photo" style="background-image: url(<?= URL ?>/public/img/background.png);"></div>
-    <h2><?= LANGUAGE::t('Welcome To The University of MNU') ?></h2>
+    <h2><?= Language::t('Welcome To The University of MNU') ?></h2>
 </div>
+
+<?php
+if (isset($_SESSION['flash_message'])) {
+    $msg = $_SESSION['flash_message'];
+    echo "<script>
+                addLoadEvent(()=>{Swal.fire({
+                  position: 'top-end',
+                  icon: 'info',
+                  title: '$msg',
+                  showConfirmButton: false,
+                  timer: 2000
+                })})
+              </script>";
+    unset($_SESSION['flash_message']);
+}
+?>

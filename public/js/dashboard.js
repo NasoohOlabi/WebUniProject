@@ -87,14 +87,14 @@ setInterval(() => {
     while (tasks.length > 0) {
         tasks.shift()();
     }
-}, 300);
+}, 600);
 
 /**
  * @param {(event:any)=>void} callback
  * @param {string} id
  */
 function set_OnClick_For_Id(callback, id, retries = 60) {
-    if (retries === 0) { console.log('retries excustid'); return }
+    if (retries === 0) { console.log(`retries excust ${id}`); return }
     tasks.push(() => {
         if (document.getElementById(id)) {
             document.getElementById(id).onclick = callback;
@@ -409,8 +409,8 @@ function subTable_tr(
                 trId.split("-")[1],
                 Object.keys(Model[identifiers[0]])
             )
-
-        set_OnClick_For_Id(EditPermissions(trId), trId + "-Edit");
+        if (trId.includes('permissions'))
+            set_OnClick_For_Id(EditPermissions(trId), trId + "-Edit");
 
         return `<tr id="${trId}" style="display:none" class="inner-shadowed">
               <td colspan=${parent_number_of_keys + 2}>
@@ -598,6 +598,9 @@ function getFromHQ(
                     if (answer == "that's all we have") return;
                     if (answer.includes("You don't have access to")) {
                         Swal.fire("Sorry", answer.substring(answer.indexOf('You')), 'info')
+                    }
+                    else if (answer.includes("Operation Failed : ")) {
+                        Swal.fire("Sorry", answer.substring("Operation Failed : ".length), 'info')
                     }
                     // console.log(error);
                     if (!(error instanceof SyntaxError)) console.log(error);
@@ -814,7 +817,7 @@ function edit_sub_Row(identifier) {
             const first_part = step1[0];
             const second_part = step1[1];
 
-            console.log(Model);
+            // console.log(Model);
 
             getFromHQ(
                 "read",
@@ -826,19 +829,20 @@ function edit_sub_Row(identifier) {
                             (identifier) => Model[identifier]
                         );
                         html_element.innerHTML = `<td>
-              ${select(
+                                                ${select(
                             field + "_id",
                             SELECT_OPTIONS,
                             Model[model_identifier],
                             field
                         )} 
-              </td>
-              <td>
-                <i class="fa fa-close" aria-hidden="true" id="${identifier}-cancel" ></i>
-              </td>
-              <td>
-                <i class="fa fa-check" aria-hidden="true" id="${identifier}-save" ></i>
-              </td>`;
+                                                </td>
+                                                <td>
+                                                    <i class="fa fa-close" aria-hidden="true" id="${identifier}-cancel" ></i>
+                                                </td>
+                                                <td>
+                                                    <i class="fa fa-check" aria-hidden="true" id="${identifier}-save" ></i>
+                                                </td>`;
+                        html_element.parentElement.parentElement.querySelector('.form-select').focus();
                         set_OnClick_For_Id(
                             cancel_sub_edit(identifier, first_part + second_part),
                             identifier + "-cancel"
@@ -929,13 +933,30 @@ function deleteRow(evt) {
         arr = arr.filter(is_not_unicode_sth)
             .filter(t => t.className != 'profile-pic')
 
-        arr.forEach((tag) => {
-            tag.contentEditable = false;
+        arr.forEach((child) => {
+            if (child.innerText != "✔" && child.innerText != "❌") {
+                child.contentEditable = false;
+            } else {
+                child.style.cursor = ''
+                // add event lister and on click toggle between "✔" and "❌"
+                child.replaceWith(child.cloneNode(true));
+            }
         });
 
         let data = Model[id.split("::").pop()];
 
-        let header = Object.keys(data).filter(is_display_key).filter(t => t != 'profile_picture');
+        let header = Object.keys(data)
+            .filter(is_display_key)
+            .filter(t => t != 'profile_picture')
+            .filter(t => t != 'password')
+        if (header.includes('last_name')) {
+            const last_name_index = header.indexOf('last_name');
+            const middle_name_index = header.indexOf('middle_name');
+
+            header[last_name_index] = 'middle_name';
+            header[middle_name_index] = 'last_name';
+
+        }
         header.forEach((key, i) => {
             if (!(data[key] instanceof Object)) arr[i].innerText = data[key];
         });
