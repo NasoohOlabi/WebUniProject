@@ -59,15 +59,16 @@ class Exam extends Table
     public array $identifying_fields =  ['id', 'number_of_questions', 'duration'];
     function __construct($stdClass = null, $prefix = "")
     {
-        if ($stdClass != null)
+        if ($stdClass != null) {
             $cols = Exam::SQL_Columns();
-        if (properties_exists($stdClass, $cols, $prefix)) {
-            foreach ($cols as $col) {
-                $this->$col = $stdClass->{$prefix . $col};
+            if (properties_exists($stdClass, $cols, $prefix)) {
+                foreach ($cols as $col) {
+                    $this->$col = $stdClass->{$prefix . $col};
+                }
+                $tmp = new Subject($stdClass, "subject_");
+                if (isset($tmp->id))
+                    $this->subject = $tmp;
             }
-            $tmp = new Subject($stdClass, "subject_");
-            if (isset($tmp->id))
-                $this->subject = $tmp;
         }
     }
     static function SQL_Dotted_Columns()
