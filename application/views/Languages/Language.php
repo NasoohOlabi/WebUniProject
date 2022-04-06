@@ -9,7 +9,14 @@ class Language
 
 	public static function init()
 	{
-		Language::$lang = (isset($_COOKIE['lang'])) ? $_COOKIE['lang'] : 'en';
+		global $SwitchLanguageTo;
+		if (isset($SwitchLanguageTo)) {
+			self::$lang = $SwitchLanguageTo;
+		} elseif (isset($_COOKIE['lang'])) {
+			self::$lang = $_COOKIE['lang'];
+		} else {
+			self::$lang = 'en';
+		}
 		Language::$direction = (Language::$lang == 'ar') ? 'rtl' : 'ltr';
 		if (!isset($_COOKIE['lang'])) {
 			setcookie('lang', 'en', 30);
