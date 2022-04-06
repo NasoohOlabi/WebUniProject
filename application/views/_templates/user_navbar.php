@@ -101,12 +101,3 @@ if ($has_picture == true) {
         </nav>
 
     </header>
-
-
-    <!-- <a href="#" onclick="
-                    let d =new Date(); 
-                    d.setTime(d.getTime() + 60 * 24 * 60 * 60 * 1000);
-                    document.cookie = 'lang=<?= (Language::$direction == 'rtl') ? 'en' : 'ar' ?>;' + 'expires=' + d.toUTCString() + ';path=/' ; " class=" link">
-        <i class="fa fa-user" aria-hidden="true"></i>
-        <?= (Language::$direction == 'ltr') ? Language::t('Arabic') : Language::t('English') ?>
-    </a> -->
