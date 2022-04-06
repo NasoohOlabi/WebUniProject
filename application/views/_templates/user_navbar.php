@@ -85,8 +85,8 @@ if ($has_picture == true) {
                         <?= Language::t('Account') ?>
                     </a>
 
-                    <a href="<?= URL ?>home?lang=<?= (Language::$direction == 'ltr') ? 'ar' : 'en' ?>" class=" link">
-                        <i class="fa fa-user" aria-hidden="true"></i>
+                    <a href="<?= URL ?>home?lang=<?= Language::$lang ?>" class=" link">
+                        <i class="fa fa-language" aria-hidden="true"></i>
                         <?= (Language::$direction == 'ltr') ? Language::t('Arabic') : Language::t('English') ?>
                     </a>
 
