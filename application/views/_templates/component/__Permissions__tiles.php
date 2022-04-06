@@ -1,16 +1,28 @@
+<style>
+	.text-input {
+		/* width: 100%; */
+	}
+
+	.add-form-container {
+		position: relative;
+	}
+</style>
+<div id="sub-nav">
+	<a href="<?= URL ?>dashboard">
+		<div class="fa fa-2x fa-arrow-left back-btn"></div>
+	</a>
+	<div class="fa fa-2x fa-save save-btn" id="permission-grant-submit-btn"></div>
+</div>
 <div id="<?= $sub_cls ?>-container" class="scrolling-wrapper">
 	<div style="width:100%;height:100%">
-		<div class="login-container">
+		<div class="add-form-container">
 			<div class="form-block">
-				<h1 style="display:flex"><span style="display:flex;align-items:center">Permissions</span> <button id="permission-grant-submit-btn">Save ✔</button>
+				<h1 style="display:flex">Permissions
 				</h1>
 			</div>
 			<form>
 
 				<?php
-				if (in_array('date', $sub_cls::SQL_Columns())) {
-					date_input('date');
-				}
 				datalist_input("Permission", $SELECT_OPTIONS);
 				?>
 
@@ -77,7 +89,7 @@
 				const newKid = document.createElement('div')
 				newKid.style.margin = "1%"
 				newKid.innerHTML = input_text
-				newKid.className = "login-container mini"
+				newKid.className = "add-form-container mini"
 				newKid.value = ID
 				if (Model['<?= $sub_cls ?>'] == undefined)
 					Model['<?= $sub_cls ?>'] = []
@@ -91,7 +103,7 @@
 
 				const del_X = document.createElement('i')
 				del_X.className = "fa fa-close"
-				del_X.style = "float:right;font-size:1.2em"
+				del_X.style = "float:right;font-size:1.2em;margin-left:15px;cursor:pointer"
 				del_X.onclick = () => {
 					selected_option.disabled = false
 					del_X.parentElement.remove()

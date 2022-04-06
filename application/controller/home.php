@@ -1,6 +1,5 @@
 <?php
 require_once 'application/views/_templates/header.php';
-require_once './application/libs/util/log.php';
 require_once 'application/models/core/schema.php';
 
 
@@ -24,6 +23,14 @@ class Home extends Controller
         // echo 'Message from Controller: You are in the controller home, using the method index()';
         session_start();
 
+        if (isset($_GET['lang'])) {
+            setcookie('lang', $_GET['lang'], time() + (86400 * 30), "/");
+            $SwitchLanguageTo = $_GET['lang'];
+            unset($_GET['lang']);
+            header("Location: " . URL);
+            return;
+        }
+
 
         $p = $this->loadModel('QuestionModel');
 
@@ -32,9 +39,9 @@ class Home extends Controller
 
         if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
             require 'application/views/_templates/user_navbar.php';
-            echo '<pre>';
-            var_dump(json_encode($_SESSION));
-            echo '</pre>';
+            // echo '<pre>';
+            // var_dump($_SESSION);
+            // echo '</pre>';
             $role = $_SESSION['user']->role->name;
             $username = $_SESSION['username'];
 

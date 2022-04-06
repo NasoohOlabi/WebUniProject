@@ -1,6 +1,5 @@
 <?php
 require_once './application/libs/util/Option.php';
-require_once './application/libs/util/log.php';
 require_once 'basemodel_util.php';
 class BaseModel
 {

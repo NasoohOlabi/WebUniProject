@@ -10,7 +10,7 @@ $isRootAdmin = ($role == 'ROOT::ADMIN' ? true : false);
 $user_first_name = $_SESSION['user']->first_name;
 $user_initial = strtoupper($user_first_name[0]);
 
-$dashboard_option = '<a href="' . URL . 'DashBoard">' . ((Language::$direction == 'rtl') ? Language::t('Dashboard') : '') . '<i class="fa fa-cogs" aria-hidden="true"></i>' . ((Language::$direction == 'ltr') ? Language::t('Dashboard') : '') . '</a>';
+$dashboard_option = '<a href="' . URL . 'DashBoard"><i class="fa fa-cogs" aria-hidden="true"></i>  ' . Language::t('Dashboard') . '</a>';
 
 $profile_pic_style = '';
 
@@ -76,29 +76,25 @@ if ($has_picture == true) {
                 <div class="dropdown-content<?= (Language::$direction == 'rtl') ? '-rtl' : '' ?>" id="menu">
 
                     <a href="<?= URL ?>" class="link">
-                        <?= (Language::$direction == 'rtl') ? Language::t('Home') : '' ?>
                         <i class="fa fa-home" aria-hidden="true"></i>
-                        <?= (Language::$direction == 'ltr') ? Language::t('Home') : '' ?>
+                        <?= Language::t('Home') ?>
                     </a>
 
                     <a href="<?= URL ?>users/profile" class="link">
-                        <?= (Language::$direction == 'rtl') ? Language::t('Account') : '' ?>
                         <i class="fa fa-user" aria-hidden="true"></i>
-                        <?= (Language::$direction == 'ltr') ? Language::t('Account') : '' ?>
+                        <?= Language::t('Account') ?>
                     </a>
 
-                    <a href="#" class="link">
-                        <?= (Language::$direction == 'rtl') ? Language::t('English') : '' ?>
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <?= (Language::$direction == 'ltr') ? Language::t('Arabic') : '' ?>
+                    <a href="<?= URL ?>home?lang=<?= Language::$lang ?>" class=" link">
+                        <i class="fa fa-language" aria-hidden="true"></i>
+                        <?= (Language::$direction == 'ltr') ? Language::t('Arabic') : Language::t('English') ?>
                     </a>
 
                     <?php if ($isRootAdmin) echo $dashboard_option ?>
 
                     <a href="<?= URL ?>users/logout" class="link">
-                        <?= (Language::$direction == 'rtl') ? Language::t('Logout') : '' ?>
                         <i class="fa fa-sign-out" aria-hidden="true"></i>
-                        <?= (Language::$direction == 'ltr') ? Language::t('Logout') : '' ?>
+                        <?= Language::t('Logout')  ?>
                     </a>
                 </div>
             </div>

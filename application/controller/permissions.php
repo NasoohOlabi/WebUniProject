@@ -1,5 +1,4 @@
 <?php
-require_once './application/libs/util/log.php';
 require_once './application/models/core/schema.php';
 
 

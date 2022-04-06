@@ -16,7 +16,7 @@
                     <?= Language::t('Please enter a valid username') ?></small>
             </div>
             <div class="form-block">
-                <input type="password" name="password" autocomplete="current-password" id="password" class="text-input valid-input" placeholder="<?= Language::t('Password') ?>" required onclick="this.dir='ltr';this.placeholder=''" />
+                <input type="password" name="password" autocomplete="current-password" id="password" class="text-input valid-input" placeholder="<?= Language::t('Password') ?>" required />
                 <small class="invalid-text"><?= Language::t('Please enter a valid password') ?></small>
             </div>
             <div class="form-block">

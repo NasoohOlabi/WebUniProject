@@ -1,5 +1,5 @@
 <style>
-    .scrolling-wrapper div {
+    .scrolling-wrapper > div {
         margin: 1em;
     }
 </style>

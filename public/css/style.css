@@ -17,7 +17,28 @@
   --navbar-height: 60px;
   --opp-dir: right;
   --norm-dir: left;
+
+
+  --greenish-primary: #80ea6f;
+  --background-grayish: #ebf2f2;
+  --background-grayish-green: #ebf2ec;
+  --foreground-blackish: #1a1f1f;
+  --links-bluish: #06c;
+
+  /* --login-user-icon-color: rgb(47, 121, 194); */
+  --login-user-icon-color: rgb(0 123 255);
+  --login-container-background: var(--background-grayish-green);
+  --login-container-outline: #fff;
+  --login-button-background: var(--links-bluish);
+  --login-button-outline: var(--links-bluish);
+  --login-button-hover-background: #06c;
+  --login-button-hover-outline: rgba(0, 102, 204, 0.748);
+  --add-form-container-background: #3a4141;
+  --add-form-container-outline: #fff;
+  --add-form-container-h1-color: #fff;
 }
+
+
 
 /*##############################################*/
 header {
@@ -25,6 +46,7 @@ header {
   padding: 0px;
   display: flex;
   height: var(--navbar-height);
+  min-width: 300px;
 }
 nav {
   display: flex;
@@ -142,6 +164,7 @@ aside {
 }
 #main-content {
   width: 100%;
+  min-width: 300px;
   display: flex;
   min-height: calc(100vh - var(--navbar-height));
   flex-direction: column;
@@ -178,14 +201,17 @@ aside {
 }
 
 .login-container {
-  margin: 5% auto;
+  margin: 5% auto 0px auto;
   width: 25%;
-  min-width: 300px;
-  padding: 5%;
-  background-color: var(--primary);
+  min-width: 275px;
+  max-width: 350px;
+  
+  padding: 1.5rem 2rem 2.5rem 2rem;
+  background-color: var(--login-container-background);
   box-shadow: 0px -1px 6px 2px #ffffff4a;
-  border-radius: 30px;
-  border: 2px solid #009688;
+  border-radius: 15px;
+  border: none;
+  outline: 2px solid var(--login-container-outline);
   height: fit-content;
 }
 
@@ -193,6 +219,34 @@ aside {
   font-family: "Segoe UI";
   color: #245e7a;
 }
+
+
+.add-form-container {
+  margin: 5% auto;
+  width: 25%;
+  min-width: 275px;
+  max-width: 350px;
+
+  padding: 1.75rem 2.25rem 5.25rem 2.25rem;
+  background-color: var(--add-form-container-background);
+  box-shadow: 0px -1px 6px 2px #ffffff4a;
+  border-radius: 15px;
+  border: none;
+  outline: 2px solid var(--add-form-container-outline);
+  height: fit-content;
+}
+
+.add-form-container h1 {
+  font-family: "Segoe UI";
+  color: var(--add-form-container-h1-color);
+}
+.add-form-container.mini {
+  padding: 1em;
+  min-width: fit-content;
+  display: inline-block;
+  color:white;
+}
+
 
 #spinner {
   animation: rotate 2s linear infinite;
@@ -388,7 +442,8 @@ noscript {
 .form-block button {
   font-weight: 400;
   text-align: center;
-  border: 1px solid var(--secondary-background-color);
+  border : none;
+  outline: 1px solid var(--login-button-outline);
   padding: var(--standard-padding);
   font-size: 1rem;
   line-height: 1.5;
@@ -396,10 +451,14 @@ noscript {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   color: #fff;
-  background-color: var(--secondary-background-color);
+  background-color: var(--login-button-background);
   display: block;
   width: 100%;
   cursor: pointer;
+}
+.form-block button:hover{
+  background-color: var(--login-button-hover-background);
+  outline: 1px solid var(--login-button-hover-outline);
 }
 
 .white-outline-hover:hover {
@@ -411,7 +470,7 @@ noscript {
 .user-icon,
 .fa-address-card {
   font-size: 4.5em !important;
-  color: var(--secondary-dark-background-color);
+  color: var(--login-user-icon-color);
 }
 .icon-container {
   text-align: center;
@@ -433,7 +492,6 @@ noscript {
   font-weight: 400;
   line-height: 1.5;
   color: black;
-  background-color: var(--primary);
   background-clip: padding-box;
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -588,54 +646,58 @@ noscript {
 }
 
 .back-btn {
-  background-color: var(--secondary-background-color);
-  color: var(--background);
+  color: black;
   width: fit-content;
   padding: 0.1em 0.3em;
   margin: 0.1em;
   border-radius: 10px;
 }
-.back-btn:hover {
-  background-color: var(--secondary-dark-background-color);
+#sub-nav{
+  background-color: #bedada;
+  position: relative;
 }
-
 .save-btn {
-  background-color: var(--secondary-background-color);
-  color: var(--background);
+  color: black;
   width: fit-content;
   padding: 0.1em 0.3em;
   margin: 0.1em;
   border-radius: 10px;
-  float: right;
+  position:absolute;
+  top: 0;
+  right: 0;
 }
 .save-btn:hover {
-  background-color: var(--secondary-dark-background-color);
+  cursor: pointer;
 }
 
 .add-dependant-btn {
-  background-color: var(--secondary-background-color);
+  background-color: var(--add-form-container-background);
   border: none;
   width: fit-content;
   padding: 0.1rem 0.3rem;
   margin: 10rem 5%;
   border-radius: 10px;
   font-size: 5em;
+  color: white;
 }
 .add-dependant-btn:hover {
-  background-color: var(--secondary-dark-background-color);
+  background-color: #465656;
+  cursor: pointer;
 }
 
 .add-tile-dependant-btn {
-  background-color: var(--secondary-background-color);
+  background-color: var(--login-button-background);
   border: none;
-  width: calc(100% - 2em);
+  /* width: calc(100% - 2em); */
+  width: 100% ;
   padding: 0.4rem 1.2rem;
   border-radius: 10px;
   font-size: large;
-  margin: 0 1em;
+  /* margin: 0 1em; */
 }
 .add-tile-dependant-btn:hover {
-  background-color: var(--secondary-dark-background-color);
+  background-color: var(--login-button-hover-background);
+  cursor: pointer;
 }
 
 .login-container.mini {
@@ -649,33 +711,30 @@ noscript {
   float: var(--opp-dir);
   border: none;
   position: relative;
-  bottom: 0.5rem;
-  left: 0.5rem;
+  bottom: 5px;
+  left: 10px;
   cursor: pointer;
 }
 .remove-div-x-btn:hover {
   outline: none;
 }
-
-#permission-grant-submit-btn {
-  font-weight: 400;
-  text-align: center;
-  border: 1px solid var(--primary);
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  color: #fff;
-  background-color: var(--primary);
-  cursor: pointer;
-  padding: 8% 2%;
-  display: inline;
-  width: fit-content;
-  margin-left: 10%;
+.sign-up-go-back-x-btn {
+  background-color: transparent;
+  float: var(--opp-dir);
+  border: none;
+  position: absolute;
+  display:flex;
+  justify-content: center;
+  align-content: center;
+      
+  font-size: 2.5em;
+  top: 25px;
+  right: 25px;
+  z-index: 30;
 }
-#permission-grant-submit-btn:hover {
-  background-color: var(--secondary-background-color);
+.sign-up-go-back-x-btn:hover {
+  cursor: pointer;
+  outline: none;
 }
 
 .user-content {

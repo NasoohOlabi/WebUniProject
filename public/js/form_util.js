@@ -180,8 +180,8 @@ function isValidForm(form_obj) {
  * @returns 
  */
 function formNameInScope(scope) {
-    const elem = scope.querySelector("h1")
-    return elem.innerText
+    if (scope) 
+        return scope.querySelector("h1").innerText
 }
 function showErrorMsgUnderThisElem(elem, error_msg = null) {
     elem.className = "text-input invalid-input";
