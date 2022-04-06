@@ -32,9 +32,9 @@ class Home extends Controller
 
         if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']) {
             require 'application/views/_templates/user_navbar.php';
-            echo '<pre>';
-            var_dump(json_encode($_SESSION));
-            echo '</pre>';
+            // echo '<pre>';
+            // var_dump($_SESSION);
+            // echo '</pre>';
             $role = $_SESSION['user']->role->name;
             $username = $_SESSION['username'];
 

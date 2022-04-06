@@ -188,7 +188,7 @@ $_POST['id'] = $user_id;
         margin: 0;
     }
 
-    .login-container {
+    .add-form-container {
         margin: 1% auto;
         padding: 2% 3%;
     }
@@ -204,7 +204,7 @@ $_POST['id'] = $user_id;
 
 <div id="main-content" class="inlineBlock">
 
-    <div class="login-container">
+    <div class="add-form-container">
         <div class="form-block">
             <div class="profile-pic dropbtn" id="prof-pic" <?php echo $profile_pic_style ?>>
                 <input id="file" type="file" title="Profile Picture" />

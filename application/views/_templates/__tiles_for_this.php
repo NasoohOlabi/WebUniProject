@@ -14,10 +14,11 @@
             
             document.querySelector(`.form-block button`).style.display = 
             (document.getElementById(`<?= $sub_cls ?>-container`).style.display == `none`)?`block`:`none`
-            ">Add <?= ($sub_cls === 'Role_Has_Permission') ? 'Permissions' : str_replace('_', ' ', $sub_cls) ?> For This <?= str_replace('_', ' ', get_class($cls)) ?></button></div>
-<h2 style="display:none;" id="<?= $sub_cls ?>-title"><?= str_replace('_', ' ', $sub_cls) ?>s</h2>
+            this.children[this.children.length-1].className = (this.children[this.children.length-1].className === 'fas fa-angle-down')?'fas fa-angle-up':'fas fa-angle-down'
+            ">Add <?= ($sub_cls === 'Role_Has_Permission') ? 'Permissions' : str_replace('_', ' ', $sub_cls) ?> For This <?= str_replace('_', ' ', get_class($cls)) ?><i class="fas fa-angle-down" style="margin-left:50px"></i></button></div>
+<h2 style="display:none;padding-left:10%;text-decoration:underline" id="<?= $sub_cls ?>-title"><?= str_replace('_', ' ', $sub_cls) ?>s:</h2>
 <div id="<?= $sub_cls ?>-container" class="scrolling-wrapper" style="display:none;">
-    <div class="login-container">
+    <div class="add-form-container">
         <div class="form-block">
             <h1>Add <?= $the_other ?>
             </h1>
@@ -89,7 +90,7 @@
                     })
                     const newKid = document.createElement('div')
                     newKid.innerHTML = input_text
-                    newKid.className = "login-container mini"
+                    newKid.className = "add-form-container mini"
                     newKid.value = selected_option.label
                     if (Model['<?= $sub_cls ?>'] == undefined)
                         Model['<?= $sub_cls ?>'] = []
@@ -101,7 +102,7 @@
 
                     const del_X = document.createElement('i')
                     del_X.className = "fa fa-close"
-                    del_X.style = "float:right;font-size:1.2em"
+                    del_X.style = "float:right;font-size:1.2em;margin-left:15px;cursor:pointer;"
                     del_X.onclick = () => {
                         if (loner)
                             selected_option.disabled = false
@@ -129,8 +130,8 @@
                                         try {
                                             const successful_insert = JSON.parse(txt)
                                             console.log(successful_insert)
-                                            document.getElementById('<?= $sub_cls ?>-container').querySelectorAll('.login-container.mini').forEach(elem => elem.children[elem.children.length - 1].onclick())
-                                            document.querySelectorAll('.login-container form').forEach(form => cleanInputs(form))
+                                            document.getElementById('<?= $sub_cls ?>-container').querySelectorAll('.add-form-container.mini').forEach(elem => elem.children[elem.children.length - 1].onclick())
+                                            document.querySelectorAll('.add-form-container form').forEach(form => cleanInputs(form))
                                         } catch (error) {
                                             console.log('so close')
                                             console.log(error)

@@ -1,4 +1,4 @@
-<div class="login-container">
+<div class="add-form-container">
     <div class="form-block">
         <h1><?= get_class($cls) ?></h1>
     </div>

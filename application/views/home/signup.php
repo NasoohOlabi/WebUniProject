@@ -2,10 +2,10 @@
     <div id="main-container">
         <noscript>It seems that you don't have javascript enabled for this
             site...</noscript>
-        <div style="min-width:375px" class="login-container">
-            <button class="remove-div-x-btn" onclick="window.location = ourURL + 'dashboard/'">
+        <div style="min-width:375px;position:relative" class="login-container">
+            <div class="sign-up-go-back-x-btn" onclick="window.location = ourURL + 'dashboard/'">
                 <i style="font-size:x-large" class="fa fa-close"></i>
-            </button>
+            </div>
 
             <div class="icon-container">
                 <i class="fa fa-address-card user-icon"></i>

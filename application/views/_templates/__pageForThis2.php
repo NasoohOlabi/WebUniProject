@@ -19,8 +19,8 @@ pChildren[pChildren.length -2].querySelector('input').focus();
             
             document.querySelector(`.form-block button`).style.display = 
             (document.getElementById(`<?= $sub_cls ?>-container`).style.display == `none`)?`block`:`none`
-            ">Add <?= $sub_cls ?> For This <?= get_class($cls) ?></button></div>
-<h2 style="display:none;" id="<?= $sub_cls ?>-title"><?= $sub_cls ?>s</h2>
+            this.children[this.children.length-1].className = (this.children[this.children.length-1].className === 'fas fa-angle-down')?'fas fa-angle-up':'fas fa-angle-down'">Add <?= $sub_cls ?> For This <?= get_class($cls) ?><i class="fas fa-angle-down" style="margin-left:50px"></i></button></div>
+<h2 style="display:none;padding-left:10%;text-decoration:underline" id="<?= $sub_cls ?>-title"><?= $sub_cls ?>s:</h2>
 <div id="<?= $sub_cls ?>-container" class="scrolling-wrapper" style="display:none;">
     <button id="add-<?= $sub_cls ?>-dependant-btn" class="add-dependant-btn">+</button>
 </div>

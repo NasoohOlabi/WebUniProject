@@ -1,16 +1,41 @@
+<style>
+	.text-input {
+		/* width: 100%; */
+	}
+
+	#add-Permission-dependant-btn {
+		margin: 0;
+		/* width: calc(calc(100% - 2 * 0.75rem) - 2px); */
+		width: 100%;
+		color: white;
+	}
+
+	.add-form-container {
+		position: relative;
+	}
+
+	#left-span {
+		display: flex;
+		align-items: center;
+		width: 70%;
+	}
+
+	#right-span {
+		display: flex;
+		width: 30%;
+	}
+</style>
 <div id="<?= $sub_cls ?>-container" class="scrolling-wrapper">
 	<div style="width:100%;height:100%">
-		<div class="login-container">
+		<div class="add-form-container">
 			<div class="form-block">
-				<h1 style="display:flex"><span style="display:flex;align-items:center">Permissions</span> <button id="permission-grant-submit-btn">Save ✔</button>
+				<h1 style="display:flex"><span id="left-span">Permissions</span>
+					<span id="right-span"><button id="permission-grant-submit-btn">Save ✔</button></span>
 				</h1>
 			</div>
 			<form>
 
 				<?php
-				if (in_array('date', $sub_cls::SQL_Columns())) {
-					date_input('date');
-				}
 				datalist_input("Permission", $SELECT_OPTIONS);
 				?>
 
@@ -77,7 +102,7 @@
 				const newKid = document.createElement('div')
 				newKid.style.margin = "1%"
 				newKid.innerHTML = input_text
-				newKid.className = "login-container mini"
+				newKid.className = "add-form-container mini"
 				newKid.value = ID
 				if (Model['<?= $sub_cls ?>'] == undefined)
 					Model['<?= $sub_cls ?>'] = []
@@ -91,7 +116,7 @@
 
 				const del_X = document.createElement('i')
 				del_X.className = "fa fa-close"
-				del_X.style = "float:right;font-size:1.2em"
+				del_X.style = "float:right;font-size:1.2em;margin-left:15px;cursor:pointer"
 				del_X.onclick = () => {
 					selected_option.disabled = false
 					del_X.parentElement.remove()
