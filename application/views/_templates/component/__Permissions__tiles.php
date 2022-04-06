@@ -3,34 +3,21 @@
 		/* width: 100%; */
 	}
 
-	#add-Permission-dependant-btn {
-		margin: 0;
-		/* width: calc(calc(100% - 2 * 0.75rem) - 2px); */
-		width: 100%;
-		color: white;
-	}
-
 	.add-form-container {
 		position: relative;
 	}
-
-	#left-span {
-		display: flex;
-		align-items: center;
-		width: 70%;
-	}
-
-	#right-span {
-		display: flex;
-		width: 30%;
-	}
 </style>
+<div id="sub-nav">
+	<a href="<?= URL ?>dashboard">
+		<div class="fa fa-2x fa-arrow-left back-btn"></div>
+	</a>
+	<div class="fa fa-2x fa-save save-btn" id="permission-grant-submit-btn"></div>
+</div>
 <div id="<?= $sub_cls ?>-container" class="scrolling-wrapper">
 	<div style="width:100%;height:100%">
 		<div class="add-form-container">
 			<div class="form-block">
-				<h1 style="display:flex"><span id="left-span">Permissions</span>
-					<span id="right-span"><button id="permission-grant-submit-btn">Save ✔</button></span>
+				<h1 style="display:flex">Permissions
 				</h1>
 			</div>
 			<form>

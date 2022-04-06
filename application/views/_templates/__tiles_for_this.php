@@ -1,6 +1,10 @@
 <style>
-    .scrolling-wrapper div {
+    .scrolling-wrapper>div {
         margin: 1em;
+    }
+
+    .mini {
+        margin: 0.5em;
     }
 </style>
 

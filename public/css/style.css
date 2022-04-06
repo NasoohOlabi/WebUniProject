@@ -227,7 +227,7 @@ aside {
   min-width: 275px;
   max-width: 350px;
 
-  padding: 7.5% 4% 10% 4%;
+  padding: 1.75rem 2.25rem 5.25rem 2.25rem;
   background-color: var(--add-form-container-background);
   box-shadow: 0px -1px 6px 2px #ffffff4a;
   border-radius: 15px;
@@ -688,11 +688,12 @@ noscript {
 .add-tile-dependant-btn {
   background-color: var(--login-button-background);
   border: none;
-  width: calc(100% - 2em);
+  /* width: calc(100% - 2em); */
+  width: 100% ;
   padding: 0.4rem 1.2rem;
   border-radius: 10px;
   font-size: large;
-  margin: 0 1em;
+  /* margin: 0 1em; */
 }
 .add-tile-dependant-btn:hover {
   background-color: var(--login-button-hover-background);
@@ -734,28 +735,6 @@ noscript {
 .sign-up-go-back-x-btn:hover {
   cursor: pointer;
   outline: none;
-}
-
-#permission-grant-submit-btn {
-  font-weight: 400;
-  text-align: center;
-  border: none;
-  outline: var(--login-button-outline);
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  color: #fff;
-  background-color: var(--login-button-background);
-  cursor: pointer;
-  padding: 8% 2%;
-  display: inline;
-  width: fit-content;
-  margin-left: 10%;
-}
-#permission-grant-submit-btn:hover {
-  background-color: var(--secondary-background-color);
 }
 
 .user-content {
