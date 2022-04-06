@@ -41,7 +41,23 @@ $texts =
         'Logout?' => 'تسجيل خروج؟',
         'You\'re logged in as ' => 'أنت مسجل دخولك ك',
         'Save Changes' => 'حفظ التغييرات',
-
+        'Exam' => 'اختبار',
+        'Number Of Questions' => 'عدد الأسئلة',
+        'Please enter a valid number_of_questions' => 'الرجاء إدخال عدد أسئلة صحيح',
+        'Duration' => 'مدة الاختبار',
+        'Please enter a valid duration' => 'الرجاء إدخال مدة الاختبار بشكل صحيح',
+        'Subject' => 'مادة',
+        'Question' => 'سؤال',
+        'Text' => 'نص',
+        'Please enter a valid text' => 'الرجاء إدخال نص صحيح',
+        'Number Of Choices' => 'عدد الخيارات',
+        'Please enter a valid number_of_choices' => 'الرجاء إدخال عدد خيارات صحيح',
+        'Topic' => 'موضوع',
+        'Choice' => 'خيار',
+        'Text' => 'نص',
+        'Please enter a valid text' => 'الرجاء إدخال نص صحيح',
+        'Is Correct' => 'هو صحيح؟',
+        'Please enter a valid is_correct' => 'الرجاء إدخال هو صحيح بشكل صحيح',
 
     ];
 $direction = 'rtl';

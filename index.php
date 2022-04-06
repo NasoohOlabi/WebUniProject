@@ -34,6 +34,10 @@ if (!function_exists('str_contains')) {
         return $needle !== '' && mb_strpos($haystack, $needle) !== false;
     }
 }
+function humanize(string $str)
+{
+    return ucwords(str_replace('_', ' ', $str));
+}
 
 require_once 'application/libs/util/log.php';
 

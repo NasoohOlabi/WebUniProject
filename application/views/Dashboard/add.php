@@ -4,11 +4,22 @@
         z-index: 20;
         box-shadow: 0px -1px 7px rgba(50, 50, 50);
     }
+
+    .save-btn {
+        color: black;
+        width: fit-content;
+        padding: 0.1em 0.3em;
+        margin: 0.1em;
+        border-radius: 10px;
+        position: absolute;
+        top: 0;
+        <?= (Language::$direction === 'ltr') ? 'right' : 'left' ?>: 0;
+    }
 </style>
 <div id="main-content" class="inlineBlock">
     <div id="sub-nav">
         <a href="<?= URL ?>dashboard">
-            <div class="fa fa-2x fa-arrow-left back-btn"></div>
+            <div class="fa fa-2x fa-arrow-<?= (Language::$direction !== 'ltr') ? 'right' : 'left' ?> back-btn"></div>
         </a>
         <div class="fa fa-2x fa-save save-btn"></div>
     </div>

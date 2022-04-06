@@ -656,16 +656,7 @@ noscript {
   background-color: #bedada;
   position: relative;
 }
-.save-btn {
-  color: black;
-  width: fit-content;
-  padding: 0.1em 0.3em;
-  margin: 0.1em;
-  border-radius: 10px;
-  position:absolute;
-  top: 0;
-  right: 0;
-}
+
 .save-btn:hover {
   cursor: pointer;
 }
