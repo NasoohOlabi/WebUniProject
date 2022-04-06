@@ -2,7 +2,7 @@ const payload = {
   limit: 1e9,
 };
 try {
-  fetch(`<?= URL ?>Api/read/exam`, {
+  fetch(`./Api/read/exam`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -41,7 +41,7 @@ try {
 }
 
 try {
-  fetch(`<?= URL ?>Api/read/exam_center`, {
+  fetch(`./Api/read/exam_center`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

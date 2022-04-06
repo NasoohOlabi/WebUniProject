@@ -38,8 +38,6 @@ class Home extends Controller
             $role = $_SESSION['user']->role->name;
             $username = $_SESSION['username'];
 
-
-
             switch ($role) {
                 case 'TestAdmin':
                     $content =
@@ -51,7 +49,7 @@ class Home extends Controller
                     break;
                 default:
                     $content =
-                        'application/views/home/_content/__test_center_admin_content.php';
+                        null;
                     break;
             }
             require 'application/views/home/user_index.php';
