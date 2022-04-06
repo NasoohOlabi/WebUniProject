@@ -34,7 +34,11 @@ class Language
 		if (Language::$lang === 'en')
 			return $key;
 		elseif (Language::$lang === 'ar') {
-			return Language::$texts[$key];
+			if (isset(Language::$texts[$key]))
+				return Language::$texts[$key];
+			else{
+				simpleLog("Language::t($key) not found",'lang');
+				return $key;}
 		}
 	}
 }

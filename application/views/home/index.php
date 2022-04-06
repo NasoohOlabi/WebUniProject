@@ -44,7 +44,7 @@ if (isset($_SESSION['flash_message'])) {
                 addLoadEvent(()=>{Swal.fire({
                   position: 'top-end',
                   icon: 'info',
-                  title: '$msg',
+                  title: '" . Language::t($msg) . "',
                   showConfirmButton: false,
                   timer: 2000
                 })})

@@ -3,7 +3,6 @@
 use function PHPSTORM_META\type;
 
 require_once 'application/views/_templates/header.php';
-require_once './application/libs/util/log.php';
 require_once './application/models/core/schema.php';
 
 function is_display_key($key)

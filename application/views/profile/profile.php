@@ -1,4 +1,5 @@
 <?php
+
 $profile_pic = $_SESSION['user']->profile_picture;
 $has_picture = ($profile_pic == null || $profile_pic == '' ? false : true);
 
@@ -163,7 +164,8 @@ $_POST['id'] = $user_id;
         -webkit-transition: top .2s ease-in-out, font-size .2s ease-in-out;
         transition: top .2s ease-in-out, font-size .2s ease-in-out;
         visibility: hidden;
-        color: #3f51b5;
+        /* color: #3f51b5; */
+        color: #6577dc;
         font-family: "Helvetica";
         font-weight: 600;
     }
@@ -214,38 +216,38 @@ $_POST['id'] = $user_id;
         </div>
         <form method="post" class="login-form">
             <div class="form-block">
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" class="text-input valid-input" placeholder="Username" value="<?php echo $username ?>" />
+                <label for="username"><?= Language::t('Username') ?></label>
+                <input type="text" name="username" id="username" class="text-input valid-input" placeholder="<?= Language::t('Username') ?>" value="<?php echo $username ?>" />
                 <small class="invalid-text">
-                    Please enter a valid username</small>
+                    <?= Language::t('Please enter a valid username') ?></small>
             </div>
             <div class="form-block">
-                <label for="password">Password</label>
-                <input type="text" name="password" id="password" class="text-input valid-input" placeholder="Password" />
+                <label for="password"><?= Language::t('Password') ?></label>
+                <input type="text" name="password" id="password" class="text-input valid-input" placeholder="<?= Language::t('Password') ?>" />
                 <small class="invalid-text">
-                    Please enter a valid password</small>
+                    <?= Language::t('Please enter a valid password') ?></small>
             </div>
             <div class="form-block">
-                <label for="first_name">First Name</label>
-                <input type="text" name="first_name" id="first_name" class="text-input valid-input" placeholder="First_name" value="<?php echo $first_name ?>" />
+                <label for="first_name"><?= Language::t('First Name') ?></label>
+                <input type="text" name="first_name" id="first_name" class="text-input valid-input" placeholder="<?= Language::t('First Name') ?>" value="<?php echo $first_name ?>" />
                 <small class="invalid-text">
-                    Please enter a valid first_name</small>
+                    <?= Language::t('Please enter a valid first_name') ?></small>
             </div>
             <div class="form-block">
-                <label for="last_name">Last Name</label>
-                <input type="text" name="last_name" id="last_name" class="text-input valid-input" placeholder="Last_name" value="<?php echo $last_name ?>" />
+                <label for="last_name"><?= Language::t('Last Name') ?></label>
+                <input type="text" name="last_name" id="last_name" class="text-input valid-input" placeholder="<?= Language::t('Last Name') ?>" value="<?= $last_name ?>" />
                 <small class="invalid-text">
-                    Please enter a valid last_name</small>
+                    <?= Language::t('Please enter a valid last_name') ?></small>
             </div>
             <div class="form-block">
-                <label for="middle_name">Middle Name</label>
-                <input type="text" name="middle_name" id="middle_name" class="text-input valid-input" placeholder="Middle_name" value="<?php echo $middle_name ?>" />
+                <label for="middle_name"><?= LANGUAGE::t('Middle Name') ?></label>
+                <input type="text" name="middle_name" id="middle_name" class="text-input valid-input" placeholder="<?= Language::t('Middle Name') ?>" value="<?= $middle_name ?>" />
                 <small class="invalid-text">
-                    Please enter a valid middle_name</small>
+                    <?= Language::t('Please enter a valid middle_name') ?></small>
             </div>
             <div class="form-block">
                 <button type="submit" id="submit-btn" onclick="submitChanges()">
-                    Save Changes <svg id="spinner" viewBox="0 0 50 50">
+                    <?= Language::t('Save Changes') ?> <svg id="spinner" viewBox="0 0 50 50">
                         <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
                     </svg>
                 </button>
