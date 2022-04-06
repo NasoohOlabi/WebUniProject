@@ -1,0 +1,10 @@
+<Files *.php>
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+<FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css|css)$">
+<IfModule mod_headers.c>
+Header set Access-Control-Allow-Origin "*"
+</IfModule>
+</FilesMatch>
