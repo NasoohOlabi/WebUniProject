@@ -38,6 +38,7 @@ function main() {
                 }
             )
         );
+        if (form == null) return;
         if (formNameInScope(form) == "Login") return;
         const buttons = form.querySelectorAll('form .form-block button:not(.default-form)')
         if (buttons.length !== 0)

@@ -49,7 +49,7 @@ function Permissions_Tiles($cls, $bm)
 
     require 'component/__Permissions__tiles.php';
 }
-function PageForThis(Table $cls, BaseModel $bm, array $omit = [])
+function PageForThis(Table $cls, BaseModel $bm, array $omit = [],$submitBtnNeeded = true)
 {
     FormForThis($cls, $bm, $omit);
     if (count($cls->dependents) > 0) {

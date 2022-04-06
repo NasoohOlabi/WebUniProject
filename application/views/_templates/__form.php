@@ -15,14 +15,17 @@
                 select_input($field, $SELECT_OPTIONS[$field], str_replace("_id", "", ucfirst($field)));
             }
         }
-        ?>
+        
+        if (isset($submitBtnNeeded) && $submitBtnNeeded)
+            echo '
         <div class="form-block">
             <button type="submit" id="submit-btn">
-                <?= $cls->get_CRUD_Terms()['create'] . ' ' . get_class($cls) ?>
+                ' . $cls->get_CRUD_Terms()['create'] . ' ' . get_class($cls) . '
                 <svg id="spinner" viewBox="0 0 50 50">
                     <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
                 </svg>
             </button>
-        </div>
+        </div>'
+        ?>
     </form>
 </div>

@@ -712,7 +712,7 @@ noscript {
   border: none;
   position: relative;
   bottom: 5px;
-  left: -30px;
+  left: 10px;
   cursor: pointer;
 }
 .remove-div-x-btn:hover {

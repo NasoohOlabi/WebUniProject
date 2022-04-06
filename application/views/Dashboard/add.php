@@ -20,7 +20,7 @@
         }
     } else if (in_array(strtolower($form), $this->forms)) {
         $q = new $form();
-        PageForThis($q, $bm);
+        PageForThis($q, $bm, [], false);
     } else {
         return;
     }
@@ -35,7 +35,8 @@
             sv_btn.addEventListener("click", () => {
                 let parent_sql_id = -1;
 
-                const form = document.querySelector(".login-container")
+                const form = document.querySelector(".add-form-container")
+                if (form == null) return;
                 const n1 = formNameInScope(form)
                 const read_inputs = readInputs(form)
                 fetch(ourURL + `Api/create/${formNameInScope(form)}`, {
@@ -88,7 +89,13 @@
 
                     lst = lst
                         .filter(wrapper => wrapper.querySelectorAll('form').length > 0)
-                        .flatMap(wrapper => [].slice.call(wrapper.querySelectorAll('.login-container')))
+                        .flatMap(wrapper => [].slice.call(wrapper.querySelectorAll('.add-form-container')))
+
+                    if (lst.length === 0) {
+                        Swal.fire("Created!", `${n1.replace('_',' ')} was easily created.`, "success");
+                        return
+                    }
+
                     lst.forEach(sub_form => {
                         const payload = readInputs(sub_form)
                         payload[formNameInScope(form).toLowerCase() + "_id"] = parent_sql_id
