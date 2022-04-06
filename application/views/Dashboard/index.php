@@ -51,61 +51,61 @@
       <div class="menu">
         <ul class="menu-links">
           <li class="nav-link">
-            <a href="#" onclick="switchTo('Dashboard')">
+            <a href="#" onclick="switchTo('Dashboard',event)">
               <span class="text nav-text" id="Dashboard">Dashboard</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('user')">
+            <a href="#" onclick="switchTo('user',event)">
               <span class="text nav-text" id="user">Users</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('question')">
+            <a href="#" onclick="switchTo('question',event)">
               <span class="text nav-text" id="question">Questions</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('exam')">
+            <a href="#" onclick="switchTo('exam',event)">
               <span class="text nav-text" id="exam">Exams</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('exam_center')">
+            <a href="#" onclick="switchTo('exam_center',event)">
               <span class="text nav-text" id="exam_center">Exam Centers</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('subject')">
+            <a href="#" onclick="switchTo('subject',event)">
               <span class="text nav-text" id="subject">Subjects</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('topic')">
+            <a href="#" onclick="switchTo('topic',event)">
               <span class="text nav-text" id="topic">Topics</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('role')">
+            <a href="#" onclick="switchTo('role',event)">
               <span class="text nav-text" id="role">Roles</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('permission')">
+            <a href="#" onclick="switchTo('permission',event)">
               <span class="text nav-text" id="permission">Permissions</span>
             </a>
           </li>
 
           <li class="nav-link">
-            <a href="#" onclick="switchTo('student')">
+            <a href="#" onclick="switchTo('student',event)">
               <span class="text nav-text" id="student">Students</span>
             </a>
           </li>

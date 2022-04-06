@@ -24,7 +24,7 @@
 	<div style="width:100%;height:100%">
 		<div class="add-form-container">
 			<div class="form-block">
-				<h1 style="display:flex">Permissions
+				<h1 style="display:flex"><?= Language::t('Permissions') ?>
 				</h1>
 			</div>
 			<form>

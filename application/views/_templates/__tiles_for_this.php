@@ -16,15 +16,19 @@
              document.getElementById(`<?= $sub_cls ?>-container`).style.display = 
             (document.getElementById(`<?= $sub_cls ?>-container`).style.display == `none`)?`flex`:`none`;
             
-            document.querySelector(`.form-block button`).style.display = 
-            (document.getElementById(`<?= $sub_cls ?>-container`).style.display == `none`)?`block`:`none`
             this.children[this.children.length-1].className = (this.children[this.children.length-1].className === 'fas fa-angle-down')?'fas fa-angle-up':'fas fa-angle-down'
-            ">Add <?= ($sub_cls === 'Role_Has_Permission') ? 'Permissions' : str_replace('_', ' ', $sub_cls) ?> For This <?= str_replace('_', ' ', get_class($cls)) ?><i class="fas fa-angle-down" style="margin-left:50px"></i></button></div>
-<h2 style="display:none;padding-left:10%;text-decoration:underline" id="<?= $sub_cls ?>-title"><?= str_replace('_', ' ', $sub_cls) ?>s:</h2>
+            ">
+        <?= Language::t('Add') ?>
+        <?= Language::t(($sub_cls === 'Role_Has_Permission')
+            ? ((get_class($cls) === 'Permission') ? 'Role' : 'Permissions')
+            : str_replace('_', ' ', $sub_cls))
+        ?> <?= Language::t('For This') ?> <?= Language::t(str_replace('_', ' ', get_class($cls))) ?><i class="fas fa-angle-down" style="margin-left:50px"></i></button></div>
+<h2 style="display:none;padding-left:10%;text-decoration:underline" id="<?= $sub_cls ?>-title">
+    <?= Language::t(str_replace('_', ' ', $sub_cls) . 's') ?>:</h2>
 <div id="<?= $sub_cls ?>-container" class="scrolling-wrapper" style="display:none;">
     <div class="add-form-container">
         <div class="form-block">
-            <h1>Add <?= $the_other ?>
+            <h1><?= Language::t('Add') ?> <?= Language::t($the_other) ?>
             </h1>
         </div>
         <form>
@@ -35,7 +39,7 @@
             datalist_input($the_other, $SELECT_OPTIONS);
             ?>
 
-            <input type="submit" value="Add" id="add-<?= $the_other ?>-dependant-btn" class="add-tile-dependant-btn">
+            <input type="submit" value="<?= Language::t('Add') ?>" id="add-<?= $the_other ?>-dependant-btn" class="add-tile-dependant-btn">
 
             </input>
         </form>

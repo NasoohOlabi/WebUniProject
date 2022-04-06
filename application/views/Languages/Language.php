@@ -31,14 +31,16 @@ class Language
 
 	static function t($key)
 	{
+		$key = humanize($key);
 		if (Language::$lang === 'en')
 			return $key;
 		elseif (Language::$lang === 'ar') {
 			if (isset(Language::$texts[$key]))
 				return Language::$texts[$key];
-			else{
-				simpleLog("Language::t($key) not found",'lang');
-				return $key;}
+			else {
+				simpleLog("Language::t($key) not found", 'lang');
+				return $key;
+			}
 		}
 	}
 }
