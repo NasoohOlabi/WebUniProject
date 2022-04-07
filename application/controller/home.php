@@ -23,15 +23,6 @@ class Home extends Controller
         // echo 'Message from Controller: You are in the controller home, using the method index()';
         session_start();
 
-        if (isset($_GET['lang'])) {
-            setcookie('lang', $_GET['lang'], time() + (86400 * 30), "/");
-            $SwitchLanguageTo = $_GET['lang'];
-            unset($_GET['lang']);
-            header("Location: " . URL);
-            return;
-        }
-
-
         $p = $this->loadModel('QuestionModel');
 
         // load views. within the views we can echo out $songs and $amount_of_songs easily

@@ -81,7 +81,7 @@ class BaseModel
     {
         $table = $t ?? $this->table;
 
-        sessionUserHasPermissions(['read_' . $this->table]);
+        sessionUserHasPermissions(['read_' . $table]);
 
         $result = $this->select([], "$table", ["$table.id" => $id]);
 
@@ -356,7 +356,12 @@ class BaseModel
     ) {
         return $this->__select_stmt([], $schemaClasses, $ON_conditions, $WHERE_conditions, ['override' => $override]);
     }
-    public function select(array $columns, string $schemaClass,  array $WHERE_conditions = [], int $limit = 100, bool $override = false)
+    public function select(
+        array $columns,
+        string $schemaClass,
+        array $WHERE_conditions = [],
+        int $limit = 100,
+        bool $override = false)
     {
         return $this->__select_stmt($columns, [$schemaClass], [], $WHERE_conditions, ['limit' => $limit, 'override' => $override]);
     }

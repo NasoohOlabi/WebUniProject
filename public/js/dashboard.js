@@ -84,6 +84,17 @@ function UpperCaseFirstLetter(str, separator = " ") {
 
     return upperCasedWords.join(separator);
 }
+/**
+ * 
+ * @param {string} s 
+ * @returns 
+ */
+function humanize(s) {
+    return s.replaceAll('_', ' ')
+        .split(' ')
+        .map(word => word[0].toUpperCase() + word.substring(1))
+        .join(' ')
+}
 
 const tasks = [];
 
@@ -263,12 +274,7 @@ function Header(id, names) {
             : ["profile_picture", 'username', 'first_name', 'middle_name', 'last_name'])
         : names
     const th_s = processed_names.filter(is_display_key)
-        .map(item => item
-            .replaceAll('_', ' ')
-            .split(' ')
-            .map(word => word[0].toUpperCase() + word.substring(1))
-            .join(' ')
-        )
+        .map(humanize)
         .map((v) => "<th>" + v + "</th>");
 
     th_s.push('<th colspan="2"><th>');
@@ -311,7 +317,7 @@ function TableRow(identifier, inline_keys = false, inline_key_prefix = "") {
                 return `<td class="profile-pic"><img src="${ourURL}DB/ProfilePics/${((row_item['profile_picture']) ? row_item['profile_picture'] : 'newuser2.png')}" width="50" height="50"/></td>`
             }
             let td = inline_keys
-                ? `<td style="border-top:none"><strong>${inline_key_prefix} ${key}:</strong></td>`
+                ? `<td style="border-top:none"><strong>${humanize(inline_key_prefix)} ${humanize(key)}:</strong></td>`
                 : "";
             if (value instanceof Array) {
                 // just making sure key is a single word

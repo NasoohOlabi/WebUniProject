@@ -76,15 +76,17 @@ $texts =
         'Users' =>   'مستخدمين',
         'Permission' =>  'صلاحية',
         'Permissions' =>  'صلاحيات',
-        'Please Enter A Valid Name' => 'الرجاء إدخال إسم صحيح',
-        'Please Enter A Valid Username' => 'الرجاء إدخال اسم مستخدم صحيح',
-        'Please Enter A Valid Password' => 'الرجاء إدخال كلمة مرور صحيحة',
-        'Please Enter A Valid First Name' => 'الرجاء إدخال إسم أول صحيح',
-        'Please Enter A Valid Last Name' => 'الرجاء إدخال إسم آخر صحيح',
-        'Please Enter A Valid Middle Name' => 'الرجاء إدخال إسم الأب صحيح',
+        'Please enter a valid name' => 'الرجاء إدخال إسم صحيح',
+        'Please enter a valid username' => 'الرجاء إدخال اسم مستخدم صحيح',
+        'Please enter a valid password' => 'الرجاء إدخال كلمة مرور صحيحة',
+        'Please enter a valid first name' => 'الرجاء إدخال إسم أول صحيح',
+        'Please enter a valid last name' => 'الرجاء إدخال إسم آخر صحيح',
+        'Please enter a valid middle name' => 'الرجاء إدخال إسم الأب صحيح',
         '1' => '1',
         'Role Has Permissions' =>    'دور له صلاحيات',
-
+        'Student' => 'طالب',
+        'Enroll Date' => 'تاريخ التسجيل',
+        'Please enter a valid enroll_date' => 'الرجاء إدخال تاريخ التسجيل بشكل صحيح',
 
     ];
 $direction = 'rtl';

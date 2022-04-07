@@ -22,7 +22,7 @@
         <?= Language::t(($sub_cls === 'Role_Has_Permission')
             ? ((get_class($cls) === 'Permission') ? 'Role' : 'Permissions')
             : str_replace('_', ' ', $sub_cls))
-        ?> <?= Language::t('For This') ?> <?= Language::t(str_replace('_', ' ', get_class($cls))) ?><i class="fas fa-angle-down" style="margin-left:50px"></i></button></div>
+        ?> <?= Language::t('For This') ?> <?= Language::t(str_replace('_', ' ', get_class($cls))) ?><i class="fas fa-angle-down" style="margin-<?= (Language::$direction === 'ltr') ? 'left' : 'right' ?>:50px"></i></button></div>
 <h2 style="display:none;padding-left:10%;text-decoration:underline" id="<?= $sub_cls ?>-title">
     <?= Language::t(str_replace('_', ' ', $sub_cls) . 's') ?>:</h2>
 <div id="<?= $sub_cls ?>-container" class="scrolling-wrapper" style="display:none;">

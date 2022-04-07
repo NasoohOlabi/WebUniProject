@@ -98,7 +98,12 @@ class DashBoard extends Controller
 
                 $bm->updatePermissions($parent_id, $_POST['permission_ids']);
 
-                $_SESSION['user']->permissions = $bm->select([], 'Permission', [], [Permission::id => $parent_id], 1000, true);
+                $_SESSION['user']->permissions = array_map(
+                    function ($permission) {
+                        return $permission->name;
+                    },
+                    $bm->select([], 'Permission', [Permission::id => $parent_id], 1000, true)
+                );
 
                 $_SESSION['flash_message'] = 'Permissions Updated';
                 header('Location:' . URL . 'dashboard');

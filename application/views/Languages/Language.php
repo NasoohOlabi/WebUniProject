@@ -9,7 +9,14 @@ class Language
 
 	public static function init()
 	{
-		global $SwitchLanguageTo;
+		if (isset($_GET['lang'])) {
+			simpleLog('OK');
+			setcookie('lang', $_GET['lang'], time() + (86400 * 30), "/");
+			$SwitchLanguageTo = $_GET['lang'];
+			unset($_GET['lang']);
+			header("Location: " . URL);
+			return;
+		}
 		if (isset($SwitchLanguageTo)) {
 			self::$lang = $SwitchLanguageTo;
 		} elseif (isset($_COOKIE['lang'])) {
@@ -31,10 +38,10 @@ class Language
 
 	static function t($key)
 	{
-		$key = humanize($key);
-		if (Language::$lang === 'en')
+		if (Language::$lang === 'en') {
+			$key = humanize($key);
 			return $key;
-		elseif (Language::$lang === 'ar') {
+		} elseif (Language::$lang === 'ar') {
 			if (isset(Language::$texts[$key]))
 				return Language::$texts[$key];
 			else {
