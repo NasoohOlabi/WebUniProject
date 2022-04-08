@@ -14,7 +14,7 @@ TODO: add min width to '.table td'
 - [X] set up an install url
 - [ ] Unify Font 
 - [ ] dashboard delete issues --nasooh
-- [ ] dashboard delete session user delete himself --nasooh
+- [X] dashboard delete session user delete himself --nasooh
 - [ ] Exams and tests
 - [ ] grade calcutation in sql with group by stmt
 
