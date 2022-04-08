@@ -84,7 +84,7 @@ class Users extends Controller
             $_SESSION['msg'] = "User already exists";
             header("Location:" . URL . 'users/signup/User');
         } else {
-            if ($new_user->insert($u)) {
+            if ($new_user->experimental_insert($u)) {
                 $_SESSION['success'] = true;
                 $_SESSION['msg'] = "User Added";
                 header("Location:" . URL . 'users/signup/User');

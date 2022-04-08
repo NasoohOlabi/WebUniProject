@@ -1,5 +1,5 @@
 <?php
-require_once 'application/models/core/AccessDeniedException.php';
+require_once './application/libs/util/Option.php';
 require_once 'basemodel_util.php';
 class BaseModel
 {
@@ -54,7 +54,7 @@ class BaseModel
      */
     public function wipeByIds(string $schemaClass, $ids)
     {
-        sessionUserHasPermissions(['delete_' . strtolower($schemaClass)]);
+        sessionUserHasPermissions(['delete_' . $schemaClass]);
 
         $ids = array_filter($ids, function ($id) {
             return is_numeric($id);
@@ -67,7 +67,6 @@ class BaseModel
         $sql = "DELETE FROM `$schemaClass` WHERE $sql_syntax";
 
 
-        simpleLog('BaseModel::wipeByIds Running : "' . $sql . '" Bindings : ' . json_encode($ids), 'basemodel');
         simpleLog('BaseModel::wipeByIds Running : "' . $sql . '" Bindings : ' . json_encode($ids));
         $query = $this->db->prepare($sql);
         $query->execute($ids);
@@ -113,34 +112,66 @@ class BaseModel
         return $query->fetchAll();
     }
 
+    /**
+     * Takes an array of column names with values to set for each record.
+     * if you add more key=>value pairs than what's needed they will be ommited.
+     * if you add less key=>value pairs than what's needed the function will return false as failed operation
+     *
+     * @param ["sqlColumnName"=>value] $dict
+     * @return Option
+     */
+    function insert($dict)
+    {
+        sessionUserHasPermissions(['create_' . $this->table]);
 
-    function insert(&$object)
+        $col = $this->columns();
+        $bindings = array();
+        $columns_names = [];
+        $values = [];
+        foreach ($col as $index => $column_description) {
+            if ($column_description->Field == "id")
+                continue;
+
+            if (!isset($dict["{$column_description->Field}"])) {
+                $s = "you forgot {$column_description->Field}";
+                return new Either\Err($s);
+            } else {
+                $columns_names[] = `{$column_description->Field}`;
+                $values[] = ":{$column_description->Field}";
+                $bindings[":" . $column_description->Field] = $dict[$column_description->Field];
+            }
+        }
+        $columns_names = implode(", ", $columns_names);
+        $values = implode(", ", $values);
+
+        $sql = "INSERT INTO `$this->table`($columns_names) VALUES ($values)";
+
+
+        simpleLog('BaseModel::insert Running : "' . $sql . '"');
+
+        $this->db->prepare($sql)->execute($bindings);
+        return new Either\Result();
+    }
+    function experimental_insert(&$object)
     {
         $schemaClass = get_class($object);
-
-        if (!sessionUserHasPermissions(['create_' . strtolower($schemaClass)])) {
-            throw new AccessDeniedException("You Can't Create " . $schemaClass . "s");
-        }
-
         $columns = $schemaClass::SQL_Columns();
 
-        unset($columns[0]); // id is auto incremented
+        sessionUserHasPermissions(['create_' . $schemaClass]);
 
+        unset($columns[0]); // it's auto incremented
         $values =  array_map(function ($column_name) use ($object) {
             if (property_exists($object, $column_name) && isset($object->{$column_name}))
                 return $object->{$column_name};
             else
                 return null;
         }, $columns);
-
-
         foreach ($columns as $key => $value) {
             if ($values[$key] === null) {
                 unset($columns[$key]);
                 unset($values[$key]);
             }
         }
-
         $columns_names = implode(", ", $columns);
         $question_marks = implode(", ", array_map(function ($arg) {
             return "?";
@@ -150,34 +181,40 @@ class BaseModel
 
         $sql = "INSERT INTO `$schemaClass` ($columns_names) VALUES ($question_marks)";
 
-        simpleLog('BaseModel::insert Running : "' . $sql . '"', 'basemodel' . " | Bindings " . json_encode($values));
+        simpleLog('BaseModel::experimental_insert Running : "' . $sql . '"');
+
+        simpleLog("bindings " . json_encode($values));
         $query = $this->db->prepare($sql);
 
-        $insert_successful = $query->execute(array_values($values));
+        $flag = $query->execute(array_values($values));
 
-        if ($insert_successful) {
+
+
+        if ($flag) {
             $object->id = $this->db->lastInsertId();
             return true;
         } else {
             $error = $query->errorInfo();
+
             // see if anything is output here
-            simpleLog('BaseModel::create' . json_encode($error), 'basemodel');
-            simpleLog('BaseModel::create' . json_encode($error));
+            simpleLog('error>>>>>>>>>>>' . json_encode($error));
             throw new Exception($error[2]);
         }
     }
-
-    function update(string $schemaClass, int $id, stdClass $these)
+    function experimental_update(string $schemaClass, int $id, stdClass $these)
     {
-        if (!sessionUserHasPermissions(['write_' . strtolower($schemaClass)])) {
-            throw new AccessDeniedException("You Can't Edit " . $schemaClass . "s");
-        };
+        sessionUserHasPermissions(['update_' . $schemaClass]);
 
         $columns = $schemaClass::SQL_Columns();
 
-        unset($columns[0]); // id is auto incremented and un editable
+        simpleLog(json_encode($columns));
+
+        if (($key = array_search('id', $columns)) !== false) {
+            unset($columns[$key]);
+        }
         $columns = array_values($columns);
 
+        simpleLog(json_encode($columns));
 
         $columns_to_update = array_filter($columns, function ($column_name) use ($these) {
             return property_exists($these, $column_name);
@@ -185,31 +222,29 @@ class BaseModel
 
 
 
+        simpleLog(json_encode($columns_to_update));
+
+
         $values = [];
         foreach ($columns_to_update as $col) {
             $values[] = $these->{$col};
         }
 
-        simpleLog("Updating: " . json_encode($columns_to_update) . " | With these Values: " . json_encode($values), 'basemodel');
 
+        simpleLog(json_encode($values));
 
         $sql_syntax_columns = implode(', ', array_map(function ($col) {
             return '`' . $col . '` = ?';
         }, $columns_to_update));
 
-        $values[] = $id * 1; // * 1 for int to string conversion adhoc
+        $values[] = $id * 1;
 
         $sql = "UPDATE `$schemaClass` SET $sql_syntax_columns WHERE id = ?";
 
-        simpleLog('BaseModel::update Running : "' . $sql . '"' . " | Bindings " . json_encode($values), 'basemodel');
+        simpleLog('BaseModel::experimental_update Running : "' . $sql . '"');
 
-        try {
-            return $this->db->prepare($sql)->execute(array_values($values));
-        } catch (Exception $e) {
-            simpleLog('BaseModel::update ' . json_encode($e), 'basemodel');
-            simpleLog('BaseModel::update ' . json_encode($e));
-            throw $e;
-        }
+        simpleLog("bindings " . json_encode($values));
+        return $this->db->prepare($sql)->execute(array_values($values));
     }
 
     private function __select_stmt(array $columns, array $schemaClasses, array $ON_conditions = [], array $WHERE_conditions = [], array $options = [])
@@ -326,8 +361,8 @@ class BaseModel
         string $schemaClass,
         array $WHERE_conditions = [],
         int $limit = 100,
-        bool $override = false
-    ) {
+        bool $override = false)
+    {
         return $this->__select_stmt($columns, [$schemaClass], [], $WHERE_conditions, ['limit' => $limit, 'override' => $override]);
     }
     public function count(string $schemaClass = null, array $ON_conditions = [], array $WHERE_conditions = [], bool $override = false)

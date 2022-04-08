@@ -1,15 +1,29 @@
 <?php
 
+use function PHPSTORM_META\type;
+
 require_once 'application/views/_templates/header.php';
 require_once './application/models/core/schema.php';
 
 function is_display_key($key)
 {
-	return !endsWith($key, 'id')
-		&& $key !== 'identifying_fields'
-		&& $key !== 'profile_picture'
-		&& $key !== "dependents"
-		&& $key !== "active";
+	return !endsWith($key, 'id') && $key !== 'identifying_fields' && $key !== 'profile_picture' &&
+		$key !== "dependents";
+}
+if (!function_exists('is_ROOT__ADMIN')) {
+	function is_ROOT__ADMIN()
+	{
+		if (session_status() === PHP_SESSION_NONE) {
+			session_start();
+		}
+
+		// if (!(isset($_SESSION['user']) && $_SESSION['user']->role->name == 'ROOT::ADMIN')) {
+		//     header('Location:' . URL);
+		//     simpleLog("he is trying to hack us " . json_encode($_SESSION['user']), 'users/');
+		//     return;
+		// }
+		// simpleLog("access Granted to " . json_encode($_SESSION['user']), 'users/');
+	}
 }
 class Api extends Controller
 {
@@ -23,64 +37,47 @@ class Api extends Controller
 	}
 	public function create($className = null)
 	{
-		session_start();
-
-		// allow for native form requests but also for ajax requests
-		if (count($_POST) === 0)
-			$_POST = json_decode(file_get_contents("php://input"), true);
-
-		// Clean inputs
-		$_POST = array_map('htmlentities', $_POST);
-		$_POST = array_map('trim', $_POST);
-
-		// Consider empty strings as null
-		$_POST = array_map(function ($v) {
-			return (is_string($v) && strlen($v) == 0) ? NULL : $v;
-		}, $_POST);
-
-		// Passwords get special treatment and get hashed
-		if (isset($_POST['password']))
-			$_POST['password'] = md5($_POST['password']);
-
-		// Pseudo id since we don't have one
-		// Note that the constructor needs the field id
-		// While the insert Operation drops id and doesn't take in consideration
-		$_POST['id'] = -1;
-
+		Is_ROOT__ADMIN();
+		$_POST = json_decode(file_get_contents("php://input"), true);
 		try {
+			// Clean inputs
+			$_POST = array_map('htmlentities', $_POST);
+			$_POST = array_map('trim', $_POST);
+			// Consider empty strings as null
+			$_POST = array_map(function ($v) {
+				return (is_string($v) && strlen($v) == 0) ? NULL : $v;
+			}, $_POST);
+			// Passwords get special treatment and get hashed
+			if (isset($_POST['password']))
+				$_POST['password'] = md5($_POST['password']);
+			// Pseudo id since we don't have one
+			// Note that the constructor needs the field id
+			// While the insert Operation drops id and doesn't take in consideration
+			$_POST['id'] = -1;
+
 			// The constructor checks if the required field are satisfied
 			// and also obviously checks is $className is sth we have
 			$v = new $className((object) $_POST);
-		} catch (\Throwable $e) {
-			simpleLog('Caught exception: ' . $e->getMessage(), 'api/create');
-			echo 'Operation Failed : ' . 'Missing or improper fields Caught exception: ' . str_replace('::', ' ', str_replace('$', ' ', $e->getMessage()));
-			return;
-		}
 
 
-		simpleLog(json_encode($v), 'api/create/');
-		$Model = $this->loadModel('BaseModel');
-		try {
-			if ($Model->insert($v)) {
+			simpleLog(json_encode($v), 'api/create/');
+			$Model = $this->loadModel('BaseModel');
+			if ($Model->experimental_insert($v)) {
 				echo json_encode($v);
 			} else {
-				echo "Operation Failed : insert $className failed ";
+				echo "Operation Failed : create $className failed ";
 			}
-		} catch (AccessDeniedException $e) {
-			simpleLog('Caught exception: ' . $e->getMessage(), 'api/create');
-			echo 'Operation Failed : ' . 'Permission Denied: ' . str_replace('::', ' ', str_replace('$', ' ', $e->getMessage()));
-			return;
+			// header('Location:' . URL . 'DashBoard/');
 		} catch (\Throwable $e) {
-			simpleLog('Caught exception: ' . $e->getMessage(), 'api/create');
+
+			simpleLog('Caught exception: ' . $e->getMessage(), 'api');
 			echo 'Operation Failed : ' . 'Caught exception: ' . str_replace('::', ' ', str_replace('$', ' ', $e->getMessage()));
-			return;
 		}
-		// header('Location:' . URL . 'DashBoard/');
 		pageHit("Api.create");
 	}
 	public function read(string $schemaClass = null, string $id = null)
 	{
-		session_start();
+		Is_ROOT__ADMIN();
 		$_POST = json_decode(file_get_contents("php://input"), true);
 		if ($schemaClass == null) {
 			// invalid request
@@ -230,26 +227,22 @@ class Api extends Controller
 	}
 	public function update(string $schemaClass)
 	{
-		session_start();
+		Is_ROOT__ADMIN();
+		$_POST = json_decode(file_get_contents("php://input"), true);
 
-		if (count($_POST) === 0)
-			$_POST = json_decode(file_get_contents("php://input"), true);
-
-		// simpleLog('Api::update raw POST ' . json_encode((object)$_POST), 'api/update');
+		$username = isset($_POST['username']) ? $_POST['username'] : $_SESSION['user']->username;
 
 		try {
-			$wanted_columns = $schemaClass::SQL_Columns();
-		} catch (\Throwable $e) {
-			throw new Exception("invalid url " . URL . "api/update/$schemaClass");
-		}
+			// Clean inputs
+			try {
+				$wanted_columns = $schemaClass::SQL_Columns();
+			} catch (\Throwable $e) {
+				throw new Exception("invalid url $schemaClass");
+			}
 
-		try {
-			if (isset($_POST['profile_picture']) && str_starts_with($_POST['profile_picture'], 'data:image') && strlen($_POST['profile_picture']) > 100) {
+			if (isset($_POST['profile_picture'])) {
 				$data = $_POST['profile_picture'];
-				$username = isset($_POST['username']) ? $_POST['username'] : $_SESSION['user']->username;
-				if (!isset($_POST['id'])) {
-					$_POST['id'] = $_SESSION['user']->id;
-				}
+
 				if (preg_match('/^data:image\/(\w+);base64,/', $data, $type)) {
 
 
@@ -279,76 +272,93 @@ class Api extends Controller
 				$_POST['profile_picture'] = $username . "." . $type;
 			}
 
-
-			simpleLog('Api::update image preprocessed POST ' . json_encode((object)$_POST), 'api/update');
-
+			simpleLog('api update>>>preprocessed>>>>POST>>>>>' . json_encode((object)$_POST), 'api');
 			$_POST = array_filter($_POST, function ($key) use ($wanted_columns) {
 				return in_array(strtolower($key), $wanted_columns);
 			}, ARRAY_FILTER_USE_KEY);
-
-			// Clean inputs
 			$_POST = array_map('htmlentities', $_POST);
 			$_POST = array_map('trim', $_POST);
-
 			// Consider empty strings as null
 			$_POST = array_map(function ($v) {
 				return (is_string($v) && strlen($v) == 0) ? NULL : $v;
 			}, $_POST);
-
 			// Passwords get special treatment and get hashed
 			if (isset($_POST['password']))
 				$_POST['password'] = md5($_POST['password']);
 
 			simpleLog(
-				'Api::update POST processed' . json_encode((object)$_POST),
-				'api/update'
+				'api update>>>>cleaned>>>POST>>>>>' . json_encode((object)$_POST),
+				'api'
 			);
 
-			if (count($_POST) === 2 && isset($_POST['id']) && isset($_POST['role_id'])) {
+			if (!isset($_POST['id'])) {
+				$_POST['id'] = $_SESSION['user']->id;
+			}
+
+			simpleLog(
+				'api update>>>>cleaned>>>POST>>>>>id added>>>>>' . json_encode((object)$_POST),
+				'api'
+			);
+
+			if (isset($_POST['role_id'])) {
 				if (!sessionUserHasPermissions(['reassign_role'])) {
 					throw new AccessDeniedException("You don't have permission to change roles");
 				}
-			} else {
-				unset($_POST['role_id']);
 			}
 
 			$Model = $this->loadModel('BaseModel');
-
-			if ($Model->update($schemaClass, $_POST['id'], (object) $_POST)) {
+			if ($Model->experimental_update($schemaClass, $_POST['id'], (object) $_POST)) {
 				$users_model = $this->loadModel('UserModel');
 				$_SESSION['user'] = $users_model->getFullDetails($_SESSION['user']->id);
 				echo 'updated';
 			} else {
-				echo 'Operation Failed : update unsuccessful';
+				echo 'update unsuccessful';
 			}
 		} catch (\Throwable $e) {
-			simpleLog('Caught exception: ' . $e->getMessage(), 'api/update');
+
+			simpleLog('Caught exception: ' . $e->getMessage(), 'api');
 			echo 'Operation Failed : ' . $e->getMessage();
 		}
 		pageHit("Api.update");
 	}
-	public function delete(?string $schemaClass = null)
+	public function delete(?string $schemaClass = null, ?int $id = null)
 	{
-		session_start();
-
-		if (count($_POST) === 0)
-			$_POST = json_decode(file_get_contents("php://input"), true);
-
+		Is_ROOT__ADMIN();
+		$_POST = json_decode(file_get_contents("php://input"), true);
 		try {
 			if (isset($_POST['ids'])) {
-				if (isset($_SESSION['user']) && $schemaClass === 'user' && in_array($_SESSION['user']->id, $_POST['ids'])) {
-					echo 'Operation Failed : You Can\'t delete yourself from here!';
-				} else {
+				$Model
+					= $this->loadModel('BaseModel');
+				$Model->wipeByIds($schemaClass, $_POST['ids']);
+				echo 'deleted';
+			} else {
+				if ($id) {
 					$Model
 						= $this->loadModel('BaseModel');
-					$Model->wipeByIds($schemaClass, $_POST['ids']);
+					$Model->deleteById($id);
 					echo 'deleted';
+				} else {
+					// Clean inputs
+					$_POST = array_map('htmlentities', $_POST);
+					$_POST = array_map('trim', $_POST);
+					// Consider empty strings as null
+					$_POST = array_map(function ($v) {
+						return (is_string($v) && strlen($v) == 0) ? NULL : $v;
+					}, $_POST);
+					// Get the name of what are we updating
+					$className = $_POST['schemaClass'];
+					// and also obviously checks is $className is sth we have
+					$v = new $className((object) $_POST);
+
+					simpleLog(json_encode($v), 'api/delete');
+					$Model = $this->loadModel('BaseModel');
+					//TODO: check if what he submitted has the same fields
+					$Model->deleteById($v->id);
+					header('Location:' . URL . 'DashBoard/');
 				}
-			} else {
-				echo 'Operation Failed : No IDs provided';
 			}
 		} catch (\Throwable $e) {
-			simpleLog('Caught exception: ' . $e->getMessage(), 'api/delete');
+			simpleLog('Caught exception: ' . $e->getMessage(), 'api');
 			echo 'Operation Failed : ' . $e->getMessage();
 		}
 		pageHit("Api.delete");
@@ -356,7 +366,7 @@ class Api extends Controller
 
 	function getStats()
 	{
-		session_start();
+		Is_ROOT__ADMIN();
 
 		$data = hitStats();
 

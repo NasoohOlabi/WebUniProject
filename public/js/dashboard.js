@@ -1134,7 +1134,7 @@ function delete_re(depth = 0) {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: humanize(`${currentTab}${(identifiers.length === 1) ? '' : 's'} Deleted!`),
+                        title: `${currentTab}${(identifiers.length === 1) ? '' : 's'} deleted!`,
                         showConfirmButton: false,
                         timer: 750
                     })

@@ -91,7 +91,7 @@ class RoleModel extends BaseModel
         $link = new Role_Has_Permission();
         $link->permission_id = $this->permissionId($permission);
         $link->role_id = $this->roleId($role);
-        return $this->insert($link);
+        $this->experimental_insert($link);
     }
     function hasPermission($role, $permission)
     {
