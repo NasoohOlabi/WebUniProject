@@ -601,10 +601,15 @@ function getFromHQ(
 
                         if (currentTab === 'student_exam') {
                             if (Exams_Taken_or_Future_Exams === 'Future Exams') {
-                                objects = objects.filter(o => o.choices.length === 0)
+                                objects = objects.filter(o => o.grade === null)
+                                objects = objects.map(o => {
+                                    delete o.grade
+                                    delete o.choices
+                                    return o
+                                })
                             }
                             else if (Exams_Taken_or_Future_Exams === 'Exams Taken') {
-                                objects = objects.filter(o => o.choices.length !== 0)
+                                objects = objects.filter(o => o.grade !== null)
                             }
                         }
                         const identifiers = objects.map((object) => {
