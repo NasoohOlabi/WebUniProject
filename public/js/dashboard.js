@@ -177,7 +177,7 @@ function is_display_key(key) {
         && key !== "dependents"
         && key !== "students"
         && !key.toLowerCase().includes("has")
-        && key !== "number_of_choices"
+        && key !== "active"
     );
 }
 /**
@@ -601,10 +601,15 @@ function getFromHQ(
 
                         if (currentTab === 'student_exam') {
                             if (Exams_Taken_or_Future_Exams === 'Future Exams') {
-                                objects = objects.filter(o => o.choices.length === 0)
+                                objects = objects.filter(o => o.grade === null)
+                                objects = objects.map(o => {
+                                    delete o.grade
+                                    delete o.choices
+                                    return o
+                                })
                             }
                             else if (Exams_Taken_or_Future_Exams === 'Exams Taken') {
-                                objects = objects.filter(o => o.choices.length !== 0)
+                                objects = objects.filter(o => o.grade !== null)
                             }
                         }
                         const identifiers = objects.map((object) => {
@@ -702,6 +707,14 @@ function switchTo(Tab, evt = null) {
                             const row = TableRow(identifier);
                             if (tbl) tbl.innerHTML += row;
                         });
+                        // Adhoc fix
+                        if (currentTab === 'exam_center') {
+                            document.querySelectorAll('th').forEach(th => {
+                                if (th.innerText == 'User') {
+                                    th.innerText = 'Admin'
+                                }
+                            })
+                        }
                     },
                 failure: (e) => {
                     //TODO: tell user some how that that's all

@@ -57,6 +57,7 @@ class Exams extends Controller
         $exam_center->id = 1;
         $exam_center->name = "Hiast Center";
         $exam_center->description = 'A center in the hiast...';
+        $exam_center->user_id = 31;
         $exam_center = new Exam_Center($exam_center);
 
 
@@ -66,7 +67,7 @@ class Exams extends Controller
 
         print("<pre>");
         print('Generated Successfully! ');
-        print('student_exam');
+        print("student_exam\n");
         var_dump($student_exam);
         print("</pre>");
     }

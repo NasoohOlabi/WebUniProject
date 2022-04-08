@@ -43,10 +43,6 @@ INSERT INTO `topic` (`id`, `name`, `description`, `subject_id`) VALUES
 (5, "Relativity", "testing", 3),
 (6, 'Geometry', 'The study of shapes', 2);
 
-INSERT INTO `exam_center` (`id`, `name`, `description`) VALUES
-(1, 'Hiast Center', 'A center in the hiast...'),
-(2, 'FourSeason', 'test center gf');
-
 INSERT INTO `permission` (`id`, `name`) VALUES
 (1, 'add_exam_center'),
 (2, 'assign_role'),
@@ -91,18 +87,18 @@ INSERT INTO `permission` (`id`, `name`) VALUES
 -- max id: 38
 
 
-INSERT INTO `question` (`id`, `text`, `number_of_choices`, `topic_id`) VALUES
-(1, 'Which is bigger?', 3, 1),
-(2, 'What is 1+1 equals to?', 3, 2),
-(3, "Let f(x)=x^2. What is f\'(2)?", 4, 4),
-(4, "What is physics", 5, 5),
-(5, 'if x+1=3 then x = ?', 3, 2),
-(6, 'Is f(x) = -x non decreasing?', 2, 4),
-(7, 'what is 3+2 ?', 3, 2),
-(8, 'Is f(x) = x*x non decreasing?', 2, 4),
-(9, 'The area of Square?', 2, 6),
-(10, 'The area of Rectangle?', 2, 6),
-(11, 'The area of Circle?', 2, 6);
+INSERT INTO `question` (`id`, `text`, `topic_id`,`active`) VALUES
+(1, 'Which is bigger?',  1,1),
+(2, 'What is 1+1 equals to?',  2,1),
+(3, "Let f(x)=x^2. What is f\'(2)?",  4,1),
+(4, "What is physics",  5,1),
+(5, 'if x+1=3 then x = ?',  2,1),
+(6, 'Is f(x) = -x non decreasing?',  4,1),
+(7, 'what is 3+2 ?',  2,1),
+(8, 'Is f(x) = x*x non decreasing?',  4,1),
+(9, 'The area of Square?',  6,1),
+(10, 'The area of Rectangle?',  6,1),
+(11, 'The area of Circle?',  6,1);
 
 INSERT INTO `choice` (`id`, `text`, `is_correct`, `question_id`) VALUES
 (1, 'INT', 0, 1),
@@ -219,5 +215,10 @@ INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `mi
 (31, "centeradmin", "123", "TestCenter", "Admin", "", NULL, 6);
 
 INSERT INTO `student` (`id`, `enroll_date`, `user_id`) VALUES
-(1, '2022-04-12', 5)
+(1, '2022-04-12', 5);
+
+
+INSERT INTO `exam_center` (`id`, `name`, `description`,`user_id`) VALUES
+(1, 'Hiast Center', 'A center in the hiast...',18),
+(2, 'FourSeason', 'test center gf',31)
 -- last query doesn't need a semicolon
