@@ -212,7 +212,7 @@ class BaseModel
         }
     }
 
-    private function __select_stmt(array $columns, array $schemaClasses, array $ON_conditions = [], array $WHERE_conditions = [], array $options = [])
+    private function __select_stmt(array $initial_columns, array $schemaClasses, array $ON_conditions = [], array $WHERE_conditions = [], array $options = [])
     {
         $wrapper = (isset($options['wrapper'])
             && is_string($options['wrapper'])
@@ -232,7 +232,7 @@ class BaseModel
 
         $stamp = $_SERVER['REQUEST_TIME'] . '_' . rand(0, 1000);
 
-        simpleLog("OP::$stamp BaseModel::__select_stmt columns: " . json_encode($columns) . " schemaClasses: " . json_encode($schemaClasses) . " ON_conditions: " . json_encode($ON_conditions) . " WHERE_conditions: " . json_encode($WHERE_conditions) . " options: " . json_encode($options), "selects");
+        simpleLog("OP::$stamp BaseModel::__select_stmt columns: " . json_encode($initial_columns) . " schemaClasses: " . json_encode($schemaClasses) . " ON_conditions: " . json_encode($ON_conditions) . " WHERE_conditions: " . json_encode($WHERE_conditions) . " options: " . json_encode($options), "selects");
 
 
         $limit = (isset($options['limit']) && is_numeric($options['limit']))
@@ -241,9 +241,9 @@ class BaseModel
 
         $limit_sql = " LIMIT $limit ";
 
-        $columns = (count($columns) == 0)
+        $columns = (count($initial_columns) == 0)
             ? _get_classes_dotted_columns($schemaClasses)
-            : $columns;
+            : $initial_columns;
 
         $columns_sql = (isset($options['overwrite columns'])
             && is_string($options['overwrite columns'])
@@ -300,7 +300,7 @@ class BaseModel
 
         // simpleLog("got from db >>>>>>>>>>>> " . json_encode($lines));
 
-        $result = (isset($options['stdClass']) && $options['stdClass'])
+        $result = (count($initial_columns) > 0 || (isset($options['stdClass']) && $options['stdClass']))
             ? $lines
             : array_map(function ($args) use ($wrapper) {
                 return new $wrapper($args,  strtolower($wrapper) . "_");

@@ -87,7 +87,7 @@ function PageForThis(Table $cls, BaseModel $bm, array $omit = [],$submitBtnNeede
 }
 function stdclastoidstirng($stdClass)
 {
-    $columns = $stdClass::SQL_COLUMNS();
+    $columns = $stdClass::SQL_Columns();
     $wanted_names = $stdClass->identifying_fields;
     $answer = [];
     foreach ($wanted_names as $prop) {

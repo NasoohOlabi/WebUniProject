@@ -175,6 +175,7 @@ function is_display_key(key) {
         !key.endsWith("id")
         && key !== "identifying_fields"
         && key !== "dependents"
+        && key !== "many2many"
         && key !== "students"
         && !key.toLowerCase().includes("has")
         && key !== "active"
@@ -208,8 +209,11 @@ function toggleDropDown(id_to_toggle) {
         if (btn) btn.innerText = !dropped_down ? "🔽" : "🔼";
 
         // if you can't see even after you looked them abort
-        if (tr && btn)
+        if (tr)
             tr.style.display = !dropped_down ? "none" : "table-row";
+        else if (true) {
+
+        }
 
     };
     btn.onclick = f;
@@ -559,6 +563,15 @@ function getFromHQ(
                 object[subClassName] = [subClassName + "-" + object[subClassName].id];
             }
         });
+        object.dependents.forEach((dependent) => {
+            if (dependent.includes('_Has_')) {
+                const other = dependent.split('_Has_').filter(elem => elem.toLowerCase() !== currentTab.toLowerCase())[0].toLowerCase();
+                (object['many2many'] && object['many2many'].push(other)) || (object['many2many'] = [other])
+                object[other + 's'] = [];
+            } else
+                object[dependent.toLowerCase() + 's'] = []
+        });
+        delete object.dependents;
         return object;
     };
     try {
