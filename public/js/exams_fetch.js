@@ -1,6 +1,7 @@
 const payload = {
   limit: 1e9,
 };
+
 try {
   fetch(`./Api/read/exam`, {
     method: "POST",
@@ -77,4 +78,42 @@ try {
 } catch (error) {
   console.log("ops!");
   console.log(error);
+}
+
+window.onload = initialize();
+
+//window.setTimeout(initialize, 1000);
+
+function initialize() {
+  window.exams_list = document.getElementById("exams-list");
+  window.exam_centers_list = document.getElementById("exam-centers-list");
+
+  while (!exams_list || !exam_centers_list) {
+    window.setTimeout(initialize, 500);
+    return;
+  }
+
+  window.numOfExams = window.exams_list.children.length - 1;
+  window.numOfCenters = window.exam_centers_list.children.length - 1;
+
+  if (window.numOfExams && window.numOfCenters) {
+    exams_list.addEventListener("change", validate);
+    exam_centers_list.addEventListener("change", validate);
+  }
+
+  validate();
+}
+
+function validate() {
+  const Submitbtn = document.querySelector("[type='submit']");
+  let selected_exam = exams_list.selectedIndex;
+  let selected_center = exam_centers_list.selectedIndex;
+
+  if (selected_exam && selected_center) {
+    Submitbtn.disabled = false;
+    Submitbtn.style.cursor = "pointer";
+  } else {
+    Submitbtn.disabled = true;
+    Submitbtn.style.cursor = "not-allowed";
+  }
 }

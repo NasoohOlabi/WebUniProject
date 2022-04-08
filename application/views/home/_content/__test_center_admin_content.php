@@ -1,4 +1,10 @@
 <script src="<?= URL ?>public/js/exams_fetch.js"></script>
+<script>
+    function generateExam() {
+        selects = document.getElementsByTagName("select")
+        window.location = `<?= URL ?>exams/generateExam?data=${selects[0].selectedIndex}-${selects[1].selectedIndex}`
+    }
+</script>
 <div class="user-content">
     <h2>Generate Random Questions:</h2>
 
@@ -11,6 +17,6 @@
     </select>
 
     <div class="form-block">
-        <button type="submit">Generate</button>
+        <button type="submit" onclick="generateExam()">Generate</button>
     </div>
 </div>

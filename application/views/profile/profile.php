@@ -145,7 +145,7 @@ $_POST['id'] = $user_id;
         font-size: 0.4em;
         left: 3.7em;
         top: 3.7em;
-        background-color: #2196f3;
+        background-color: #009688;
         border-radius: 50%;
         z-index: 100;
         width: 1em;
@@ -164,8 +164,7 @@ $_POST['id'] = $user_id;
         -webkit-transition: top .2s ease-in-out, font-size .2s ease-in-out;
         transition: top .2s ease-in-out, font-size .2s ease-in-out;
         visibility: hidden;
-        /* color: #3f51b5; */
-        color: #6577dc;
+        color: #e91e63;
         font-family: "Helvetica";
         font-weight: 600;
     }
