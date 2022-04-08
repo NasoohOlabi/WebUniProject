@@ -195,11 +195,11 @@ class Question extends Table
 {
     const id = 'question.id';
     const text = 'question.text';
-    const number_of_choices = 'question.number_of_choices';
     const topic_id = 'question.topic_id';
+    const active = 'question.active';
     // this is what we'll interact with the rest is just jargon
     public string $text;
-    public int $number_of_choices;
+    public int $active;
     public int $topic_id;
     public ?Topic $topic;
     public ?array $choices;
@@ -454,7 +454,7 @@ class User extends Table
     public int $role_id;
     public ?Role $role;
     public ?array $permissions;
-    public array $dependents = [['Student' => 'id']];
+    public array $dependents = ['Student', 'Exam_Center'];
     public function get_CRUD_Terms()
     {
         return ['create' => 'Join', 'read' => 'Take', 'update' => 'Transfer', 'delete' => 'Revoke'];
@@ -551,9 +551,12 @@ class Exam_Center extends Table
     const id = 'exam_center.id';
     const name = 'exam_center.name';
     const description = 'exam_center.description';
+    const user_id = 'exam_center.user_id';
     // this is what we'll interact with the rest is just jargon
     public string $name;
     public string $description;
+    public int $user_id;
+    public User $user;
     public array $dependents = ['Student_Exam'];
 
     public function get_CRUD_Terms()
@@ -570,6 +573,9 @@ class Exam_Center extends Table
                 foreach ($cols as $col) {
                     $this->$col = $stdClass->{$prefix . $col};
                 }
+                $tmp = new User($stdClass, 'user_');
+                if (isset($tmp->id))
+                    $this->user = $tmp;
             }
         }
     }
@@ -602,12 +608,14 @@ class Student_Exam extends Table
     const student_id = 'student_exam.student_id';
     const exam_center_id = 'student_exam.exam_center_id';
     const qs_hash = 'student_exam.qs_hash';
+    const grade = 'student_exam.grade';
     // this is what we'll interact with the rest is just jargon
     public string $date;
     public int $exam_id;
     public int $exam_center_id;
     public int $student_id;
     public string $qs_hash;
+    public ?int $grade;
     public ?Exam $exam;
     public ?Exam_Center $exam_center;
     public ?Student $student;

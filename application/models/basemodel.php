@@ -67,7 +67,7 @@ class BaseModel
         $sql = "DELETE FROM `$schemaClass` WHERE $sql_syntax";
 
 
-        simpleLog('BaseModel::wipeByIds Running : "' . $sql . '" Bindings :' . json_encode($ids));
+        simpleLog('BaseModel::wipeByIds Running : "' . $sql . '" Bindings : ' . json_encode($ids));
         $query = $this->db->prepare($sql);
         $query->execute($ids);
     }

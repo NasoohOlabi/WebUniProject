@@ -177,7 +177,7 @@ function is_display_key(key) {
         && key !== "dependents"
         && key !== "students"
         && !key.toLowerCase().includes("has")
-        && key !== "number_of_choices"
+        && key !== "active"
     );
 }
 /**
@@ -702,6 +702,14 @@ function switchTo(Tab, evt = null) {
                             const row = TableRow(identifier);
                             if (tbl) tbl.innerHTML += row;
                         });
+                        // Adhoc fix
+                        if (currentTab === 'exam_center') {
+                            document.querySelectorAll('th').forEach(th => {
+                                if (th.innerText == 'User') {
+                                    th.innerText = 'Admin'
+                                }
+                            })
+                        }
                     },
                 failure: (e) => {
                     //TODO: tell user some how that that's all

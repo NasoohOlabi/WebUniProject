@@ -62,8 +62,8 @@ DROP TABLE IF EXISTS `question` ;
 CREATE TABLE IF NOT EXISTS `question` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `text` TEXT NOT NULL,
-  `number_of_choices` TINYINT(1) UNSIGNED NOT NULL,
   `topic_id` INT(11) NOT NULL,
+  `active` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   INDEX `fk_questions_topics1_idx` (`topic_id` ASC),
@@ -132,9 +132,16 @@ CREATE TABLE IF NOT EXISTS `exam_center` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   `description` TEXT NULL DEFAULT NULL,
+  `user_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
-  UNIQUE INDEX `name_UNIQUE` (`name` ASC))
+  UNIQUE INDEX `name_UNIQUE` (`name` ASC),
+  INDEX `fk_exam_center_user1_idx` (`user_id` ASC),
+  CONSTRAINT `fk_exam_center_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `user` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB
 AUTO_INCREMENT = 100
 DEFAULT CHARACTER SET = utf8mb4;
@@ -218,6 +225,7 @@ CREATE TABLE IF NOT EXISTS `student_exam` (
   `exam_center_id` INT(11) NOT NULL,
   `student_id` INT(11) NOT NULL,
   `qs_hash` VARCHAR(50) NOT NULL,
+  `grade` INT UNSIGNED NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_exam_center_has_exam_exams1_idx` (`exam_id` ASC),
   INDEX `fk_exam_center_has_exam_exam_centers1_idx` (`exam_center_id` ASC),
