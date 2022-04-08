@@ -100,4 +100,24 @@ class Exams extends Controller
 
         unset($_SESSION['inExam']);
     }
+
+    public function generateExam()
+    {
+        //$data = $_GET['data'];
+        var_dump($_GET);
+
+        if (!isset($_GET['data']))
+            return;
+
+        $ids = explode('-', $_GET['data']);
+
+        $em = $this->loadModel('ExamModel');
+
+        if (!$em->getById($ids[0]) || !$em->getById($ids[1], 'Exam_Center')) {
+            http_response_code(404);
+            return;
+        }
+
+        echo "found";
+    }
 }
