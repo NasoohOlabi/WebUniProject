@@ -23,7 +23,10 @@ class BaseModel
      */
     public function getAll()
     {
-        sessionUserHasPermissions(['read_' . $this->table]);
+
+        if (!sessionUserHasPermissions(['read_' . $this->table])) {
+            throw new AccessDeniedException(`You don't have permission to read $this->table`);
+        }
 
         $sql = "SELECT * FROM " . $this->table;
         $query = $this->db->prepare($sql);
@@ -40,7 +43,10 @@ class BaseModel
      */
     public function deleteById($id)
     {
-        sessionUserHasPermissions(['delete_' . $this->table]);
+
+        if (!sessionUserHasPermissions(['delete_' . $this->table])) {
+            throw new AccessDeniedException(`You don't have permission to delete $this->table`);
+        }
 
         $sql = "DELETE FROM " . $this->table . " WHERE id = :table_id";
 
@@ -54,7 +60,9 @@ class BaseModel
      */
     public function wipeByIds(string $schemaClass, $ids)
     {
-        sessionUserHasPermissions(['delete_' . $schemaClass]);
+        if (!sessionUserHasPermissions(['delete_' . $schemaClass])) {
+            throw new AccessDeniedException(`You don't have permission to delete $schemaClass`);
+        }
 
         $ids = array_filter($ids, function ($id) {
             return is_numeric($id);
@@ -81,7 +89,9 @@ class BaseModel
     {
         $table = $t ?? $this->table;
 
-        sessionUserHasPermissions(['read_' . $table]);
+        if (!sessionUserHasPermissions(['read_' . $table])) {
+            throw new AccessDeniedException(`You don't have permission to read $table`);
+        }
 
         $result = $this->select([], "$table", ["$table.id" => $id]);
 
@@ -122,7 +132,9 @@ class BaseModel
      */
     function insert($dict)
     {
-        sessionUserHasPermissions(['create_' . $this->table]);
+        if (!sessionUserHasPermissions(['create_' . $this->table])) {
+            throw new AccessDeniedException(`You don't have permission to create $this->table`);
+        }
 
         $col = $this->columns();
         $bindings = array();
@@ -157,7 +169,9 @@ class BaseModel
         $schemaClass = get_class($object);
         $columns = $schemaClass::SQL_Columns();
 
-        sessionUserHasPermissions(['create_' . $schemaClass]);
+        if (!sessionUserHasPermissions(['create_' . $schemaClass])) {
+            throw new AccessDeniedException(`You don't have permission to read $schemaClass`);
+        }
 
         unset($columns[0]); // it's auto incremented
         $values =  array_map(function ($column_name) use ($object) {
@@ -203,7 +217,9 @@ class BaseModel
     }
     function experimental_update(string $schemaClass, int $id, stdClass $these)
     {
-        sessionUserHasPermissions(['update_' . $schemaClass]);
+        if (!sessionUserHasPermissions(['update_' . $schemaClass])) {
+            throw new AccessDeniedException(`You don't have permission to update $schemaClass`);
+        }
 
         $columns = $schemaClass::SQL_Columns();
 
@@ -259,8 +275,11 @@ class BaseModel
             && is_bool($options['override']) && $options['override']
         );
 
-        if (!$override)
-            sessionUserHasPermissions(["read_" . strtolower($wrapper)]);
+        if (!$override) {
+            if (!sessionUserHasPermissions(["read_" . strtolower($wrapper)])) {
+                throw new AccessDeniedException(`You don't have permission to read $wrapper`);
+            }
+        }
 
 
         if (count($schemaClasses) == 0) throw new Exception("No Classes to select from");
@@ -361,8 +380,8 @@ class BaseModel
         string $schemaClass,
         array $WHERE_conditions = [],
         int $limit = 100,
-        bool $override = false)
-    {
+        bool $override = false
+    ) {
         return $this->__select_stmt($columns, [$schemaClass], [], $WHERE_conditions, ['limit' => $limit, 'override' => $override]);
     }
     public function count(string $schemaClass = null, array $ON_conditions = [], array $WHERE_conditions = [], bool $override = false)
