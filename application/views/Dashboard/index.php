@@ -24,7 +24,7 @@
 
           <div class=" text logo-text">
             <span class="name"><?php echo (isset($_SESSION['user'])) ? $_SESSION['user']->username : 'John Doe' ?></span>
-            <span class="profession">Admin Account</span>
+            <span class="profession"><?= ((isset($_SESSION['user'])&& isset($_SESSION['user']->role)) ? $_SESSION['user']->role->name : 'Admin Account')?></span>
           </div>
         </div>
       </a>
@@ -112,7 +112,7 @@
 
           <li class="nav-link">
             <a href="#" onclick="switchTo('student_exam',event)">
-              <span class="text nav-text" id="student_exam">Future Exams</span>
+              <span class="text nav-text" id="student_exam">Upcoming Exams</span>
             </a>
           </li>
 

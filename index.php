@@ -23,10 +23,18 @@ require 'application/config/config.php';
 require 'application/libs/application.php';
 require 'application/libs/controller.php';
 
-function endsWith(string $haystack, string $needle)
-{
-    $length = strlen($needle);
-    return $length > 0 ? substr($haystack, -$length) === $needle : true;
+if (!function_exists('str_starts_with')) {
+    function str_starts_with($haystack, $needle)
+    {
+        return (string)$needle !== '' && strncmp($haystack, $needle, strlen($needle)) === 0;
+    }
+}
+if (!function_exists('endsWith')) {
+    function endsWith(string $haystack, string $needle)
+    {
+        $length = strlen($needle);
+        return $length > 0 ? substr($haystack, -$length) === $needle : true;
+    }
 }
 if (!function_exists('str_contains')) {
     function str_contains(string $haystack, string $needle)
@@ -113,9 +121,7 @@ function sessionUserHasPermissions(array $required_permissions)
 
     $user_permissions = (session_status() === PHP_SESSION_NONE || !isset($_SESSION['user']))
         ? ['read_role'] // <---- basic permissions for the public goes here 
-        : array_map(function ($elem) {
-            return $elem->name;
-        }, $_SESSION['user']->permissions);
+        : $_SESSION['user']->permissions;
 
     foreach ($user_permissions as $permission) {
         if (in_array($permission, $hierarchy_keys)) {
@@ -125,13 +131,13 @@ function sessionUserHasPermissions(array $required_permissions)
         }
     }
 
+    $user_permissions = array_map('strtolower', $user_permissions);
     // simpleLog("----->>>>user_permissions: " . json_encode($user_permissions));
 
     foreach ($required_permissions as $required_permission) {
         // A required permission isn't in the user permission list
-        if (!in_array($required_permission, $user_permissions)) {
-            simpleLog("----->>>>required_permissions: " . json_encode($required_permissions));
-            simpleLog("this one is missing " . $required_permission);
+        if (!in_array(strtolower($required_permission), $user_permissions)) {
+            simpleLog("----->>>>required_permissions: " . json_encode($required_permissions) . " | This one is missing " . $required_permission . " In the session user augmented permissions " . json_encode($user_permissions) . (new Exception('permission'))->getTraceAsString());
             return false;
         }
     }

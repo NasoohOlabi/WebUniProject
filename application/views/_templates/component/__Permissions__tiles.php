@@ -1,14 +1,14 @@
 <style>
 	.save-btn {
-        color: black;
-        width: fit-content;
-        padding: 0.1em 0.3em;
-        margin: 0.1em;
-        border-radius: 10px;
-        position: absolute;
-        top: 0;
-        <?= (Language::$direction ==='ltr')? 'right':'left'?>: 0;
-    }
+		color: black;
+		width: fit-content;
+		padding: 0.1em 0.3em;
+		margin: 0.1em;
+		border-radius: 10px;
+		position: absolute;
+		top: 0;
+		<?= (Language::$direction === 'ltr') ? 'right' : 'left' ?>: 0;
+	}
 
 	.add-form-container {
 		position: relative;
@@ -27,7 +27,7 @@
 				<h1 style="display:flex"><?= Language::t('Permissions') ?>
 				</h1>
 			</div>
-			<form>
+			<form id="f">
 
 				<?php
 				datalist_input("Permission", $SELECT_OPTIONS);
@@ -136,6 +136,9 @@
 				const s = window.location.href
 				window.location = s.substring(0, s.indexOf('update'))
 			})
+
+			document.querySelector("#f>div>input").focus()
+
 		} //close addLoadEvent
 	)
 </script>

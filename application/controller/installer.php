@@ -22,4 +22,11 @@ class installer extends Controller
 		header('HTTP/1.1 200 OK');
 		echo 'OK';
 	}
+	public function session()
+	{
+		session_start();
+		echo '<pre>';
+		var_dump($_SESSION);
+		echo '</pre>';
+	}
 }
