@@ -13,9 +13,12 @@ TODO: add min width to '.table td'
 - [X] Unify database
 - [X] set up an install url
 - [ ] Unify Font 
-- [ ] dashboard delete issues --nasooh
+- [X] dashboard delete issues --nasooh
 - [X] simplify read api 
-- [ ] add api doc in api/index 
+- [ ] Language constructor should be private
+- [X] add api doc in api/index 
+- [ ] admin delete himself
+- [ ] when dashboard is empty add button goes away 
 - [ ] surround question letters with spans so it would be uncopyable
 - [X] dashboard delete session user delete himself --nasooh
 - [ ] Exams and tests
