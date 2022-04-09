@@ -106,12 +106,18 @@ function sessionUserHasPermissions(array $required_permissions)
     }
     if (in_array('delete_permission', $required_permissions)) {
         throw new AccessDeniedException("Sorry, We don't delete Permissions!");
+        simpleLog("Sorry, We don't delete Permissions!");
     }
 
     global $___userHasPermissionConstantHierarchy;
     $hierarchy = $___userHasPermissionConstantHierarchy;
 
     $hierarchy_keys = array_keys($hierarchy);
+
+    if (session_status() === PHP_SESSION_NONE)
+        session_start();
+
+    var_dump($_SESSION);
 
     $user_permissions = (session_status() === PHP_SESSION_NONE || !isset($_SESSION['user']))
         ? ['read_role'] // <---- basic permissions for the public goes here 

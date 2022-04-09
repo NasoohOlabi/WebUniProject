@@ -237,4 +237,51 @@ class ExamModel extends BaseModel
     {
         return (isset($_SESSION['inExam']) && ($_SESSION['inExam']));
     }
+
+    public function generateExam($exam_id, $exam_center_id)
+    {
+
+        $exam = $this->select([], 'exam', ["exam.id" => $exam_id])[0];
+
+        $exam_center = $this->select([], 'exam_center', ["exam_center.id" => $exam_center_id])[0];
+
+
+        echo ("Exam >>>>:");
+
+        var_dump($exam);
+
+        echo ("exam_center >>>>:");
+
+        var_dump($exam_center);
+
+        // return;
+
+        // $exam = new stdClass();
+        // $exam->id = 1;
+        // $exam->number_of_questions = 3;
+        // $exam->duration = 60;
+        // $exam->subject_id = 2;
+        // $exam = new Exam($exam);
+
+        $student = new stdClass();
+        $student->id = 0;
+        $student->enroll_date = "01/01/2000";
+        $student->user_id = "22";
+        $student = new Student($student);
+
+        // $exam_center = new stdClass();
+        // $exam_center->id = 1;
+        // $exam_center->name = "Hiast Center";
+        // $exam_center->description = 'A center in the hiast...';
+        // $exam_center->user_id = 31;
+        // $exam_center = new Exam_Center($exam_center);
+
+        $student_exam = $this->InsertOneOfAKind_student_exam($exam, $student, $exam_center);
+
+        print("<pre>");
+        print('Generated Successfully! ');
+        print("student_exam\n");
+        var_dump($student_exam);
+        print("</pre>");
+    }
 }
