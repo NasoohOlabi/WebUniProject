@@ -655,7 +655,7 @@ function getFromHQ(
                     if (!(objects instanceof Array)) {
                         Swal.fire({
                             title: "There has been a problem!",
-                            text: objects,
+                            text: JSON.stringify(objects),
                             icon: "error",
                             showCancelButton: false,
                             confirmButtonColor: "#3085d6",

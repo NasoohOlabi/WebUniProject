@@ -189,9 +189,9 @@ class Api extends Controller
 				: $answers = $Model->select([], $schemaClass, [], $limit);
 
 			// filter non null elements in the array
-			$answers = array_filter(array_map($fetch_fk_values, $answers), function ($answer) {
+			$answers = array_values(array_filter(array_map($fetch_fk_values, $answers), function ($answer) {
 				return $answer !== null;
-			});
+			}));
 			$answers = array_map(function ($row) use ($Model, $schemaClass) {
 				if (property_exists($row, 'password'))
 					unset($row->password);
