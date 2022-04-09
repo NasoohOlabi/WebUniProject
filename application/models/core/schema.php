@@ -17,12 +17,12 @@ function properties_exists($stdClass, array $properties, string $prefix)
 
     // simpleLog("properties_exists: checking " . json_encode($stdClass) . " to contain the following " . json_encode(array_map(function ($elem) use ($prefix) {
     //     return $prefix . $elem;
-    // }, $properties)));
+    // }, $properties)),'basemodel/schema');
     if ($stdClass == null) return false;
     foreach ($properties as $property) {
         if (!property_exists($stdClass, $prefix . $property)) {
 
-            // simpleLog("this one failed $prefix" . "$property");
+            simpleLog("this one failed $prefix" . "$property", 'basemodel/schema');
             if ($prefix == '')
                 throw new Exception("Constructing : " . json_encode($stdClass) . " to contain the following " . json_encode($properties) . " this one failed $prefix" . "$property");
             return false;
@@ -198,9 +198,9 @@ class Question extends Table
     const topic_id = 'question.topic_id';
     const active = 'question.active';
     // this is what we'll interact with the rest is just jargon
-    public string $text;
+public string $text;
     public int $active;
-    public int $topic_id;
+    public ?int $topic_id;
     public ?Topic $topic;
     public ?array $choices;
     public array $dependents = ['Choice', 'Student_Exam_Has_Question'];

@@ -87,7 +87,7 @@ function PageForThis(Table $cls, BaseModel $bm, array $omit = [],$submitBtnNeede
 }
 function stdclastoidstirng($stdClass)
 {
-    $columns = $stdClass::SQL_COLUMNS();
+    $columns = $stdClass::SQL_Columns();
     $wanted_names = $stdClass->identifying_fields;
     $answer = [];
     foreach ($wanted_names as $prop) {
@@ -118,6 +118,8 @@ function FormForThis(Table $cls, BaseModel $bm, array $omit = [])
             $SELECT_OPTIONS[$field] = $v;
         } elseif ($field === 'profile_picture') {
             $inputs[$field] = 'profile_picture';
+        } elseif ($field === 'active') {
+            $inputs[$field] = 'active';
         } elseif (str_contains($field, 'date')) {
             $inputs[$field] = 'date';
         } else
