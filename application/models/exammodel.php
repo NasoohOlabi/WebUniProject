@@ -264,7 +264,7 @@ class ExamModel extends BaseModel
         // $exam = new Exam($exam);
 
         $student = new stdClass();
-        $student->id = 0;
+        $student->id = 1;
         $student->enroll_date = "01/01/2000";
         $student->user_id = "22";
         $student = new Student($student);
@@ -283,5 +283,37 @@ class ExamModel extends BaseModel
         print("student_exam\n");
         var_dump($student_exam);
         print("</pre>");
+    }
+
+    public function loadExam($exam_id, $exam_center_id)
+    {
+
+        //TODO CHANGE ID
+
+        $valid_student_exams = $this->select([], 'student_exam', [[Student_Exam::exam_id => $exam_id], [Student_Exam::student_id => 102]]);
+
+        var_dump($valid_student_exams);
+
+        $student_exam = $valid_student_exams[array_rand($valid_student_exams)];
+        if (!$student_exam) {
+            http_response_code(404);
+            return;
+        }
+
+        $student_id = $this->select([], 'student', [Student::user_id => $_SESSION['user']->id])[0]->id;
+
+        var_dump($student_id);
+
+
+        $curDate = date("Y-m-d");
+
+        $this->experimental_update("student_exam", $student_exam->id, (object) ["date" => $curDate, "student_id" => $student_id, "exam_center_id" => $exam_center_id]);
+
+        $_SESSION['inExam'] = true;
+        $_SESSION['Exam'] = $student_exam;
+
+        $questions = $this->select([], 'student_exam_has_question', [Student_Exam_Has_Question::student_exam_id => $student_exam->id]);
+        shuffle($questions);
+        $_SESSION['ExamQuestions'] = $questions;
     }
 }

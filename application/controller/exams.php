@@ -5,13 +5,8 @@ require_once 'application/views/_templates/schema_table.php';
 
 class Exams extends Controller
 {
-    public function index()
+    public function index($question_index)
     {
-
-        //TODO: remove =null
-
-        // $model = $this->loadModel('ExamModel');
-        // $Exam = $model->getAll();
 
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
@@ -26,6 +21,20 @@ class Exams extends Controller
             http_response_code(403);
             return;
         }
+
+        if ($question_index + 1 > sizeof($_SESSION['ExamQuestions']))
+            $this->endExam();
+
+        $curQuestion = $_SESSION['ExamQuestions'][$question_index];
+
+        var_dump($curQuestion = $_SESSION['ExamQuestions']);
+
+        $curQuestionInfo = $exam_model->select([], 'question', [Question::id => $curQuestion->question_id])[0];
+
+        var_dump($curQuestionInfo);
+
+        $question_text = $curQuestionInfo->text;
+        $question_mark = $curQuestionInfo->text;
 
 
         pageHeadTag("Exam");
@@ -74,13 +83,37 @@ class Exams extends Controller
 
     public function startExam()
     {
+
+        ob_start();
+
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
 
-        /* ... */
+        if (!isset($_GET['data']))
+            return;
 
-        $_SESSION['inExam'] = true;
+        $ids = explode('-', $_GET['data']);
+
+        $em = $this->loadModel('ExamModel');
+
+        if (!$em->getById($ids[0]) || !$em->getById($ids[1], 'Exam_Center')) {
+            http_response_code(404);
+            return;
+        }
+
+        $em->loadExam(intval($ids[0]), intval($ids[1]));
+
+        while (ob_get_status()) {
+            ob_end_clean();
+        }
+
+        header('Location: ' . URL . 'exams/index/0');
+
+        //$this->index(0);
+
+
+        /* ... */
     }
 
     public function endExam()
@@ -96,6 +129,8 @@ class Exams extends Controller
             return;
         }
 
+
+
         /* ... */
 
         unset($_SESSION['inExam']);
@@ -107,7 +142,7 @@ class Exams extends Controller
         //Temp
 
         $em = $this->loadModel('ExamModel');
-        $em->generateExam(1, 2);
+        $em->generateExam(2, 2);
 
         return;
 

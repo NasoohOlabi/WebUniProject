@@ -1,7 +1,7 @@
 <div class="question-main-content">
     <div class="question-container">
         <div class="question-content">
-            <h1 class="question-header">Question #1</h1>
+            <h1 class="question-header">Question #1 <span>(15 marks)</span></h1>
             <h3 class="question-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta, velit laborum veritatis unde nobis rem placeat necessitatibus non ipsa, reiciendis ea quis laboriosam consequatur, nulla voluptatem molestias dolor quisquam et?</h3>
             <form action="" method="post" class=question-form>
                 <div class="form-block choice-container">
