@@ -1,6 +1,5 @@
 <?php
 require_once 'application/views/_templates/header.php';
-require_once 'application/models/core/schema.php';
 
 
 /**

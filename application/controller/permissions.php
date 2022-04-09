@@ -1,5 +1,4 @@
 <?php
-require_once './application/models/core/schema.php';
 
 
 class permissions extends Controller
