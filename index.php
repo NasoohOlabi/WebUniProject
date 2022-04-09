@@ -117,7 +117,7 @@ function sessionUserHasPermissions(array $required_permissions)
     if (session_status() === PHP_SESSION_NONE)
         session_start();
 
-    var_dump($_SESSION);
+    // var_dump($_SESSION);
 
     $user_permissions = (session_status() === PHP_SESSION_NONE || !isset($_SESSION['user']))
         ? ['read_role'] // <---- basic permissions for the public goes here 
