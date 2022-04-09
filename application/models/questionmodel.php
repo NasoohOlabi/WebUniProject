@@ -1,6 +1,5 @@
 <?php
 require_once 'basemodel.php';
-require_once 'core/schema.php';
 class QuestionModel extends BaseModel
 {
     function __construct($db)

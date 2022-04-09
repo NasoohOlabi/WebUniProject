@@ -1,7 +1,6 @@
 <?php
 require_once 'basemodel.php';
 require_once './application/libs/util/Option.php';
-require_once 'core/schema.php';
 class RoleModel extends BaseModel
 {
     function __construct($db)

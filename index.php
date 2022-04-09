@@ -48,6 +48,7 @@ function humanize(string $str)
 }
 
 require_once 'application/libs/util/log.php';
+require_once 'application/models/core/schema.php';
 
 // require 'application/model/permissions.php';
 // long name so I don't pollute the global namespace

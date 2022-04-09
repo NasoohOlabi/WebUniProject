@@ -1,7 +1,6 @@
 <?php
 require_once 'basemodel.php';
 require_once 'subjectmodel.php';
-require_once 'core/schema.php';
 
 class ExamModel extends BaseModel
 {

@@ -1,7 +1,6 @@
 <?php
 
 require_once 'application/views/_templates/header.php';
-require_once './application/models/core/schema.php';
 
 function is_display_key($key)
 {
