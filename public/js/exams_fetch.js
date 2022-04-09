@@ -35,7 +35,7 @@ try {
       // console.log(txt);
       try {
         let exams_list = JSON.parse(txt);
-        console.log("exams fetched");
+        // console.log("exams fetched");
         // console.log(exams_list[0]['subject']['name']);
 
         const select = document.getElementById("exams-list");
@@ -74,8 +74,8 @@ try {
       // console.log(txt);
       try {
         let exam_centers_list = JSON.parse(txt);
-        console.log("exams centers fetched");
-        console.log(exam_centers_list[0]);
+        // console.log("exams centers fetched");
+        // console.log(exam_centers_list[0]);
 
         const select = document.getElementById("exam-centers-list");
 

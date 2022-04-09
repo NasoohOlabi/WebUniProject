@@ -1,3 +1,4 @@
+<script src="<?= URL ?>public/js/exams_fetch.js"></script>
 <div class="user-content">
     <h2>Take an exam:</h2>
 
