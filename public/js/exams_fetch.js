@@ -1,3 +1,23 @@
+function success() {
+  Swal.fire({
+    position: "top-end",
+    icon: "success",
+    title: `Opreation Done Successfully`,
+    showConfirmButton: false,
+    timer: 1500,
+  });
+}
+
+function failure() {
+  Swal.fire({
+    position: "top-end",
+    icon: "error",
+    title: `Opreation failed`,
+    showConfirmButton: false,
+    timer: 1500,
+  });
+}
+
 const payload = {
   limit: 1e9,
 };
@@ -100,6 +120,8 @@ function initialize() {
     exams_list.addEventListener("change", validate);
     exam_centers_list.addEventListener("change", validate);
   }
+
+  if (window.fire_success) success();
 
   validate();
 }

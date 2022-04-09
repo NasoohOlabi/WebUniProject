@@ -82,10 +82,14 @@ INSERT INTO `permission` (`id`, `name`) VALUES
 (32, 'write_question'),
 (33, 'write_student'),
 (34, 'write_subject'),
-(35, 'write_topic'),(38,'reassign_role'),
-(36, 'write_user');
+(35, 'write_topic'),
+(38,'reassign_role'),
 -- ########################################### 10 lines separator
--- max id: 38
+(40,'read_student_exam_has_question'),
+(41,'read_student_exam_has_choice'),
+(42, 'write_student_exam'),
+(36, 'write_user');
+-- max id: 41
 
 
 INSERT INTO `question` (`id`, `text`, `topic_id`,`active`) VALUES
@@ -186,7 +190,13 @@ INSERT INTO `role_has_permission` (`id`, `role_id`, `permission_id`) VALUES
 (40, 6, 24),
 (41, 6, 26),
 (42, 6, 39),
-(43, 6, 28);
+(43, 6, 28),
+(44, 2, 21),
+(45, 2, 22),
+(46, 2, 23),
+(47, 2, 40),
+(48, 2, 41),
+(49, 2, 42);
 
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `profile_picture`, `role_id`) VALUES
 (1, 'NasoohOlabi', '81dc9bdb52d04dc20036dbd8313ed055', 'Nasooh', 'Olabi', 'Yaser', 'NasoohOlabi.jpg', 1),
@@ -219,6 +229,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `mi
 (29, "radmin", "a9b7b5912b7043805c326b62c636e069", "Root", "Admin", "", NULL, 1),
 (30, "profpic", "a9b7b5912b7043805c326b62c636e069", "With", "Profile", NULL, "profpic.jpg", 2),
 (31, "centeradmin", "123", "TestCenter", "Admin", "", NULL, 6);
+
 
 INSERT INTO `student` (`id`, `enroll_date`, `user_id`) VALUES
 (1, '2022-04-12', 5);

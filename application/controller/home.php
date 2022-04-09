@@ -44,7 +44,6 @@ class Home extends Controller
                 case 'Student':
                     $content =
                         'application/views/home/_content/__student_content.php';
-                    var_dump($_SESSION);
                     break;
                 default:
                     $content =
@@ -64,7 +63,6 @@ class Home extends Controller
             }
         }
 
-        //require 'application/views/_templates/footer.php';
         pageHit('home.index');
     }
 }

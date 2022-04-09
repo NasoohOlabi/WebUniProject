@@ -223,7 +223,7 @@ CREATE TABLE IF NOT EXISTS `student_exam` (
   `date` DATE NOT NULL,
   `exam_id` INT(11) NOT NULL,
   `exam_center_id` INT(11) NOT NULL,
-  `student_id` INT(11) NOT NULL,
+  `student_id` INT(11),
   `qs_hash` VARCHAR(50) NOT NULL,
   `grade` INT UNSIGNED NULL,
   PRIMARY KEY (`id`),

@@ -56,12 +56,6 @@ class Exams extends Controller
         $exam->subject_id = 2;
         $exam = new Exam($exam);
 
-        $student = new stdClass();
-        $student->id = 1;
-        $student->enroll_date = "2022-04-12";
-        $student->user_id = "5";
-        $student = new Student($student);
-
         $exam_center = new stdClass();
         $exam_center->id = 1;
         $exam_center->name = "Hiast Center";
@@ -72,7 +66,7 @@ class Exams extends Controller
 
         $exam_model = $this->loadModel('ExamModel');
 
-        $student_exam = $exam_model->InsertOneOfAKind_student_exam($exam, $student, $exam_center);
+        $student_exam = $exam_model->InsertOneOfAKind_student_exam($exam, $exam_center);
 
         print("<pre>");
         print('Generated Successfully! ');
@@ -138,16 +132,6 @@ class Exams extends Controller
 
     public function generateExam()
     {
-        //var_dump($_GET);
-        //Temp
-
-        $em = $this->loadModel('ExamModel');
-        $em->generateExam(2, 2);
-
-        return;
-
-        // End Temp
-
         if (!isset($_GET['data']))
             return;
 
@@ -160,6 +144,13 @@ class Exams extends Controller
             return;
         }
 
-        echo "found";
+        try {
+            $em->generateExam(intval($ids[0]), intval($ids[1]));
+            $success = true;
+        } catch (\Throwable $th) {
+            $success = false;
+        }
+
+        header('Location: ' . URL . "index?op_success=$success");
     }
 }

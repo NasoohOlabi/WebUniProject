@@ -4,6 +4,14 @@
         selects = document.getElementsByTagName("select")
         window.location = `<?= URL ?>exams/generateExam?data=${selects[0].selectedIndex}-${selects[1].selectedIndex}`
     }
+
+    if (<?php echo (isset($_GET['op_success']) && $_GET['op_success']) ? ("true") : "false" ?>) {
+        success();
+    }
+
+    if (<?php echo (isset($_GET['op_success']) && !$_GET['op_success']) ? ("true") : "false" ?>) {
+        failure();
+    }
 </script>
 <div class="user-content">
     <h2>Generate Random Questions:</h2>

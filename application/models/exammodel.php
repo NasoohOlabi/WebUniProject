@@ -33,7 +33,7 @@ class ExamModel extends BaseModel
         return $questions;
     }
 
-    function InsertOneOfAKind_student_exam(Exam $exam, Student $student, Exam_Center $exam_center)
+    function InsertOneOfAKind_student_exam(Exam $exam, Exam_Center $exam_center)
     {
         $number_of_questions =  $exam->number_of_questions;
         $subject_id = $exam->subject_id;
@@ -165,7 +165,7 @@ class ExamModel extends BaseModel
         $insert_time = date("Y-m-d");
         $sql = "INSERT INTO `student_exam` (`date`,`exam_id`,`student_id`,`exam_center_id`,`qs_hash`) VALUES (?, ?, ?, ?, ?)";
         $query = $this->db->prepare($sql);
-        $query->execute([$insert_time, $exam->id, $student->id, $exam_center->id, $what_to_throw_for_topic_id['unique hash']]);
+        $query->execute([$insert_time, $exam->id, null, $exam_center->id, $what_to_throw_for_topic_id['unique hash']]);
         $student_exam_id = $this->db->lastInsertId();
 
         // link questions to the student exam using the topic_questions array
@@ -183,9 +183,9 @@ class ExamModel extends BaseModel
         $student_exam = new Student_Exam();
         $student_exam->id = $student_exam_id;
         $student_exam->exam = $exam;
-        $student_exam->student = $student;
+        $student_exam->student = null;
         $student_exam->exam_center = $exam_center;
-        $student_exam->student_id = $student->id;
+        $student_exam->student_id = 0;
         $student_exam->exam_id = $exam->id;
         $student_exam->exam_center_id = $exam_center->id;
         $student_exam->qs_hash = $what_to_throw_for_topic_id['unique hash'];
@@ -242,47 +242,8 @@ class ExamModel extends BaseModel
     {
 
         $exam = $this->select([], 'exam', ["exam.id" => $exam_id])[0];
-
         $exam_center = $this->select([], 'exam_center', ["exam_center.id" => $exam_center_id])[0];
-
-
-        echo ("Exam >>>>:");
-
-        var_dump($exam);
-
-        echo ("exam_center >>>>:");
-
-        var_dump($exam_center);
-
-        // return;
-
-        // $exam = new stdClass();
-        // $exam->id = 1;
-        // $exam->number_of_questions = 3;
-        // $exam->duration = 60;
-        // $exam->subject_id = 2;
-        // $exam = new Exam($exam);
-
-        $student = new stdClass();
-        $student->id = 1;
-        $student->enroll_date = "01/01/2000";
-        $student->user_id = "22";
-        $student = new Student($student);
-
-        // $exam_center = new stdClass();
-        // $exam_center->id = 1;
-        // $exam_center->name = "Hiast Center";
-        // $exam_center->description = 'A center in the hiast...';
-        // $exam_center->user_id = 31;
-        // $exam_center = new Exam_Center($exam_center);
-
-        $student_exam = $this->InsertOneOfAKind_student_exam($exam, $student, $exam_center);
-
-        print("<pre>");
-        print('Generated Successfully! ');
-        print("student_exam\n");
-        var_dump($student_exam);
-        print("</pre>");
+        $student_exam = $this->InsertOneOfAKind_student_exam($exam, $exam_center);
     }
 
     public function loadExam($exam_id, $exam_center_id)
@@ -307,7 +268,7 @@ class ExamModel extends BaseModel
 
         $curDate = date("Y-m-d");
 
-        $this->experimental_update("student_exam", $student_exam->id, (object) ["date" => $curDate, "student_id" => $student_id, "exam_center_id" => $exam_center_id]);
+        $this->update("student_exam", $student_exam->id, (object) ["date" => $curDate, "student_id" => $student_id, "exam_center_id" => $exam_center_id]);
 
         $_SESSION['inExam'] = true;
         $_SESSION['Exam'] = $student_exam;
