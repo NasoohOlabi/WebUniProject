@@ -24,7 +24,8 @@ class BaseModel
     public function getAll()
     {
 
-        if (!sessionUserHasPermissions(['read_' . $this->table])) {
+        if (!sessionUserHasPermissions(['read_' . strtolower($this->table)])) {
+            simpleLog(`You don't have permission to read $this->table`);
             throw new AccessDeniedException(`You don't have permission to read $this->table`);
         }
 
@@ -44,7 +45,8 @@ class BaseModel
     public function deleteById($id)
     {
 
-        if (!sessionUserHasPermissions(['delete_' . $this->table])) {
+        if (!sessionUserHasPermissions(['delete_' . strtolower($this->table)])) {
+            simpleLog(`You don't have permission to delete $this->table`);
             throw new AccessDeniedException(`You don't have permission to delete $this->table`);
         }
 
@@ -61,6 +63,7 @@ class BaseModel
     public function wipeByIds(string $schemaClass, $ids)
     {
         if (!sessionUserHasPermissions(['delete_' . $schemaClass])) {
+            simpleLog(`You don't have permission to delete $schemaClass`);
             throw new AccessDeniedException(`You don't have permission to delete $schemaClass`);
         }
 
@@ -89,7 +92,12 @@ class BaseModel
     {
         $table = $t ?? $this->table;
 
-        if (!sessionUserHasPermissions(['read_' . $table])) {
+        echo $table;
+
+        //var_dump($_SESSION);
+
+        if (!sessionUserHasPermissions(['read_' . strtolower($table)])) {
+            simpleLog(`You don't have permission to read $table`);
             throw new AccessDeniedException(`You don't have permission to read $table`);
         }
 
@@ -132,7 +140,8 @@ class BaseModel
      */
     function insert($dict)
     {
-        if (!sessionUserHasPermissions(['create_' . $this->table])) {
+        if (!sessionUserHasPermissions(['create_' . strtolower($this->table)])) {
+            simpleLog(`You don't have permission to create $this->table`);
             throw new AccessDeniedException(`You don't have permission to create $this->table`);
         }
 
@@ -170,6 +179,7 @@ class BaseModel
         $columns = $schemaClass::SQL_Columns();
 
         if (!sessionUserHasPermissions(['create_' . $schemaClass])) {
+            simpleLog(`You don't have permission to read $schemaClass`);
             throw new AccessDeniedException(`You don't have permission to read $schemaClass`);
         }
 
@@ -218,6 +228,7 @@ class BaseModel
     function experimental_update(string $schemaClass, int $id, stdClass $these)
     {
         if (!sessionUserHasPermissions(['update_' . $schemaClass])) {
+            simpleLog(`You don't have permission to read $schemaClass`);
             throw new AccessDeniedException(`You don't have permission to update $schemaClass`);
         }
 
@@ -277,6 +288,7 @@ class BaseModel
 
         if (!$override) {
             if (!sessionUserHasPermissions(["read_" . strtolower($wrapper)])) {
+                simpleLog(`You don't have permission to read $wrapper`);
                 throw new AccessDeniedException(`You don't have permission to read $wrapper`);
             }
         }

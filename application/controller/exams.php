@@ -103,8 +103,15 @@ class Exams extends Controller
 
     public function generateExam()
     {
-        //$data = $_GET['data'];
-        var_dump($_GET);
+        //var_dump($_GET);
+        //Temp
+
+        $em = $this->loadModel('ExamModel');
+        $em->generateExam(1, 2);
+
+        return;
+
+        // End Temp
 
         if (!isset($_GET['data']))
             return;

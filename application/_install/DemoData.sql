@@ -72,8 +72,9 @@ INSERT INTO `permission` (`id`, `name`) VALUES
 (26, 'read_subject'),
 (27, 'read_topic'),
 (28, 'read_user'),
-(29, 'take_exam'),
+(39, 'read_student_exam'),
 -- ########################################### 10 lines separator
+(29, 'take_exam'),
 (3, 'change_role_permissions'),
 (20, 'grant_permission'),
 (30, 'write_exam'),
@@ -139,9 +140,8 @@ INSERT INTO `role` (`id`, `name`) VALUES
 (4, 'Parent'),
 (5, 'Guest'),
 (6, 'TestAdmin'),
-(7, "TestAdminn"),
-(8, 'Admin'),
-(9, 'Text Center Admin');
+(7, 'Admin'),
+(8, 'Text Center Admin');
 
 INSERT INTO `role_has_permission` (`id`, `role_id`, `permission_id`) VALUES
 (1, 1, 1),
@@ -180,7 +180,13 @@ INSERT INTO `role_has_permission` (`id`, `role_id`, `permission_id`) VALUES
 (34, 1, 34),
 (35, 1, 35),
 (36, 1, 36),
-(37, 2, 23);
+(37, 2, 23),
+(38, 6, 21),
+(39, 6, 22),
+(40, 6, 24),
+(41, 6, 26),
+(42, 6, 39),
+(43, 6, 28);
 
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `profile_picture`, `role_id`) VALUES
 (1, 'NasoohOlabi', '81dc9bdb52d04dc20036dbd8313ed055', 'Nasooh', 'Olabi', 'Yaser', 'NasoohOlabi.jpg', 1),

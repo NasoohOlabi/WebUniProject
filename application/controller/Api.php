@@ -302,6 +302,7 @@ class Api extends Controller
 
 			if (isset($_POST['role_id'])) {
 				if (!sessionUserHasPermissions(['reassign_role'])) {
+					simpleLog("You don't have permission to change roles");
 					throw new AccessDeniedException("You don't have permission to change roles");
 				}
 			}
