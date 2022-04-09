@@ -54,23 +54,38 @@ class BaseModel
      */
     public function wipeByIds(string $schemaClass, $ids)
     {
+        if (empty($ids)) {
+            return;
+        }
+
         sessionUserHasPermissions(['delete_' . strtolower($schemaClass)]);
 
-        $ids = array_filter($ids, function ($id) {
-            return is_numeric($id);
-        });
-        $sql_syntax = array_map(function ($id) {
-            return "id = ?";
-        }, $ids);
-        $sql_syntax = implode(" OR ", $sql_syntax);
+        // if strtolower($schemaClass) == 'question'
+        if (strtolower($schemaClass) == 'question') {
+            // then update column active to 0 instead of deleting
+            simpleLog('BaseModel::wipeByIds Running : "UPDATE ' . $schemaClass . ' SET active = 0 WHERE id IN (' . implode(',', $ids) . ')"');
+            $sql = "UPDATE `question` SET active = 0 , topic_id=NULL WHERE id IN (" . implode(',', $ids) . ")";
+            $query = $this->db->prepare($sql);
+            $query->execute();
+            return true;
+        } else {
 
-        $sql = "DELETE FROM `$schemaClass` WHERE $sql_syntax";
+            $ids = array_filter($ids, function ($id) {
+                return is_numeric($id);
+            });
+            $sql_syntax = array_map(function ($id) {
+                return "id = ?";
+            }, $ids);
+            $sql_syntax = implode(" OR ", $sql_syntax);
+
+            $sql = "DELETE FROM `$schemaClass` WHERE $sql_syntax";
 
 
-        simpleLog('BaseModel::wipeByIds Running : "' . $sql . '" Bindings : ' . json_encode($ids), 'basemodel');
-        simpleLog('BaseModel::wipeByIds Running : "' . $sql . '" Bindings : ' . json_encode($ids));
-        $query = $this->db->prepare($sql);
-        $query->execute($ids);
+            simpleLog('BaseModel::wipeByIds Running : "' . $sql . '" Bindings : ' . json_encode($ids), 'basemodel');
+            simpleLog('BaseModel::wipeByIds Running : "' . $sql . '" Bindings : ' . json_encode($ids));
+            $query = $this->db->prepare($sql);
+            return $query->execute($ids);
+        }
     }
     /**
      * returns Option with the row with this particular id
@@ -82,7 +97,7 @@ class BaseModel
     {
         $table = $t ?? $this->table;
 
-        sessionUserHasPermissions(['read_' . $table]);
+        sessionUserHasPermissions(['read_' . strtolower($table)]);
 
         $result = $this->select([], "$table", ["$table.id" => $id]);
 
@@ -225,7 +240,9 @@ class BaseModel
         );
 
         if (!$override)
-            sessionUserHasPermissions(["read_" . strtolower($wrapper)]);
+            if (!sessionUserHasPermissions(array_map(function ($schemaClass) {
+                return "read_" . strtolower($schemaClass);
+            }, $schemaClasses))) throw new AccessDeniedException("You Can't Read " . $wrapper . "s");
 
 
         if (count($schemaClasses) == 0) throw new Exception("No Classes to select from");

@@ -200,7 +200,7 @@ class Question extends Table
     // this is what we'll interact with the rest is just jargon
     public string $text;
     public int $active;
-    public int $topic_id;
+    public ?int $topic_id;
     public ?Topic $topic;
     public ?array $choices;
     public array $dependents = ['Choice', 'Student_Exam_Has_Question'];

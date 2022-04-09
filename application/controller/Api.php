@@ -93,6 +93,8 @@ class Api extends Controller
 
 		$Model = $this->loadModel('BaseModel');
 
+		simpleLog("schemaClass $schemaClass && field_or_id $field_or_id && is_string($field_or_id) " . is_string($field_or_id) . " && needle $needle", 'api/read/');
+
 		// targeted calls
 		if (isset($schemaClass) && isset($field_or_id) && is_numeric($field_or_id)) {
 			$id = intval($field_or_id);
@@ -114,21 +116,25 @@ class Api extends Controller
 
 					$middle_table_many_col =
 						$schemaClass::access(strtolower($many_name) . '_id');
-
-					echo json_encode($Model->join(
-						[
-							$many_name,
-							$middle_table
-						],
-						// safe conditions
-						[
-							[$many_name::id =>
-							$middle_table_many_col],
-							[$middle_table_one_col => $needle]
-						]
-					));
+					try {
+						echo json_encode($Model->join(
+							[
+								$many_name,
+								$middle_table
+							],
+							// safe conditions
+							[
+								[$many_name::id =>
+								$middle_table_many_col],
+								[$middle_table_one_col => $needle]
+							]
+						));
+					} catch (AccessDeniedException $th) {
+						simpleLog("AccessDeniedException $th", 'api/read/');
+						simpleLog("You have access to $schemaClass but: " . $th->getMessage(), 'api/');
+						echo ('Operation Failed : Access Denied: ' . $th->getMessage());
+					}
 				} else {
-					var_dump($schemaClass::access($field));
 					echo json_encode($Model->select([], $schemaClass, [$schemaClass::access($field) => $needle]));
 				}
 			} else
@@ -159,6 +165,10 @@ class Api extends Controller
 					if (endsWith($prop, '_id')) {
 						$subSchemaClass = substr($prop, 0, -3); // remove _id from the end
 
+						if ($val === null) {
+							return null;
+						}
+
 						// you have fk and so answer should be one since id is unique
 						$answer->{$subSchemaClass} =
 							$Model->select([], $subSchemaClass,  [$subSchemaClass::id => $val])[0];
@@ -172,80 +182,19 @@ class Api extends Controller
 				return $answer;
 			}
 		};
-		
+
 		try {
 			$answers = ($more)
 				? $answers = $Model->select([], $schemaClass, (($id !== null) ? [$schemaClass::id => $id, 'op' => '>'] : []), $limit)
 				: $answers = $Model->select([], $schemaClass, [], $limit);
 
-			$answers = array_map($fetch_fk_values, $answers);
+			// filter non null elements in the array
+			$answers = array_filter(array_map($fetch_fk_values, $answers), function ($answer) {
+				return $answer !== null;
+			});
 			$answers = array_map(function ($row) use ($Model, $schemaClass) {
 				if (property_exists($row, 'password'))
 					unset($row->password);
-
-				// if (count($row->dependents) === 0) return $row;
-				// foreach ($row->dependents as $dep) {
-				// 	if (is_array($dep) && count($dep) == 1) {
-				// 		// One2Many getting the many...
-				// 		foreach ($dep as $key => $value) {
-				// 			try {
-				// 				$row->{strtolower($key) . 's'} = $Model->select([], $key,  [$key::access($value) => $row->id]);
-				// 			} catch (AccessDeniedException $th) {
-				// 				simpleLog("Access Denied Exception $th", 'api/read/');
-				// 				simpleLog("You have access to $schemaClass but: " . $th->getMessage(), 'api/read/');
-				// 				// return $row;
-				// 				continue;
-				// 			}
-				// 		}
-				// 	} else {
-				// 		if (str_contains(strtolower($dep), '_has_')) {
-				// 			// Many2Many but we can treat is as One2Many in this case
-				// 			// those are SchemaClass names
-				// 			// not sql names
-				// 			$one_name = get_class($row);
-				// 			$many_name =  str_replace('_Has_', '', str_replace($one_name, '', $dep));
-				// 			$middle_table = $dep;
-				// 			$middle_table_one_col =
-				// 				$dep::access(strtolower($one_name) . '_id');
-				// 			$middle_table_many_col =
-				// 				$dep::access(strtolower($many_name) . '_id');
-				// 			simpleLog('->>jump over many2many table :: $dep<<<----' . "dep: $dep one_name: $one_name many_name: $many_name middle_table: $middle_table middle_table_one_col: $middle_table_one_col middle_table_many_col: $middle_table_many_col row->id: " . json_encode($row->id), 'api/read');
-				// 			try {
-				// 				$row->{strtolower($many_name) . 's'} =
-				// 					$Model->join(
-				// 						[
-				// 							$many_name,
-				// 							$middle_table
-				// 						],
-				// 						// safe conditions
-				// 						[
-				// 							[$many_name::id =>
-				// 							$middle_table_many_col],
-				// 							[$middle_table_one_col => $row->id]
-				// 						]
-				// 					);
-				// 			} catch (AccessDeniedException $th) {
-				// 				simpleLog("Access Denied Exception $th", 'api/read/');
-				// 				simpleLog("You have access to $schemaClass but: " . $th->getMessage(), 'api/read/');
-				// 				continue;
-				// 				// return $row;
-				// 			}
-				// 		} else {
-				// 			$fk_col = $dep::access(strtolower(get_class($row)) . '_id');
-				// 			simpleLog(get_class($row) . ' dep fetch ' .
-				// 				$dep, 'api/read/');
-				// 			try {
-				// 				$row->{strtolower($dep) . 's'} = $Model->select([], $dep,  [$fk_col => $row->id]);
-				// 			} catch (AccessDeniedException $th) {
-				// 				simpleLog("Access Denied Exception $th", 'api/read/');
-				// 				simpleLog("You have access to $schemaClass but: " . $th->getMessage(), 'api/read/');
-				// 				continue;
-				// 				// return $row;
-				// 			}
-				// 			// simpleLog(get_class($row) . " dep " . json_encode($row->{strtolower($dep) . 's'}));
-				// 		}
-				// 	}
-				// }
 				return $row;
 			}, $answers);
 
@@ -253,15 +202,13 @@ class Api extends Controller
 				' served', 'api/read/');
 			if (count($answers) >= 1)
 				echo json_encode($answers);
-			elseif ($more)
-				echo "that's all we have";
 			else
-				echo "id $id Not Found";
+				echo "that's all we have";
 		} catch (\Throwable $e) {
 
 			simpleLog('$_POST ' .
 				json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage(), 'api/read/');
-			echo 'Operation Failed : ' . ' $_POST ' .
+			echo 'Operation Failed: ' . ' $_POST ' .
 				json_encode($_POST) . ' failed ' . 'Caught exception: ' . $e->getMessage();
 		}
 		pageHit("Api.read");
@@ -381,14 +328,27 @@ class Api extends Controller
 				if (isset($_SESSION['user']) && $schemaClass === 'user' && in_array($_SESSION['user']->id, $_POST['ids'])) {
 					echo 'Operation Failed : You Can\'t delete yourself from here!';
 				} else {
-					$Model
-						= $this->loadModel('BaseModel');
-					$Model->wipeByIds($schemaClass, $_POST['ids']);
-					echo 'deleted';
+					try {
+						$Model
+							= $this->loadModel('BaseModel');
+						if ($Model->wipeByIds($schemaClass, $_POST['ids']))
+							echo 'deleted';
+						else
+							echo 'Operation Failed: unsuccessful';
+					} catch (AccessDeniedException $e) {
+						simpleLog('Caught exception: ' . $e->getMessage(), 'api/delete');
+						echo 'Operation Failed : ' . $e->getMessage();
+					} catch (\Throwable $e) {
+						simpleLog('Caught exception: ' . $e->getMessage(), 'api/delete');
+						echo 'Operation Failed : ' . $e->getMessage();
+					}
 				}
 			} else {
 				echo 'Operation Failed : No IDs provided';
 			}
+		} catch (AccessDeniedException $e) {
+			simpleLog('Caught exception: ' . $e->getMessage(), 'api/delete');
+			echo 'Operation Failed : ' . $e->getMessage();
 		} catch (\Throwable $e) {
 			simpleLog('Caught exception: ' . $e->getMessage(), 'api/delete');
 			echo 'Operation Failed : ' . $e->getMessage();

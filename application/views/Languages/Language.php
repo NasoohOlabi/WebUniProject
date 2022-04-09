@@ -10,7 +10,6 @@ class Language
 	public static function init()
 	{
 		if (isset($_GET['lang'])) {
-			simpleLog('OK');
 			setcookie('lang', $_GET['lang'], time() + (86400 * 30), "/");
 			$SwitchLanguageTo = $_GET['lang'];
 			unset($_GET['lang']);
@@ -51,5 +50,4 @@ class Language
 		}
 	}
 }
-simpleLog("language called");
 Language::init();

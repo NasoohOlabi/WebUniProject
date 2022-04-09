@@ -62,7 +62,7 @@ DROP TABLE IF EXISTS `question` ;
 CREATE TABLE IF NOT EXISTS `question` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `text` TEXT NOT NULL,
-  `topic_id` INT(11) NOT NULL,
+  `topic_id` INT(11),
   `active` TINYINT NOT NULL DEFAULT 1,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),

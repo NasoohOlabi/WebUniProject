@@ -6,9 +6,9 @@ var statistics = null;
  * @type {{[index: string]:object}}
  */
 var Model = {};
-var Exams_Taken_or_Future_Exams = (getCookie('Exams_Taken_or_Future_Exams') !== '')
-    ? getCookie('Exams_Taken_or_Future_Exams')
-    : 'Future Exams'
+var Exams_Taken_or_Upcoming_Exams = (getCookie('Exams_Taken_or_Upcoming_Exams') !== '')
+    ? getCookie('Exams_Taken_or_Upcoming_Exams')
+    : 'Upcoming Exams'
 
 const schemaClasses = [
     "question",
@@ -27,6 +27,18 @@ const schemaClasses = [
     "student_exam_has_choice",
 ];
 
+/**
+ * 
+ * @param {string} s 
+ * @returns 
+ */
+const parseTrs = (s) => {
+    var wrapper = document.createElement('div');
+    wrapper.innerHTML = '<table><thead><th>hi</th></thead><tbody>' + s + '</tbody></table>';
+    const DOM_rows = wrapper.querySelectorAll('div > table > tbody > tr');
+    return DOM_rows
+}
+
 var currentTab =
     getCookie("currentTab") == ""
         ? (() => {
@@ -40,6 +52,9 @@ var currentTab =
             return curr;
         })();
 
+const insertAfter = (existingNode) => (newNode) => {
+    existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling)
+}
 /**
  * @param cname {string}
  * @param cvalue {string}
@@ -109,7 +124,10 @@ setInterval(() => {
  * @param {string} id
  */
 function set_OnClick_For_Id(callback, id, retries = 60) {
-    if (retries === 0) { console.log(`retries excust ${id}`); return }
+    if (retries === 0) {
+        // console.log(`retries excust ${id}`)
+        return
+    }
     tasks.push(() => {
         if (document.getElementById(id)) {
             document.getElementById(id).onclick = callback;
@@ -172,7 +190,7 @@ function MainTable(id, header) {
  */
 function is_display_key(key) {
     return (
-        !key.endsWith("id")
+        !key.endsWith("_id")
         && key !== "identifying_fields"
         && key !== "dependents"
         && key !== "many2many"
@@ -188,7 +206,7 @@ function is_display_key(key) {
  */
 function is_not_unicode_sth(elem) {
     return !(
-        elem.children[0] && ["🔽", "🔼"].includes(elem.children[0].innerText)
+        elem.children[0] && [`<i class="fas fa-angle-down""></i>`, `<i class="fas fa-angle-up""></i>`].includes(elem.children[0].innerText)
     );
 }
 /**
@@ -206,13 +224,43 @@ function toggleDropDown(id_to_toggle) {
             btn = document.getElementById(id_to_toggle + "-" + "btn");
         }
         dropped_down = !dropped_down;
-        if (btn) btn.innerText = !dropped_down ? "🔽" : "🔼";
+        if (btn) btn.innerHTML = !dropped_down ? `<i class="fas fa-angle-down""></i>` : `<i class="fas fa-angle-up""></i>`;
 
-        // if you can't see even after you looked them abort
-        if (tr)
-            tr.style.display = !dropped_down ? "none" : "table-row";
-        else if (true) {
 
+        if (!tr || (tr.querySelectorAll('tr').length <= 1 && tr.querySelectorAll('tr>th').length !== 0)) {
+            const old_tr = document.getElementById(id_to_toggle)
+            if (old_tr) old_tr.remove()
+            const insert = insertAfter(btn.parentElement.parentElement)
+            const parent_number_of_tds = btn.parentElement.parentElement.children.length
+            const remove_s = (s) => s.substring(0, s.length - 1)
+            const before_last_elem = l => l[l.length - 2]
+            const universal_identifier_split = id_to_toggle.split('::')
+            const sub_kind = remove_s(universal_identifier_split.pop())
+            const parent_kind_identifier = before_last_elem(id_to_toggle.split('::'))
+            const parent_kind = parent_kind_identifier.split('-')[0]
+            const parent_id = parent_kind_identifier.split('-')[1]
+            const is_many2many = Model[parent_kind_identifier].many2many
+                && Model[parent_kind_identifier].many2many[sub_kind] !== undefined
+            const reading = (is_many2many) ? Model[parent_kind_identifier].many2many[sub_kind] : sub_kind
+            const universal_identifier_root = universal_identifier_split.join('')
+
+            getFromHQ(`api/read/${reading}/${parent_kind + '_id'}/${parent_id}`, sub_kind, {}, {
+                success: (lst) => {
+                    const trs = parseTrs(subTable_tr(
+                        lst,
+                        id_to_toggle,
+                        parent_number_of_tds,
+                        universal_identifier_root
+                    ))
+                    trs.forEach(tr => {
+                        insert(tr)
+                    })
+
+                    document.getElementById(id_to_toggle).style.display = !dropped_down ? "none" : "table-row";
+                }
+            })
+        } else {
+            document.getElementById(id_to_toggle).style.display = !dropped_down ? "none" : "table-row";
         }
 
     };
@@ -240,7 +288,7 @@ function revoker(identifier) {
                             icon: 'success',
                             title: `${perm} revoked`,
                             showConfirmButton: false,
-                            timer: 1000
+                            timer: 2000
                         })
                         document.getElementById(identifier).remove();
                     }
@@ -277,14 +325,18 @@ function Header(id, names) {
             ? ["profile_picture", 'username', 'first_name', 'middle_name', 'last_name', 'role']
             : ["profile_picture", 'username', 'first_name', 'middle_name', 'last_name'])
         : names
-    const th_s = processed_names.filter(is_display_key)
+    const t = id.split('@')[0].split('::')
+
+    const table_objects_kind = t[t.length - 1].split('-')[0]
+    const th_s = processed_names.filter(is_display_key).filter(k => k !== 'id')
         .map(humanize)
         .map((v) => "<th>" + v + "</th>");
 
-    th_s.push('<th colspan="2"><th>');
+    th_s.unshift(`<th>${humanize(table_objects_kind)}</th>`);
+    th_s.push('<th colspan="2"></th>');
 
     const html_string = th_s.join("");
-
+    console.log(html_string)
     return `<tr id ="${id}">
       ${html_string}
     </tr>`;
@@ -313,57 +365,58 @@ function TableRow(identifier, inline_keys = false, inline_key_prefix = "") {
         .split("::")
         .slice(0, -1)
         .map((name_id) => name_id.split("-")[0]);
-    let td_s = display_keys
-        .filter((key) => !ancestors.some((elem) => elem.includes(key)))
-        .map((key) => {
-            const value = row_item[key];
-            if (key == 'profile_picture') {
-                return `<td class="profile-pic"><img src="${ourURL}DB/ProfilePics/${((row_item['profile_picture']) ? row_item['profile_picture'] : 'newuser2.png')}" width="50" height="50"/></td>`
-            }
-            let td = inline_keys
-                ? `<td style="border-top:none"><strong>${humanize(inline_key_prefix)} ${humanize(key)}:</strong></td>`
-                : "";
-            if (value instanceof Array) {
-                // just making sure key is a single word
-                // key.replace(' ', '-')
-                // since key is a field in the object this row represent
-                const id_of_tr_this_btn_will_expand = identifier + "::" + key;
-                subTables.push(id_of_tr_this_btn_will_expand);
-                td += `<td
+    let columns = display_keys
+        .filter((key) => (!ancestors.some((elem) => elem.includes(key))) && key !== 'id')
+    columns.unshift('id')
+    let td_s = columns.map((key) => {
+        const value = row_item[key];
+        if (key == 'profile_picture') {
+            return `<td class="profile-pic"><img src="${ourURL}DB/ProfilePics/${((row_item['profile_picture']) ? row_item['profile_picture'] : 'newuser2.png')}" width="50" height="50"/></td>`
+        }
+        let td = inline_keys
+            ? `<td style="border-top:none"><strong>${humanize(inline_key_prefix)}${(key !== 'id') ? ' ' + humanize(key) : ''}:</strong></td>`
+            : "";
+        if (value instanceof Array) {
+            // just making sure key is a single word
+            // key.replace(' ', '-')
+            // since key is a field in the object this row represent
+            const id_of_tr_this_btn_will_expand = identifier + "::" + key;
+            subTables.push(id_of_tr_this_btn_will_expand);
+            td += `<td 
                         ${inline_keys ? 'style = "border-top:none"' : ""}
                         >
                         <button
                         id="${id_of_tr_this_btn_will_expand}-btn" 
                         style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;">
-                            🔽
+                            <i class="fas fa-angle-down""></i>
                         </button>
                         </td>`;
-                set_OnClick_For_Id(() => {
-                    toggleDropDown(id_of_tr_this_btn_will_expand);
-                }, id_of_tr_this_btn_will_expand + "-btn");
-            } else if (key == `is_correct`) {
-                td += `<td
+            set_OnClick_For_Id(() => {
+                toggleDropDown(id_of_tr_this_btn_will_expand);
+            }, id_of_tr_this_btn_will_expand + "-btn");
+        } else if (key == `is_correct`) {
+            td += `<td
           ${inline_keys ? 'style = "border-top:none"' : ""}
           >${value ? "✔" : "❌"}</td>`;
-            } else {
-                td += `<td
+        } else {
+            td += `<td
           ${inline_keys ? 'style = "border-top:none"' : ""}
           >${value}</td>`;
-            }
+        }
 
-            return td;
-        });
+        return td;
+    });
 
     const tds_text = td_s.join("");
 
     const delete_edit_icons = inline_keys
-        ? `<td>
+        ? `<td style="border-top:none">
       <i class="fa fa-pencil" aria-hidden="true" id="${identifier}-switcher"></i>
     </td>`
         : `<td>
       <i class="fa fa-trash" aria-hidden="true"  id="${identifier}-left"></i>
     </td>
-    <td>
+    <td >
       <i class="fa fa-pencil" aria-hidden="true"  id="${identifier}-right"></i>
     </td>`;
     if (inline_keys) {
@@ -392,7 +445,7 @@ function EditPermissions(identifier) {
     return (evt) => {
         console.log(`identifier : `);
         console.log(identifier);
-        const One2Many_one_id = identifier.split("::")[0].split('-')[1];
+        const One2Many_one_id = identifier.split("::").slice(-2)[0].split('-')[1];
 
         window.location = ourURL + 'dashboard/update/role_has_permission?parent_id=' + One2Many_one_id;
 
@@ -420,7 +473,7 @@ function subTable_tr(
         const header = (trId.includes('permissions'))
             ? `<th>Name</th><th colspan="2"><span id="${trId}-Edit" class="permission-clickable">Edit Permissions</span></th>`
             : Header(
-                trId.split("-")[1],
+                trId + "@header",
                 Object.keys(Model[identifiers[0]])
             )
         if (trId.includes('permissions'))
@@ -493,10 +546,8 @@ function main() {
             getFromHQ("read", currentTab, data, {
                 success: (lst) => {
                     lst.forEach((identifier) => {
-                        const row = TableRow(identifier);
-                        var wrapper = document.createElement('div');
-                        wrapper.innerHTML = '<table><thead><th>hi</th></thead><tbody>' + row + '</tbody></table>';
-                        const DOM_rows = wrapper.querySelectorAll('div > table > tbody > tr');
+                        const rows = TableRow(identifier);
+                        const DOM_rows = parseTrs(rows)
                         DOM_rows.forEach(elem => {
                             tbl.appendChild(elem)
                         })
@@ -528,19 +579,19 @@ function main() {
  * @param {string} ApiEndPoint
  * @param {string} kind
  * @param {object} POST_PAYLOAD
- * @param {{success?: ((identifiers :string[]) => void),failure?: (reason: any) => PromiseLike<never>,unclean?:(response_text :string) => void}} callbackObject
+ * @param {{success?: ((identifiers :string[]|object,response_txt?: string) => void),unclean?:(response_text :string) => void}} callbackObject
  */
 function getFromHQ(
     ApiEndPoint,
     kind,
     POST_PAYLOAD,
-    callbackObject = { success: null, failure: null, unclean: null }
+    callbackObject = { success: null, unclean: null }
 ) {
-    const { success, failure, unclean } = callbackObject;
+    const { success, unclean } = callbackObject;
     /**
      * @param {object} object
      */
-    let clean_format = (object) => {
+    let clean_format = (object, object_kind = null) => {
         Object.keys(object).forEach((key) => {
             if (
                 key.endsWith("s") &&
@@ -549,7 +600,7 @@ function getFromHQ(
             ) {
                 const subClassName = key.slice(0, -1);
                 object[key] = object[key].map((subItem) => {
-                    Model[subClassName + "-" + subItem.id] = clean_format(subItem);
+                    Model[subClassName + "-" + subItem.id] = clean_format(subItem, subClassName);
                     return subClassName + "-" + subItem.id;
                 });
             } else if (
@@ -558,96 +609,117 @@ function getFromHQ(
             ) {
                 const subClassName = key.slice(0, -3);
                 Model[subClassName + "-" + object[subClassName].id] = clean_format(
-                    object[subClassName]
+                    object[subClassName],
+                    subClassName
                 );
                 object[subClassName] = [subClassName + "-" + object[subClassName].id];
             }
         });
         object.dependents.forEach((dependent) => {
             if (dependent.includes('_Has_')) {
-                const other = dependent.split('_Has_').filter(elem => elem.toLowerCase() !== currentTab.toLowerCase())[0].toLowerCase();
-                (object['many2many'] && object['many2many'].push(other)) || (object['many2many'] = [other])
+                const my_name = object_kind || currentTab.toLowerCase()
+                const other = dependent.split('_Has_').filter(elem => elem.toLowerCase() !== my_name)[0].toLowerCase();
+                (
+                    object['many2many']
+                    && (object['many2many'][other] = dependent.toLowerCase())
+                ) || (object['many2many'] = { [other]: dependent.toLowerCase() });
                 object[other + 's'] = [];
             } else
                 object[dependent.toLowerCase() + 's'] = []
         });
-        delete object.dependents;
         return object;
     };
-    try {
-        const uurl = (ApiEndPoint.includes('/'))
-            ? (
-                (ApiEndPoint.startsWith('/'))
-                    ? ApiEndPoint.substring(1)
-                    : ApiEndPoint
-            )
-            : `Api/${ApiEndPoint}/${kind}`
-        fetch(URL + uurl, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(POST_PAYLOAD),
-        })
-            .then((res) => {
-                return res.text();
-            })
-            .then((answer) => {
-                try {
-                    if (unclean != null) unclean(answer);
-                    let objects = JSON.parse(answer);
-                    if (success != null) {
-                        if (!(objects instanceof Array)) {
-                            Swal.fire({
-                                title: "There has been a problem!",
-                                text: objects,
-                                icon: "error",
-                                showCancelButton: false,
-                                confirmButtonColor: "#3085d6",
-                                confirmButtonText: "OK",
-                            });
-                            return;
-                        }
-                        objects.forEach((object) => {
-                            clean_format(object)
-                        })
+    const uurl = (ApiEndPoint.includes('/'))
+        ? (
+            (ApiEndPoint.startsWith('/'))
+                ? ApiEndPoint.substring(1)
+                : ApiEndPoint
+        )
+        : `Api/${ApiEndPoint}/${kind}`
 
-                        if (currentTab === 'student_exam') {
-                            if (Exams_Taken_or_Future_Exams === 'Future Exams') {
-                                objects = objects.filter(o => o.grade === null)
-                                objects = objects.map(o => {
-                                    delete o.grade
-                                    delete o.choices
-                                    return o
-                                })
-                            }
-                            else if (Exams_Taken_or_Future_Exams === 'Exams Taken') {
-                                objects = objects.filter(o => o.grade !== null)
-                            }
-                        }
-                        const identifiers = objects.map((object) => {
-                            Model[kind + "-" + object.id] = object;
-                            return kind + "-" + object.id;
+    fetch(URL + uurl, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(POST_PAYLOAD),
+    })
+        .then((res) => {
+            return res.text();
+        })
+        .then((answer) => {
+            try {
+                if (unclean != null) unclean(answer);
+                let objects = JSON.parse(answer);
+                if (success != null) {
+                    if (!(objects instanceof Array)) {
+                        Swal.fire({
+                            title: "There has been a problem!",
+                            text: objects,
+                            icon: "error",
+                            showCancelButton: false,
+                            confirmButtonColor: "#3085d6",
+                            confirmButtonText: "OK",
                         });
-                        success(identifiers);
+                        return;
                     }
-                } catch (error) {
-                    if (answer == "that's all we have") return;
-                    if (answer.includes("You don't have access to")) {
-                        Swal.fire("Sorry", answer.substring(answer.indexOf('You')), 'info')
+                    objects.forEach((object) => {
+                        clean_format(object, kind)
+                    })
+
+                    if (currentTab === 'student_exam') {
+                        if (Exams_Taken_or_Upcoming_Exams === 'Upcoming Exams') {
+                            objects = objects.filter(o => o.grade === null)
+                            objects = objects.map(o => {
+                                delete o.grade
+                                delete o.choices
+                                return o
+                            })
+                        }
+                        else if (Exams_Taken_or_Upcoming_Exams === 'Exams Taken') {
+                            objects = objects.filter(o => o.grade !== null)
+                        }
                     }
-                    else if (answer.includes("Operation Failed : ")) {
-                        Swal.fire("Sorry", answer.substring("Operation Failed : ".length), 'info')
-                    }
-                    // console.log(error);
-                    if (!(error instanceof SyntaxError)) console.log(error);
-                    console.log(answer);
+                    const identifiers = objects.map((object) => {
+                        Model[kind + "-" + object.id] = object;
+                        return kind + "-" + object.id;
+                    });
+                    success(identifiers);
                 }
-            })
-            .catch(failure);
-    } catch (error) {
-        console.log(error);
-    }
+            } catch (error) {
+                if (error.stack.startsWith('SyntaxError: ')) {
+                    if (success)
+                        success({ lst: [], response_text: answer, length: 0 })
+                    else {
+                        if (answer == "that's all we have") return;
+                        if (answer.includes("You don't have access to")) {
+                            Swal.fire("Sorry", answer.substring(answer.indexOf('You')), 'error')
+                        }
+                        else if (answer.includes("Operation Failed : ")) {
+                            Swal.fire("Sorry", answer.substring("Operation Failed : ".length), 'info')
+                        }
+                        console.log('error');
+                        console.log(error);
+                        console.log('answer');
+                        console.log(answer);
+                    }
+                }
+            }
+        })
+}
+/**
+ * @param {string} ApiEndPoint
+ * @param {string} kind
+ * @param {object} POST_PAYLOAD
+ */
+const liftedGetFromHQ = (
+    ApiEndPoint,
+    kind,
+    POST_PAYLOAD
+) => {
+    return new Promise((success, reject) => {
+        getFromHQ(ApiEndPoint, kind, POST_PAYLOAD, { success })
+    })
 }
 /**
  *
@@ -660,13 +732,13 @@ function switchTo(Tab, evt = null) {
         if (currentTab === Tab && Tab !== 'student_exam') return;
         currentTab = Tab;
 
-        const txt = (evt != null) ? evt.target.innerText : Exams_Taken_or_Future_Exams
+        const txt = (evt != null) ? evt.target.innerText : Exams_Taken_or_Upcoming_Exams
 
         document.getElementById("title").innerText =
             txt;
 
-        Exams_Taken_or_Future_Exams = txt
-        setCookie('Exams_Taken_or_Future_Exams', txt, 3)
+        Exams_Taken_or_Upcoming_Exams = txt
+        setCookie('Exams_Taken_or_Upcoming_Exams', txt, 3)
 
         const container = document.getElementById("JS-App-Root");
         container.innerHTML = "";
@@ -750,6 +822,7 @@ function editRow(identifier) {
         var arr = [].slice.call(document.getElementById(identifier).children);
         let tic = arr.pop();
         let x = arr.pop();
+        arr.shift()
         arr = arr
             .filter(is_not_unicode_sth)
             .filter(t => t.className != 'profile-pic');
@@ -797,7 +870,14 @@ function editRow(identifier) {
                     let sql_id = identifier.split("-").pop();
                     let header = Object.keys(data)
                         .filter(is_display_key)
-                        .filter(t => t != 'profile_picture');
+                        .filter(t => t != 'profile_picture' && t !== 'id' && !t.endsWith('s'))
+                    if (header.includes('last_name')) {
+                        const last_name_index = header.indexOf('last_name');
+                        const middle_name_index = header.indexOf('middle_name');
+
+                        header[last_name_index] = 'middle_name';
+                        header[middle_name_index] = 'last_name';
+                    }
                     data["id"] = sql_id;
 
                     header.forEach((key, i) => {
@@ -827,11 +907,14 @@ function editRow(identifier) {
                                     "fa-trash"
                                 );
 
-                                Swal.fire(
-                                    "Modified!",
-                                    "Your changes have been saved.",
-                                    "success"
-                                );
+                                Swal.fire({
+                                    position: 'top-end',
+                                    icon: 'success',
+                                    title: `${humanize(child_name)} updated successfully`,
+                                    text: "Your changes have been saved.",
+                                    showConfirmButton: false,
+                                    timer: 2000
+                                })
                             } else if (res == "update unsuccessful") {
                                 Swal.fire(
                                     "Was not Modified!",
@@ -873,13 +956,12 @@ function edit_sub_Row(identifier) {
         const field = model_identifier.split("-").shift();
         const html_element = document.getElementById(identifier);
         if (evt.target.className.includes("fa-pencil")) {
-            const step1 = html_element.innerHTML.split("<i ");
-            step1[0] = step1[0].substring(0, step1[0].lastIndexOf("<td>"));
-            step1[1] = "<td><i " + step1[1];
+            const step0 = html_element.innerHTML.split("<i ");
+            const step1 = [step0.slice(0, step0.length - 1).join("<i "), step0[step0.length - 1]];
+            step1[0] = step1[0].substring(0, step1[0].lastIndexOf("</td>"));
+            step1[1] = `<td style="border-top:none"><i ` + step1[1];
             const first_part = step1[0];
             const second_part = step1[1];
-
-            // console.log(Model);
 
             getFromHQ(
                 "read",
@@ -943,13 +1025,13 @@ function edit_sub_Row(identifier) {
                             icon: 'success',
                             title: `${father_name} updated`,
                             showConfirmButton: false,
-                            timer: 750
+                            timer: 1500
                         })
                     }
                 },
             });
 
-            // html_element.innerHTML = TableRow(field + '-' + v, true, field)
+            html_element.innerHTML = TableRow(field + '-' + v, true, field)
         }
     };
 }
@@ -980,18 +1062,26 @@ function deleteRow(evt) {
         }
 
         let clickedRowId = evt.target.parentNode.parentNode.id;
-        console.log("almost:", clickedRowId);
+
+
+        let rows = [].slice.call(document.querySelectorAll('*')).filter(el => {
+            return el.id.includes(clickedRowId.split('::').pop()) && el.tagName === 'TR';
+        })
+
         let rowTable = clickedRowId.split("-")[0];
         let rowId = clickedRowId.split("-")[1];
-        console.log(rowTable, rowId);
+
         deleteList.push({ table: rowTable, id: rowId, trId: clickedRowId });
 
-        document.getElementById(clickedRowId).style.display = "none";
+        rows.forEach(row => {
+            document.getElementById(row.id).style.display = "none";
+        })
     } else {
         const id = evt.target.parentElement.parentElement.id; // direct tr parent
         var arr = [].slice.call(document.getElementById(id).children);
         let tic = arr.pop();
         let x = arr.pop();
+        arr.shift()
         arr = arr.filter(is_not_unicode_sth)
             .filter(t => t.className != 'profile-pic')
 
@@ -1009,15 +1099,17 @@ function deleteRow(evt) {
 
         let header = Object.keys(data)
             .filter(is_display_key)
-            .filter(t => t != 'profile_picture')
-            .filter(t => t != 'password')
+            .filter(t => !schemaClasses.includes(t))
+            .filter(t => t != 'profile_picture' && t != 'id' && t != 'password' && !t.endsWith('s'))
+
+
+
         if (header.includes('last_name')) {
             const last_name_index = header.indexOf('last_name');
             const middle_name_index = header.indexOf('middle_name');
 
             header[last_name_index] = 'middle_name';
             header[middle_name_index] = 'last_name';
-
         }
         header.forEach((key, i) => {
             if (!(data[key] instanceof Object)) arr[i].innerText = data[key];
@@ -1048,98 +1140,140 @@ function reset() {
 }
 /**
  *
- * @param {string[]} identifiers
+ * @param {number} depth
+ * @param {string[]} initial_identifiers
  */
-function delete_re(depth = 0) {
-    const identifiers = deleteList
+async function delete_re(depth = 0, initial_identifiers = null) {
+    const identifiers = initial_identifiers || deleteList
         .map((elem) => elem.trId)
         .map((identifier) => identifier.split("::").pop());
+    if (identifiers.length == 0) return;
     if (!identifiers || identifiers.length == 0) return;
+    const stringifyIdentifier = (identifier) => Model[identifier]["identifying_fields"]
+        .map((id_field) => Model[identifier][id_field])
+        .join(" ")
     const delete_ids = identifiers.map((identifier) =>
         identifier.split("-").pop()
     );
     const payload = { ids: delete_ids };
-    fetch(URL + `Api/delete/${identifiers[0].split("-")[0]}/`, {
+    const res = await fetch(URL + `Api/delete/${identifiers[0].split("-")[0]}/`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify(payload),
     })
-        .then((res) => {
-            return res.text();
-        })
-        .then((response_text) => {
-            console.log(response_text);
-            if (response_text.includes("NO ACTION") || response_text.includes("Operation Failed")) {
-                if (response_text.includes("Operation Failed")) {
-                    Swal.fire("Failed", response_text, "error");
-                    deleteList.map((elem) => document.getElementById(elem.trId).style.display = "table-row");
+    const response_text = await res.text();
 
-                    if (document.getElementById("modify-div"))
-                        document.getElementById("modify-div").remove();
+    if (response_text.includes("AccessDeniedException:")) {
+        Swal.fire({
+            title: "Failed",
+            text: response_text.substring(response_text.indexOf("AccessDeniedException:") + "AccessDeniedException:".length, response_text.indexOf('in C:\\')),
+            icon: "error",
+            showCancelButton: false,
+            confirmButtonColor: "#3085d6",
+            confirmButtonText: "OK",
+        })
+        return;
+    }
+
+    if (response_text.includes("NO ACTION") || response_text.startsWith("Operation Failed")) {
+
+        const fields = Model[identifiers[0]]["dependents"]
+            .map((x) => x.toLowerCase());
+
+        let reasons = ''
+        const acc = []
+        const new_delete_identifiers = {}
+        for (let index = 0; index < identifiers.length; index++) {
+            const one_elem_problem = []
+            const identifier = identifiers[index];
+            for (let i = 0; i < fields.length; i++) {
+                const field = fields[i]
+                const [parent_name, parent_id] = identifier.split('::').pop().split('-')
+                let obj, lst, response_txt
+
+                /**
+                 * @type {string[]|object}
+                 */
+                obj = await liftedGetFromHQ(`api/read/${field}/${parent_name + "_id"}/${parent_id}`, field)
+
+
+                if (obj instanceof Array) {
+                    lst = obj
+                } else {
+                    lst = obj.lst
+                    response_txt = obj.response_text
                 }
-                else {
+
+                const match = /Access.*Denied.*:/.exec(response_txt)
+                if (match) {
+                    const start = match.index
+                    const finish = start + match[0].length
+                    console.log(`match : `);
+                    console.log(match);
+                    console.log(`response_txt : `);
+                    console.log(response_txt);
                     Swal.fire({
-                        title: "Couldn't delete!",
-                        // .map((identifier) => Model[identifier]['identifying_fields'].map(field=>Model[identifier][field]))
-                        // .flatMap((obj) => obj.dependents.map((dep) => Model[dep]))
-                        text: `${currentTab} was not alone! we need backup to delete his bloodline including " ${identifiers
-                            .map((identifier) =>
-                                Model[identifier]["dependents"]
-                                    .map((x) => x.toLowerCase() + "s")
-                                    .filter(
-                                        (field) =>
-                                            Model[identifier][field] != undefined &&
-                                            Model[identifier][field].length > 0
-                                    )
-                                    .map((field) => {
-                                        return (
-                                            field.replaceAll("_", " ").replaceAll("-", " ") +
-                                            " [ " +
-                                            Model[identifier][field]
-                                                .map((sub_identifier) =>
-                                                    Model[sub_identifier]["identifying_fields"]
-                                                        .map((id_field) => Model[sub_identifier][id_field])
-                                                        .join("& ")
-                                                )
-                                                .join(" ") +
-                                            " ] "
-                                        );
-                                    })
-                                    .join(", ")
-                            )
-                            .join(" And ")} "`,
+                        title: "There has been a problem!",
+                        text: response_txt.substring(finish),
                         icon: "error",
-                        showCancelButton: true,
+                        showCancelButton: false,
                         confirmButtonColor: "#3085d6",
-                        cancelButtonColor: "#d33",
-                        confirmButtonText: "Yes, do whatever's necessary!",
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            identifiers
-                                .map((identifier) => Model[identifier])
-                                .forEach((item, index) => {
-                                    Object.keys(item).forEach((key) => {
-                                        if (
-                                            item[key] instanceof Array &&
-                                            item[key].length > 0 &&
-                                            item[key][0].split("-").length == 2
-                                        ) {
-                                            const identifiers = item[key];
-                                            delete_re(identifiers, depth + 1);
-                                        }
-                                    });
-                                    // delete parent
-                                    delete_re([identifiers[index]]);
-                                });
-                        } else {
-                            reset();
-                        }
+                        confirmButtonText: "OK",
                     })
+                    reset()
+                    return;
                 }
-            } else {
-                if (document.getElementById("modify-div")) {
+
+                true && ((new_delete_identifiers[field] && new_delete_identifiers[field].push(...lst)) || (new_delete_identifiers[field] = [...lst]))
+
+                lst = lst.map((sub_identifier) =>
+                    field + ': ' + stringifyIdentifier(sub_identifier)
+                )
+
+                if (lst.length > 0)
+                    one_elem_problem.push(
+                        field.replaceAll("_", " ").replaceAll("-", " ") +
+                        " [ " +
+                        lst.join(" ") +
+                        " ] "
+                    );
+            }
+            if (one_elem_problem.length > 0) {
+                one_elem_problem.join(", ")
+                acc.push(stringifyIdentifier(identifier) + ': ' + one_elem_problem)
+            }
+        }
+
+        reasons = acc.join(" And ")
+
+        console.log(`new_delete_identifiers : `);
+        console.log(new_delete_identifiers);
+
+        const result = await Swal.fire({
+            title: "Couldn't delete!",
+            // .map((identifier) => Model[identifier]['identifying_fields'].map(field=>Model[identifier][field]))
+            // .flatMap((obj) => obj.dependents.map((dep) => Model[dep]))
+            text: `${humanize(identifiers[0].split("-")[0])} was not alone! we need backup to delete his bloodline including " ${reasons} "`,
+            icon: "error",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, do whatever's necessary!",
+        })
+
+        if (result.isConfirmed) {
+            for (const id in new_delete_identifiers) {
+                const new_identifiers = new_delete_identifiers[id]
+                console.log(`depth : `);
+                console.log(depth);
+                const kid_del = await delete_re(depth + 1, new_identifiers)
+                let another_self_del
+                if (kid_del === 'deleted') {
+                    another_self_del = await delete_re(depth, identifiers)
+                }
+                if (depth === 0 && another_self_del === 'deleted' && document.getElementById("modify-div")) {
                     document.getElementById("modify-div").remove();
                     delete_ids.forEach((delete_id) => {
                         delete Model[currentTab + "-" + delete_id];
@@ -1149,29 +1283,70 @@ function delete_re(depth = 0) {
                         icon: 'success',
                         title: humanize(`${currentTab}${(identifiers.length === 1) ? '' : 's'} Deleted!`),
                         showConfirmButton: false,
-                        timer: 750
+                        timer: 1500
                     })
                 }
             }
-        });
+        } else {
+            reset();
+        }
+
+
+    } else {
+        if (depth === 0 && document.getElementById("modify-div")) {
+            document.getElementById("modify-div").remove();
+            delete_ids.forEach((delete_id) => {
+                delete Model[currentTab + "-" + delete_id];
+            });
+            Swal.fire({
+                position: 'top-end',
+                icon: 'success',
+                title: humanize(`${currentTab}${(identifiers.length === 1) ? '' : 's'} Deleted!`),
+                showConfirmButton: false,
+                timer: 1500
+            })
+        }
+        return 'deleted'
+    }
+
 }
 function confirmChanges() {
-    Swal.fire({
-        title: "Are you sure you want to save your changes?",
-        text: "You won't be able to revert this!",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!",
-    }).then((result) => {
-        if (result.isConfirmed) {
+    if (deleteList.length > 0) {
+        const prefixes = deleteList.map(e => {
+            const temp = e.trId.split('-')
+            temp.pop()
+            return temp.pop()
+        })
+        // prefixes elements equal each other
+        if (prefixes.every(e => e === prefixes[0])) {
+            Swal.fire({
+                title: "Are you sure you want to save your changes?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!",
+            }).then((result) => {
+                if (result.isConfirmed) {
 
-            delete_re(deleteList);
+                    delete_re();
 
-            modifyMode = false;
+                    modifyMode = false;
+                }
+            });
+        } else {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: `Sorry deleting things of deferent types is not supported yet!`,
+                showConfirmButton: false,
+                timer: 2000
+            })
+            reset()
         }
-    });
+    }
+
 }
 
 function add() {

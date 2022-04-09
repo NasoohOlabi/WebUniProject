@@ -92,7 +92,9 @@ class UserModel extends BaseModel
             true
         );
         simpleLog("$username details looked up : " . json_encode($answer));
-        $answer->permissions = $tmp;
+        $answer->permissions = array_map(function ($elem) {
+            return $elem->name;
+        }, $tmp);
         return $answer;
     }
 }
