@@ -256,7 +256,8 @@ function toggleDropDown(id_to_toggle) {
                         insert(tr)
                     })
 
-                    document.getElementById(id_to_toggle).style.display = !dropped_down ? "none" : "table-row";
+                    const tr_elem = document.getElementById(id_to_toggle)
+                    tr_elem && (tr_elem.style.display = !dropped_down ? "none" : "table-row");
                 }
             })
         } else {
@@ -336,7 +337,6 @@ function Header(id, names) {
     th_s.push('<th colspan="2"></th>');
 
     const html_string = th_s.join("");
-    console.log(html_string)
     return `<tr id ="${id}">
       ${html_string}
     </tr>`;
@@ -545,14 +545,16 @@ function main() {
             fetching_flag[currentTab] = true;
             getFromHQ("read", currentTab, data, {
                 success: (lst) => {
-                    lst.forEach((identifier) => {
-                        const rows = TableRow(identifier);
-                        const DOM_rows = parseTrs(rows)
-                        DOM_rows.forEach(elem => {
-                            tbl.appendChild(elem)
-                        })
-                    });
-                    fetching_flag[currentTab] = false;
+                    if (lst instanceof Array) {
+                        lst.forEach((identifier) => {
+                            const rows = TableRow(identifier);
+                            const DOM_rows = parseTrs(rows)
+                            DOM_rows.forEach(elem => {
+                                tbl.appendChild(elem)
+                            })
+                        });
+                        fetching_flag[currentTab] = false;
+                    }
                 },
                 unclean: (response_text) => {
                     if (response_text === "that's all we have") {
@@ -1198,6 +1200,8 @@ async function delete_re(depth = 0, initial_identifiers = null) {
                  */
                 obj = await liftedGetFromHQ(`api/read/${field}/${parent_name + "_id"}/${parent_id}`, field)
 
+                console.log(`obj : `);
+                console.log(obj);
 
                 if (obj instanceof Array) {
                     lst = obj
@@ -1205,6 +1209,8 @@ async function delete_re(depth = 0, initial_identifiers = null) {
                     lst = obj.lst
                     response_txt = obj.response_text
                 }
+
+                if (lst.length === 0) continue 
 
                 const match = /Access.*Denied.*:/.exec(response_txt)
                 if (match) {

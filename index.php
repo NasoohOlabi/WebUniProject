@@ -105,6 +105,7 @@ function sessionUserHasPermissions(array $required_permissions)
     if ($required_permissions === []) {
         return true;
     }
+
     if (in_array('delete_permission', $required_permissions)) {
         throw new AccessDeniedException("Sorry, We don't delete Permissions!");
         simpleLog("Sorry, We don't delete Permissions!");
@@ -117,6 +118,11 @@ function sessionUserHasPermissions(array $required_permissions)
 
     if (session_status() === PHP_SESSION_NONE)
         session_start();
+
+    // user has role name root::admin return true
+    if (isset($_SESSION['user']) && $_SESSION['user']->role->name === 'ROOT::ADMIN') {
+        return true;
+    }
 
     // var_dump($_SESSION);
 
