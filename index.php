@@ -44,7 +44,7 @@ if (!function_exists('str_contains')) {
 }
 function humanize(string $str)
 {
-    return ucwords(str_replace('_', ' ', $str));
+    return (strtolower($str) === 'duration')?'Duration (mins)':ucwords(str_replace('_', ' ', $str));
 }
 
 require_once 'application/libs/util/log.php';

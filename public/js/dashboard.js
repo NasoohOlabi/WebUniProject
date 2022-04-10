@@ -108,7 +108,7 @@ function UpperCaseFirstLetter(str, separator = " ") {
 function humanize(s) {
     return s.replaceAll('_', ' ')
         .split(' ')
-        .map(word => word[0].toUpperCase() + word.substring(1))
+        .map(word => (word.toLowerCase() === 'duration') ? 'Duration (mins)' : word[0].toUpperCase() + word.substring(1))
         .join(' ')
 }
 
@@ -1211,7 +1211,7 @@ async function delete_re(depth = 0, initial_identifiers = null) {
                     response_txt = obj.response_text
                 }
 
-                if (lst.length === 0) continue 
+                if (lst.length === 0) continue
 
                 const match = /Access.*Denied.*:/.exec(response_txt)
                 if (match) {

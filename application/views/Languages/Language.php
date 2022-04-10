@@ -7,6 +7,10 @@ class Language
 	static $direction = 'ltr';
 	static $lang = 'en';
 
+	private function __construct()
+	{
+	} 
+
 	public static function init()
 	{
 		if (isset($_GET['lang'])) {
