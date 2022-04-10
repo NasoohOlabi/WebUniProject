@@ -58,11 +58,12 @@ const insertAfter = (existingNode) => (newNode) => {
 /**
  * @param cname {string}
  * @param cvalue {string}
- * @param exdays {number}
+ * @param exmins {number}
  */
-function setCookie(cname, cvalue, exdays) {
+function setCookie(cname, cvalue, exmins) {
     const d = new Date();
-    d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+    // d.setTime(d.getTime() + exmins * 24 * 60 * 60 * 1000);
+    d.setTime(d.getTime() + exmins * 60 * 1000);
     let expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }

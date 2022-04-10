@@ -204,7 +204,7 @@ $_POST['id'] = $user_id;
 </style>
 
 <div id="main-content" class="inlineBlock">
-
+    <h1 style="margin-left: 10%;">Profile:</h1>
     <div class="add-form-container">
         <div class="form-block">
             <div class="profile-pic dropbtn" id="prof-pic" <?php echo $profile_pic_style ?>>

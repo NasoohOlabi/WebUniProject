@@ -36,7 +36,7 @@ class DashBoard extends Controller
         pageHit("dashboard.index");
     }
 
-    public function add($form)
+    public function add($form = null)
     {
         session_start();
         if (isset($_SESSION['user'])) {
@@ -52,7 +52,7 @@ class DashBoard extends Controller
             );
             return;
         }
-
+        $forms = $this->forms;
         $bm = $this->loadModel('BaseModel');
         pageHeadTag("Add $form", ['Swal' => true]);
 
@@ -98,9 +98,9 @@ class DashBoard extends Controller
                 $bm->updatePermissions($parent_id, $_POST['permission_ids']);
 
                 if ($_SESSION['user']->role->id === $parent_id)
-                $_SESSION['user']->permissions = array_map(function ($elem) {
-                    return $elem->name;
-                }, $bm->join(['name'], ['Permission','Role_Has_Permission'], [Role::id => $parent_id], 1000, true));
+                    $_SESSION['user']->permissions = array_map(function ($elem) {
+                        return $elem->name;
+                    }, $bm->join(['name'], ['Permission', 'Role_Has_Permission'], [Role::id => $parent_id], 1000, true));
 
                 $_SESSION['flash_message'] = 'Permissions Updated';
                 header('Location:' . URL . 'dashboard');
