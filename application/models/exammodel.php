@@ -247,12 +247,10 @@ class ExamModel extends BaseModel
 
     public function loadExam($exam_id, $exam_center_id)
     {
+        $student_exams = $this->select([], 'student_exam', [[Student_Exam::exam_id => $exam_id]]);
+        $valid_student_exams = array_filter($student_exams, fn ($exam) => !$exam->student_id);
 
-        //TODO CHANGE ID
-
-        $valid_student_exams = $this->select([], 'student_exam', [[Student_Exam::exam_id => $exam_id], [Student_Exam::student_id => 102]]);
-
-        var_dump($valid_student_exams);
+        // var_dump($valid_student_exams);
 
         $student_exam = $valid_student_exams[array_rand($valid_student_exams)];
         if (!$student_exam) {
@@ -262,8 +260,7 @@ class ExamModel extends BaseModel
 
         $student_id = $this->select([], 'student', [Student::user_id => $_SESSION['user']->id])[0]->id;
 
-        var_dump($student_id);
-
+        // var_dump($student_id);
 
         $curDate = date("Y-m-d");
 
@@ -271,7 +268,6 @@ class ExamModel extends BaseModel
 
         $_SESSION['inExam'] = true;
         $_SESSION['Exam'] = $student_exam;
-
         $questions = $this->select([], 'student_exam_has_question', [Student_Exam_Has_Question::student_exam_id => $student_exam->id]);
         shuffle($questions);
         $_SESSION['ExamQuestions'] = $questions;

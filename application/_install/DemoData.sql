@@ -198,7 +198,8 @@ INSERT INTO `role_has_permission` (`id`, `role_id`, `permission_id`) VALUES
 (48, 2, 41),
 (49, 2, 42),
 (50, 2, 39),
-(51, 2, 26);
+(51, 2, 26),
+(52, 2, 25);
 
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `profile_picture`, `role_id`) VALUES
 (1, 'NasoohOlabi', '81dc9bdb52d04dc20036dbd8313ed055', 'Nasooh', 'Olabi', 'Yaser', 'NasoohOlabi.jpg', 1),

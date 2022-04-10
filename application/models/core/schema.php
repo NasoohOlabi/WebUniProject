@@ -198,7 +198,7 @@ class Question extends Table
     const topic_id = 'question.topic_id';
     const active = 'question.active';
     // this is what we'll interact with the rest is just jargon
-public string $text;
+    public string $text;
     public int $active;
     public ?int $topic_id;
     public ?Topic $topic;
@@ -613,7 +613,7 @@ class Student_Exam extends Table
     public string $date;
     public int $exam_id;
     public int $exam_center_id;
-    public int $student_id;
+    public ?int $student_id;
     public string $qs_hash;
     public ?int $grade;
     public ?Exam $exam;

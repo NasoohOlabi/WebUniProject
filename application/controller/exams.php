@@ -11,10 +11,7 @@ class Exams extends Controller
             session_start();
         }
 
-        $_SESSION['inExam'] = true; //TODO: REMOVE
-
         $exam_model = $this->loadModel('ExamModel');
-
 
         if (!$exam_model->inExam()) {
             http_response_code(403);
@@ -26,7 +23,7 @@ class Exams extends Controller
 
         $curQuestion = $_SESSION['ExamQuestions'][$question_index];
 
-        var_dump($curQuestion = $_SESSION['ExamQuestions']);
+        var_dump($curQuestion);
 
         $curQuestionInfo = $exam_model->select([], 'question', [Question::id => $curQuestion->question_id])[0];
 
@@ -102,11 +99,6 @@ class Exams extends Controller
         }
 
         header('Location: ' . URL . 'exams/index/0');
-
-        //$this->index(0);
-
-
-        /* ... */
     }
 
     public function endExam()
