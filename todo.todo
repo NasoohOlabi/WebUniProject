@@ -9,19 +9,28 @@ TODO: add min width to '.table td'
 
 - [X] Language support
 - [ ] Permissions --nasooh
-
+- [X] Special Choice editing UI
 - [X] Unify database
 - [X] set up an install url
 - [ ] Unify Font 
 - [X] dashboard delete issues --nasooh
 - [X] simplify read api 
-- [ ] Language constructor should be private
+- [X] Language constructor should be private
 - [X] add api doc in api/index 
 - [ ] admin delete himself
 - [ ] when dashboard is empty add button goes away 
+- [ ] dynamic dashboard
 - [ ] surround question letters with spans so it would be uncopyable
 - [X] dashboard delete session user delete himself --nasooh
 - [ ] Exams and tests
 - [ ] grade calcutation in sql with group by stmt
 
 
+give me a function at the end of the submit
+and I'm go through the db and put them in a file using the log function and the answers as json
+easy to parse back I think
+
+choice in db used in case close browser accidentally
+and we'll demonstrate it in the demo
+
+duration we say it's in a test center and so test admin forces them to get of the pcs XD

@@ -68,7 +68,7 @@ class Api extends Controller
 			return;
 		} catch (\Throwable $e) {
 			simpleLog('Caught exception: ' . $e->getMessage(), 'api/create');
-			echo 'Operation Failed : ' . 'Caught exception: ' . str_replace('::', ' ', str_replace('$', ' ', $e->getMessage()));
+			echo 'Operation Failed : ' . str_replace('::', ' ', str_replace('$', ' ', $e->getMessage()));
 			return;
 		}
 		// header('Location:' . URL . 'DashBoard/');

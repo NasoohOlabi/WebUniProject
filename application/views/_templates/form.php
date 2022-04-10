@@ -100,6 +100,10 @@ function FormForThis(Table $cls, BaseModel $bm, array $omit = [])
 {
     $required_fields = $cls::SQL_Columns();
     unset($required_fields[0]);
+    if (strtolower(get_class($cls)) === 'choice') {
+        require '__choice_form.php';
+        return;
+    }
     // print_r($required_fields);
     $inputs = [];
     $SELECT_OPTIONS = [];

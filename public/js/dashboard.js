@@ -398,7 +398,7 @@ function TableRow(identifier, inline_keys = false, inline_key_prefix = "") {
         } else if (key == `is_correct`) {
             td += `<td
           ${inline_keys ? 'style = "border-top:none"' : ""}
-          >${value ? "✔" : "❌"}</td>`;
+          class="${identifier.split("-").slice(0, -1)}-check">${value ? "✔" : "❌"}</td>`;
         } else {
             td += `<td
           ${inline_keys ? 'style = "border-top:none"' : ""}
@@ -820,7 +820,7 @@ function switchTo(Tab, evt = null) {
     }
 }
 
-function editRow(identifier) {
+function editRow(identifier, submit = false) {
     return (evt) => {
         var arr = [].slice.call(document.getElementById(identifier).children);
         let tic = arr.pop();
@@ -830,19 +830,26 @@ function editRow(identifier) {
             .filter(is_not_unicode_sth)
             .filter(t => t.className != 'profile-pic');
 
-        if (tic.children[0].className.includes("fa-pencil")) {
+        const get_is_correct_tds = () => {
+            const a = [].slice.call(document.getElementsByClassName(`${identifier.split("-").slice(0, -1)}-check`))
+            console.log(a)
+            return a
+        }
+
+        if (tic.children[0].className.includes("fa-pencil") && !submit) {
             for (const child of arr) {
                 if (child.innerText != "✔" && child.innerText != "❌") {
                     child.contentEditable = true;
                 } else {
-                    child.style.cursor = 'pointer'
-                    // add event lister and on click toggle between "✔" and "❌"
-                    child.addEventListener('click', (e) => {
-                        if (child.innerText == "✔") {
-                            child.innerText = "❌"
-                        } else {
-                            child.innerText = "✔"
-                        }
+                    get_is_correct_tds().forEach(check => {
+                        check.style.cursor = 'pointer'
+                        check.addEventListener('click', (e) => {
+                            if (e.target.innerText === '✔') return;
+                            get_is_correct_tds().forEach(c => {
+                                c.innerText = '❌'
+                            })
+                            e.target.innerText = '✔'
+                        })
                     })
                 }
             }
@@ -856,82 +863,96 @@ function editRow(identifier) {
             );
         } else {
             //Alert before procceed
-
-            Swal.fire({
-                title: "Are you sure you want to edit this row?",
-                text: "You won't be able to revert this!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, modify it!",
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    const child_identifier = identifier.split("::").pop();
-
-                    let data = { ...Model[child_identifier] };
-                    let sql_id = identifier.split("-").pop();
-                    let header = Object.keys(data)
-                        .filter(is_display_key)
-                        .filter(t => t != 'profile_picture' && t !== 'id' && !t.endsWith('s'))
-                    if (header.includes('last_name')) {
-                        const last_name_index = header.indexOf('last_name');
-                        const middle_name_index = header.indexOf('middle_name');
-
-                        header[last_name_index] = 'middle_name';
-                        header[middle_name_index] = 'last_name';
-                    }
-                    data["id"] = sql_id;
-
-                    header.forEach((key, i) => {
-                        if (!(data[key] instanceof Object)) {
-                            if (arr[i].innerText == "✔" || arr[i].innerText == "❌") {
-                                data[key] = arr[i].innerText == "✔" ? 1 : 0;
-                            }
-                            else
-                                data[key] = arr[i].innerText;
-                        }
-                    });
-
-                    const child_name = child_identifier.split('-')[0];
-
-                    getFromHQ("update", child_name, data, {
-                        unclean: (res) => {
-                            if (res == "updated") {
-                                arr.forEach((tag) => {
-                                    tag.contentEditable = false;
-                                });
-                                tic.children[0].className = tic.children[0].className.replace(
-                                    "fa-check",
-                                    "fa-pencil"
-                                );
-                                x.children[0].className = x.children[0].className.replace(
-                                    "fa-close",
-                                    "fa-trash"
-                                );
-
-                                Swal.fire({
-                                    position: 'top-end',
-                                    icon: 'success',
-                                    title: `${humanize(child_name)} updated successfully`,
-                                    text: "Your changes have been saved.",
-                                    showConfirmButton: false,
-                                    timer: 2000
-                                })
-                            } else if (res == "update unsuccessful") {
-                                Swal.fire(
-                                    "Was not Modified!",
-                                    "Your changes have not been saved.",
-                                    "error"
-                                );
-                                deleteRow(evt);
-                            }
-                        },
-                    });
-                } else {
-                    deleteRow(evt);
+            const behavior = () => {
+                const child_identifier = identifier.split("::").pop();
+                if (child_identifier.includes('choice') && !submit) {
+                    const is_correct = get_is_correct_tds()
+                    const is_correct_trs_identifiers = is_correct
+                        .map(el => el.parentElement.id)
+                        .filter(id => id != identifier)
+                    is_correct_trs_identifiers.forEach(id => editRow(id, true)({}))
                 }
-            });
+                let data = { ...Model[child_identifier] };
+                let sql_id = identifier.split("-").pop();
+                let header = Object.keys(data)
+                    .filter(is_display_key)
+                    .filter(t => t != 'profile_picture' && t !== 'id' && !t.endsWith('s'))
+                if (header.includes('last_name')) {
+                    const last_name_index = header.indexOf('last_name');
+                    const middle_name_index = header.indexOf('middle_name');
+
+                    header[last_name_index] = 'middle_name';
+                    header[middle_name_index] = 'last_name';
+                }
+                data["id"] = sql_id;
+
+                header.forEach((key, i) => {
+                    if (!(data[key] instanceof Object)) {
+                        if (arr[i].innerText == "✔" || arr[i].innerText == "❌") {
+                            data[key] = arr[i].innerText == "✔" ? 1 : 0;
+                        }
+                        else
+                            data[key] = arr[i].innerText;
+                    }
+                });
+
+                const child_name = child_identifier.split('-')[0];
+
+                getFromHQ("update", child_name, data, {
+                    unclean: (res) => {
+                        if (res == "updated") {
+                            arr.forEach((tag) => {
+                                tag.contentEditable = false;
+                            });
+                            tic.children[0].className = tic.children[0].className.replace(
+                                "fa-check",
+                                "fa-pencil"
+                            );
+                            x.children[0].className = x.children[0].className.replace(
+                                "fa-close",
+                                "fa-trash"
+                            );
+
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: `${humanize(child_name)} updated successfully`,
+                                text: "Your changes have been saved.",
+                                showConfirmButton: false,
+                                timer: 2000
+                            })
+                        } else if (res == "update unsuccessful") {
+                            Swal.fire(
+                                "Was not Modified!",
+                                "Your changes have not been saved.",
+                                "error"
+                            );
+                            deleteRow(evt);
+                        }
+                    },
+                });
+            }
+
+            if (submit) {
+                behavior()
+            }
+            else {
+                Swal.fire({
+                    title: "Are you sure you want to edit this row?",
+                    text: "You won't be able to revert this!",
+                    icon: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#3085d6",
+                    cancelButtonColor: "#d33",
+                    confirmButtonText: "Yes, modify it!",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        behavior()
+                    } else {
+                        deleteRow(evt);
+                    }
+                });
+            }
         }
     };
 }

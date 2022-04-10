@@ -200,7 +200,7 @@ class Question extends Table
     // this is what we'll interact with the rest is just jargon
     public string $text;
     public int $active;
-    public ?int $topic_id;
+    public ?string $topic_id;
     public ?Topic $topic;
     public ?array $choices;
     public array $dependents = ['Choice', 'Student_Exam_Has_Question'];
@@ -266,7 +266,10 @@ class Choice extends Table
             $cols = Choice::SQL_Columns();
             if (properties_exists($stdClass, $cols, $prefix)) {
                 foreach ($cols as $col) {
-                    $this->$col = $stdClass->{$prefix . $col};
+                    if ($col == "is_correct")
+                        $this->$col = ($stdClass->{$prefix . $col} == 1) ? 1 : 0;
+                    else
+                        $this->$col = $stdClass->{$prefix . $col};
                 }
             }
         }
@@ -613,7 +616,7 @@ class Student_Exam extends Table
     public string $date;
     public int $exam_id;
     public int $exam_center_id;
-    public ?int $student_id;
+    public ?string $student_id;
     public string $qs_hash;
     public ?int $grade;
     public ?Exam $exam;

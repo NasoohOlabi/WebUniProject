@@ -14,7 +14,7 @@
             } elseif ($func === 'active') {
                 echo '<input type="hidden" name="active" value="1">';
             } elseif ($func === 'select') {
-                datalist_input($field, $SELECT_OPTIONS[$field], str_replace("_id", "", ucfirst($field)));
+                select_input($field, $SELECT_OPTIONS[$field], str_replace("_id", "", ucfirst($field)));
             }
         }
 

@@ -122,8 +122,11 @@ function readInputs(form) {
      * @type {{[index:string]:string}}
      */
     const dic = {};
-    form.querySelectorAll("input").forEach(elem => {
-        dic[elem.name] = elem.value.trim();
+    form.querySelectorAll("input:not(input[type=radio])").forEach(elem => {
+        dic[elem.name] = (elem.label && elem.label.trim()) || elem.value.trim();
+    })
+    form.querySelectorAll("input[type=radio]").forEach(elem => {
+        dic[elem.name] = elem.checked;
     })
     form.querySelectorAll("select").forEach(elem => {
         dic[elem.name] = elem.value.trim();
@@ -180,7 +183,7 @@ function isValidForm(form_obj) {
  * @returns 
  */
 function formNameInScope(scope) {
-    if (scope) 
+    if (scope)
         return scope.querySelector("h1").innerText
 }
 function showErrorMsgUnderThisElem(elem, error_msg = null) {
@@ -208,7 +211,7 @@ function removeErrorMsgUnderThisElem(elem) {
  */
 function showFormStatus(flags, scopeElement, Touched = {}) {
     scopeElement.querySelectorAll(".text-input").forEach(elem => {
-        if (Touched[elem.id + " is Touched"] && !flags[elem.id]) {
+        if (Touched[elem.id + " is Touched"] && Object.keys(flags).includes(elem.id) && !flags[elem.id]) {
             showErrorMsgUnderThisElem(elem);
         } else {
             removeErrorMsgUnderThisElem(elem);

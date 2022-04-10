@@ -144,6 +144,7 @@ section::-webkit-scrollbar {
 body {
   margin: 0;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  min-width: 350px;
 }
 a {
   text-decoration: none;
@@ -163,6 +164,7 @@ aside {
 #main-content {
   width: 100%;
   min-width: 300px;
+  height: 100%;
   display: flex;
   min-height: calc(100vh - var(--navbar-height));
   flex-direction: column;

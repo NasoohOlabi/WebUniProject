@@ -16,6 +16,16 @@
         <?= (Language::$direction === 'ltr') ? 'right' : 'left' ?>: 0;
     }
 </style>
+<script>
+    function radio(e) {
+        if (e.checked) {
+            document.querySelectorAll('input[name=\'is_correct\']').forEach((el) => {
+                el.checked = false;
+            });
+            e.checked = true;
+        }
+    }
+</script>
 <div id="main-content" class="inlineBlock">
     <div id="sub-nav">
         <a href="<?= URL ?>dashboard">
@@ -104,6 +114,9 @@
 
                     if (lst.length === 0) {
                         Swal.fire("Created!", `${n1.replace('_',' ')} was easily created.`, "success");
+                        document.querySelectorAll('input, select').forEach(input => {
+                            input.value = ''
+                        })
                         return
                     }
 
@@ -136,6 +149,9 @@
                                 }
                             } else {
                                 Swal.fire("Created!", `${n1.replace('_',' ')} was easily created.`, "success");
+                                document.querySelectorAll('input , select').forEach(input => {
+                                    input.value = ''
+                                })
                             }
                         })
                     })
