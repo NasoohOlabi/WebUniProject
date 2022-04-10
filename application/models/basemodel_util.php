@@ -75,13 +75,17 @@ function _parse_unsafe_term(array $x)
     $key = array_keys($x)[0];
     $val = $x[$key];
     // simpleLog(json_encode($x));
-    return ['prepare' => "$key " . (isset($x['op']) ? $x['op'] : '=') . " ?", 'execute' => $val];
+    if ($val === null)
+        return ['prepare' => "$key " . (isset($x['op']) ? $x['op'] : '=') . " null"];
+    else
+        return ['prepare' => "$key " . (isset($x['op']) ? $x['op'] : '=') . " ?", 'execute' => $val];
 }
 function _parse_WHERE_conditions(array $WHERE_conditions)
 {
     $f = function (array $acc, array $v) {
         $acc['prepare'][] = $v['prepare'];
-        $acc['execute'][] = $v['execute'];
+        if (isset($v['execute']))
+            $acc['execute'][] = $v['execute'];
         return $acc;
     };
     $answer = ['prepare' => [], 'execute' => []];

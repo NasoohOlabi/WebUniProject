@@ -324,28 +324,28 @@ class Api extends Controller
 			$_POST = json_decode(file_get_contents("php://input"), true);
 
 		try {
-			if (isset($_POST['ids'])) {
-				if (isset($_SESSION['user']) && $schemaClass === 'user' && in_array($_SESSION['user']->id, $_POST['ids'])) {
-					echo 'Operation Failed : You Can\'t delete yourself from here!';
-				} else {
-					try {
-						$Model
-							= $this->loadModel('BaseModel');
-						if ($Model->wipeByIds($schemaClass, $_POST['ids']))
-							echo 'deleted';
-						else
-							echo 'Operation Failed: unsuccessful';
+		if (isset($_POST['ids'])) {
+			if (isset($_SESSION['user']) && $schemaClass === 'user' && in_array($_SESSION['user']->id, $_POST['ids'])) {
+				echo 'Operation Failed : You Can\'t delete yourself from here!';
+			} else {
+				try {
+				$Model
+					= $this->loadModel('BaseModel');
+				if ($Model->wipeByIds($schemaClass, $_POST['ids']))	
+				echo 'deleted';
+				else
+					echo 'Operation Failed: unsuccessful';
 					} catch (AccessDeniedException $e) {
 						simpleLog('Caught exception: ' . $e->getMessage(), 'api/delete');
 						echo 'Operation Failed : ' . $e->getMessage();
 					} catch (\Throwable $e) {
-						simpleLog('Caught exception: ' . $e->getMessage(), 'api/delete');
-						echo 'Operation Failed : ' . $e->getMessage();
-					}
+				simpleLog('Caught exception: ' . $e->getMessage(), 'api/delete');
+					echo 'Operation Failed : ' . $e->getMessage();
 				}
-			} else {
-				echo 'Operation Failed : No IDs provided';
 			}
+		} else {
+			echo 'Operation Failed : No IDs provided';
+		}
 		} catch (AccessDeniedException $e) {
 			simpleLog('Caught exception: ' . $e->getMessage(), 'api/delete');
 			echo 'Operation Failed : ' . $e->getMessage();
