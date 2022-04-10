@@ -618,7 +618,7 @@ class Student_Exam extends Table
     public int $exam_center_id;
     public ?string $student_id;
     public string $qs_hash;
-    public ?int $grade;
+    public ?float $grade;
     public ?Exam $exam;
     public ?Exam_Center $exam_center;
     public ?Student $student;

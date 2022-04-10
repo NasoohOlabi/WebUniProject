@@ -259,17 +259,16 @@ class ExamModel extends BaseModel
         }
 
         $student_id = $this->select([], 'student', [Student::user_id => $_SESSION['user']->id])[0]->id;
-
-        // var_dump($student_id);
-
         $curDate = date("Y-m-d");
-
-        $this->update("student_exam", $student_exam->id, (object) ["date" => $curDate, "student_id" => $student_id, "exam_center_id" => $exam_center_id]);
-
+        simpleLog($this->update("student_exam", $student_exam->id, (object) ["date" => $curDate, "student_id" => $student_id, "exam_center_id" => $exam_center_id]));
         $_SESSION['inExam'] = true;
         $_SESSION['Exam'] = $student_exam;
         $questions = $this->select([], 'student_exam_has_question', [Student_Exam_Has_Question::student_exam_id => $student_exam->id]);
         shuffle($questions);
         $_SESSION['ExamQuestions'] = $questions;
+        $question_mark = 100 / sizeof($_SESSION['ExamQuestions']);
+        $_SESSION['MarksPerQuestion'] = $question_mark;
+        $_SESSION['examGrade'] = 0.0;
+        $_SESSION['studentChoices'] = [];
     }
 }

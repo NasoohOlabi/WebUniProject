@@ -225,7 +225,7 @@ CREATE TABLE IF NOT EXISTS `student_exam` (
   `exam_center_id` INT(11) NOT NULL,
   `student_id` INT(11),
   `qs_hash` VARCHAR(50) NOT NULL,
-  `grade` INT UNSIGNED NULL,
+  `grade` FLOAT UNSIGNED NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_exam_center_has_exam_exams1_idx` (`exam_id` ASC),
   INDEX `fk_exam_center_has_exam_exam_centers1_idx` (`exam_center_id` ASC),
@@ -327,7 +327,7 @@ DEFAULT CHARACTER SET = utf8mb4;
 DROP TABLE IF EXISTS `student_exam_has_choice` ;
 
 CREATE TABLE IF NOT EXISTS `student_exam_has_choice` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `student_exam_id` INT(11) NOT NULL,
   `choice_id` INT(11) NOT NULL,
   PRIMARY KEY (`id`),

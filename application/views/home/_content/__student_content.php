@@ -5,12 +5,30 @@
         window.location = `<?= URL ?>exams/startExam?data=${selects[0].selectedIndex}-${selects[1].selectedIndex}`
     }
 
-    if (<?php echo (isset($_GET['op_success']) && $_GET['op_success']) ? ("true") : "false" ?>) {
-        success();
+    function viewResult() {
+        grade = <?= isset($_SESSION['examGrade']) ? round($_SESSION['examGrade'], 2) . ";" : "null;" ?>
+        msgText = "Your exam has finished. Score =  " + grade + "/100.\nWould You like to review your answers?"
+
+        Swal.fire({
+            title: "Exam Finished",
+            text: msgText,
+            icon: "info",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Review Exam",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location = "<?= URL ?>exams/reviewExam";
+            } else {
+                window.location = "<?= URL ?>exams/unsetExam";
+            }
+        });
+
     }
 
-    if (<?php echo (isset($_GET['op_success']) && !$_GET['op_success']) ? ("true") : "false" ?>) {
-        failure();
+    if (<?php echo (isset($_GET['exam_finished']) && isset($_SESSION['examGrade'])) ? ("true") : "false" ?>) {
+        viewResult();
     }
 </script>
 <div class="user-content">

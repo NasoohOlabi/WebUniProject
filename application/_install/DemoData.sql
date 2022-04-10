@@ -88,6 +88,7 @@ INSERT INTO `permission` (`id`, `name`) VALUES
 (40,'read_student_exam_has_question'),
 (41,'read_student_exam_has_choice'),
 (42, 'write_student_exam'),
+(43, 'create_student_exam_has_choice'),
 (36, 'write_user');
 -- max id: 41
 
@@ -199,7 +200,10 @@ INSERT INTO `role_has_permission` (`id`, `role_id`, `permission_id`) VALUES
 (49, 2, 42),
 (50, 2, 39),
 (51, 2, 26),
-(52, 2, 25);
+(52, 2, 25),
+(53, 2, 43),
+(54, 2, 28),
+(55, 2, 24);
 
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `profile_picture`, `role_id`) VALUES
 (1, 'NasoohOlabi', '81dc9bdb52d04dc20036dbd8313ed055', 'Nasooh', 'Olabi', 'Yaser', 'NasoohOlabi.jpg', 1),
@@ -235,7 +239,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `mi
 
 
 INSERT INTO `student` (`id`, `enroll_date`, `user_id`) VALUES
-(1, '2022-04-12', 5);
+(1, '2022-04-12', 5), (2, '2022-04-01', 24);
 
 
 INSERT INTO `exam_center` (`id`, `name`, `description`,`user_id`) VALUES

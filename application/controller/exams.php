@@ -18,20 +18,27 @@ class Exams extends Controller
             return;
         }
 
-        if ($question_index + 1 > sizeof($_SESSION['ExamQuestions']))
+        if ($question_index != 0 && (!isset($_SESSION['curQuestionIndex']) || $_SESSION['curQuestionIndex'] != $question_index - 1)) {
+            http_response_code(404);
+            return;
+        }
+
+        if ($question_index == sizeof($_SESSION['ExamQuestions'])) {
             $this->endExam();
+            return;
+        }
+
+        if ($question_index > sizeof($_SESSION['ExamQuestions'])) {
+            http_response_code(404);
+            return;
+        }
 
         $curQuestion = $_SESSION['ExamQuestions'][$question_index];
-
-        var_dump($curQuestion);
-
+        $_SESSION['curQuestionIndex'] = $question_index;
         $curQuestionInfo = $exam_model->select([], 'question', [Question::id => $curQuestion->question_id])[0];
-
-        var_dump($curQuestionInfo);
-
-        $question_text = $curQuestionInfo->text;
-        $question_mark = $curQuestionInfo->text;
-
+        $curQuestionInfo->choices = $exam_model->select([], 'choice', [Choice::question_id => $curQuestion->question_id]);
+        $reviewMode = (isset($_SESSION['reviewExam']) && $_SESSION['reviewExam']) ? true : false;
+        $studentChoice = $reviewMode ? intval(explode('-', $_SESSION['studentChoices'][$question_index])[1]) : null;
 
         pageHeadTag("Exam");
         require 'application/views/_templates/user_navbar.php';
@@ -74,8 +81,6 @@ class Exams extends Controller
     public function startExam()
     {
 
-        ob_start();
-
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
@@ -94,10 +99,6 @@ class Exams extends Controller
 
         $em->loadExam(intval($ids[0]), intval($ids[1]));
 
-        while (ob_get_status()) {
-            ob_end_clean();
-        }
-
         header('Location: ' . URL . 'exams/index/0');
     }
 
@@ -109,16 +110,18 @@ class Exams extends Controller
 
         $exam_model = $this->loadModel('ExamModel');
 
-        if (!$exam_model->inExam()) {
+        if (!$exam_model->inExam() || ($_SESSION['curQuestionIndex'] + 1 != sizeof($_SESSION['ExamQuestions']))) {
             http_response_code(403);
             return;
         }
 
-
-
-        /* ... */
-
-        unset($_SESSION['inExam']);
+        if (isset($_SESSION['reviewExam']) && $_SESSION['reviewExam']) {
+            header('Location: ' . URL . 'exams/unsetExam');
+        } else {
+            $student_exam = $_SESSION['Exam'];
+            $exam_model->update("student_exam", $student_exam->id, (object) ["grade" => round($_SESSION['examGrade'], 2)]);
+            header('Location: ' . URL . "index?exam_finished=true");
+        }
     }
 
     public function generateExam()
@@ -143,5 +146,83 @@ class Exams extends Controller
         }
 
         header('Location: ' . URL . "index?op_success=$success");
+    }
+
+    public function nextQuestion()
+    {
+
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $exam_model = $this->loadModel('ExamModel');
+
+        if (!$exam_model->inExam() || !isset($_SESSION['curQuestionIndex'])) {
+            http_response_code(403);
+            return;
+        }
+
+        $next_question_index = $_SESSION['curQuestionIndex'] + 1;
+
+        if (!$_POST || (isset($_SESSION['reviewExam']) && $_SESSION['reviewExam'])) {
+            header('Location: ' . URL . "exams/index/$next_question_index");
+            array_push($_SESSION['studentChoices'], -1);
+            simpleLog("Empty selection or review mode is enabled");
+        }
+
+        $answer_choice_id = explode('-', $_POST[array_key_first($_POST)])[1];
+
+        $answer = new Student_Exam_Has_Choice();
+        $answer->student_exam_id = $_SESSION['Exam']->id;
+        $answer->choice_id = $answer_choice_id;
+
+        simpleLog($exam_model->insert($answer));
+
+        array_push($_SESSION['studentChoices'], $_POST[array_key_first($_POST)]);
+
+        $is_correct =
+            $exam_model->select([], 'choice', [Choice::id => $answer_choice_id])[0]->is_correct;
+
+        if ($is_correct) {
+            $_SESSION['examGrade'] += $_SESSION['MarksPerQuestion'];
+        }
+
+        header('Location: ' . URL . "exams/index/$next_question_index");
+    }
+
+    public function unsetExam()
+    {
+
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        unset($_SESSION['inExam']);
+        unset($_SESSION['Exam']);
+        unset($_SESSION['ExamQuestions']);
+        unset($_SESSION['MarksPerQuestion']);
+        unset($_SESSION['examGrade']);
+        unset($_SESSION['studentChoices']);
+        unset($_SESSION['curQuestionIndex']);
+        unset($_SESSION['reviewExam']);
+
+        header('Location: ' . URL);
+    }
+
+    public function reviewExam()
+    {
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        $exam_model = $this->loadModel('ExamModel');
+
+        if (!$exam_model->inExam() || !isset($_SESSION['curQuestionIndex'])) {
+            http_response_code(403);
+            return;
+        }
+
+        $_SESSION['reviewExam'] = true;
+        header('Location: ' . URL . "exams/index/0");
     }
 }
