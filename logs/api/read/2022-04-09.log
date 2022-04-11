@@ -1,0 +1,2053 @@
+[09-Apr-2022 04:07:09 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:07:12 Europe/Berlin] more is requested specifically after 9
+[09-Apr-2022 04:07:12 Europe/Berlin] $_POST {"op":"get after","id":9} served
+[09-Apr-2022 04:10:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:11:58 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:11:59 Europe/Berlin] more is requested specifically after 9
+[09-Apr-2022 04:11:59 Europe/Berlin] $_POST {"op":"get after","id":9} served
+[09-Apr-2022 04:12:17 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:12:20 Europe/Berlin] more is requested specifically after 9
+[09-Apr-2022 04:12:20 Europe/Berlin] $_POST {"op":"get after","id":9} served
+[09-Apr-2022 04:13:03 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:13:03 Europe/Berlin] more is requested specifically after 9
+[09-Apr-2022 04:13:03 Europe/Berlin] $_POST {"op":"get after","id":9} served
+[09-Apr-2022 04:13:22 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:13:27 Europe/Berlin] more is requested specifically after 9
+[09-Apr-2022 04:13:27 Europe/Berlin] $_POST {"op":"get after","id":9} served
+[09-Apr-2022 04:13:53 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:15:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:17:02 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:17:11 Europe/Berlin] more is requested specifically after 9
+[09-Apr-2022 04:17:11 Europe/Berlin] $_POST {"op":"get after","id":9} served
+[09-Apr-2022 04:17:24 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:18:25 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:18:39 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:18:53 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:20:04 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:20:05 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:20:15 Europe/Berlin] more is requested specifically after 9
+[09-Apr-2022 04:20:15 Europe/Berlin] $_POST {"op":"get after","id":9} served
+[09-Apr-2022 04:22:29 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:22:36 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:22:44 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:23:13 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:23:20 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:23:31 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:24:06 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:24:58 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:25:20 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:25:34 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:26:17 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:26:59 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:29:15 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:30:03 Europe/Berlin] more is requested specifically after 2
+[09-Apr-2022 04:30:03 Europe/Berlin] $_POST {"op":"get after","id":2} served
+[09-Apr-2022 04:35:17 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:43:48 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:47:01 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:47:11 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:47:21 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:48:02 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:48:10 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:48:27 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:50:58 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:51:05 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:51:16 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:51:25 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:51:31 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:51:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:52:00 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:52:09 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:52:15 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:52:22 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:52:36 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:52:52 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:53:34 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:56:22 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:57:49 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:58:19 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:58:32 Europe/Berlin] more is requested specifically after 2
+[09-Apr-2022 04:58:32 Europe/Berlin] $_POST {"op":"get after","id":2} served
+[09-Apr-2022 04:59:43 Europe/Berlin] $_POST [] served
+[09-Apr-2022 04:59:54 Europe/Berlin] more is requested specifically after 2
+[09-Apr-2022 04:59:54 Europe/Berlin] $_POST {"op":"get after","id":2} served
+[09-Apr-2022 05:00:22 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:03:49 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:09:41 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:09:49 Europe/Berlin] more is requested specifically after 2
+[09-Apr-2022 05:09:49 Europe/Berlin] $_POST {"op":"get after","id":2} served
+[09-Apr-2022 05:10:04 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:10:14 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:10:17 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 05:10:17 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 05:10:18 Europe/Berlin] more is requested specifically after 21
+[09-Apr-2022 05:10:18 Europe/Berlin] $_POST {"op":"get after","id":21} served
+[09-Apr-2022 05:12:13 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:12:14 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 05:12:14 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 05:14:47 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:15:00 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:15:10 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:15:17 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:15:24 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:20:19 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:21:48 Europe/Berlin] more is requested specifically after 29
+[09-Apr-2022 05:21:48 Europe/Berlin] $_POST {"op":"get after","id":29} served
+[09-Apr-2022 05:21:48 Europe/Berlin] more is requested specifically after 31
+[09-Apr-2022 05:21:48 Europe/Berlin] $_POST {"op":"get after","id":31} served
+[09-Apr-2022 05:22:16 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:22:20 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:22:28 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 05:22:28 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 05:33:14 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:33:16 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 05:33:16 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 05:34:19 Europe/Berlin] $_POST [] served
+[09-Apr-2022 05:34:22 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 05:34:22 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 06:22:17 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:22:18 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 06:22:18 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 06:24:39 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:24:40 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 06:24:40 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 06:25:55 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:25:58 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 06:25:59 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 06:26:06 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:26:07 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 06:26:07 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 06:27:26 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:27:28 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 06:27:28 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 06:28:49 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:29:02 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:29:13 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:29:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:29:37 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:29:39 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:29:40 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:29:44 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:30:03 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:30:06 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:30:21 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:30:22 Europe/Berlin] more is requested specifically after 9
+[09-Apr-2022 06:30:22 Europe/Berlin] $_POST {"op":"get after","id":9} served
+[09-Apr-2022 06:31:26 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:31:46 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:31:50 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:32:01 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:32:03 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:32:04 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 06:32:04 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 06:32:17 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:35:55 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:36:24 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:38:34 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:38:34 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:38:40 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:38:40 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:38:49 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:38:49 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:38:53 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:38:53 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:38:55 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 06:39:04 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:39:04 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:39:06 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 06:39:17 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:39:17 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:39:32 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:39:32 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:39:33 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:39:33 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:39:35 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:39:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:39:37 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:39:37 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:39:38 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:39:38 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:41:58 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:41:58 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 06:41:58 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 06:41:59 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:41:59 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:42:00 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:42:00 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 06:42:00 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 06:42:02 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:42:02 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:42:04 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 06:42:04 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 06:42:06 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 06:43:02 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:43:02 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:43:14 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:43:15 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:45:13 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:45:13 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:45:15 Europe/Berlin] schemaClass role_has_permission && field_or_id permission_id && is_string(permission_id) 1 && needle 2
+[09-Apr-2022 06:45:22 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 06:49:21 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:49:21 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:49:23 Europe/Berlin] schemaClass role_has_permission && field_or_id permission_id && is_string(permission_id) 1 && needle 1
+[09-Apr-2022 06:51:30 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:51:30 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:51:32 Europe/Berlin] schemaClass role_has_permission && field_or_id permission_id && is_string(permission_id) 1 && needle 1
+[09-Apr-2022 06:53:08 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:53:08 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:53:23 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:53:23 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:53:27 Europe/Berlin] schemaClass role_has_permission && field_or_id permission_id && is_string(permission_id) 1 && needle 1
+[09-Apr-2022 06:55:50 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:55:50 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:55:54 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:55:54 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:55:57 Europe/Berlin] schemaClass role_has_permission && field_or_id permission_id && is_string(permission_id) 1 && needle 1
+[09-Apr-2022 06:55:58 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 06:56:03 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 06:56:04 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 06:56:19 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:56:19 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:57:57 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:57:57 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:58:00 Europe/Berlin] schemaClass role_has_permission && field_or_id permission_id && is_string(permission_id) 1 && needle 1
+[09-Apr-2022 06:58:02 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 06:58:12 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:58:12 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:58:14 Europe/Berlin] schemaClass role_has_permission && field_or_id permission_id && is_string(permission_id) 1 && needle 1
+[09-Apr-2022 06:58:17 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 06:59:48 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 06:59:48 Europe/Berlin] $_POST [] served
+[09-Apr-2022 06:59:50 Europe/Berlin] schemaClass role_has_permission && field_or_id permission_id && is_string(permission_id) 1 && needle 1
+[09-Apr-2022 06:59:53 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 07:00:13 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:00:13 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:00:15 Europe/Berlin] schemaClass role_has_permission && field_or_id permission_id && is_string(permission_id) 1 && needle 1
+[09-Apr-2022 07:00:17 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 07:00:27 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:00:27 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:02:02 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:02:02 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:02:10 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:02:10 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:02:12 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:02:12 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:02:13 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:02:13 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:02:16 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:02:16 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:02:17 Europe/Berlin] schemaClass user && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 07:02:27 Europe/Berlin] schemaClass user && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 07:02:29 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:02:29 Europe/Berlin] more is requested specifically after 9
+[09-Apr-2022 07:02:29 Europe/Berlin] $_POST {"op":"get after","id":9} served
+[09-Apr-2022 07:03:19 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 07:04:20 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:04:20 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:04:22 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:04:22 Europe/Berlin] more is requested specifically after 9
+[09-Apr-2022 07:04:22 Europe/Berlin] $_POST {"op":"get after","id":9} served
+[09-Apr-2022 07:04:31 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 07:04:41 Europe/Berlin] schemaClass user && field_or_id 1 && is_string(1) 1 && needle 
+[09-Apr-2022 07:04:45 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:04:45 Europe/Berlin] $_POST null served
+
+[09-Apr-2022 07:06:55 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:06:55 Europe/Berlin] PHP Notice:  Undefined variable: e in C:\xampp\htdocs\mnu\index.php on line 135
+[09-Apr-2022 07:06:55 Europe/Berlin] $_POST null failed Caught exception: Call to a member function getTraceAsString() on null
+[09-Apr-2022 07:07:26 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:07:26 Europe/Berlin] $_POST null served
+[09-Apr-2022 07:10:54 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:10:54 Europe/Berlin] $_POST null failed Caught exception: You Can't Read users
+[09-Apr-2022 07:11:37 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 07:13:55 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 07:14:47 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 07:15:23 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:15:23 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 07:15:23 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 07:15:33 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:15:33 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:15:39 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 07:15:50 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:15:50 Europe/Berlin] $_POST [] failed Caught exception: You Can't Read roles
+[09-Apr-2022 07:23:23 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:23:23 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:23:24 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:23:24 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:23:26 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 07:23:37 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:23:37 Europe/Berlin] $_POST [] failed Caught exception: You Can't Read roles
+[09-Apr-2022 07:26:10 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:26:10 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:26:11 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:26:11 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:26:14 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 07:27:58 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:27:58 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:28:00 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 07:28:00 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:28:00 Europe/Berlin] more is requested specifically after 9
+[09-Apr-2022 07:28:00 Europe/Berlin] $_POST {"op":"get after","id":9} served
+[09-Apr-2022 07:28:09 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:28:09 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:28:12 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:28:12 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:28:51 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:28:51 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:29:05 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:29:05 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:29:07 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:29:07 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:29:11 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:29:11 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 07:29:12 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 07:29:21 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:29:21 Europe/Berlin] more is requested specifically after 21
+[09-Apr-2022 07:29:21 Europe/Berlin] $_POST {"op":"get after","id":21} served
+[09-Apr-2022 07:30:26 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:30:26 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:30:27 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:30:27 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 07:30:27 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 07:32:02 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:32:03 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:32:03 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:32:03 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 07:32:03 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 07:32:58 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:32:58 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:33:00 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:33:00 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 07:33:00 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 07:33:17 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:33:17 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:33:18 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:33:18 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 07:33:18 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 07:34:01 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:34:01 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:34:02 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:34:02 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 07:34:02 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 07:34:46 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:34:46 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:34:47 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:34:47 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 07:34:48 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 07:36:33 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:36:33 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:36:34 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:36:34 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 07:36:34 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 07:37:19 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:37:19 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:37:20 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:37:20 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 07:37:20 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 07:42:22 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:42:22 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:42:23 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:42:23 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 07:42:23 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 07:45:30 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:45:30 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:45:31 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:45:31 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 07:45:31 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 07:50:53 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:50:53 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:50:54 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:50:54 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 07:50:54 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 07:51:10 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:51:10 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:51:12 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:51:12 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 07:51:12 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 07:58:15 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:58:15 Europe/Berlin] $_POST [] served
+[09-Apr-2022 07:58:16 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 07:58:16 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 07:58:16 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 08:02:15 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:02:15 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:02:21 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:02:21 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 08:02:21 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 08:28:16 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:28:17 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:28:18 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:28:18 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 08:28:18 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 08:28:52 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:28:53 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:29:22 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:29:22 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:29:24 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:29:24 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 08:29:24 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 08:29:29 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:29:29 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:29:35 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:29:35 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:29:35 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:29:35 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:29:38 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:29:38 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:29:38 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:29:38 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:30:59 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:30:59 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:31:05 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:31:05 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:31:07 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:31:07 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:31:07 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:31:07 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:32:29 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:32:29 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:32:36 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:32:36 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:33:35 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:33:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:33:45 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 1
+[09-Apr-2022 08:33:45 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 1
+[09-Apr-2022 08:33:47 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 1
+[09-Apr-2022 08:33:47 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 1
+[09-Apr-2022 08:33:47 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 1
+[09-Apr-2022 08:33:47 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 1
+[09-Apr-2022 08:33:55 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 1
+[09-Apr-2022 08:33:55 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 1
+[09-Apr-2022 08:33:55 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 1
+[09-Apr-2022 08:33:55 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 1
+[09-Apr-2022 08:34:35 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:34:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:34:40 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:34:40 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 08:34:40 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 08:34:42 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:34:43 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:34:44 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:34:44 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 08:34:44 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 08:34:50 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:34:50 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:35:47 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:35:47 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:35:48 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:35:48 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 08:35:48 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 08:35:55 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:35:55 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:36:20 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:36:20 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:36:21 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:36:21 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 08:36:22 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 08:36:27 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:36:27 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:36:33 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:36:33 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:36:33 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:36:33 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:36:37 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:36:37 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:36:37 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:36:38 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:36:41 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:36:41 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:36:42 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:36:42 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 08:36:42 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 08:36:51 Europe/Berlin] schemaClass student && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:36:51 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:36:57 Europe/Berlin] schemaClass student && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:36:57 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:48:34 Europe/Berlin] schemaClass student && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:48:34 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:48:47 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:48:47 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:48:49 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:48:49 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 08:48:49 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 08:48:58 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:48:58 Europe/Berlin] more is requested specifically after 21
+[09-Apr-2022 08:48:58 Europe/Berlin] $_POST {"op":"get after","id":21} served
+[09-Apr-2022 08:49:34 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:49:34 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:49:36 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:49:36 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 08:49:36 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 08:49:42 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:49:42 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:50:27 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:50:27 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:50:28 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:50:28 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 08:50:28 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 08:50:33 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:50:33 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:51:14 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:51:14 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:51:15 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:51:15 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 08:51:15 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 08:51:20 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:51:20 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:53:13 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:53:13 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:53:14 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:53:14 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 08:53:14 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 08:53:19 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:53:20 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 08:53:35 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:53:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 08:53:42 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 08:53:42 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 08:53:42 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 08:53:42 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 08:59:55 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 08:59:55 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:00:08 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:00:08 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:00:16 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:01:30 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:01:30 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:01:40 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:01:40 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:02:14 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:02:14 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:02:20 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:02:20 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:06:15 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:06:15 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:06:22 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:06:22 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:06:26 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 09:06:26 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 09:06:26 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 09:07:23 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:07:23 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:07:32 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:07:32 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:07:42 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:07:42 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:07:49 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 09:07:49 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 09:07:54 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:07:54 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:07:58 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:07:58 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:08:14 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:08:14 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:08:22 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 09:08:22 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 09:08:22 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 09:08:52 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:08:52 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:10:31 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:10:31 Europe/Berlin] more is requested specifically after 22
+[09-Apr-2022 09:10:31 Europe/Berlin] $_POST {"op":"get after","id":22} served
+[09-Apr-2022 09:15:39 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:15:39 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:16:01 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:16:01 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:17:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 09:17:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 09:17:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 09:17:25 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:17:25 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:22:00 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:22:00 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:22:06 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:22:52 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:22:52 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:22:58 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:22:59 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:23:01 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 09:23:01 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 09:23:01 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 09:23:03 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:23:03 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:26:43 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:26:43 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:26:52 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:26:52 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:26:54 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 09:26:54 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 09:26:55 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 09:26:59 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:26:59 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:27:48 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:27:48 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:27:58 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:27:58 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:28:02 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 09:28:02 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 09:28:02 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 09:29:12 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:29:12 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:29:18 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:29:19 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:29:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 09:29:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 09:29:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 09:29:22 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:29:22 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:32:25 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:32:25 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:32:57 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:32:57 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:33:22 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:33:22 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:34:09 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:34:09 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:35:00 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:35:00 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:35:06 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:35:06 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:35:07 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 09:35:07 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 09:35:07 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 09:35:09 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:35:09 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:36:27 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 09:36:27 Europe/Berlin] $_POST [] served
+[09-Apr-2022 09:36:33 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:36:33 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 09:36:34 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 09:36:34 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 09:36:34 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 09:36:36 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 09:36:36 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:01:04 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 10:01:04 Europe/Berlin] $_POST [] served
+[09-Apr-2022 10:01:07 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 10:01:07 Europe/Berlin] more is requested specifically after 22
+[09-Apr-2022 10:01:07 Europe/Berlin] $_POST {"op":"get after","id":22} served
+[09-Apr-2022 10:01:15 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:01:15 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:01:15 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 3
+[09-Apr-2022 10:01:15 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 3
+[09-Apr-2022 10:01:17 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 10:01:17 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 10:01:17 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 10:01:17 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 5
+[09-Apr-2022 10:01:21 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:01:21 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:04:30 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 10:04:30 Europe/Berlin] $_POST [] served
+[09-Apr-2022 10:04:36 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:04:36 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:04:37 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 10:04:37 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 10:04:38 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 10:04:39 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:04:39 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:04:39 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 10:06:21 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 10:06:21 Europe/Berlin] $_POST [] served
+[09-Apr-2022 10:06:25 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:06:49 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 10:06:49 Europe/Berlin] $_POST [] served
+[09-Apr-2022 10:06:55 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:06:55 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:06:56 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 10:06:56 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 10:06:56 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 10:06:58 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:06:58 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:06:58 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 10:10:36 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 10:10:36 Europe/Berlin] $_POST [] served
+[09-Apr-2022 10:11:20 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:11:20 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:11:21 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 10:11:21 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 10:11:21 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 10:11:23 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:11:23 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:11:23 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 10:12:43 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 10:12:43 Europe/Berlin] $_POST [] served
+[09-Apr-2022 10:12:50 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:12:51 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:12:51 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 10:12:51 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 10:12:51 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 10:12:53 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:12:53 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:12:53 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 10:13:29 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 10:13:29 Europe/Berlin] $_POST [] served
+[09-Apr-2022 10:13:35 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:13:35 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:13:36 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 10:13:36 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 10:13:36 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 10:13:38 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:13:38 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:13:38 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 10:14:26 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 10:14:26 Europe/Berlin] $_POST [] served
+[09-Apr-2022 10:14:32 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:14:32 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:14:33 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 10:14:33 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 10:14:33 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 10:14:34 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:14:34 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:14:34 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 10:17:50 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 10:17:50 Europe/Berlin] $_POST [] served
+[09-Apr-2022 10:17:55 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:17:55 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:17:56 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 10:17:57 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 10:17:57 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 10:17:58 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:17:58 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:17:58 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 10:20:28 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 10:20:28 Europe/Berlin] $_POST [] served
+[09-Apr-2022 10:20:34 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:20:34 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:20:35 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 10:20:35 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 10:20:35 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 10:20:36 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:20:36 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:20:36 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 10:21:55 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 10:21:55 Europe/Berlin] $_POST [] served
+[09-Apr-2022 10:22:02 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:22:02 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:22:03 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 10:22:03 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 10:22:03 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 10:22:04 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:22:04 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:22:04 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 10:23:30 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 10:23:30 Europe/Berlin] $_POST [] served
+[09-Apr-2022 10:23:36 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:23:36 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:23:37 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 10:23:37 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 10:23:37 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 10:23:38 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:23:39 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:23:39 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 10:24:44 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 10:24:44 Europe/Berlin] $_POST [] served
+[09-Apr-2022 10:24:50 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:24:50 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 10:24:52 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 10:24:52 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 10:24:52 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 10:24:54 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:24:54 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 10:24:54 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:10:06 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:10:07 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:10:08 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:10:08 Europe/Berlin] more is requested specifically after 22
+[09-Apr-2022 11:10:08 Europe/Berlin] $_POST {"op":"get after","id":22} served
+[09-Apr-2022 11:10:08 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:10:08 Europe/Berlin] more is requested specifically after 22
+[09-Apr-2022 11:10:08 Europe/Berlin] $_POST {"op":"get after","id":22} served
+[09-Apr-2022 11:10:08 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:10:08 Europe/Berlin] more is requested specifically after 22
+[09-Apr-2022 11:10:08 Europe/Berlin] $_POST {"op":"get after","id":22} served
+[09-Apr-2022 11:10:08 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:10:08 Europe/Berlin] more is requested specifically after 22
+[09-Apr-2022 11:10:08 Europe/Berlin] $_POST {"op":"get after","id":22} served
+[09-Apr-2022 11:10:09 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:10:09 Europe/Berlin] more is requested specifically after 22
+[09-Apr-2022 11:10:09 Europe/Berlin] $_POST {"op":"get after","id":22} served
+[09-Apr-2022 11:10:09 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:10:09 Europe/Berlin] more is requested specifically after 22
+[09-Apr-2022 11:10:09 Europe/Berlin] $_POST {"op":"get after","id":22} served
+[09-Apr-2022 11:10:09 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:10:09 Europe/Berlin] more is requested specifically after 22
+[09-Apr-2022 11:10:09 Europe/Berlin] $_POST {"op":"get after","id":22} served
+[09-Apr-2022 11:10:09 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:10:09 Europe/Berlin] more is requested specifically after 22
+[09-Apr-2022 11:10:09 Europe/Berlin] $_POST {"op":"get after","id":22} served
+[09-Apr-2022 11:10:09 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:10:09 Europe/Berlin] more is requested specifically after 22
+[09-Apr-2022 11:10:09 Europe/Berlin] $_POST {"op":"get after","id":22} served
+[09-Apr-2022 11:10:12 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 11:10:19 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:12:02 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:12:02 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:12:31 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:14:59 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:14:59 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:15:25 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:16:59 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:16:59 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:25:35 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:25:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:25:47 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:26:01 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:26:38 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:26:45 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:26:49 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:27:04 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:27:08 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:27:08 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:27:14 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 5
+[09-Apr-2022 11:27:24 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 5
+[09-Apr-2022 11:27:24 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '5')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:30:33 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 7
+[09-Apr-2022 11:30:36 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:30:36 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:30:50 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:30:50 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:30:53 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:30:53 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:30:53 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:30:55 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 5
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 5
+[09-Apr-2022 11:30:55 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '5')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 7
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 7
+[09-Apr-2022 11:30:55 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '7')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 3
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 3
+[09-Apr-2022 11:30:55 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '3')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 6
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 6
+[09-Apr-2022 11:30:55 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '6')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 8
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 8
+[09-Apr-2022 11:30:55 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '8')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 9
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 9
+[09-Apr-2022 11:30:55 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '9')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 10
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 10
+[09-Apr-2022 11:30:55 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '10')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 11
+[09-Apr-2022 11:30:55 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 11
+[09-Apr-2022 11:30:55 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '11')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:31:05 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:31:05 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:32:57 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:32:57 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:33:05 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:33:05 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:33:06 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:33:06 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:33:06 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:33:37 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:33:37 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:33:42 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:33:42 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:34:45 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:34:45 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:35:01 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:35:01 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:35:22 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:35:22 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:35:38 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:35:38 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:35:43 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:35:49 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:35:57 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:36:06 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:36:08 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:36:17 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:36:31 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:36:31 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:38:57 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 5
+[09-Apr-2022 11:39:06 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 5
+[09-Apr-2022 11:39:06 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '5')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:39:08 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:39:08 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:39:15 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:39:19 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:39:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:39:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:39:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:39:22 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:39:22 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:39:22 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:39:28 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:39:28 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:39:34 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:39:34 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:42:08 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:42:08 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:42:13 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:42:13 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:42:15 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:42:15 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:42:15 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:42:17 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:42:17 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:42:17 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:44:41 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:44:41 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:44:53 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:44:53 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:44:55 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:44:55 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:44:55 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:44:57 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:44:57 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:44:57 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:45:25 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:45:25 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:45:27 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:45:27 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:45:33 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:45:33 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:45:34 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:45:34 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:45:35 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:45:36 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:45:36 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:45:36 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:46:39 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:46:39 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:46:44 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:46:44 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:46:46 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:46:46 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:46:46 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:46:47 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:46:47 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:46:47 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:47:25 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:47:25 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:47:32 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:47:32 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:47:34 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:47:34 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:47:34 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:47:35 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:47:35 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 2
+[09-Apr-2022 11:47:35 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:230
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(324): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '2')
+#3 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#4 {main}
+[09-Apr-2022 11:48:01 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:48:01 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:52:44 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:52:44 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:52:51 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:52:51 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:52:53 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:52:53 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:52:53 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:52:58 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:52:58 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:53:31 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:53:31 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:53:45 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:53:45 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:53:46 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:53:46 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:53:46 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:53:51 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:53:51 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:54:06 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:54:06 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:54:19 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:54:19 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:54:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:54:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:54:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:55:16 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:55:16 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:55:25 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:55:26 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:55:28 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:55:28 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:55:28 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:56:32 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:56:32 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:56:38 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:56:38 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:56:41 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:56:41 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:56:41 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 11:57:09 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:57:09 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:57:41 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 11:57:41 Europe/Berlin] $_POST [] served
+[09-Apr-2022 11:57:47 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:57:47 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 11:57:50 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 11:57:50 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 11:57:50 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:05:25 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:05:25 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:08:02 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:08:02 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:08:07 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:08:07 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:08:09 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:08:09 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:08:09 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:08:15 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:08:15 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:08:21 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:08:21 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:08:23 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:08:23 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:08:23 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:08:49 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:08:49 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:08:54 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:08:54 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:08:56 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:08:56 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:08:56 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:08:59 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:08:59 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:08:59 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:09:02 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:09:02 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:09:02 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:09:03 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:09:03 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:09:03 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:09:10 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:09:10 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:09:10 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:09:53 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:09:53 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:09:53 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:12:34 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:12:34 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:12:49 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:12:49 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:12:51 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:12:51 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:12:51 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:12:54 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:12:54 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:12:54 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:12:55 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:12:56 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:12:56 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:13:19 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:13:19 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:13:32 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:13:32 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:13:39 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:13:39 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:13:40 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:13:41 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:13:41 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:13:43 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:13:43 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:13:43 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:13:44 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:13:44 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:13:44 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:13:46 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:13:46 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:13:46 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:13:48 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:13:48 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:13:48 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:14:12 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:14:12 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:14:19 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:14:19 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:14:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:14:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:14:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:14:22 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:14:22 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:14:22 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:14:26 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:14:26 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:14:26 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:14:29 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:14:29 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:14:29 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:14:31 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:14:31 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:14:31 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:14:32 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:14:32 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:14:32 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:14:33 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:14:33 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:14:33 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:14:34 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:14:34 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:14:34 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:14:39 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:14:39 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:14:39 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:17:59 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:17:59 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:18:07 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:18:07 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:18:08 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:18:09 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:18:09 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:18:18 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:18:18 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:18:18 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:18:19 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:18:19 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:18:19 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:18:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:18:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:18:20 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:18:57 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:18:57 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:19:25 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:19:25 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:19:47 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:19:47 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:19:47 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:24:42 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:24:42 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:24:42 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:24:53 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:24:53 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:24:55 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:24:55 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:24:56 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:24:56 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:24:56 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:25:03 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:25:03 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:25:03 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:26:19 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:26:19 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:26:25 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:26:25 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:26:26 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:26:26 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:26:26 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:26:28 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:26:28 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:26:28 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:26:29 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:26:29 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:26:29 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:26:30 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:26:30 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:26:30 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:29:49 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:29:49 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:29:55 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:29:55 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:29:59 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:29:59 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:31:14 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:31:14 Europe/Berlin] $_POST [] failed Caught exception: Argument 1 passed to Api::{closure}() must be an instance of Table, null given, called in C:\xampp\htdocs\mnu\application\controller\Api.php on line 171
+[09-Apr-2022 12:31:23 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:31:23 Europe/Berlin] $_POST [] failed Caught exception: Argument 1 passed to Api::{closure}() must be an instance of Table, null given, called in C:\xampp\htdocs\mnu\application\controller\Api.php on line 171
+[09-Apr-2022 12:35:17 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:35:17 Europe/Berlin] $_POST [] failed Caught exception: Typed property Question::$topic must not be accessed before initialization
+[09-Apr-2022 12:37:15 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:37:15 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:38:23 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:38:23 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:38:29 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:38:29 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:38:32 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:38:32 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:38:33 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:38:33 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:38:35 Europe/Berlin] schemaClass student && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:38:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:38:37 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:38:37 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:39:52 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:39:52 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:39:58 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:39:58 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:39:59 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:39:59 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:40:01 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:40:01 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:40:02 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:40:02 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:40:03 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:40:03 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:40:11 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:40:11 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:40:12 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:40:12 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:40:15 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:40:15 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:40:23 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:40:23 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:40:24 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:40:24 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:40:31 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:40:31 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:40:34 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:40:34 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 12:40:38 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 12:40:38 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 12:40:38 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 12:40:51 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:40:51 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:40:52 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:40:52 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:40:55 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:40:55 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:40:57 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:40:57 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:41:04 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:41:04 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:41:05 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:41:05 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 12:41:05 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 12:41:12 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 12:41:12 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 12:41:21 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:41:21 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:41:22 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:41:22 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 12:41:22 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 12:41:37 Europe/Berlin] schemaClass user && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 12:41:41 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 12:41:42 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 12:44:56 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:44:56 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:47:01 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:47:01 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:47:24 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:47:24 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:47:28 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 12:47:30 Europe/Berlin] schemaClass user && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 12:47:41 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 12:47:47 Europe/Berlin] schemaClass user && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 12:48:41 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:48:41 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:49:28 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:49:28 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:49:39 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:49:39 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 12:49:39 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 12:51:40 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:51:40 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:51:55 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:51:55 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:51:59 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:51:59 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 12:51:59 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 12:52:29 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:52:29 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:52:30 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:52:30 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 12:52:30 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 12:53:24 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:53:24 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:53:26 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:53:26 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 12:53:26 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 12:54:46 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:54:46 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:54:47 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:54:47 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 12:54:47 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 12:56:21 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:56:21 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:56:22 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:56:22 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 12:56:22 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 12:56:46 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:56:46 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:56:47 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:56:47 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 12:56:47 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 12:57:07 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:57:07 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:58:51 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:58:51 Europe/Berlin] $_POST [] served
+[09-Apr-2022 12:58:56 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:58:56 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 12:58:56 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 12:58:57 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:58:57 Europe/Berlin] more is requested specifically after 22
+[09-Apr-2022 12:58:57 Europe/Berlin] $_POST {"op":"get after","id":22} served
+[09-Apr-2022 12:59:00 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 12:59:00 Europe/Berlin] more is requested specifically after 31
+[09-Apr-2022 12:59:00 Europe/Berlin] $_POST {"op":"get after","id":31} served
+[09-Apr-2022 13:00:17 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:00:17 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:00:47 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:00:47 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:02:01 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:02:01 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:03:30 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:03:30 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:04:16 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:04:16 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:05:29 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:05:29 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:05:44 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:05:44 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:05:52 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:05:52 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:06:46 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:06:46 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:06:57 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:06:57 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:07:10 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:07:10 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:10:09 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:10:09 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:10:39 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:10:39 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:11:53 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:11:53 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:13:27 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:13:27 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:13:42 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:13:42 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:14:16 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:14:16 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:14:36 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:14:36 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:15:59 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:15:59 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:20:47 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:20:47 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:21:02 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:21:02 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:21:08 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:21:08 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 13:21:08 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 13:21:56 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:21:56 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:21:58 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:21:58 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 13:21:58 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 13:22:04 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:22:04 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:22:48 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:22:48 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:22:49 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:22:49 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 13:22:49 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 13:22:52 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:22:52 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:23:52 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:23:52 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:23:53 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:23:53 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 13:23:53 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 13:23:58 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:23:58 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:25:29 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:25:29 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:25:30 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:25:30 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 13:25:30 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 13:25:36 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:25:36 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:27:49 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:27:49 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:27:50 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:27:50 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 13:27:50 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 13:27:55 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:27:55 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:28:15 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:28:15 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:28:17 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:28:17 Europe/Berlin] more is requested specifically after 11
+[09-Apr-2022 13:28:17 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[09-Apr-2022 13:30:03 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:30:03 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:31:44 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:31:44 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:33:55 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:33:55 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:34:05 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:34:06 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:35:09 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:35:09 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:35:26 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:35:26 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:35:59 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:35:59 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:36:10 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:36:10 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:36:14 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 13:36:23 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:36:23 Europe/Berlin] $_POST [] failed Caught exception: You Can't Read roles
+[09-Apr-2022 13:36:32 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:36:32 Europe/Berlin] $_POST [] failed Caught exception: You Can't Read roles
+[09-Apr-2022 13:46:22 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:46:22 Europe/Berlin] $_POST [] failed Caught exception: You Can't Read roles
+[09-Apr-2022 13:46:32 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:46:32 Europe/Berlin] $_POST [] failed Caught exception: You Can't Read roles
+[09-Apr-2022 13:46:58 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:46:58 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:47:02 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 13:48:43 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:48:43 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:48:51 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 13:49:01 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:49:01 Europe/Berlin] $_POST [] failed Caught exception: You Can't Read roles
+[09-Apr-2022 13:52:32 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:52:32 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:52:38 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 13:52:39 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 13:52:41 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 13:52:55 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:52:55 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:53:44 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 13:54:09 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:54:09 Europe/Berlin] $_POST [] failed Caught exception: You Can't Read roles
+[09-Apr-2022 13:56:45 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:56:45 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:57:01 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[09-Apr-2022 13:57:09 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:57:09 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:57:11 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 13:57:18 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:57:18 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:57:35 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:57:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:57:37 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:57:37 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:57:39 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:57:39 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:57:40 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:57:40 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:57:41 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:57:41 Europe/Berlin] $_POST [] served
+[09-Apr-2022 13:57:44 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 13:57:44 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:12:20 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:12:20 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:12:25 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 14:12:25 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 14:12:27 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 14:12:27 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 14:12:29 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 14:12:29 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 14:12:29 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 14:12:36 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:12:36 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:13:30 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:13:30 Europe/Berlin] $_POST null served
+[09-Apr-2022 14:13:38 Europe/Berlin] schemaClass question && field_or_id active && is_string(active) 1 && needle 1
+[09-Apr-2022 14:13:56 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:13:56 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:15:18 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:15:18 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:17:41 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:17:41 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:17:45 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:17:45 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:18:35 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:18:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:22:01 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:22:01 Europe/Berlin] $_POST null served
+[09-Apr-2022 14:27:41 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:27:41 Europe/Berlin] $_POST null served
+[09-Apr-2022 14:28:11 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:28:11 Europe/Berlin] $_POST null served
+[09-Apr-2022 14:28:25 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:28:25 Europe/Berlin] $_POST null served
+[09-Apr-2022 14:31:14 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:31:14 Europe/Berlin] $_POST null served
+[09-Apr-2022 14:32:59 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:32:59 Europe/Berlin] $_POST null served
+[09-Apr-2022 14:33:10 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:33:10 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:33:11 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:33:11 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:33:38 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 4
+[09-Apr-2022 14:33:42 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 1
+[09-Apr-2022 14:33:43 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:33:43 Europe/Berlin] more is requested specifically after 4
+[09-Apr-2022 14:33:43 Europe/Berlin] $_POST {"op":"get after","id":4} served
+[09-Apr-2022 14:33:45 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 4
+[09-Apr-2022 14:33:46 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 4
+[09-Apr-2022 14:33:46 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:245
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(339): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '4')
+#3 C:\xampp\htdocs\mnu\index.php(150): Application->__construct()
+#4 {main}
+[09-Apr-2022 14:33:49 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 5
+[09-Apr-2022 14:33:53 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 4
+[09-Apr-2022 14:33:56 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 4
+[09-Apr-2022 14:33:56 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:245
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(339): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '4')
+#3 C:\xampp\htdocs\mnu\index.php(150): Application->__construct()
+#4 {main}
+[09-Apr-2022 14:34:05 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 3
+[09-Apr-2022 14:34:07 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 3
+[09-Apr-2022 14:34:10 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 5
+[09-Apr-2022 14:34:12 Europe/Berlin] schemaClass choice && field_or_id question_id && is_string(question_id) 1 && needle 4
+[09-Apr-2022 14:34:14 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 4
+[09-Apr-2022 14:34:14 Europe/Berlin] AccessDeniedException AccessDeniedException: You Can't Read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:245
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(339): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(129): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '4')
+#3 C:\xampp\htdocs\mnu\index.php(150): Application->__construct()
+#4 {main}
+[09-Apr-2022 14:34:43 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:34:43 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:38:11 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:38:11 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:38:17 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 2
+[09-Apr-2022 14:38:17 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 2
+[09-Apr-2022 14:38:17 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 3
+[09-Apr-2022 14:38:17 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 3
+[09-Apr-2022 14:38:17 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 4
+[09-Apr-2022 14:38:17 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 4
+[09-Apr-2022 14:38:18 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 14:38:18 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 5
+[09-Apr-2022 14:38:22 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:38:22 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:38:34 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 14:38:34 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 14:38:34 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 3
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 3
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 4
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 4
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 5
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 5
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 6
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 6
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 7
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 7
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 8
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 8
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 9
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 9
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 20
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 20
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 21
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 21
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 22
+[09-Apr-2022 14:38:35 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 22
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 3
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 3
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 4
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 4
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 5
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 5
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 6
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 6
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 7
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 7
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 8
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 8
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 9
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 9
+[09-Apr-2022 14:38:37 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 20
+[09-Apr-2022 14:38:38 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 20
+[09-Apr-2022 14:38:38 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 21
+[09-Apr-2022 14:38:38 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 21
+[09-Apr-2022 14:38:38 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 22
+[09-Apr-2022 14:38:38 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 22
+[09-Apr-2022 14:38:47 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:38:47 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:38:48 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:38:48 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:39:00 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:39:01 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:39:12 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:39:12 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:39:13 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:39:13 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:39:14 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:39:14 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:39:21 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 1
+[09-Apr-2022 14:39:21 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 1
+[09-Apr-2022 14:39:21 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 6
+[09-Apr-2022 14:39:21 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 6
+[09-Apr-2022 14:39:21 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 7
+[09-Apr-2022 14:39:21 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 7
+[09-Apr-2022 14:39:21 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 8
+[09-Apr-2022 14:39:21 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 8
+[09-Apr-2022 14:39:21 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 9
+[09-Apr-2022 14:39:21 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 9
+[09-Apr-2022 14:39:36 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:39:37 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:39:53 Europe/Berlin] schemaClass student && field_or_id user_id && is_string(user_id) 1 && needle 1
+[09-Apr-2022 14:39:53 Europe/Berlin] schemaClass exam_center && field_or_id user_id && is_string(user_id) 1 && needle 1
+[09-Apr-2022 14:40:19 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:19 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:40:28 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:28 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:40:36 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:36 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:40:38 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:38 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:40:39 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:39 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:40:40 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:40 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:40:45 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:45 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:40:46 Europe/Berlin] schemaClass student && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:46 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:40:48 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:48 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:40:49 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:49 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:40:51 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:51 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:40:52 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:52 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:40:54 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:54 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:40:56 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:56 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:40:57 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:40:57 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:41:09 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:41:09 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:41:10 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:41:10 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:41:20 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:41:20 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:41:21 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:41:21 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:41:35 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:41:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:41:36 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:41:36 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:41:43 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:41:43 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:41:45 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:41:45 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:42:07 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:42:07 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:42:16 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:42:16 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:42:18 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:42:18 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:42:21 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:42:21 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:42:23 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:42:23 Europe/Berlin] $_POST [] served
+[09-Apr-2022 14:42:49 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 14:42:49 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:52:37 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:52:37 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:52:50 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:52:50 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:52:52 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:52:52 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:52:53 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:52:53 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:52:54 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:52:54 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:52:59 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:52:59 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:53:00 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:53:00 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:53:34 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:53:34 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:54:21 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:54:21 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:54:57 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:54:57 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:54:59 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:54:59 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:55:00 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:55:00 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:55:02 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:55:02 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:55:04 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:55:04 Europe/Berlin] more is requested specifically after 2
+[09-Apr-2022 16:55:04 Europe/Berlin] $_POST {"op":"get after","id":2} served
+[09-Apr-2022 16:55:06 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:55:06 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:55:07 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:55:07 Europe/Berlin] more is requested specifically after 6
+[09-Apr-2022 16:55:07 Europe/Berlin] $_POST {"op":"get after","id":6} served
+[09-Apr-2022 16:55:23 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:55:23 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:55:28 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:55:28 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:55:29 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:55:29 Europe/Berlin] more is requested specifically after 10
+[09-Apr-2022 16:55:29 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[09-Apr-2022 16:55:36 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:55:36 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:55:44 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:55:44 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:56:01 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:56:01 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:56:04 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 1
+[09-Apr-2022 16:56:15 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:56:15 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:56:17 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:56:17 Europe/Berlin] $_POST [] served
+[09-Apr-2022 16:56:32 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 16:56:32 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:09:19 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:09:19 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:20:23 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:20:23 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:22:34 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:22:34 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:22:43 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 17:22:44 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:22:44 Europe/Berlin] more is requested specifically after 6
+[09-Apr-2022 17:22:44 Europe/Berlin] $_POST {"op":"get after","id":6} served
+[09-Apr-2022 17:22:46 Europe/Berlin] schemaClass student_exam && field_or_id exam_id && is_string(exam_id) 1 && needle 1
+[09-Apr-2022 17:26:55 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:26:55 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:26:59 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:26:59 Europe/Berlin] more is requested specifically after 6
+[09-Apr-2022 17:26:59 Europe/Berlin] $_POST {"op":"get after","id":6} served
+[09-Apr-2022 17:27:00 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:27:03 Europe/Berlin] schemaClass student_exam && field_or_id exam_id && is_string(exam_id) 1 && needle 2
+[09-Apr-2022 17:27:35 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:27:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:27:41 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 1
+[09-Apr-2022 17:27:43 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 1
+[09-Apr-2022 17:27:43 Europe/Berlin] AccessDeniedException AccessDeniedException: You don't have permission to read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(355): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(128): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '1')
+#3 C:\xampp\htdocs\mnu\index.php(157): Application->__construct()
+#4 {main}
+[09-Apr-2022 17:27:44 Europe/Berlin] schemaClass student_exam_has_question && field_or_id question_id && is_string(question_id) 1 && needle 1
+[09-Apr-2022 17:27:44 Europe/Berlin] AccessDeniedException AccessDeniedException: You don't have permission to read student_exams in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(355): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(128): BaseModel->join(Array, Array)
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('student_exam_ha...', 'question_id', '1')
+#3 C:\xampp\htdocs\mnu\index.php(157): Application->__construct()
+#4 {main}
+[09-Apr-2022 17:29:07 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:29:07 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:29:10 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:29:10 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:29:14 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 17:29:17 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:29:17 Europe/Berlin] more is requested specifically after 2
+[09-Apr-2022 17:29:17 Europe/Berlin] $_POST {"op":"get after","id":2} served
+[09-Apr-2022 17:29:22 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 17:29:32 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:29:32 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 3
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 3
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 4
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 4
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 5
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 5
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 6
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 6
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 7
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 7
+[09-Apr-2022 17:29:40 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 8
+[09-Apr-2022 17:29:41 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 8
+[09-Apr-2022 17:29:41 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 9
+[09-Apr-2022 17:29:41 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 9
+[09-Apr-2022 17:29:43 Europe/Berlin] schemaClass student_exam && field_or_id exam_id && is_string(exam_id) 1 && needle 1
+[09-Apr-2022 17:29:43 Europe/Berlin] schemaClass student_exam && field_or_id exam_id && is_string(exam_id) 1 && needle 2
+[09-Apr-2022 17:29:47 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 1
+[09-Apr-2022 17:29:47 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 17:29:47 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 17:29:48 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 17:29:48 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 5
+[09-Apr-2022 17:29:48 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 3
+[09-Apr-2022 17:29:53 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:29:53 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:30:16 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 17:30:16 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 17:30:16 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:30:16 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:30:16 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 3
+[09-Apr-2022 17:30:16 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 3
+[09-Apr-2022 17:30:16 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 4
+[09-Apr-2022 17:30:16 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 4
+[09-Apr-2022 17:30:16 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 5
+[09-Apr-2022 17:30:17 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 5
+[09-Apr-2022 17:30:17 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 6
+[09-Apr-2022 17:30:17 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 6
+[09-Apr-2022 17:30:17 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 7
+[09-Apr-2022 17:30:17 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 7
+[09-Apr-2022 17:30:17 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 8
+[09-Apr-2022 17:30:17 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 8
+[09-Apr-2022 17:30:17 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 9
+[09-Apr-2022 17:30:17 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 9
+[09-Apr-2022 17:30:19 Europe/Berlin] schemaClass student_exam && field_or_id exam_id && is_string(exam_id) 1 && needle 1
+[09-Apr-2022 17:30:19 Europe/Berlin] schemaClass student_exam && field_or_id exam_id && is_string(exam_id) 1 && needle 2
+[09-Apr-2022 17:30:22 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:30:22 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:30:24 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:30:24 Europe/Berlin] more is requested specifically after 22
+[09-Apr-2022 17:30:24 Europe/Berlin] $_POST {"op":"get after","id":22} served
+[09-Apr-2022 17:31:14 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:31:14 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:31:23 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:31:23 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:31:33 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:31:33 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:31:33 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 4
+[09-Apr-2022 17:31:33 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 4
+[09-Apr-2022 17:31:33 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 5
+[09-Apr-2022 17:31:33 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 5
+[09-Apr-2022 17:31:33 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 6
+[09-Apr-2022 17:31:33 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 6
+[09-Apr-2022 17:31:43 Europe/Berlin] schemaClass student_exam && field_or_id exam_id && is_string(exam_id) 1 && needle 2
+[09-Apr-2022 17:31:54 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 17:31:54 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 17:31:54 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 17:31:54 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 3
+[09-Apr-2022 17:33:46 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:33:46 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:33:59 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:33:59 Europe/Berlin] more is requested specifically after 22
+[09-Apr-2022 17:33:59 Europe/Berlin] $_POST {"op":"get after","id":22} served
+[09-Apr-2022 17:34:02 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 17:34:02 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[09-Apr-2022 17:34:02 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:34:02 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:34:21 Europe/Berlin] schemaClass student_exam && field_or_id exam_id && is_string(exam_id) 1 && needle 1
+[09-Apr-2022 17:34:21 Europe/Berlin] schemaClass student_exam && field_or_id exam_id && is_string(exam_id) 1 && needle 2
+[09-Apr-2022 17:34:23 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 1
+[09-Apr-2022 17:34:35 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:34:35 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:34:42 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:34:43 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:34:48 Europe/Berlin] schemaClass student_exam && field_or_id exam_id && is_string(exam_id) 1 && needle 2
+[09-Apr-2022 17:36:03 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:36:03 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:36:31 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:36:31 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:36:39 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:36:39 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:36:40 Europe/Berlin] schemaClass student_exam && field_or_id exam_id && is_string(exam_id) 1 && needle 2
+[09-Apr-2022 17:39:51 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 17:39:51 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 17:39:51 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 17:40:03 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:40:03 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:40:10 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:40:10 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:40:12 Europe/Berlin] schemaClass student_exam && field_or_id exam_id && is_string(exam_id) 1 && needle 2
+[09-Apr-2022 17:40:52 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:40:52 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:40:57 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:40:57 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:40:59 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:40:59 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:41:01 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:41:01 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:41:02 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:41:02 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:46:55 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:46:55 Europe/Berlin] $_POST [] served
+[09-Apr-2022 17:47:01 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:47:01 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:47:03 Europe/Berlin] schemaClass exam && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:47:03 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 2
+[09-Apr-2022 17:47:05 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 2
+[09-Apr-2022 17:47:05 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 4
+[09-Apr-2022 17:47:05 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 6
+[09-Apr-2022 17:47:10 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[09-Apr-2022 17:47:10 Europe/Berlin] $_POST [] served

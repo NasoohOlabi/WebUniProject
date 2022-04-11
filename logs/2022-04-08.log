@@ -1,0 +1,2607 @@
+[08-Apr-2022 04:10:01 Europe/Berlin] language called
+[08-Apr-2022 04:10:01 Europe/Berlin] dashboard called
+[08-Apr-2022 04:10:03 Europe/Berlin] language called
+[08-Apr-2022 04:12:06 Europe/Berlin] language called
+[08-Apr-2022 04:12:11 Europe/Berlin] language called
+[08-Apr-2022 04:12:11 Europe/Berlin] OK
+[08-Apr-2022 04:12:11 Europe/Berlin] language called
+[08-Apr-2022 04:13:34 Europe/Berlin] language called
+[08-Apr-2022 04:16:45 Europe/Berlin] language called
+[08-Apr-2022 04:22:27 Europe/Berlin] language called
+[08-Apr-2022 04:22:27 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\mnu\application\controller\home.php on line 38
+[08-Apr-2022 04:23:42 Europe/Berlin] language called
+[08-Apr-2022 04:23:42 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\mnu\application\controller\home.php on line 38
+[08-Apr-2022 04:25:08 Europe/Berlin] language called
+[08-Apr-2022 04:25:08 Europe/Berlin] PHP Notice:  Undefined offset: 2 in C:\xampp\htdocs\mnu\application\controller\home.php on line 38
+[08-Apr-2022 08:20:32 Europe/Berlin] language called
+[08-Apr-2022 08:20:37 Europe/Berlin] language called
+[08-Apr-2022 08:20:39 Europe/Berlin] PHP Warning:  PDO::query(): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mnu`.`exam_center`, CONSTRAINT `fk_exam_center_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\installermodel.php on line 24
+[08-Apr-2022 08:20:39 Europe/Berlin] PHP Warning:  PDO::query(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number_of_choices' in 'field list' in C:\xampp\htdocs\mnu\application\models\installermodel.php on line 24
+[08-Apr-2022 08:20:39 Europe/Berlin] PHP Warning:  PDO::query(): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mnu`.`choice`, CONSTRAINT `fk_choices_questions1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\installermodel.php on line 24
+[08-Apr-2022 08:23:47 Europe/Berlin] language called
+[08-Apr-2022 08:23:48 Europe/Berlin] PHP Warning:  PDO::query(): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mnu`.`exam_center`, CONSTRAINT `fk_exam_center_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\installermodel.php on line 24
+[08-Apr-2022 08:23:48 Europe/Berlin] PHP Warning:  PDO::query(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'number_of_choices' in 'field list' in C:\xampp\htdocs\mnu\application\models\installermodel.php on line 24
+[08-Apr-2022 08:23:48 Europe/Berlin] PHP Warning:  PDO::query(): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mnu`.`choice`, CONSTRAINT `fk_choices_questions1` FOREIGN KEY (`question_id`) REFERENCES `question` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\installermodel.php on line 24
+[08-Apr-2022 08:25:26 Europe/Berlin] language called
+[08-Apr-2022 08:25:27 Europe/Berlin] PHP Warning:  PDO::query(): SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mnu`.`exam_center`, CONSTRAINT `fk_exam_center_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\installermodel.php on line 24
+[08-Apr-2022 08:26:09 Europe/Berlin] language called
+[08-Apr-2022 08:26:22 Europe/Berlin] language called
+[08-Apr-2022 08:26:27 Europe/Berlin] language called
+[08-Apr-2022 08:26:32 Europe/Berlin] language called
+[08-Apr-2022 08:26:32 Europe/Berlin] dashboard called
+[08-Apr-2022 08:26:32 Europe/Berlin] language called
+[08-Apr-2022 08:26:34 Europe/Berlin] language called
+[08-Apr-2022 08:26:36 Europe/Berlin] language called
+[08-Apr-2022 08:26:37 Europe/Berlin] language called
+[08-Apr-2022 08:28:28 Europe/Berlin] language called
+[08-Apr-2022 08:28:28 Europe/Berlin] dashboard called
+[08-Apr-2022 08:28:28 Europe/Berlin] language called
+[08-Apr-2022 08:28:40 Europe/Berlin] language called
+[08-Apr-2022 08:28:41 Europe/Berlin] dashboard called
+[08-Apr-2022 08:28:41 Europe/Berlin] language called
+[08-Apr-2022 08:29:02 Europe/Berlin] language called
+[08-Apr-2022 08:29:02 Europe/Berlin] dashboard called
+[08-Apr-2022 08:29:03 Europe/Berlin] language called
+[08-Apr-2022 08:29:22 Europe/Berlin] language called
+[08-Apr-2022 08:29:22 Europe/Berlin] dashboard called
+[08-Apr-2022 08:29:22 Europe/Berlin] language called
+[08-Apr-2022 08:29:47 Europe/Berlin] language called
+[08-Apr-2022 08:29:47 Europe/Berlin] dashboard called
+[08-Apr-2022 08:29:47 Europe/Berlin] language called
+[08-Apr-2022 08:30:06 Europe/Berlin] language called
+[08-Apr-2022 08:30:09 Europe/Berlin] language called
+[08-Apr-2022 08:30:11 Europe/Berlin] language called
+[08-Apr-2022 08:30:13 Europe/Berlin] language called
+[08-Apr-2022 08:30:16 Europe/Berlin] language called
+[08-Apr-2022 08:30:19 Europe/Berlin] language called
+[08-Apr-2022 08:34:00 Europe/Berlin] language called
+[08-Apr-2022 08:34:00 Europe/Berlin] dashboard called
+[08-Apr-2022 08:34:01 Europe/Berlin] language called
+[08-Apr-2022 08:34:05 Europe/Berlin] language called
+[08-Apr-2022 08:34:06 Europe/Berlin] language called
+[08-Apr-2022 08:34:15 Europe/Berlin] language called
+[08-Apr-2022 08:34:15 Europe/Berlin] dashboard called
+[08-Apr-2022 08:34:16 Europe/Berlin] language called
+[08-Apr-2022 08:34:47 Europe/Berlin] language called
+[08-Apr-2022 08:34:47 Europe/Berlin] dashboard called
+[08-Apr-2022 08:34:48 Europe/Berlin] language called
+[08-Apr-2022 08:35:07 Europe/Berlin] language called
+[08-Apr-2022 08:35:07 Europe/Berlin] dashboard called
+[08-Apr-2022 08:35:07 Europe/Berlin] language called
+[08-Apr-2022 08:36:12 Europe/Berlin] language called
+[08-Apr-2022 08:36:12 Europe/Berlin] dashboard called
+[08-Apr-2022 08:36:27 Europe/Berlin] language called
+[08-Apr-2022 08:36:27 Europe/Berlin] dashboard called
+[08-Apr-2022 08:36:28 Europe/Berlin] language called
+[08-Apr-2022 08:36:28 Europe/Berlin] language called
+[08-Apr-2022 08:36:55 Europe/Berlin] language called
+[08-Apr-2022 08:36:55 Europe/Berlin] dashboard called
+[08-Apr-2022 08:36:56 Europe/Berlin] language called
+[08-Apr-2022 08:36:56 Europe/Berlin] language called
+[08-Apr-2022 08:37:33 Europe/Berlin] language called
+[08-Apr-2022 09:14:14 Europe/Berlin] language called
+[08-Apr-2022 09:15:36 Europe/Berlin] language called
+[08-Apr-2022 09:15:36 Europe/Berlin] dashboard called
+[08-Apr-2022 09:15:36 Europe/Berlin] language called
+[08-Apr-2022 09:15:40 Europe/Berlin] language called
+[08-Apr-2022 09:15:41 Europe/Berlin] language called
+[08-Apr-2022 09:15:42 Europe/Berlin] language called
+[08-Apr-2022 09:15:52 Europe/Berlin] language called
+[08-Apr-2022 09:15:52 Europe/Berlin] PHP Fatal error:  Uncaught Exception: Constructing : {"id":1,"name":"Hiast Center","description":"A center in the hiast..."} to contain the following ["id","name","description","user_id"] this one failed user_id in C:\xampp\htdocs\mnu\application\models\core\schema.php:27
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\core\schema.php(572): properties_exists(Object(stdClass), Array, '')
+#1 C:\xampp\htdocs\mnu\application\controller\exams.php(60): Exam_Center->__construct(Object(stdClass))
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(52): Exams->test()
+#3 C:\xampp\htdocs\mnu\index.php(144): Application->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\core\schema.php on line 27
+[08-Apr-2022 09:16:35 Europe/Berlin] language called
+[08-Apr-2022 09:16:35 Europe/Berlin] Exam Model Loaded
+[08-Apr-2022 09:17:31 Europe/Berlin] language called
+[08-Apr-2022 09:17:31 Europe/Berlin] dashboard called
+[08-Apr-2022 09:17:31 Europe/Berlin] language called
+[08-Apr-2022 09:17:40 Europe/Berlin] language called
+[08-Apr-2022 09:17:57 Europe/Berlin] language called
+[08-Apr-2022 09:17:57 Europe/Berlin] dashboard called
+[08-Apr-2022 09:17:57 Europe/Berlin] language called
+[08-Apr-2022 09:18:19 Europe/Berlin] language called
+[08-Apr-2022 09:21:52 Europe/Berlin] language called
+[08-Apr-2022 09:23:24 Europe/Berlin] language called
+[08-Apr-2022 09:23:34 Europe/Berlin] language called
+[08-Apr-2022 09:23:34 Europe/Berlin] dashboard called
+[08-Apr-2022 09:23:38 Europe/Berlin] language called
+[08-Apr-2022 09:23:39 Europe/Berlin] language called
+[08-Apr-2022 09:48:24 Europe/Berlin] language called
+[08-Apr-2022 09:48:26 Europe/Berlin] language called
+[08-Apr-2022 09:48:36 Europe/Berlin] language called
+[08-Apr-2022 09:48:36 Europe/Berlin] ----->>>>required_permissions: ["create_Question"]
+[08-Apr-2022 09:48:36 Europe/Berlin] this one is missing create_Question
+[08-Apr-2022 09:51:16 Europe/Berlin] language called
+[08-Apr-2022 09:51:22 Europe/Berlin] language called
+[08-Apr-2022 09:51:22 Europe/Berlin] ----->>>>required_permissions: ["create_Question"]
+[08-Apr-2022 09:51:22 Europe/Berlin] this one is missing create_Question
+[08-Apr-2022 09:52:42 Europe/Berlin] language called
+[08-Apr-2022 09:52:49 Europe/Berlin] language called
+[08-Apr-2022 09:52:49 Europe/Berlin] ----->>>>required_permissions: ["create_Question"]
+[08-Apr-2022 09:52:49 Europe/Berlin] this one is missing create_Question
+[08-Apr-2022 09:53:47 Europe/Berlin] language called
+[08-Apr-2022 09:53:47 Europe/Berlin] dashboard called
+[08-Apr-2022 09:53:47 Europe/Berlin] language called
+[08-Apr-2022 09:53:47 Europe/Berlin] dashboard called
+[08-Apr-2022 09:53:48 Europe/Berlin] language called
+[08-Apr-2022 09:53:49 Europe/Berlin] language called
+[08-Apr-2022 09:55:54 Europe/Berlin] language called
+[08-Apr-2022 09:56:07 Europe/Berlin] language called
+[08-Apr-2022 09:56:07 Europe/Berlin] BaseModel::insert Running : "INSERT INTO `Question` (text, topic_id, active) VALUES (?, ?, ?)"
+[08-Apr-2022 09:56:07 Europe/Berlin] bindings ["jafjl",2,1]
+[08-Apr-2022 09:59:25 Europe/Berlin] language called
+[08-Apr-2022 09:59:25 Europe/Berlin] ----->>>>required_permissions: ["create_Question"]
+[08-Apr-2022 09:59:25 Europe/Berlin] this one is missing create_Question
+[08-Apr-2022 10:00:30 Europe/Berlin] language called
+[08-Apr-2022 10:00:37 Europe/Berlin] language called
+[08-Apr-2022 10:00:37 Europe/Berlin] ----->>>>required_permissions: ["creatse_question"]
+[08-Apr-2022 10:00:37 Europe/Berlin] this one is missing creatse_question
+[08-Apr-2022 10:12:44 Europe/Berlin] language called
+[08-Apr-2022 10:12:47 Europe/Berlin] language called
+[08-Apr-2022 10:12:47 Europe/Berlin] dashboard called
+[08-Apr-2022 10:12:47 Europe/Berlin] language called
+[08-Apr-2022 10:12:53 Europe/Berlin] language called
+[08-Apr-2022 10:12:57 Europe/Berlin] language called
+[08-Apr-2022 10:12:57 Europe/Berlin] dashboard called
+[08-Apr-2022 10:12:58 Europe/Berlin] language called
+[08-Apr-2022 10:13:11 Europe/Berlin] language called
+[08-Apr-2022 10:13:11 Europe/Berlin] ----->>>>required_permissions: ["update_question"]
+[08-Apr-2022 10:13:11 Europe/Berlin] this one is missing update_question
+[08-Apr-2022 10:21:54 Europe/Berlin] language called
+[08-Apr-2022 10:22:05 Europe/Berlin] language called
+[08-Apr-2022 10:24:30 Europe/Berlin] language called
+[08-Apr-2022 10:25:01 Europe/Berlin] language called
+[08-Apr-2022 10:25:01 Europe/Berlin] dashboard called
+[08-Apr-2022 10:25:01 Europe/Berlin] language called
+[08-Apr-2022 10:25:09 Europe/Berlin] language called
+[08-Apr-2022 10:26:08 Europe/Berlin] language called
+[08-Apr-2022 10:26:12 Europe/Berlin] language called
+[08-Apr-2022 10:26:17 Europe/Berlin] language called
+[08-Apr-2022 10:26:17 Europe/Berlin] language called
+[08-Apr-2022 10:26:17 Europe/Berlin] ----->>>>required_permissions: ["update_user"]
+[08-Apr-2022 10:26:17 Europe/Berlin] this one is missing update_user
+[08-Apr-2022 10:26:17 Europe/Berlin] language called
+[08-Apr-2022 10:27:18 Europe/Berlin] language called
+[08-Apr-2022 10:28:37 Europe/Berlin] language called
+[08-Apr-2022 10:28:37 Europe/Berlin] dashboard called
+[08-Apr-2022 10:28:37 Europe/Berlin] language called
+[08-Apr-2022 10:28:40 Europe/Berlin] language called
+[08-Apr-2022 10:28:45 Europe/Berlin] language called
+[08-Apr-2022 10:28:45 Europe/Berlin] ----->>>>required_permissions: ["read_Role"]
+[08-Apr-2022 10:28:45 Europe/Berlin] this one is missing read_Role
+[08-Apr-2022 10:29:32 Europe/Berlin] language called
+[08-Apr-2022 10:29:32 Europe/Berlin] dashboard called
+[08-Apr-2022 10:29:32 Europe/Berlin] language called
+[08-Apr-2022 10:29:35 Europe/Berlin] language called
+[08-Apr-2022 10:29:44 Europe/Berlin] language called
+[08-Apr-2022 10:29:51 Europe/Berlin] language called
+[08-Apr-2022 10:29:51 Europe/Berlin] language called
+[08-Apr-2022 10:29:51 Europe/Berlin] USERMODEL
+[08-Apr-2022 10:29:51 Europe/Berlin] getFullDetails with id 1
+[08-Apr-2022 10:29:52 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":["Student","Exam_Center"],"identifying_fields":["username"],"id":1}
+[08-Apr-2022 10:29:52 Europe/Berlin] language called
+[08-Apr-2022 10:30:40 Europe/Berlin] language called
+[08-Apr-2022 10:33:27 Europe/Berlin] language called
+[08-Apr-2022 10:35:15 Europe/Berlin] language called
+[08-Apr-2022 10:35:15 Europe/Berlin] ----->>>>required_permissions: ["reassign_role"]
+[08-Apr-2022 10:35:15 Europe/Berlin] this one is missing reassign_role
+[08-Apr-2022 10:36:57 Europe/Berlin] language called
+[08-Apr-2022 10:37:00 Europe/Berlin] language called
+[08-Apr-2022 10:37:05 Europe/Berlin] language called
+[08-Apr-2022 10:37:05 Europe/Berlin] ----->>>>required_permissions: ["reassign_role"]
+[08-Apr-2022 10:37:05 Europe/Berlin] this one is missing reassign_role
+[08-Apr-2022 10:55:47 Europe/Berlin] language called
+[08-Apr-2022 10:55:47 Europe/Berlin] dashboard called
+[08-Apr-2022 10:55:47 Europe/Berlin] language called
+[08-Apr-2022 10:55:48 Europe/Berlin] language called
+[08-Apr-2022 10:55:50 Europe/Berlin] language called
+[08-Apr-2022 10:55:52 Europe/Berlin] language called
+[08-Apr-2022 10:56:00 Europe/Berlin] language called
+[08-Apr-2022 10:56:00 Europe/Berlin] USERMODEL
+[08-Apr-2022 10:56:00 Europe/Berlin] getFullDetails with id 1
+[08-Apr-2022 10:56:00 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":["Student","Exam_Center"],"identifying_fields":["username"],"id":1}
+[08-Apr-2022 10:56:06 Europe/Berlin] language called
+[08-Apr-2022 10:56:06 Europe/Berlin] dashboard called
+[08-Apr-2022 10:56:06 Europe/Berlin] language called
+[08-Apr-2022 10:56:07 Europe/Berlin] language called
+[08-Apr-2022 10:56:13 Europe/Berlin] language called
+[08-Apr-2022 10:56:15 Europe/Berlin] language called
+[08-Apr-2022 10:56:15 Europe/Berlin] ----->>>>required_permissions: ["reassign_role"]
+[08-Apr-2022 10:56:15 Europe/Berlin] this one is missing reassign_role
+[08-Apr-2022 10:56:19 Europe/Berlin] language called
+[08-Apr-2022 10:56:19 Europe/Berlin] ----->>>>required_permissions: ["reassign_role"]
+[08-Apr-2022 10:56:19 Europe/Berlin] this one is missing reassign_role
+[08-Apr-2022 11:03:18 Europe/Berlin] language called
+[08-Apr-2022 11:03:18 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `user` WHERE id = ?" Bindings : ["5"]
+[08-Apr-2022 11:03:18 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`student`, CONSTRAINT `fk_student_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 73
+[08-Apr-2022 11:03:24 Europe/Berlin] language called
+[08-Apr-2022 11:03:24 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `user` WHERE id = ?" Bindings : ["5"]
+[08-Apr-2022 11:03:24 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`student`, CONSTRAINT `fk_student_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 73
+[08-Apr-2022 11:03:26 Europe/Berlin] language called
+[08-Apr-2022 11:03:26 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `user` WHERE id = ?" Bindings : ["5"]
+[08-Apr-2022 11:03:26 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`student`, CONSTRAINT `fk_student_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 73
+[08-Apr-2022 11:05:53 Europe/Berlin] language called
+[08-Apr-2022 11:05:53 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `user` WHERE id = ?" Bindings : ["5"]
+[08-Apr-2022 11:05:53 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`student`, CONSTRAINT `fk_student_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 73
+[08-Apr-2022 11:05:59 Europe/Berlin] language called
+[08-Apr-2022 11:05:59 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `user` WHERE id = ?" Bindings : ["1"]
+[08-Apr-2022 11:06:05 Europe/Berlin] language called
+[08-Apr-2022 11:06:05 Europe/Berlin] dashboard called
+[08-Apr-2022 11:06:06 Europe/Berlin] language called
+[08-Apr-2022 11:06:16 Europe/Berlin] language called
+[08-Apr-2022 11:06:21 Europe/Berlin] language called
+[08-Apr-2022 11:08:06 Europe/Berlin] language called
+[08-Apr-2022 11:08:06 Europe/Berlin] dashboard called
+[08-Apr-2022 11:08:06 Europe/Berlin] language called
+[08-Apr-2022 11:08:08 Europe/Berlin] language called
+[08-Apr-2022 11:08:13 Europe/Berlin] language called
+[08-Apr-2022 11:08:14 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `user` WHERE id = ?" Bindings : ["1"]
+[08-Apr-2022 11:08:55 Europe/Berlin] language called
+[08-Apr-2022 11:08:58 Europe/Berlin] language called
+[08-Apr-2022 11:08:58 Europe/Berlin] dashboard called
+[08-Apr-2022 11:08:59 Europe/Berlin] language called
+[08-Apr-2022 11:09:00 Europe/Berlin] language called
+[08-Apr-2022 11:09:04 Europe/Berlin] language called
+[08-Apr-2022 11:10:07 Europe/Berlin] language called
+[08-Apr-2022 11:10:07 Europe/Berlin] dashboard called
+[08-Apr-2022 11:10:08 Europe/Berlin] language called
+[08-Apr-2022 11:10:09 Europe/Berlin] language called
+[08-Apr-2022 11:10:15 Europe/Berlin] language called
+[08-Apr-2022 11:10:21 Europe/Berlin] language called
+[08-Apr-2022 11:10:24 Europe/Berlin] language called
+[08-Apr-2022 11:10:24 Europe/Berlin] dashboard called
+[08-Apr-2022 11:10:24 Europe/Berlin] language called
+[08-Apr-2022 11:10:25 Europe/Berlin] language called
+[08-Apr-2022 11:11:00 Europe/Berlin] language called
+[08-Apr-2022 11:11:00 Europe/Berlin] dashboard called
+[08-Apr-2022 11:11:01 Europe/Berlin] language called
+[08-Apr-2022 11:14:29 Europe/Berlin] language called
+[08-Apr-2022 11:14:30 Europe/Berlin] language called
+[08-Apr-2022 11:14:30 Europe/Berlin] dashboard called
+[08-Apr-2022 11:14:31 Europe/Berlin] language called
+[08-Apr-2022 11:14:32 Europe/Berlin] language called
+[08-Apr-2022 11:14:36 Europe/Berlin] language called
+[08-Apr-2022 11:14:36 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `user` WHERE id = ? OR id = ?" Bindings : ["3","4"]
+[08-Apr-2022 11:14:42 Europe/Berlin] language called
+[08-Apr-2022 11:14:42 Europe/Berlin] dashboard called
+[08-Apr-2022 11:14:43 Europe/Berlin] language called
+[08-Apr-2022 11:14:44 Europe/Berlin] language called
+[08-Apr-2022 11:15:04 Europe/Berlin] language called
+[08-Apr-2022 11:15:04 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `user` WHERE id = ?" Bindings : ["5"]
+[08-Apr-2022 11:15:04 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`student`, CONSTRAINT `fk_student_user1` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 73
+[08-Apr-2022 11:15:11 Europe/Berlin] language called
+[08-Apr-2022 11:15:11 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `user` WHERE id = ?" Bindings : ["6"]
+[08-Apr-2022 11:16:27 Europe/Berlin] language called
+[08-Apr-2022 11:16:27 Europe/Berlin] dashboard called
+[08-Apr-2022 11:16:28 Europe/Berlin] language called
+[08-Apr-2022 11:16:29 Europe/Berlin] language called
+[08-Apr-2022 11:16:34 Europe/Berlin] language called
+[08-Apr-2022 11:16:34 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `user` WHERE id = ? OR id = ?" Bindings : ["7","8"]
+[08-Apr-2022 14:45:44 Europe/Berlin] language called
+[08-Apr-2022 14:45:52 Europe/Berlin] language called
+[08-Apr-2022 14:45:52 Europe/Berlin] language called
+[08-Apr-2022 14:45:52 Europe/Berlin] language called
+[08-Apr-2022 14:47:20 Europe/Berlin] language called
+[08-Apr-2022 14:47:20 Europe/Berlin] language called
+[08-Apr-2022 14:47:39 Europe/Berlin] language called
+[08-Apr-2022 14:47:46 Europe/Berlin] language called
+[08-Apr-2022 14:47:47 Europe/Berlin] language called
+[08-Apr-2022 14:47:47 Europe/Berlin] language called
+[08-Apr-2022 14:48:12 Europe/Berlin] language called
+[08-Apr-2022 14:48:12 Europe/Berlin] language called
+[08-Apr-2022 14:48:12 Europe/Berlin] language called
+[08-Apr-2022 14:50:38 Europe/Berlin] language called
+[08-Apr-2022 14:50:47 Europe/Berlin] language called
+[08-Apr-2022 14:50:47 Europe/Berlin] language called
+[08-Apr-2022 14:50:47 Europe/Berlin] USERMODEL
+[08-Apr-2022 14:50:47 Europe/Berlin] getFullDetails with id 1
+[08-Apr-2022 14:50:47 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yasser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":["Student","Exam_Center"],"identifying_fields":["username"],"id":1}
+[08-Apr-2022 14:50:47 Europe/Berlin] language called
+[08-Apr-2022 14:50:55 Europe/Berlin] language called
+[08-Apr-2022 14:51:00 Europe/Berlin] language called
+[08-Apr-2022 14:51:00 Europe/Berlin] dashboard called
+[08-Apr-2022 14:51:02 Europe/Berlin] language called
+[08-Apr-2022 15:03:27 Europe/Berlin] language called
+[08-Apr-2022 15:03:35 Europe/Berlin] language called
+[08-Apr-2022 15:03:46 Europe/Berlin] language called
+[08-Apr-2022 15:04:02 Europe/Berlin] language called
+[08-Apr-2022 15:04:07 Europe/Berlin] language called
+[08-Apr-2022 15:04:13 Europe/Berlin] language called
+[08-Apr-2022 15:05:13 Europe/Berlin] language called
+[08-Apr-2022 15:05:37 Europe/Berlin] language called
+[08-Apr-2022 15:05:51 Europe/Berlin] language called
+[08-Apr-2022 15:06:18 Europe/Berlin] language called
+[08-Apr-2022 15:07:01 Europe/Berlin] language called
+[08-Apr-2022 15:08:01 Europe/Berlin] language called
+[08-Apr-2022 15:08:17 Europe/Berlin] language called
+[08-Apr-2022 15:08:39 Europe/Berlin] language called
+[08-Apr-2022 15:08:56 Europe/Berlin] language called
+[08-Apr-2022 15:09:29 Europe/Berlin] language called
+[08-Apr-2022 15:11:53 Europe/Berlin] language called
+[08-Apr-2022 15:13:52 Europe/Berlin] language called
+[08-Apr-2022 15:15:43 Europe/Berlin] language called
+[08-Apr-2022 15:16:05 Europe/Berlin] language called
+[08-Apr-2022 15:16:11 Europe/Berlin] language called
+[08-Apr-2022 15:17:13 Europe/Berlin] language called
+[08-Apr-2022 15:17:13 Europe/Berlin] dashboard called
+[08-Apr-2022 15:17:15 Europe/Berlin] language called
+[08-Apr-2022 15:17:17 Europe/Berlin] language called
+[08-Apr-2022 15:17:20 Europe/Berlin] language called
+[08-Apr-2022 15:17:24 Europe/Berlin] language called
+[08-Apr-2022 15:17:25 Europe/Berlin] dashboard called
+[08-Apr-2022 15:17:25 Europe/Berlin] language called
+[08-Apr-2022 15:17:27 Europe/Berlin] language called
+[08-Apr-2022 15:17:29 Europe/Berlin] language called
+[08-Apr-2022 15:17:31 Europe/Berlin] language called
+[08-Apr-2022 15:17:35 Europe/Berlin] language called
+[08-Apr-2022 15:17:38 Europe/Berlin] language called
+[08-Apr-2022 15:17:44 Europe/Berlin] language called
+[08-Apr-2022 15:17:44 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings : ["2"]
+[08-Apr-2022 15:17:44 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 73
+[08-Apr-2022 15:17:46 Europe/Berlin] language called
+[08-Apr-2022 15:17:46 Europe/Berlin] language called
+[08-Apr-2022 15:17:46 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings : ["2"]
+[08-Apr-2022 15:17:46 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 73
+[08-Apr-2022 15:17:46 Europe/Berlin] language called
+[08-Apr-2022 15:17:46 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings : ["2"]
+[08-Apr-2022 15:17:46 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 73
+[08-Apr-2022 15:17:46 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings : ["2"]
+[08-Apr-2022 15:17:46 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 73
+[08-Apr-2022 15:17:48 Europe/Berlin] language called
+[08-Apr-2022 15:17:48 Europe/Berlin] language called
+[08-Apr-2022 15:17:48 Europe/Berlin] language called
+[08-Apr-2022 15:17:48 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings : ["2"]
+[08-Apr-2022 15:17:48 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 73
+[08-Apr-2022 15:17:48 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings : ["2"]
+[08-Apr-2022 15:17:48 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 73
+[08-Apr-2022 15:17:48 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings : ["2"]
+[08-Apr-2022 15:17:48 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 73
+[08-Apr-2022 15:33:41 Europe/Berlin] language called
+[08-Apr-2022 15:33:41 Europe/Berlin] dashboard called
+[08-Apr-2022 15:33:44 Europe/Berlin] language called
+[08-Apr-2022 15:43:55 Europe/Berlin] language called
+[08-Apr-2022 15:43:55 Europe/Berlin] dashboard called
+[08-Apr-2022 15:43:57 Europe/Berlin] language called
+[08-Apr-2022 15:44:24 Europe/Berlin] language called
+[08-Apr-2022 15:44:24 Europe/Berlin] dashboard called
+[08-Apr-2022 15:44:25 Europe/Berlin] language called
+[08-Apr-2022 15:45:03 Europe/Berlin] language called
+[08-Apr-2022 15:45:03 Europe/Berlin] dashboard called
+[08-Apr-2022 15:45:28 Europe/Berlin] language called
+[08-Apr-2022 15:45:33 Europe/Berlin] language called
+[08-Apr-2022 15:45:33 Europe/Berlin] dashboard called
+[08-Apr-2022 15:45:57 Europe/Berlin] language called
+[08-Apr-2022 15:48:57 Europe/Berlin] language called
+[08-Apr-2022 15:48:57 Europe/Berlin] dashboard called
+[08-Apr-2022 15:49:00 Europe/Berlin] language called
+[08-Apr-2022 15:49:09 Europe/Berlin] language called
+[08-Apr-2022 15:49:09 Europe/Berlin] dashboard called
+[08-Apr-2022 15:49:15 Europe/Berlin] language called
+[08-Apr-2022 15:51:57 Europe/Berlin] language called
+[08-Apr-2022 15:51:58 Europe/Berlin] language called
+[08-Apr-2022 15:52:14 Europe/Berlin] language called
+[08-Apr-2022 15:52:37 Europe/Berlin] language called
+[08-Apr-2022 15:52:48 Europe/Berlin] language called
+[08-Apr-2022 15:52:53 Europe/Berlin] language called
+[08-Apr-2022 15:53:05 Europe/Berlin] language called
+[08-Apr-2022 15:58:07 Europe/Berlin] language called
+[08-Apr-2022 15:58:07 Europe/Berlin] dashboard called
+[08-Apr-2022 15:58:14 Europe/Berlin] language called
+[08-Apr-2022 16:25:15 Europe/Berlin] language called
+[08-Apr-2022 16:25:15 Europe/Berlin] PHP Notice:  Undefined index: _has_permission_id in C:\xampp\htdocs\mnu\application\models\core\schema.php on line 434
+[08-Apr-2022 16:25:15 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class '_has_permission' not found in C:\xampp\htdocs\mnu\application\controller\Api.php:125
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('role_has_permis...', 'role_id', '1')
+#1 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\mnu\application\controller\Api.php on line 125
+[08-Apr-2022 16:25:32 Europe/Berlin] language called
+[08-Apr-2022 16:25:32 Europe/Berlin] PHP Notice:  Undefined index: _has_permission_id in C:\xampp\htdocs\mnu\application\models\core\schema.php on line 434
+[08-Apr-2022 16:25:32 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class '_has_permission' not found in C:\xampp\htdocs\mnu\application\controller\Api.php:125
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('role_has_permis...', 'role_id', '1')
+#1 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\mnu\application\controller\Api.php on line 125
+[08-Apr-2022 16:28:01 Europe/Berlin] language called
+[08-Apr-2022 16:28:53 Europe/Berlin] language called
+[08-Apr-2022 16:28:53 Europe/Berlin] PHP Fatal error:  Uncaught Error: Access to undeclared static property: User::$field in C:\xampp\htdocs\mnu\application\controller\Api.php:131
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\libs\application.php(43): Api->read('user', 'username', 'nasooholabi')
+#1 C:\xampp\htdocs\mnu\index.php(152): Application->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\mnu\application\controller\Api.php on line 131
+[08-Apr-2022 16:30:26 Europe/Berlin] language called
+[08-Apr-2022 16:30:52 Europe/Berlin] language called
+[08-Apr-2022 16:31:09 Europe/Berlin] language called
+[08-Apr-2022 16:31:19 Europe/Berlin] language called
+[08-Apr-2022 16:58:01 Europe/Berlin] language called
+[08-Apr-2022 16:58:01 Europe/Berlin] dashboard called
+[08-Apr-2022 16:58:03 Europe/Berlin] language called
+[08-Apr-2022 16:58:03 Europe/Berlin] dashboard called
+[08-Apr-2022 16:58:03 Europe/Berlin] language called
+[08-Apr-2022 16:58:03 Europe/Berlin] PHP Notice:  Undefined variable: id in C:\xampp\htdocs\mnu\application\controller\Api.php on line 178
+[08-Apr-2022 16:59:37 Europe/Berlin] language called
+[08-Apr-2022 16:59:37 Europe/Berlin] dashboard called
+[08-Apr-2022 16:59:38 Europe/Berlin] language called
+[08-Apr-2022 16:59:38 Europe/Berlin] PHP Notice:  Undefined index: id in C:\xampp\htdocs\mnu\application\controller\Api.php on line 175
+[08-Apr-2022 17:00:40 Europe/Berlin] language called
+[08-Apr-2022 17:00:40 Europe/Berlin] dashboard called
+[08-Apr-2022 17:00:40 Europe/Berlin] language called
+[08-Apr-2022 17:01:09 Europe/Berlin] language called
+[08-Apr-2022 17:01:09 Europe/Berlin] dashboard called
+[08-Apr-2022 17:01:10 Europe/Berlin] language called
+[08-Apr-2022 17:02:35 Europe/Berlin] language called
+[08-Apr-2022 17:02:35 Europe/Berlin] dashboard called
+[08-Apr-2022 17:02:35 Europe/Berlin] language called
+[08-Apr-2022 17:05:24 Europe/Berlin] language called
+[08-Apr-2022 17:05:24 Europe/Berlin] dashboard called
+[08-Apr-2022 17:05:26 Europe/Berlin] language called
+[08-Apr-2022 17:11:07 Europe/Berlin] language called
+[08-Apr-2022 17:11:07 Europe/Berlin] dashboard called
+[08-Apr-2022 17:11:08 Europe/Berlin] language called
+[08-Apr-2022 17:12:44 Europe/Berlin] language called
+[08-Apr-2022 17:12:44 Europe/Berlin] dashboard called
+[08-Apr-2022 17:12:45 Europe/Berlin] language called
+[08-Apr-2022 17:16:40 Europe/Berlin] language called
+[08-Apr-2022 17:16:40 Europe/Berlin] dashboard called
+[08-Apr-2022 17:16:40 Europe/Berlin] language called
+[08-Apr-2022 17:17:08 Europe/Berlin] language called
+[08-Apr-2022 17:17:08 Europe/Berlin] dashboard called
+[08-Apr-2022 17:17:11 Europe/Berlin] language called
+[08-Apr-2022 17:19:46 Europe/Berlin] language called
+[08-Apr-2022 17:19:46 Europe/Berlin] dashboard called
+[08-Apr-2022 17:19:46 Europe/Berlin] language called
+[08-Apr-2022 17:21:15 Europe/Berlin] language called
+[08-Apr-2022 17:21:15 Europe/Berlin] dashboard called
+[08-Apr-2022 17:21:15 Europe/Berlin] language called
+[08-Apr-2022 17:22:22 Europe/Berlin] language called
+[08-Apr-2022 17:22:22 Europe/Berlin] dashboard called
+[08-Apr-2022 17:22:23 Europe/Berlin] language called
+[08-Apr-2022 17:25:16 Europe/Berlin] language called
+[08-Apr-2022 17:26:17 Europe/Berlin] language called
+[08-Apr-2022 17:26:27 Europe/Berlin] language called
+[08-Apr-2022 17:26:27 Europe/Berlin] dashboard called
+[08-Apr-2022 17:26:28 Europe/Berlin] language called
+[08-Apr-2022 17:26:34 Europe/Berlin] language called
+[08-Apr-2022 17:26:36 Europe/Berlin] language called
+[08-Apr-2022 17:26:36 Europe/Berlin] dashboard called
+[08-Apr-2022 17:26:36 Europe/Berlin] language called
+[08-Apr-2022 17:26:40 Europe/Berlin] language called
+[08-Apr-2022 17:26:40 Europe/Berlin] dashboard called
+[08-Apr-2022 17:26:41 Europe/Berlin] language called
+[08-Apr-2022 17:26:45 Europe/Berlin] language called
+[08-Apr-2022 17:26:46 Europe/Berlin] language called
+[08-Apr-2022 17:26:47 Europe/Berlin] language called
+[08-Apr-2022 17:26:54 Europe/Berlin] language called
+[08-Apr-2022 17:29:53 Europe/Berlin] language called
+[08-Apr-2022 17:31:37 Europe/Berlin] language called
+[08-Apr-2022 17:31:37 Europe/Berlin] dashboard called
+[08-Apr-2022 17:32:04 Europe/Berlin] language called
+[08-Apr-2022 17:32:04 Europe/Berlin] dashboard called
+[08-Apr-2022 17:32:05 Europe/Berlin] language called
+[08-Apr-2022 17:32:17 Europe/Berlin] language called
+[08-Apr-2022 17:32:20 Europe/Berlin] language called
+[08-Apr-2022 17:33:20 Europe/Berlin] language called
+[08-Apr-2022 17:33:20 Europe/Berlin] dashboard called
+[08-Apr-2022 17:33:22 Europe/Berlin] language called
+[08-Apr-2022 17:33:25 Europe/Berlin] language called
+[08-Apr-2022 17:33:26 Europe/Berlin] language called
+[08-Apr-2022 17:33:28 Europe/Berlin] language called
+[08-Apr-2022 17:33:47 Europe/Berlin] language called
+[08-Apr-2022 17:33:47 Europe/Berlin] dashboard called
+[08-Apr-2022 17:33:47 Europe/Berlin] language called
+[08-Apr-2022 17:36:00 Europe/Berlin] language called
+[08-Apr-2022 17:36:00 Europe/Berlin] dashboard called
+[08-Apr-2022 17:36:01 Europe/Berlin] language called
+[08-Apr-2022 17:40:10 Europe/Berlin] language called
+[08-Apr-2022 17:40:10 Europe/Berlin] dashboard called
+[08-Apr-2022 17:40:10 Europe/Berlin] language called
+[08-Apr-2022 17:40:21 Europe/Berlin] language called
+[08-Apr-2022 17:40:21 Europe/Berlin] ----->>>>required_permissions: ["read_Role"]
+[08-Apr-2022 17:40:21 Europe/Berlin] this one is missing read_Role
+[08-Apr-2022 17:40:32 Europe/Berlin] language called
+[08-Apr-2022 17:40:32 Europe/Berlin] language called
+[08-Apr-2022 17:40:32 Europe/Berlin] ----->>>>required_permissions: ["read_Role"]
+[08-Apr-2022 17:40:32 Europe/Berlin] this one is missing read_Role
+[08-Apr-2022 17:40:32 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\index.php on line 111
+[08-Apr-2022 17:40:32 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:40:32 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:40:32 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:40:32 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:40:32 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:40:32 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:40:32 Europe/Berlin] language called
+[08-Apr-2022 17:40:32 Europe/Berlin] dashboard called
+[08-Apr-2022 17:40:32 Europe/Berlin] dashboard called
+[08-Apr-2022 17:40:33 Europe/Berlin] language called
+[08-Apr-2022 17:40:33 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\index.php on line 111
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:40:33 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:40:33 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:40:46 Europe/Berlin] language called
+[08-Apr-2022 17:40:46 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\index.php on line 111
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:40:46 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:40:46 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:10 Europe/Berlin] language called
+[08-Apr-2022 17:44:10 Europe/Berlin] dashboard called
+[08-Apr-2022 17:44:13 Europe/Berlin] language called
+[08-Apr-2022 17:44:13 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\index.php on line 111
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:13 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:13 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:14 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:14 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:14 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:14 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:14 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:14 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:14 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:14 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:14 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:14 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:14 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:14 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:16 Europe/Berlin] language called
+[08-Apr-2022 17:44:21 Europe/Berlin] language called
+[08-Apr-2022 17:44:21 Europe/Berlin] dashboard called
+[08-Apr-2022 17:44:21 Europe/Berlin] language called
+[08-Apr-2022 17:44:21 Europe/Berlin] PHP Notice:  Trying to get property 'name' of non-object in C:\xampp\htdocs\mnu\index.php on line 111
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:44:21 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:44:21 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:44:25 Europe/Berlin] language called
+[08-Apr-2022 17:44:31 Europe/Berlin] language called
+[08-Apr-2022 17:44:31 Europe/Berlin] User NasoohOlabilogged out.
+[08-Apr-2022 17:44:31 Europe/Berlin] language called
+[08-Apr-2022 17:44:39 Europe/Berlin] language called
+[08-Apr-2022 17:44:39 Europe/Berlin] USERMODEL
+[08-Apr-2022 17:44:39 Europe/Berlin] username = NasoohOlabi and password = 1234
+[08-Apr-2022 17:44:39 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[08-Apr-2022 17:44:39 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":["Student","Exam_Center"],"identifying_fields":["username"],"id":1}
+[08-Apr-2022 17:44:39 Europe/Berlin] language called
+[08-Apr-2022 17:44:39 Europe/Berlin] language called
+[08-Apr-2022 17:44:53 Europe/Berlin] language called
+[08-Apr-2022 17:44:53 Europe/Berlin] dashboard called
+[08-Apr-2022 17:44:53 Europe/Berlin] language called
+[08-Apr-2022 17:44:56 Europe/Berlin] language called
+[08-Apr-2022 17:45:00 Europe/Berlin] language called
+[08-Apr-2022 17:45:00 Europe/Berlin] ----->>>>required_permissions: ["read_Role"]
+[08-Apr-2022 17:45:00 Europe/Berlin] this one is missing read_Role
+[08-Apr-2022 17:45:10 Europe/Berlin] language called
+[08-Apr-2022 17:45:10 Europe/Berlin] language called
+[08-Apr-2022 17:45:10 Europe/Berlin] ----->>>>required_permissions: ["read_Role"]
+[08-Apr-2022 17:45:10 Europe/Berlin] this one is missing read_Role
+[08-Apr-2022 17:45:10 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:45:10 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:45:10 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:45:10 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:45:10 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:45:10 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:45:10 Europe/Berlin] dashboard called
+[08-Apr-2022 17:45:10 Europe/Berlin] language called
+[08-Apr-2022 17:45:10 Europe/Berlin] dashboard called
+[08-Apr-2022 17:45:11 Europe/Berlin] language called
+[08-Apr-2022 17:45:11 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:45:11 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:45:11 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:45:11 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:45:11 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:45:11 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:45:11 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:45:11 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:45:11 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:45:11 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:45:11 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:45:11 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:45:11 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:45:12 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:45:12 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:45:12 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:45:12 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:45:12 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:45:12 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:45:12 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:45:12 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:45:12 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:45:12 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:45:12 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:45:12 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:45:12 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:45:12 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:45:12 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:45:12 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:45:12 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:45:12 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:45:12 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:45:12 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:45:12 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:45:12 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:45:12 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:45:12 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 17:45:12 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 17:45:14 Europe/Berlin] language called
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_user
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_student
+[08-Apr-2022 17:45:14 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[08-Apr-2022 17:45:14 Europe/Berlin] this one is missing read_exam_center
+[08-Apr-2022 19:33:58 Europe/Berlin] language called
+[08-Apr-2022 19:33:58 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 19:33:58 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 19:34:21 Europe/Berlin] language called
+[08-Apr-2022 19:34:21 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 19:34:21 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 19:34:24 Europe/Berlin] language called
+[08-Apr-2022 19:34:24 Europe/Berlin] dashboard called
+[08-Apr-2022 19:34:39 Europe/Berlin] language called
+[08-Apr-2022 19:34:39 Europe/Berlin] dashboard called
+[08-Apr-2022 19:34:41 Europe/Berlin] language called
+[08-Apr-2022 19:34:41 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 19:34:41 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 19:35:06 Europe/Berlin] language called
+[08-Apr-2022 19:35:06 Europe/Berlin] dashboard called
+[08-Apr-2022 19:35:07 Europe/Berlin] language called
+[08-Apr-2022 19:35:07 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 19:35:07 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:06:27 Europe/Berlin] language called
+[08-Apr-2022 20:06:27 Europe/Berlin] dashboard called
+[08-Apr-2022 20:06:28 Europe/Berlin] language called
+[08-Apr-2022 20:06:28 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:06:28 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:06:33 Europe/Berlin] language called
+[08-Apr-2022 20:06:33 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:06:33 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:19:55 Europe/Berlin] language called
+[08-Apr-2022 20:19:55 Europe/Berlin] dashboard called
+[08-Apr-2022 20:19:57 Europe/Berlin] language called
+[08-Apr-2022 20:19:57 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:19:57 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] language called
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:25 Europe/Berlin] language called
+[08-Apr-2022 20:20:25 Europe/Berlin] dashboard called
+[08-Apr-2022 20:20:26 Europe/Berlin] language called
+[08-Apr-2022 20:20:26 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:26 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] language called
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:20:29 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:20:29 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:23:48 Europe/Berlin] language called
+[08-Apr-2022 20:23:48 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:23:48 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:23:54 Europe/Berlin] language called
+[08-Apr-2022 20:23:54 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:23:54 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:18 Europe/Berlin] language called
+[08-Apr-2022 20:24:18 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:18 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:36 Europe/Berlin] language called
+[08-Apr-2022 20:24:36 Europe/Berlin] dashboard called
+[08-Apr-2022 20:24:37 Europe/Berlin] language called
+[08-Apr-2022 20:24:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] language called
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:45 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:45 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:45 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:45 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:45 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:45 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:45 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:45 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:45 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:45 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:45 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:45 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:24:45 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:24:45 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:24:45 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:24:45 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:31 Europe/Berlin] language called
+[08-Apr-2022 20:54:31 Europe/Berlin] dashboard called
+[08-Apr-2022 20:54:35 Europe/Berlin] language called
+[08-Apr-2022 20:54:35 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:35 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] language called
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:42 Europe/Berlin] language called
+[08-Apr-2022 20:54:42 Europe/Berlin] ----->>>>required_permissions: ["read_Role"]
+[08-Apr-2022 20:54:42 Europe/Berlin] this one is missing read_Role
+[08-Apr-2022 20:54:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:54:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:54:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:54:53 Europe/Berlin] language called
+[08-Apr-2022 20:54:53 Europe/Berlin] dashboard called
+[08-Apr-2022 20:54:56 Europe/Berlin] language called
+[08-Apr-2022 20:54:56 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:54:56 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:13 Europe/Berlin] language called
+[08-Apr-2022 20:55:13 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:13 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:13 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:13 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:13 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:13 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:13 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:13 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:13 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:13 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:13 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:13 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:13 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:13 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:13 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:13 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:13 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:13 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:13 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:13 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:14 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:14 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:42 Europe/Berlin] language called
+[08-Apr-2022 20:55:42 Europe/Berlin] dashboard called
+[08-Apr-2022 20:55:44 Europe/Berlin] language called
+[08-Apr-2022 20:55:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] language called
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:55:47 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 20:55:47 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 20:57:07 Europe/Berlin] language called
+[08-Apr-2022 20:57:07 Europe/Berlin] dashboard called
+[08-Apr-2022 20:57:09 Europe/Berlin] language called
+[08-Apr-2022 20:57:09 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:57:09 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:58:16 Europe/Berlin] language called
+[08-Apr-2022 20:58:16 Europe/Berlin] dashboard called
+[08-Apr-2022 20:58:18 Europe/Berlin] language called
+[08-Apr-2022 20:58:18 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:58:18 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:58:50 Europe/Berlin] language called
+[08-Apr-2022 20:58:50 Europe/Berlin] dashboard called
+[08-Apr-2022 20:58:51 Europe/Berlin] language called
+[08-Apr-2022 20:58:51 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 20:58:51 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:58:51 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:58:52 Europe/Berlin] language called
+[08-Apr-2022 20:58:52 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 20:58:52 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 20:58:52 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 20:59:40 Europe/Berlin] language called
+[08-Apr-2022 20:59:40 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:00:02 Europe/Berlin] language called
+[08-Apr-2022 21:00:02 Europe/Berlin] role_has_permission && role_id && 1 && 
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:00:02 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:00:02 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:37 Europe/Berlin] language called
+[08-Apr-2022 21:03:37 Europe/Berlin] dashboard called
+[08-Apr-2022 21:03:38 Europe/Berlin] language called
+[08-Apr-2022 21:03:38 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:03:38 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:38 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] language called
+[08-Apr-2022 21:03:42 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] language called
+[08-Apr-2022 21:03:42 Europe/Berlin] role_has_permission && role_id && 1 && 
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:42 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:42 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:03:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:03:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:04:32 Europe/Berlin] language called
+[08-Apr-2022 21:04:32 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:04:38 Europe/Berlin] language called
+[08-Apr-2022 21:04:38 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:04:43 Europe/Berlin] language called
+[08-Apr-2022 21:04:43 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:04:47 Europe/Berlin] language called
+[08-Apr-2022 21:04:47 Europe/Berlin] role_has_permission && role_id && 1 && 2
+[08-Apr-2022 21:05:09 Europe/Berlin] language called
+[08-Apr-2022 21:05:09 Europe/Berlin] role_has_permission && role_id && 1 && 2
+[08-Apr-2022 21:05:09 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:09 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] language called
+[08-Apr-2022 21:05:15 Europe/Berlin] role_has_permission && role_id && 1 && 
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:15 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:15 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] language called
+[08-Apr-2022 21:05:16 Europe/Berlin] role_has_permission && role_id && 1 && 
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:16 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:16 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:05:17 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:05:17 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:25 Europe/Berlin] language called
+[08-Apr-2022 21:06:25 Europe/Berlin] dashboard called
+[08-Apr-2022 21:06:26 Europe/Berlin] language called
+[08-Apr-2022 21:06:26 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:06:26 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:26 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] language called
+[08-Apr-2022 21:06:31 Europe/Berlin] role_has_permission && role_id && 1 && 
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:43 Europe/Berlin] language called
+[08-Apr-2022 21:06:43 Europe/Berlin] role_has_permission && role_id && 1 && 
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:43 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:43 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:06:44 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:06:44 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:08:04 Europe/Berlin] language called
+[08-Apr-2022 21:08:04 Europe/Berlin] dashboard called
+[08-Apr-2022 21:08:04 Europe/Berlin] language called
+[08-Apr-2022 21:08:04 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:08:04 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:08:04 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:08:09 Europe/Berlin] language called
+[08-Apr-2022 21:08:09 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:08:09 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:08:09 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:08:12 Europe/Berlin] language called
+[08-Apr-2022 21:08:12 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:08:12 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:08:12 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:08:57 Europe/Berlin] language called
+[08-Apr-2022 21:08:57 Europe/Berlin] dashboard called
+[08-Apr-2022 21:08:58 Europe/Berlin] language called
+[08-Apr-2022 21:08:58 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:08:58 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:08:58 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:09:01 Europe/Berlin] language called
+[08-Apr-2022 21:09:01 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:09:01 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:09:01 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:09:53 Europe/Berlin] language called
+[08-Apr-2022 21:09:53 Europe/Berlin] dashboard called
+[08-Apr-2022 21:09:54 Europe/Berlin] language called
+[08-Apr-2022 21:09:54 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:09:54 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:09:54 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:10:50 Europe/Berlin] language called
+[08-Apr-2022 21:10:50 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:10:50 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:10:50 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:16:28 Europe/Berlin] language called
+[08-Apr-2022 21:16:28 Europe/Berlin] dashboard called
+[08-Apr-2022 21:16:29 Europe/Berlin] language called
+[08-Apr-2022 21:16:29 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:16:29 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:16:29 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:16:33 Europe/Berlin] language called
+[08-Apr-2022 21:16:33 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:16:33 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:16:33 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:19:20 Europe/Berlin] language called
+[08-Apr-2022 21:19:20 Europe/Berlin] dashboard called
+[08-Apr-2022 21:19:21 Europe/Berlin] language called
+[08-Apr-2022 21:19:21 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:19:21 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:19:21 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:19:24 Europe/Berlin] language called
+[08-Apr-2022 21:19:24 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:19:24 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:19:24 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:21:09 Europe/Berlin] language called
+[08-Apr-2022 21:21:09 Europe/Berlin] dashboard called
+[08-Apr-2022 21:21:09 Europe/Berlin] language called
+[08-Apr-2022 21:21:09 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:21:09 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:21:09 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:21:12 Europe/Berlin] language called
+[08-Apr-2022 21:21:13 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:21:13 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:21:13 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:21:33 Europe/Berlin] language called
+[08-Apr-2022 21:21:33 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:21:33 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:21:33 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:23:58 Europe/Berlin] language called
+[08-Apr-2022 21:23:58 Europe/Berlin] dashboard called
+[08-Apr-2022 21:24:05 Europe/Berlin] language called
+[08-Apr-2022 21:24:05 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:24:05 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:24:05 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:24:06 Europe/Berlin] language called
+[08-Apr-2022 21:24:06 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:24:06 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:24:06 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:24:08 Europe/Berlin] language called
+[08-Apr-2022 21:24:08 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:24:08 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:24:08 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:24:50 Europe/Berlin] language called
+[08-Apr-2022 21:24:50 Europe/Berlin] dashboard called
+[08-Apr-2022 21:24:53 Europe/Berlin] language called
+[08-Apr-2022 21:24:53 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:24:53 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:24:53 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:24:55 Europe/Berlin] language called
+[08-Apr-2022 21:24:55 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:24:55 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:24:55 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:24:57 Europe/Berlin] language called
+[08-Apr-2022 21:24:57 Europe/Berlin] role_has_permission && role_id && 1 && 2
+[08-Apr-2022 21:24:57 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:24:57 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:25:00 Europe/Berlin] language called
+[08-Apr-2022 21:25:00 Europe/Berlin] role_has_permission && role_id && 1 && 2
+[08-Apr-2022 21:25:00 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:25:00 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:25:01 Europe/Berlin] language called
+[08-Apr-2022 21:25:01 Europe/Berlin] role_has_permission && role_id && 1 && 2
+[08-Apr-2022 21:25:01 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:25:01 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:25:03 Europe/Berlin] language called
+[08-Apr-2022 21:25:03 Europe/Berlin] role_has_permission && role_id && 1 && 2
+[08-Apr-2022 21:25:03 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:25:03 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:26:09 Europe/Berlin] language called
+[08-Apr-2022 21:26:09 Europe/Berlin] dashboard called
+[08-Apr-2022 21:26:10 Europe/Berlin] language called
+[08-Apr-2022 21:26:10 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:26:10 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:26:10 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:26:45 Europe/Berlin] language called
+[08-Apr-2022 21:26:45 Europe/Berlin] dashboard called
+[08-Apr-2022 21:26:47 Europe/Berlin] language called
+[08-Apr-2022 21:26:47 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:26:47 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:26:47 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:26:48 Europe/Berlin] language called
+[08-Apr-2022 21:26:48 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:26:48 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:26:48 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:26:50 Europe/Berlin] language called
+[08-Apr-2022 21:26:50 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:26:50 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:26:50 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:27:06 Europe/Berlin] language called
+[08-Apr-2022 21:27:06 Europe/Berlin] dashboard called
+[08-Apr-2022 21:27:07 Europe/Berlin] language called
+[08-Apr-2022 21:27:07 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:27:07 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:27:07 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:27:13 Europe/Berlin] language called
+[08-Apr-2022 21:27:13 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:27:13 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:27:13 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:28:30 Europe/Berlin] language called
+[08-Apr-2022 21:28:30 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:28:30 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:28:30 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:28:32 Europe/Berlin] language called
+[08-Apr-2022 21:28:32 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:28:32 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:28:32 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:28:33 Europe/Berlin] language called
+[08-Apr-2022 21:28:34 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:28:34 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:28:34 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:28:37 Europe/Berlin] language called
+[08-Apr-2022 21:28:37 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:28:37 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:28:37 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:36:16 Europe/Berlin] language called
+[08-Apr-2022 21:36:16 Europe/Berlin] dashboard called
+[08-Apr-2022 21:36:20 Europe/Berlin] language called
+[08-Apr-2022 21:36:20 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:36:20 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:36:20 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:36:21 Europe/Berlin] language called
+[08-Apr-2022 21:36:21 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:36:21 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:36:21 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:37:31 Europe/Berlin] language called
+[08-Apr-2022 21:37:31 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:37:31 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:37:31 Europe/Berlin] this one is missing read_permission
+[08-Apr-2022 21:41:08 Europe/Berlin] language called
+[08-Apr-2022 21:41:08 Europe/Berlin] dashboard called
+[08-Apr-2022 21:41:08 Europe/Berlin] language called
+[08-Apr-2022 21:41:08 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:41:08 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:41:08 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:41:09 Europe/Berlin] language called
+[08-Apr-2022 21:41:09 Europe/Berlin] role &&  &&  && 
+[08-Apr-2022 21:41:09 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[08-Apr-2022 21:41:09 Europe/Berlin] this one is missing read_role
+[08-Apr-2022 21:41:13 Europe/Berlin] language called
+[08-Apr-2022 21:41:13 Europe/Berlin] role_has_permission && role_id && 1 && 1
+[08-Apr-2022 21:41:13 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[08-Apr-2022 21:41:13 Europe/Berlin] this one is missing read_permission

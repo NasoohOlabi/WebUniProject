@@ -1,0 +1,295 @@
+[04-Apr-2022 16:27:08 Europe/Berlin] $_POST [] failed Caught exception: You don't have read_topic permission!
+[04-Apr-2022 16:29:10 Europe/Berlin] $_POST [] failed Caught exception: You don't have read_topic permission!
+[04-Apr-2022 19:58:57 Europe/Berlin] Exam dep fetch Student_Exam
+[04-Apr-2022 19:58:57 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 19:58:57 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 19:58:57 Europe/Berlin] Exam dep fetch Student_Exam
+[04-Apr-2022 19:58:57 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 19:58:57 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 19:58:57 Europe/Berlin] $_POST {"limit":1000000000} served
+[04-Apr-2022 19:58:57 Europe/Berlin] Exam_Center dep fetch Student_Exam
+[04-Apr-2022 19:58:57 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 19:58:57 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 19:58:57 Europe/Berlin] Exam_Center dep fetch Student_Exam
+[04-Apr-2022 19:58:57 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 19:58:57 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 19:58:57 Europe/Berlin] $_POST {"limit":1000000000} served
+[04-Apr-2022 20:04:40 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:40 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:40 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:40 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:40 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:40 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:40 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:40 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:40 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:40 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:40 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:40 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:40 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:41 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:41 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:42 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:42 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:42 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:42 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:42 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:42 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:42 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:42 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:42 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:42 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:42 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:42 Europe/Berlin] Subject dep fetch Exam
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:42 Europe/Berlin] Subject dep fetch Topic
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:42 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:42 Europe/Berlin] $_POST {"limit":1000000000} served
+[04-Apr-2022 20:04:53 Europe/Berlin] Topic dep fetch Question
+[04-Apr-2022 20:04:53 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:53 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:53 Europe/Berlin] Topic dep fetch Question
+[04-Apr-2022 20:04:53 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:53 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:53 Europe/Berlin] Topic dep fetch Question
+[04-Apr-2022 20:04:53 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:53 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:53 Europe/Berlin] Topic dep fetch Question
+[04-Apr-2022 20:04:53 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:53 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:53 Europe/Berlin] Topic dep fetch Question
+[04-Apr-2022 20:04:53 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:53 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:54 Europe/Berlin] Topic dep fetch Question
+[04-Apr-2022 20:04:54 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:54 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:54 Europe/Berlin] $_POST [] served
+[04-Apr-2022 20:04:55 Europe/Berlin] Exam_Center dep fetch Student_Exam
+[04-Apr-2022 20:04:55 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:55 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:55 Europe/Berlin] Exam_Center dep fetch Student_Exam
+[04-Apr-2022 20:04:55 Europe/Berlin] PHP Notice:  Undefined variable: hierarchy in C:\xampp\htdocs\mnu\index.php on line 96
+[04-Apr-2022 20:04:55 Europe/Berlin] PHP Warning:  array_keys() expects parameter 1 to be array, null given in C:\xampp\htdocs\mnu\index.php on line 98
+[04-Apr-2022 20:04:55 Europe/Berlin] $_POST [] served
+[04-Apr-2022 20:05:52 Europe/Berlin] Exam_Center dep fetch Student_Exam
+[04-Apr-2022 20:05:52 Europe/Berlin] Exam_Center dep fetch Student_Exam
+[04-Apr-2022 20:05:52 Europe/Berlin] $_POST [] served
+[04-Apr-2022 20:05:57 Europe/Berlin] $_POST [] served
+[04-Apr-2022 20:05:58 Europe/Berlin] more is requested specifically after 8
+[04-Apr-2022 20:05:58 Europe/Berlin] $_POST {"op":"get after","id":8} served
+[04-Apr-2022 20:05:59 Europe/Berlin] more is requested specifically after 16
+[04-Apr-2022 20:05:59 Europe/Berlin] $_POST {"op":"get after","id":16} served
+[04-Apr-2022 20:06:04 Europe/Berlin] more is requested specifically after 25
+[04-Apr-2022 20:06:04 Europe/Berlin] $_POST {"op":"get after","id":25} served
+[04-Apr-2022 20:06:04 Europe/Berlin] more is requested specifically after 31
+[04-Apr-2022 20:06:04 Europe/Berlin] $_POST {"op":"get after","id":31} served
+[04-Apr-2022 20:06:21 Europe/Berlin] $_POST [] served
+[04-Apr-2022 20:06:21 Europe/Berlin] more is requested specifically after 8
+[04-Apr-2022 20:06:21 Europe/Berlin] $_POST {"op":"get after","id":8} served
+[04-Apr-2022 20:06:29 Europe/Berlin] $_POST [] served
+[04-Apr-2022 20:06:30 Europe/Berlin] more is requested specifically after 8
+[04-Apr-2022 20:06:30 Europe/Berlin] $_POST {"op":"get after","id":8} served
+[04-Apr-2022 20:06:31 Europe/Berlin] more is requested specifically after 16
+[04-Apr-2022 20:06:31 Europe/Berlin] $_POST {"op":"get after","id":16} served
+[04-Apr-2022 20:06:32 Europe/Berlin] more is requested specifically after 25
+[04-Apr-2022 20:06:32 Europe/Berlin] $_POST {"op":"get after","id":25} served
+[04-Apr-2022 20:06:33 Europe/Berlin] more is requested specifically after 31
+[04-Apr-2022 20:06:33 Europe/Berlin] $_POST {"op":"get after","id":31} served
+[04-Apr-2022 20:06:48 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:06:48 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 1
+[04-Apr-2022 20:06:48 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:06:48 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 2
+[04-Apr-2022 20:06:48 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:06:48 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 3
+[04-Apr-2022 20:06:48 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:06:48 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 4
+[04-Apr-2022 20:06:48 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:06:48 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 5
+[04-Apr-2022 20:06:48 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:06:48 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 6
+[04-Apr-2022 20:06:48 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:06:48 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 7
+[04-Apr-2022 20:06:48 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:06:48 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 8
+[04-Apr-2022 20:06:48 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:06:48 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 9
+[04-Apr-2022 20:06:48 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:06:48 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 10
+[04-Apr-2022 20:06:48 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:06:48 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 11
+[04-Apr-2022 20:06:48 Europe/Berlin] $_POST [] served
+[04-Apr-2022 20:06:53 Europe/Berlin] more is requested specifically after 11
+[04-Apr-2022 20:06:53 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[04-Apr-2022 20:08:04 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:08:04 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 1
+[04-Apr-2022 20:08:04 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:08:04 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 2
+[04-Apr-2022 20:08:04 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:08:04 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 3
+[04-Apr-2022 20:08:04 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:08:04 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 4
+[04-Apr-2022 20:08:04 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:08:04 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 5
+[04-Apr-2022 20:08:04 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:08:04 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 6
+[04-Apr-2022 20:08:04 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:08:04 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 7
+[04-Apr-2022 20:08:04 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:08:04 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 8
+[04-Apr-2022 20:08:04 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:08:04 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 9
+[04-Apr-2022 20:08:04 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:08:04 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 10
+[04-Apr-2022 20:08:04 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:08:04 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 11
+[04-Apr-2022 20:08:04 Europe/Berlin] $_POST [] served
+[04-Apr-2022 20:08:05 Europe/Berlin] more is requested specifically after 11
+[04-Apr-2022 20:08:05 Europe/Berlin] $_POST {"op":"get after","id":11} served
+[04-Apr-2022 20:18:49 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:18:49 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 1
+[04-Apr-2022 20:18:49 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:18:49 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 2
+[04-Apr-2022 20:18:49 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:18:49 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 3
+[04-Apr-2022 20:18:49 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:18:49 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 4
+[04-Apr-2022 20:18:49 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:18:49 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 5
+[04-Apr-2022 20:18:49 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:18:49 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 6
+[04-Apr-2022 20:18:49 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:18:49 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 7
+[04-Apr-2022 20:18:49 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:18:49 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 8
+[04-Apr-2022 20:18:49 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:18:49 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 9
+[04-Apr-2022 20:18:49 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:18:49 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 10
+[04-Apr-2022 20:18:49 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:18:50 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 11
+[04-Apr-2022 20:18:50 Europe/Berlin] $_POST [] served
+[04-Apr-2022 20:19:26 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:19:26 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 1
+[04-Apr-2022 20:19:26 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:19:26 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 2
+[04-Apr-2022 20:19:26 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:19:26 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 3
+[04-Apr-2022 20:19:26 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:19:26 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 4
+[04-Apr-2022 20:19:26 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:19:27 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 5
+[04-Apr-2022 20:19:27 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:19:27 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 6
+[04-Apr-2022 20:19:27 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:19:27 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 7
+[04-Apr-2022 20:19:27 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:19:27 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 8
+[04-Apr-2022 20:19:27 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:19:27 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 9
+[04-Apr-2022 20:19:27 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:19:27 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 10
+[04-Apr-2022 20:19:27 Europe/Berlin] Question dep fetch Choice
+[04-Apr-2022 20:19:27 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 11
+[04-Apr-2022 20:19:27 Europe/Berlin] $_POST [] served

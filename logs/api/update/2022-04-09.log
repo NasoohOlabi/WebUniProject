@@ -1,0 +1,16 @@
+[09-Apr-2022 13:31:58 Europe/Berlin] Api::update image preprocessed POST {"username":"NassouhAlOlabi","first_name":"Nassouh","last_name":"Yasser","middle_name":"AlOlabis","profile_picture":null,"role_id":1,"role":["role-1"],"dependents":["Student","Exam_Center"],"identifying_fields":["username"],"id":"2","students":[],"exam_centers":[]}
+[09-Apr-2022 13:31:58 Europe/Berlin] Api::update POST processed{"username":"NassouhAlOlabi","first_name":"Nassouh","last_name":"Yasser","middle_name":"AlOlabis","profile_picture":null,"role_id":"1","id":"2"}
+[09-Apr-2022 13:35:23 Europe/Berlin] Api::update image preprocessed POST {"username":"NassouhAlOlabi","first_name":"Nassouh","last_name":"Olabi","middle_name":"Yasser","profile_picture":null,"role_id":1,"role":["role-1"],"dependents":["Student","Exam_Center"],"identifying_fields":["username"],"id":"2","students":[],"exam_centers":[]}
+[09-Apr-2022 13:35:23 Europe/Berlin] Api::update POST processed{"username":"NassouhAlOlabi","first_name":"Nassouh","last_name":"Olabi","middle_name":"Yasser","profile_picture":null,"role_id":"1","id":"2"}
+[09-Apr-2022 13:35:39 Europe/Berlin] Api::update image preprocessed POST {"username":"NassouhAlOlabi","first_name":"Nassouh","last_name":"Olabis","middle_name":"Yasser","profile_picture":null,"role_id":1,"role":["role-1"],"dependents":["Student","Exam_Center"],"identifying_fields":["username"],"id":"2","students":[],"exam_centers":[]}
+[09-Apr-2022 13:35:39 Europe/Berlin] Api::update POST processed{"username":"NassouhAlOlabi","first_name":"Nassouh","last_name":"Olabis","middle_name":"Yasser","profile_picture":null,"role_id":"1","id":"2"}
+[09-Apr-2022 13:35:52 Europe/Berlin] Api::update image preprocessed POST {"username":"NassouhAlOlabi","first_name":"Nassouh","last_name":"Olabi","middle_name":"Yasser","profile_picture":null,"role_id":1,"role":["role-1"],"dependents":["Student","Exam_Center"],"identifying_fields":["username"],"id":"2","students":[],"exam_centers":[]}
+[09-Apr-2022 13:35:52 Europe/Berlin] Api::update POST processed{"username":"NassouhAlOlabi","first_name":"Nassouh","last_name":"Olabi","middle_name":"Yasser","profile_picture":null,"role_id":"1","id":"2"}
+[09-Apr-2022 13:36:05 Europe/Berlin] Api::update image preprocessed POST {"id":"2","role_id":"6"}
+[09-Apr-2022 13:36:05 Europe/Berlin] Api::update POST processed{"id":"2","role_id":"6"}
+[09-Apr-2022 13:36:05 Europe/Berlin] Caught exception: You don't have permission to change roles
+[09-Apr-2022 14:34:37 Europe/Berlin] Api::update image preprocessed POST {"text":"INT","is_correct":1,"question_id":1,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":"1","many2many":{"student_exam":"student_exam_has_choice"},"student_exams":[]}
+[09-Apr-2022 14:34:37 Europe/Berlin] Api::update POST processed{"text":"INT","is_correct":"1","question_id":"1","id":"1"}
+[09-Apr-2022 14:34:37 Europe/Berlin] Caught exception: You Can't Edit choices
+[09-Apr-2022 16:55:41 Europe/Berlin] Api::update image preprocessed POST {"id":"2","role_id":"6"}
+[09-Apr-2022 16:55:41 Europe/Berlin] Api::update POST processed{"id":"2","role_id":"6"}

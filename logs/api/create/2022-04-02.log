@@ -1,0 +1,4 @@
+[02-Apr-2022 21:12:45 Europe/Berlin] {"text":"if x+1=3 then x = ?","number_of_choices":3,"topic_id":2,"dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[02-Apr-2022 21:12:45 Europe/Berlin] {"text":"x = 2","is_correct":0,"question_id":100,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[02-Apr-2022 21:12:45 Europe/Berlin] {"text":"x = -1","is_correct":0,"question_id":100,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[02-Apr-2022 21:12:45 Europe/Berlin] {"text":"x = 10","is_correct":0,"question_id":100,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}

@@ -1,0 +1,57 @@
+[02-Apr-2022 12:48:50 Europe/Berlin] $_POST [] failed Caught exception: Class 'student_took_exam' not found
+[02-Apr-2022 12:51:51 Europe/Berlin] Question dep fetch Choice
+[02-Apr-2022 12:51:51 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 1
+[02-Apr-2022 12:51:51 Europe/Berlin] Question dep fetch Choice
+[02-Apr-2022 12:51:51 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 2
+[02-Apr-2022 12:51:51 Europe/Berlin] Question dep fetch Choice
+[02-Apr-2022 12:51:51 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 3
+[02-Apr-2022 12:51:51 Europe/Berlin] Question dep fetch Choice
+[02-Apr-2022 12:51:51 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Question many_name: Student_Exam middle_table: Student_Exam_Has_Question middle_table_one_col: student_exam_has_question.question_id middle_table_many_col: student_exam_has_question.student_exam_id row->id: 4
+[02-Apr-2022 12:51:51 Europe/Berlin] $_POST [] served
+[02-Apr-2022 12:51:55 Europe/Berlin] $_POST [] served
+[02-Apr-2022 12:52:00 Europe/Berlin] $_POST [] served
+[02-Apr-2022 12:52:01 Europe/Berlin] Exam dep fetch Student_Exam
+[02-Apr-2022 12:52:01 Europe/Berlin] ->>jump over many2many table :: $dep<<<----dep: Student_Exam_Has_Question one_name: Exam many_name: Student_Question middle_table: Student_Exam_Has_Question middle_table_one_col:  middle_table_many_col:  row->id: 1
+[02-Apr-2022 12:52:01 Europe/Berlin] $_POST [] failed Caught exception: Class 'Student_Question' not found
+[02-Apr-2022 20:56:35 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"3","topic_id":"4"}
+[02-Apr-2022 20:56:35 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"3","topic_id":"4"}
+[02-Apr-2022 20:56:35 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"3","topic_id":"4"}
+[02-Apr-2022 20:56:37 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"3","topic_id":"4"}
+[02-Apr-2022 20:56:37 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"3","topic_id":"4"}
+[02-Apr-2022 20:56:37 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"3","topic_id":"4"}
+[02-Apr-2022 20:58:30 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"3","topic_id":"2"}
+[02-Apr-2022 20:58:30 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"3","topic_id":"2"}
+[02-Apr-2022 20:58:30 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"3","topic_id":"2"}
+[02-Apr-2022 21:02:10 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"3","topic_id":"1"}
+[02-Apr-2022 21:02:10 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"3","topic_id":"1"}
+[02-Apr-2022 21:02:10 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"3","topic_id":"1"}
+[02-Apr-2022 21:08:36 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"3","topic_id":"4"}
+[02-Apr-2022 21:08:36 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"3","topic_id":"4"}
+[02-Apr-2022 21:08:36 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"3","topic_id":"4"}
+[02-Apr-2022 21:08:53 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"3","topic_id":"2"}
+[02-Apr-2022 21:08:53 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"3","topic_id":"2"}
+[02-Apr-2022 21:08:53 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"3","topic_id":"2"}
+[02-Apr-2022 21:09:02 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"3","topic_id":"4"}
+[02-Apr-2022 21:09:02 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"3","topic_id":"4"}
+[02-Apr-2022 21:09:02 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"3","topic_id":"4"}
+[02-Apr-2022 21:13:15 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"100"}
+[02-Apr-2022 21:13:15 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"100"}
+[02-Apr-2022 21:13:15 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"100"}
+[02-Apr-2022 21:15:41 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"100"}
+[02-Apr-2022 21:15:41 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"100"}
+[02-Apr-2022 21:15:41 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"100"}
+[02-Apr-2022 21:29:18 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"100"}
+[02-Apr-2022 21:29:18 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"100"}
+[02-Apr-2022 21:29:18 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"100"}
+[02-Apr-2022 21:31:20 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"100"}
+[02-Apr-2022 21:31:20 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"100"}
+[02-Apr-2022 21:31:20 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"100"}
+[02-Apr-2022 21:31:53 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"text":"x = 2","is_correct":"1","question_id":100,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":"100"}
+[02-Apr-2022 21:31:53 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"text":"x = 2","is_correct":"1","question_id":"100","id":"100"}
+[02-Apr-2022 21:31:53 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"text":"x = 2","is_correct":"1","question_id":"100","id":"100"}
+[02-Apr-2022 21:47:05 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"text":"x = 2","is_correct":0,"question_id":100,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":"100"}
+[02-Apr-2022 21:47:05 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"text":"x = 2","is_correct":"0","question_id":"100","id":"100"}
+[02-Apr-2022 21:47:05 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"text":"x = 2","is_correct":"0","question_id":"100","id":"100"}
+[02-Apr-2022 21:47:19 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"text":"x = 2","is_correct":1,"question_id":100,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":"100"}
+[02-Apr-2022 21:47:19 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"text":"x = 2","is_correct":"1","question_id":"100","id":"100"}
+[02-Apr-2022 21:47:19 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"text":"x = 2","is_correct":"1","question_id":"100","id":"100"}

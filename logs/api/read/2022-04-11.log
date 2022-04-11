@@ -1,0 +1,722 @@
+[11-Apr-2022 03:49:44 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 03:49:44 Europe/Berlin] $_POST [] served
+[11-Apr-2022 04:48:41 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 04:48:41 Europe/Berlin] $_POST [] served
+[11-Apr-2022 04:48:42 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[11-Apr-2022 04:48:42 Europe/Berlin] $_POST [] served
+[11-Apr-2022 04:48:43 Europe/Berlin] schemaClass topic && field_or_id  && is_string()  && needle 
+[11-Apr-2022 04:48:43 Europe/Berlin] $_POST [] served
+[11-Apr-2022 04:48:50 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 04:48:51 Europe/Berlin] $_POST [] served
+[11-Apr-2022 04:48:56 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 04:48:56 Europe/Berlin] more is requested specifically after 10
+[11-Apr-2022 04:48:56 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[11-Apr-2022 04:51:23 Europe/Berlin] schemaClass question && field_or_id  && is_string()  && needle 
+[11-Apr-2022 04:51:23 Europe/Berlin] $_POST [] served
+[11-Apr-2022 04:51:28 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 04:51:28 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:00:47 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:00:47 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:00:48 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:00:48 Europe/Berlin] more is requested specifically after 10
+[11-Apr-2022 05:00:48 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[11-Apr-2022 05:04:55 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:04:55 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:05:06 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:05:06 Europe/Berlin] more is requested specifically after 10
+[11-Apr-2022 05:05:07 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[11-Apr-2022 05:08:03 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:08:03 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:08:04 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:08:04 Europe/Berlin] more is requested specifically after 10
+[11-Apr-2022 05:08:04 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[11-Apr-2022 05:08:08 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:08:08 Europe/Berlin] more is requested specifically after 21
+[11-Apr-2022 05:08:08 Europe/Berlin] $_POST {"op":"get after","id":21} served
+[11-Apr-2022 05:08:09 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:08:09 Europe/Berlin] more is requested specifically after 31
+[11-Apr-2022 05:08:09 Europe/Berlin] $_POST {"op":"get after","id":31} served
+[11-Apr-2022 05:08:29 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:08:30 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:08:30 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:08:30 Europe/Berlin] more is requested specifically after 10
+[11-Apr-2022 05:08:30 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[11-Apr-2022 05:10:33 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:10:34 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:10:35 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:10:35 Europe/Berlin] more is requested specifically after 10
+[11-Apr-2022 05:10:35 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[11-Apr-2022 05:10:59 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:10:59 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:11:01 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:11:01 Europe/Berlin] more is requested specifically after 10
+[11-Apr-2022 05:11:01 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[11-Apr-2022 05:11:06 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:11:06 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:11:07 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:11:07 Europe/Berlin] more is requested specifically after 10
+[11-Apr-2022 05:11:07 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[11-Apr-2022 05:18:41 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:18:41 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:18:41 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:18:41 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:19:22 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:19:22 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:19:22 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:19:22 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:22:21 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:22:21 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:22:28 Europe/Berlin] schemaClass role && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:22:28 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:22:32 Europe/Berlin] schemaClass role_has_permission && field_or_id role_id && is_string(role_id) 1 && needle 2
+[11-Apr-2022 05:25:47 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:25:47 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:25:47 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:25:47 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:25:57 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:25:57 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:25:57 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:25:57 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:29:13 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:29:13 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:29:13 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:29:14 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:29:19 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:29:19 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:29:19 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:29:19 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:29:54 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:29:54 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:29:54 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:29:54 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:30:00 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:30:00 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:31:26 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:31:26 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:32:24 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:32:25 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:35:59 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:35:59 Europe/Berlin] $_POST null served
+[11-Apr-2022 05:36:43 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:36:43 Europe/Berlin] $_POST null served
+[11-Apr-2022 05:40:33 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:40:33 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:40:33 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:40:33 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:40:42 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:40:42 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:40:42 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:40:42 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:41:25 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:41:25 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:41:25 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:41:25 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:41:35 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:41:36 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:41:36 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:41:36 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:43:39 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:43:39 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:43:39 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:43:39 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:43:50 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:43:50 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:43:50 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:43:50 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:44:06 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:44:06 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:44:06 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:44:06 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:44:36 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:44:36 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:44:36 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:44:37 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:44:50 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:44:50 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:44:50 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:44:50 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:53:26 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:53:26 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:53:26 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:53:26 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:53:29 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:53:29 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:53:29 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:53:29 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:54:00 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:54:00 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:54:00 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:54:00 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 05:54:05 Europe/Berlin] schemaClass subject && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:54:05 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:54:08 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:54:08 Europe/Berlin] $_POST [] served
+[11-Apr-2022 05:54:21 Europe/Berlin] schemaClass topic && field_or_id subject_id && is_string(subject_id) 1 && needle 1
+[11-Apr-2022 05:54:27 Europe/Berlin] schemaClass question && field_or_id topic_id && is_string(topic_id) 1 && needle 1
+[11-Apr-2022 05:54:28 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 05:54:28 Europe/Berlin] more is requested specifically after 2
+[11-Apr-2022 05:54:28 Europe/Berlin] $_POST {"op":"get after","id":2} served
+[11-Apr-2022 06:03:51 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:03:51 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:03:51 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:03:51 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:03:59 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:03:59 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:03:59 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:03:59 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:04:27 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:04:27 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:04:27 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:04:27 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:04:38 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:04:38 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:04:38 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:04:38 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:10:43 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:10:43 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:10:43 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:10:43 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:11:29 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:11:29 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:11:29 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:11:29 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:13:22 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:13:22 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:13:22 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:13:22 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:14:43 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:14:43 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:14:43 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:14:43 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:21:13 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:21:13 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:21:14 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:21:14 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:21:16 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:21:16 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:23:34 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:23:35 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:23:41 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:23:41 Europe/Berlin] more is requested specifically after 10
+[11-Apr-2022 06:23:41 Europe/Berlin] $_POST {"op":"get after","id":10} served
+[11-Apr-2022 06:23:44 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:23:44 Europe/Berlin] more is requested specifically after 21
+[11-Apr-2022 06:23:44 Europe/Berlin] $_POST {"op":"get after","id":21} served
+[11-Apr-2022 06:23:44 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:23:44 Europe/Berlin] more is requested specifically after 31
+[11-Apr-2022 06:23:45 Europe/Berlin] $_POST {"op":"get after","id":31} served
+[11-Apr-2022 06:24:37 Europe/Berlin] schemaClass user && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:24:37 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:24:41 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:24:41 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:24:44 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:24:44 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:24:45 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:24:45 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:25:18 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:25:19 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:25:19 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:25:19 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:25:37 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:25:37 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:25:37 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:25:37 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:25:44 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:25:44 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:25:44 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:25:44 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:25:54 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:25:55 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:25:55 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:25:55 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:26:01 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:26:01 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:26:01 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:26:01 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:26:04 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:26:04 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:26:04 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:26:04 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:26:15 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:26:15 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:26:15 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:26:15 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:26:21 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:26:21 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:26:21 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:26:21 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:26:43 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:26:43 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:26:43 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:26:43 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:26:58 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:26:58 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:26:58 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:26:58 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:27:06 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:27:06 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:27:06 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:27:06 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:27:16 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:27:16 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:27:16 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:27:16 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:27:16 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:27:16 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:27:19 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:27:19 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:27:20 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:27:21 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:27:21 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:27:21 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:27:21 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:27:21 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:27:22 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:27:22 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:27:22 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:27:22 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:27:22 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:27:22 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:28:12 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:28:12 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:28:12 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:28:12 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:28:15 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:28:15 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:28:15 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:28:15 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:28:15 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:28:15 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:28:17 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:28:17 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:28:17 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:28:18 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:28:22 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:28:22 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:28:22 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:28:22 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:28:22 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:28:22 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:28:27 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:28:27 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:28:27 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:28:27 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:28:40 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:28:40 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:28:40 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:28:40 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:28:46 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:28:46 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:28:46 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:28:46 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:28:46 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:28:46 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:28:49 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:28:49 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:28:49 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:28:49 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:28:49 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:28:49 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:28:52 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:28:52 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:28:52 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:28:52 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:28:52 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:28:52 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:30:10 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:30:10 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:30:10 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:30:10 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:30:10 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:30:10 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:30:14 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:30:14 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:30:14 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:30:14 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:30:14 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:30:14 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:30:50 Europe/Berlin] schemaClass permission && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:30:50 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:30:51 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:30:51 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:30:51 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:30:51 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:30:51 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:30:51 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:31:21 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:31:21 Europe/Berlin] $_POST null served
+[11-Apr-2022 06:32:40 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:32:40 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:32:40 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:32:40 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:32:40 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:32:40 Europe/Berlin] $_POST null served
+[11-Apr-2022 06:35:02 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:35:02 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:35:02 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:35:02 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:35:27 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:35:27 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:35:27 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:35:27 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:35:34 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:35:34 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:35:34 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:35:34 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:35:45 Europe/Berlin] schemaClass exam_center && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:35:45 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:35:45 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:35:45 Europe/Berlin] $_POST {"limit":1000000000} served
+[11-Apr-2022 06:36:17 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:36:18 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:36:18 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:36:18 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:36:18 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:36:18 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:36:20 Europe/Berlin] schemaClass exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:36:20 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:36:23 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:36:23 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:36:23 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:36:23 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:36:23 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:36:23 Europe/Berlin] $_POST [] served
+[11-Apr-2022 06:36:28 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:36:28 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:36:28 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:36:28 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:36:28 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:36:28 Europe/Berlin] $_POST null served
+[11-Apr-2022 06:36:36 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:36:37 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:36:37 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:36:37 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:36:37 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:36:37 Europe/Berlin] $_POST null served
+[11-Apr-2022 06:36:48 Europe/Berlin] schemaClass student_exam && field_or_id grade && is_string(grade) 1 && needle null
+[11-Apr-2022 06:36:59 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:36:59 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:36:59 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:36:59 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:36:59 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:36:59 Europe/Berlin] $_POST null served
+[11-Apr-2022 06:37:45 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:37:45 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:37:45 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:37:45 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:37:45 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:37:45 Europe/Berlin] $_POST null served
+[11-Apr-2022 06:43:48 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:43:48 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:43:48 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:43:48 Europe/Berlin] Access Denied Exception AccessDeniedException: You don't have permission to read students in C:\xampp\htdocs\mnu\application\models\basemodel.php:261
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\models\basemodel.php(364): BaseModel->__select_stmt(Array, Array, Array, Array, Array)
+#1 C:\xampp\htdocs\mnu\application\controller\Api.php(176): BaseModel->select(Array, 'student', Array)
+#2 [internal function]: Api->{closure}(Object(Student_Exam))
+#3 C:\xampp\htdocs\mnu\application\controller\Api.php(194): array_map(Object(Closure), Array)
+#4 C:\xampp\htdocs\mnu\application\libs\application.php(49): Api->read('student_exam')
+#5 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
+#6 {main}
+[11-Apr-2022 06:43:48 Europe/Berlin] You have access to student_exam but: You don't have permission to read students
+[11-Apr-2022 06:43:48 Europe/Berlin] $_POST null served
+[11-Apr-2022 06:45:12 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:45:12 Europe/Berlin] $_POST null served
+[11-Apr-2022 06:45:18 Europe/Berlin] schemaClass student_exam && field_or_id  && is_string()  && needle 
+[11-Apr-2022 06:45:18 Europe/Berlin] $_POST [] served

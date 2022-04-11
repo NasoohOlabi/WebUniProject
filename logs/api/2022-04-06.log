@@ -1,0 +1,4 @@
+[06-Apr-2022 16:55:33 Europe/Berlin] Caught exception: Constructing : {"id":-1} to contain the following ["id","name","description"] this one failed name
+[06-Apr-2022 17:08:42 Europe/Berlin] Caught exception: Duplicate entry 'jlk' for key 'name_UNIQUE'
+[06-Apr-2022 17:26:04 Europe/Berlin] Caught exception: Typed property Exam::$number_of_questions must be int, string used
+[06-Apr-2022 17:26:04 Europe/Berlin] Caught exception: Typed property Topic::$name must be string, null used

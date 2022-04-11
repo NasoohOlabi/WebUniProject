@@ -1,0 +1,541 @@
+[07-Apr-2022 05:57:30 Europe/Berlin] language called
+[07-Apr-2022 05:58:15 Europe/Berlin] language called
+[07-Apr-2022 05:58:15 Europe/Berlin] dashboard called
+[07-Apr-2022 05:58:17 Europe/Berlin] language called
+[07-Apr-2022 05:59:04 Europe/Berlin] language called
+[07-Apr-2022 06:00:52 Europe/Berlin] language called
+[07-Apr-2022 06:01:14 Europe/Berlin] language called
+[07-Apr-2022 06:01:14 Europe/Berlin] language called
+[07-Apr-2022 06:01:20 Europe/Berlin] language called
+[07-Apr-2022 06:01:20 Europe/Berlin] language called
+[07-Apr-2022 06:01:45 Europe/Berlin] language called
+[07-Apr-2022 06:01:45 Europe/Berlin] language called
+[07-Apr-2022 06:05:18 Europe/Berlin] language called
+[07-Apr-2022 06:05:33 Europe/Berlin] language called
+[07-Apr-2022 06:05:33 Europe/Berlin] language called
+[07-Apr-2022 06:06:13 Europe/Berlin] language called
+[07-Apr-2022 06:07:40 Europe/Berlin] language called
+[07-Apr-2022 06:07:46 Europe/Berlin] language called
+[07-Apr-2022 06:07:46 Europe/Berlin] OK
+[07-Apr-2022 06:07:46 Europe/Berlin] language called
+[07-Apr-2022 06:07:53 Europe/Berlin] language called
+[07-Apr-2022 06:07:53 Europe/Berlin] dashboard called
+[07-Apr-2022 06:07:54 Europe/Berlin] language called
+[07-Apr-2022 06:07:57 Europe/Berlin] language called
+[07-Apr-2022 06:08:06 Europe/Berlin] language called
+[07-Apr-2022 06:08:06 Europe/Berlin] dashboard called
+[07-Apr-2022 06:08:07 Europe/Berlin] language called
+[07-Apr-2022 06:08:12 Europe/Berlin] language called
+[07-Apr-2022 06:08:20 Europe/Berlin] language called
+[07-Apr-2022 06:08:20 Europe/Berlin] OK
+[07-Apr-2022 06:08:20 Europe/Berlin] language called
+[07-Apr-2022 06:08:28 Europe/Berlin] language called
+[07-Apr-2022 06:08:28 Europe/Berlin] dashboard called
+[07-Apr-2022 06:08:29 Europe/Berlin] language called
+[07-Apr-2022 06:08:34 Europe/Berlin] language called
+[07-Apr-2022 06:08:35 Europe/Berlin] language called
+[07-Apr-2022 06:08:56 Europe/Berlin] language called
+[07-Apr-2022 06:08:56 Europe/Berlin] dashboard called
+[07-Apr-2022 06:08:58 Europe/Berlin] language called
+[07-Apr-2022 06:09:02 Europe/Berlin] language called
+[07-Apr-2022 06:09:04 Europe/Berlin] language called
+[07-Apr-2022 06:09:07 Europe/Berlin] language called
+[07-Apr-2022 06:09:10 Europe/Berlin] language called
+[07-Apr-2022 06:09:17 Europe/Berlin] language called
+[07-Apr-2022 06:09:17 Europe/Berlin] dashboard called
+[07-Apr-2022 06:09:20 Europe/Berlin] language called
+[07-Apr-2022 06:11:05 Europe/Berlin] language called
+[07-Apr-2022 06:11:10 Europe/Berlin] language called
+[07-Apr-2022 06:11:10 Europe/Berlin] User NasoohOlabilogged out.
+[07-Apr-2022 06:11:10 Europe/Berlin] language called
+[07-Apr-2022 06:11:23 Europe/Berlin] language called
+[07-Apr-2022 06:11:23 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:11:27 Europe/Berlin] language called
+[07-Apr-2022 06:11:27 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:11:27 Europe/Berlin] username = NassouhAlOlabi and password = 123
+[07-Apr-2022 06:11:27 Europe/Berlin] getFullDetails with username NassouhAlOlabi and password 123
+[07-Apr-2022 06:11:27 Europe/Berlin] NassouhAlOlabi details looked up : {"username":"NassouhAlOlabi","password":"202cb962ac59075b964b07152d234b70","first_name":"Nassouh","last_name":"AlOlabi","middle_name":"Yasser","profile_picture":null,"role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":2}
+[07-Apr-2022 06:11:27 Europe/Berlin] language called
+[07-Apr-2022 06:11:27 Europe/Berlin] language called
+[07-Apr-2022 06:11:41 Europe/Berlin] language called
+[07-Apr-2022 06:11:41 Europe/Berlin] User NassouhAlOlabilogged out.
+[07-Apr-2022 06:11:41 Europe/Berlin] language called
+[07-Apr-2022 06:11:52 Europe/Berlin] language called
+[07-Apr-2022 06:11:52 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:11:53 Europe/Berlin] language called
+[07-Apr-2022 06:11:53 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:11:53 Europe/Berlin] username = newuser and password = 123
+[07-Apr-2022 06:11:53 Europe/Berlin] getFullDetails with username newuser and password 123
+[07-Apr-2022 06:11:53 Europe/Berlin] newuser details looked up : {"username":"newuser","password":"202cb962ac59075b964b07152d234b70","first_name":"New","last_name":"User","middle_name":"","profile_picture":null,"role_id":2,"role":{"name":"Student","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":2},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":24}
+[07-Apr-2022 06:11:53 Europe/Berlin] language called
+[07-Apr-2022 06:11:53 Europe/Berlin] language called
+[07-Apr-2022 06:13:26 Europe/Berlin] language called
+[07-Apr-2022 06:13:26 Europe/Berlin] Exam Model Loaded
+[07-Apr-2022 06:13:31 Europe/Berlin] language called
+[07-Apr-2022 06:13:38 Europe/Berlin] language called
+[07-Apr-2022 06:13:38 Europe/Berlin] User newuserlogged out.
+[07-Apr-2022 06:13:38 Europe/Berlin] language called
+[07-Apr-2022 06:13:44 Europe/Berlin] language called
+[07-Apr-2022 06:13:44 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:13:46 Europe/Berlin] language called
+[07-Apr-2022 06:13:46 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:13:46 Europe/Berlin] username = NasoohOlabi and password = 1234
+[07-Apr-2022 06:13:46 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[07-Apr-2022 06:13:46 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[07-Apr-2022 06:13:46 Europe/Berlin] language called
+[07-Apr-2022 06:13:46 Europe/Berlin] language called
+[07-Apr-2022 06:13:56 Europe/Berlin] language called
+[07-Apr-2022 06:13:56 Europe/Berlin] dashboard called
+[07-Apr-2022 06:13:56 Europe/Berlin] language called
+[07-Apr-2022 06:13:58 Europe/Berlin] language called
+[07-Apr-2022 06:14:00 Europe/Berlin] language called
+[07-Apr-2022 06:14:03 Europe/Berlin] language called
+[07-Apr-2022 06:14:08 Europe/Berlin] language called
+[07-Apr-2022 06:14:08 Europe/Berlin] ----->>>>required_permissions: ["reassign_role"]
+[07-Apr-2022 06:14:08 Europe/Berlin] this one is missing reassign_role
+[07-Apr-2022 06:14:13 Europe/Berlin] language called
+[07-Apr-2022 06:14:17 Europe/Berlin] language called
+[07-Apr-2022 06:14:17 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[07-Apr-2022 06:14:17 Europe/Berlin] this one is missing read_DUAL
+[07-Apr-2022 06:14:26 Europe/Berlin] language called
+[07-Apr-2022 06:14:26 Europe/Berlin] language called
+[07-Apr-2022 06:14:26 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Argument 4 passed to BaseModel::select() must be of the type int, array given, called in C:\xampp\htdocs\mnu\application\controller\DashBoard.php on line 101 and defined in C:\xampp\htdocs\mnu\application\models\basemodel.php:359
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\controller\DashBoard.php(101): BaseModel->select(Array, 'Permission', Array, Array, 1000, true)
+#1 C:\xampp\htdocs\mnu\application\libs\application.php(49): DashBoard->update('role_has_permis...')
+#2 C:\xampp\htdocs\mnu\index.php(144): Application->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 359
+[07-Apr-2022 06:14:26 Europe/Berlin] dashboard called
+[07-Apr-2022 06:14:28 Europe/Berlin] language called
+[07-Apr-2022 06:14:33 Europe/Berlin] language called
+[07-Apr-2022 06:14:34 Europe/Berlin] language called
+[07-Apr-2022 06:14:38 Europe/Berlin] language called
+[07-Apr-2022 06:14:43 Europe/Berlin] language called
+[07-Apr-2022 06:14:43 Europe/Berlin] ----->>>>required_permissions: ["reassign_role"]
+[07-Apr-2022 06:14:43 Europe/Berlin] this one is missing reassign_role
+[07-Apr-2022 06:14:46 Europe/Berlin] language called
+[07-Apr-2022 06:14:46 Europe/Berlin] dashboard called
+[07-Apr-2022 06:14:47 Europe/Berlin] language called
+[07-Apr-2022 06:14:48 Europe/Berlin] language called
+[07-Apr-2022 06:14:51 Europe/Berlin] language called
+[07-Apr-2022 06:14:57 Europe/Berlin] language called
+[07-Apr-2022 06:14:57 Europe/Berlin] ----->>>>required_permissions: ["reassign_role"]
+[07-Apr-2022 06:14:57 Europe/Berlin] this one is missing reassign_role
+[07-Apr-2022 06:15:00 Europe/Berlin] language called
+[07-Apr-2022 06:15:08 Europe/Berlin] language called
+[07-Apr-2022 06:15:08 Europe/Berlin] User NasoohOlabilogged out.
+[07-Apr-2022 06:15:08 Europe/Berlin] language called
+[07-Apr-2022 06:15:15 Europe/Berlin] language called
+[07-Apr-2022 06:15:15 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:15:16 Europe/Berlin] language called
+[07-Apr-2022 06:15:16 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:15:16 Europe/Berlin] username = NasoohOlabi and password = 1234
+[07-Apr-2022 06:15:16 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[07-Apr-2022 06:15:16 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[07-Apr-2022 06:15:16 Europe/Berlin] language called
+[07-Apr-2022 06:15:16 Europe/Berlin] language called
+[07-Apr-2022 06:15:24 Europe/Berlin] language called
+[07-Apr-2022 06:15:24 Europe/Berlin] dashboard called
+[07-Apr-2022 06:15:27 Europe/Berlin] language called
+[07-Apr-2022 06:15:29 Europe/Berlin] language called
+[07-Apr-2022 06:15:32 Europe/Berlin] language called
+[07-Apr-2022 06:15:35 Europe/Berlin] language called
+[07-Apr-2022 06:15:35 Europe/Berlin] ----->>>>required_permissions: ["update_user"]
+[07-Apr-2022 06:15:35 Europe/Berlin] this one is missing update_user
+[07-Apr-2022 06:15:35 Europe/Berlin] ["id","username","password","first_name","last_name","middle_name","profile_picture","role_id"]
+[07-Apr-2022 06:15:35 Europe/Berlin] ["username","password","first_name","last_name","middle_name","profile_picture","role_id"]
+[07-Apr-2022 06:15:35 Europe/Berlin] {"6":"role_id"}
+[07-Apr-2022 06:15:35 Europe/Berlin] ["6"]
+[07-Apr-2022 06:15:35 Europe/Berlin] BaseModel::experimental_update Running : "UPDATE `user` SET `role_id` = ? WHERE id = ?"
+[07-Apr-2022 06:15:35 Europe/Berlin] bindings ["6",2]
+[07-Apr-2022 06:15:35 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:15:35 Europe/Berlin] getFullDetails with id 1
+[07-Apr-2022 06:15:35 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[07-Apr-2022 06:21:06 Europe/Berlin] language called
+[07-Apr-2022 06:21:06 Europe/Berlin] dashboard called
+[07-Apr-2022 06:21:08 Europe/Berlin] language called
+[07-Apr-2022 06:21:15 Europe/Berlin] language called
+[07-Apr-2022 06:21:24 Europe/Berlin] language called
+[07-Apr-2022 06:21:24 Europe/Berlin] Exam Model Loaded
+[07-Apr-2022 06:21:30 Europe/Berlin] language called
+[07-Apr-2022 06:21:34 Europe/Berlin] language called
+[07-Apr-2022 06:21:34 Europe/Berlin] ----->>>>required_permissions: ["read_Role"]
+[07-Apr-2022 06:21:34 Europe/Berlin] this one is missing read_Role
+[07-Apr-2022 06:21:46 Europe/Berlin] language called
+[07-Apr-2022 06:21:46 Europe/Berlin] language called
+[07-Apr-2022 06:21:46 Europe/Berlin] ----->>>>required_permissions: ["read_Role"]
+[07-Apr-2022 06:21:46 Europe/Berlin] this one is missing read_Role
+[07-Apr-2022 06:21:46 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:46 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:46 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:46 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:46 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:46 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:46 Europe/Berlin] dashboard called
+[07-Apr-2022 06:21:46 Europe/Berlin] language called
+[07-Apr-2022 06:21:46 Europe/Berlin] dashboard called
+[07-Apr-2022 06:21:48 Europe/Berlin] language called
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:48 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:48 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:51 Europe/Berlin] language called
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:51 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:51 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:52 Europe/Berlin] language called
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:52 Europe/Berlin] ----->>>>required_permissions: ["read_student"]
+[07-Apr-2022 06:21:52 Europe/Berlin] this one is missing read_student
+[07-Apr-2022 06:21:55 Europe/Berlin] language called
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_role"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_role
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_user"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_user
+[07-Apr-2022 06:21:55 Europe/Berlin] ----->>>>required_permissions: ["read_permission"]
+[07-Apr-2022 06:21:55 Europe/Berlin] this one is missing read_permission
+[07-Apr-2022 06:22:00 Europe/Berlin] language called
+[07-Apr-2022 06:22:00 Europe/Berlin] ----->>>>required_permissions: ["reassign_role"]
+[07-Apr-2022 06:22:00 Europe/Berlin] this one is missing reassign_role
+[07-Apr-2022 06:23:48 Europe/Berlin] language called
+[07-Apr-2022 06:23:56 Europe/Berlin] language called
+[07-Apr-2022 06:23:56 Europe/Berlin] User NasoohOlabilogged out.
+[07-Apr-2022 06:23:56 Europe/Berlin] language called
+[07-Apr-2022 06:24:04 Europe/Berlin] language called
+[07-Apr-2022 06:24:04 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:24:05 Europe/Berlin] language called
+[07-Apr-2022 06:24:05 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:24:05 Europe/Berlin] username = NasoohOlabi and password = 1234
+[07-Apr-2022 06:24:05 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[07-Apr-2022 06:24:05 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[07-Apr-2022 06:24:05 Europe/Berlin] language called
+[07-Apr-2022 06:24:05 Europe/Berlin] language called
+[07-Apr-2022 06:24:11 Europe/Berlin] language called
+[07-Apr-2022 06:24:11 Europe/Berlin] dashboard called
+[07-Apr-2022 06:24:13 Europe/Berlin] language called
+[07-Apr-2022 06:24:19 Europe/Berlin] language called
+[07-Apr-2022 06:24:22 Europe/Berlin] language called
+[07-Apr-2022 06:24:22 Europe/Berlin] ----->>>>required_permissions: ["read_Role"]
+[07-Apr-2022 06:24:22 Europe/Berlin] this one is missing read_Role
+[07-Apr-2022 06:24:28 Europe/Berlin] language called
+[07-Apr-2022 06:24:28 Europe/Berlin] dashboard called
+[07-Apr-2022 06:24:29 Europe/Berlin] language called
+[07-Apr-2022 06:24:30 Europe/Berlin] language called
+[07-Apr-2022 06:24:32 Europe/Berlin] language called
+[07-Apr-2022 06:24:37 Europe/Berlin] language called
+[07-Apr-2022 06:24:41 Europe/Berlin] language called
+[07-Apr-2022 06:24:41 Europe/Berlin] ----->>>>required_permissions: ["update_user"]
+[07-Apr-2022 06:24:41 Europe/Berlin] this one is missing update_user
+[07-Apr-2022 06:24:41 Europe/Berlin] ["id","username","password","first_name","last_name","middle_name","profile_picture","role_id"]
+[07-Apr-2022 06:24:41 Europe/Berlin] ["username","password","first_name","last_name","middle_name","profile_picture","role_id"]
+[07-Apr-2022 06:24:41 Europe/Berlin] {"6":"role_id"}
+[07-Apr-2022 06:24:41 Europe/Berlin] ["6"]
+[07-Apr-2022 06:24:41 Europe/Berlin] BaseModel::experimental_update Running : "UPDATE `user` SET `role_id` = ? WHERE id = ?"
+[07-Apr-2022 06:24:41 Europe/Berlin] bindings ["6",2]
+[07-Apr-2022 06:24:41 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:24:41 Europe/Berlin] getFullDetails with id 1
+[07-Apr-2022 06:24:41 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[07-Apr-2022 06:24:44 Europe/Berlin] language called
+[07-Apr-2022 06:24:56 Europe/Berlin] language called
+[07-Apr-2022 06:24:56 Europe/Berlin] User NasoohOlabilogged out.
+[07-Apr-2022 06:24:56 Europe/Berlin] language called
+[07-Apr-2022 06:25:04 Europe/Berlin] language called
+[07-Apr-2022 06:25:04 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:25:07 Europe/Berlin] language called
+[07-Apr-2022 06:25:07 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:25:14 Europe/Berlin] language called
+[07-Apr-2022 06:25:14 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:25:14 Europe/Berlin] username = NassouhAlOlabi and password = 123
+[07-Apr-2022 06:25:14 Europe/Berlin] getFullDetails with username NassouhAlOlabi and password 123
+[07-Apr-2022 06:25:14 Europe/Berlin] NassouhAlOlabi details looked up : {"username":"NassouhAlOlabi","password":"202cb962ac59075b964b07152d234b70","first_name":"Nassouh","last_name":"AlOlabi","middle_name":"Yasser","profile_picture":null,"role_id":6,"role":{"name":"TestAdmin","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":6},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":2}
+[07-Apr-2022 06:25:14 Europe/Berlin] language called
+[07-Apr-2022 06:25:14 Europe/Berlin] language called
+[07-Apr-2022 06:25:17 Europe/Berlin] language called
+[07-Apr-2022 06:25:17 Europe/Berlin] language called
+[07-Apr-2022 06:25:17 Europe/Berlin] ----->>>>required_permissions: ["read_exam"]
+[07-Apr-2022 06:25:17 Europe/Berlin] this one is missing read_exam
+[07-Apr-2022 06:25:17 Europe/Berlin] ----->>>>required_permissions: ["read_subject"]
+[07-Apr-2022 06:25:17 Europe/Berlin] this one is missing read_subject
+[07-Apr-2022 06:25:17 Europe/Berlin] ----->>>>required_permissions: ["read_subject"]
+[07-Apr-2022 06:25:17 Europe/Berlin] this one is missing read_subject
+[07-Apr-2022 06:25:17 Europe/Berlin] ----->>>>required_permissions: ["read_student_exam"]
+[07-Apr-2022 06:25:17 Europe/Berlin] this one is missing read_student_exam
+[07-Apr-2022 06:25:17 Europe/Berlin] ----->>>>required_permissions: ["read_student_exam"]
+[07-Apr-2022 06:25:17 Europe/Berlin] this one is missing read_student_exam
+[07-Apr-2022 06:25:17 Europe/Berlin] ----->>>>required_permissions: ["read_exam_center"]
+[07-Apr-2022 06:25:17 Europe/Berlin] this one is missing read_exam_center
+[07-Apr-2022 06:25:17 Europe/Berlin] ----->>>>required_permissions: ["read_student_exam"]
+[07-Apr-2022 06:25:17 Europe/Berlin] this one is missing read_student_exam
+[07-Apr-2022 06:25:17 Europe/Berlin] ----->>>>required_permissions: ["read_student_exam"]
+[07-Apr-2022 06:25:17 Europe/Berlin] this one is missing read_student_exam
+[07-Apr-2022 06:26:05 Europe/Berlin] language called
+[07-Apr-2022 06:26:05 Europe/Berlin] User NassouhAlOlabilogged out.
+[07-Apr-2022 06:26:05 Europe/Berlin] language called
+[07-Apr-2022 06:26:25 Europe/Berlin] language called
+[07-Apr-2022 06:26:25 Europe/Berlin] USERMODEL
+[07-Apr-2022 06:26:25 Europe/Berlin] username = NasoohOlabi and password = 1234
+[07-Apr-2022 06:26:25 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[07-Apr-2022 06:26:25 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[07-Apr-2022 06:26:25 Europe/Berlin] language called
+[07-Apr-2022 06:26:25 Europe/Berlin] language called
+[07-Apr-2022 06:26:32 Europe/Berlin] language called
+[07-Apr-2022 06:26:32 Europe/Berlin] dashboard called
+[07-Apr-2022 06:26:33 Europe/Berlin] language called
+[07-Apr-2022 06:26:35 Europe/Berlin] language called
+[07-Apr-2022 06:26:35 Europe/Berlin] language called
+[07-Apr-2022 06:26:41 Europe/Berlin] language called
+[07-Apr-2022 06:26:42 Europe/Berlin] language called
+[07-Apr-2022 06:26:44 Europe/Berlin] language called
+[07-Apr-2022 06:26:45 Europe/Berlin] language called
+[07-Apr-2022 06:26:48 Europe/Berlin] language called
+[07-Apr-2022 06:28:16 Europe/Berlin] language called
+[07-Apr-2022 06:28:29 Europe/Berlin] language called
+[07-Apr-2022 06:28:29 Europe/Berlin] dashboard called
+[07-Apr-2022 06:28:31 Europe/Berlin] language called
+[07-Apr-2022 06:29:18 Europe/Berlin] language called
+[07-Apr-2022 06:30:46 Europe/Berlin] language called
+[07-Apr-2022 06:30:46 Europe/Berlin] dashboard called
+[07-Apr-2022 06:30:49 Europe/Berlin] language called
+[07-Apr-2022 06:30:53 Europe/Berlin] language called
+[07-Apr-2022 06:32:33 Europe/Berlin] language called
+[07-Apr-2022 06:32:33 Europe/Berlin] dashboard called
+[07-Apr-2022 06:32:34 Europe/Berlin] language called
+[07-Apr-2022 06:32:39 Europe/Berlin] language called
+[07-Apr-2022 06:32:44 Europe/Berlin] language called
+[07-Apr-2022 06:33:14 Europe/Berlin] language called
+[07-Apr-2022 06:33:14 Europe/Berlin] dashboard called
+[07-Apr-2022 06:33:15 Europe/Berlin] language called
+[07-Apr-2022 06:33:16 Europe/Berlin] language called
+[07-Apr-2022 06:33:21 Europe/Berlin] language called
+[07-Apr-2022 06:33:22 Europe/Berlin] language called
+[07-Apr-2022 06:33:23 Europe/Berlin] language called
+[07-Apr-2022 06:33:25 Europe/Berlin] language called
+[07-Apr-2022 06:33:31 Europe/Berlin] language called
+[07-Apr-2022 06:34:09 Europe/Berlin] language called
+[07-Apr-2022 19:19:23 Europe/Berlin] language called
+[07-Apr-2022 19:19:33 Europe/Berlin] language called
+[07-Apr-2022 19:19:33 Europe/Berlin] USERMODEL
+[07-Apr-2022 19:19:35 Europe/Berlin] language called
+[07-Apr-2022 19:19:35 Europe/Berlin] USERMODEL
+[07-Apr-2022 19:19:35 Europe/Berlin] username = NasoohOlabi and password = 1234
+[07-Apr-2022 19:19:35 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[07-Apr-2022 19:19:35 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[07-Apr-2022 19:19:35 Europe/Berlin] language called
+[07-Apr-2022 19:19:35 Europe/Berlin] language called
+[07-Apr-2022 19:19:53 Europe/Berlin] language called
+[07-Apr-2022 19:19:53 Europe/Berlin] dashboard called
+[07-Apr-2022 19:19:53 Europe/Berlin] language called
+[07-Apr-2022 19:22:20 Europe/Berlin] language called
+[07-Apr-2022 19:22:26 Europe/Berlin] language called
+[07-Apr-2022 19:22:26 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:22:26 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:22:59 Europe/Berlin] language called
+[07-Apr-2022 19:22:59 Europe/Berlin] language called
+[07-Apr-2022 19:22:59 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:22:59 Europe/Berlin] language called
+[07-Apr-2022 19:22:59 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:22:59 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:22:59 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:22:59 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:22:59 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:05 Europe/Berlin] language called
+[07-Apr-2022 19:23:05 Europe/Berlin] language called
+[07-Apr-2022 19:23:05 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:05 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:05 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:05 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:05 Europe/Berlin] language called
+[07-Apr-2022 19:23:05 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:05 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:10 Europe/Berlin] language called
+[07-Apr-2022 19:23:10 Europe/Berlin] language called
+[07-Apr-2022 19:23:10 Europe/Berlin] language called
+[07-Apr-2022 19:23:10 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:10 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:10 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:10 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:10 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:10 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:12 Europe/Berlin] language called
+[07-Apr-2022 19:23:12 Europe/Berlin] language called
+[07-Apr-2022 19:23:12 Europe/Berlin] language called
+[07-Apr-2022 19:23:12 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:12 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:12 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:12 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:12 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:12 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:13 Europe/Berlin] language called
+[07-Apr-2022 19:23:13 Europe/Berlin] language called
+[07-Apr-2022 19:23:13 Europe/Berlin] language called
+[07-Apr-2022 19:23:13 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:13 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:13 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:13 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:13 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:13 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:14 Europe/Berlin] language called
+[07-Apr-2022 19:23:14 Europe/Berlin] language called
+[07-Apr-2022 19:23:14 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:14 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:14 Europe/Berlin] language called
+[07-Apr-2022 19:23:14 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:14 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:14 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:14 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:15 Europe/Berlin] language called
+[07-Apr-2022 19:23:15 Europe/Berlin] language called
+[07-Apr-2022 19:23:15 Europe/Berlin] language called
+[07-Apr-2022 19:23:15 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:15 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:15 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:15 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:15 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:15 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:17 Europe/Berlin] language called
+[07-Apr-2022 19:23:17 Europe/Berlin] language called
+[07-Apr-2022 19:23:17 Europe/Berlin] language called
+[07-Apr-2022 19:23:17 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:17 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:17 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:17 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:17 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:17 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:46 Europe/Berlin] language called
+[07-Apr-2022 19:23:46 Europe/Berlin] language called
+[07-Apr-2022 19:23:46 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:46 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:46 Europe/Berlin] language called
+[07-Apr-2022 19:23:46 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:46 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72
+[07-Apr-2022 19:23:46 Europe/Berlin] BaseModel::wipeByIds Running : "DELETE FROM `subject` WHERE id = ?" Bindings :["2"]
+[07-Apr-2022 19:23:46 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`mnu`.`exam`, CONSTRAINT `fk_exams_subjects1` FOREIGN KEY (`subject_id`) REFERENCES `subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION) in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 72

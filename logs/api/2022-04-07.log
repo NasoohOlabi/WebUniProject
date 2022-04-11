@@ -1,0 +1,22 @@
+[07-Apr-2022 06:14:08 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:14:08 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:14:08 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:14:08 Europe/Berlin] Caught exception: You don't have permission to change roles
+[07-Apr-2022 06:14:43 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:14:43 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:14:43 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:14:43 Europe/Berlin] Caught exception: You don't have permission to change roles
+[07-Apr-2022 06:14:57 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:14:57 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:14:57 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:14:57 Europe/Berlin] Caught exception: You don't have permission to change roles
+[07-Apr-2022 06:15:35 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:15:35 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:15:35 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:22:00 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:22:00 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:22:00 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:22:00 Europe/Berlin] Caught exception: You don't have permission to change roles
+[07-Apr-2022 06:24:41 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:24:41 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[07-Apr-2022 06:24:41 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}

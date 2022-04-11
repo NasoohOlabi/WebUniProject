@@ -1,0 +1,63 @@
+[10-Apr-2022 07:51:12 Europe/Berlin] {"enroll_date":"2022-04-17","user_id":2,"dependents":["Student_Exam"],"identifying_fields":["id","enroll_date"],"id":-1}
+[10-Apr-2022 07:51:17 Europe/Berlin] {"enroll_date":"2022-04-17","user_id":2,"dependents":["Student_Exam"],"identifying_fields":["id","enroll_date"],"id":-1}
+[10-Apr-2022 07:51:18 Europe/Berlin] {"enroll_date":"2022-04-17","user_id":2,"dependents":["Student_Exam"],"identifying_fields":["id","enroll_date"],"id":-1}
+[10-Apr-2022 07:51:18 Europe/Berlin] {"enroll_date":"2022-04-17","user_id":2,"dependents":["Student_Exam"],"identifying_fields":["id","enroll_date"],"id":-1}
+[10-Apr-2022 07:51:18 Europe/Berlin] {"enroll_date":"2022-04-17","user_id":2,"dependents":["Student_Exam"],"identifying_fields":["id","enroll_date"],"id":-1}
+[10-Apr-2022 07:51:18 Europe/Berlin] {"enroll_date":"2022-04-17","user_id":2,"dependents":["Student_Exam"],"identifying_fields":["id","enroll_date"],"id":-1}
+[10-Apr-2022 07:51:18 Europe/Berlin] {"enroll_date":"2022-04-17","user_id":2,"dependents":["Student_Exam"],"identifying_fields":["id","enroll_date"],"id":-1}
+[10-Apr-2022 07:51:19 Europe/Berlin] {"enroll_date":"2022-04-17","user_id":2,"dependents":["Student_Exam"],"identifying_fields":["id","enroll_date"],"id":-1}
+[10-Apr-2022 07:51:19 Europe/Berlin] {"enroll_date":"2022-04-17","user_id":2,"dependents":["Student_Exam"],"identifying_fields":["id","enroll_date"],"id":-1}
+[10-Apr-2022 07:51:22 Europe/Berlin] {"enroll_date":"2022-04-17","user_id":2,"dependents":["Student_Exam"],"identifying_fields":["id","enroll_date"],"id":-1}
+[10-Apr-2022 07:51:23 Europe/Berlin] {"enroll_date":"2022-04-17","user_id":2,"dependents":["Student_Exam"],"identifying_fields":["id","enroll_date"],"id":-1}
+[10-Apr-2022 15:38:48 Europe/Berlin] Caught exception: Typed property Question::$topic_id must be int or null, string used
+[10-Apr-2022 15:39:13 Europe/Berlin] Caught exception: Typed property Question::$topic_id must be int or null, string used
+[10-Apr-2022 15:42:43 Europe/Berlin] {"text":"hi","active":1,"topic_id":"Analysis","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 15:42:43 Europe/Berlin] Caught exception: Cannot add or update a child row: a foreign key constraint fails (`mnu`.`question`, CONSTRAINT `fk_questions_topics1` FOREIGN KEY (`topic_id`) REFERENCES `topic` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+[10-Apr-2022 15:43:53 Europe/Berlin] {"text":"hi","active":1,"topic_id":"Analysis","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 15:43:53 Europe/Berlin] Caught exception: Cannot add or update a child row: a foreign key constraint fails (`mnu`.`question`, CONSTRAINT `fk_questions_topics1` FOREIGN KEY (`topic_id`) REFERENCES `topic` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+[10-Apr-2022 15:46:56 Europe/Berlin] {"text":"jp","active":1,"topic_id":"Types","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 15:46:56 Europe/Berlin] Caught exception: Cannot add or update a child row: a foreign key constraint fails (`mnu`.`question`, CONSTRAINT `fk_questions_topics1` FOREIGN KEY (`topic_id`) REFERENCES `topic` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+[10-Apr-2022 15:50:36 Europe/Berlin] {"text":"jp","active":1,"topic_id":"Typ","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 15:50:36 Europe/Berlin] Caught exception: Cannot add or update a child row: a foreign key constraint fails (`mnu`.`question`, CONSTRAINT `fk_questions_topics1` FOREIGN KEY (`topic_id`) REFERENCES `topic` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+[10-Apr-2022 15:51:29 Europe/Berlin] {"text":"klj","active":1,"topic_id":"6","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 15:51:29 Europe/Berlin] {"text":"jsfdkla","is_correct":1,"question_id":104,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 15:51:29 Europe/Berlin] {"text":"ajkl","is_correct":3,"question_id":104,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 15:52:41 Europe/Berlin] {"text":"jkla","active":1,"topic_id":"2","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 15:52:41 Europe/Berlin] {"text":"Afd","is_correct":2,"question_id":105,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 15:52:41 Europe/Berlin] {"text":"aklfj","is_correct":2,"question_id":105,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 15:54:38 Europe/Berlin] {"text":"jlkjlk","active":1,"topic_id":"3","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 15:55:02 Europe/Berlin] {"text":"jkl","active":1,"topic_id":"2","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 15:55:18 Europe/Berlin] {"text":"jlkj","active":1,"topic_id":"2","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 15:56:17 Europe/Berlin] {"text":"fad","active":1,"topic_id":"3","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 15:58:50 Europe/Berlin] {"text":"jilj","active":1,"topic_id":"2","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 16:37:35 Europe/Berlin] Caught exception: Typed property Question::$text must be string, null used
+[10-Apr-2022 16:37:56 Europe/Berlin] {"text":"jlkj","active":1,"topic_id":"1","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 16:37:56 Europe/Berlin] Caught exception: Typed property Choice::$text must be string, null used
+[10-Apr-2022 16:37:57 Europe/Berlin] Caught exception: Typed property Choice::$is_correct must be int, string used
+[10-Apr-2022 16:57:03 Europe/Berlin] {"text":"jjkljlk","active":1,"topic_id":"1","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 16:57:03 Europe/Berlin] Caught exception: Typed property Choice::$is_correct must be int, string used
+[10-Apr-2022 16:57:03 Europe/Berlin] Caught exception: Typed property Choice::$is_correct must be int, string used
+[10-Apr-2022 17:28:53 Europe/Berlin] {"text":"fasklj","active":1,"topic_id":"2","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:28:54 Europe/Berlin] Caught exception: Typed property Choice::$is_correct must be int, string used
+[10-Apr-2022 17:28:54 Europe/Berlin] Caught exception: Typed property Choice::$is_correct must be int, string used
+[10-Apr-2022 17:28:54 Europe/Berlin] Caught exception: Typed property Choice::$is_correct must be int, string used
+[10-Apr-2022 17:31:08 Europe/Berlin] {"text":"lkajfkl","active":1,"topic_id":"2","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:31:08 Europe/Berlin] {"text":"fadslkj","is_correct":1,"question_id":114,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:31:08 Europe/Berlin] {"text":"adjkfl","is_correct":1,"question_id":114,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:31:08 Europe/Berlin] {"text":"klsajfl","is_correct":1,"question_id":114,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:32:16 Europe/Berlin] {"text":"fjklj","active":1,"topic_id":"1","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:32:16 Europe/Berlin] {"text":"adjskfl","is_correct":1,"question_id":115,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:32:16 Europe/Berlin] {"text":"jkla","is_correct":1,"question_id":115,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:32:16 Europe/Berlin] {"text":"ajdsklfj","is_correct":1,"question_id":115,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:38:18 Europe/Berlin] {"text":"kljfkal","active":1,"topic_id":"2","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:38:18 Europe/Berlin] Caught exception: Typed property Choice::$is_correct must be int, null used
+[10-Apr-2022 17:38:18 Europe/Berlin] Caught exception: Typed property Choice::$is_correct must be int, null used
+[10-Apr-2022 17:38:18 Europe/Berlin] {"text":"jlkasf","is_correct":1,"question_id":116,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:47:11 Europe/Berlin] {"text":"klsfsaf","active":1,"topic_id":"2","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:47:11 Europe/Berlin] Caught exception: Typed property Choice::$is_correct must be int, null used
+[10-Apr-2022 17:47:11 Europe/Berlin] {"text":"adjklfsj","is_correct":1,"question_id":117,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:47:11 Europe/Berlin] Caught exception: Typed property Choice::$is_correct must be int, null used
+[10-Apr-2022 17:50:24 Europe/Berlin] {"text":"jfasklj","active":1,"topic_id":"3","dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:50:24 Europe/Berlin] {"text":"dafsjk","is_correct":0,"question_id":118,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:50:24 Europe/Berlin] {"text":"jdklafj","is_correct":1,"question_id":118,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}
+[10-Apr-2022 17:50:24 Europe/Berlin] {"text":"jkljas","is_correct":0,"question_id":118,"dependents":["Student_Exam_Has_Choice"],"identifying_fields":["text"],"id":-1}

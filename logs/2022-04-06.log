@@ -1,0 +1,644 @@
+[06-Apr-2022 11:51:33 Europe/Berlin] language called
+[06-Apr-2022 11:51:33 Europe/Berlin] language called
+[06-Apr-2022 11:52:10 Europe/Berlin] language called
+[06-Apr-2022 11:52:14 Europe/Berlin] language called
+[06-Apr-2022 11:52:17 Europe/Berlin] language called
+[06-Apr-2022 11:55:16 Europe/Berlin] language called
+[06-Apr-2022 11:55:43 Europe/Berlin] language called
+[06-Apr-2022 11:56:01 Europe/Berlin] language called
+[06-Apr-2022 11:56:20 Europe/Berlin] language called
+[06-Apr-2022 11:57:22 Europe/Berlin] language called
+[06-Apr-2022 12:01:34 Europe/Berlin] language called
+[06-Apr-2022 12:02:38 Europe/Berlin] language called
+[06-Apr-2022 12:03:39 Europe/Berlin] language called
+[06-Apr-2022 12:03:57 Europe/Berlin] language called
+[06-Apr-2022 12:07:07 Europe/Berlin] language called
+[06-Apr-2022 12:14:58 Europe/Berlin] language called
+[06-Apr-2022 12:15:36 Europe/Berlin] language called
+[06-Apr-2022 12:16:12 Europe/Berlin] language called
+[06-Apr-2022 12:16:21 Europe/Berlin] USERMODEL
+[06-Apr-2022 12:16:21 Europe/Berlin] username =  and password = 
+[06-Apr-2022 12:17:38 Europe/Berlin] language called
+[06-Apr-2022 12:17:48 Europe/Berlin] USERMODEL
+[06-Apr-2022 12:21:18 Europe/Berlin] language called
+[06-Apr-2022 12:22:03 Europe/Berlin] language called
+[06-Apr-2022 12:24:10 Europe/Berlin] language called
+[06-Apr-2022 12:24:54 Europe/Berlin] language called
+[06-Apr-2022 12:25:10 Europe/Berlin] language called
+[06-Apr-2022 12:25:10 Europe/Berlin] language called
+[06-Apr-2022 12:25:28 Europe/Berlin] language called
+[06-Apr-2022 12:28:31 Europe/Berlin] language called
+[06-Apr-2022 12:42:59 Europe/Berlin] language called
+[06-Apr-2022 12:44:35 Europe/Berlin] USERMODEL
+[06-Apr-2022 12:44:38 Europe/Berlin] USERMODEL
+[06-Apr-2022 12:44:42 Europe/Berlin] USERMODEL
+[06-Apr-2022 12:44:42 Europe/Berlin] username = NasoohOlabi and password = 1234
+[06-Apr-2022 12:44:42 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[06-Apr-2022 12:44:42 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[06-Apr-2022 12:44:42 Europe/Berlin] language called
+[06-Apr-2022 12:44:42 Europe/Berlin] language called
+[06-Apr-2022 12:45:01 Europe/Berlin] language called
+[06-Apr-2022 12:45:01 Europe/Berlin] dashboard called
+[06-Apr-2022 12:45:07 Europe/Berlin] language called
+[06-Apr-2022 12:59:56 Europe/Berlin] language called
+[06-Apr-2022 13:00:09 Europe/Berlin] language called
+[06-Apr-2022 13:00:09 Europe/Berlin] dashboard called
+[06-Apr-2022 13:00:10 Europe/Berlin] language called
+[06-Apr-2022 13:01:02 Europe/Berlin] language called
+[06-Apr-2022 13:04:18 Europe/Berlin] language called
+[06-Apr-2022 13:17:19 Europe/Berlin] language called
+[06-Apr-2022 13:17:37 Europe/Berlin] language called
+[06-Apr-2022 13:18:11 Europe/Berlin] language called
+[06-Apr-2022 13:19:44 Europe/Berlin] language called
+[06-Apr-2022 13:21:47 Europe/Berlin] language called
+[06-Apr-2022 13:22:26 Europe/Berlin] language called
+[06-Apr-2022 13:24:00 Europe/Berlin] language called
+[06-Apr-2022 13:24:18 Europe/Berlin] language called
+[06-Apr-2022 13:24:18 Europe/Berlin] dashboard called
+[06-Apr-2022 13:24:23 Europe/Berlin] language called
+[06-Apr-2022 13:24:30 Europe/Berlin] language called
+[06-Apr-2022 13:24:30 Europe/Berlin] dashboard called
+[06-Apr-2022 13:24:36 Europe/Berlin] language called
+[06-Apr-2022 13:27:16 Europe/Berlin] language called
+[06-Apr-2022 13:27:32 Europe/Berlin] language called
+[06-Apr-2022 13:28:08 Europe/Berlin] language called
+[06-Apr-2022 13:28:08 Europe/Berlin] dashboard called
+[06-Apr-2022 13:28:21 Europe/Berlin] language called
+[06-Apr-2022 13:32:04 Europe/Berlin] language called
+[06-Apr-2022 13:34:56 Europe/Berlin] language called
+[06-Apr-2022 13:35:53 Europe/Berlin] language called
+[06-Apr-2022 13:38:37 Europe/Berlin] language called
+[06-Apr-2022 13:39:03 Europe/Berlin] language called
+[06-Apr-2022 13:39:03 Europe/Berlin] dashboard called
+[06-Apr-2022 13:39:20 Europe/Berlin] language called
+[06-Apr-2022 13:39:29 Europe/Berlin] language called
+[06-Apr-2022 13:39:29 Europe/Berlin] dashboard called
+[06-Apr-2022 13:39:33 Europe/Berlin] language called
+[06-Apr-2022 13:39:33 Europe/Berlin] USERMODEL
+[06-Apr-2022 13:39:45 Europe/Berlin] language called
+[06-Apr-2022 13:39:45 Europe/Berlin] dashboard called
+[06-Apr-2022 13:39:48 Europe/Berlin] User NasoohOlabilogged out.
+[06-Apr-2022 13:39:48 Europe/Berlin] language called
+[06-Apr-2022 13:42:33 Europe/Berlin] language called
+[06-Apr-2022 13:46:43 Europe/Berlin] language called
+[06-Apr-2022 13:51:42 Europe/Berlin] language called
+[06-Apr-2022 13:52:03 Europe/Berlin] language called
+[06-Apr-2022 13:53:58 Europe/Berlin] language called
+[06-Apr-2022 13:54:42 Europe/Berlin] language called
+[06-Apr-2022 13:55:42 Europe/Berlin] USERMODEL
+[06-Apr-2022 13:55:42 Europe/Berlin] username = NasoohOlabi and password = 1234
+[06-Apr-2022 13:55:42 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[06-Apr-2022 13:55:42 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[06-Apr-2022 13:55:42 Europe/Berlin] language called
+[06-Apr-2022 13:55:42 Europe/Berlin] language called
+[06-Apr-2022 13:55:46 Europe/Berlin] language called
+[06-Apr-2022 13:55:46 Europe/Berlin] dashboard called
+[06-Apr-2022 13:55:54 Europe/Berlin] language called
+[06-Apr-2022 13:56:07 Europe/Berlin] language called
+[06-Apr-2022 13:56:07 Europe/Berlin] dashboard called
+[06-Apr-2022 13:56:14 Europe/Berlin] language called
+[06-Apr-2022 13:56:17 Europe/Berlin] language called
+[06-Apr-2022 13:56:17 Europe/Berlin] dashboard called
+[06-Apr-2022 13:56:22 Europe/Berlin] language called
+[06-Apr-2022 13:57:04 Europe/Berlin] language called
+[06-Apr-2022 13:57:11 Europe/Berlin] language called
+[06-Apr-2022 13:57:11 Europe/Berlin] dashboard called
+[06-Apr-2022 13:57:18 Europe/Berlin] language called
+[06-Apr-2022 13:57:32 Europe/Berlin] language called
+[06-Apr-2022 13:57:32 Europe/Berlin] dashboard called
+[06-Apr-2022 13:57:40 Europe/Berlin] language called
+[06-Apr-2022 13:57:40 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 13:57:40 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 13:58:00 Europe/Berlin] language called
+[06-Apr-2022 13:58:00 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 13:58:00 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 13:58:03 Europe/Berlin] language called
+[06-Apr-2022 13:58:09 Europe/Berlin] language called
+[06-Apr-2022 13:58:09 Europe/Berlin] dashboard called
+[06-Apr-2022 13:58:13 Europe/Berlin] language called
+[06-Apr-2022 13:58:13 Europe/Berlin] USERMODEL
+[06-Apr-2022 14:43:06 Europe/Berlin] language called
+[06-Apr-2022 14:43:06 Europe/Berlin] dashboard called
+[06-Apr-2022 14:43:12 Europe/Berlin] language called
+[06-Apr-2022 14:43:55 Europe/Berlin] language called
+[06-Apr-2022 14:43:55 Europe/Berlin] dashboard called
+[06-Apr-2022 14:44:13 Europe/Berlin] language called
+[06-Apr-2022 14:44:13 Europe/Berlin] USERMODEL
+[06-Apr-2022 14:46:10 Europe/Berlin] language called
+[06-Apr-2022 14:46:10 Europe/Berlin] USERMODEL
+[06-Apr-2022 14:47:16 Europe/Berlin] language called
+[06-Apr-2022 14:47:16 Europe/Berlin] USERMODEL
+[06-Apr-2022 14:47:34 Europe/Berlin] language called
+[06-Apr-2022 14:47:34 Europe/Berlin] USERMODEL
+[06-Apr-2022 14:47:40 Europe/Berlin] language called
+[06-Apr-2022 14:47:40 Europe/Berlin] USERMODEL
+[06-Apr-2022 14:48:44 Europe/Berlin] language called
+[06-Apr-2022 14:48:44 Europe/Berlin] USERMODEL
+[06-Apr-2022 14:51:03 Europe/Berlin] language called
+[06-Apr-2022 14:51:03 Europe/Berlin] USERMODEL
+[06-Apr-2022 14:52:34 Europe/Berlin] language called
+[06-Apr-2022 14:52:34 Europe/Berlin] USERMODEL
+[06-Apr-2022 14:53:48 Europe/Berlin] language called
+[06-Apr-2022 14:53:48 Europe/Berlin] USERMODEL
+[06-Apr-2022 14:53:58 Europe/Berlin] language called
+[06-Apr-2022 14:53:58 Europe/Berlin] dashboard called
+[06-Apr-2022 14:54:04 Europe/Berlin] language called
+[06-Apr-2022 14:54:04 Europe/Berlin] USERMODEL
+[06-Apr-2022 14:56:06 Europe/Berlin] language called
+[06-Apr-2022 14:56:06 Europe/Berlin] USERMODEL
+[06-Apr-2022 14:56:54 Europe/Berlin] language called
+[06-Apr-2022 14:56:54 Europe/Berlin] USERMODEL
+[06-Apr-2022 14:57:13 Europe/Berlin] language called
+[06-Apr-2022 14:57:13 Europe/Berlin] USERMODEL
+[06-Apr-2022 14:57:43 Europe/Berlin] language called
+[06-Apr-2022 14:57:43 Europe/Berlin] USERMODEL
+[06-Apr-2022 15:00:38 Europe/Berlin] language called
+[06-Apr-2022 15:00:38 Europe/Berlin] USERMODEL
+[06-Apr-2022 15:01:01 Europe/Berlin] language called
+[06-Apr-2022 15:01:01 Europe/Berlin] USERMODEL
+[06-Apr-2022 15:01:43 Europe/Berlin] language called
+[06-Apr-2022 15:01:43 Europe/Berlin] USERMODEL
+[06-Apr-2022 15:02:19 Europe/Berlin] language called
+[06-Apr-2022 15:02:19 Europe/Berlin] USERMODEL
+[06-Apr-2022 15:02:58 Europe/Berlin] language called
+[06-Apr-2022 15:02:58 Europe/Berlin] USERMODEL
+[06-Apr-2022 15:04:17 Europe/Berlin] language called
+[06-Apr-2022 15:04:17 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 15:04:17 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 15:05:48 Europe/Berlin] language called
+[06-Apr-2022 15:05:48 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 15:05:48 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 15:07:00 Europe/Berlin] language called
+[06-Apr-2022 15:07:00 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 15:07:00 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 15:07:51 Europe/Berlin] language called
+[06-Apr-2022 15:07:51 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 15:07:51 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 15:08:58 Europe/Berlin] language called
+[06-Apr-2022 15:08:58 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 15:08:58 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 15:09:46 Europe/Berlin] language called
+[06-Apr-2022 15:09:46 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 15:09:46 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 15:10:42 Europe/Berlin] language called
+[06-Apr-2022 15:10:42 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 15:10:42 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 15:11:18 Europe/Berlin] language called
+[06-Apr-2022 15:11:18 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 15:11:18 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 15:13:33 Europe/Berlin] language called
+[06-Apr-2022 15:13:33 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 15:13:33 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 15:15:13 Europe/Berlin] language called
+[06-Apr-2022 15:15:13 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 15:15:13 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 15:18:34 Europe/Berlin] language called
+[06-Apr-2022 15:18:34 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 15:18:34 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 15:18:36 Europe/Berlin] language called
+[06-Apr-2022 15:18:39 Europe/Berlin] User NasoohOlabilogged out.
+[06-Apr-2022 15:18:39 Europe/Berlin] language called
+[06-Apr-2022 15:18:41 Europe/Berlin] language called
+[06-Apr-2022 15:18:56 Europe/Berlin] USERMODEL
+[06-Apr-2022 15:18:56 Europe/Berlin] username = NasoohOlabi and password = 1234
+[06-Apr-2022 15:18:56 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[06-Apr-2022 15:18:56 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[06-Apr-2022 15:18:56 Europe/Berlin] language called
+[06-Apr-2022 15:18:56 Europe/Berlin] language called
+[06-Apr-2022 15:19:36 Europe/Berlin] language called
+[06-Apr-2022 15:19:37 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 15:19:37 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 15:20:39 Europe/Berlin] language called
+[06-Apr-2022 15:20:39 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 15:20:39 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 15:21:01 Europe/Berlin] language called
+[06-Apr-2022 15:22:54 Europe/Berlin] language called
+[06-Apr-2022 15:23:02 Europe/Berlin] language called
+[06-Apr-2022 15:23:02 Europe/Berlin] dashboard called
+[06-Apr-2022 15:23:05 Europe/Berlin] language called
+[06-Apr-2022 15:23:05 Europe/Berlin] USERMODEL
+[06-Apr-2022 15:23:12 Europe/Berlin] language called
+[06-Apr-2022 15:23:12 Europe/Berlin] USERMODEL
+[06-Apr-2022 15:23:18 Europe/Berlin] language called
+[06-Apr-2022 15:23:18 Europe/Berlin] dashboard called
+[06-Apr-2022 15:23:52 Europe/Berlin] language called
+[06-Apr-2022 15:24:17 Europe/Berlin] language called
+[06-Apr-2022 15:24:17 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 15:24:17 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 15:24:21 Europe/Berlin] User NasoohOlabilogged out.
+[06-Apr-2022 15:24:21 Europe/Berlin] language called
+[06-Apr-2022 15:24:43 Europe/Berlin] language called
+[06-Apr-2022 15:24:53 Europe/Berlin] language called
+[06-Apr-2022 15:25:49 Europe/Berlin] USERMODEL
+[06-Apr-2022 15:25:52 Europe/Berlin] USERMODEL
+[06-Apr-2022 15:25:52 Europe/Berlin] username = NasoohOlabi and password = 1234
+[06-Apr-2022 15:25:52 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[06-Apr-2022 15:25:52 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[06-Apr-2022 15:25:52 Europe/Berlin] language called
+[06-Apr-2022 15:25:52 Europe/Berlin] language called
+[06-Apr-2022 15:27:24 Europe/Berlin] language called
+[06-Apr-2022 15:27:54 Europe/Berlin] language called
+[06-Apr-2022 15:27:54 Europe/Berlin] dashboard called
+[06-Apr-2022 15:32:23 Europe/Berlin] language called
+[06-Apr-2022 15:32:58 Europe/Berlin] language called
+[06-Apr-2022 15:36:36 Europe/Berlin] language called
+[06-Apr-2022 15:37:17 Europe/Berlin] language called
+[06-Apr-2022 15:38:18 Europe/Berlin] language called
+[06-Apr-2022 15:39:14 Europe/Berlin] language called
+[06-Apr-2022 15:39:35 Europe/Berlin] language called
+[06-Apr-2022 15:40:17 Europe/Berlin] language called
+[06-Apr-2022 15:42:12 Europe/Berlin] language called
+[06-Apr-2022 15:42:36 Europe/Berlin] language called
+[06-Apr-2022 15:46:46 Europe/Berlin] language called
+[06-Apr-2022 15:47:09 Europe/Berlin] language called
+[06-Apr-2022 15:49:04 Europe/Berlin] language called
+[06-Apr-2022 15:50:52 Europe/Berlin] language called
+[06-Apr-2022 15:51:19 Europe/Berlin] language called
+[06-Apr-2022 15:52:30 Europe/Berlin] language called
+[06-Apr-2022 15:53:07 Europe/Berlin] language called
+[06-Apr-2022 15:54:04 Europe/Berlin] language called
+[06-Apr-2022 15:54:29 Europe/Berlin] language called
+[06-Apr-2022 15:55:19 Europe/Berlin] language called
+[06-Apr-2022 15:55:19 Europe/Berlin] dashboard called
+[06-Apr-2022 15:55:42 Europe/Berlin] language called
+[06-Apr-2022 16:00:46 Europe/Berlin] language called
+[06-Apr-2022 16:00:46 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:00:46 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:01:26 Europe/Berlin] language called
+[06-Apr-2022 16:01:26 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:01:26 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:02:25 Europe/Berlin] language called
+[06-Apr-2022 16:02:32 Europe/Berlin] language called
+[06-Apr-2022 16:03:13 Europe/Berlin] language called
+[06-Apr-2022 16:03:13 Europe/Berlin] dashboard called
+[06-Apr-2022 16:03:22 Europe/Berlin] language called
+[06-Apr-2022 16:03:22 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:03:22 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:04:21 Europe/Berlin] language called
+[06-Apr-2022 16:04:21 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:04:21 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:04:27 Europe/Berlin] language called
+[06-Apr-2022 16:04:27 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:04:27 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:04:55 Europe/Berlin] language called
+[06-Apr-2022 16:04:55 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:04:55 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:05:58 Europe/Berlin] language called
+[06-Apr-2022 16:05:58 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:05:58 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:06:26 Europe/Berlin] language called
+[06-Apr-2022 16:06:26 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:06:26 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:06:56 Europe/Berlin] language called
+[06-Apr-2022 16:06:56 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:06:56 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:07:13 Europe/Berlin] language called
+[06-Apr-2022 16:07:13 Europe/Berlin] dashboard called
+[06-Apr-2022 16:07:19 Europe/Berlin] language called
+[06-Apr-2022 16:07:19 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:07:19 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:07:34 Europe/Berlin] language called
+[06-Apr-2022 16:07:34 Europe/Berlin] language called
+[06-Apr-2022 16:07:34 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Argument 4 passed to BaseModel::select() must be of the type int, array given, called in C:\xampp\htdocs\mnu\application\controller\DashBoard.php on line 103 and defined in C:\xampp\htdocs\mnu\application\models\basemodel.php:360
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\controller\DashBoard.php(103): BaseModel->select(Array, 'Permission', Array, Array, 1000, true)
+#1 C:\xampp\htdocs\mnu\application\libs\application.php(49): DashBoard->update('role_has_permis...')
+#2 C:\xampp\htdocs\mnu\index.php(138): Application->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 360
+[06-Apr-2022 16:07:34 Europe/Berlin] dashboard called
+[06-Apr-2022 16:07:41 Europe/Berlin] language called
+[06-Apr-2022 16:07:41 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:07:41 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:08:58 Europe/Berlin] language called
+[06-Apr-2022 16:08:58 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:08:58 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:09:13 Europe/Berlin] language called
+[06-Apr-2022 16:09:13 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:09:13 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:09:26 Europe/Berlin] language called
+[06-Apr-2022 16:09:40 Europe/Berlin] language called
+[06-Apr-2022 16:09:40 Europe/Berlin] dashboard called
+[06-Apr-2022 16:09:46 Europe/Berlin] language called
+[06-Apr-2022 16:12:39 Europe/Berlin] language called
+[06-Apr-2022 16:13:16 Europe/Berlin] language called
+[06-Apr-2022 16:13:48 Europe/Berlin] language called
+[06-Apr-2022 16:13:48 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:13:48 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:15:50 Europe/Berlin] language called
+[06-Apr-2022 16:16:26 Europe/Berlin] language called
+[06-Apr-2022 16:16:41 Europe/Berlin] language called
+[06-Apr-2022 16:16:59 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:05 Europe/Berlin] language called
+[06-Apr-2022 16:17:12 Europe/Berlin] language called
+[06-Apr-2022 16:17:12 Europe/Berlin] ----->>>>required_permissions: ["read_DUAL"]
+[06-Apr-2022 16:17:12 Europe/Berlin] this one is missing read_DUAL
+[06-Apr-2022 16:17:27 Europe/Berlin] language called
+[06-Apr-2022 16:18:55 Europe/Berlin] language called
+[06-Apr-2022 16:19:15 Europe/Berlin] language called
+[06-Apr-2022 16:19:15 Europe/Berlin] dashboard called
+[06-Apr-2022 16:22:08 Europe/Berlin] language called
+[06-Apr-2022 16:22:34 Europe/Berlin] language called
+[06-Apr-2022 16:22:34 Europe/Berlin] dashboard called
+[06-Apr-2022 16:23:00 Europe/Berlin] language called
+[06-Apr-2022 16:23:00 Europe/Berlin] dashboard called
+[06-Apr-2022 16:23:04 Europe/Berlin] language called
+[06-Apr-2022 16:48:26 Europe/Berlin] User NasoohOlabilogged out.
+[06-Apr-2022 16:48:26 Europe/Berlin] language called
+[06-Apr-2022 16:48:45 Europe/Berlin] language called
+[06-Apr-2022 16:48:45 Europe/Berlin] language called
+[06-Apr-2022 16:51:18 Europe/Berlin] language called
+[06-Apr-2022 16:51:18 Europe/Berlin] language called
+[06-Apr-2022 16:51:27 Europe/Berlin] USERMODEL
+[06-Apr-2022 16:51:36 Europe/Berlin] USERMODEL
+[06-Apr-2022 16:51:36 Europe/Berlin] username = NasoohOlabi and password = 1234
+[06-Apr-2022 16:51:36 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[06-Apr-2022 16:51:36 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[06-Apr-2022 16:51:36 Europe/Berlin] language called
+[06-Apr-2022 16:51:36 Europe/Berlin] language called
+[06-Apr-2022 16:51:51 Europe/Berlin] language called
+[06-Apr-2022 16:51:51 Europe/Berlin] dashboard called
+[06-Apr-2022 16:51:57 Europe/Berlin] language called
+[06-Apr-2022 16:53:58 Europe/Berlin] language called
+[06-Apr-2022 16:53:58 Europe/Berlin] dashboard called
+[06-Apr-2022 16:55:25 Europe/Berlin] language called
+[06-Apr-2022 16:57:34 Europe/Berlin] language called
+[06-Apr-2022 17:04:47 Europe/Berlin] language called
+[06-Apr-2022 17:04:47 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: Argument 3 passed to PageForThis() must be of the type array, bool given, called in C:\xampp\htdocs\mnu\application\views\Dashboard\add.php on line 23 and defined in C:\xampp\htdocs\mnu\application\views\_templates\form.php:52
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\views\Dashboard\add.php(23): PageForThis(Object(Subject), Object(BaseModel), false)
+#1 C:\xampp\htdocs\mnu\application\controller\DashBoard.php(63): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\mnu\application\libs\application.php(49): DashBoard->add('Subject')
+#3 C:\xampp\htdocs\mnu\index.php(138): Application->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\mnu\application\views\_templates\form.php on line 52
+[06-Apr-2022 17:05:05 Europe/Berlin] language called
+[06-Apr-2022 17:07:53 Europe/Berlin] language called
+[06-Apr-2022 17:08:26 Europe/Berlin] language called
+[06-Apr-2022 17:08:37 Europe/Berlin] ----->>>>required_permissions: ["create_Subject"]
+[06-Apr-2022 17:08:37 Europe/Berlin] this one is missing create_Subject
+[06-Apr-2022 17:08:37 Europe/Berlin] BaseModel::experimental_insert Running : "INSERT INTO `Subject` (name, description) VALUES (?, ?)"
+[06-Apr-2022 17:08:37 Europe/Berlin] bindings ["jlk","jklajfs"]
+[06-Apr-2022 17:08:42 Europe/Berlin] ----->>>>required_permissions: ["create_Subject"]
+[06-Apr-2022 17:08:42 Europe/Berlin] this one is missing create_Subject
+[06-Apr-2022 17:08:42 Europe/Berlin] BaseModel::experimental_insert Running : "INSERT INTO `Subject` (name, description) VALUES (?, ?)"
+[06-Apr-2022 17:08:42 Europe/Berlin] bindings ["jlk","jklajfs"]
+[06-Apr-2022 17:08:42 Europe/Berlin] PHP Warning:  PDOStatement::execute(): SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'jlk' for key 'name_UNIQUE' in C:\xampp\htdocs\mnu\application\models\basemodel.php on line 190
+[06-Apr-2022 17:08:42 Europe/Berlin] error>>>>>>>>>>>["23000",1062,"Duplicate entry 'jlk' for key 'name_UNIQUE'"]
+[06-Apr-2022 17:08:53 Europe/Berlin] ----->>>>required_permissions: ["create_Subject"]
+[06-Apr-2022 17:08:53 Europe/Berlin] this one is missing create_Subject
+[06-Apr-2022 17:08:53 Europe/Berlin] BaseModel::experimental_insert Running : "INSERT INTO `Subject` (name, description) VALUES (?, ?)"
+[06-Apr-2022 17:08:53 Europe/Berlin] bindings ["jlkj","jklajfs"]
+[06-Apr-2022 17:15:04 Europe/Berlin] language called
+[06-Apr-2022 17:15:10 Europe/Berlin] ----->>>>required_permissions: ["create_Subject"]
+[06-Apr-2022 17:15:10 Europe/Berlin] this one is missing create_Subject
+[06-Apr-2022 17:15:10 Europe/Berlin] BaseModel::experimental_insert Running : "INSERT INTO `Subject` (name, description) VALUES (?, ?)"
+[06-Apr-2022 17:15:10 Europe/Berlin] bindings ["jhj","jlk"]
+[06-Apr-2022 17:16:26 Europe/Berlin] language called
+[06-Apr-2022 17:16:33 Europe/Berlin] ----->>>>required_permissions: ["create_Subject"]
+[06-Apr-2022 17:16:33 Europe/Berlin] this one is missing create_Subject
+[06-Apr-2022 17:16:33 Europe/Berlin] BaseModel::experimental_insert Running : "INSERT INTO `Subject` (name, description) VALUES (?, ?)"
+[06-Apr-2022 17:16:33 Europe/Berlin] bindings ["jkl","jkla"]
+[06-Apr-2022 17:16:36 Europe/Berlin] language called
+[06-Apr-2022 17:16:36 Europe/Berlin] dashboard called
+[06-Apr-2022 17:16:49 Europe/Berlin] language called
+[06-Apr-2022 17:17:20 Europe/Berlin] language called
+[06-Apr-2022 17:21:18 Europe/Berlin] language called
+[06-Apr-2022 17:21:53 Europe/Berlin] language called
+[06-Apr-2022 17:22:53 Europe/Berlin] language called
+[06-Apr-2022 17:26:04 Europe/Berlin] ----->>>>required_permissions: ["create_Subject"]
+[06-Apr-2022 17:26:04 Europe/Berlin] this one is missing create_Subject
+[06-Apr-2022 17:26:04 Europe/Berlin] BaseModel::experimental_insert Running : "INSERT INTO `Subject` (name, description) VALUES (?, ?)"
+[06-Apr-2022 17:26:04 Europe/Berlin] bindings ["kljjljkl","kjaklf"]
+[06-Apr-2022 17:26:10 Europe/Berlin] language called
+[06-Apr-2022 17:26:33 Europe/Berlin] ----->>>>required_permissions: ["create_Subject"]
+[06-Apr-2022 17:26:33 Europe/Berlin] this one is missing create_Subject
+[06-Apr-2022 17:26:33 Europe/Berlin] BaseModel::experimental_insert Running : "INSERT INTO `Subject` (name, description) VALUES (?, ?)"
+[06-Apr-2022 17:26:33 Europe/Berlin] bindings ["jklkk","jklafj"]
+[06-Apr-2022 17:26:34 Europe/Berlin] ----->>>>required_permissions: ["create_Exam"]
+[06-Apr-2022 17:26:34 Europe/Berlin] this one is missing create_Exam
+[06-Apr-2022 17:26:34 Europe/Berlin] BaseModel::experimental_insert Running : "INSERT INTO `Exam` (number_of_questions, duration, subject_id) VALUES (?, ?, ?)"
+[06-Apr-2022 17:26:34 Europe/Berlin] bindings [22,223,106]
+[06-Apr-2022 17:26:39 Europe/Berlin] language called
+[06-Apr-2022 17:26:39 Europe/Berlin] dashboard called
+[06-Apr-2022 18:45:38 Europe/Berlin] language called
+[06-Apr-2022 18:45:38 Europe/Berlin] dashboard called
+[06-Apr-2022 18:45:42 Europe/Berlin] language called
+[06-Apr-2022 18:45:52 Europe/Berlin] language called
+[06-Apr-2022 18:46:31 Europe/Berlin] language called
+[06-Apr-2022 18:47:22 Europe/Berlin] language called
+[06-Apr-2022 18:47:36 Europe/Berlin] language called
+[06-Apr-2022 18:48:57 Europe/Berlin] language called
+[06-Apr-2022 18:49:40 Europe/Berlin] language called
+[06-Apr-2022 18:49:49 Europe/Berlin] language called
+[06-Apr-2022 18:50:13 Europe/Berlin] language called
+[06-Apr-2022 18:50:59 Europe/Berlin] language called
+[06-Apr-2022 18:51:29 Europe/Berlin] language called
+[06-Apr-2022 18:51:46 Europe/Berlin] language called
+[06-Apr-2022 18:52:15 Europe/Berlin] language called
+[06-Apr-2022 18:52:20 Europe/Berlin] language called
+[06-Apr-2022 18:57:47 Europe/Berlin] language called
+[06-Apr-2022 18:57:51 Europe/Berlin] language called
+[06-Apr-2022 18:57:55 Europe/Berlin] language called
+[06-Apr-2022 19:00:49 Europe/Berlin] language called
+[06-Apr-2022 19:00:54 Europe/Berlin] language called
+[06-Apr-2022 19:00:58 Europe/Berlin] language called
+[06-Apr-2022 19:01:04 Europe/Berlin] language called
+[06-Apr-2022 19:01:07 Europe/Berlin] language called
+[06-Apr-2022 19:01:12 Europe/Berlin] language called
+[06-Apr-2022 19:01:33 Europe/Berlin] language called
+[06-Apr-2022 19:01:40 Europe/Berlin] language called
+[06-Apr-2022 19:01:44 Europe/Berlin] language called
+[06-Apr-2022 19:01:52 Europe/Berlin] language called
+[06-Apr-2022 19:02:48 Europe/Berlin] language called
+[06-Apr-2022 19:02:55 Europe/Berlin] language called
+[06-Apr-2022 19:03:00 Europe/Berlin] language called
+[06-Apr-2022 19:04:08 Europe/Berlin] language called
+[06-Apr-2022 19:04:13 Europe/Berlin] language called
+[06-Apr-2022 19:05:33 Europe/Berlin] language called
+[06-Apr-2022 19:18:30 Europe/Berlin] language called
+[06-Apr-2022 19:18:39 Europe/Berlin] User NasoohOlabilogged out.
+[06-Apr-2022 19:18:39 Europe/Berlin] language called
+[06-Apr-2022 19:18:56 Europe/Berlin] USERMODEL
+[06-Apr-2022 19:19:01 Europe/Berlin] USERMODEL
+[06-Apr-2022 19:19:06 Europe/Berlin] USERMODEL
+[06-Apr-2022 19:19:06 Europe/Berlin] username = NasoohOlabi and password = 1234
+[06-Apr-2022 19:19:06 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[06-Apr-2022 19:19:06 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[06-Apr-2022 19:19:06 Europe/Berlin] language called
+[06-Apr-2022 19:19:06 Europe/Berlin] language called
+[06-Apr-2022 19:26:25 Europe/Berlin] language called
+[06-Apr-2022 19:27:24 Europe/Berlin] language called
+[06-Apr-2022 19:27:24 Europe/Berlin] User NasoohOlabilogged out.
+[06-Apr-2022 19:27:24 Europe/Berlin] language called
+[06-Apr-2022 19:27:28 Europe/Berlin] language called
+[06-Apr-2022 19:27:28 Europe/Berlin] language called
+[06-Apr-2022 19:27:28 Europe/Berlin] PHP Fatal error:  Uncaught Error: Class 'JetBrains\PhpStorm\Language' not found in C:\xampp\htdocs\mnu\application\views\home\index.php:50
+Stack trace:
+#0 C:\xampp\htdocs\mnu\application\controller\home.php(65): require()
+#1 C:\xampp\htdocs\mnu\application\libs\application.php(62): Home->index()
+#2 C:\xampp\htdocs\mnu\index.php(140): Application->__construct()
+#3 {main}
+  thrown in C:\xampp\htdocs\mnu\application\views\home\index.php on line 50
+[06-Apr-2022 19:28:00 Europe/Berlin] language called
+[06-Apr-2022 19:59:00 Europe/Berlin] language called
+[06-Apr-2022 19:59:00 Europe/Berlin] USERMODEL
+[06-Apr-2022 19:59:02 Europe/Berlin] language called
+[06-Apr-2022 19:59:02 Europe/Berlin] USERMODEL
+[06-Apr-2022 19:59:02 Europe/Berlin] username = NasoohOlabi and password = 1234
+[06-Apr-2022 19:59:02 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[06-Apr-2022 19:59:02 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[06-Apr-2022 19:59:02 Europe/Berlin] language called
+[06-Apr-2022 19:59:02 Europe/Berlin] language called
+[06-Apr-2022 19:59:14 Europe/Berlin] language called
+[06-Apr-2022 20:04:12 Europe/Berlin] language called
+[06-Apr-2022 20:07:36 Europe/Berlin] language called
+[06-Apr-2022 20:09:20 Europe/Berlin] language called
+[06-Apr-2022 20:09:20 Europe/Berlin] language called
+[06-Apr-2022 20:09:36 Europe/Berlin] language called
+[06-Apr-2022 20:09:36 Europe/Berlin] USERMODEL
+[06-Apr-2022 20:09:36 Europe/Berlin] username = NasoohOlabi and password = 1234
+[06-Apr-2022 20:09:36 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[06-Apr-2022 20:09:36 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[06-Apr-2022 20:09:36 Europe/Berlin] language called
+[06-Apr-2022 20:09:37 Europe/Berlin] language called
+[06-Apr-2022 20:09:42 Europe/Berlin] language called
+[06-Apr-2022 20:11:43 Europe/Berlin] language called
+[06-Apr-2022 20:13:41 Europe/Berlin] language called
+[06-Apr-2022 20:14:49 Europe/Berlin] language called
+[06-Apr-2022 20:15:11 Europe/Berlin] language called
+[06-Apr-2022 20:15:20 Europe/Berlin] language called
+[06-Apr-2022 20:16:37 Europe/Berlin] language called
+[06-Apr-2022 20:16:43 Europe/Berlin] language called
+[06-Apr-2022 20:16:43 Europe/Berlin] dashboard called
+[06-Apr-2022 20:16:43 Europe/Berlin] language called
+[06-Apr-2022 20:16:54 Europe/Berlin] language called
+[06-Apr-2022 20:17:01 Europe/Berlin] language called
+[06-Apr-2022 20:19:27 Europe/Berlin] language called
+[06-Apr-2022 20:19:27 Europe/Berlin] language called
+[06-Apr-2022 20:19:32 Europe/Berlin] language called
+[06-Apr-2022 20:19:32 Europe/Berlin] dashboard called
+[06-Apr-2022 20:19:32 Europe/Berlin] language called
+[06-Apr-2022 20:19:34 Europe/Berlin] language called
+[06-Apr-2022 20:19:40 Europe/Berlin] language called
+[06-Apr-2022 20:19:40 Europe/Berlin] language called
+[06-Apr-2022 20:19:45 Europe/Berlin] language called
+[06-Apr-2022 20:19:45 Europe/Berlin] language called
+[06-Apr-2022 20:19:47 Europe/Berlin] language called
+[06-Apr-2022 20:19:51 Europe/Berlin] language called
+[06-Apr-2022 20:20:50 Europe/Berlin] language called
+[06-Apr-2022 20:21:00 Europe/Berlin] language called
+[06-Apr-2022 20:21:00 Europe/Berlin] language called
+[06-Apr-2022 20:31:38 Europe/Berlin] language called
+[06-Apr-2022 20:31:38 Europe/Berlin] User NasoohOlabilogged out.
+[06-Apr-2022 20:31:38 Europe/Berlin] language called
+[06-Apr-2022 20:32:05 Europe/Berlin] language called
+[06-Apr-2022 20:32:05 Europe/Berlin] USERMODEL
+[06-Apr-2022 20:32:05 Europe/Berlin] username = NasoohOlabi and password = 1234
+[06-Apr-2022 20:32:05 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[06-Apr-2022 20:32:05 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":[{"Student":"id"}],"identifying_fields":["username"],"id":1}
+[06-Apr-2022 20:32:05 Europe/Berlin] language called
+[06-Apr-2022 20:32:05 Europe/Berlin] language called
+[06-Apr-2022 20:32:16 Europe/Berlin] language called
+[06-Apr-2022 20:32:47 Europe/Berlin] language called
+[06-Apr-2022 20:32:47 Europe/Berlin] dashboard called
+[06-Apr-2022 20:32:47 Europe/Berlin] language called
+[06-Apr-2022 20:32:50 Europe/Berlin] language called
+[06-Apr-2022 20:38:14 Europe/Berlin] language called
+[06-Apr-2022 20:38:14 Europe/Berlin] PHP Parse error:  syntax error, unexpected ''right'' (T_CONSTANT_ENCAPSED_STRING), expecting ';' or ',' in C:\xampp\htdocs\mnu\application\views\Dashboard\add.php on line 16
+[06-Apr-2022 20:38:43 Europe/Berlin] language called
+[06-Apr-2022 20:39:16 Europe/Berlin] language called
+[06-Apr-2022 20:39:48 Europe/Berlin] language called
+[06-Apr-2022 20:46:32 Europe/Berlin] language called
+[06-Apr-2022 20:48:40 Europe/Berlin] language called
+[06-Apr-2022 20:48:52 Europe/Berlin] language called
+[06-Apr-2022 20:48:52 Europe/Berlin] dashboard called
+[06-Apr-2022 20:48:52 Europe/Berlin] language called
+[06-Apr-2022 20:49:02 Europe/Berlin] language called
+[06-Apr-2022 20:49:05 Europe/Berlin] language called
+[06-Apr-2022 22:00:08 Europe/Berlin] language called
+[06-Apr-2022 22:01:48 Europe/Berlin] language called
+[06-Apr-2022 22:02:09 Europe/Berlin] language called
+[06-Apr-2022 22:02:09 Europe/Berlin] dashboard called
+[06-Apr-2022 22:02:10 Europe/Berlin] language called
+[06-Apr-2022 22:02:15 Europe/Berlin] language called
+[06-Apr-2022 22:02:17 Europe/Berlin] language called
+[06-Apr-2022 22:03:54 Europe/Berlin] language called
+[06-Apr-2022 22:06:40 Europe/Berlin] language called
+[06-Apr-2022 22:06:51 Europe/Berlin] language called
+[06-Apr-2022 22:06:51 Europe/Berlin] dashboard called
+[06-Apr-2022 22:06:52 Europe/Berlin] language called
+[06-Apr-2022 22:07:00 Europe/Berlin] language called
+[06-Apr-2022 22:07:10 Europe/Berlin] language called
+[06-Apr-2022 22:07:53 Europe/Berlin] language called
+[06-Apr-2022 22:08:16 Europe/Berlin] language called
+[06-Apr-2022 22:08:16 Europe/Berlin] dashboard called
+[06-Apr-2022 22:08:17 Europe/Berlin] language called
+[06-Apr-2022 22:08:37 Europe/Berlin] language called
+[06-Apr-2022 22:08:41 Europe/Berlin] language called
+[06-Apr-2022 22:08:51 Europe/Berlin] language called
+[06-Apr-2022 22:08:51 Europe/Berlin] dashboard called
+[06-Apr-2022 22:08:52 Europe/Berlin] language called
+[06-Apr-2022 22:08:54 Europe/Berlin] language called
+[06-Apr-2022 22:08:56 Europe/Berlin] language called
+[06-Apr-2022 22:09:11 Europe/Berlin] language called
+[06-Apr-2022 22:09:11 Europe/Berlin] dashboard called
+[06-Apr-2022 22:09:12 Europe/Berlin] language called
+[06-Apr-2022 22:09:17 Europe/Berlin] language called
+[06-Apr-2022 22:09:20 Europe/Berlin] language called
+[06-Apr-2022 22:11:49 Europe/Berlin] language called
+[06-Apr-2022 22:12:28 Europe/Berlin] language called
+[06-Apr-2022 22:12:28 Europe/Berlin] dashboard called
+[06-Apr-2022 22:12:29 Europe/Berlin] language called
+[06-Apr-2022 22:22:12 Europe/Berlin] language called
+[06-Apr-2022 22:22:12 Europe/Berlin] dashboard called
+[06-Apr-2022 22:22:12 Europe/Berlin] language called
+[06-Apr-2022 22:24:46 Europe/Berlin] language called
+[06-Apr-2022 22:24:46 Europe/Berlin] dashboard called
+[06-Apr-2022 22:24:47 Europe/Berlin] language called
+[06-Apr-2022 22:24:52 Europe/Berlin] language called
+[06-Apr-2022 22:24:55 Europe/Berlin] language called
+[06-Apr-2022 22:25:11 Europe/Berlin] language called
+[06-Apr-2022 22:25:11 Europe/Berlin] dashboard called
+[06-Apr-2022 22:25:11 Europe/Berlin] language called
+[06-Apr-2022 22:25:19 Europe/Berlin] language called
+[06-Apr-2022 22:27:23 Europe/Berlin] language called
+[06-Apr-2022 22:27:23 Europe/Berlin] dashboard called
+[06-Apr-2022 22:27:24 Europe/Berlin] language called
+[06-Apr-2022 22:27:59 Europe/Berlin] language called
+[06-Apr-2022 22:27:59 Europe/Berlin] dashboard called
+[06-Apr-2022 22:28:00 Europe/Berlin] language called
+[06-Apr-2022 22:28:02 Europe/Berlin] language called
+[06-Apr-2022 22:28:04 Europe/Berlin] language called
+[06-Apr-2022 22:28:05 Europe/Berlin] language called
+[06-Apr-2022 22:28:08 Europe/Berlin] language called
+[06-Apr-2022 22:28:10 Europe/Berlin] language called
+[06-Apr-2022 22:28:12 Europe/Berlin] language called
+[06-Apr-2022 22:28:14 Europe/Berlin] language called
+[06-Apr-2022 22:28:15 Europe/Berlin] language called
+[06-Apr-2022 22:28:17 Europe/Berlin] language called
+[06-Apr-2022 22:28:18 Europe/Berlin] language called
+[06-Apr-2022 22:28:26 Europe/Berlin] language called
+[06-Apr-2022 22:28:28 Europe/Berlin] language called
+[06-Apr-2022 22:28:29 Europe/Berlin] language called
+[06-Apr-2022 22:30:54 Europe/Berlin] language called
+[06-Apr-2022 22:30:54 Europe/Berlin] dashboard called
+[06-Apr-2022 22:30:56 Europe/Berlin] language called
+[06-Apr-2022 22:30:59 Europe/Berlin] language called
+[06-Apr-2022 22:33:09 Europe/Berlin] language called
+[06-Apr-2022 22:35:17 Europe/Berlin] language called
+[06-Apr-2022 22:35:54 Europe/Berlin] language called

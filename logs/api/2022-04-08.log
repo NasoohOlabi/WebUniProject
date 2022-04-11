@@ -1,0 +1,24 @@
+[08-Apr-2022 10:13:11 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"text":"Which is bigger in value?","active":1,"topic_id":1,"topic":["topic-1"],"choices":["choice-1","choice-2","choice-3"],"dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":"1","student_exams":[]}
+[08-Apr-2022 10:13:11 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"text":"Which is bigger in value?","active":"1","topic_id":"1","id":"1"}
+[08-Apr-2022 10:13:11 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"text":"Which is bigger in value?","active":"1","topic_id":"1","id":"1"}
+[08-Apr-2022 10:13:11 Europe/Berlin] Caught exception: You Can't Edit questions
+[08-Apr-2022 10:22:05 Europe/Berlin] Picture decode failed
+[08-Apr-2022 10:22:05 Europe/Berlin] Caught exception: did not match data URI with image data
+[08-Apr-2022 10:24:30 Europe/Berlin] Picture decode failed
+[08-Apr-2022 10:24:30 Europe/Berlin] Caught exception: did not match data URI with image data
+[08-Apr-2022 10:25:09 Europe/Berlin] Picture decode failed
+[08-Apr-2022 10:25:09 Europe/Berlin] Caught exception: did not match data URI with image data
+[08-Apr-2022 10:26:17 Europe/Berlin] Saving image to: ./DB/ProfilePics/NasoohOlabi.jpeg
+[08-Apr-2022 10:26:17 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"username":"NasoohOlabi","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser"}
+[08-Apr-2022 10:26:17 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"username":"NasoohOlabi","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","id":1}
+[08-Apr-2022 10:26:17 Europe/Berlin] Caught exception: You Can't Edit users
+[08-Apr-2022 10:29:51 Europe/Berlin] Saving image to: ./DB/ProfilePics/NasoohOlabi.jpeg
+[08-Apr-2022 10:29:51 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"username":"NasoohOlabi","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser"}
+[08-Apr-2022 10:29:51 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"username":"NasoohOlabi","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","id":1}
+[08-Apr-2022 10:33:27 Europe/Berlin] Caught exception: Call to undefined function str_starts_with()
+[08-Apr-2022 10:35:15 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"username":"MSmith","first_name":"Michell","last_name":"ssk","middle_name":"Smith","role_id":"1","id":"3"}
+[08-Apr-2022 10:35:15 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"username":"MSmith","first_name":"Michell","last_name":"ssk","middle_name":"Smith","role_id":"1","id":"3"}
+[08-Apr-2022 10:35:15 Europe/Berlin] Caught exception: You don't have permission to change roles
+[08-Apr-2022 10:37:05 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"4"}
+[08-Apr-2022 10:37:05 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"4"}
+[08-Apr-2022 10:37:05 Europe/Berlin] Caught exception: You don't have permission to change roles

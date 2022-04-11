@@ -1,0 +1,80 @@
+[05-Apr-2022 05:57:21 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 05:57:21 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 05:57:21 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 05:57:21 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 05:57:25 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 05:57:25 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 05:57:25 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 05:57:25 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 05:58:12 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 05:58:12 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 05:58:12 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 05:58:12 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 06:00:36 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 06:00:36 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 06:00:36 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 06:00:36 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 06:05:55 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 06:05:55 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 06:05:55 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"4","role_id":"2"}
+[05-Apr-2022 06:05:55 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 08:35:22 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"username":"NasoohOlabi","password":"1","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser"}
+[05-Apr-2022 08:35:22 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"username":"NasoohOlabi","password":"c4ca4238a0b923820dcc509a6f75849b","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser"}
+[05-Apr-2022 08:35:22 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"username":"NasoohOlabi","password":"c4ca4238a0b923820dcc509a6f75849b","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","id":1}
+[05-Apr-2022 08:37:01 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"username":"NasoohOlabi","password":"1234","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser"}
+[05-Apr-2022 08:37:01 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser"}
+[05-Apr-2022 08:37:01 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","id":1}
+[05-Apr-2022 16:04:17 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:04:17 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:04:17 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:04:17 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 16:05:00 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:05:00 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:05:00 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:05:00 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 16:05:04 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:05:04 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:05:04 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:05:04 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 16:05:48 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:05:48 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:05:48 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:05:48 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 16:06:09 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:06:09 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:06:09 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:06:09 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 16:07:44 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"2"}
+[05-Apr-2022 16:07:44 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"2"}
+[05-Apr-2022 16:07:44 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"2"}
+[05-Apr-2022 16:07:44 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 16:09:04 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:09:04 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:09:04 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:09:04 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 16:11:16 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:11:16 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:11:16 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:11:16 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 16:12:46 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:12:46 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:12:46 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:12:46 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 16:13:29 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:13:29 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:13:29 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:13:29 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 16:15:17 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:15:17 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:15:17 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:15:17 Europe/Berlin] Caught exception: You don't have permission to change roles
+[05-Apr-2022 16:16:11 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:16:11 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:16:11 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:30:39 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"1"}
+[05-Apr-2022 16:30:39 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"1"}
+[05-Apr-2022 16:30:39 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"1"}
+[05-Apr-2022 16:31:43 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:31:43 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:31:43 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"2","role_id":"6"}
+[05-Apr-2022 16:31:43 Europe/Berlin] Caught exception: You don't have permission to change roles

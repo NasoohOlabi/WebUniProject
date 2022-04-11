@@ -1,0 +1,13 @@
+[03-Apr-2022 08:43:50 Europe/Berlin] Caught exception: Duplicate entry 'Geometry' for key 'name_UNIQUE'
+[03-Apr-2022 08:46:39 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"text":"what's 3+2 ?","number_of_choices":3,"topic_id":2,"topic":["topic-2"],"choices":["choice-105","choice-106","choice-107"],"dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":"102","student_exams":[]}
+[03-Apr-2022 08:46:39 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"text":"what's 3+2 ?","number_of_choices":"3","topic_id":"2","id":"102"}
+[03-Apr-2022 08:46:39 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"text":"what's 3+2 ?","number_of_choices":"3","topic_id":"2","id":"102"}
+[03-Apr-2022 10:55:11 Europe/Berlin] api update>>>preprocessed>>>>POST>>>>>{"id":"3","topic_id":"4"}
+[03-Apr-2022 10:55:11 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>{"id":"3","topic_id":"4"}
+[03-Apr-2022 10:55:11 Europe/Berlin] api update>>>>cleaned>>>POST>>>>>id added>>>>>{"id":"3","topic_id":"4"}
+[03-Apr-2022 11:58:24 Europe/Berlin] Caught exception: Sorry, We don't delete Permissions!
+[03-Apr-2022 11:59:46 Europe/Berlin] Caught exception: Sorry, We don't delete Permissions!
+[03-Apr-2022 12:12:27 Europe/Berlin] Caught exception: Sorry, We don't delete Permissions!
+[03-Apr-2022 12:16:24 Europe/Berlin] Caught exception: Sorry, We don't delete Permissions!
+[03-Apr-2022 12:19:37 Europe/Berlin] Caught exception: Sorry, We don't delete Permissions!
+[03-Apr-2022 12:19:47 Europe/Berlin] Caught exception: Sorry, We don't delete Permissions!

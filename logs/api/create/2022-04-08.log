@@ -1,0 +1,8 @@
+[08-Apr-2022 09:48:36 Europe/Berlin] {"text":"ajfkl","active":0,"topic_id":1,"dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[08-Apr-2022 09:51:22 Europe/Berlin] {"text":"fadfadfa","active":1,"topic_id":2,"dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[08-Apr-2022 09:52:49 Europe/Berlin] {"text":"afdfdfdsa","active":1,"topic_id":1,"dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[08-Apr-2022 09:56:07 Europe/Berlin] {"text":"jafjl","active":1,"topic_id":2,"dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[08-Apr-2022 09:59:25 Europe/Berlin] {"text":"jasdfafa","active":1,"topic_id":4,"dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[08-Apr-2022 09:59:25 Europe/Berlin] Caught exception: You Can't Create Questions
+[08-Apr-2022 10:00:37 Europe/Berlin] {"text":"dasf","active":1,"topic_id":1,"dependents":["Choice","Student_Exam_Has_Question"],"identifying_fields":["text"],"id":-1}
+[08-Apr-2022 10:00:37 Europe/Berlin] Caught exception: You Can't Create Questions
