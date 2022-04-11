@@ -412,21 +412,21 @@ function TableRow(identifier, inline_keys = false, inline_key_prefix = "") {
 
     // TODO: BASE ON global permissions array
     const lastIntIdentifier = identifier.split('::').pop().split('-')[0]
-    const read = permissions.includes('read_'+lastIntIdentifier.toLowerCase())
-    const delete = permissions.includes('delete_' + lastIntIdentifier.toLowerCase())
-    
+    const edit = (USER_ROLE === 'ROOT::ADMIN') || permissions.includes('edit_' + lastIntIdentifier.toLowerCase())
+    const delete_perm = (USER_ROLE === 'ROOT::ADMIN') || permissions.includes('delete_' + lastIntIdentifier.toLowerCase())
 
-    
+
+
     const delete_edit_icons = inline_keys
-        ? `<td style="border-top:none">
+        ? ((!edit) ? '' : `<td style="border-top:none">
       <i class="fa fa-pencil" aria-hidden="true" id="${identifier}-switcher"></i>
-    </td>`
-        : `<td>
+    </td>`)
+        : ((!delete_perm) ? '' : `<td>
       <i class="fa fa-trash" aria-hidden="true"  id="${identifier}-left"></i>
-    </td>
+    </td>`) + ((!edit) ? '' : `
     <td >
       <i class="fa fa-pencil" aria-hidden="true"  id="${identifier}-right"></i>
-    </td>`;
+    </td>`);
     if (inline_keys) {
         set_OnClick_For_Id(edit_sub_Row(identifier), identifier + "-switcher");
     } else {

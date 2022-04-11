@@ -171,7 +171,8 @@
   </section>
   <script>
     var URL = '<?= URL ?>'
-    var permissions = <?= json_encode($_SESSION['user']->permissions) ?>
+    var permissions = <?= json_encode($_SESSION['user']->permissions) ?>;
+    var USER_ROLE = <?= json_encode($_SESSION['user']->role->name) ?>;
   </script>
   <script src="<?= URL ?>public/js/dashboard.js"></script>
 </body>

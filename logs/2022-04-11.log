@@ -2275,3 +2275,23 @@ Stack trace:
 #2 C:\xampp\htdocs\mnu\application\libs\application.php(56): DashBoard->index()
 #3 C:\xampp\htdocs\mnu\index.php(163): Application->__construct()
 #4 {main}
+[11-Apr-2022 08:00:42 Europe/Berlin] dashboard called
+[11-Apr-2022 08:01:51 Europe/Berlin] User BrandonFreemanlogged out.
+[11-Apr-2022 08:02:06 Europe/Berlin] USERMODEL
+[11-Apr-2022 08:02:07 Europe/Berlin] USERMODEL
+[11-Apr-2022 08:02:07 Europe/Berlin] username = NasoohOlabi and password = 1234
+[11-Apr-2022 08:02:07 Europe/Berlin] getFullDetails with username NasoohOlabi and password 1234
+[11-Apr-2022 08:02:07 Europe/Berlin] NasoohOlabi details looked up : {"username":"NasoohOlabi","password":"81dc9bdb52d04dc20036dbd8313ed055","first_name":"Nasooh","last_name":"Olabi","middle_name":"Yaser","profile_picture":"NasoohOlabi.jpg","role_id":1,"role":{"name":"ROOT::ADMIN","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":1},"dependents":["Student","Exam_Center"],"identifying_fields":["username"],"id":1}
+[11-Apr-2022 08:02:12 Europe/Berlin] dashboard called
+[11-Apr-2022 08:04:46 Europe/Berlin] dashboard called
+[11-Apr-2022 08:05:07 Europe/Berlin] dashboard called
+[11-Apr-2022 08:05:14 Europe/Berlin] dashboard called
+[11-Apr-2022 08:05:44 Europe/Berlin] dashboard called
+[11-Apr-2022 08:05:58 Europe/Berlin] dashboard called
+[11-Apr-2022 08:09:38 Europe/Berlin] dashboard called
+[11-Apr-2022 08:09:43 Europe/Berlin] User NasoohOlabilogged out.
+[11-Apr-2022 08:12:56 Europe/Berlin] USERMODEL
+[11-Apr-2022 08:12:59 Europe/Berlin] USERMODEL
+[11-Apr-2022 08:12:59 Europe/Berlin] username = MarcDemo and password = 123
+[11-Apr-2022 08:12:59 Europe/Berlin] getFullDetails with username MarcDemo and password 123
+[11-Apr-2022 08:12:59 Europe/Berlin] MarcDemo details looked up : {"username":"MarcDemo","password":"202cb962ac59075b964b07152d234b70","first_name":"Marc","last_name":"Demo","middle_name":"Angry","profile_picture":"MarcDemo.jpg","role_id":2,"role":{"name":"Student","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":2},"dependents":["Student","Exam_Center"],"identifying_fields":["username"],"id":17}
