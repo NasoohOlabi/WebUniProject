@@ -5,6 +5,10 @@
 ini_set("log_errors", TRUE);
 function simpleLog($msg, $directory = null, $filename = null)
 {
+    if (str_contains(strtolower($msg), "exception") || str_contains(strtolower($msg), "error")) {
+        simpleLog($msg);
+    }
+
     // path of the log file where errors need to be logged
     if (substr($directory, -1) !== '/') $directory = $directory . '/';
     $log_file = 'logs/' . $directory . (($filename === null) ? date("Y-m-d") : $filename) . ".log";
