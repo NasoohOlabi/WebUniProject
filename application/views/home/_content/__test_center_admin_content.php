@@ -10,7 +10,7 @@
     }
 
     if (<?php echo (isset($_GET['op_success']) && !$_GET['op_success']) ? ("true") : "false" ?>) {
-        failure();
+        failure("Can't generate anymore random exams");
     }
 </script>
 <div class="user-content">

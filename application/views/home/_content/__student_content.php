@@ -24,11 +24,31 @@
                 window.location = "<?= URL ?>exams/unsetExam";
             }
         });
+    }
 
+    function alertExam() {
+        Swal.fire({
+            title: "Start Exam?",
+            text: "You cant go back once you start your exam. Are you sure you want to continue?",
+            icon: "info",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Start Exam",
+        }).then((result) => {
+            if (result.isConfirmed) {
+                startExam();
+            } else {
+                return;
+            }
+        });
     }
 
     if (<?php echo (isset($_GET['exam_finished']) && isset($_SESSION['examGrade'])) ? ("true") : "false" ?>) {
         viewResult();
+    }
+    if (<?php echo (isset($_GET['no_exams']) && $_GET['no_exams']) ? ("true") : "false" ?>) {
+        failure("No exams available");
     }
 </script>
 <div class="user-content">
@@ -43,6 +63,6 @@
     </select>
 
     <div class="form-block">
-        <button type="submit" onclick="startExam()">Take Exam</button>
+        <button type="submit" onclick="alertExam()">Take Exam</button>
     </div>
 </div>

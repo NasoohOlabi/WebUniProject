@@ -126,7 +126,6 @@ header .image-text .profession {
 
 .sidebar li a {
 	list-style: none;
-	height: 100%;
 	background-color: transparent;
 	display: flex;
 	align-items: center;
@@ -169,7 +168,6 @@ header .image-text .profession {
 #home {
 	position: absolute;
 	top: 0;
-	top: 0;
 	left: 250px;
 	height: 100vh;
 	width: calc(100% - 250px);
@@ -197,7 +195,6 @@ body.dark #home .text {
 .table th {
 	padding: 0.75rem;
 	/* padding: 100px 0; if you want to tryout incremental loading*/
-	vertical-align: top;
 	text-align: center;
 	border-top: 1px solid #dee2e6;
 	vertical-align: middle;
@@ -270,6 +267,16 @@ body.dark #home .text {
 .fa-trash:hover {
 	color: #f44336;
 }
+
+.fa-pencil {
+	cursor: pointer;
+	color: #795548;
+}
+
+.fa-pencil:hover {
+	color: #f44336;
+}
+
 .modify-btn:hover {
 	background-color: #f44336;
 }

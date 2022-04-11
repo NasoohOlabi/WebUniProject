@@ -39,6 +39,8 @@ class Exams extends Controller
         $curQuestionInfo->choices = $exam_model->select([], 'choice', [Choice::question_id => $curQuestion->question_id]);
         $reviewMode = (isset($_SESSION['reviewExam']) && $_SESSION['reviewExam']) ? true : false;
         $studentChoice = $reviewMode ? intval(explode('-', $_SESSION['studentChoices'][$question_index])[1]) : null;
+        $endTime = $_SESSION['endTime'];
+        $endTime = str_replace("CES", "", $endTime);
 
         pageHeadTag("Exam");
         require 'application/views/_templates/user_navbar.php';
@@ -97,7 +99,14 @@ class Exams extends Controller
             return;
         }
 
-        $em->loadExam(intval($ids[0]), intval($ids[1]));
+        simpleLog("Attempting to find an exam...");
+
+        try {
+            $em->loadExam(intval($ids[0]), intval($ids[1]));
+        } catch (\Throwable $th) {
+            header('Location: ' . URL . "index?no_exams=true");
+            return;
+        }
 
         header('Location: ' . URL . 'exams/index/0');
     }
@@ -110,7 +119,7 @@ class Exams extends Controller
 
         $exam_model = $this->loadModel('ExamModel');
 
-        if (!$exam_model->inExam() || ($_SESSION['curQuestionIndex'] + 1 != sizeof($_SESSION['ExamQuestions']))) {
+        if (!$exam_model->inExam()) {
             http_response_code(403);
             return;
         }

@@ -8,11 +8,11 @@ function success() {
   });
 }
 
-function failure() {
+function failure(msg) {
   Swal.fire({
     position: "top-end",
     icon: "error",
-    title: `Opreation failed`,
+    title: msg,
     showConfirmButton: false,
     timer: 1500,
   });

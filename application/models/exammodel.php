@@ -250,8 +250,11 @@ class ExamModel extends BaseModel
         $student_exams = $this->select([], 'student_exam', [[Student_Exam::exam_id => $exam_id]]);
         $valid_student_exams = array_filter($student_exams, fn ($exam) => !$exam->student_id);
 
-        // var_dump($valid_student_exams);
-
+        if (!$valid_student_exams) {
+            simpleLog("No exams available");
+            throw new Exception("No available exams were found");
+        }
+        simpleLog("There is a valid exam");
         $student_exam = $valid_student_exams[array_rand($valid_student_exams)];
         if (!$student_exam) {
             http_response_code(404);
@@ -270,5 +273,8 @@ class ExamModel extends BaseModel
         $_SESSION['MarksPerQuestion'] = $question_mark;
         $_SESSION['examGrade'] = 0.0;
         $_SESSION['studentChoices'] = [];
+        $duration = $this->select([], 'exam', [Exam::id => $student_exam->exam_id])[0]->duration;
+        $_SESSION['endTime'] =
+            date("Y-m-dTH:i:s", strtotime("+$duration minutes"));
     }
 }

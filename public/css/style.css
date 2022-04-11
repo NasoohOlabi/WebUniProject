@@ -819,3 +819,8 @@ noscript {
 .choice-container {
   margin-bottom: 2.5em;
 }
+
+.timer{
+  float: right;
+  margin-right: 2.5em;
+}
