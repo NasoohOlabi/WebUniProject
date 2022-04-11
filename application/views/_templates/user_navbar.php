@@ -6,7 +6,19 @@ $profile_pic = $_SESSION['user']->profile_picture;
 // var_dump($_SESSION['user']);
 $has_picture = ($profile_pic == null || $profile_pic == '' ? false : true);
 $role = $_SESSION['user']->role->name;
-$isRootAdmin = ($role == 'ROOT::ADMIN' ? true : false);
+$isRootAdmin = (sessionUserHasRole('ROOT::ADMIN')
+    || sessionUserHasPermissions(['read_user'])
+    || sessionUserHasPermissions(['read_question'])
+    || sessionUserHasPermissions(['read_exam'])
+    || sessionUserHasPermissions(['read_exam_center'])
+    || sessionUserHasPermissions(['read_subject'])
+    || sessionUserHasPermissions(['read_topic'])
+    || sessionUserHasPermissions(['read_role'])
+    || sessionUserHasPermissions(['read_permission'])
+    || sessionUserHasPermissions(['read_student'])
+    || sessionUserHasPermissions(['read_student_exam'])
+    || sessionUserHasPermissions(['read_student_exam'])
+);
 $user_first_name = $_SESSION['user']->first_name;
 $user_initial = strtoupper($user_first_name[0]);
 

@@ -14,7 +14,19 @@ class DashBoard extends Controller
     {
         session_start();
         if (isset($_SESSION['user'])) {
-            if (!sessionUserHasRole('ROOT::ADMIN')) {
+            if (!(sessionUserHasRole('ROOT::ADMIN')
+                || sessionUserHasPermissions(['read_user'])
+                || sessionUserHasPermissions(['read_question'])
+                || sessionUserHasPermissions(['read_exam'])
+                || sessionUserHasPermissions(['read_exam_center'])
+                || sessionUserHasPermissions(['read_subject'])
+                || sessionUserHasPermissions(['read_topic'])
+                || sessionUserHasPermissions(['read_role'])
+                || sessionUserHasPermissions(['read_permission'])
+                || sessionUserHasPermissions(['read_student'])
+                || sessionUserHasPermissions(['read_student_exam'])
+                || sessionUserHasPermissions(['read_student_exam'])
+            )) {
                 $this->redirectToIndex_flash_message(
                     Language::t('You don\'t have permission to access this page!')
                 );
@@ -40,7 +52,19 @@ class DashBoard extends Controller
     {
         session_start();
         if (isset($_SESSION['user'])) {
-            if (!sessionUserHasRole('ROOT::ADMIN')) {
+            if (!(sessionUserHasRole('ROOT::ADMIN')
+                || sessionUserHasPermissions(['read_user'])
+                || sessionUserHasPermissions(['read_question'])
+                || sessionUserHasPermissions(['read_exam'])
+                || sessionUserHasPermissions(['read_exam_center'])
+                || sessionUserHasPermissions(['read_subject'])
+                || sessionUserHasPermissions(['read_topic'])
+                || sessionUserHasPermissions(['read_role'])
+                || sessionUserHasPermissions(['read_permission'])
+                || sessionUserHasPermissions(['read_student'])
+                || sessionUserHasPermissions(['read_student_exam'])
+                || sessionUserHasPermissions(['read_student_exam'])
+            )) {
                 $this->redirectToIndex_flash_message(
                     Language::t('You don\'t have permission to access this page!')
                 );
@@ -67,7 +91,19 @@ class DashBoard extends Controller
     {
         session_start();
         if (isset($_SESSION['user'])) {
-            if (!sessionUserHasRole('ROOT::ADMIN')) {
+            if (!(sessionUserHasRole('ROOT::ADMIN')
+                || sessionUserHasPermissions(['read_user'])
+                || sessionUserHasPermissions(['read_question'])
+                || sessionUserHasPermissions(['read_exam'])
+                || sessionUserHasPermissions(['read_exam_center'])
+                || sessionUserHasPermissions(['read_subject'])
+                || sessionUserHasPermissions(['read_topic'])
+                || sessionUserHasPermissions(['read_role'])
+                || sessionUserHasPermissions(['read_permission'])
+                || sessionUserHasPermissions(['read_student'])
+                || sessionUserHasPermissions(['read_student_exam'])
+                || sessionUserHasPermissions(['read_student_exam'])
+            )) {
                 $this->redirectToIndex_flash_message(
                     Language::t('You don\'t have permission to access this page!')
                 );
@@ -145,7 +181,19 @@ class DashBoard extends Controller
         // echo 'Message from Controller: You are in the controller home, using the method index()';
         session_start();
         if (isset($_SESSION['user'])) {
-            if (!sessionUserHasRole('ROOT::ADMIN')) {
+            if (!(sessionUserHasRole('ROOT::ADMIN')
+                || sessionUserHasPermissions(['read_user'])
+                || sessionUserHasPermissions(['read_question'])
+                || sessionUserHasPermissions(['read_exam'])
+                || sessionUserHasPermissions(['read_exam_center'])
+                || sessionUserHasPermissions(['read_subject'])
+                || sessionUserHasPermissions(['read_topic'])
+                || sessionUserHasPermissions(['read_role'])
+                || sessionUserHasPermissions(['read_permission'])
+                || sessionUserHasPermissions(['read_student'])
+                || sessionUserHasPermissions(['read_student_exam'])
+                || sessionUserHasPermissions(['read_student_exam'])
+            )) {
                 $this->redirectToIndex_flash_message(
                     Language::t('You don\'t have permission to access this page!')
                 );

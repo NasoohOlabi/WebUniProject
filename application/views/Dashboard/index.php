@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" href="<?= URL ?>public/img/logo/favicon.png" type="image/ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard</title>
   <link rel="stylesheet" href="<?= URL ?>public/css/dashboard_style.css" />
@@ -24,7 +25,7 @@
 
           <div class=" text logo-text">
             <span class="name"><?php echo (isset($_SESSION['user'])) ? $_SESSION['user']->username : 'John Doe' ?></span>
-            <span class="profession"><?= ((isset($_SESSION['user'])&& isset($_SESSION['user']->role)) ? $_SESSION['user']->role->name : 'Admin Account')?></span>
+            <span class="profession"><?= ((isset($_SESSION['user']) && isset($_SESSION['user']->role)) ? $_SESSION['user']->role->name : 'Admin Account') ?></span>
           </div>
         </div>
       </a>
@@ -50,78 +51,102 @@
     <div class="menu-bar">
       <div class="menu">
         <ul class="menu-links">
+          <?php
+          if (isset($_SESSION['user']) && sessionUserHasRole('ROOT::ADMIN'))
+            echo '
           <li class="nav-link">
-            <a href="#" onclick="switchTo('Dashboard',event)">
+            <a href="#" onclick="switchTo(\'Dashboard\',event)">
               <span class="text nav-text" id="Dashboard">Dashboard</span>
             </a>
-          </li>
+          </li>';
 
+          if (isset($_SESSION['user']) && sessionUserHasPermissions(['read_user']))
+            echo '
           <li class="nav-link">
-            <a href="#" onclick="switchTo('user',event)">
+            <a href="#" onclick="switchTo(\'user\',event)">
               <span class="text nav-text" id="user">Users</span>
             </a>
-          </li>
+          </li>';
 
+          if (isset($_SESSION['user']) && sessionUserHasPermissions(['read_question']))
+            echo '
           <li class="nav-link">
-            <a href="#" onclick="switchTo('question',event)">
+            <a href="#" onclick="switchTo(\'question\',event)">
               <span class="text nav-text" id="question">Questions</span>
             </a>
-          </li>
+          </li>';
 
+          if (isset($_SESSION['user']) && sessionUserHasPermissions(['read_exam']))
+            echo '
           <li class="nav-link">
-            <a href="#" onclick="switchTo('exam',event)">
+            <a href="#" onclick="switchTo(\'exam\',event)">
               <span class="text nav-text" id="exam">Exams</span>
             </a>
-          </li>
+          </li>';
 
+          if (isset($_SESSION['user']) && sessionUserHasPermissions(['read_exam_center']))
+            echo '
           <li class="nav-link">
-            <a href="#" onclick="switchTo('exam_center',event)">
+            <a href="#" onclick="switchTo(\'exam_center\',event)">
               <span class="text nav-text" id="exam_center">Exam Centers</span>
             </a>
-          </li>
+          </li>';
 
+          if (isset($_SESSION['user']) && sessionUserHasPermissions(['read_subject']))
+            echo '
           <li class="nav-link">
-            <a href="#" onclick="switchTo('subject',event)">
+            <a href="#" onclick="switchTo(\'subject\',event)">
               <span class="text nav-text" id="subject">Subjects</span>
             </a>
-          </li>
+          </li>';
 
+          if (isset($_SESSION['user']) && sessionUserHasPermissions(['read_topic']))
+            echo '
           <li class="nav-link">
-            <a href="#" onclick="switchTo('topic',event)">
+            <a href="#" onclick="switchTo(\'topic\',event)">
               <span class="text nav-text" id="topic">Topics</span>
             </a>
-          </li>
+          </li>';
 
+          if (isset($_SESSION['user']) && sessionUserHasPermissions(['read_role']))
+            echo '
           <li class="nav-link">
-            <a href="#" onclick="switchTo('role',event)">
+            <a href="#" onclick="switchTo(\'role\',event)">
               <span class="text nav-text" id="role">Roles</span>
             </a>
-          </li>
+          </li>';
 
-          <li class="nav-link">
-            <a href="#" onclick="switchTo('permission',event)">
+          if (isset($_SESSION['user']) && sessionUserHasPermissions(['read_permission']))
+            echo '<li class="nav-link">
+            <a href="#" onclick="switchTo(\'permission\',event)">
               <span class="text nav-text" id="permission">Permissions</span>
             </a>
-          </li>
+          </li>';
 
+          if (isset($_SESSION['user']) && sessionUserHasPermissions(['read_student']))
+            echo '
           <li class="nav-link">
-            <a href="#" onclick="switchTo('student',event)">
+            <a href="#" onclick="switchTo(\'student\',event)">
               <span class="text nav-text" id="student">Students</span>
             </a>
-          </li>
+          </li>';
 
+          if (isset($_SESSION['user']) && sessionUserHasPermissions(['read_student_exam']))
+            echo '
           <li class="nav-link">
-            <a href="#" onclick="switchTo('student_exam',event)">
+            <a href="#" onclick="switchTo(\'student_exam\',event)">
               <span class="text nav-text" id="student_exam">Upcoming Exams</span>
             </a>
-          </li>
+          </li>';
 
+          if (isset($_SESSION['user']) && sessionUserHasPermissions(['read_student_exam']))
+            echo '
           <li class="nav-link">
-            <a href="#" onclick="switchTo('student_exam',event)">
+            <a href="#" onclick="switchTo(\'student_exam\',event)">
               <span class="text nav-text" id="student_exam">Exams Taken</span>
             </a>
-          </li>
-
+          </li>';
+          ?>
         </ul>
       </div>
 
@@ -146,6 +171,7 @@
   </section>
   <script>
     var URL = '<?= URL ?>'
+    var permissions = <?= json_encode($_SESSION['user']->permissions) ?>
   </script>
   <script src="<?= URL ?>public/js/dashboard.js"></script>
 </body>

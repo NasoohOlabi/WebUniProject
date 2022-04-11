@@ -9,7 +9,7 @@ var Model = {};
 var Exams_Taken_or_Upcoming_Exams = (getCookie('Exams_Taken_or_Upcoming_Exams') !== '')
     ? getCookie('Exams_Taken_or_Upcoming_Exams')
     : 'Upcoming Exams'
-
+var first_time = true;
 const schemaClasses = [
     "question",
     "role",
@@ -38,20 +38,20 @@ const parseTrs = (s) => {
     const DOM_rows = wrapper.querySelectorAll('div > table > tbody > tr');
     return DOM_rows
 }
-
-var currentTab =
-    getCookie("currentTab") == ""
-        ? (() => {
-            setCookie("currentTab", "Dashboard", 3);
-            switchTo("Dashboard");
-            return "Dashboard";
-        })()
-        : (() => {
-            const curr = getCookie("currentTab");
-            switchTo(curr);
-            return curr;
-        })();
-
+addLoadEvent(() => {
+    window.currentTab =
+        getCookie("currentTab") == ""
+            ? (() => {
+                const default_tab_for_this_user = document.querySelector('.nav-link>a>span').id
+                setCookie("currentTab", default_tab_for_this_user, 3);
+                return default_tab_for_this_user;
+            })()
+            : (() => {
+                const curr = getCookie("currentTab");
+                return curr;
+            })();
+    switchTo(currentTab);
+})
 const insertAfter = (existingNode) => (newNode) => {
     existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling)
 }
@@ -63,7 +63,7 @@ const insertAfter = (existingNode) => (newNode) => {
 function setCookie(cname, cvalue, exmins) {
     const d = new Date();
     // d.setTime(d.getTime() + exmins * 24 * 60 * 60 * 1000);
-    d.setTime(d.getTime() + exmins * 60 * 1000);
+    d.setTime(d.getTime() + exmins * 60 * 60 * 1000);
     let expires = "expires=" + d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
@@ -732,7 +732,7 @@ const liftedGetFromHQ = (
 function switchTo(Tab, evt = null) {
     fetching_flag[currentTab] = false;
     try {
-        if (currentTab === Tab && Tab !== 'student_exam') return;
+        if (!first_time && (currentTab === Tab && Tab !== 'student_exam')) return;
         currentTab = Tab;
 
         const txt = (evt != null) ? evt.target.innerText : Exams_Taken_or_Upcoming_Exams

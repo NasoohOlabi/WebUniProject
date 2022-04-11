@@ -25,6 +25,7 @@
         padding: 20px 0;
         margin: auto;
         width: 100vw;
+        min-width: 300px;
     }
 
     .content {

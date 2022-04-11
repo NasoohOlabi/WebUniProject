@@ -58,6 +58,9 @@ class Api extends Controller
 		$Model = $this->loadModel('BaseModel');
 		try {
 			if ($Model->insert($v)) {
+				if ($className === 'Student') {
+					$Model->update('User',$v->user_id,(object)['role_id'=>2]);
+				}
 				echo json_encode($v);
 			} else {
 				echo "Operation Failed : insert $className failed ";
@@ -170,14 +173,14 @@ class Api extends Controller
 
 						// you have fk and so answer should be one since id is unique
 						$answer->{$subSchemaClass} =
-							$Model->select([], $subSchemaClass,  [$subSchemaClass::id => $val])[0];
+							$Model->select([], $subSchemaClass,  [$subSchemaClass::id => $val],100,true)[0];
 						$answer->{$subSchemaClass} = $fetch_fk_values($answer->{$subSchemaClass});
 					}
 				}
-				return $answer;
 			} catch (AccessDeniedException $th) {
 				simpleLog("Access Denied Exception $th", 'api/read/');
 				simpleLog("You have access to $schemaClass but: " . $th->getMessage(), 'api/read/');
+			} finally {
 				return $answer;
 			}
 		};

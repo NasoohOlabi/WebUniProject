@@ -340,7 +340,7 @@ class BaseModel
             }, $lines);
 
 
-        simpleLog("OP::$stamp returning >>>>>>>>>>>> " . json_encode($result));
+        simpleLog("OP::$stamp returning >>>>>>>>>>>> " . json_encode($result), "selects");
 
         return $result;
     }

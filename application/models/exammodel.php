@@ -44,7 +44,7 @@ class ExamModel extends BaseModel
             return $row->id;
         }, $query->fetchAll());
         $number_of_questions_per_topic = $number_of_questions / count($topic_ids);
-
+        $number_of_questions_per_topic = min($number_of_questions_per_topic, 1);
 
         /**
          * topic_questions is an array of arrays indexed by topic_ids

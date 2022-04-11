@@ -23,7 +23,7 @@ const payload = {
 };
 
 try {
-  fetch(`./Api/read/exam`, {
+  fetch(`http://127.0.0.1:80/mnu/api/read/exam`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -62,7 +62,7 @@ try {
 }
 
 try {
-  fetch(`./Api/read/exam_center`, {
+  fetch(`http://127.0.0.1:80/mnu/api/read/exam_center`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

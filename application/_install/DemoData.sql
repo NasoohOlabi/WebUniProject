@@ -1,4 +1,5 @@
 DELETE FROM `student` WHERE id < 100;
+DELETE FROM `exam_center` WHERE id < 100;
 DELETE FROM `user` WHERE id < 100;
 DELETE FROM `exam` WHERE id < 100;
 DELETE FROM `role_has_permission` WHERE id < 100;
@@ -6,7 +7,6 @@ DELETE FROM `role` WHERE id < 100;
 DELETE FROM `choice` WHERE id < 100;
 DELETE FROM `question` WHERE id < 100;
 DELETE FROM `permission` WHERE id < 100;
-DELETE FROM `exam_center` WHERE id < 100;
 DELETE FROM `topic` WHERE id < 100;
 DELETE FROM `subject` WHERE id < 100;
 
@@ -208,21 +208,21 @@ INSERT INTO `role_has_permission` (`id`, `role_id`, `permission_id`) VALUES
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `profile_picture`, `role_id`) VALUES
 (1, 'NasoohOlabi', '81dc9bdb52d04dc20036dbd8313ed055', 'Nasooh', 'Olabi', 'Yaser', 'NasoohOlabi.jpg', 1),
 (2, 'NassouhAlOlabi', '202cb962ac59075b964b07152d234b70', 'Nassouh', 'AlOlabi', 'Yasser', NULL, 1),
-(3, 'MSmith', 'e268f98f247841960366c10ea099a67e', 'Michell', 'Smith', 'car', 'MSmith.jpg', 1),
-(4, 'BrandonFreeman', 'e268f98f247841960366c10ea099a67e', 'Brandon', 'Freeman', 'M.', 'BrandonFreeman.jpg', 1),
-(5, 'ColleenDiaz', 'e268f98f247841960366c10ea099a67e', 'Colleen', 'Diaz', 'L.', 'ColleenDiaz.jpg', 1),
-(6, 'NicoleFord', 'e268f98f247841960366c10ea099a67e', 'Nicole', 'Ford', 'Nancy', 'NicoleFord.jpg', 1),
-(7, 'AddisonOlson', 'e268f98f247841960366c10ea099a67e', 'Addison', 'Olson', 'Mike', 'AddisonOlson.jpg', 1),
-(8, 'DouglasFletcher', 'e268f98f247841960366c10ea099a67e', 'Douglas', 'Fletcher', 'John', 'DouglasFletcher.jpg', 1),
-(9, 'FloydSteward', 'e268f98f247841960366c10ea099a67e', 'Floyd', 'Steward', 'Jack', 'FloydSteward.jpg', 1),
-(10, 'JesseBrown', 'e268f98f247841960366c10ea099a67e', 'Jesse', 'Brown', 'Axel', 'JesseBrown.jpg', 1),
-(11, 'OscarMorgan', 'e268f98f247841960366c10ea099a67e', 'Oscar', 'Morgan', 'Gotee', 'OscarMorgan.jpg', 1),
-(12, 'SohamPalmer', 'e268f98f247841960366c10ea099a67e', 'Soham', 'Palmer', 'Kid', 'SohamPalmer.jpg', 1),
-(13, 'EdithSanchez', 'e268f98f247841960366c10ea099a67e', 'Edith', 'Sanchez', 'Blonde', 'EdithSanchez.jpg', 1),
-(14, 'KimSnyder', 'e268f98f247841960366c10ea099a67e', 'Kim', 'Snyder', 'Red', 'KimSnyder.jpg', 1),
-(15, 'SandraNeal', 'e268f98f247841960366c10ea099a67e', 'Sandra', 'Neal', 'Kim', 'SandraNeal.jpg', 1),
-(16, 'ToniRhodes', 'e268f98f247841960366c10ea099a67e', 'Toni', 'Rhodes', 'Jordan', 'ToniRhodes.jpg', 1),
-(17, 'MarcDemo', 'e268f98f247841960366c10ea099a67e', 'Marc', 'Demo', 'Angry', 'MarcDemo.jpg', 1),
+(3, 'MSmith', '202cb962ac59075b964b07152d234b70', 'Michell', 'Smith', 'car', 'MSmith.jpg', 7),
+(4, 'BrandonFreeman', '202cb962ac59075b964b07152d234b70', 'Brandon', 'Freeman', 'M.', 'BrandonFreeman.jpg', 6),
+(5, 'ColleenDiaz', '202cb962ac59075b964b07152d234b70', 'Colleen', 'Diaz', 'L.', 'ColleenDiaz.jpg', 2),
+(6, 'NicoleFord', '202cb962ac59075b964b07152d234b70', 'Nicole', 'Ford', 'Nancy', 'NicoleFord.jpg', 5),
+(7, 'AddisonOlson', '202cb962ac59075b964b07152d234b70', 'Addison', 'Olson', 'Mike', 'AddisonOlson.jpg', 5),
+(8, 'DouglasFletcher', '202cb962ac59075b964b07152d234b70', 'Douglas', 'Fletcher', 'John', 'DouglasFletcher.jpg', 5),
+(9, 'FloydSteward', '202cb962ac59075b964b07152d234b70', 'Floyd', 'Steward', 'Jack', 'FloydSteward.jpg', 5),
+(10, 'JesseBrown', '202cb962ac59075b964b07152d234b70', 'Jesse', 'Brown', 'Axel', 'JesseBrown.jpg', 5),
+(11, 'OscarMorgan', '202cb962ac59075b964b07152d234b70', 'Oscar', 'Morgan', 'Gotee', 'OscarMorgan.jpg', 5),
+(12, 'SohamPalmer', '202cb962ac59075b964b07152d234b70', 'Soham', 'Palmer', 'Kid', 'SohamPalmer.jpg', 5),
+(13, 'EdithSanchez', '202cb962ac59075b964b07152d234b70', 'Edith', 'Sanchez', 'Blonde', 'EdithSanchez.jpg', 5),
+(14, 'KimSnyder', '202cb962ac59075b964b07152d234b70', 'Kim', 'Snyder', 'Red', 'KimSnyder.jpg', 5),
+(15, 'SandraNeal', '202cb962ac59075b964b07152d234b70', 'Sandra', 'Neal', 'Kim', 'SandraNeal.jpg', 5),
+(16, 'ToniRhodes', '202cb962ac59075b964b07152d234b70', 'Toni', 'Rhodes', 'Jordan', 'ToniRhodes.jpg', 5),
+(17, 'MarcDemo', '202cb962ac59075b964b07152d234b70', 'Marc', 'Demo', 'Angry', 'MarcDemo.jpg', 2),
 (18, 'testadmin', '202cb962ac59075b964b07152d234b70', 'TestCenter', 'Admin', NULL, NULL, 6),
 (19, "user1", "testpassword", "User1", "Lname", "MidName", NULL, 1),
 (21, "mail", "827ccb0eea8a706c4c34a16891f84e7b", "RealUser", "UserLname", "", NULL, 2),
@@ -239,7 +239,7 @@ INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `mi
 
 
 INSERT INTO `student` (`id`, `enroll_date`, `user_id`) VALUES
-(1, '2022-04-12', 5), (2, '2022-04-01', 24);
+(1, '2022-04-12', 5), (2, '2022-04-01', 24),(3, '2022-04-12', 17);
 
 
 INSERT INTO `exam_center` (`id`, `name`, `description`,`user_id`) VALUES

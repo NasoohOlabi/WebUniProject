@@ -34,7 +34,7 @@ body {
 	top: 0;
 	left: 0;
 	height: 100%;
-	width: 250px;
+	width: fit-content;
 	padding: 10px 14px;
 	background: var(--sidebar-color);
 	z-index: 100;
@@ -350,4 +350,14 @@ body.dark #home .text {
 	cursor: pointer;
 	text-decoration: underline;
 	font-style: italic;
+}
+
+#MainTable-container{
+	position: relative;
+}
+#MainTable-container thead {
+	position: sticky;
+}
+.table {
+	position: relative;
 }
