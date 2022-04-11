@@ -177,6 +177,7 @@ class Exams extends Controller
             header('Location: ' . URL . "exams/index/$next_question_index");
             array_push($_SESSION['studentChoices'], -1);
             simpleLog("Empty selection or review mode is enabled");
+            return;
         }
 
         $answer_choice_id = explode('-', $_POST[array_key_first($_POST)])[1];
@@ -195,6 +196,9 @@ class Exams extends Controller
         if ($is_correct) {
             $_SESSION['examGrade'] += $_SESSION['MarksPerQuestion'];
         }
+
+        $exam_model->update("student_exam", $_SESSION['Exam']->id, (object) ["grade" => round($_SESSION['examGrade'], 2)]);
+
 
         header('Location: ' . URL . "exams/index/$next_question_index");
     }
