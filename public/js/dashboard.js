@@ -410,6 +410,13 @@ function TableRow(identifier, inline_keys = false, inline_key_prefix = "") {
 
     const tds_text = td_s.join("");
 
+    // TODO: BASE ON global permissions array
+    const lastIntIdentifier = identifier.split('::').pop().split('-')[0]
+    const read = permissions.includes('read_'+lastIntIdentifier.toLowerCase())
+    const delete = permissions.includes('delete_' + lastIntIdentifier.toLowerCase())
+    
+
+    
     const delete_edit_icons = inline_keys
         ? `<td style="border-top:none">
       <i class="fa fa-pencil" aria-hidden="true" id="${identifier}-switcher"></i>
