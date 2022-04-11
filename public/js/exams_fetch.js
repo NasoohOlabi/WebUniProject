@@ -1,8 +1,8 @@
-function success() {
+function success(msg) {
   Swal.fire({
     position: "top-end",
     icon: "success",
-    title: `Opreation Done Successfully`,
+    title: msg,
     showConfirmButton: false,
     timer: 1500,
   });

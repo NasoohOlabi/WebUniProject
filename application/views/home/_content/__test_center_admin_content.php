@@ -6,7 +6,7 @@
     }
 
     if (<?php echo (isset($_GET['op_success']) && $_GET['op_success']) ? ("true") : "false" ?>) {
-        success();
+        success("Exam generated successfully");
     }
 
     if (<?php echo (isset($_GET['op_success']) && !$_GET['op_success']) ? ("true") : "false" ?>) {

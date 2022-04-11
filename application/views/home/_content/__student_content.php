@@ -50,6 +50,9 @@
     if (<?php echo (isset($_GET['no_exams']) && $_GET['no_exams']) ? ("true") : "false" ?>) {
         failure("No exams available");
     }
+    if (<?php echo (isset($_GET['exam_saved']) && $_GET['exam_saved']) ? ("true") : "false" ?>) {
+        success("Exam info saved");
+    }
 </script>
 <div class="user-content">
     <h2>Take an exam:</h2>

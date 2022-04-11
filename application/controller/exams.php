@@ -219,7 +219,7 @@ class Exams extends Controller
         unset($_SESSION['curQuestionIndex']);
         unset($_SESSION['reviewExam']);
 
-        header('Location: ' . URL);
+        header('Location: ' . URL . "index?exam_saved=true");
     }
 
     public function reviewExam()
