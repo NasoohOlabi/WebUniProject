@@ -1,5 +1,5 @@
 <style>
-    .scrolling-wrapper > div {
+    .scrolling-wrapper>div {
         margin: 1em;
     }
 </style>
@@ -10,4 +10,4 @@
                         document.getElementById("add-<?= $sub_cls ?>-dependant-btn").onclick = (event) => {
                                 console.log("catchMe");
                                 const btn = document.getElementById("add-<?= $sub_cls ?>-dependant-btn");
-                                btn.insertAdjacentHTML("beforebegin", `<div style="min-width:375px"><button class="remove-div-x-btn" onclick="this.parentElement.remove()"><i style="font-size:x-large" class="fa fa-close"></i></button>
+                                btn.insertAdjacentHTML("beforebegin", `<div style="min-width:375px;display:inline-block"><button class="remove-div-x-btn" onclick="this.parentElement.remove()"><i style="font-size:x-large" class="fa fa-close"></i></button>
