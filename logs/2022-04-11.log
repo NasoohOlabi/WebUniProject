@@ -2295,3 +2295,5 @@ Stack trace:
 [11-Apr-2022 08:12:59 Europe/Berlin] username = MarcDemo and password = 123
 [11-Apr-2022 08:12:59 Europe/Berlin] getFullDetails with username MarcDemo and password 123
 [11-Apr-2022 08:12:59 Europe/Berlin] MarcDemo details looked up : {"username":"MarcDemo","password":"202cb962ac59075b964b07152d234b70","first_name":"Marc","last_name":"Demo","middle_name":"Angry","profile_picture":"MarcDemo.jpg","role_id":2,"role":{"name":"Student","dependents":["User","Role_Has_Permission"],"identifying_fields":["name"],"id":2},"dependents":["Student","Exam_Center"],"identifying_fields":["username"],"id":17}
+[11-Apr-2022 08:43:28 Europe/Berlin] dashboard called
+[11-Apr-2022 08:43:41 Europe/Berlin] dashboard called
