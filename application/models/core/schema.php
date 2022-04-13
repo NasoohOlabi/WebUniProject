@@ -31,20 +31,20 @@ function properties_exists($stdClass, array $properties, string $prefix)
     return true;
 }
 
-define('Question','Question');
-define('Role','Role');
-define('Exam','Exam');
-define('Subject','Subject');
-define('Topic','Topic');
-define('Choice','Choice');
-define('Permission','Permission');
-define('Role_has_Permission','Role_has_Permission');
-define('User','User');
-define('Exam_Center','Exam_Center');
-define('Student','Student');
-define('Student_Exam_has_Question','Student_Exam_has_Question');
-define('Student_Exam_has_Choice','Student_Exam_has_Choice');
-define('Student_Exam','Student_Exam');
+define('Question', 'Question');
+define('Role', 'Role');
+define('Exam', 'Exam');
+define('Subject', 'Subject');
+define('Topic', 'Topic');
+define('Choice', 'Choice');
+define('Permission', 'Permission');
+define('Role_has_Permission', 'Role_has_Permission');
+define('User', 'User');
+define('Exam_Center', 'Exam_Center');
+define('Student', 'Student');
+define('Student_Exam_has_Question', 'Student_Exam_has_Question');
+define('Student_Exam_has_Choice', 'Student_Exam_has_Choice');
+define('Student_Exam', 'Student_Exam');
 
 abstract class Table
 {
@@ -65,7 +65,7 @@ abstract class Table
         }
     }
 
-    protected function relationalSetter(stdClass $stdClass, string $name)
+    protected function relationalSetter(?stdClass $stdClass, string $name)
     {
         if ($stdClass === null) return;
         $tmp = new $name($stdClass, strtolower($name) . "_");
@@ -419,5 +419,4 @@ class Student_Exam_Has_Question extends Table
         return ['create' => 'Give', 'read' => 'Take', 'update' => 'Change', 'delete' => 'Remove'];
     }
     public array $identifying_fields =  ['question_id', 'student_exam_id'];
-
 }
