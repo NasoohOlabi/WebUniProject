@@ -206,7 +206,7 @@ INSERT INTO `role_has_permission` (`id`, `role_id`, `permission_id`) VALUES
 (55, 2, 24);
 
 INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `middle_name`, `profile_picture`, `role_id`) VALUES
-(1, 'NasoohOlabi', '81dc9bdb52d04dc20036dbd8313ed055', 'Nasooh', 'Olabi', 'Yaser', 'NasoohOlabi.jpg', 1),
+(1, 'NasoohOlabi', '202cb962ac59075b964b07152d234b70', 'Nasooh', 'Olabi', 'Yaser', 'NasoohOlabi.jpg', 1),
 (2, 'NassouhAlOlabi', '202cb962ac59075b964b07152d234b70', 'Nassouh', 'AlOlabi', 'Yasser', NULL, 1),
 (3, 'MSmith', '202cb962ac59075b964b07152d234b70', 'Michell', 'Smith', 'car', 'MSmith.jpg', 7),
 (4, 'BrandonFreeman', '202cb962ac59075b964b07152d234b70', 'Brandon', 'Freeman', 'M.', 'BrandonFreeman.jpg', 6),
@@ -224,8 +224,8 @@ INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `mi
 (16, 'ToniRhodes', '202cb962ac59075b964b07152d234b70', 'Toni', 'Rhodes', 'Jordan', 'ToniRhodes.jpg', 5),
 (17, 'MarcDemo', '202cb962ac59075b964b07152d234b70', 'Marc', 'Demo', 'Angry', 'MarcDemo.jpg', 2),
 (18, 'testadmin', '202cb962ac59075b964b07152d234b70', 'TestCenter', 'Admin', NULL, NULL, 6),
-(19, "user1", "testpassword", "User1", "Lname", "MidName", NULL, 1),
-(21, "mail", "827ccb0eea8a706c4c34a16891f84e7b", "RealUser", "UserLname", "", NULL, 2),
+(19, "user1", "202cb962ac59075b964b07152d234b70", "User1", "Lname", "MidName", NULL, 1),
+(21, "mail", "202cb962ac59075b964b07152d234b70", "RealUser", "UserLname", "", NULL, 2),
 (22, "myadmin", "202cb962ac59075b964b07152d234b70", "AdminUser", "AdminLname", "middleName1", "myadmin.jpeg", 1),
 (23, "teacher", "202cb962ac59075b964b07152d234b70", "Teacher", "TLname", "", NULL, 2),
 (24, "newuser", "202cb962ac59075b964b07152d234b70", "New", "User", "", NULL, 2),
@@ -233,9 +233,9 @@ INSERT INTO `user` (`id`, `username`, `password`, `first_name`, `last_name`, `mi
 (26, "newuser2", "202cb962ac59075b964b07152d234b70", "New", "modified", "", "newuser2.png", 2),
 (27, "omar.a", "202cb962ac59075b964b07152d234b70", "Omar", "Ahmad", "middleName", NULL, 2),
 (28, "bob", "202cb962ac59075b964b07152d234b70", "Newacc", "Lname", "MyMiddleName", "bob.jpeg", 2),
-(29, "radmin", "a9b7b5912b7043805c326b62c636e069", "Root", "Admin", "", NULL, 1),
-(30, "profpic", "a9b7b5912b7043805c326b62c636e069", "With", "Profile", NULL, "profpic.jpg", 2),
-(31, "centeradmin", "123", "TestCenter", "Admin", "", NULL, 6);
+(29, "radmin", "202cb962ac59075b964b07152d234b70", "Root", "Admin", "", NULL, 1),
+(30, "profpic", "202cb962ac59075b964b07152d234b70", "With", "Profile", NULL, "profpic.jpg", 2),
+(31, "centeradmin", "202cb962ac59075b964b07152d234b70", "TestCenter", "Admin", "", NULL, 6);
 
 
 INSERT INTO `student` (`id`, `enroll_date`, `user_id`) VALUES
